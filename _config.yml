@@ -37,8 +37,8 @@ css:
   - /assets/css/custom.css
 
 aux_links:
-  📖 Course Notes:
-    - 'https://eecs245.org/notes'
+  # 📖 Course Notes:
+  #   - 'https://eecs245.org/notes'
 #   🧠 Study:
 #     - 'https://study.practicaldsc.org/'
 #   Ed:
