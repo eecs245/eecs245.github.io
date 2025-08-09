@@ -40,6 +40,12 @@ As of 4/13, the course is **not currently approved** to count for the DS major.
 
 If the course is approved to count for other programs, we will update this page.
 
+**How is this course formatted?**
+
+- **Lectures (TuTh 3-4:30PM, 1013 DOW):** Introduce core content in an interactive format. Recorded, and attendance will not be taken.
+- **Labs (W 12:30-2:30PM or W 4:30-6:30PM):** Provide supervised practice with mathematical ideas and a venue for exploring practical applications in Python. Attendance will be taken.
+- **Homeworks:** Assigned and due weekly. Will consist of ~80% math on paper and ~20% code in Python.
+- **Exams:** 2 Midterm Exams and 1 Final Exam (see dates on the [course homepage](../)), all in-person and on-paper.
 
 **Who should take this class?**
 
