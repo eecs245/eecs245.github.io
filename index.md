@@ -21,7 +21,13 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {% endfor %}
 
 {: .green }
-**Welcome to Mathematics for Machine Learning!** The course website is currently under construction. In the meantime, refer to the description below and the [FAQs](faqs) for more information.
+**Welcome to Mathematics for Machine Learning!** The course website is currently under construction. Lecture titles can be found below; refer to the [**FAQs**](faqs) for more information.
+
+> Linear algebra, calculus, and probability form the basis of modern machine learning and artificial intelligence. This course will introduce linear algebra from scratch by focusing on methods and examples from machine learning. It will give students strong intuition for how linear algebra, calculus and probability are used in machine learning. While the course is primarily theoretical, we’ll look at practical applications involving real data in Python each week, so that students are able to apply what they’ve learned.
+
+{% for module in site.modules %}
+{{ module }}
+{% endfor %}
 
 <!-- {: .green }
 Linear algebra forms the basis of modern machine learning and artificial intelligence. _Mathematics for Machine Learning_ will introduce students to the theory of linear algebra while exposing them to its applications to real-world machine learning problems using Python. After taking this course, students will understand the mathematical underpinnings of linear regression, neural networks, gradient descent, decision trees, dimensionality reduction, and other core ideas in machine learning. -->
@@ -29,7 +35,7 @@ Linear algebra forms the basis of modern machine learning and artificial intelli
 <!-- 1. TOC
 {:toc} -->
 
-## Content
+<!-- ## Content
 
 Linear algebra, calculus, and probability form the basis of modern machine learning and artificial intelligence. **This course will introduce linear algebra from scratch by focusing on methods and examples from machine learning.** It will give students strong intuition for how linear algebra, calculus and probability are used in machine learning. While the course is primarily theoretical, we'll look at practical applications involving real data in Python each week, so that students are able to apply what they've learned.
 
@@ -59,4 +65,4 @@ Each topic below corresponds to ~1-2 lectures.
 - **Homeworks**: Assigned and due weekly. Will consist of ~80% math on paper and ~20% code in Python.
 - **Exams**: 1-2 Midterm Exams and one Final Exam, all in-person and on-paper.
 
-
+ -->

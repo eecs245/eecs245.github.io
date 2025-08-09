@@ -24,7 +24,7 @@
               {% endif %}
             </p>
             <div class="event-links">
-                {%- if event.type == "lecture" or event.type == "review" or event.type == "exam" -%}
+                {%- if event.type == "lecture" or event.type == "review" or event.type == "lab" or event.type == "exam" -%}
                 {%- if event.blank_slides -%}
                 <small><a href="{{ event.blank_slides }}" class="btn btn-info btn-sm">🌗 blank slides</a></small>
                 {%- endif -%}
@@ -59,10 +59,10 @@
                 <a href="{{ event.videos }}" class="btn btn-info btn-sm">⏯️ videos</a>
                 {%- endif -%}
                 {%- if event.reading and event.reading_text -%}
-                <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 Read: {{ event.reading_text }}</a>
+                <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 {{ event.reading_text }}</a>
                 {%- endif -%}
                 {%- if event.reading2 and event.reading2_text -%}
-                <a href="{{ event.reading2 }}" class="btn btn-info btn-sm">📕 Read: {{ event.reading2_text }}</a>
+                <a href="{{ event.reading2 }}" class="btn btn-info btn-sm">📕 {{ event.reading2_text }}</a>
                 {%- endif -%}
               {%- endif -%}
               {%- if event.type == "hw" or event.type == "disc" -%}
