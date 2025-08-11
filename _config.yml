@@ -37,19 +37,12 @@ css:
   - /assets/css/custom.css
 
 aux_links:
-  # 📖 Course Notes:
-  #   - 'https://eecs245.org/notes'
-#   🧠 Study:
-#     - 'https://study.practicaldsc.org/'
-#   Ed:
-#     - 'https://edstem.org/us/courses/69737/discussion/'
-#   Gradescope:
-#     - 'https://www.gradescope.com/courses/930446/'
-#   🤔 Lecture Questions:
-#     - 'https://docs.google.com/forms/d/e/1FAIpQLSd4oliiZYeNh76jWy-arfEtoAkCrVSsobZxPwxifWggo3EO0Q/viewform'
-#   📬 Feedback:
-#     - 'https://docs.google.com/forms/d/e/1FAIpQLScjlYueonz7_ye6NtyIwdboOuQniPPxcCjsoRfjB4rPKDxKRg/viewform'
-
+  📖 Course Notes:
+    - 'https://notes.eecs245.org'
+  Ed:
+    - 'https://edstem.org/us/join/ZeqXCK/'
+  Gradescope:
+    - 'https://www.gradescope.com/courses/1077394/'
 footer_content:
 
 # Collections for website data

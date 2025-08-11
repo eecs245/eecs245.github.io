@@ -17,8 +17,8 @@ days:
         title: Python and Jupyter Notebooks; Math Review
         # reading: https://notes.eecs245.org/prelim/summation/
         # reading_text: "Ch. 0.1"
-        # reading2: https://notes.eecs245.org/prelim/derivatives/
-        # reading2_text: "Ch. 0.2"
+        reading2: https://notes.eecs245.org/prelim/derivatives/
+        reading2_text: "Ch. 0.2"
   - date: "2025-08-28"
     events:
       - name: LEC 2
