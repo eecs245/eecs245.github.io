@@ -13,10 +13,6 @@ toc_max_heading_level: 2
 
 **Who is teaching the class?**
 
-{% for staffer in site.staffersnobio %}
-{{ staffer }}
-{% endfor %}
-
 Since this information is not on ATLAS, course evaluations from Suraj's Fall 2024 offering of a different course can be found [here](https://practicaldsc.org/assets/marketing/fa24-evals.pdf).
 
 **What are the prerequisites?**

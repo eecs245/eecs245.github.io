@@ -18,12 +18,12 @@ nav_exclude: true
 ## Instructional Assistants
 
 
-<!-- {% assign tas = site.staffers | where: 'role', 'TA' %}
+{% assign tas = site.staffers | where: 'role', 'TA' %}
 {% for staffer in tas %}
 {{ staffer }}
 {% endfor %}
 
-## Graders
+<!-- ## Graders
 
 {% assign tas = site.staffers | where: 'role', 'Grader' %}
 {% for staffer in tas %}
