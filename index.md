@@ -21,7 +21,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {% endfor %}
 
 {: .green }
-**Welcome to Mathematics for Machine Learning!** The course website is currently under construction. Lecture titles can be found below; refer to the [**FAQs**](faqs) for more information.
+**Welcome to Mathematics for Machine Learning!** The course website is currently under construction. Lecture titles can be found below. Refer to the [**Syllabus**](syllabus) for more information.
 
 
 {% for module in site.modules %}
