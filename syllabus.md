@@ -286,7 +286,7 @@ Exams are to be completed individually, with absolutely no collaboration allowed
 | Midterm 1                                    | 20% | see [Exams](#exams) section above |
 | Midterm 2                                    | 20% | see [Exams](#exams) section above  |
 | Final Exam                                   | 30%                 |  |
-| Homeworks | 20% | • 11 total; 2 lowest scores dropped <br> • 8 [slip days](#late-policy-slip-days-and-drops) available to use with a max of 2 per homework  |
+| Homeworks | 20% | • 11 total; 2 lowest scores dropped <br> • 8 slip days available to use with a max of 2 per homework  |
 | Labs | 10% | 13 total; 3 lowest scores dropped  |
 
 
