@@ -2,8 +2,7 @@
 layout: page
 title: 👩‍🏫 Staff
 description: A listing of all the course staff members.
-# nav_order: 8
-nav_exclude: true
+nav_order: 4
 ---
 
 # 👩‍🏫 Staff
@@ -23,9 +22,11 @@ nav_exclude: true
 {{ staffer }}
 {% endfor %}
 
-<!-- ## Graders
+## Graders
 
-{% assign tas = site.staffers | where: 'role', 'Grader' %}
-{% for staffer in tas %}
-{{ staffer }}
-{% endfor %} -->
+Coming soon!
+
+<!-- {% assign tas = site.staffers | where: 'role', 'Grader' %} -->
+<!-- {% for staffer in tas %} -->
+<!-- {{ staffer }} -->
+<!-- {% endfor %} -->

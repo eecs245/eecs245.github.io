@@ -7,6 +7,9 @@ days:
       - name: LEC 3
         type: lecture
         title: Empirical Risk; Simple Linear Regression
+      - name: HW 1
+        type: hw
+        title: Homework 1
   - date: "2025-09-03"
     events:
       - name: LAB 2
@@ -17,7 +20,4 @@ days:
       - name: LEC 4
         type: lecture
         title: Simple Linear Regression, Continued
-      - name: HW 1
-        type: hw
-        title: Homework 1
 ---

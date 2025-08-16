@@ -23,7 +23,6 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {: .green }
 **Welcome to Mathematics for Machine Learning!** The course website is currently under construction. Lecture titles can be found below; refer to the [**FAQs**](faqs) for more information.
 
-> Linear algebra, calculus, and probability form the basis of modern machine learning and artificial intelligence. This course will introduce linear algebra from scratch by focusing on methods and examples from machine learning. It will give students strong intuition for how linear algebra, calculus and probability are used in machine learning. While the course is primarily theoretical, we’ll look at practical applications involving real data in Python each week, so that students are able to apply what they’ve learned.
 
 {% for module in site.modules %}
 {{ module }}
