@@ -8,8 +8,8 @@ days:
         type: lecture
         title: Introduction 
         # note: "Course notes are actively being developed, and will be linked under each lecture once they are available."
-        # reading: https://notes.eecs245.org/supervised-learning/intro/
-        # reading_text: "Ch. 1.1" 
+        reading: https://notes.eecs245.org/supervised-learning/intro/
+        reading_text: "Ch. 1.1"
   - date: "2025-08-27"
     events:
       - name: LAB 1
