@@ -31,6 +31,8 @@ permalink: pretty
 sass:
   custom_css: _sass/custom/custom.scss
 
+# logo: "/assets/site-images/logo.png"
+
 # Add custom CSS
 aux_links_new_tab: true
 css:
@@ -43,6 +45,8 @@ aux_links:
     - 'https://edstem.org/us/join/ZeqXCK/'
   Gradescope:
     - 'https://www.gradescope.com/courses/1077394/'
+  📬 Feedback:
+    - 'https://forms.gle/3FQf9iJ21BrPoJhM9'
 footer_content:
 
 # Collections for website data

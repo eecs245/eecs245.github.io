@@ -104,27 +104,27 @@ You may also use computer workstations in CAEN labs on campus or <a href="https:
 
 You'll need to make accounts on the following sites:
 
-- **Ed:** We’ll be using Ed as our course message and discussion board. (Think of Ed as a replacement to Piazza.) More
+- **Ed:** We’ll be using Ed as our course message and discussion board. More
   details are in the [Communication](#communication) section below. If you
   didn’t already get an invitation to our Ed course, [sign up
   here](https://edstem.org/us/join/ZeqXCK/).
 
 - **Gradescope:** You’ll submit all assignments to
   [Gradescope](https://www.gradescope.com/courses/1077394/), and this is where all of
-  your grades will live as well. Most homeworks will involve creating a PDF with your answers and submitting that to Gradescope. Some homeworks will involve submitting code to an autograder on Gradescope as well; we will not be using the EECS department-specific autograder. You should have received an email invitation for
+  your grades will live as well. Most homeworks will involve creating a PDF with your answers and submitting that to Gradescope. Most homeworks will also involve submitting code to an autograder on Gradescope; we will not be using the EECS department-specific autograder. You should have received an email invitation for
   Gradescope, but if not please let us know as soon as possible (preferably via
   Ed).
 
 {: .red }
 Note that we will **not** be using Canvas for anything this semester (so please don't try and send us messages on Canvas!).
 
-### Programming Environment Setup
+### Programming Environment
 
-Some labs and homeworks will involve writing Python code in Jupyter Notebooks, locally on your computer. As soon as you are able to, go follow the steps in the [Environment Setup](../env-setup) page of the course website to set up your programming environment for the course. In Lab 1, we'll verify that you've followed these steps and help you get set up if you run into any issues.
+Some labs and homeworks will involve writing Python code in Jupyter Notebooks. We've created a virtual Jupyter Notebook server that will allow you to access and write code directly from your browser, though you can also set up the necessary programming environment locally on your computer if you'd like. See the [Tech Support](../tech-support) page of the course website for more details.
 
 ### Forms
 
-Please fill out the required [Welcome Survey](https://forms.gle/qo2rCzcoxxvEE7Wx8) to tell us a bit more about your background and whether you need alternate exams **no later than Tuesday, September 2nd**.
+Please fill out the required [Welcome Survey](https://forms.gle/tUz2QhqzJDRxdtDn8) to tell us a bit more about your background and whether you need alternate exams **no later than Wednesday, September 3rd**.
 
 ---
 
@@ -169,12 +169,11 @@ There are two lab sections on Wednesdays. You can attend either lab section on a
 - 12:30-2:30PM in 2246 CSRB
 - 4:30-6:30PM in 1008 FXB
 
-
 Labs are meant to provide hands-on practice with the recent lecture material and preparation for the upcoming homeworks and exams. 
 
-Each lab session will have an accompanying **physical worksheet** that is distributed in-person at the start of lab and meant to be completed during the live lab session. The top of each lab worksheet will contain a list of action items that must be completed by the end of the lab session in order to receive credit. Many action items will involve writing math on the paper worksheet, and others will involve writing code in a Jupyter Notebook and either showing your TA a working solution or submitting it to the autograder. 
+Each lab session will have an accompanying **physical worksheet** that is distributed in-person at the start of lab and meant to be completed during the live lab session. Each worksheet is broken into several activities; some activities will involve writing math on the paper worksheet, and others will involve writing code in a Jupyter Notebook and either showing your TA a working solution or submitting it to the autograder. 
 
-To earn credit for a lab, you must finish all action items and **show the lab TA a completed worksheet** by the end of the lab session. **This means that there is no option to receive credit for labs remotely.** 
+To earn credit for a lab, you must finish all activities and **show the lab TA a completed worksheet** by the end of the lab session. **This means that there is no option to receive credit for labs remotely.** 
 
 There will be 13 labs in total. Each week you attend and submit the lab will earn you 1 "lab point", up to a maximum of 10 lab points. Your lab score will be the number of lab points you earn out of 10. This means **you can miss up to 3 labs for any reason** (late add, extenuating circumstances, etc.) and still earn a full lab score. This flexibility is provided in lieu of allowing for remote submissions, since we really believe in the power of working on problems in-person and on-paper with other students. Details can be found in the [Grades](#grades) section below.
 
@@ -271,7 +270,7 @@ The specific lecture numbers above are subject to change slightly. Midterm 2 is 
 
 This "redemption policy" for Parts 1 and 2 is designed to help you boost your Midterm 1 and Midterm 2 scores if you didn't do as well as you'd hoped. This policy can only help your grade; it can't hurt. To be clear, all three parts of the Final Exam are required and part of your Final Exam score.
 
-If you have conflicts with any of the exams, please let us know on the [Welcome Survey](https://forms.gle/qo2rCzcoxxvEE7Wx8). We may provide alternate exam times for students with a valid, documented conflict with a required activity in another course or official university-affiliated activity, or to help students avoid negative academic consequences when their religious obligations conflict with academic requirements.
+If you have conflicts with any of the exams, please let us know on the [Welcome Survey](https://forms.gle/tUz2QhqzJDRxdtDn8). We may provide alternate exam times for students with a valid, documented conflict with a required activity in another course or official university-affiliated activity, or to help students avoid negative academic consequences when their religious obligations conflict with academic requirements.
 
 Exams are to be completed individually, with absolutely no collaboration allowed. Any suspected violations will be reported to the [Honor Council](https://ecas.engin.umich.edu/honor-council/).
 
@@ -358,4 +357,4 @@ This course is being offered for the first time at the University of Michigan. W
 
 While we try to do our best to plan ahead, unfortunately, sometimes circumstances do arise that necessitate a policy change. When this happens, the change will be announced, and this document will be updated with the new policy.
 
-We appreciate any and all feedback, given that this course is new and evolving. If you'd like to provide us with anonymous feedback at any point, you can do so at [this form](Anonymous Feedback Form – EECS 245, Fall 2025). Thank you!
+We appreciate any and all feedback, given that this course is new and evolving. If you'd like to provide us with anonymous feedback at any point, you can do so at [this form](https://forms.gle/3FQf9iJ21BrPoJhM9). Thank you!
