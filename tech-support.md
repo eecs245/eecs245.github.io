@@ -64,6 +64,11 @@ You'll never really need to go to [datahub.eecs245.org](https://datahub.eecs245.
 
 To submit your Jupyter Notebooks to Gradescope, you'll need to first download them to your computer, and then upload them to Gradescope.
 
+{: .yellow }
+> As mentioned above, Option 1 has the potential of being slow and unreliable, so if you're comfortable with the local steps, we recommend following Option 2.
+>
+> Another note: You should not store any sensitive information on DataHub, as the instructors have access to your files for debugging purposes. The server is limited in its storage capacity, so you should only use it to work on course materials for this class, nothing else.
+
 ---
 
 ## Option 2: Local Setup
