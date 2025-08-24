@@ -10,11 +10,13 @@ days:
         # note: "Course notes are actively being developed, and will be linked under each lecture once they are available."
         reading: https://notes.eecs245.org/supervised-learning/intro/
         reading_text: "Ch. 1.1"
+        reading2: https://notes.eecs245.org/supervised-learning/loss-functions-constant-model/
+        reading2_text: "Ch. 1.2"
   - date: "2025-08-27"
     events:
       - name: LAB 1
         type: lab
-        title: Python and Jupyter Notebooks; Math Review
+        title: Python Basics and Math Review
         # reading: https://notes.eecs245.org/prelim/summation/
         # reading_text: "Ch. 0.1"
         reading2: https://notes.eecs245.org/prelim/derivatives/
