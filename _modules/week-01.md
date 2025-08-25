@@ -17,10 +17,11 @@ days:
       - name: LAB 1
         type: lab
         title: Python Basics and Math Review
-        # reading: https://notes.eecs245.org/prelim/summation/
-        # reading_text: "Ch. 0.1"
+        reading: https://notes.eecs245.org/prelim/summation/
+        reading_text: "Ch. 0.1"
         reading2: https://notes.eecs245.org/prelim/derivatives/
         reading2_text: "Ch. 0.2"
+        note: Most future labs won't have associated readings – just a worksheet and code.
   - date: "2025-08-28"
     events:
       - name: LEC 2
