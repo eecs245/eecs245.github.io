@@ -27,6 +27,9 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 >
 > Make sure to read the [**Syllabus**](syllabus) and complete the action items in the [**Getting Started**](syllabus#getting-started) section.
 
+[Jump to Week 1: Welcome 👋](#week-1-welcome){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
+
+
 {% for module in site.modules %}
 {{ module }}
 {% endfor %}
