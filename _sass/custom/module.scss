@@ -13,12 +13,36 @@
 .event-links {
   margin-top: 2px;
   margin-left: 80px;
-  line-height: 15px;
+  line-height: 1.5;
 }
 
 .event-links .btn {
   margin-right: 5px;
   margin-bottom: 5px;
+}
+
+.expandable-code-btn {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.code-links-expanded {
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  line-height: 1.4;
+}
+
+.code-links-expanded a {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.code-links-expanded a:hover {
+  text-decoration: underline;
 }
 
 .btn-sm {

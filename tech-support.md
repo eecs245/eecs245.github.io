@@ -62,6 +62,12 @@ The **first time** you access DataHub, your username will be your uniqname (with
 
 You'll never really need to go to [datahub.eecs245.org](https://datahub.eecs245.org) directly. Instead, for labs, homeworks, or lectures that have programming components, we'll give you a magic link that will automatically open the relevant code notebook on your DataHub. Clicking a magic link **does not** delete any of your work – all it does is pull the latest versions of our assignment skeletons onto your DataHub.
 
+**The first time** you open a notebook on DataHub – likely in Lab 1 – you'll need to **click "Python 3 (ipykernel)"** in the top right corner of the notebook and select **"Python 3.10 for EECS 245"**. Make sure to click "Always start the preferred kernel". 
+
+<center><img src="../assets/site-images/select-kernel.png" alt="Select Kernel" width="300"></center>
+
+You should only need to do this step once, but if you ever see "Python 3 (ipykernel)" in the top right corner of the notebook, make sure to switch it to "Python 3.10 for EECS 245".
+
 To submit your Jupyter Notebooks to Gradescope, you'll need to first download them to your computer, and then upload them to Gradescope.
 
 {: .yellow }

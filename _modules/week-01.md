@@ -13,6 +13,7 @@ days:
         reading2: https://notes.eecs245.org/supervised-learning/loss-functions-constant-model/
         reading2_text: "Ch. 1.2"
         live_notes: ../resources/lecture-pdfs/lec01.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/2qU6vQ
   - date: "2025-08-27"
     events:
       - name: LAB 1
@@ -22,7 +23,10 @@ days:
         reading_text: "Ch. 0.1"
         reading2: https://notes.eecs245.org/prelim/derivatives/
         reading2_text: "Ch. 0.2"
-        note: Most future labs won't have associated readings – just a worksheet and code.
+        datahub_text: Lab 1
+        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa25&urlpath=tree%2Ffa25%2Flabs%2Flab01%2Flab01.ipynb&branch=main
+        github_link: https://github.com/eecs245/fa25/tree/main/labs/lab01/lab01.ipynb
+        # note: Most future labs won't have associated readings – just a worksheet and code.
   - date: "2025-08-28"
     events:
       - name: LEC 2

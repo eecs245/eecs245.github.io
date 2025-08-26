@@ -28,6 +28,7 @@
                 {%- if event.blank_slides -%}
                 <small><a href="{{ event.blank_slides }}" class="btn btn-info btn-sm">🌗 blank slides</a></small>
                 {%- endif -%}
+                {%- if event.datahub_link or event.github_link -%}<button class="btn btn-info btn-sm expandable-code-btn" onclick="toggleCodeLinks(this)" data-event-id="{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">💻 {% if event.code_button_text %}{{ event.code_button_text }}{% else %}Code{% endif %} ▼</button>{%- endif -%}
                 {%- if event.reading and event.reading_text -%}
                 <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 {{ event.reading_text }}</a>
                 {%- endif -%}
@@ -35,7 +36,7 @@
                 <a href="{{ event.reading2 }}" class="btn btn-info btn-sm">📕 {{ event.reading2_text }}</a>
                 {%- endif -%}
                 {%- if event.live_notes -%}
-                <small><a href="{{ event.live_notes }}" class="btn btn-info btn-sm">📝 in-class notes</a></small>
+                <small><a href="{{ event.live_notes }}" class="btn btn-info btn-sm">📝 In-Class Notes</a></small>
                 {%- endif -%}
                 {%- if event.html -%}
                 <a href="{{ event.html }}" class="btn btn-info btn-sm">📝 filled html</a>
@@ -53,18 +54,17 @@
                 <a href="{{ event.github }}" class="btn btn-info btn-sm">{% include icon-github.html %} GitHub</a>
                 {%- endif -%}
                 {%- if event.recording -%}
-                <a href="{{ event.recording }}" class="btn btn-info btn-sm">🎥 recording</a>
+                <a href="{{ event.recording }}" class="btn btn-info btn-sm">🎥 Recording</a>
                 {%- endif -%}
                 {%- if event.guide -%}
-                <small><a href="{{ event.guide }}" class="btn btn-info btn-sm">🧑‍🤝‍🧑 Guide: {{ event.guide_title }}</a></small>
+                <small><a href="{{ event.guide }}" class="btn btn-info btn-sm">🧑‍🤝‍🧑 Guides: {{ event.guide_title }}</a></small>
                 {%- endif -%}
                 {%- if event.animations -%}
-                <a href="{{ event.animations }}" class="btn btn-info btn-sm">🧮 animations</a>
+                <a href="{{ event.animations }}" class="btn btn-info btn-sm">🧮 Animations</a>
                 {%- endif -%}
                 {%- if event.videos -%}
-                <a href="{{ event.videos }}" class="btn btn-info btn-sm">⏯️ videos</a>
+                <a href="{{ event.videos }}" class="btn btn-info btn-sm">⏯️ Videos</a>
                 {%- endif -%}
-
               {%- endif -%}
               {%- if event.type == "hw" or event.type == "disc" -%}
                 {%- if event.slides -%}
@@ -95,6 +95,16 @@
                 <a href="{{ event.solutions }}" class="btn btn-info btn-sm">📝 solutions</a>
                 {%- endif -%}
               {%- endif -%}
+              {%- if event.datahub_link or event.github_link -%}
+              <div class="code-links-expanded" id="code-links-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" style="display: none;">
+                {%- if event.datahub_link -%}
+                <small><a href="{{ event.datahub_link }}">🚀 Launch {{ event.datahub_text }} on DataHub</a>, or </small>
+                {%- endif -%}
+                {%- if event.github_link -%}
+                <small> clone our <a href="{{ event.github_link }}">{% include icon-github.html %} GitHub repository</a>.</small>
+                {%- endif -%}
+              </div>
+              {%- endif -%}
               {%- if event.note -%}
               <br><p><small>{{ event.note }}</small></p>
               {%- endif -%}
@@ -112,3 +122,19 @@
   </div>
   {% endif %}
 </div>
+
+<script>
+function toggleCodeLinks(button) {
+  const eventId = button.getAttribute('data-event-id');
+  const expandedDiv = document.getElementById('code-links-' + eventId);
+  const isExpanded = expandedDiv.style.display !== 'none';
+  
+  if (isExpanded) {
+    expandedDiv.style.display = 'none';
+    button.innerHTML = button.innerHTML.replace('▲', '▼');
+  } else {
+    expandedDiv.style.display = 'block';
+    button.innerHTML = button.innerHTML.replace('▼', '▲');
+  }
+}
+</script>
