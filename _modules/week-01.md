@@ -12,6 +12,7 @@ days:
         reading_text: "Ch. 1.1"
         reading2: https://notes.eecs245.org/supervised-learning/loss-functions-constant-model/
         reading2_text: "Ch. 1.2"
+        live_notes: ../resources/lecture-pdfs/lec01.pdf
   - date: "2025-08-27"
     events:
       - name: LAB 1

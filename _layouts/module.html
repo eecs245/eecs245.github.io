@@ -28,8 +28,14 @@
                 {%- if event.blank_slides -%}
                 <small><a href="{{ event.blank_slides }}" class="btn btn-info btn-sm">🌗 blank slides</a></small>
                 {%- endif -%}
-                {%- if event.filled_slides -%}
-                <small><a href="{{ event.filled_slides }}" class="btn btn-info btn-sm">📝 filled slides</a></small>
+                {%- if event.reading and event.reading_text -%}
+                <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 {{ event.reading_text }}</a>
+                {%- endif -%}
+                {%- if event.reading2 and event.reading2_text -%}
+                <a href="{{ event.reading2 }}" class="btn btn-info btn-sm">📕 {{ event.reading2_text }}</a>
+                {%- endif -%}
+                {%- if event.live_notes -%}
+                <small><a href="{{ event.live_notes }}" class="btn btn-info btn-sm">📝 in-class notes</a></small>
                 {%- endif -%}
                 {%- if event.html -%}
                 <a href="{{ event.html }}" class="btn btn-info btn-sm">📝 filled html</a>
@@ -58,12 +64,7 @@
                 {%- if event.videos -%}
                 <a href="{{ event.videos }}" class="btn btn-info btn-sm">⏯️ videos</a>
                 {%- endif -%}
-                {%- if event.reading and event.reading_text -%}
-                <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 {{ event.reading_text }}</a>
-                {%- endif -%}
-                {%- if event.reading2 and event.reading2_text -%}
-                <a href="{{ event.reading2 }}" class="btn btn-info btn-sm">📕 {{ event.reading2_text }}</a>
-                {%- endif -%}
+
               {%- endif -%}
               {%- if event.type == "hw" or event.type == "disc" -%}
                 {%- if event.slides -%}
