@@ -24,9 +24,15 @@
               {% endif %}
             </p>
             <div class="event-links">
-                {%- if event.type == "lecture" or event.type == "review" or event.type == "lab" or event.type == "exam" -%}
-                {%- if event.blank_slides -%}
-                <small><a href="{{ event.blank_slides }}" class="btn btn-info btn-sm">🌗 blank slides</a></small>
+                {%- if event.type == "lecture" or event.type == "review" or event.type == "lab" or event.type == "exam" or event.type == "hw" -%}
+                {%- if event.problems -%}
+                <a href="{{ event.problems }}" class="btn btn-info btn-sm">🧠 Problems</a>
+                {%- endif -%}
+                {%- if event.template -%}
+                <a href="{{ event.template }}" class="btn btn-info btn-sm">🍃 LaTeX Template</a>
+                {%- endif -%}
+                {%- if event.solutions -%}
+                <a href="{{ event.solutions }}" class="btn btn-info btn-sm">✅ Solutions</a>
                 {%- endif -%}
                 {%- if event.datahub_link or event.github_link -%}<button class="btn btn-info btn-sm expandable-code-btn" onclick="toggleCodeLinks(this)" data-event-id="{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">💻 {% if event.code_button_text %}{{ event.code_button_text }}{% else %}Code{% endif %} ▼</button>{%- endif -%}
                 {%- if event.reading and event.reading_text -%}
@@ -40,9 +46,6 @@
                 {%- endif -%}
                 {%- if event.html -%}
                 <a href="{{ event.html }}" class="btn btn-info btn-sm">📝 filled html</a>
-                {%- endif -%}
-                {%- if event.problems -%}
-                <a href="{{ event.problems }}" class="btn btn-info btn-sm">🧠 problems</a>
                 {%- endif -%}
                 {%- if event.extra -%}
                 <a href="{{ event.extra }}" class="btn btn-info btn-sm">🎁 {{ event.extra_text }}</a>
@@ -66,7 +69,7 @@
                 <a href="{{ event.videos }}" class="btn btn-info btn-sm">⏯️ Videos</a>
                 {%- endif -%}
               {%- endif -%}
-              {%- if event.type == "hw" or event.type == "disc" -%}
+              <!-- {%- if event.type == "hw" or event.type == "disc" -%}
                 {%- if event.slides -%}
                 <small><a href="{{ event.slides }}" class="btn btn-info btn-sm">🧑‍🏫 mini-lecture slides</a></small>
                 {%- endif -%}
@@ -85,16 +88,13 @@
                 {%- if event.reading and event.reading_text -%}
                 <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 Read: {{ event.reading_text }}</a>
                 {%- endif -%}
-                {%- if event.template -%}
-                <a href="{{ event.template }}" class="btn btn-info btn-sm">🍃 template</a>
-                {%- endif -%}
                 {%- if event.walkthrough -%}
                 <a href="{{ event.walkthrough }}" class="btn btn-info btn-sm">🎥 walkthrough</a>
                 {%- endif -%}
                 {%- if event.solutions -%}
                 <a href="{{ event.solutions }}" class="btn btn-info btn-sm">📝 solutions</a>
                 {%- endif -%}
-              {%- endif -%}
+              {%- endif -%} -->
               {%- if event.datahub_link or event.github_link -%}
               <div class="code-links-expanded" id="code-links-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" style="display: none;">
                 {%- if event.datahub_link -%}
