@@ -23,7 +23,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {: .green }
 > **Welcome to Mathematics for Machine Learning!** 👋
 >
-> Our first lecture is on Tuesday 8/26 at 3PM in 1013 DOW, and the first labs are on Wednesday 8/27 at 12:30PM or 4:30PM.
+> Our first labs are on Wednesday 8/27 at 12:30PM or 4:30PM, and attendance is required.
 >
 > Make sure to read the [**Syllabus**](syllabus) and complete the action items in the [**Getting Started**](syllabus#getting-started) section.
 
