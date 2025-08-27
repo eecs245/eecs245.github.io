@@ -341,6 +341,10 @@ confidential resources to all enrolled students, many of which are listed [here]
 - Psychiatric Emergency Services: 734-996-4747
 - [Services for Students with Disabilities (SSD)](https://ssd.umich.edu); 734-763-3000; ssdoffice@umich.edu
 
+### CSE Resources
+
+<img src="../assets/site-images/CSE UAO Resources.png" width="600">
+
 ---
 
 ## Acknowledgements
