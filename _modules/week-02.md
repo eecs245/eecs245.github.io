@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 2
         type: lab
-        title: "<code>numpy</code> and <code>sklearn</code>"
+        title: Lab 2
       - name: HW 1
         type: hw
         title: "<b>Means, Sums, and Calculus</b>"

@@ -7,6 +7,9 @@ days:
       - name: LEC 5
         type: lecture
         title: Vectors and the Dot Product
+      - name: HW 2
+        type: hw
+        title: Homework 2
   - date: "2025-09-10"
     events:
       - name: LAB 3

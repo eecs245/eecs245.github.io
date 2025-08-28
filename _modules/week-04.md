@@ -7,6 +7,9 @@ days:
       - name: LEC 7
         type: lecture
         title: Linear Independence
+      - name: HW 3
+        type: hw
+        title: Homework 3
   - date: "2025-09-17"
     events:
       - name: LAB 4

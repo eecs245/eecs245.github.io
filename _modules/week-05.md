@@ -7,6 +7,9 @@ days:
       - name: LEC 9
         type: lecture
         title: Linear Transformations
+      - name: HW 4
+        type: hw
+        title: Homework 4
   - date: "2025-09-24"
     events:
       - name: LAB 5
