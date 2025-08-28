@@ -10,8 +10,6 @@ days:
         # note: "Course notes are actively being developed, and will be linked under each lecture once they are available."
         reading: https://notes.eecs245.org/supervised-learning/intro/
         reading_text: "Ch. 1.1"
-        reading2: https://notes.eecs245.org/supervised-learning/loss-functions-constant-model/
-        reading2_text: "Ch. 1.2"
         live_notes: ../resources/lecture-pdfs/lec01.pdf
         recording: https://leccap.engin.umich.edu/leccap/player/r/2qU6vQ
   - date: "2025-08-27"
@@ -34,6 +32,8 @@ days:
       - name: LEC 2
         type: lecture
         title: Loss Functions and the Constant Model
-        # reading: https://notes.eecs245.org/supervised-learning/loss-functions-constant-model/
-        # reading_text: "Ch. 1.2"
+        reading: https://notes.eecs245.org/supervised-learning/loss-functions-constant-model/
+        reading_text: "Ch. 1.2"
+        reading2: https://notes.eecs245.org/supervised-learning/empirical-risk-minimization/
+        reading2_text: "Ch. 1.3"
 ---
