@@ -7,6 +7,10 @@ days:
       - name: LEC 3
         type: lecture
         title: Empirical Risk; Simple Linear Regression
+        reading: https://notes.eecs245.org/supervised-learning/empirical-risk-minimization/
+        reading_text: "Ch. 1.3"
+        reading2: "#"
+        reading2_text: "Ch 1.4 (coming soon)"
   - date: "2025-09-03"
     events:
       - name: LAB 2

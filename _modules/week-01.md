@@ -36,4 +36,5 @@ days:
         reading_text: "Ch. 1.2"
         reading2: https://notes.eecs245.org/supervised-learning/empirical-risk-minimization/
         reading2_text: "Ch. 1.3"
+        live_notes: ../resources/lecture-pdfs/lec02.pdf
 ---
