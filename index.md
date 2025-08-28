@@ -23,9 +23,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {: .green }
 > **Welcome to Mathematics for Machine Learning!** 👋
 >
-> Our first labs are on Wednesday 8/27 at 12:30PM or 4:30PM, and attendance is required.
->
-> Make sure to read the [**Syllabus**](syllabus) and complete the action items in the [**Getting Started**](syllabus#getting-started) section.
+> Make sure to read the [**Syllabus**](syllabus), complete the action items in the [**Getting Started**](syllabus#getting-started) section, and stay active on [**Ed**](https://edstem.org/us/join/ZeqXCK), as that's where all announcements are posted.
 
 [Jump to Week 1: Welcome 👋](#week-1-welcome){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
