@@ -26,7 +26,7 @@ nav_order: 5
 
 Coming soon!
 
-<!-- {% assign tas = site.staffers | where: 'role', 'Grader' %} -->
-<!-- {% for staffer in tas %} -->
-<!-- {{ staffer }} -->
-<!-- {% endfor %} -->
+{% assign graders = site.staffers | where: 'role', 'Grader' %}
+{% for staffer in graders %}
+{{ staffer }}
+{% endfor %}
