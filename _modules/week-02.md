@@ -9,8 +9,7 @@ days:
         title: Empirical Risk; Simple Linear Regression
         reading: https://notes.eecs245.org/supervised-learning/empirical-risk-minimization/
         reading_text: "Ch. 1.3"
-        reading2: "#"
-        reading2_text: "Ch 1.4 (coming soon)"
+        recording: https://leccap.engin.umich.edu/leccap/player/r/pSPnBn
   - date: "2025-09-03"
     events:
       - name: LAB 2
@@ -30,5 +29,5 @@ days:
     events:
       - name: LEC 4
         type: lecture
-        title: Simple Linear Regression, Continued
+        title: Simple Linear Regression
 ---
