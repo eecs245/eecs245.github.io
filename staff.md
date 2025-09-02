@@ -24,8 +24,6 @@ nav_order: 5
 
 ## Graders
 
-Coming soon!
-
 {% assign graders = site.staffers | where: 'role', 'Grader' %}
 {% for staffer in graders %}
 {{ staffer }}
