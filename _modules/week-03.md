@@ -9,7 +9,9 @@ days:
         title: Vectors and the Dot Product
       - name: HW 2
         type: hw
-        title: Homework 2
+        title: <b>Empirical Risk and Simple Linear Regression</b>
+        problems: ../resources/homeworks/hw02/hw02.pdf
+        template: https://www.overleaf.com/read/rkctpjvbfzjd#74af82
   - date: "2025-09-10"
     events:
       - name: LAB 3
