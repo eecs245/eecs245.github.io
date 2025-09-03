@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 3
         type: lecture
-        title: Empirical Risk; Simple Linear Regression
+        title: Empirical Risk and Simple Linear Regression
         reading: https://notes.eecs245.org/supervised-learning/empirical-risk-minimization/
         reading_text: "Ch. 1.3"
         live_notes: ../resources/lecture-pdfs/lec03.pdf
@@ -15,7 +15,10 @@ days:
     events:
       - name: LAB 2
         type: lab
-        title: Lab 2
+        title: Empirical Risk and Simple Linear Regression
+        datahub_text: Lab 2
+        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa25&urlpath=tree%2Ffa25%2Flabs%2Flab02%2Flab02.ipynb&branch=main
+        github_link: https://github.com/eecs245/fa25/tree/main/labs/lab02/lab02.ipynb
       - name: HW 1
         type: hw
         title: "<b>Means, Sums, and Calculus</b>"
