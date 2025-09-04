@@ -36,4 +36,6 @@ days:
       - name: LEC 4
         type: lecture
         title: Simple Linear Regression
+        reading: https://notes.eecs245.org/supervised-learning/simple-linear-regression/
+        reading_text: Ch. 1.4
 ---
