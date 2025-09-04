@@ -38,4 +38,6 @@ days:
         title: Simple Linear Regression
         reading: https://notes.eecs245.org/supervised-learning/simple-linear-regression/
         reading_text: Ch. 1.4
+        recording: https://leccap.engin.umich.edu/leccap/player/r/Gvl5lW
+        live_notes: ../resources/lecture-pdfs/lec04.pdf
 ---
