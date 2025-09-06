@@ -12,6 +12,7 @@ days:
         title: <b>Empirical Risk and Simple Linear Regression</b>
         problems: ../resources/homeworks/hw02/hw02.pdf
         template: https://www.overleaf.com/read/rkctpjvbfzjd#74af82
+        note: Watch <b><a href="https://edstem.org/us/courses/81392/discussion/6920064">this video</a></b> for hints on Problem 2a.
   - date: "2025-09-10"
     events:
       - name: LAB 3
