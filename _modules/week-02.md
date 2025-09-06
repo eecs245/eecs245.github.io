@@ -25,6 +25,7 @@ days:
         type: hw
         title: "<b>Means, Sums, and Calculus</b>"
         problems: ../resources/homeworks/hw01/hw01.pdf
+        solutions: https://edstem.org/us/courses/81392/discussion/6921732
         template: https://www.overleaf.com/read/fgmjgvmdypjg#c81775
         video: https://www.loom.com/share/4f02c4ba618846b79841d1bc01982d46?sid=e9d76743-c5a5-413c-83f3-7471db9d13d6
         video_text: "Template Instructions"
