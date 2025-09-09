@@ -13,6 +13,7 @@ days:
         reading2_text: Ch. 2.1
         reading3: https://notes.eecs245.org/vectors-and-matrices/dot-product/
         reading3_text: Ch. 2.2
+        live_notes: ../resources/lecture-pdfs/lec05.pdf
       - name: HW 2
         type: hw
         title: <b>Empirical Risk and Simple Linear Regression</b>
