@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 5
         type: lecture
-        title: Vectors and the Dot Product
+        title: Introduction to Vectors
         reading: https://notes.eecs245.org/supervised-learning/least-squares/
         reading_text: Ch. 1.5
         reading2: https://notes.eecs245.org/vectors-and-matrices/vectors/
@@ -14,6 +14,7 @@ days:
         reading3: https://notes.eecs245.org/vectors-and-matrices/dot-product/
         reading3_text: Ch. 2.2
         live_notes: ../resources/lecture-pdfs/lec05.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/RKJr91
       - name: HW 2
         type: hw
         title: <b>Empirical Risk and Simple Linear Regression</b>
@@ -29,5 +30,5 @@ days:
     events:
       - name: LEC 6
         type: lecture
-        title: Projections, Part 1
+        title: The Dot Product and Projections
 ---
