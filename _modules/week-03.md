@@ -1,5 +1,5 @@
 ---
-title: "Week 3: Vectors and Projections"
+title: "Week 3: Introduction to Linear Algebra"
 weekNumber: 3
 days:
   - date: "2025-09-09"
@@ -7,6 +7,12 @@ days:
       - name: LEC 5
         type: lecture
         title: Vectors and the Dot Product
+        reading: https://notes.eecs245.org/supervised-learning/least-squares/
+        reading_text: Ch. 1.5
+        reading2: https://notes.eecs245.org/vectors-and-matrices/vectors/
+        reading2_text: Ch. 2.1
+        reading3: https://notes.eecs245.org/vectors-and-matrices/dot-product/
+        reading3_text: Ch. 2.2
       - name: HW 2
         type: hw
         title: <b>Empirical Risk and Simple Linear Regression</b>
