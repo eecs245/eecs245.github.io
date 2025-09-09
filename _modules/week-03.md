@@ -11,8 +11,6 @@ days:
         reading_text: Ch. 1.5
         reading2: https://notes.eecs245.org/vectors-and-matrices/vectors/
         reading2_text: Ch. 2.1
-        reading3: https://notes.eecs245.org/vectors-and-matrices/dot-product/
-        reading3_text: Ch. 2.2
         live_notes: ../resources/lecture-pdfs/lec05.pdf
         recording: https://leccap.engin.umich.edu/leccap/player/r/RKJr91
       - name: HW 2
@@ -31,4 +29,6 @@ days:
       - name: LEC 6
         type: lecture
         title: The Dot Product and Projections
+        reading: https://notes.eecs245.org/vectors-and-matrices/dot-product/
+        reading_text: Ch. 2.2
 ---
