@@ -23,7 +23,9 @@ days:
     events:
       - name: LAB 3
         type: lab
-        title: "Lab 3"
+        title: "Vectors and the Dot Product"
+        problems: ../resources/labs/lab03/lab03.pdf
+        solutions: ../resources/labs/lab03/lab03-solutions.pdf
   - date: "2025-09-11"
     events:
       - name: LEC 6
