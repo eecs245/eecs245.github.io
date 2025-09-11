@@ -30,7 +30,9 @@ days:
     events:
       - name: LEC 6
         type: lecture
-        title: The Dot Product and Projections
+        title: The Dot Product
         reading: https://notes.eecs245.org/vectors-and-matrices/dot-product/
         reading_text: Ch. 2.2
+        live_notes: ../resources/lecture-pdfs/lec06.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/CHtYYt
 ---

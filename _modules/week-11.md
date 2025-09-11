@@ -17,4 +17,10 @@ days:
       - name: LEC 20
         type: lecture
         title: Principal Components Analysis
+  - date: "2025-11-07"
+    events:
+      - name: REV
+        type: review
+        title: "Practice Midterm 2 (2:30-5:30PM, 1365 LCSIB)"
+        note: For the first 80 minutes, you can take the practice midterm. For the remaining time, we will take up the problems from it.
 ---

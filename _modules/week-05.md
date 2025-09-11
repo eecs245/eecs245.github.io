@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 9
         type: lecture
-        title: Linear Transformations
+        title: Vector Spaces
       - name: HW 4
         type: hw
         title: Homework 4
@@ -19,5 +19,11 @@ days:
     events:
       - name: LEC 10
         type: lecture
-        title: Vector Spaces
+        title: Linear Transformations
+  - date: "2025-09-26"
+    events:
+      - name: REV
+        type: review
+        title: "Practice Midterm 1 (2:30-5:30PM, 1365 LCSIB)"
+        note: For the first 80 minutes, you can take the practice midterm. For the remaining time, we will take up the problems from it.
 ---
