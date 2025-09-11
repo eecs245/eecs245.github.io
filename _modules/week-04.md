@@ -9,7 +9,9 @@ days:
         title: Linear Independence
       - name: HW 3
         type: hw
-        title: Homework 3
+        title: <b>Vectors and the Dot Product</b>
+        template: https://www.overleaf.com/read/nmjfsrzmcrxm#1556d4
+        problems: ../resources/homeworks/hw03/hw03.pdf
   - date: "2025-09-17"
     events:
       - name: LAB 4
