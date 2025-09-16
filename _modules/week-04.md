@@ -11,6 +11,8 @@ days:
         reading_text: Ch. 2.3
         reading2: https://notes.eecs245.org/vectors-and-matrices/span-linear-independence/
         reading2_text: Ch. 2.4 (under construction)
+        live_notes: ../resources/lecture-pdfs/lec07.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/tyE0vn
       - name: HW 3
         type: hw
         title: <b>Vectors and the Dot Product</b>
@@ -25,5 +27,5 @@ days:
     events:
       - name: LEC 8
         type: lecture
-        title: Linear Independence; Matrices
+        title: Spans and Linear Independence
 ---

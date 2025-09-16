@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 9
         type: lecture
-        title: Rank and Invertibility
+        title: Matrices
   - date: "2025-09-24"
     events:
       - name: LAB 5
