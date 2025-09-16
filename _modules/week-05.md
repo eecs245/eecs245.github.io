@@ -7,9 +7,6 @@ days:
       - name: LEC 9
         type: lecture
         title: Rank and Invertibility
-      - name: HW 4
-        type: hw
-        title: Homework 4
   - date: "2025-09-24"
     events:
       - name: LAB 5
@@ -20,6 +17,9 @@ days:
       - name: LEC 10
         type: lecture
         title: Linear Transformations
+      - name: HW 4
+        type: hw
+        title: Homework 4
   - date: "2025-09-26"
     events:
       - name: REV

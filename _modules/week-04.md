@@ -9,6 +9,8 @@ days:
         title: Projections and Spans
         reading: https://notes.eecs245.org/vectors-and-matrices/projection-1/
         reading_text: Ch. 2.3
+        reading2: https://notes.eecs245.org/vectors-and-matrices/span-linear-independence/
+        reading2_text: Ch. 2.4 (under construction)
       - name: HW 3
         type: hw
         title: <b>Vectors and the Dot Product</b>
