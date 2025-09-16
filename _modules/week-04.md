@@ -8,7 +8,7 @@ days:
         type: lecture
         title: Projections and Linear Independence
         reading2: https://notes.eecs245.org/vectors-and-matrices/projection-1/
-        reading2_text: Ch. 2.3 (under construction)
+        reading2_text: Ch. 2.3
       - name: HW 3
         type: hw
         title: <b>Vectors and the Dot Product</b>
@@ -18,7 +18,7 @@ days:
     events:
       - name: LAB 4
         type: lab
-        title: "Lab 4"
+        title: "Projections, Linear Independence, and Matrices"
   - date: "2025-09-18"
     events:
       - name: LEC 8
