@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 9
         type: lecture
-        title: Vector Spaces
+        title: Rank and Invertibility
       - name: HW 4
         type: hw
         title: Homework 4
