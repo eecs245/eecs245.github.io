@@ -6,11 +6,9 @@ days:
     events:
       - name: LEC 7
         type: lecture
-        title: Projections and Spans
+        title: Projections
         reading: https://notes.eecs245.org/vectors-and-matrices/projection-1/
         reading_text: Ch. 2.3
-        reading2: https://notes.eecs245.org/vectors-and-matrices/span-linear-independence/
-        reading2_text: Ch. 2.4 (under construction)
         live_notes: ../resources/lecture-pdfs/lec07.pdf
         recording: https://leccap.engin.umich.edu/leccap/player/r/tyE0vn
       - name: HW 3
@@ -33,4 +31,6 @@ days:
       - name: LEC 8
         type: lecture
         title: Spans and Linear Independence
+        reading: https://notes.eecs245.org/vectors-and-matrices/span-linear-independence/
+        reading_text: Ch. 2.4
 ---
