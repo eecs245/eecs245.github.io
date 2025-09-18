@@ -31,6 +31,8 @@ days:
       - name: LEC 8
         type: lecture
         title: Spans and Linear Independence
-        reading: https://notes.eecs245.org/vectors-and-matrices/span-linear-independence/
+        reading: https://notes.eecs245.org/span-linear-independence/
         reading_text: Ch. 2.4
+        live_notes: ../resources/lecture-pdfs/lec08.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/l9N88V
 ---
