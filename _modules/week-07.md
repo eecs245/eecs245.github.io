@@ -9,9 +9,9 @@ days:
         title: Regression using Linear Algebra
   - date: "2025-10-08"
     events:
-      - name: LAB 7
+      - name: LAB 6
         type: lab
-        title: "Lab 7"
+        title: "Lab 6"
   - date: "2025-10-09"
     events:
       - name: LEC 13

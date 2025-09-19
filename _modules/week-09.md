@@ -9,9 +9,9 @@ days:
         title: Convexity, Introduction to Gradient Descent
   - date: "2025-10-22"
     events:
-      - name: LAB 9
+      - name: LAB 8
         type: lab
-        title: "Lab 9"
+        title: "Lab 8"
   - date: "2025-10-23"
     events:
       - name: LEC 16

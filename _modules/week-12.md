@@ -9,9 +9,7 @@ days:
         title: <b>Midterm 2 (during lecture)</b>
   - date: "2025-11-12"
     events:
-      - name: LAB 12
-        type: lab
-        title: "Lab 12"
+      - title: "No Lab: Day after Midterm"
   - date: "2025-11-13"
     events:
       - name: LEC 21

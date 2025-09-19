@@ -1,5 +1,5 @@
 ---
-title: "Week 4: Linear Independence and Matrices"
+title: "Week 4: Projections, Spans, and Linear Independence"
 weekNumber: 4
 days:
   - date: "2025-09-16"

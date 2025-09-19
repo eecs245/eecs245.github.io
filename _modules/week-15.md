@@ -9,9 +9,9 @@ days:
         title: Maximum Likelihood Estimation
   - date: "2025-12-03"
     events:
-      - name: LAB 14
+      - name: LAB 12
         type: lab
-        title: "Lab 14"
+        title: "Lab 12"
   - date: "2025-12-04"
     events:
       - name: LEC 26

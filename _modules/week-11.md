@@ -9,9 +9,9 @@ days:
         title: Singular Value Decomposition
   - date: "2025-11-05"
     events:
-      - name: LAB 11
+      - name: LAB 10
         type: lab
-        title: "Lab 11"
+        title: "Lab 10"
   - date: "2025-11-06"
     events:
       - name: LEC 20

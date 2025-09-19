@@ -9,9 +9,9 @@ days:
         title: Random Variables, Continued
   - date: "2025-11-19"
     events:
-      - name: LAB 13
+      - name: LAB 11
         type: lab
-        title: "Lab 13"
+        title: "Lab 11"
   - date: "2025-11-20"
     events:
       - name: LEC 23

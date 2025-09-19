@@ -1,5 +1,5 @@
 ---
-title: "Week 5: Linear Transformations and Vector Spaces"
+title: "Week 5: Matrices and Linear Transformations"
 weekNumber: 5
 days:
   - date: "2025-09-23"
@@ -19,7 +19,7 @@ days:
         title: Linear Transformations
       - name: HW 4
         type: hw
-        title: Homework 4
+        title: Projections, Spans, and Linear Independence
   - date: "2025-09-26"
     events:
       - name: REV

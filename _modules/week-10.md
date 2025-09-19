@@ -9,9 +9,9 @@ days:
         title: Eigenvalues and Eigenvectors
   - date: "2025-10-29"
     events:
-      - name: LAB 10
+      - name: LAB 9
         type: lab
-        title: "Lab 10"
+        title: "Lab 9"
   - date: "2025-10-30"
     events:
       - name: LEC 18

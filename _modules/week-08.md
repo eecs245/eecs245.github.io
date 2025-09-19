@@ -7,9 +7,9 @@ days:
       - title: "No Lecture: Fall Break 🍂"
   - date: "2025-10-15"
     events:
-      - name: LAB 8
+      - name: LAB 7
         type: lab
-        title: "Lab 8"
+        title: "Lab 7"
   - date: "2025-10-16"
     events:
       - name: LEC 14
