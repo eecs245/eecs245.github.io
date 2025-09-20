@@ -20,7 +20,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
-[Jump to Week 4: Linear Independence and Matrices](#week-4-projections-spans-and-linear-independence){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
+[Jump to Week 4: Projections, Spans, and Linear Independence](#week-4-projections-spans-and-linear-independence){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 
 {% for module in site.modules %}

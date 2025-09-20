@@ -17,13 +17,15 @@ days:
       - name: LEC 10
         type: lecture
         title: Linear Transformations
-      - name: HW 4
-        type: hw
-        title: Projections, Spans, and Linear Independence
   - date: "2025-09-26"
     events:
       - name: REV
         type: review
         title: "Practice Midterm 1 (2:30-5:30PM, 1365 LCSIB)"
         note: For the first 80 minutes, you can take the practice midterm. For the remaining time, we will take up the problems from it.
+      - name: HW 4
+        type: hw
+        title: <b>Projections, Spans, and Linear Independence</b>
+        problems: ../resources/homeworks/hw04/hw04.pdf
+        template: https://www.overleaf.com/read/ftzzxbbwwmkv#ed0e65
 ---
