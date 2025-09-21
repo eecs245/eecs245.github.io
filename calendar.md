@@ -14,7 +14,7 @@ We will not be using the Office Hours Queue this semester – look for [Suraj, A
 The events are color-coded:
 - Deadlines appear in <span style="color:#d50000"><b>red</b></span>.
 - Lectures and labs appear in <span style="color:#039be5"><b>blue</b></span>. These are all held on North Campus.
-- In-person North Campus office hours appear in <span style="color:#009688"><b>turquoise</b></span>. These are typically held either in Suraj's office (4721 BBB), a BBB conference room (**especially for office hours after lecture on Tuesdays**), or the BBB Atrium.
+- In-person North Campus office hours appear in <span style="color:#009688"><b>turquoise</b></span>. These are typically held either in a BBB or Leinweber conference room (**especially for office hours after lecture on Tuesdays and Thursdays**), Suraj's office (4721 BBB), or the BBB Atrium.
 - In-person Central Campus office hours appear in <span style="color:#c0ca33"><b>lime green</b></span>. These are typically held in the UgLi Basement.
 - Remote office hours appear in <span style="color:#e6804d"><b>orange</b></span>, and can be accessed at the Zoom link below.
 
