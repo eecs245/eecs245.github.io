@@ -11,6 +11,7 @@ days:
         reading_text: Ch. 2.5 (lines and planes; read this)
         reading2: https://notes.eecs245.org/vectors-and-matrices/vector-spaces/
         reading2_text: Ch. 2.6
+        live_notes: ../resources/lecture-pdfs/lec09.pdf
   - date: "2025-09-24"
     events:
       - name: LAB 5
