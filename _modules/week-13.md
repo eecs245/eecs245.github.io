@@ -17,4 +17,7 @@ days:
       - name: LEC 23
         type: lecture
         title: Continuous Distributions
+      - name: HW 10
+        type: hw
+        title: Homework 10
 ---

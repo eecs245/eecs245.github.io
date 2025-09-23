@@ -1,12 +1,12 @@
 ---
-title: "Week 5: Matrices and Linear Transformations"
+title: "Week 5: Vector Spaces; Matrices"
 weekNumber: 5
 days:
   - date: "2025-09-23"
     events:
       - name: LEC 9
         type: lecture
-        title: Matrices
+        title: Vector Spaces, Subspaces, and Bases
   - date: "2025-09-24"
     events:
       - name: LAB 5
@@ -16,7 +16,8 @@ days:
     events:
       - name: LEC 10
         type: lecture
-        title: Linear Transformations
+        title: Matrices
+        note: This lecture is <b>not</b> on Midterm 1.
   - date: "2025-09-26"
     events:
       - name: REV

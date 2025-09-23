@@ -17,4 +17,7 @@ days:
       - name: LEC 18
         type: lecture
         title: Eigenvalues and Eigenvectors, Continued
+      - name: HW 8
+        type: hw
+        title: Homework 8
 ---

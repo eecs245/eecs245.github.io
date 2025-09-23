@@ -17,6 +17,9 @@ days:
       - name: LEC 20
         type: lecture
         title: Principal Components Analysis
+      - name: HW 9
+        type: hw
+        title: Homework 9
   - date: "2025-11-07"
     events:
       - name: REV

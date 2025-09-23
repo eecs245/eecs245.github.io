@@ -17,4 +17,7 @@ days:
       - name: LEC 16
         type: lecture
         title: Gradient Descent, Continued
+      - name: HW 7
+        type: hw
+        title: Homework 7
 ---

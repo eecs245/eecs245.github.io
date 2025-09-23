@@ -15,4 +15,7 @@ days:
       - name: LEC 14
         type: lecture
         title: The Gradient Vector
+      - name: HW 6
+        type: hw
+        title: Homework 5
 ---

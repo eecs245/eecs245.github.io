@@ -14,10 +14,5 @@ days:
     events:
       - name: LEC 11
         type: lecture
-        title: Projections, Part 2
-  - date: "2025-10-03"
-    events:
-      - name: HW 5
-        type: hw
-        title: Homework 5
+        title: Linear Transformations
 ---

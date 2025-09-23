@@ -17,4 +17,7 @@ days:
       - name: LEC 26
         type: lecture
         title: Least Squares, Revisited; Conclusion
+      - name: HW 11
+        type: hw
+        title: Homework 11
 ---
