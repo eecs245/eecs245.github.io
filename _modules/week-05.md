@@ -22,8 +22,8 @@ days:
     events:
       - name: LEC 10
         type: lecture
-        title: Matrices
-        note: This lecture is <b>not</b> on Midterm 1.
+        title: Bases and Dimension; Matrices
+        note: Content about bases and dimensions (briefly introduced in Lecture 9) <b>is in scope</b> and will be reviewed. Matrices <b>are not in scope</b> for Midterm 1.
   - date: "2025-09-26"
     events:
       - name: REV
