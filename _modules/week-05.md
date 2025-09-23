@@ -12,6 +12,7 @@ days:
         reading2: https://notes.eecs245.org/vectors-and-matrices/vector-spaces/
         reading2_text: Ch. 2.6
         live_notes: ../resources/lecture-pdfs/lec09.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/PvOh5h
   - date: "2025-09-24"
     events:
       - name: LAB 5
