@@ -20,15 +20,15 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
+{: .green }
+**Midterm 1 is on Tuesday, September 30th, 3-4:20PM in lecture**. See [**this post on Ed**](https://edstem.org/us/courses/81392/discussion/7008682) for logistical details and links to practice problems, and come to the **mock exam on Friday from 2:30-5:30PM in 1365 LCSIB**.
+
 [Jump to Week 5: Vector Spaces; Matrices](#week-5-vector-spaces-matrices){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 
 {% for module in site.modules %}
 {{ module }}
 {% endfor %}
-
-{: .green }
-**Midterm 1 is on Tuesday, September 30th, 3-4:20PM in lecture. See [this post on Ed](https://edstem.org/us/courses/81392/discussion/7008682) for logistical details and links to practice problems, and come to the mock exam on Friday from 2:30-5:30PM in 1365 LCSIB.**
 
 <!-- {: .green }
 Linear algebra forms the basis of modern machine learning and artificial intelligence. _Mathematics for Machine Learning_ will introduce students to the theory of linear algebra while exposing them to its applications to real-world machine learning problems using Python. After taking this course, students will understand the mathematical underpinnings of linear regression, neural networks, gradient descent, decision trees, dimensionality reduction, and other core ideas in machine learning. -->
