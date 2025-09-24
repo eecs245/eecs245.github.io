@@ -16,6 +16,7 @@ days:
         title: <b>Vectors and the Dot Product</b>
         template: https://www.overleaf.com/read/nmjfsrzmcrxm#1556d4
         problems: ../resources/homeworks/hw03/hw03.pdf
+        solutions: https://edstem.org/us/courses/81392/discussion/6984801
   - date: "2025-09-17"
     events:
       - name: LAB 4
