@@ -18,6 +18,8 @@ days:
       - name: LAB 5
         type: lab
         title: "Vector Spaces, Subspaces, and Bases"
+        problems: ../resources/homeworks/lab05/lab05.pdf
+        solutions: ../resources/homeworks/lab05/lab05-solutions.pdf
   - date: "2025-09-25"
     events:
       - name: LEC 10
