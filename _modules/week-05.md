@@ -17,7 +17,7 @@ days:
     events:
       - name: LAB 5
         type: lab
-        title: "Lab 5"
+        title: "Vector Spaces, Subspaces, and Bases"
   - date: "2025-09-25"
     events:
       - name: LEC 10
