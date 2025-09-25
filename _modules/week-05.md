@@ -24,9 +24,10 @@ days:
     events:
       - name: LEC 10
         type: lecture
-        title: Bases and Dimension; Curse of Dimensionality
-        reading2: https://notes.eecs245.org/vectors-and-matrices/vector-spaces/
-        reading2_text: Ch. 2.6
+        title: Bases and Dimension
+        reading: https://notes.eecs245.org/vectors-and-matrices/vector-spaces/
+        reading_text: Ch. 2.6
+        live_notes: ../resources/lecture-pdfs/lec10.pdf
   - date: "2025-09-26"
     events:
       - name: REV
