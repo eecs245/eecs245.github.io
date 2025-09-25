@@ -69,7 +69,7 @@ You should take this course if you:
 
 The second prerequisite serves to ensure you've written _some_ code before. Labs and homeworks will involve some Python programming; you are not expected to have any experience with Python, but you should be comfortable with the basics of programming. -->
 
-If you're not sure if you meet the prerequisites – or if you do, but are still interested in taking the course nonetheless – email the instructor.
+If you're not sure if you meet the prerequisites – or if you don't, but are still interested in taking the course nonetheless – email the instructor.
 
 ---
 
