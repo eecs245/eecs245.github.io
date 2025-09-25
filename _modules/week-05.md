@@ -28,6 +28,7 @@ days:
         reading: https://notes.eecs245.org/vectors-and-matrices/vector-spaces/
         reading_text: Ch. 2.6
         live_notes: ../resources/lecture-pdfs/lec10.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/IsAfg7
   - date: "2025-09-26"
     events:
       - name: REV

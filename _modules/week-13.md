@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 22
         type: lecture
-        title: Random Variables, Continued
+        title: Random Variables
   - date: "2025-11-19"
     events:
       - name: LAB 11
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 23
         type: lecture
-        title: Continuous Distributions
+        title: Random Variables, Continued
       - name: HW 10
         type: hw
         title: Homework 10

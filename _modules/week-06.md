@@ -14,5 +14,5 @@ days:
     events:
       - name: LEC 11
         type: lecture
-        title: Linear Transformations
+        title: Matrices
 ---

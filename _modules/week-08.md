@@ -14,7 +14,7 @@ days:
     events:
       - name: LEC 14
         type: lecture
-        title: The Gradient Vector
+        title: Regression using Linear Algebra
       - name: HW 6
         type: hw
         title: Homework 5

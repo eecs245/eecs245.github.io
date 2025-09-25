@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 19
         type: lecture
-        title: Singular Value Decomposition
+        title: Eigenvalues and Eigenvectors, Continued
   - date: "2025-11-05"
     events:
       - name: LAB 10
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 20
         type: lecture
-        title: Principal Components Analysis
+        title: Singular Value Decomposition
       - name: HW 9
         type: hw
         title: Homework 9

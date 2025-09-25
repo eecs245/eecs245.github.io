@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 12
         type: lecture
-        title: Projections, Part 2
+        title: Linear Transformations
   - date: "2025-10-08"
     events:
       - name: LAB 6
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 13
         type: lecture
-        title: Regression using Linear Algebra
+        title: Projections, Part 2
       - name: HW 5
         type: hw
         title: Homework 5

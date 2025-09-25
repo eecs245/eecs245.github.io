@@ -14,5 +14,5 @@ days:
     events:
       - name: LEC 21
         type: lecture
-        title: Random Variables
+        title: Principal Components Analysis
 ---
