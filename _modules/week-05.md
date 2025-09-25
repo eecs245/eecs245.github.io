@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 9
         type: lecture
-        title: Vector Spaces, Subspaces, and Bases
+        title: Vector Spaces and Subspaces
         reading: https://notes.eecs245.org/vectors-and-matrices/lines-planes-hyperplanes/
         reading_text: Ch. 2.5 (lines and planes; read this)
         reading2: https://notes.eecs245.org/vectors-and-matrices/vector-spaces/
@@ -24,8 +24,9 @@ days:
     events:
       - name: LEC 10
         type: lecture
-        title: Bases and Dimension; Matrices
-        note: Content about bases and dimensions (briefly introduced in Lecture 9) <b>is in scope</b> and will be reviewed. Matrices <b>are not in scope</b> for Midterm 1.
+        title: Bases and Dimension; Curse of Dimensionality
+        reading2: https://notes.eecs245.org/vectors-and-matrices/vector-spaces/
+        reading2_text: Ch. 2.6
   - date: "2025-09-26"
     events:
       - name: REV
