@@ -21,7 +21,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {% endfor %}
 
 {: .green }
-**Midterm 1 is on Tuesday, September 30th, 3-4:20PM in lecture**. See [**this post on Ed**](https://edstem.org/us/courses/81392/discussion/7008682) for logistical details and links to practice problems, and come to the **mock exam on Friday from 2:30-5:30PM in 1365 LCSIB**.
+**Midterm 1 is on Tuesday, September 30th, 3-4:20PM in lecture**. See [**this post on Ed**](https://edstem.org/us/courses/81392/discussion/7008682) for logistical details and links to practice problems, and scroll down to see the mock exam, solutions, and review session recording.
 
 [Jump to Week 5: Vector Spaces; Matrices](#week-5-vector-spaces-matrices){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 

@@ -34,8 +34,9 @@ days:
       - name: REV
         type: review
         title: "Practice Midterm 1 (2:30-5:30PM, 1365 LCSIB)"
-        note: For the first 80 minutes, you can take the practice midterm. For the remaining time, we will take up the problems from it.
         problems: ../resources/exams/mock-mt1.pdf
+        solutions: ../resources/exams/mock-mt1-solutions.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/CFJfnN
       - name: HW 4
         type: hw
         title: <b>Projections, Spans, and Linear Independence</b>
