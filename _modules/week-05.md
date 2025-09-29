@@ -42,4 +42,5 @@ days:
         title: <b>Projections, Spans, and Linear Independence</b>
         problems: ../resources/homeworks/hw04/hw04.pdf
         template: https://www.overleaf.com/read/ftzzxbbwwmkv#ed0e65
+        solutions: https://edstem.org/us/courses/81392/discussion/7040264
 ---
