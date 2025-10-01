@@ -21,7 +21,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {% endfor %}
 
 {: .green }
-**Midterm 1 is on Tuesday, September 30th, 3-4:20PM in lecture**. See [**this post on Ed**](https://edstem.org/us/courses/81392/discussion/7008682) for logistical details and links to practice problems, and scroll down to see the mock exam, solutions, and review session recording.
+Congrats on finishing Midterm 1! There is no lab this week. Homework 5 will be released later this week.
 
 [Jump to Week 6: Midterm 1; Matrices](#week-6-midterm-1-matrices){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
