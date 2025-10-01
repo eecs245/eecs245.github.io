@@ -7,6 +7,9 @@ nav_order: 3
 
 # 📆 Calendar
 
+{: .green }
+**Want to meet with Suraj 1-on-1 to talk about your midterm performance? Sign up for a 20-minute appointment [here](https://calendar.app.google/raNXV4uwVZfaSDPX7).**
+
 The times and locations of office hours, as well as lectures and labs, are all in the calendar below. **The times of office hours are subject to change week-to-week, so make sure to check the calendar before attending.**
 
 We will not be using the Office Hours Queue this semester – look for [Suraj, Angela, or Vincent](../staff) in office hours. If you can't find us, post on Ed!

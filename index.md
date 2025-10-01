@@ -21,7 +21,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {% endfor %}
 
 {: .green }
-Congrats on finishing Midterm 1! There is no lab this week. Homework 5 will be released later this week.
+**Want to meet with Suraj 1-on-1 to talk about your midterm performance? Sign up for a 20-minute appointment [here](https://calendar.app.google/raNXV4uwVZfaSDPX7).**
 
 [Jump to Week 6: Midterm 1; Matrices](#week-6-midterm-1-matrices){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
