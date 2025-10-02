@@ -15,7 +15,9 @@ days:
       - name: LEC 14
         type: lecture
         title: Projections, Part 2
+  - date: "2025-10-17"
+    events:
       - name: HW 6
         type: hw
-        title: Homework 5
+        title: Homework 6
 ---
