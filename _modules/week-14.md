@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 24
         type: lecture
-        title: Continuous Distributions
+        title: Random Variables, Continued
   - date: "2025-11-26"
     events:
       - title: "No Lab: Thanksgiving 🍁"

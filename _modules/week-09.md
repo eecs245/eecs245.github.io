@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 15
         type: lecture
-        title: The Gradient Vector
+        title: Regression using Linear Algebra
   - date: "2025-10-22"
     events:
       - name: LAB 8
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 16
         type: lecture
-        title: Convexity, Introduction to Gradient Descent
+        title: The Gradient Vector
       - name: HW 7
         type: hw
         title: Homework 7

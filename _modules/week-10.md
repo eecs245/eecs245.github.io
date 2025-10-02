@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 17
         type: lecture
-        title: Gradient Descent, Continued
+        title: Convexity, Introduction to Gradient Descent
   - date: "2025-10-29"
     events:
       - name: LAB 9
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 18
         type: lecture
-        title: Eigenvalues and Eigenvectors
+        title: Gradient Descent, Continued
       - name: HW 8
         type: hw
         title: Homework 8

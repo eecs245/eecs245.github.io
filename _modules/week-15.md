@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 25
         type: lecture
-        title: Independence
+        title: Continuous Distributions
   - date: "2025-12-03"
     events:
       - name: LAB 12
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 26
         type: lecture
-        title: Maximum Likelihood Estimation
+        title: Independence
       - name: HW 11
         type: hw
         title: Homework 11

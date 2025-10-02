@@ -14,7 +14,7 @@ days:
     events:
       - name: LEC 14
         type: lecture
-        title: Regression using Linear Algebra
+        title: Projections, Part 2
       - name: HW 6
         type: hw
         title: Homework 5

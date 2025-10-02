@@ -14,5 +14,5 @@ days:
     events:
       - name: LEC 21
         type: lecture
-        title: Principal Components Analysis
+        title: Singular Value Decomposition
 ---
