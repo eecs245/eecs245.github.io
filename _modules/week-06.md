@@ -16,4 +16,6 @@ days:
       - name: LEC 11
         type: lecture
         title: Matrices
+        reading: https://notes.eecs245.org/vectors-and-matrices/matrices/
+        reading_text: Ch. 2.7
 ---
