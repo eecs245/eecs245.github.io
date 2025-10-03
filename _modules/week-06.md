@@ -18,4 +18,6 @@ days:
         title: Matrices
         reading: https://notes.eecs245.org/vectors-and-matrices/matrices/
         reading_text: Ch. 2.7
+        live_notes: ../resources/lecture-pdfs/lec11.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/i6se6e
 ---
