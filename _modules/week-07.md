@@ -19,5 +19,7 @@ days:
         title: Linear Transformations
       - name: HW 5
         type: hw
-        title: Homework 5
+        title: <b>Matrices</b>
+        problems: ../resources/homeworks/hw05/hw05.pdf
+        template: https://www.overleaf.com/read/nxrfgvtzjdtc#3dfe13
 ---
