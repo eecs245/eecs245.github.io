@@ -1,5 +1,5 @@
 ---
-title: "Week 10: Eigenvalues and Eigenvectors"
+title: "Week 10: Convexity and Gradient Descent"
 weekNumber: 10
 days:
   - date: "2025-10-28"

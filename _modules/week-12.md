@@ -1,5 +1,5 @@
 ---
-title: "Week 12: Midterm 2; Introduction to Probability"
+title: "Week 12: Midterm 2; Singular Value Decomposition"
 weekNumber: 12
 days:
   - date: "2025-11-11"

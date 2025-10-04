@@ -1,5 +1,5 @@
 ---
-title: "Week 7: Regression and Overfitting"
+title: "Week 7: Rank, Column Space, and Linear Transformations"
 weekNumber: 7
 days:
   - date: "2025-10-07"

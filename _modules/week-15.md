@@ -1,5 +1,5 @@
 ---
-title: "Week 15: Maximum Likelihood; Conclusion"
+title: "Week 15: Continuous Distributions and Independence"
 weekNumber: 15
 days:
   - date: "2025-12-02"

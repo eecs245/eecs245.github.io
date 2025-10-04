@@ -1,5 +1,5 @@
 ---
-title: "Week 13: Random Variables and Continuous Distributions"
+title: "Week 13: Principal Components Analysis and Random Variables"
 weekNumber: 13
 days:
   - date: "2025-11-18"

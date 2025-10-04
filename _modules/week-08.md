@@ -1,5 +1,5 @@
 ---
-title: "Week 8: Fall Break 🍂; The Gradient Vector"
+title: "Week 8: Fall Break 🍂; Projections, Part 2"
 weekNumber: 8
 days:
   - date: "2025-10-14"

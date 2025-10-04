@@ -1,5 +1,5 @@
 ---
-title: "Week 11: SVD and PCA"
+title: "Week 11: Eigenvalues and Eigenvectors"
 weekNumber: 11
 days:
   - date: "2025-11-04"

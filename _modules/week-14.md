@@ -1,5 +1,5 @@
 ---
-title: "Week 14: Independence; Thanksgiving 🍁"
+title: "Week 14: Random Variables, Continued; Thanksgiving 🍁"
 weekNumber: 14
 days:
   - date: "2025-11-25"
