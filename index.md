@@ -23,7 +23,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {: .green }
 **Want to meet with Suraj 1-on-1 to talk about your midterm performance? Sign up for a 20-minute appointment [here](https://calendar.app.google/raNXV4uwVZfaSDPX7).**
 
-[Jump to Week 6: Midterm 1; Matrices](#week-6-midterm-1-matrices){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
+[Jump to Week 7: Rank, Inverses](#week-7-rank-inverses){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 
 {% for module in site.modules %}

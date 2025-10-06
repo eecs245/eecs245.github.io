@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 17
         type: lecture
-        title: Convexity, Introduction to Gradient Descent
+        title: Gradient Descent
   - date: "2025-10-29"
     events:
       - name: LAB 9

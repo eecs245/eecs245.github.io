@@ -1,5 +1,5 @@
 ---
-title: "Week 9: Regression using Linear Algebra and The Gradient Vector"
+title: "Week 9: Regression using Linear Algebra"
 weekNumber: 9
 days:
   - date: "2025-10-21"

@@ -1,12 +1,12 @@
 ---
-title: "Week 7: Rank, Column Space, and Linear Transformations"
+title: "Week 7: Rank, Inverses"
 weekNumber: 7
 days:
   - date: "2025-10-07"
     events:
       - name: LEC 12
         type: lecture
-        title: Rank and Column Space
+        title: Rank
   - date: "2025-10-08"
     events:
       - name: LAB 6
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 13
         type: lecture
-        title: Linear Transformations
+        title: Inverses and Determinants
       - name: HW 5
         type: hw
         title: <b>Matrices</b>

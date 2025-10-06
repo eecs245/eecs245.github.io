@@ -1,5 +1,5 @@
 ---
-title: "Week 8: Fall Break 🍂; Projections, Part 2"
+title: "Week 8: Fall Break 🍂"
 weekNumber: 8
 days:
   - date: "2025-10-14"
@@ -14,7 +14,7 @@ days:
     events:
       - name: LEC 14
         type: lecture
-        title: Projections, Part 2
+        title: Projections, Revisited
   - date: "2025-10-17"
     events:
       - name: HW 6

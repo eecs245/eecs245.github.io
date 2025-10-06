@@ -8,6 +8,7 @@ days:
         type: exam
         title: <b>Midterm 1 (during lecture)</b>
         problems: ../resources/exams/fa25-mt1.pdf
+        solutions: ../resources/exams/fa25-mt1-solutions.pdf
   - date: "2025-10-01"
     events:
       - title: "No Lab: Day after Midterm"
