@@ -7,6 +7,10 @@ days:
       - name: LEC 12
         type: lecture
         title: Rank
+        reading: https://notes.eecs245.org/vectors-and-matrices/rank/
+        reading_text: Ch. 2.8
+        # live_notes: ../resources/lecture-pdfs/lec12.pdf
+        # recording: https://leccap.engin.umich.edu/leccap/player/r/mBnO9v
   - date: "2025-10-08"
     events:
       - name: LAB 6
