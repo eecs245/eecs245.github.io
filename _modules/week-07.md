@@ -15,7 +15,10 @@ days:
     events:
       - name: LAB 6
         type: lab
-        title: "Lab 6"
+        title: "Rank, Column Space, and Null Space"
+        datahub_text: Lab 6
+        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa25&urlpath=tree%2Ffa25%2Flabs%2Flab06%2Flab06.ipynb&branch=main
+        github_link: https://github.com/eecs245/fa25/tree/main/labs/lab06/lab06.ipynb
   - date: "2025-10-09"
     events:
       - name: LEC 13
