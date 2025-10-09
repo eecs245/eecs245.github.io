@@ -28,6 +28,7 @@ days:
         title: Inverses
         reading: https://notes.eecs245.org/vectors-and-matrices/inverses/
         reading_text: Ch. 2.9
+        live_notes: ../resources/lecture-pdfs/lec13.pdf
       - name: HW 5
         type: hw
         title: <b>Matrices</b>
