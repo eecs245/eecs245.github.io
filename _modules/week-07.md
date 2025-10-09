@@ -25,7 +25,9 @@ days:
     events:
       - name: LEC 13
         type: lecture
-        title: Inverses and Determinants
+        title: Inverses
+        reading: https://notes.eecs245.org/vectors-and-matrices/inverses/
+        reading_text: Ch. 2.9
       - name: HW 5
         type: hw
         title: <b>Matrices</b>
