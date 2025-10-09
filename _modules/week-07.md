@@ -29,6 +29,7 @@ days:
         reading: https://notes.eecs245.org/vectors-and-matrices/inverses/
         reading_text: Ch. 2.9
         live_notes: ../resources/lecture-pdfs/lec13.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/bSiVcC
       - name: HW 5
         type: hw
         title: <b>Matrices</b>
