@@ -19,5 +19,7 @@ days:
     events:
       - name: HW 6
         type: hw
-        title: Homework 6
+        title: <b>Rank and Inverses</b>
+        problems: ../resources/homeworks/hw06/hw06.pdf
+        template: https://www.overleaf.com/read/fhzfzrycpgsf#c1123b
 ---
