@@ -34,5 +34,6 @@ days:
         type: hw
         title: <b>Matrices</b>
         problems: ../resources/homeworks/hw05/hw05.pdf
+        solutions: https://edstem.org/us/courses/81392/discussion/7132310
         template: https://www.overleaf.com/read/nxrfgvtzjdtc#3dfe13
 ---
