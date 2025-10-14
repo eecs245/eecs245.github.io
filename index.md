@@ -23,7 +23,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {: .green }
 **Enjoy Fall Break!** There is no lecture on Tuesday, October 14th, and no office hours on Monday or Tuesday, but **there is lab on Wednesday, October 15th**. Homework 6 is out and is due on **Friday, October 17th**.
 
-[Jump to Week 7: Rank, Inverses](#week-7-rank-inverses){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
+[Jump to Week 8: Fall Break 🍂](#week-8-fall-break){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 
 {% for module in site.modules %}
