@@ -9,7 +9,9 @@ days:
     events:
       - name: LAB 7
         type: lab
-        title: "Lab 7"
+        title: "Inverses"
+        problems: ../resources/labs/lab07/lab07.pdf
+        solutions: ../resources/labs/lab07/lab07-solutions.pdf
   - date: "2025-10-16"
     events:
       - name: LEC 14
