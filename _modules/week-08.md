@@ -16,12 +16,5 @@ days:
     events:
       - name: LEC 14
         type: lecture
-        title: Projections, Revisited
-  - date: "2025-10-17"
-    events:
-      - name: HW 6
-        type: hw
-        title: <b>Rank and Inverses</b>
-        problems: ../resources/homeworks/hw06/hw06.pdf
-        template: https://www.overleaf.com/read/fhzfzrycpgsf#c1123b
+        title: Inverses; Projections Revisited
 ---
