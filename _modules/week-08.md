@@ -17,4 +17,8 @@ days:
       - name: LEC 14
         type: lecture
         title: Inverses; Projections Revisited
+        reading: https://notes.eecs245.org/vectors-and-matrices/inverses/
+        reading_text: Ch. 2.9
+        reading2: https://notes.eecs245.org/vectors-and-matrices/projection-2/
+        reading2_text: Ch. 2.10 (in progress)
 ---
