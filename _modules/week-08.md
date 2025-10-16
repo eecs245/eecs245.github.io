@@ -22,4 +22,5 @@ days:
         reading2: https://notes.eecs245.org/vectors-and-matrices/projection-2/
         reading2_text: Ch. 2.10 (in progress)
         live_notes: ../resources/lecture-pdfs/lec14.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/LBlk9Y
 ---
