@@ -13,7 +13,11 @@ days:
     events:
       - name: LEC 15
         type: lecture
-        title: Regression using Linear Algebra
+        title: Projections; Regression using Linear Algebra
+        reading: https://notes.eecs245.org/vectors-and-matrices/projection-2/
+        reading_text: Ch. 2.10
+        reading2: https://notes.eecs245.org/multiple-linear-regression/regression-using-linear-algebra/
+        reading2_text: Ch. 3.1 (coming soon)
   - date: "2025-10-22"
     events:
       - name: LAB 8
