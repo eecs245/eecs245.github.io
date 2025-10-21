@@ -20,10 +20,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
-{: .green}
-Note that the Homework 6 deadline has been extended to Monday, October 20th, to encourage more students to submit it (and not drop it!). Homework 7 will be released on Saturday and due on Friday, October 24th.
-
-[Jump to Week 8: Fall Break 🍂](#week-8-fall-break){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
+[Jump to Week 9: Regression using Linear Algebra](#week-9-regression-using-linear-algebra){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 
 {% for module in site.modules %}
