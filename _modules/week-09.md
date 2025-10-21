@@ -19,6 +19,7 @@ days:
         reading2: https://notes.eecs245.org/multiple-linear-regression/regression-using-linear-algebra/
         reading2_text: Ch. 3.1 (coming soon)
         live_notes: ../resources/lecture-pdfs/lec15.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/nbpgx5
   - date: "2025-10-22"
     events:
       - name: LAB 8
