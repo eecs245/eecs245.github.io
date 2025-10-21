@@ -18,6 +18,7 @@ days:
         reading_text: Ch. 2.10
         reading2: https://notes.eecs245.org/multiple-linear-regression/regression-using-linear-algebra/
         reading2_text: Ch. 3.1 (coming soon)
+        live_notes: ../resources/lecture-pdfs/lec15.pdf
   - date: "2025-10-22"
     events:
       - name: LAB 8
