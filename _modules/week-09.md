@@ -22,7 +22,8 @@ days:
     events:
       - name: LAB 8
         type: lab
-        title: "Lab 8"
+        title: "Homework 7 Work Session"
+        note: There is still lab!
   - date: "2025-10-23"
     events:
       - name: LEC 16
