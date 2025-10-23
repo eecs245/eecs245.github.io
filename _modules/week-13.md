@@ -1,12 +1,12 @@
 ---
-title: "Week 13: Principal Components Analysis and Random Variables"
+title: "Week 13: SVD and PCA"
 weekNumber: 13
 days:
   - date: "2025-11-18"
     events:
       - name: LEC 22
         type: lecture
-        title: Principal Components Analysis
+        title: Singular Value Decomposition
   - date: "2025-11-19"
     events:
       - name: LAB 11
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 23
         type: lecture
-        title: Random Variables
+        title: Principal Components Analysis
       - name: HW 10
         type: hw
         title: Homework 10

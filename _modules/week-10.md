@@ -1,12 +1,12 @@
 ---
-title: "Week 10: Convexity and Gradient Descent"
+title: "Week 10: Gradients"
 weekNumber: 10
 days:
   - date: "2025-10-28"
     events:
       - name: LEC 17
         type: lecture
-        title: Gradient Descent
+        title: The Gradient Vector
   - date: "2025-10-29"
     events:
       - name: LAB 9
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 18
         type: lecture
-        title: Gradient Descent, Continued
+        title: Gradient Descent
       - name: HW 8
         type: hw
         title: Homework 8

@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 26
         type: lecture
-        title: Independence
+        title: Independence; Conclusion
       - name: HW 11
         type: hw
         title: Homework 11

@@ -1,5 +1,5 @@
 ---
-title: "Week 12: Midterm 2; Singular Value Decomposition"
+title: "Week 12: Midterm 2; Eigenvalues and Eigenvectors"
 weekNumber: 12
 days:
   - date: "2025-11-11"
@@ -14,5 +14,5 @@ days:
     events:
       - name: LEC 21
         type: lecture
-        title: Singular Value Decomposition
+        title: Eigenvalues and Eigenvectors, Continued
 ---

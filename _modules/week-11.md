@@ -1,12 +1,12 @@
 ---
-title: "Week 11: Eigenvalues and Eigenvectors"
+title: "Week 11: Gradient Descent; Eigenvalues and Eigenvectors"
 weekNumber: 11
 days:
   - date: "2025-11-04"
     events:
       - name: LEC 19
         type: lecture
-        title: Eigenvalues and Eigenvectors
+        title: Gradient Descent, Continued
         note: Live lecture is cancelled, since Suraj will be <a href="https://jupytercon2025.sched.com/event/28H4f/rise-and-shine-teaching-with-jupyter-notebooks-in-real-time-suraj-rampure-nishant-kheterpal-university-of-michigan-janine-tiefenbruck-university-of-california-san-diego/">presenting at a conference</a>. A recording will be posted ahead of time.
   - date: "2025-11-05"
     events:
@@ -17,7 +17,7 @@ days:
     events:
       - name: LEC 20
         type: lecture
-        title: Eigenvalues and Eigenvectors, Continued
+        title: Eigenvalues and Eigenvectors
       - name: HW 9
         type: hw
         title: Homework 9
