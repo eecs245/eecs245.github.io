@@ -9,6 +9,7 @@ days:
         title: <b>Rank and Inverses (note the extended deadline!)</b>
         problems: ../resources/homeworks/hw06/hw06.pdf
         template: https://www.overleaf.com/read/fhzfzrycpgsf#c1123b
+        solutions: https://edstem.org/us/courses/81392/discussion/7187702
   - date: "2025-10-21"
     events:
       - name: LEC 15
