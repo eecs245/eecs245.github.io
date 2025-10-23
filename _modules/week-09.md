@@ -16,9 +16,9 @@ days:
         type: lecture
         title: Projections; Regression using Linear Algebra
         reading: https://notes.eecs245.org/vectors-and-matrices/projection-2/
-        reading_text: Ch. 2.10
+        reading_text: Ch. 2.10 (many new examples!)
         reading2: https://notes.eecs245.org/multiple-linear-regression/regression-using-linear-algebra/
-        reading2_text: Ch. 3.1 (coming soon)
+        reading2_text: Ch. 3.1
         live_notes: ../resources/lecture-pdfs/lec15.pdf
         recording: https://leccap.engin.umich.edu/leccap/player/r/nbpgx5
   - date: "2025-10-22"
@@ -31,7 +31,11 @@ days:
     events:
       - name: LEC 16
         type: lecture
-        title: The Gradient Vector
+        title: Multiple Linear Regression
+        reading: https://notes.eecs245.org/multiple-linear-regression/regression-using-linear-algebra/
+        reading_text: Ch. 3.1
+        reading2: "#"
+        reading2_text: Ch. 3.2 (coming soon)
   - date: "2025-10-24"
     events:
       - name: HW 7
