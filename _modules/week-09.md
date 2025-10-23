@@ -36,6 +36,7 @@ days:
         reading_text: Ch. 3.1
         reading2: https://notes.eecs245.org/multiple-linear-regression/multiple-linear-regression/
         reading2_text: Ch. 3.2
+        live_notes: ../resources/lecture-pdfs/lec16.pdf
   - date: "2025-10-24"
     events:
       - name: HW 7
