@@ -18,13 +18,13 @@ days:
       - name: LEC 20
         type: lecture
         title: Eigenvalues and Eigenvectors
-      - name: HW 9
-        type: hw
-        title: Homework 9
   - date: "2025-11-07"
     events:
       - name: REV
         type: review
         title: "Practice Midterm 2 (2:30-5:30PM, 1365 LCSIB)"
         note: For the first 80 minutes, you can take the practice midterm. For the remaining time, we will take up the problems from it.
+      - name: HW 9
+        type: hw
+        title: Homework 9
 ---

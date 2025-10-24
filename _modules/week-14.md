@@ -2,6 +2,11 @@
 title: "Week 14: Random Variables; Thanksgiving 🍁"
 weekNumber: 14
 days:
+  - date: "2025-11-24"
+    events:
+      - name: HW 10
+        type: hw
+        title: Homework 10
   - date: "2025-11-25"
     events:
       - name: LEC 24

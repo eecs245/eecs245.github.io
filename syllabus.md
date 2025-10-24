@@ -181,7 +181,7 @@ Lab worksheets (and solutions) will be posted on the course website on Wednesday
 
 ### Homeworks
 
-This class will have 11 **weekly** homework assignments, which are to be completed **individually** and will usually be due to Gradescope on Tuesdays at 11:59PM (though the deadline is subject to change on any given week; see the course homepage for the most up-to-date information).
+This class will have 11 **weekly** homework assignments, which are to be completed **individually**. See the course homepage for the most up-to-date information on homework due dates.
 
 **Collaboration Policy**
 

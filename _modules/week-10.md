@@ -17,6 +17,8 @@ days:
       - name: LEC 18
         type: lecture
         title: Gradient Descent
+  - date: "2025-10-31"
+    events:
       - name: HW 8
         type: hw
         title: Homework 8

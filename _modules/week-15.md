@@ -17,6 +17,8 @@ days:
       - name: LEC 26
         type: lecture
         title: Independence; Conclusion
+  - date: "2025-12-05"
+    events:
       - name: HW 11
         type: hw
         title: Homework 11

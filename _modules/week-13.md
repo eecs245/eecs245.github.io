@@ -17,7 +17,4 @@ days:
       - name: LEC 23
         type: lecture
         title: Principal Components Analysis
-      - name: HW 10
-        type: hw
-        title: Homework 10
 ---
