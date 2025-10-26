@@ -21,5 +21,7 @@ days:
     events:
       - name: HW 8
         type: hw
-        title: Homework 8
+        title: <b>Multiple Linear Regression</b>
+        problems: ../resources/homeworks/hw08/hw08.pdf
+        template: https://www.overleaf.com/read/xdprtysknycg#e13ed6
 ---
