@@ -45,4 +45,5 @@ days:
         title: <b>Projections; Regression using Linear Algebra</b>
         problems: ../resources/homeworks/hw07/hw07.pdf
         template: https://www.overleaf.com/read/gngrpzddbdhn#eacac9
+        solutions: https://edstem.org/us/courses/81392/discussion/7208733
 ---
