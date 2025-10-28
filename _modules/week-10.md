@@ -9,6 +9,7 @@ days:
         title: The Gradient Vector
         reading: https://notes.eecs245.org/gradients/gradient-vector/
         reading_text: Ch. 4.1
+        live_notes: ../resources/lecture-pdfs/lec17.pdf
   - date: "2025-10-29"
     events:
       - name: LAB 9
