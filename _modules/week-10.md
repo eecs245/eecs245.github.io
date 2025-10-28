@@ -10,6 +10,7 @@ days:
         reading: https://notes.eecs245.org/gradients/gradient-vector/
         reading_text: Ch. 4.1
         live_notes: ../resources/lecture-pdfs/lec17.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/xop6jJ
   - date: "2025-10-29"
     events:
       - name: LAB 9
