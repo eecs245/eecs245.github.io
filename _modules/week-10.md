@@ -7,6 +7,8 @@ days:
       - name: LEC 17
         type: lecture
         title: The Gradient Vector
+        reading: https://notes.eecs245.org/gradients/gradient-vector/
+        reading_text: Ch. 4.1
   - date: "2025-10-29"
     events:
       - name: LAB 9
