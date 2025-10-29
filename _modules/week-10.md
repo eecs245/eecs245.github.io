@@ -10,12 +10,13 @@ days:
         reading: https://notes.eecs245.org/gradients/gradient-vector/
         reading_text: Ch. 4.1
         live_notes: ../resources/lecture-pdfs/lec17.pdf
-        recording: https://leccap.engin.umich.edu/leccap/player/r/xop6jJ
+        recording: https://leccap.engin.umich.edu/leccap/player/r/yO1AqM
   - date: "2025-10-29"
     events:
       - name: LAB 9
         type: lab
-        title: "Lab 9"
+        title: "Feature Engineering; The Gradient Vector"
+        problems: ../resources/labs/lab09/lab09.pdf
   - date: "2025-10-30"
     events:
       - name: LEC 18
