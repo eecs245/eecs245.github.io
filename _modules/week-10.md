@@ -17,6 +17,7 @@ days:
         type: lab
         title: "Feature Engineering; The Gradient Vector"
         problems: ../resources/labs/lab09/lab09.pdf
+        solutions: ../resources/labs/lab09/lab09-solutions.pdf
   - date: "2025-10-30"
     events:
       - name: LEC 18
