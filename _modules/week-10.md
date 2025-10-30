@@ -25,6 +25,7 @@ days:
         title: Gradient Descent
         reading: https://notes.eecs245.org/gradients/gradient-descent/
         reading_text: Ch. 4.2
+        live_notes: ../resources/lecture-pdfs/lec18.pdf
   - date: "2025-10-31"
     events:
       - name: HW 8
