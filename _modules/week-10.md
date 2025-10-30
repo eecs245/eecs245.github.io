@@ -23,6 +23,8 @@ days:
       - name: LEC 18
         type: lecture
         title: Gradient Descent
+        reading: https://notes.eecs245.org/gradients/gradient-descent/
+        reading_text: Ch. 4.2
   - date: "2025-10-31"
     events:
       - name: HW 8
