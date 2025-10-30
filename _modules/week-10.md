@@ -26,6 +26,7 @@ days:
         reading: https://notes.eecs245.org/gradients/gradient-descent/
         reading_text: Ch. 4.2
         live_notes: ../resources/lecture-pdfs/lec18.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/yH9VIQ
   - date: "2025-10-31"
     events:
       - name: HW 8
