@@ -26,5 +26,7 @@ days:
         note: For the first 80 minutes, you can take the practice midterm. For the remaining time, we will take up the problems from it.
       - name: HW 9
         type: hw
-        title: Homework 9
+        title: <b>Gradients and Gradient Descent</b>
+        problems: ../resources/homeworks/hw09/hw09.pdf
+        template: https://www.overleaf.com/read/jbbfxkzvxvvn#6a1b96
 ---
