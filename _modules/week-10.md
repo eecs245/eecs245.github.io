@@ -34,4 +34,5 @@ days:
         title: <b>Multiple Linear Regression</b>
         problems: ../resources/homeworks/hw08/hw08.pdf
         template: https://www.overleaf.com/read/xdprtysknycg#e13ed6
+        solutions: https://edstem.org/us/courses/81392/discussion/7250216
 ---
