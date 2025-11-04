@@ -6,8 +6,10 @@ days:
     events:
       - name: LEC 19
         type: lecture
-        title: Gradient Descent, Continued
-        note: Live lecture is cancelled, since Suraj will be <a href="https://jupytercon2025.sched.com/event/28H4f/rise-and-shine-teaching-with-jupyter-notebooks-in-real-time-suraj-rampure-nishant-kheterpal-university-of-michigan-janine-tiefenbruck-university-of-california-san-diego/">presenting at a conference</a>. A recording will be posted ahead of time.
+        title: Convexity
+        note: Live lecture is cancelled, since Suraj is <a href="https://jupytercon2025.sched.com/event/28H4f/rise-and-shine-teaching-with-jupyter-notebooks-in-real-time-suraj-rampure-nishant-kheterpal-university-of-michigan-janine-tiefenbruck-university-of-california-san-diego/">presenting at a conference</a>. A recording has been posted above.
+        recording: https://www.loom.com/share/0b459d47827d4a2093d58a0632c9a97e
+        live_notes: ../resources/lecture-pdfs/lec19.pdf
   - date: "2025-11-05"
     events:
       - name: LAB 10
