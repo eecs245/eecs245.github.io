@@ -21,7 +21,8 @@ days:
     events:
       - name: LEC 20
         type: lecture
-        title: Eigenvalues and Eigenvectors
+        title: Review Convexity; Eigenvalues and Eigenvectors
+        live_notes: ../resources/lecture-pdfs/lec20.pdf
   - date: "2025-11-07"
     events:
       - name: REV
