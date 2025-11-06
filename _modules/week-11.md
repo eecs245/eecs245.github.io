@@ -14,7 +14,9 @@ days:
     events:
       - name: LAB 10
         type: lab
-        title: "Lab 10"
+        title: "Gradient Descent and Convexity"
+        problems: ../resources/labs/lab10/lab10.pdf
+        solutions: ../resources/labs/lab10/lab10-solutions.pdf
   - date: "2025-11-06"
     events:
       - name: LEC 20
