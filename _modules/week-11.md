@@ -23,6 +23,7 @@ days:
         type: lecture
         title: Review Convexity; Eigenvalues and Eigenvectors
         live_notes: ../resources/lecture-pdfs/lec20.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/Pk1lek
   - date: "2025-11-07"
     events:
       - name: REV
