@@ -30,6 +30,7 @@ days:
         type: review
         title: "Practice Midterm 2 (2:30-5:30PM, 1365 LCSIB)"
         note: For the first 80 minutes, you can take the practice midterm. For the remaining time, we will take up the problems from it.
+        problems: ../resources/exams/mock-mt2.pdf
       - name: HW 9
         type: hw
         title: <b>Gradients and Gradient Descent</b>
