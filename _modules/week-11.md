@@ -37,4 +37,5 @@ days:
         title: <b>Gradients and Gradient Descent</b>
         problems: ../resources/homeworks/hw09/hw09.pdf
         template: https://www.overleaf.com/read/jbbfxkzvxvvn#6a1b96
+        solutions: https://edstem.org/us/courses/81392/discussion/7286537
 ---

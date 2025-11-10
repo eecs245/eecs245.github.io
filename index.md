@@ -20,13 +20,14 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
-[Jump to Week 11](#week-11-gradient-descent-eigenvalues-and-eigenvectors){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
+[Jump to Week 12](#week-12-midterm-2-eigenvalues-and-eigenvectors){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 {: .green }
 > **Midterm 2 is on Tuesday, November 11th in lecture.** 
+> - See all relevant details [**here on Ed**](https://edstem.org/us/courses/81392/discussion/7263626).
 > - Lectures 11-19, Chapters 2.6-4.3, Labs 6-10, and Homeworks 5-9 are all in scope. 
 > - Check out the new [**Resources**](../resources) page for more practice problems.
-> - Come to the mock exam **this Friday from 2:30-5:30PM in 1365 LCSIB**.
+> - There is no lab on Wednesday.
 
 {% for module in site.modules %}
 {{ module }}
