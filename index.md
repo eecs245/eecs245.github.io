@@ -6,6 +6,21 @@ description: >-
 nav_order: 1
 ---
 
+<!-- <style>
+.next-link {
+  color: #1565c0;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+.next-link:hover {
+  text-decoration: underline;
+}
+</style>
+<div style="background: #e3f2fd; color: #0d47a1; padding: 0.5em 1em; border-radius: 0.35em; margin-bottom: 1.2em; font-weight: 500; font-size: 1.05em;">
+  Interested in taking the course next semester? Check out <a href="./next" class="next-link">eecs245.org/next</a>!
+</div> -->
+
+
 # Mathematics for Machine Learning 🧠
 {: .no_toc }
 {: .mb-2 }
