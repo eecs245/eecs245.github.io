@@ -16,6 +16,6 @@ days:
       - name: LEC 21
         type: lecture
         title: Eigenvalues and Eigenvectors, Continued
-        reading: https://notes.eecs245.org/eigenvalues/eigenvalues-and-eigenvectors/
+        reading: https://notes.eecs245.org/eigenvalues/intro/
         reading_text: Ch. 5.1
 ---
