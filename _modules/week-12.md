@@ -18,4 +18,6 @@ days:
         title: Eigenvalues and Eigenvectors, Continued
         reading: https://notes.eecs245.org/eigenvalues/intro/
         reading_text: Ch. 5.1
+        live_notes: ../resources/lecture-pdfs/lec21.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/3Bissu
 ---
