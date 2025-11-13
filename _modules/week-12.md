@@ -7,6 +7,7 @@ days:
       - name: EXAM
         type: exam
         title: <b>Midterm 2 (during lecture)</b>
+        problems: ../resources/exams/fa25-mt2.pdf
   - date: "2025-11-12"
     events:
       - title: "No Lab: Day after Midterm"
