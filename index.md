@@ -6,20 +6,8 @@ description: >-
 nav_order: 1
 ---
 
-<!-- <style>
-.next-link {
-  color: #1565c0;
-  text-decoration: none;
-  transition: text-decoration 0.2s;
-}
-.next-link:hover {
-  text-decoration: underline;
-}
-</style>
-<div style="background: #e3f2fd; color: #0d47a1; padding: 0.5em 1em; border-radius: 0.35em; margin-bottom: 1.2em; font-weight: 500; font-size: 1.05em;">
-  Interested in taking the course next semester? Check out <a href="./next" class="next-link">eecs245.org/next</a>!
-</div> -->
-
+{: .blue }
+Interested in taking the course next semester? Check out [**eecs245.org/next**](./next)!
 
 # Mathematics for Machine Learning 🧠
 {: .no_toc }
@@ -38,7 +26,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 [Jump to Week 12](#week-12-midterm-2-eigenvalues-and-eigenvectors){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 {: .green }
-Congrats on finishing Midterm 2! There is no lab this week.
+Midterm 2 scores are available on Gradescope. If you'd like, sign up for a 1 on 1 meeting with Suraj [**here**](https://calendar.app.google/V25UneJoqjMPobKb8).
 
 {% for module in site.modules %}
 {{ module }}
