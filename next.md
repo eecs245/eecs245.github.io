@@ -59,6 +59,7 @@ As of **November 10, 2025**, the course counts for:
     - **Computer Science** majors (CS-Eng and CS-LSA*).
     - <span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Data Science** majors (DS-Eng and DS-LSA).
     - <span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Statistics** majors.
+    - <span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Artificial Intelligence** minors.
 - The linear algebra prerequisite for:
     - EECS 442, EECS 445, EECS 448, EECS 474, EECS 476, and CSE 576.
     - STATS 413.
