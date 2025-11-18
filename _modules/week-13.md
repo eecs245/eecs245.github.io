@@ -1,12 +1,16 @@
 ---
-title: "Week 13: SVD and PCA"
+title: "Week 13: Diagonalization, SVD"
 weekNumber: 13
 days:
   - date: "2025-11-18"
     events:
       - name: LEC 22
         type: lecture
-        title: Singular Value Decomposition
+        title: Adjacency Matrices and Diagonalization
+        reading: https://notes.eecs245.org/eigenvalues/adjacency-matrices/
+        reading_text: Ch. 5.1, Part 2
+        reading2: https://notes.eecs245.org/eigenvalues/diagonalization/
+        reading2_text: Ch. 5.2
   - date: "2025-11-19"
     events:
       - name: LAB 11

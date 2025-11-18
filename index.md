@@ -23,10 +23,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
-[Jump to Week 12](#week-12-midterm-2-eigenvalues-and-eigenvectors){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
-
-{: .green }
-Midterm 2 scores are available on Gradescope. If you'd like, sign up for a 1 on 1 meeting with Suraj [**here**](https://calendar.app.google/V25UneJoqjMPobKb8).
+[Jump to Week 13](#week-13-diagonalization-svd){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 {% for module in site.modules %}
 {{ module }}
