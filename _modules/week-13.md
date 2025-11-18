@@ -11,6 +11,7 @@ days:
         reading_text: Ch. 5.1, Part 2
         reading2: https://notes.eecs245.org/eigenvalues/diagonalization/
         reading2_text: Ch. 5.2
+        live_notes: ../resources/lecture-pdfs/lec22.pdf
   - date: "2025-11-19"
     events:
       - name: LAB 11
