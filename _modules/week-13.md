@@ -18,9 +18,11 @@ days:
       - name: LAB 11
         type: lab
         title: "Diagonalization"
+        problems: ../resources/labs/lab11/lab11.pdf
+        solutions: ../resources/labs/lab11/lab11-solutions.pdf
   - date: "2025-11-20"
     events:
       - name: LEC 23
         type: lecture
-        title: Principal Components Analysis
+        title: Diagonalization; Singular Value Decomposition
 ---
