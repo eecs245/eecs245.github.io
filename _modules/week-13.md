@@ -24,5 +24,7 @@ days:
     events:
       - name: LEC 23
         type: lecture
-        title: Diagonalization; Singular Value Decomposition
+        title: Diagonalization, Spectral Theorem, SVD
+        reading: https://notes.eecs245.org/eigenvalues/diagonalization/
+        reading_text: Ch. 5.2
 ---
