@@ -28,4 +28,5 @@ days:
         reading: https://notes.eecs245.org/eigenvalues/diagonalization/
         reading_text: Ch. 5.2
         live_notes: ../resources/lecture-pdfs/lec23.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/HdaMFo
 ---
