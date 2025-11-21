@@ -1,12 +1,12 @@
 ---
-title: "Week 15: Continuous Distributions and Independence"
+title: "Week 15: PCA; Probability"
 weekNumber: 15
 days:
   - date: "2025-12-02"
     events:
       - name: LEC 25
         type: lecture
-        title: Continuous Distributions
+        title: Principal Components Analysis
   - date: "2025-12-03"
     events:
       - name: LAB 12
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 26
         type: lecture
-        title: Independence; Conclusion
+        title: Probability in Machine Learning
   - date: "2025-12-05"
     events:
       - name: HW 11

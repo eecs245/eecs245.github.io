@@ -1,5 +1,5 @@
 ---
-title: "Week 14: PCA; Thanksgiving 🍁"
+title: "Week 14: SVD; Thanksgiving 🍁"
 weekNumber: 14
 days:
   - date: "2025-11-24"
@@ -13,7 +13,7 @@ days:
     events:
       - name: LEC 24
         type: lecture
-        title: Principal Components Analysis
+        title: Singular Value Decomposition
   - date: "2025-11-26"
     events:
       - title: "No Lab: Thanksgiving 🍁"
