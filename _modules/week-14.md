@@ -14,6 +14,8 @@ days:
       - name: LEC 24
         type: lecture
         title: Singular Value Decomposition
+        reading: https://notes.eecs245.org/eigenvalues/singular-value-decomposition/
+        reading_text: Ch. 5.3
   - date: "2025-11-26"
     events:
       - title: "No Lab: Thanksgiving 🍁"
