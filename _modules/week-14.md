@@ -17,6 +17,7 @@ days:
         reading: https://notes.eecs245.org/eigenvalues/singular-value-decomposition/
         reading_text: Ch. 5.3
         live_notes: ../resources/lecture-pdfs/lec24.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/N0yz5f
   - date: "2025-11-26"
     events:
       - title: "No Lab: Thanksgiving 🍁"
