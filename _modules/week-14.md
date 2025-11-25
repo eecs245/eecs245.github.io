@@ -16,6 +16,7 @@ days:
         title: Singular Value Decomposition
         reading: https://notes.eecs245.org/eigenvalues/singular-value-decomposition/
         reading_text: Ch. 5.3
+        live_notes: ../resources/lecture-pdfs/lec24.pdf
   - date: "2025-11-26"
     events:
       - title: "No Lab: Thanksgiving 🍁"
