@@ -9,6 +9,7 @@ days:
         title: <b>Eigenvalues and Eigenvectors</b>
         problems: ../resources/homeworks/hw10/hw10.pdf
         template: https://www.overleaf.com/read/dmqfhyywgsqy#83b60b
+        solutions: https://edstem.org/us/courses/81392/discussion/7372089
   - date: "2025-11-25"
     events:
       - name: LEC 24
