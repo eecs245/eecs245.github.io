@@ -11,7 +11,7 @@ days:
     events:
       - name: LAB 12
         type: lab
-        title: "Lab 12"
+        title: "Homework 11 Work Session"
   - date: "2025-12-04"
     events:
       - name: LEC 26
