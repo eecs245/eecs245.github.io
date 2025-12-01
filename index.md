@@ -23,10 +23,7 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
-[Jump to Week 14](#week-14-svd-thanksgiving){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
-
-{: .green }
-There is no lab on Wednesday and no lecture on Thursday of this week. Happy Thanksgiving! 🦃
+[Jump to Week 15](#week-15-pca-probability){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 {% for module in site.modules %}
 {{ module }}
