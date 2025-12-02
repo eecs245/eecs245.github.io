@@ -7,6 +7,8 @@ days:
       - name: LEC 25
         type: lecture
         title: Principal Components Analysis
+        reading: https://notes.eecs245.org/eigenvalues/principal-components-analysis/
+        reading_text: Ch. 5.4
   - date: "2025-12-03"
     events:
       - name: LAB 12
