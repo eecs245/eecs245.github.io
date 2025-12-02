@@ -9,6 +9,7 @@ days:
         title: Principal Components Analysis
         reading: https://notes.eecs245.org/eigenvalues/principal-components-analysis/
         reading_text: Ch. 5.4
+        live_notes: ../resources/lecture-pdfs/lec25.pdf
   - date: "2025-12-03"
     events:
       - name: LAB 12
@@ -18,5 +19,5 @@ days:
     events:
       - name: LEC 26
         type: lecture
-        title: Probability in Machine Learning
+        title: Principal Components Analysis, Continued
 ---
