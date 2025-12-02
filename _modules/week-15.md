@@ -10,6 +10,7 @@ days:
         reading: https://notes.eecs245.org/eigenvalues/principal-components-analysis/
         reading_text: Ch. 5.4
         live_notes: ../resources/lecture-pdfs/lec25.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/kPZKrf
   - date: "2025-12-03"
     events:
       - name: LAB 12
