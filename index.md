@@ -23,46 +23,12 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
+{: .green }
+> - The Final Exam is on **Wednesday, December 10th, 10:30AM-12:30PM in 1013 DOW**. More details to come.
+> - If at least 90% of students complete **both** the [<b>End-of-Semester Survey</b>](https://forms.gle/khiTFo9AVwEVte8p7) and [<b>Official Evals</b>](https://umich.bluera.com/umich/) by Tuesday, December 9th at 11:59PM, we'll add an **extra 2%** to everyone's overall grade in the course.
+
 [Jump to Week 15](#week-15-pca-probability){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
 
 {% for module in site.modules %}
 {{ module }}
 {% endfor %}
-
-<!-- {: .green }
-Linear algebra forms the basis of modern machine learning and artificial intelligence. _Mathematics for Machine Learning_ will introduce students to the theory of linear algebra while exposing them to its applications to real-world machine learning problems using Python. After taking this course, students will understand the mathematical underpinnings of linear regression, neural networks, gradient descent, decision trees, dimensionality reduction, and other core ideas in machine learning. -->
-
-<!-- 1. TOC
-{:toc} -->
-
-<!-- ## Content
-
-Linear algebra, calculus, and probability form the basis of modern machine learning and artificial intelligence. **This course will introduce linear algebra from scratch by focusing on methods and examples from machine learning.** It will give students strong intuition for how linear algebra, calculus and probability are used in machine learning. While the course is primarily theoretical, we'll look at practical applications involving real data in Python each week, so that students are able to apply what they've learned.
-
-Each topic below corresponds to ~1-2 lectures.
-
-- Python, Jupyter Notebooks, and `numpy`.
-- Introduction to supervised learning: parameters, loss functions, and empirical risk minimization.
-- Optimization in single and multiple variables.
-- Vectors, the dot product, and projections.
-- Vector spaces and spans.
-- Matrices, linear independence, and rank.
-- Multiple linear regression, using both projections and vector calculus.
-- Partial derivatives and gradient vectors.
-- Gradient descent.
-- Eigenvalues and eigenvectors.
-- Singular value decomposition (SVD) and Principal Components Analysis (PCA).
-- The PageRank algorithm.
-- Random variables.
-- Independence and conditional independence.
-- Maximum likelihood estimation.
-
-
-## Format
-
-- **Lectures (TuTh 3-4:30PM, 1013 DOW)**: Introduce core content in an interactive format. Recorded, and attendance will **not** be taken.
-- **Labs (W 12:30-2:30PM or W 4:30-6:30PM)**: Provide supervised practice with mathematical ideas and a venue for exploring practical applications in Python. Attendance **will** be taken.
-- **Homeworks**: Assigned and due weekly. Will consist of ~80% math on paper and ~20% code in Python.
-- **Exams**: 1-2 Midterm Exams and one Final Exam, all in-person and on-paper.
-
- -->

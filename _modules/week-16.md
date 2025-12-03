@@ -10,6 +10,12 @@ days:
         problems: ../resources/homeworks/hw11/hw11.pdf
         template: https://www.overleaf.com/read/sqzfjngzwbkw#577e21
         note: You cannot use slip days on Homework 11. We will be releasing solutions shortly after the deadline.
+  - date: "2025-12-09"
+    events:
+      - name: SUR
+        type: survey
+        title: <b><a href="https://forms.gle/khiTFo9AVwEVte8p7">End-of-Semester Survey</a></b> and <b><a href="https://umich.bluera.com/umich/">Official Evals</a></b>
+        note: If at least 90% of students complete both by Tuesday 12/9 at 11:59PM, we'll add an extra 2% to everyone's overall grade in the course.
   - date: "2025-12-10"
     events:
       - name: EXAM
