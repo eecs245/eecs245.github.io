@@ -20,5 +20,6 @@ days:
     events:
       - name: EXAM
         type: exam
-        title: <b>Final Exam (10:30AM-12:30PM)</b>
+        title: <b>Final Exam (10:30AM-12:30PM, 1013 DOW)</b>
+        note: Make sure to read the <a href="">Logistics</a> post on Ed for details on how to prepare.
 ---

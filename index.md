@@ -23,8 +23,11 @@ EECS 245*, Fall 2025 at the <b><span style="background-color: #FFCB05; color: #0
 {{ staffer }}
 {% endfor %}
 
+
+
 {: .green }
-> - The Final Exam is on **Wednesday, December 10th, 10:30AM-12:30PM in 1013 DOW**. More details to come.
+> - The Final Exam is on **Wednesday, December 10th, 10:30AM-12:30PM in 1013 DOW**. See all relevant logistical details [**here**](https://edstem.org/us/courses/81392/discussion/7419337).
+> - Check out the new [**Post-Midterm 2 Practice Problems**](./post-mt2-practice) document that includes some walkthrough videos (more to come).
 > - If at least 90% of students complete **both** the [<b>End-of-Semester Survey</b>](https://forms.gle/khiTFo9AVwEVte8p7) and [<b>Official Evals</b>](https://umich.bluera.com/umich/) by Tuesday, December 9th at 11:59PM, we'll add an **extra 2%** to everyone's overall grade in the course.
 
 [Jump to Week 15](#week-15-pca-probability){: .btn .btn-green } [Announcements on Ed 📣](https://edstem.org/us/courses/81392/discussion/6878182){: .btn .btn-purple }
