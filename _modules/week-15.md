@@ -25,4 +25,11 @@ days:
         reading_text: Ch. 5.4
         live_notes: ../resources/lecture-pdfs/lec26.pdf
         recording: https://leccap.engin.umich.edu/leccap/player/r/0cBuh9
+  - date: "2025-12-06"
+    events:
+      - name: REV
+        type: review
+        title: "Post-Midterm 2 Practice Problems"
+        problems: 'post-mt2-practice'
+        note: The linked page has practice problems for content introduced after Midterm 2. Some problems have walkthrough videos; we're adding more over the weekend.
 ---

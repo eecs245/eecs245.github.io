@@ -9,21 +9,23 @@ nav_exclude: true
 
 # Post-Midterm 2 Practice Problems
 
+_last updated on December 6th, 2025 at 12:10AM_
+
 This page contains several practice problems for content introduced after Midterm 2. They are sorted by topic:
 
 - Problems 1-14 are on [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors).
-- Problems 15-20 are on the [Singular Value Decomposition](#singular-value-decomposition).
-- Problems 21-24 are on [Principal Components Analysis](#principal-components-analysis).
+- Problems 15-21 are on the [Singular Value Decomposition](#singular-value-decomposition).
+- Problems 22-26 are on [Principal Components Analysis](#principal-components-analysis).
 
 The problems range in difficulty, and aren't necessarily indicative of the difficulty or styles of problems you will see on the real exam; some problems are more open-ended than we'd ask on an exam, and are designed to encourage you to review parts of the course notes.
 
-As we're able to, we will embed videos to certain problems here.
+As we're able to, we will embed videos to certain problems here. A few have already been embedded below.
 
 ---
 
 ## Eigenvalues and Eigenvectors
 
-### Problem 1 (A problem just like this one will appear on the Final Exam!)
+### Problem 1
 
 Let 
 
@@ -183,34 +185,35 @@ The goal of this problem is to find the minimum and maximum values of $$f(x, y)$
 
 ### Problem 15
 
-Suppose the $$2 \times 3$$ matrix $$A$$ has the singular value decomposition $$A = U \Sigma V^T$$ where
+Suppose the matrix $$X$$ has the singular value decomposition $$X = U \Sigma V^T$$ where
 
-- $$U = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$$
-- $$\Sigma = \begin{bmatrix} 5 & 0 & 0 \\ 0 & 2 & 0 \end{bmatrix}$$
-- $$\vec v_1$$, the first column of $$V$$, is $$\begin{bmatrix} 1/\sqrt{2} \\ 1/\sqrt{2} \\ 0 \end{bmatrix}$$
+$$U = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \Sigma = \begin{bmatrix} \sigma_1 & 0 & 0 \\ 0 & 2 & 0 \end{bmatrix}, \quad V = \begin{bmatrix} 1/\sqrt{2} & | & 0 \\ 0 & \vec v_2 & 1 \\ 1/\sqrt{2} & | & 0 \end{bmatrix}$$
 
-Find $$A$$.
+1. How many rows and columns does $$X$$ have? What is $$\text{rank}(X)$$?
+1. Find $$\vec v_2$$.
+1. Given that the first column of $$X$$ and third column of $$X$$ sum to $$\begin{bmatrix} 0 \\ 5 \end{bmatrix}$$, find $$\sigma_1$$. _Hint: Recall that $$X \vec v_i = \sigma_i \vec u_i$$ for $$i = 1, 2, ..., \text{rank}(X)$$._
 
 ---
 
 ### Problem 16
 
-Consider the rank-$$2$$ matrix $$A = \begin{bmatrix} 1 & 2 & 2 \\ 1 & 3 & 3 \end{bmatrix}$$.
+Consider the rank-$$2$$ matrix $$X = \begin{bmatrix} 1 & 2 & 2 \\ 1 & 3 & 3 \end{bmatrix}$$.
 
-1. Write $$A$$ as a sum of two rank-1 outer products, e.g. $$A = \vec x_1 \vec y_1^T + \vec x_2 \vec y_2^T$$.
-1. Find $$AA^T$$ and $$A^TA$$, and the trace and determinant of each.
-1. If $$A$$ is any $$n \times d$$ matrix, which of the following are guaranteed to be true, and why?
+1. Write $$X$$ as a sum of two rank-1 outer products, e.g. $$X = \vec x_1 \vec y_1^T + \vec x_2 \vec y_2^T$$.
+1. Find $$X X^T$$ and $$X^T X$$, and the trace and determinant of each.
+1. If $$X$$ is any $$n \times d$$ matrix, which of the following are guaranteed to be true, and why?
 
-- $$\text{trace}(AA^T) = \text{trace}(A^TA)$$
-- $$\text{det}(AA^T) = \text{det}(A^TA)$$
+$$\text{trace}(X X^T) = \text{trace}(X^T X)$$
+
+$$\text{det}(X X^T) = \text{det}(X^T X)$$
 
 ---
 
 ### Problem 17
 
-Suppose $$X$$ is a symmetric $$n \times n$$ matrix with singular value decomposition $$X = U \Sigma V^T$$. (Note that we are assuming $$X$$ is square, which isn't typically the case for the singular value decomposition.
+Suppose $$X$$ is a symmetric $$n \times n$$ matrix with singular value decomposition $$X = U \Sigma V^T$$. (Note that we are assuming $$X$$ is square, which isn't typically the case for the singular value decomposition.)
 
-Show that the diagonal entries of $$\Sigma$$ are the **absolute values** of the eigenvalues of $$X$$.
+Show that the diagonal entries of $$\Sigma$$ are the **absolute values** of the eigenvalues of $$X$$, i.e. $$\sigma_i = \mid \lambda_i \mid$$ for all $$i = 1, 2, ..., \text{rank}(X)$$.
 
 ---
 
@@ -224,21 +227,18 @@ Why is it guaranteed that the eigenvalues of $$X^TX$$ are non-negative? (Hint: W
 
 ---
 
-### Problem 18
-
-Suppose $$X = U \Sigma V^T$$ is the singular value decomposition of some $$n \times d$$ matrix $$X$$. Furthermore, suppose the columns of $$U$$ are $$\vec u_1, \vec u_2, \ldots, \vec u_n \in \mathbb{R}^n$$, the singular values of $$X$$ are $$\sigma_1, \sigma_2, \ldots, \sigma_r > 0$$, the columns of $$V^T$$ are $$\vec v_1, \vec v_2, \ldots, \vec v_d \in \mathbb{R}^d$$, and $$r = \text{rank}(X)$$.
-
-Earlier in the semester, we saw that the matrix $$\vec a \vec b^T + \vec c \vec e^T$$ had a rank of 1 **or** 2.
-
-Why is it **guaranteed** that the matrix $$\sigma_1 \vec u_1 \vec v_1^T + \sigma_2 \vec u_2 \vec v_2^T$$ has a rank of **exactly** 2?
-
----
-
 ### Problem 19
 
-Give the SVD of a matrix, mostly about low-rank approximation.
+Consider the matrix $$X$$ whose singular value decomposition is given by
 
-- Frobenius norm of the difference
+$$X = \underbrace{\begin{bmatrix} 1/2 & 1/2 & 1/2 & 1/2 
+\\ 1/2 & 1/2 & -1/2 & -1/2 
+\\ 1/2 & -1/2 & 1/2 & -1/2 
+\\ 1/2 & -1/2 & -1/2 & 1/2 \end{bmatrix}}_{U} \underbrace{\begin{bmatrix} 8 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{\Sigma} \underbrace{\begin{bmatrix} \sqrt{2}/2 & \sqrt{2}/2 & 0 \\ -\sqrt{2}/2 & \sqrt{2}/2 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{V^T}$$
+
+1. Find the best rank-1 approximation of $$X$$.
+1. Let $$X_1$$ be the matrix you found in the previous part. In Homework 11, Problem 2, you were introduced to the Frobenius norm of a matrix, which can be thought of as the length of the norm of the matrix, if you think of it as one long $n \times d$ vector. Explain why the Frobenius norm of $$X - X_1$$ is equal to $$\sqrt{8^2 - 3^2 - 1^2} = \sqrt{54}$$.
+1. Find the best rank-2 approximation of $$X$$. There's no need to work out the entire calculation, but make sure you know how to do it.
 
 ---
 
@@ -250,19 +250,9 @@ Suppose $$\vec v_1$$ and $$\vec v_2$$ are the first and second columns of $$V$$,
 
 $$\vec w = 3 \vec v_1 - \vec v_2$$
 
-**Problem 20.1
-
-Find $$V^T \vec w$$.
-
-**Problem 20.2
-
-Suppose $$X$$'s two singular values are $$\sigma_1 = 10$$ and $$\sigma_2 = 3$$.
-
-Find $$\Sigma V^T \vec w$$.
-
-**Problem 20.3
-
-Let $$\vec z = \Sigma V^T \vec w$$. Give English interpretations of $$\vec z$$ and $$U \vec z$$.
+1. Find $$V^T \vec w$$.
+1. Suppose $$X$$'s two singular values are $$\sigma_1 = 10$$ and $$\sigma_2 = 3$$. Find $$\Sigma V^T \vec w$$.
+1. Let $$\vec z = \Sigma V^T \vec w$$. In English, what does $$\vec z$$ represent, relative to $$\vec w$$?
 
 ---
 
@@ -280,16 +270,30 @@ What is $$V_P^T$$? Justify your answer **conceptually**, not just algebraically.
 
 ### Problem 22
 
-In Homework 11, Problem 4 (and in Chapter 5.4), we plotted a 2-dimensional representation of a higher-dimensional dataset.
+In Homework 11, Problem 4 (and in Chapter 5.4), we plotted a 2-dimensional representation of a higher-dimensional dataset. Let $$\tilde X$$ be the mean-centered version of the dataset.
 
-Fill in the blanks: to create this plot, we plotted the first 2 __(i)__ of __(ii)__.
+Fill in the blanks: to create this plot, we plotted the first 2 __(1)__ of __(2)__.
 
-1. (i) rows / columns
-2. (ii) $$\tilde X$$ / $$U$$ / $$V$$ / $$V^T$$ / $$U \Sigma$$ / $$\Sigma V^T$$ / $$U \Sigma V^T$$
+1. rows / columns
+1. $$\tilde X \qquad U \qquad V \qquad V^T \qquad U \Sigma \qquad \Sigma V^T \qquad \tilde X V \qquad U \Sigma V^T$$ 
+
+(there may be more than one correct answer; identify all of them)
 
 ---
 
 ### Problem 23
+
+Suppose $$\tilde X$$ is a mean-centered $$n \times d$$ matrix, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
+
+All you are given is that $$\Sigma = \begin{bmatrix} 10 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 0.1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$.
+
+1. How many rows and columns does $$\tilde X$$ have? What is $$\text{rank}(\tilde X)$$?
+1. What is the variance of the second principal component?
+1. What is the proportion of the total variance in $$\tilde X$$ that is accounted for by the first principal component? The second? The first and second together?
+
+---
+
+### Problem 24
 
 Suppose $$X$$ is a $$51 \times 5$$ matrix, whose **first 3 rows** are given by
 
@@ -302,43 +306,22 @@ Consider the following information about the columns of $$X$$.
 | Mean | 2 | 3 | 10 | 5 | 1 |
 | Variance | 0.3 | 0.3 | _ | 0.3 | 0.3 |
 
-Let $$\tilde X$$ be the centered version of $$X$$, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
+Let $$\tilde X$$ be the mean-centered version of $$X$$, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
 
 Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1$$, and $$0$$.
 
-**Problem 23.1
+1. What is $$\text{rank}(\tilde X)$$? (Note that in general, **unlike** I accidentally said in Thursday's lecture, $$\text{rank}(\tilde X)$$ is not necessarily equal to $$\text{rank}(X)$$: it is possible for $$\text{rank}(\tilde X)$$ to $$\text{rank}(X) - 1$$. Think about why this is the case!)
+1. We want to choose the first $$k$$ principal components, such that at least $$95\%$$ of the variance in $$X$$ is accounted for. What is the smallest possible value of $$k$$ that we can choose?
+1. Notice that the table provided does not include the variance of column $$3$$. Given all the information above, what is the variance of column $$3$$?
+1. Suppose $$\vec v_3 = \begin{bmatrix} 4/5 \\ 3/5 \\ 0 \\ 0 \\ 0 \end{bmatrix}$$ is the third column of $$V$$. What is the **first entry** of $$\vec u_3$$, the third column of $$U$$? *Hint: Remember that $$U \Sigma V^T$$ is the singular value decomposition of $$\tilde X$$, not $$X$$.*
+1. Prove that the entries of $$\tilde X \vec w$$ sum to 0, for any $$\vec w \in \mathbb{R}^5$$.
+1. Which of these four plots visualizes principal component 2 vs. principal component 1?
 
-What is $$\text{rank}(X)$$? Give your answer as an integer.
-
-**Problem 23.2
-
-What proportion of the total variance in $$X$$ is accounted for by the second principal component? Give your answer as a fraction.
-
-**Problem 23.3
-
-We want to choose the first $$k$$ principal components, such that at least $$95\%$$ of the variance in $$X$$ is accounted for. What is the smallest possible value of $$k$$ that we can choose?
-
-**Problem 23.4
-
-Notice that the table provided does not include the variance of column $$3$$. Given all the information above, what is the variance of column $$3$$?
-
-**Problem 23.5
-
-Suppose $$\vec v_3 = \begin{bmatrix} 4/5 \\ 3/5 \\ 0 \\ 0 \\ 0 \end{bmatrix}$$ is the third column of $$V$$.
-
-What is the **first entry** of $$\vec u_3$$, the third column of $$U$$? *Hint: Remember that $$U \Sigma V^T$$ is the singular value decomposition of $$\tilde X$$, not $$X$$.*
-
-**Problem 23.6
-
-Prove that the entries of $$\tilde X \vec w$$ sum to 0, for any $$\vec w \in \mathbb{R}^5$$.
-
-**Problem 23.7
-
-[Image placeholder: pc-4-plots.png]
+<center><img src="../assets/rev-imgs/pc-4-plots.png" alt="Principal component 2 vs. principal component 1" style="width: 50%; height: auto;"></center>
 
 ---
 
-### Problem 24
+### Problem 25
 
 Let $$X$$ be a $$20 \times 3$$ matrix, let $$\tilde X$$ be the centered version of $$X$$, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
 
@@ -346,18 +329,22 @@ Suppose the variances of the 3 columns of $$\tilde X$$ are $$125$$, $$20$$, and 
 
 ---
 
-### Problem 25
+### Problem 26
 
 Suppose $$A$$, $$B$$, and $$C$$ are each $$100 \times 2$$ matrices, representing $$n = 100$$ points in $$\mathbb{R}^2$$. The three datasets are shown in the scatter plots below. (Matrix $$A$$ is in Plot A, matrix $$B$$ is in Plot B, and matrix $$C$$ is in Plot C.)
 
-[Image placeholder: pc-3-plots.png]
+<center><img src="../assets/rev-imgs/pc-3-plots.png" alt="Principal component 2 vs. principal component 1" style="width: 70%; height: auto;"></center>
 
 Assume that $$A$$, $$B$$, and $$C$$ are each already centered.
 
-**Problem 25.1
+1. If we applied PCA to each of the above datasets, and created just one principal component in each case, for which dataset would the first principal component have the smallest mean squared orthogonal error – $$A$$, $$B$$, or $$C$$?
+1. Suppose $$\tilde X = U \Sigma V^T$$ is the singular value decomposition of $$\tilde X$$, and that
+    $$\Sigma \approx \begin{bmatrix} 16 & 0 \\ 0 & 4 \\ 0 & 0 \\ \vdots & \vdots \\ 0 & 0\end{bmatrix}, \qquad \underbrace{V = \begin{bmatrix} 2/\sqrt{5} & 1/\sqrt{5} \\ -1/\sqrt{5} & 2/\sqrt{5} \end{bmatrix}}_{\textbf{not } V^T}$$
+
+    Which dataset is most likely to be $$\tilde X$$ – $$A$$, $$B$$, or $$C$$?
+1. Suppose that in the graph of principal component 2 vs. principal component 1 (i.e. with PC 1 on the $$x$$-axis and PC 2 on the $$y$$-axis), a particular data point is plotted at $$(4, 2)$$. What is the corresponding point in the original (mean-centered) dataset? Your answer should be a tuple of two numbers, $$(a, b)$$ (or equivalently, a vector in $$\mathbb{R}^2$$).
+
 
 ---
 
-### Problem 26
-
-Two columns, correlation $$r$$ and standard deviations.
+<small>Some problems were borrowed from [this site](https://ds100.org/su20/resources).</small>
