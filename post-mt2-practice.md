@@ -42,6 +42,8 @@ Suppose $$A$$ is a $$3 \times 3$$ matrix such that the eigenspace for $$\lambda 
 1. Why is $$A$$ diagonalizable?
 2. Find matrices $$V$$ and $$\Lambda$$ such that $$A = V \Lambda V^{-1}$$.
 
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/tGyqgj-378U?si=J5ydwrAqTIiZuKAF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+
 ---
 
 ### Problem 3
@@ -148,6 +150,8 @@ Note that $$V$$ is **not** an orthogonal matrix.
 1. Why is the above statement **not** a contradiction of the spectral theorem?
 2. What is the name of the process that allows us to convert a collection of vectors into an orthonormal basis?
 3. Find matrices $$Q$$ and $$\Lambda$$ such that $$A = Q \Lambda Q^T$$.
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/XDR_4bTFZ6s?si=dO_jrIhUeKum9Q6G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
 ---
 
