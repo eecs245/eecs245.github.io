@@ -161,6 +161,8 @@ Recall, a symmetric matrix $$A$$ is positive semidefinite if $$\vec v^T A \vec v
 1. Fill in the blanks: A symmetric matrix $$A$$ is positive semidefinite if and only if all of its eigenvalues are ________.
 1. Draw a Venn diagram of the relationship between the following sets of square matrices: positive semidefinite, positive definite, symmetric, diagonalizable, and invertible.
 
+<center><iframe width="640" height="360" src="https://www.loom.com/embed/16e913f28c0140999769f34d52cf719e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+
 ---
 
 ### Problem 14
