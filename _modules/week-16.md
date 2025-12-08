@@ -9,7 +9,7 @@ days:
         title: <b>Singular Value Decomposition (no slip days!)</b>
         problems: ../resources/homeworks/hw11/hw11.pdf
         template: https://www.overleaf.com/read/sqzfjngzwbkw#577e21
-        note: You cannot use slip days on Homework 11. We will be releasing solutions shortly after the deadline.
+        solutions: https://edstem.org/us/courses/81392/discussion/7431284
   - date: "2025-12-09"
     events:
       - name: SUR
