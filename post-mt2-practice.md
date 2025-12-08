@@ -316,7 +316,7 @@ Let $$\tilde X$$ be the mean-centered version of $$X$$, and let $$\tilde X = U \
 
 Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1$$, and $$0$$.
 
-1. What is $$\text{rank}(\tilde X)$$? (Note that in general, **unlike** I accidentally said in Thursday's lecture, $$\text{rank}(\tilde X)$$ is not necessarily equal to $$\text{rank}(X)$$: it is possible for $$\text{rank}(\tilde X)$$ to $$\text{rank}(X) - 1$$. Think about why this is the case!)
+1. What is $$\text{rank}(\tilde X)$$? (Note that in general, **unlike** I accidentally said in Thursday's lecture, $$\text{rank}(\tilde X)$$ is not necessarily equal to $$\text{rank}(X)$$: it is possible for $$\text{rank}(\tilde X)$$ to equal $$\text{rank}(X) - 1$$. Think about why this is the case!)
 1. We want to choose the first $$k$$ principal components, such that at least $$95\%$$ of the variance in $$X$$ is accounted for. What is the smallest possible value of $$k$$ that we can choose?
 1. Notice that the table provided does not include the variance of column $$3$$. Given all the information above, what is the variance of column $$3$$?
 1. Suppose $$\vec v_3 = \begin{bmatrix} 4/5 \\ 3/5 \\ 0 \\ 0 \\ 0 \end{bmatrix}$$ is the third column of $$V$$. What is the **first entry** of $$\vec u_3$$, the third column of $$U$$? *Hint: Remember that $$U \Sigma V^T$$ is the singular value decomposition of $$\tilde X$$, not $$X$$.*
