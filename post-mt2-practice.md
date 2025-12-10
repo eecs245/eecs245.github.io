@@ -120,7 +120,7 @@ Suppose $$A$$ and $$B$$ are both $$2 \times 2$$ matrices with an eigenvalue of $
 ### Problem 9
 
 1. Suppose $$A$$ has an eigenvalue of $$\lambda$$. Show that $$A^k$$ has an eigenvalue of $$\lambda^k$$ with the same eigenvector.
-1. The converse of the statement above is false --- that is, just because $$A^k$$ has an eigenvalue of $$\lambda^k$$, it does not mean $$A$$ has an eigenvalue of $$\lambda$$. Find a counterexample, by finding a matrix $$A$$ such that $$A^2$$ has an eigenvalue of $$1$$, but $$A$$ does not have an eigenvalue of $$\pm 1$$. Is $$A$$ diagonalizable?
+1. The converse of the statement above is false --- that is, just because $$A^k$$ has an eigenvalue of $$\lambda^k$$, it does not mean $$A$$ has an eigenvalue of $$\lambda$$. Find a counterexample, by finding a matrix $$A$$ such that $$A^2$$ has an eigenvalue of $$-1$$ such that $$A$$ has no real eigenvalues. Is $$A$$ diagonalizable?
 
 ---
 
