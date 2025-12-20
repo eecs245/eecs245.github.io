@@ -43,8 +43,8 @@ aux_links:
     - 'https://notes.eecs245.org'
   Ed:
     - 'https://edstem.org/us/join/CCnkTE'
-  # Gradescope:
-  #   - 'https://www.gradescope.com/courses/1077394/'
+  Gradescope:
+    - 'https://www.gradescope.com/courses/1202817/'
   📬 Feedback:
     - 'https://forms.gle/3FQf9iJ21BrPoJhM9'
 footer_content:
