@@ -5,6 +5,8 @@ nav_order: 4
 description: Instructions on how to set up your programming environment and type up math problems.
 ---
 
+{: .red }
+**This page is a work in progress, and is subject to change as long as this disclaimer is here.**
 
 # {{ page.title }}
 {:.no_toc}
@@ -14,7 +16,6 @@ description: Instructions on how to set up your programming environment and type
 
 1. TOC
 {:toc}
-
 
 ---
 
@@ -185,7 +186,7 @@ You can also use [VSCode](https://code.visualstudio.com/) (not the same as Visua
 {:.no_toc}
 
 All of our course materials, including your assignments, are hosted on
-GitHub in [this Git repository](https://github.com/eecs245/fa25). If you follow Option 1 and use DataHub, the magic links we provide automatically pull from this repository.
+GitHub in [this Git repository](https://github.com/eecs245/wn26-code). If you follow Option 1 and use DataHub, the magic links we provide automatically pull from this repository.
 
 If following Option 2, though, you'll need to pull from this repository any time we release a new assignment. This means that you'll need to download and use Git in order to work with the course
 materials. You can do so [here](https://git-scm.com/).
@@ -200,7 +201,7 @@ There are Git GUIs, and you can use them for this class. You can also
 use the command-line version of Git. To get started, you\'ll need to
 \"clone\" the course repository. The command to do this is:
 
-    git clone https://github.com/eecs245/fa25
+    git clone https://github.com/eecs245/wn26-code
 
 This will copy the repository to a directory on your computer. You should only need to do this once. (If you're doing this before the first lab, the repository will be pretty empty, and that's fine.)
 
@@ -215,7 +216,7 @@ to lose work (although it\'s still possible!).
 
 <!-- **Merge Conflicts**
 
-You might – but hopefully won't! – face issues when using `git pull` regarding merge issues and branches. This is caused by files being updated on your side while we are also changing the [Git repository](https://github.com/eecs245/fa25) by updating assignments on our side.
+You might – but hopefully won't! – face issues when using `git pull` regarding merge issues and branches. This is caused by files being updated on your side while we are also changing the [Git repository](https://github.com/eecs245/wn26-code) by updating assignments on our side.
 
 To minimize frustration, working with GitHub pulls, merges, etc., it's a good idea to save your important work locally so that if you accidentally overwrite your files you still have the work saved. **Save your work locally, in a separate, duplicated folder (e.g. duplicate `eecs398` to `eecs398-copy`, if your local folder is called `eecs398`) before following the steps below.**
 

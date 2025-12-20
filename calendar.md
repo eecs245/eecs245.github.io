@@ -5,17 +5,20 @@ description: Google Calendar containing all course events.
 nav_order: 3
 ---
 
+{: .red }
+**This page is a work in progress, and is subject to change as long as this disclaimer is here.**
+
 # 📆 Calendar
 
 The times and locations of office hours, as well as lectures and labs, are all in the calendar below. **The times of office hours are subject to change week-to-week, so make sure to check the calendar before attending.**
 
-We will not be using the Office Hours Queue this semester – look for [Suraj, Angela, or Vincent](../staff) in office hours. If you can't find us, post on Ed!
+We will not be using the Office Hours Queue this semester – look for [Suraj or one of the TAs](../staff) in office hours. If you can't find us, post on Ed!
 
 The events are color-coded:
 - Deadlines appear in <span style="color:#d50000"><b>red</b></span>.
-- Lectures and labs appear in <span style="color:#039be5"><b>blue</b></span>. These are all held on North Campus.
-- In-person North Campus office hours appear in <span style="color:#009688"><b>turquoise</b></span>. These are typically held either in a BBB or Leinweber conference room (**especially for office hours after lecture on Tuesdays and Thursdays**), Suraj's office (4721 BBB), or the BBB Atrium.
-- In-person Central Campus office hours appear in <span style="color:#c0ca33"><b>lime green</b></span>. These are typically held in the UgLi Basement.
+- Lectures and labs appear in <span style="color:#039be5"><b>blue</b></span>. These are all held on North Campus. **We will be consolidating some of the lab sections, which is why they don't yet appear in the calendar.**
+- In-person North Campus office hours appear in <span style="color:#009688"><b>turquoise</b></span>. These are typically held either in a BBB or Leinweber conference room, Suraj's office, or the BBB Atrium.
+- In-person Central Campus office hours – if we hold any – appear in <span style="color:#c0ca33"><b>lime green</b></span>. These are typically held in the UgLi Basement.
 - Remote office hours appear in <span style="color:#e6804d"><b>orange</b></span>, and can be accessed at the Zoom link below.
 
 <div align="center" markdown="1">

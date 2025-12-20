@@ -1,32 +1,25 @@
 ---
-title: "Week 13: Diagonalization, SVD"
+title: "Week 13: Midterm 2; Eigenvalues and Eigenvectors"
 weekNumber: 13
 days:
-  - date: "2025-11-18"
+  - date: "2026-03-30"
     events:
-      - name: LEC 22
+      - name: EXAM
+        type: exam
+        title: <b>Midterm 2 (7-9PM)</b>
+  - date: "2026-04-01"
+    events:
+      - name: LEC 20
         type: lecture
-        title: Adjacency Matrices and Diagonalization
-        reading: https://notes.eecs245.org/eigenvalues/adjacency-matrices/
-        reading_text: Ch. 5.1, Part 2
-        reading2: https://notes.eecs245.org/eigenvalues/diagonalization/
-        reading2_text: Ch. 5.2
-        live_notes: ../resources/lecture-pdfs/lec22.pdf
-        recording: https://leccap.engin.umich.edu/leccap/player/r/EjyvK5
-  - date: "2025-11-19"
+        title: Eigenvalues and Eigenvectors
+  - date: "2026-04-02"
     events:
-      - name: LAB 11
+      - name: Lab 11
         type: lab
-        title: "Diagonalization"
-        problems: ../resources/labs/lab11/lab11.pdf
-        solutions: ../resources/labs/lab11/lab11-solutions.pdf
-  - date: "2025-11-20"
+        title: Lab 11
+  - date: "2026-04-03"
     events:
-      - name: LEC 23
-        type: lecture
-        title: Diagonalization, Spectral Theorem, SVD
-        reading: https://notes.eecs245.org/eigenvalues/diagonalization/
-        reading_text: Ch. 5.2
-        live_notes: ../resources/lecture-pdfs/lec23.pdf
-        recording: https://leccap.engin.umich.edu/leccap/player/r/HdaMFo
+      - name: HW 10
+        type: hw
+        title: Homework 10
 ---

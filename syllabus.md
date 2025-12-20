@@ -6,26 +6,29 @@ description: >-
 nav_order: 2
 ---
 
+{: .red }
+**This page is a work in progress, and is subject to change as long as this disclaimer is here.**
+
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
 
 # 📖 Syllabus
 {:.no_toc}
 
-## Table of contents
+<!-- ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
-{:toc}
+{:toc} -->
 
 ---
 
+Coming soon!
+
+<!-- 
 ## Overview
 
 ### Course Number
-
-{: .green }
-EECS 245 is the permanent number for this course, which will be officially used starting Winter 2026. In Fall 2025, the course is listed under the 004 and 005 sections of the EECS 298 special topics course number. We will refer to the course as "EECS 245" throughout the semester in all materials.
 
 ### Instructor
 
@@ -45,8 +48,7 @@ This course is worth 4 credits, and is currently approved to count towards:
 - The linear algebra requirement for the CS-Eng major.
 - The linear algebra "category" for the CS-LSA major (see [here](https://docs.google.com/document/d/1i0W77CzwMK6l3FFFdG7_7urp8H_oE4EaOzRPFOJdrxo/preview?tab=t.0#heading=h.m67kk7886dyq) for the CS-LSA program guide).
 - The linear algebra prerequisite for EECS 445.
-
-As of 4/13, the course is **not currently approved** to count for the DS major. If the course is approved to count for other programs, we will update this page.
+- TODO
 
 <details><summary><b>Who should take this course?</b></summary>
 
@@ -64,10 +66,6 @@ You should take this course if you:
 
 - EECS 203 or Math 116 (or Math 215, 216, 275, 285, or 295), i.e. some math course after Calculus 1.
 - Some 100-level programming class (e.g. EECS 183, ENGR 101, ROB 102, or similar).
-
-<!-- The first prerequisite corresponds to some math course after Calculus 1. We won't assume any particular content from discrete math (EECS 203) or Calculus 2 (Math 116), but we will assume that you have a strong understanding of the concepts covered in Calculus 1 and some mathematical maturity beyond that. [Chapter 0.2](https://notes.eecs245.org/prelim/derivatives/) in the course notes reviews key ideas from Calculus 1.
-
-The second prerequisite serves to ensure you've written _some_ code before. Labs and homeworks will involve some Python programming; you are not expected to have any experience with Python, but you should be comfortable with the basics of programming. -->
 
 If you're not sure if you meet the prerequisites – or if you don't, but are still interested in taking the course nonetheless – email the instructor.
 
@@ -229,17 +227,16 @@ Most homework problems will be graded manually by our excellent graders, strictl
 
 Some homework problems will be graded automatically by the autograder. If you believe that the autograder has made a mistake in grading your homework, send the instructor an email, again, within one week of the grades being released. Note that it's rare that something is wrong with the autograder, and if that's the case, we'll typically fix the necessary test cases and re-run the autograder for the entire class.
 
-<!-- Talking through homework problems with other students can be very valuable for many reasons:
+Talking through homework problems with other students can be very valuable for many reasons:
 
 - You will learn about someone else’s thought process and learn new ways of solving problems that you may not have thought of.
 - You will get practice explaining your ideas, which is a useful life skill, and important for job interviews.
 - You will get practice thinking critically about whether someone’s proposed solution actually works, and you will learn how to poke holes in shaky arguments.
 - As a result of this collaboration policy, students may have similar approaches to problems, but they should not have similarly presented solutions, such as word choice.
- -->
 
-<!-- Homeworks should be written or typed up and turned in by each student individually. If you want to type up your answers, we will provide a LaTeX template through Overleaf; click the 🍃 emoji next to each homework on the homepage to access the template. Follow these instructions to make a copy of the template, and then add your solutions. -->
+Homeworks should be written or typed up and turned in by each student individually. If you want to type up your answers, we will provide a LaTeX template through Overleaf; click the 🍃 emoji next to each homework on the homepage to access the template. Follow these instructions to make a copy of the template, and then add your solutions.
 
-<!-- Using the template is optional, except for Homework 2, for which it will be mandatory. The purpose of this is to ensure that all students are exposed to LaTeX at some point, since it’ll be useful in later DSC courses as well; we’re requiring it in an earlier homework so that if you find that you like it, you’ll choose to use it for the remainder of the homeworks. If you choose not to use the template in other homeworks, make sure that your handwriting is clearly legible – if we can’t read what you’ve written, we can’t give you points for it! -->
+Using the template is optional, except for Homework 2, for which it will be mandatory. The purpose of this is to ensure that all students are exposed to LaTeX at some point, since it’ll be useful in later DSC courses as well; we’re requiring it in an earlier homework so that if you find that you like it, you’ll choose to use it for the remainder of the homeworks. If you choose not to use the template in other homeworks, make sure that your handwriting is clearly legible – if we can’t read what you’ve written, we can’t give you points for it!
 
 
 ### Office Hours
@@ -361,4 +358,5 @@ This course is being offered for the first time at the University of Michigan. W
 
 While we try to do our best to plan ahead, unfortunately, sometimes circumstances do arise that necessitate a policy change. When this happens, the change will be announced, and this document will be updated with the new policy.
 
-We appreciate any and all feedback, given that this course is new and evolving. If you'd like to provide us with anonymous feedback at any point, you can do so at [this form](https://forms.gle/3FQf9iJ21BrPoJhM9). Thank you!
+We appreciate any and all feedback, given that this course is new and evolving. If you'd like to provide us with anonymous feedback at any point, you can do so at [this form](https://forms.gle/3FQf9iJ21BrPoJhM9). Thank you.
+-->
