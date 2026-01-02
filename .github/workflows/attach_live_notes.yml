@@ -1,0 +1,44 @@
+name: Attach live lecture notes
+
+on:
+  push:
+    paths:
+      - "_incoming/live_notes/*.json"
+  workflow_dispatch:
+    inputs:
+      lecture:
+        description: "Lecture number (e.g. 15)"
+        required: true
+
+jobs:
+  attach-notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Attach live notes
+        run: python .github/scripts/attach_live_notes.py
+        env:
+          LECTURE_INPUT: ${{ github.event.inputs.lecture || '' }}
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add _modules
+          git commit -m "Attach live notes for lecture"
+          git push
