@@ -3,29 +3,16 @@ import json
 import yaml
 from glob import glob
 
-INCOMING_DIR = "_incoming/live-notes"
 MODULES_DIR = "_modules"
 
-def load_requests():
-    lecture_input = os.getenv("LECTURE_INPUT") or ""
-    requests = []
+def get_lecture_and_pdf():
+    lecture_input = os.getenv("LECTURE_INPUT")
+    if not lecture_input:
+        raise RuntimeError("LECTURE_INPUT is required")
 
-    if lecture_input.strip():
-        lec = int(lecture_input)
-        requests.append({
-            "lecture": lec,
-            "pdf-path": f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
-        })
-        return requests
-
-    for path in glob(f"{INCOMING_DIR}/lec*.json"):
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        # normalize
-        data["lecture"] = int(data["lecture"])
-        requests.append(data)
-
-    return requests
+    lec = int(lecture_input)
+    pdf_path = f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
+    return lec, pdf_path
 
 def split_front_matter(text: str):
     """
@@ -52,13 +39,16 @@ def build_front_matter(yaml_obj) -> str:
     return f"---\n{dumped}---\n"
 
 def main():
-    requests = load_requests()
-    if not requests:
-        print("No lecture requests found.")
-        return
+    # --- replacement for load_requests(): single lecture per run via workflow_dispatch ---
+    lecture_input = os.getenv("LECTURE_INPUT") or ""
+    if not lecture_input.strip():
+        raise RuntimeError("LECTURE_INPUT is required (set by workflow_dispatch input 'lecture').")
+
+    lec = int(lecture_input)
+    pdf_path = f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
 
     module_files = sorted(glob(f"{MODULES_DIR}/week-*.md"))
-    found = set()
+    found = False
     changed_files = []
 
     for module_path in module_files:
@@ -76,14 +66,13 @@ def main():
             for event in day.get("events", []) or []:
                 if event.get("type") != "lecture":
                     continue
-                name = event.get("name", "")
-                for req in requests:
-                    if name == f"LEC {req['lecture']}":
-                        print("REQ KEYS:", req.keys())
-                        print("REQ:", req)
-                        event["live_notes"] = req["pdf-path"] # Only underscore, for Jekyll compatibility.
-                        found.add(req["lecture"])
+
+                if event.get("name") == f"LEC {lec}":
+                    # idempotent: only mark modified if the value actually changes
+                    if event.get("live_notes") != pdf_path:
+                        event["live_notes"] = pdf_path
                         modified = True
+                    found = True  # even if already correct
 
         if modified:
             new_raw = build_front_matter(doc) + rest_text
@@ -91,17 +80,10 @@ def main():
                 f.write(new_raw)
             changed_files.append(module_path)
 
-    missing = {req["lecture"] for req in requests} - found
-    if missing:
-        raise RuntimeError(f"Lecture(s) not found in modules: {sorted(missing)}")
+    if not found:
+        raise RuntimeError(f"Lecture {lec} not found in modules (searched name: 'LEC {lec}').")
 
-    # delete incoming json only after successful updates
-    for req in requests:
-        p = f"{INCOMING_DIR}/lec{req['lecture']}.json"
-        if os.path.exists(p):
-            os.remove(p)
-
-    print("Updated:", ", ".join(changed_files) if changed_files else "(none)")
+    print("Updated:", ", ".join(changed_files) if changed_files else "(none; already up to date)")
 
 if __name__ == "__main__":
     main()

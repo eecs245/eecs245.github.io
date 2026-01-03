@@ -4,13 +4,9 @@ permissions:
   contents: write
 
 on:
-  push:
-    paths:
-      - "_incoming/live-notes/*.json"
   workflow_dispatch:
     inputs:
       lecture:
-        description: "Lecture number (e.g. 15)"
         required: true
 
 jobs:
