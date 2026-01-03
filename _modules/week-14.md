@@ -7,7 +7,6 @@ days:
   - name: LEC 21
     type: lecture
     title: Eigenvalues and Eigenvectors, Continued
-    live_notes: resources/lecture-pdfs/lec21-filled.pdf
 - date: '2026-04-08'
   events:
   - name: LEC 22

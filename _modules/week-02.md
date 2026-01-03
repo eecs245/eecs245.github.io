@@ -7,7 +7,6 @@ days:
   - name: LEC 2
     type: lecture
     title: Loss Functions and the Constant Model
-    live_notes: resources/lecture-pdfs/lec2-filled.pdf
 - date: '2026-01-14'
   events:
   - name: LEC 3
