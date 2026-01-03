@@ -7,7 +7,6 @@ days:
   - name: LEC 7
     type: lecture
     title: Projections
-    live_notes: resources/lecture-pdfs/lec07-filled.pdf
 - date: '2026-02-04'
   events:
   - name: LEC 8
