@@ -14,7 +14,7 @@ def load_requests():
         lec = int(lecture_input)
         requests.append({
             "lecture": lec,
-            "pdf_path": f"resources/lecture_pdfs/lec{lec:02d}-filled.pdf"
+            "pdf_path": f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
         })
         return requests
 
