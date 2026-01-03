@@ -1,5 +1,8 @@
 name: Attach live lecture notes
 
+permissions:
+  contents: write
+
 on:
   push:
     paths:
@@ -39,6 +42,6 @@ jobs:
           fi
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add _modules
+          git add _modules _incoming/live_notes
           git commit -m "Attach live notes for lecture"
           git push
