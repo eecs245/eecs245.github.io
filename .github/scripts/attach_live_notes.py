@@ -1,18 +1,10 @@
 import os
-import json
-import yaml
 from glob import glob
+from io import StringIO
+
+from ruamel.yaml import YAML
 
 MODULES_DIR = "_modules"
-
-def get_lecture_and_pdf():
-    lecture_input = os.getenv("LECTURE_INPUT")
-    if not lecture_input:
-        raise RuntimeError("LECTURE_INPUT is required")
-
-    lec = int(lecture_input)
-    pdf_path = f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
-    return lec, pdf_path
 
 def split_front_matter(text: str):
     """
@@ -34,8 +26,16 @@ def split_front_matter(text: str):
     raise RuntimeError("Front matter starts with '---' but no closing '---' found.")
 
 def build_front_matter(yaml_obj) -> str:
-    # keep key order, readable formatting
-    dumped = yaml.safe_dump(yaml_obj, sort_keys=False, allow_unicode=True)
+    # Round-trip dump: preserve quotes, ordering, and indentation as much as possible
+    ryaml = YAML()
+    ryaml.preserve_quotes = True
+    ryaml.width = 10_000  # avoid line-wrapping
+    # Match common front-matter indentation styles
+    ryaml.indent(mapping=2, sequence=4, offset=2)
+
+    buf = StringIO()
+    ryaml.dump(yaml_obj, buf)
+    dumped = buf.getvalue()
     return f"---\n{dumped}---\n"
 
 def main():
@@ -59,7 +59,9 @@ def main():
         if not has_fm:
             raise RuntimeError(f"{module_path} has no YAML front matter starting with '---'.")
 
-        doc = yaml.safe_load(yaml_text) or {}
+        ryaml = YAML()
+        ryaml.preserve_quotes = True
+        doc = ryaml.load(yaml_text) or {}
         modified = False
 
         for day in doc.get("days", []) or []:

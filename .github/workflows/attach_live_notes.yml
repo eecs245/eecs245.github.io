@@ -23,7 +23,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pyyaml
+        run: pip install ruamel.yaml
 
       - name: Attach live notes
         run: python .github/scripts/attach_live_notes.py
