@@ -3,7 +3,7 @@ import json
 import yaml
 from glob import glob
 
-INCOMING_DIR = "_incoming/live_notes"
+INCOMING_DIR = "_incoming/live-notes"
 MODULES_DIR = "_modules"
 
 def load_requests():
@@ -14,7 +14,7 @@ def load_requests():
         lec = int(lecture_input)
         requests.append({
             "lecture": lec,
-            "pdf_path": f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
+            "pdf-path": f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
         })
         return requests
 
@@ -79,7 +79,7 @@ def main():
                 name = event.get("name", "")
                 for req in requests:
                     if name == f"LEC {req['lecture']}":
-                        event["live_notes"] = req["pdf_path"]
+                        event["live-notes"] = req["pdf-path"]
                         found.add(req["lecture"])
                         modified = True
 

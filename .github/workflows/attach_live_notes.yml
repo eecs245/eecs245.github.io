@@ -3,7 +3,7 @@ name: Attach live lecture notes
 on:
   push:
     paths:
-      - "_incoming/live_notes/*.json"
+      - "_incoming/live-notes/*.json"
   workflow_dispatch:
     inputs:
       lecture:
