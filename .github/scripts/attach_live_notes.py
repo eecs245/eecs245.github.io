@@ -79,7 +79,7 @@ def main():
                 name = event.get("name", "")
                 for req in requests:
                     if name == f"LEC {req['lecture']}":
-                        event["live-notes"] = req["pdf-path"]
+                        event["live_notes"] = req["pdf-path"] # Only underscore, for Jekyll compatibility.
                         found.add(req["lecture"])
                         modified = True
 
