@@ -67,12 +67,12 @@ def main():
                 if event.get("type") != "lecture":
                     continue
 
-                if event.get("name") == f"LEC {lec}":
-                    # idempotent: only mark modified if the value actually changes
+                name = (event.get("name") or "").strip()
+                if name in {f"LEC {lec}", f"LEC {lec:02d}"}:
                     if event.get("live_notes") != pdf_path:
                         event["live_notes"] = pdf_path
                         modified = True
-                    found = True  # even if already correct
+                    found = True
 
         if modified:
             new_raw = build_front_matter(doc) + rest_text
