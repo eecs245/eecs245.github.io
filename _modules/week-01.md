@@ -6,11 +6,13 @@ days:
     events:
       - name: LEC 1
         type: lecture
-        title: Introduction 
-        reading: https://notes.eecs245.org/introduction-to-supervised-learning/what-is-machine-learning/
-        reading_text: Ch. 1.1
-        reading2: https://notes.eecs245.org/introduction-to-supervised-learning/squared-loss-constant-model/
-        reading2_text: Ch. 1.2
+        title: Introduction
+        reading: https://notes.eecs245.org/advice/
+        reading_text: Advice
+        reading2: https://notes.eecs245.org/introduction-to-supervised-learning/what-is-machine-learning/
+        reading2_text: Ch. 1.1
+        reading3: https://notes.eecs245.org/introduction-to-supervised-learning/squared-loss-constant-model/
+        reading3_text: Ch. 1.2
   - date: "2026-01-08"
     events:
       - name: Lab 1
