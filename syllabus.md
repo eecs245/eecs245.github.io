@@ -336,6 +336,7 @@ academic performance and affect your ability to participate in day-to-day activi
 In order to support you during such challenging times, the University of Michigan provides a number of
 confidential resources to all enrolled students, many of which are listed [here](https://wellbeing.umich.edu/tools-resources/#resourcesforstudents). Some particularly useful resources include:
 
+- [CoE CARE Center](https://docs.google.com/document/d/1KwA3_R93QSMhOJOmVMLydoT4D4Hu1fhM_QngiDprX6U/edit?usp=sharing)
 - [Counseling and Psychological Services (CAPS)](https://caps.umich.edu/contact); 734-764-8312 (24/7 line)
 - [Sexual Assault Prevention and Awareness Center (SAPAC)](https://sapac.umich.edu); 734-936-3333 (24/7 line)
 - Psychiatric Emergency Services: 734-996-4747
