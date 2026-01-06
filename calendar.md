@@ -21,7 +21,7 @@ The events are color-coded:
 </div>
 
 {: .yellow }
-> Due to staffing shortages, **we will not be staffing the Thursday 4:30-6:30PM lab section**. If you are enrolled in the Thursday 4:30-6:30PM section, you should attend one of the other three sections shown in the calendar. 
+> Due to staffing shortages, **we will not be staffing the Thursday 4:30-6:30PM lab section**. If you are enrolled in this section, you should attend one of the other three sections shown in the calendar. 
 > 
 > If the only time you are free is Thursday 4:30-6:30PM, you should attend the second half of the Thursday 3:30-5:30PM section and then the office hours that follow afterwards held by the same TA.
 
