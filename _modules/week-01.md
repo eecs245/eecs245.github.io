@@ -19,4 +19,8 @@ days:
         type: lab
         title: Math Foundations and Environment Setup
         note: Note that the Thursday 4:30-6:30PM lab section has been cancelled; if you are enrolled in that section, you should attend one of the other three sections listed in the <a href="calendar">Calendar</a>.
+        reading: https://notes.eecs245.org/math-foundations/summation/
+        reading_text: "Appendix 1"
+        reading2: https://notes.eecs245.org/math-foundations/derivatives/
+        reading2_text: "Appendix 2"
 ---
