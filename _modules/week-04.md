@@ -14,9 +14,9 @@ days:
         title: Orthogonality and the Dot Product
   - date: "2026-01-29"
     events:
-      - name: Lab 3
+      - name: Lab 4
         type: lab
-        title: Lab 3
+        title: Lab 4
   - date: "2026-01-30"
     events:
       - name: HW 3

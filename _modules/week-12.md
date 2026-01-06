@@ -14,12 +14,12 @@ days:
         title: Convexity
   - date: "2026-03-26"
     events:
-      - name: Lab 10
+      - name: Lab 11
         type: lab
-        title: Lab 10
+        title: Lab 11
   - date: "2026-03-27"
     events:
-      - name: HW 10
+      - name: HW 9
         type: hw
-        title: Homework 10
+        title: Homework 9
 ---

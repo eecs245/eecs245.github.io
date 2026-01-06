@@ -1,12 +1,9 @@
 ---
 layout: default
-title: "⚙️ Tech Support"
+title: "⚙️ Environment Setup"
 nav_order: 4
-description: Instructions on how to set up your programming environment and type up math problems.
+description: Instructions on how to set up your programming environment.
 ---
-
-{: .red }
-**This page is a work in progress, and is subject to change as long as this disclaimer is here.**
 
 # {{ page.title }}
 {:.no_toc}
@@ -19,9 +16,21 @@ description: Instructions on how to set up your programming environment and type
 
 ---
 
-<!-- ## Walkthrough Video
+## Where Will We Write Code?
 
-[This video](https://www.loom.com/share/b74ed3c77fe74ef4a4fa4fcc2b247699) walks through most of the steps here, but it’s not a substitute for reading this page carefully.
+In this class, we'll be writing Python code, specifically in the context of machine learning. Instead of using a more traditional IDE or text editor + Terminal setup, where you write your code in one window and run it in a separate command-line, we will be using [Jupyter](https://jupyter.org), which allows us to write and run code within a single document. Within a _Jupyter Notebook_, not only can you run code and see its results in-line (from the results of `print` statements to interactive visualizations), but you can also write text and include images, which will be useful when communicating the results of data analyses to others.
+
+In this class, labs and homeworks will involve writing some code in Python, using the Jupyter Notebook interface and some very specific versions of Python packages. There are two ways you can write code in this class:
+- **Option 1 (strongly preferred)**: By setting up Jupyter Notebooks and the correct package versions on your computer, and using Git to pull the latest versions of assignments.
+- **Option 2 (only as a backup)**: Using the **EECS 245 DataHub**, a web-based environment that allows you to access and run all necessary code directly in your browser by clicking a single link.
+
+Option 1 – setting up Jupyter Notebooks on your computer – requires a bit of setup time (which we'll help you with in Lab 1), but once you have it set up, it's robust, reliable, and you can work on assignments on your own computer without needing to use the internet. At some point in a future course or in industry, you'll need to do this anyways. Option 2 – using our server – can be easy to get started but is much less reliable, and is prone to crashing.
+
+---
+
+## Option 1: Local Setup
+
+[This video](https://www.loom.com/share/b74ed3c77fe74ef4a4fa4fcc2b247699) walks through most of the steps here, but it’s not a substitute for reading this page carefully. (The video was originally recorded for a different class, which is why some of the names are different than what we're using here.)
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/b74ed3c77fe74ef4a4fa4fcc2b247699?sid=15db74ca-5f63-401a-bdac-a86ef00ecab5" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
@@ -35,58 +44,11 @@ It's a long, but useful video. In addition to walking you through the setup stag
 - [24:53](https://www.loom.com/share/b74ed3c77fe74ef4a4fa4fcc2b247699?t=1493): JupyterLab, Jupyter Notebook, Jupyter Notebook Classic, VSCode, and Bash Profiles
 - [29:25](https://www.loom.com/share/b74ed3c77fe74ef4a4fa4fcc2b247699?t=1765): Verifying public tests pass on Gradescope
 
-<!-- {: .green }
-**You're encouraged to follow along by walking through and submitting the "Example Homework", which can be found in our public course GitHub repository. It is not a real assignment, but just exists to make sure you know how to access, run, and submit our assignments.** -->
-
-## Where Will We Write Code?
-
-In this class, we'll be writing Python code, specifically in the context of machine learning. Instead of using a more traditional IDE or text editor + Terminal setup, where you write your code in one window and run it in a separate command-line, we will be using [Jupyter](https://jupyter.org), which allows us to write and run code within a single document. Within a _Jupyter Notebook_, not only can you run code and see its results in-line (from the results of `print` statements to interactive visualizations), but you can also write text and include images, which will be useful when communicating the results of data analyses to others.
-
-In this class, labs and homeworks will involve writing some code in Python, using the Jupyter Notebook interface and some very specific versions of Python packages. There are two ways you can write code in this class:
-
-- **Option 1**: Using the **EECS 245 DataHub**, a web-based environment that allows you to access and run all necessary code directly in your browser by clicking a single link.
-- **Option 2**: By setting up Jupyter Notebooks and the correct package versions on your computer, and using Git to pull the latest versions of assignments.
-
-The choice of which option to follow is up to you, and you can switch between the two at any time.
-
-The pro of Option 1 is that it's very easy to get started – you don't need to deal with your Terminal, or Python packages, or Git. We've already installed all of the correct versions of Python packages for you on the DataHub, and every time we release a new assignment, we'll give you a **magic link** on the course homepage that will automatically open the relevant code notebook on your DataHub, without you needing to use Git at all. The downside to Option 1 is that the servers we're using for the DataHub are experimental and not very powerful, and if too many students try and access them at once, they may become slow or unresponsive. There is a chance you may be required to use Option 2 later in the semester, if the Option 1 servers prove to be too unreliable.
-
-At some point in a future course or in industry, you'll need to follow Option 2. The pro is that you can work on assignments on your own computer without needing to use the internet, and the performance of your computer will be better than the DataHub's. The downside is that the setup is slightly more complicated, and each time you need to access a new assignment you'll need to pull it from `Git`, but we'll do our best to walk you through it.
-
----
-
-## Option 1: Using the EECS 245 DataHub
-
-The EECS 245 DataHub can be found at [datahub.eecs245.org](https://datahub.eecs245.org). Only students enrolled in EECS 245 have access to the server.
-
-The **first time** you access DataHub, your username will be your uniqname (without `@umich.edu`). The password you enter will become your password for accessing DataHub. If you ever forget or need to reset your password, email `rampure@umich.edu` and we'll trigger a password reset.
-
-You'll never really need to go to [datahub.eecs245.org](https://datahub.eecs245.org) directly. Instead, for labs, homeworks, or lectures that have programming components, we'll give you a magic link that will automatically open the relevant code notebook on your DataHub. Clicking a magic link **does not** delete any of your work – all it does is pull the latest versions of our assignment skeletons onto your DataHub.
-
-**The first time** you open a notebook on DataHub – likely in Lab 1 – you'll need to **click "Python 3 (ipykernel)"** in the top right corner of the notebook and select **"Python 3.10 for EECS 245"**. Make sure to click "Always start the preferred kernel". 
-
-<center><img src="../assets/site-images/select-kernel.png" alt="Select Kernel" width="300"></center>
-
-You should only need to do this step once, but if you ever see "Python 3 (ipykernel)" in the top right corner of the notebook, make sure to switch it to "Python 3.10 for EECS 245".
-
-To submit your Jupyter Notebooks to Gradescope, you'll need to first download them to your computer, and then upload them to Gradescope.
-
-{: .yellow }
-> As mentioned above, Option 1 has the potential of being slow and unreliable, so if you're comfortable with the local steps, we recommend following Option 2.
->
-> Another note: You should not store any sensitive information on DataHub, as the instructors have access to your files for debugging purposes. The server is limited in its storage capacity, so you should only use it to work on course materials for this class, nothing else.
-
----
-
-## Option 2: Local Setup
-
 Here, we'll detail how to:
 1. Download Jupyter Notebooks and set up the correct Python packages on your computer, i.e. set up your "programming environment".
 1. Access the latest versions of assignments from our course GitHub repository.
 
 We'll use the command-line (Terminal on macOS and Linux, or WSL on Windows) here extensively. This tutorial contains all of the commands you'll need to follow, but if you'd like more details, you can check out the [EECS 280 Command-Line Tutorial](https://eecs280staff.github.io/tutorials/cli.html).
-
-There is also a [**🎥 walkthrough video**](https://www.loom.com/share/b74ed3c77fe74ef4a4fa4fcc2b247699) we recorded for a different class that covers many of the same steps. Feel free to refer to it, but it's not a substitute for reading this page carefully.
 
 ### Step 0: If using Windows, install WSL
 {:.no_toc}
@@ -154,13 +116,13 @@ If you get an error saying `mamba` isn't defined, try closing and reopening your
 **The four steps above only need to be run once!**
 
 
-Now, every time you work on assignments for this class, all you need to do is run
+Now, every time you work on assignments for this class, to active your environment, just run:
 
 ```
 mamba activate eecs245
 ```
 
-in your Terminal. If you need to install any packages into your `eecs245` environment using `mamba install`, make sure to activate the environment first.
+in your Terminal. If you need to install any packages into your `eecs245` environment using `mamba install` or `pip install`, make sure to activate the environment first.
 
 ### Launching Jupyter Notebooks
 {:.no_toc}
@@ -186,9 +148,9 @@ You can also use [VSCode](https://code.visualstudio.com/) (not the same as Visua
 {:.no_toc}
 
 All of our course materials, including your assignments, are hosted on
-GitHub in [this Git repository](https://github.com/eecs245/wn26-code). If you follow Option 1 and use DataHub, the magic links we provide automatically pull from this repository.
+GitHub in [this Git repository](https://github.com/eecs245/wn26-code). (If you follow Option 2 and use DataHub, the magic links we provide automatically pull from this repository.)
 
-If following Option 2, though, you'll need to pull from this repository any time we release a new assignment. This means that you'll need to download and use Git in order to work with the course
+If following Option 1 and using your own computer, you'll need to pull from this repository any time we release a new assignment. This means that you'll need to download and use Git in order to work with the course
 materials. You can do so [here](https://git-scm.com/).
 
 Git is a *version control system*. In short, it is used to keep track of
@@ -214,26 +176,29 @@ git pull
 This will **not** overwrite your work. In fact, Git is designed to make it very difficult
 to lose work (although it\'s still possible!).
 
-<!-- **Merge Conflicts**
 
-You might – but hopefully won't! – face issues when using `git pull` regarding merge issues and branches. This is caused by files being updated on your side while we are also changing the [Git repository](https://github.com/eecs245/wn26-code) by updating assignments on our side.
+---
 
-To minimize frustration, working with GitHub pulls, merges, etc., it's a good idea to save your important work locally so that if you accidentally overwrite your files you still have the work saved. **Save your work locally, in a separate, duplicated folder (e.g. duplicate `eecs398` to `eecs398-copy`, if your local folder is called `eecs398`) before following the steps below.**
+## Option 2: Using the EECS 245 DataHub
 
-1. `git status` shows the current state of your Git working directory and staging area. It's a good sanity check to start with. You will probably see your project and lab files that you have worked on.
-1. `git add .`  will add all your files to be ready to commit.
-1. `git commit -m "some message of your choice"`  will commit the files, with some description in the quotations. This can be whatever you want, it won't matter.
+The EECS 245 DataHub can be found at [datahub.eecs245.org](https://datahub.eecs245.org). Only students enrolled in EECS 245 have access to the server.
 
-At this stage, if you `git pull`, it should work. You should double-check that you have new files, as well as that your old files are unchanged. If they are changed then you should be able to just copy-paste from your local backup.
+The **first time** you access DataHub, your username will be your uniqname (**without** `@umich.edu`). The password you enter will become your password for accessing DataHub. If you ever forget or need to reset your password, email `rampure@umich.edu` and we'll trigger a password reset.
 
-If the above steps do **not** work and you actually have a **merge conflict**, then:
+You'll never really need to go to [datahub.eecs245.org](https://datahub.eecs245.org) directly. Instead, for labs, homeworks, or lectures that have programming components, we'll give you a **magic link** that will automatically open the relevant code notebook on your DataHub. Clicking a magic link **does not** delete any of your work – all it does is pull the latest versions of our assignment skeletons onto your DataHub.
 
-1. `git checkout --theirs [FILENAME]`  will tell git that whenever a conflict occurs in `[FILENAME]` to keep your version. Run this for each file with a conflict.
-1. `git add [FILENAME]` to mark each file with a conflict as resolved. 
-1. `git rebase --continue` or `git merge`, depending on the setup.
+**The first time** you open a notebook on DataHub, you'll need to **click "Python 3 (ipykernel)"** in the top right corner of the notebook and select **"Python 3.10 for EECS 245"**. Make sure to click "Always start the preferred kernel". 
 
-There's a lot more to using Git than we've outlined here. What's here should be sufficient for this class, but if you find yourself needing more help, take a look [here](https://www.w3schools.com/git/) or [here](https://dsc-capstone.org/2023-24/lessons/06/).
- -->
+<center><img src="../assets/site-images/select-kernel.png" alt="Select Kernel" width="300"></center>
+
+You should only need to do this step once, but if you ever see "Python 3 (ipykernel)" in the top right corner of the notebook, make sure to switch it to "Python 3.10 for EECS 245".
+
+To submit your Jupyter Notebooks to Gradescope, you'll need to first download them to your computer, and then upload them to Gradescope.
+
+{: .yellow }
+> As mentioned above, DataHub has the potential of being slow and unreliable, so if you're comfortable with the local steps, we recommend following Option 1.
+>
+> Another note: You should not store any sensitive information on DataHub, as the instructors have access to your files for debugging purposes. The server is limited in its storage capacity, so you should only use it to work on course materials for this class, nothing else.
 
 ---
 

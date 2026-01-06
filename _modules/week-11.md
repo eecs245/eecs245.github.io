@@ -14,12 +14,12 @@ days:
         title: The Gradient Vector
   - date: "2026-03-19"
     events:
-      - name: Lab 9
+      - name: Lab 10
         type: lab
-        title: Lab 9
+        title: Lab 10
   - date: "2026-03-20"
     events:
-      - name: HW 9
+      - name: HW 8
         type: hw
-        title: Homework 9
+        title: Homework 8
 ---

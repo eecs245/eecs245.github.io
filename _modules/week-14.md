@@ -14,12 +14,12 @@ days:
     title: Adjacency Matrices and Diagonalization
 - date: '2026-04-09'
   events:
-  - name: Lab 12
+  - name: Lab 13
     type: lab
-    title: Lab 12
+    title: Lab 13
 - date: '2026-04-10'
   events:
-  - name: HW 11
+  - name: HW 10
     type: hw
-    title: Homework 11
+    title: Homework 10
 ---

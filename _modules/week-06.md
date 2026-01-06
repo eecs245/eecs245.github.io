@@ -14,9 +14,9 @@ days:
         title: Bases and Dimension
   - date: "2026-02-12"
     events:
-      - name: Lab 5
+      - name: Lab 6
         type: lab
-        title: Lab 5
+        title: Lab 6
   - date: "2026-02-13"
     events:
       - name: HW 5

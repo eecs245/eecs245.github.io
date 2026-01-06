@@ -17,10 +17,8 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {{ staffer }}
 {% endfor %}
 
-{: .blue }
-> **Welcome to EECS 245, Winter 2026!** This site is under construction; anything you see here is tentative and subject to change. If you're considering taking the course next term, look at:
-> - [**eecs245.org/next**](./next), which has information on the **workload, course credit for various majors, and prerequisites**, along with the **letter grade distribution and course evaluations from Fall 2025**.
-> - [**eecs245.org/fa25**](https://eecs245.org/fa25), the course website for Fall 2025, where you can find links to lecture recordings, notes, and lab worksheets from last semester.
+{: .green }
+> **Welcome to EECS 245, Winter 2026!** Make sure to read the [**Syllabus**](./syllabus) and complete the [**Welcome Survey**](https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor). See you in lecture on Wednesday at 12PM and in lab later this week!
 
 {% for module in site.modules %}
 {{ module }}

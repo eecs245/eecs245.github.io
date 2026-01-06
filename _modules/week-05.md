@@ -14,9 +14,9 @@ days:
     title: Spans and Linear Independence
 - date: '2026-02-05'
   events:
-  - name: Lab 4
+  - name: Lab 5
     type: lab
-    title: Lab 4
+    title: Lab 5
 - date: '2026-02-06'
   events:
   - name: HW 4

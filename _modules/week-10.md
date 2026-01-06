@@ -14,12 +14,12 @@ days:
         title: Regression using Linear Algebra
   - date: "2026-03-12"
     events:
-      - name: Lab 8
+      - name: Lab 9
         type: lab
-        title: Lab 8
+        title: Lab 9
   - date: "2026-03-13"
     events:
-      - name: HW 8
+      - name: HW 7
         type: hw
-        title: Homework 8
+        title: Homework 7
 ---

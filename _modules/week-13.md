@@ -14,12 +14,7 @@ days:
         title: Eigenvalues and Eigenvectors
   - date: "2026-04-02"
     events:
-      - name: Lab 11
+      - name: Lab 12
         type: lab
-        title: Lab 11
-  - date: "2026-04-03"
-    events:
-      - name: HW 10
-        type: hw
-        title: Homework 10
+        title: Lab 12
 ---

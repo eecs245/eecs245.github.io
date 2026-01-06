@@ -6,8 +6,6 @@ description: >-
 nav_order: 2
 ---
 
-{: .red }
-**This page is a work in progress, and is subject to change as long as this disclaimer is here.**
 
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
@@ -15,24 +13,19 @@ nav_order: 2
 # 📖 Syllabus
 {:.no_toc}
 
-<!-- ## Table of contents
+## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
-{:toc} -->
+{:toc}
 
 ---
 
-Coming soon!
-
-<!-- 
 ## Overview
-
-### Course Number
 
 ### Instructor
 
-See the [👩‍🏫 Staff](../staff) page for contact information.
+See the [👩‍🏫 Staff](../staff) page for contact information, and [eecs245.org/next](https://eecs245.org/next) for course evaluations from Fall 2025.
 
 ### Content
 
@@ -44,11 +37,18 @@ This course aims to provide:
 
 ### Credit
 
-This course is worth 4 credits, and is currently approved to count towards:
-- The linear algebra requirement for the CS-Eng major.
-- The linear algebra "category" for the CS-LSA major (see [here](https://docs.google.com/document/d/1i0W77CzwMK6l3FFFdG7_7urp8H_oE4EaOzRPFOJdrxo/preview?tab=t.0#heading=h.m67kk7886dyq) for the CS-LSA program guide).
-- The linear algebra prerequisite for EECS 445.
-- TODO
+This course is worth 4 credits, and is currently approved to count towards the **linear algebra requirement for**:
+
+- **Computer Science** majors (CS-Eng and CS-LSA*).
+- **Data Science** majors (DS-Eng and DS-LSA).
+- **Statistics** majors.
+- **Artificial Intelligence** minors.
+
+And the linear algebra prerequisite for:
+- EECS 442, EECS 445, EECS 448, EECS 474, EECS 476, and CSE 576.
+- **Any** 400-level STATS or DATASCI course with a linear algebra prerequisite.
+
+<small>*CS-LSA students don't have a linear algebra requirement, but this course fits in the linear algebra "bucket" for the second math course; see [here](https://docs.google.com/document/d/1i0W77CzwMK6l3FFFdG7_7urp8H_oE4EaOzRPFOJdrxo/preview?tab=t.0#heading=h.m67kk7886dyq) for details.</small>
 
 <details><summary><b>Who should take this course?</b></summary>
 
@@ -105,11 +105,11 @@ You'll need to make accounts on the following sites:
 - **Ed:** We’ll be using Ed as our course message and discussion board. More
   details are in the [Communication](#communication) section below. If you
   didn’t already get an invitation to our Ed course, [sign up
-  here](https://edstem.org/us/join/ZeqXCK/).
+  here](https://edstem.org/us/join/CCnkTE).
 
 - **Gradescope:** You’ll submit all assignments to
-  [Gradescope](https://www.gradescope.com/courses/1077394/), and this is where all of
-  your grades will live as well. Most homeworks will involve creating a PDF with your answers and submitting that to Gradescope. Most homeworks will also involve submitting code to an autograder on Gradescope; we will not be using the EECS department-specific autograder. You should have received an email invitation for
+  [Gradescope](https://www.gradescope.com/courses/1202817/), and this is where all of
+  your grades will live as well. All homeworks will involve creating a PDF with your answers and submitting that to Gradescope. Some homeworks will also involve submitting code to an autograder on Gradescope; we will not be using the EECS department-specific autograder. You should have received an email invitation for
   Gradescope, but if not please let us know as soon as possible (preferably via
   Ed).
 
@@ -118,11 +118,11 @@ Note that we will **not** be using Canvas for anything this semester (so please 
 
 ### Programming Environment
 
-Some labs and homeworks will involve writing Python code in Jupyter Notebooks. We've created a virtual Jupyter Notebook server that will allow you to access and write code directly from your browser, though you can also set up the necessary programming environment locally on your computer if you'd like. See the [Tech Support](../tech-support) page of the course website for more details.
+Some labs and homeworks will involve writing Python code in Jupyter Notebooks. **As soon as you can**, follow the steps in the [Environment Setup](../env-setup) page to set up your programming environment locally on your computer. Alternatively, we've created a Jupyter Notebook server that will allow you to access and write code directly from your browser, but it can be unreliable, so you should only use it as a last resort.
 
 ### Forms
 
-Please fill out the required [Welcome Survey](https://forms.gle/tUz2QhqzJDRxdtDn8) to tell us a bit more about your background and whether you need alternate exams **no later than Wednesday, September 3rd**.
+Please fill out the required [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor) to tell us a bit more about your background and whether you need alternate exams **no later than Friday, January 16th**.
 
 ---
 
@@ -153,43 +153,54 @@ post instead.**
 
 ### Lectures
 
-Lectures will be held in-person on Tuesdays and Thursdays from 3-4:30PM in 1013 DOW. Attendance is not required, **though you are encouraged to attend in-person if you are able to**, no matter which section you're enrolled in (i.e. students in LEC 004 and LEC 005 can both attend lecture). Lectures will be recorded. We will do our best to make lectures are interactive and well-worth your time.
+Lectures will be held in-person on Mondays and Wednesdays from 12-1:30PM in 1013 DOW. Attendance is not required, **though you are encouraged to attend in-person if you are able to**, no matter which section you're enrolled in (i.e. students in LEC 001 and LEC 002 can both attend lecture). Lectures will be recorded. We will do our best to make lectures are interactive and well-worth your time.
 
 Recordings will be made publicly available so that students who are not enrolled – including students not at Michigan – can benefit from the recordings. As part of your participation in this course, you may be recorded (e.g. if you answer a question). If you do not wish to be recorded, please email the instructor to discuss alternate arrangements.
 
-Course notes are being written specifically for EECS 245, and will be your main resource in this class. These can be found at [notes.eecs245.org](https://notes.eecs245.org). Relevant sections of the course notes will be linked directly on the course homepage as soon as they're available, and **you are expected to read them all**. If you find any typos or ways to improve the notes, please let us know.
+Course notes have been written specifically for EECS 245, and will be your main resource in this class. These can be found at [notes.eecs245.org](https://notes.eecs245.org). We are constantly refining the notes, and will link them directly underneath the relevant lecture once they are ready.
+
+{: .yellow }
+**These notes aren't optional readings, they're mandatory.** It is nearly impossible to succeed in this course without reading them regularly. See the [Advice](https://notes.eecs245.org/advice) section of the notes for testimonies from previous students.
+
+If you find any typos or ways to improve the notes, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfrAu2o3eBa9ZvjerOFxqDHV63GlR9NoYdA4TOgK8BBoSguCg/viewform?usp=dialog).
 
 Live lectures will closely follow the notes. Instead of presenting using slides in lecture, we will start with a blank document on a tablet, and write out the lecture content in real time, allowing us to move at a pace that is appropriate for the class and to focus on the high-level ideas (details can be found in the notes). Anything we write in live lectures will be posted as a PDF on the course website after lecture.
 
 ### Labs
 
-There are two lab sections on Wednesdays. You can attend either lab section on any given week, regardless of which section you're enrolled in.
-- 12:30-2:30PM in 2246 CSRB
-- 4:30-6:30PM in 1008 FXB
+There are **three** lab sections throughout the week. **You can attend any lab section on any given week, regardless of which section you're enrolled in.**
+- Thursdays, 12:30-2:30PM in 2918 COOL
+- Thursdays, 3:30-5:30PM in 1017 DOW
+- Fridays, 11:30AM-1:30PM in 1014 DOW
+
+{: .yellow }
+> Due to staffing shortages, **we will not be staffing the Thursday 4:30-6:30PM lab section**. If you are enrolled in the Thursday 4:30-6:30PM section, you should attend one of the other three sections above. 
+> 
+> If the only time you are free is Thursday 4:30-6:30PM, you should attend the second half of the Thursday 3:30-5:30PM section and then the office hours that follow afterwards held by the same TA.
 
 Labs are meant to provide hands-on practice with the recent lecture material and preparation for the upcoming homeworks and exams. 
 
 Each lab session will have an accompanying **physical worksheet** that is distributed in-person at the start of lab and meant to be completed during the live lab session. Each worksheet is broken into several activities; some activities will involve writing math on the paper worksheet, and others will involve writing code in a Jupyter Notebook and either showing your TA a working solution or submitting it to the autograder. 
 
-To earn credit for a lab, you must finish all activities and **show the lab TA a completed worksheet** by the end of the lab session. **This means that there is no option to receive credit for labs remotely.** 
+To earn credit for a lab, you must make an effort to attempt all "required" activities and **show the lab TA an almost completed worksheet** by the end of the lab session. **This means that there is no option to receive credit for labs remotely.** Worksheets will usually include additional practice problems for you to work through after lab.
 
-There will be 13 labs in total. Each week you attend and submit the lab will earn you 1 "lab point", up to a maximum of 10 lab points. Your lab score will be the number of lab points you earn out of 10. This means **you can miss up to 3 labs for any reason** (late add, extenuating circumstances, etc.) and still earn a full lab score. This flexibility is provided in lieu of allowing for remote submissions, since we really believe in the power of working on problems in-person and on-paper with other students. Details can be found in the [Grades](#grades) section below.
+There will be 13 labs in total. Each week you attend and submit the lab will earn you 1 "lab point", up to a maximum of 10 lab points. Your lab score will be the number of lab points you earn out of 10. This means **you can miss up to 3 labs for any reason** (late add, extenuating circumstances, etc.) and still earn a full lab score. This flexibility is provided in lieu of allowing for remote submissions, since we really believe in the power of working on problems in-person and on-paper with other students. Details can be found in the [Grades](#grades) section below. (The course schedule currently shows 14 lab sections; we will either cancel one throughout the term or give everyone full attendance credit for one of them.)
 
-Lab worksheets (and solutions) will be posted on the course website on Wednesday evenings, after both lab sessions have concluded.
+Lab worksheets and solutions will be posted on the course website on Friday afternoons, after all lab sessions have concluded.
 
 ### Homeworks
 
-This class will have 11 **weekly** homework assignments, which are to be completed **individually**. See the course homepage for the most up-to-date information on homework due dates.
+This class will have 11 **weekly** homework assignments, which are to be completed **individually**. Homeworks will usually be released on Friday afternoons and be due the following **Friday at 11:59PM**, though this may change in any given week. See the [course homepage](../) for the most up-to-date deadline schedule.
 
 **Collaboration Policy**
 
-The majority of homework problems will involve writing solutions to math problems, but some will involve writing code in a Jupyter Notebook. The point of a homework problem is not really to "find the answer" – we know the answers, and ChatGPT can likely provide answers to any homework problem we could ask you pretty effortlessly. Rather, the point of a homework problem is to help you **deeply understand the material**, **apply it to new problems**, and build **problem-solving skills** along the way that will pay dividends in future courses and in your life as a graduate of the University of Michigan.
+The majority of homework problems will involve writing solutions to math problems, but some will involve writing code in a Jupyter Notebook. The point of a homework problem is not really to "find the answer" – we know the answers, and ChatGPT can easily provide answers to any homework problem we could ask you. Rather, the point of a homework problem is to help you **deeply understand the material**, **apply it to new problems**, and build **problem-solving skills** along the way that will pay dividends in future courses and in your life as a graduate of the University of Michigan.
 
 Think of it like this: driving 10 miles is a lot easier than running 10 miles, and in many cases, driving makes total sense. But, if you're trying to exercise, driving 10 miles won't really help you achieve your goals. If you buy that analogy, just think of driving as "copying the answers from someone else" and running as "thinking through problems yourself" – both may earn you the same score on homeworks, but only the latter will help you in the long run.
 
-With that in mind, you can – and are actually encouraged to! – talk to other students in the class about the problems and discuss solution strategies. Talking and debating about challenging ideas is a great way to solidify your own understanding of the material. That said, you should not share any written communication. You can tell someone how to approach a homework problem if they're stuck, but you cannot show them how to do it. One way to tell if you are respecting this boundary is to ask yourself whether your collaboration could take place over the phone. Additionally, the content of your verbal communication should involve the problem-solving strategy and approach, and you should not directly compare answers with classmates.
+**With that in mind, you can – and are actually encouraged to! – talk to other students in the class about the problems and discuss solution strategies. Talking and debating about challenging ideas is a great way to solidify your own understanding of the material.** That said, you should not share any written communication. You can tell someone how to approach a homework problem if they're stuck, but you cannot show them how to do it. One way to tell if you are respecting this boundary is to ask yourself whether your collaboration could take place over the phone. Additionally, the content of your verbal communication should involve the problem-solving strategy and approach, and you should not directly compare answers with classmates.
 
-Similarly, you can ask generative AI tools like ChatGPT for help with concepts, because these tools _can_ be genuinely useful. Just be cautious that they can also lead you astray. If you find a particularly useful explanation online, either on a website or from a generative AI tool, please let us know! You cannot ask generative AI tools to solve homework problems for you or to verify your answers. Doing so is only cheating yourself. Remember you will not be able to use these tools during the exams, which are worth 70% of your overall grade. 
+Similarly, you can ask generative AI tools like ChatGPT for help with concepts, because these tools _can_ be genuinely useful. Just be cautious that they can also lead you astray. If you find a particularly useful explanation online, either on a website or from a generative AI tool, please let us know! **You cannot ask generative AI tools to solve homework problems for you or to verify your answers.** Doing so is only cheating yourself. **Remember you will not be able to use these tools during the exams, which are worth 70% of your overall grade.**
 
 If we suspect that your homework answers are not the result of your own work, we reserve the right to interview you in-person and ask you to answer and explain similar questions, and submit a case to the [Honor Council](https://ecas.engin.umich.edu/honor-council/).
 
@@ -227,17 +238,7 @@ Most homework problems will be graded manually by our excellent graders, strictl
 
 Some homework problems will be graded automatically by the autograder. If you believe that the autograder has made a mistake in grading your homework, send the instructor an email, again, within one week of the grades being released. Note that it's rare that something is wrong with the autograder, and if that's the case, we'll typically fix the necessary test cases and re-run the autograder for the entire class.
 
-Talking through homework problems with other students can be very valuable for many reasons:
-
-- You will learn about someone else’s thought process and learn new ways of solving problems that you may not have thought of.
-- You will get practice explaining your ideas, which is a useful life skill, and important for job interviews.
-- You will get practice thinking critically about whether someone’s proposed solution actually works, and you will learn how to poke holes in shaky arguments.
-- As a result of this collaboration policy, students may have similar approaches to problems, but they should not have similarly presented solutions, such as word choice.
-
-Homeworks should be written or typed up and turned in by each student individually. If you want to type up your answers, we will provide a LaTeX template through Overleaf; click the 🍃 emoji next to each homework on the homepage to access the template. Follow these instructions to make a copy of the template, and then add your solutions.
-
-Using the template is optional, except for Homework 2, for which it will be mandatory. The purpose of this is to ensure that all students are exposed to LaTeX at some point, since it’ll be useful in later DSC courses as well; we’re requiring it in an earlier homework so that if you find that you like it, you’ll choose to use it for the remainder of the homeworks. If you choose not to use the template in other homeworks, make sure that your handwriting is clearly legible – if we can’t read what you’ve written, we can’t give you points for it!
-
+Homeworks should be written or typed up and turned in by each student individually. If you want to type up your answers, we will provide a LaTeX template through Overleaf; click the 🍃 emoji next to each homework on the homepage to access the template. Homework 1 will include instructions on how to use the template. This template will be optional, except for one homework assignment, for which it will be mandatory.
 
 ### Office Hours
 
@@ -253,9 +254,9 @@ This class has two Midterm Exams and one Final Exam, all of which will be admini
 
 | Exam | Date and Time | Content |
 | --- | --- | --- |
-| Midterm 1 | Tuesday, September 30th, 3-4:30PM (in lecture) | Lectures 1-10 only |
-| Midterm 2 | Tuesday, November 11th, 3-4:30PM (in lecture) | Lectures 11-20 only |
-| Final Exam | Wednesday, December 10th, 10:30AM-12:30PM | ~25% Lectures 1-10<br>~25% Lectures 11-20<br>~50% Lectures 21-26 |
+| Midterm 1 | Monday, February 16th, 7-9PM | Lectures 1-10 only |
+| Midterm 2 | Monday, March 30th, 7-9PM | Lectures 11-19 only |
+| Final Exam | Monday, April 27th, 1:30-3:30PM | ~30% Lectures 1-10<br>~30% Lectures 11-19<br>~40% Lectures 20-25 |
 
 The specific lecture numbers above are subject to change slightly. Midterm 2 is not cumulative. The Final Exam will be cumulative, and broken into three parts:
 
@@ -267,7 +268,7 @@ The specific lecture numbers above are subject to change slightly. Midterm 2 is 
 
 This "redemption policy" for Parts 1 and 2 is designed to help you boost your Midterm 1 and Midterm 2 scores if you didn't do as well as you'd hoped. This policy can only help your grade; it can't hurt. To be clear, all three parts of the Final Exam are required and part of your Final Exam score.
 
-If you have conflicts with any of the exams, please let us know on the [Welcome Survey](https://forms.gle/tUz2QhqzJDRxdtDn8). We may provide alternate exam times for students with a valid, documented conflict with a required activity in another course or official university-affiliated activity, or to help students avoid negative academic consequences when their religious obligations conflict with academic requirements.
+If you have conflicts with any of the exams, please let us know on the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor). We may provide alternate exam times for students with a valid, documented conflict with a required activity in another course or official university-affiliated activity, or to help students avoid negative academic consequences when their religious obligations conflict with academic requirements.
 
 Exams are to be completed individually, with absolutely no collaboration allowed. Any suspected violations will be reported to the [Honor Council](https://ecas.engin.umich.edu/honor-council/).
 
@@ -301,6 +302,8 @@ other grade. To determine the final grade, we will ask questions like “Did thi
 student master the material?”. With that said, grades will not be any stricter
 than the standard grading scale (where an A+ is a 97+, A is 93+, A- is 90+,
 etc). For instance, the threshold for an “A” will never be higher than 93%.
+
+You can see last semester's letter grade distribution [here](https://eecs245.org/next/#workload-and-final-grade-distribution); we will aim to achieve a similar distribution this semester, but minor variations are expected.
 
 Try your best not to worry about grades, and we’ll reciprocate by being fair.
 We’re in this together ❤️.
@@ -346,7 +349,7 @@ confidential resources to all enrolled students, many of which are listed [here]
 
 ## Acknowledgements
 
-This course is being offered for the first time at the University of Michigan. With that said, many of the materials we will use are adopted from content created by countless other instructors for courses at other institutions.
+This course is being offered for the second time at the University of Michigan. With that said, many of the materials we will use are adopted from content created by countless other instructors for courses at other institutions.
 
 - In particular, some materials are adopted from [EECS 398: Practical Data Science](https://practicaldsc.org), which itself was based on content from DSC 10, DSC 40A, and DSC 80 at the University of California, San Diego; and Data 6 and Data 100 at the University of California, Berkeley.
 - Some homework problems have been adapted from various linear algebra courses and textbooks online and at other institutions. Some of these sources are listed at the bottom of the introduction to the [course notes](https://notes.eecs245.org/).
@@ -359,4 +362,3 @@ This course is being offered for the first time at the University of Michigan. W
 While we try to do our best to plan ahead, unfortunately, sometimes circumstances do arise that necessitate a policy change. When this happens, the change will be announced, and this document will be updated with the new policy.
 
 We appreciate any and all feedback, given that this course is new and evolving. If you'd like to provide us with anonymous feedback at any point, you can do so at [this form](https://forms.gle/3FQf9iJ21BrPoJhM9). Thank you.
--->

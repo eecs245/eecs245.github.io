@@ -9,12 +9,12 @@ days:
     events:
       - name: LEC 4
         type: lecture
-        title: Simple Linear Regression
+        title: Simple Linear Regression        
   - date: "2026-01-22"
     events:
-      - name: Lab 2
+      - name: Lab 3
         type: lab
-        title: Lab 2
+        title: Lab 3
   - date: "2026-01-23"
     events:
       - name: HW 2

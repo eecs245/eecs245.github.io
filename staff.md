@@ -16,19 +16,10 @@ nav_order: 6
 
 ## Instructional Assistants
 
-Coming soon!
-
-
-{%
-  comment
-%}
 {% assign tas = site.staffers | where: 'role', 'TA' %}
 {% for staffer in tas %}
 {{ staffer }}
 {% endfor %}
-{%
-  endcomment
-%}
 
 ## Graders
 

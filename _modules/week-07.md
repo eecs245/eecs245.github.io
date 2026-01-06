@@ -14,12 +14,7 @@ days:
         title: Matrices
   - date: "2026-02-19"
     events:
-      - name: Lab 6
+      - name: Lab 7
         type: lab
-        title: Lab 6
-  - date: "2026-02-20"
-    events:
-      - name: HW 6
-        type: hw
-        title: Homework 6
+        title: Lab 7
 ---

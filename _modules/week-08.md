@@ -14,12 +14,12 @@ days:
         title: Inverses
   - date: "2026-02-26"
     events:
-      - name: Lab 7
+      - name: Lab 8
         type: lab
-        title: Lab 7
+        title: Lab 8
   - date: "2026-02-27"
     events:
-      - name: HW 7
+      - name: HW 6
         type: hw
-        title: Homework 7
+        title: Homework 6
 ---
