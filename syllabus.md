@@ -254,8 +254,8 @@ This class has two Midterm Exams and one Final Exam, all of which will be admini
 
 | Exam | Date and Time | Content |
 | --- | --- | --- |
-| Midterm 1 | Monday, February 16th, 7-9PM | Lectures 1-10 only |
-| Midterm 2 | Monday, March 30th, 7-9PM | Lectures 11-19 only |
+| Midterm 1 | Monday, February 16th, 7-9PM | Lectures 1-10, Chapters 1-4 only |
+| Midterm 2 | Monday, March 30th, 7-9PM | Lectures 11-19, Chapters 5-8 only |
 | Final Exam | Monday, April 27th, 1:30-3:30PM | ~30% Lectures 1-10<br>~30% Lectures 11-19<br>~40% Lectures 20-25 |
 
 The specific lecture numbers above are subject to change slightly. Midterm 2 is not cumulative. The Final Exam will be cumulative, and broken into three parts:
