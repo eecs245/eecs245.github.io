@@ -1,0 +1,35 @@
+name: Update lecture recording link
+
+on:
+  schedule:
+    - cron: 'CRON_TZ=America/Detroit 10 14 * * 1,3'
+  workflow_dispatch:
+
+jobs:
+  update-recording:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update recording link
+        run: .github/scripts/update_recording_link.py
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _modules
+          git commit -m "Add lecture recording link"
+          git push
