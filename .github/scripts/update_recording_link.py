@@ -101,10 +101,13 @@ def parse_date_text(date_text: str, target_year: int) -> Optional[dt.date]:
     return None
 
 
-def fetch_recordings(site_url: str) -> List[dict]:
-    req = Request(site_url, headers={"User-Agent": "recording-bot/1.0"})
-    with urlopen(req) as response:
-        html = response.read().decode("utf-8", errors="replace")
+def fetch_recordings(site_url: str, html_path: Optional[Path]) -> List[dict]:
+    if html_path is not None:
+        html = html_path.read_text(encoding="utf-8", errors="replace")
+    else:
+        req = Request(site_url, headers={"User-Agent": "recording-bot/1.0"})
+        with urlopen(req) as response:
+            html = response.read().decode("utf-8", errors="replace")
 
     parser = RecordingParser()
     parser.feed(html)
@@ -193,6 +196,12 @@ def update_recording_in_file(path: Path, lecture_name: str, recording_url: str, 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Update lecture recording link in module YAML.")
     parser.add_argument("--recording-site-url", default=os.getenv("RECORDING_SITE_URL", RECORDING_SITE_URL))
+    parser.add_argument(
+        "--recording-site-html",
+        type=Path,
+        default=os.getenv("RECORDING_SITE_HTML"),
+        help="Path to a saved recording site HTML file (useful for 403s).",
+    )
     parser.add_argument("--timezone", default=os.getenv("LOCAL_TIMEZONE", LOCAL_TIMEZONE))
     parser.add_argument("--date", default=os.getenv("TARGET_DATE"), help="YYYY-MM-DD override")
     parser.add_argument("--modules-dir", default="_modules")
@@ -206,7 +215,7 @@ def main() -> int:
     else:
         target_date = now.date()
 
-    recordings = fetch_recordings(args.recording_site_url)
+    recordings = fetch_recordings(args.recording_site_url, args.recording_site_html)
     parsed = []
     for rec in recordings:
         rec_date = parse_date_text(rec.get("date_text", ""), target_date.year)
