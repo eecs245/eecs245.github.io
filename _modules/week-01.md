@@ -13,6 +13,7 @@ days:
         reading2_text: Ch. 1.1
         reading3: https://notes.eecs245.org/introduction-to-supervised-learning/squared-loss-constant-model/
         reading3_text: Ch. 1.2
+        live_notes: resources/lecture-pdfs/lec01-filled.pdf
   - date: "2026-01-08"
     events:
       - name: Lab 1
