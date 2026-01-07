@@ -1,5 +1,7 @@
 name: Update lecture recording link
 
+on:
+
 jobs:
   update-recording:
     runs-on: ubuntu-latest
