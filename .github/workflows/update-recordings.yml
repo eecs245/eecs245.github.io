@@ -1,10 +1,5 @@
 name: Update lecture recording link
 
-on:
-  schedule:
-    - cron: 'CRON_TZ=America/Detroit 10 14 * * 1,3'
-  workflow_dispatch:
-
 jobs:
   update-recording:
     runs-on: ubuntu-latest
