@@ -103,12 +103,10 @@
               {%- endif -%} -->
               {%- if event.datahub_link or event.github_link -%}
               <div class="code-links-expanded" id="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" style="display: none;">
-                {%- if event.datahub_link -%}
-                <small><a href="{{ event.datahub_link }}">🚀 Launch {{ event.datahub_text }} on DataHub</a>, or </small>
-                {%- endif -%}
-                {%- if event.github_link -%}
-                <small> clone our <a href="{{ event.github_link }}">{% include icon-github.html %} GitHub repository</a>.</small>
-                {%- endif -%}
+                <small>
+                  <b>Preferred:</b> Clone our <a href="{{ event.github_link }}">{% include icon-github.html %} GitHub Repository</a><br>
+                  <b>Backup:</b> 🚀 Launch <a href="{{ event.datahub_link }}">Lab 1</a> on DataHub
+                </small>
               </div>
               {%- endif -%}
               {%- if event.note -%}
