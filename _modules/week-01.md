@@ -25,4 +25,7 @@ days:
         reading_text: "Appendix 1"
         reading2: https://notes.eecs245.org/math-foundations/derivatives/
         reading2_text: "Appendix 2"
+        datahub_text: Lab 1
+        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Flabs%2Flab01%2Flab01.ipynb&branch=main
+        github_link: https://github.com/eecs245/wn26-code/tree/main/labs/lab01/lab01.ipynb
 ---
