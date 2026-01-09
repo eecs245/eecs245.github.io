@@ -20,7 +20,7 @@ days:
       - name: Lab 1
         type: lab
         title: Math Foundations and Environment Setup
-        note: See the note in the <a href="calendar">Calendar</a> about the Thursday 4:30-6:30PM section.
+        note: See the note in the <a href="calendar">Calendar</a> about the Thursday 4:30-6:30PM lab section.
         reading: https://notes.eecs245.org/math-foundations/summation/
         reading_text: "Appendix 1"
         reading2: https://notes.eecs245.org/math-foundations/derivatives/
