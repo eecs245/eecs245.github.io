@@ -17,8 +17,6 @@ days:
   - name: Lab 13
     type: lab
     title: Lab 13
-    problems: resources/labs/lab01/lab01.pdf
-    solutions: resources/labs/lab01/lab01-solutions.pdf
 - date: '2026-04-10'
   events:
   - name: HW 10
