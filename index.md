@@ -18,7 +18,7 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {% endfor %}
 
 {: .green }
-> **Welcome to EECS 245, Winter 2026!** Make sure to read the [**Syllabus**](./syllabus) and complete the [**Welcome Survey**](https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor). See you in lecture on Wednesday at 12PM and in lab later this week!
+> **Welcome to EECS 245, Winter 2026!** If you've just joined the course, be sure to read the [**Syllabus**](./syllabus) and complete the [**Welcome Survey**](https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor).
 
 {% for module in site.modules %}
 {{ module }}
