@@ -20,6 +20,8 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {: .green }
 > **Welcome to EECS 245, Winter 2026!** If you've just joined the course, be sure to read the [**Syllabus**](./syllabus) and complete the [**Welcome Survey**](https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor).
 
+<a class="btn" style="background-color: #00274C; color: white;" href="#week-2-empirical-risk-minimization">Jump to the current week</a>
+
 {% for module in site.modules %}
 {{ module }}
 {% endfor %}

@@ -6,7 +6,7 @@ days:
   events:
   - name: LEC 2
     type: lecture
-    title: Loss Functions and the Constant Model
+    title: Models and Loss Functions
     reading: https://notes.eecs245.org/introduction-to-supervised-learning/squared-loss-constant-model/
     reading_text: Ch. 1.2
     reading2: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
