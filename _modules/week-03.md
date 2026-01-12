@@ -15,8 +15,6 @@ days:
       - name: Lab 3
         type: lab
         title: Lab 3
-        problems: resources/labs/lab03/lab03.pdf
-        solutions: resources/labs/lab03/lab03-solutions.pdf
   - date: "2026-01-23"
     events:
       - name: HW 2
