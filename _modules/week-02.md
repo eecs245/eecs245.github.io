@@ -12,6 +12,7 @@ days:
         reading2: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
         reading2_text: Ch. 1.3
         live_notes: resources/lecture-pdfs/lec02-filled.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/hO59Vx
   - date: '2026-01-14'
     events:
       - name: LEC 3
