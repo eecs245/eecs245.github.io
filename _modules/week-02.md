@@ -24,6 +24,7 @@ days:
         reading2_text: Ch. 1.4
         reading3: https://notes.eecs245.org/simple-linear-regression/overview/
         reading3_text: Ch. 2.1
+        live_notes: resources/lecture-pdfs/lec03-filled.pdf
   - date: '2026-01-15'
     events:
       - name: Lab 2
