@@ -18,10 +18,12 @@ days:
       - name: LEC 3
         type: lecture
         title: Empirical Risk and Simple Linear Regression
-        reading: https://notes.eecs245.org/introduction-to-supervised-learning/comparing-loss-functions/
-        reading_text: Ch. 1.4
-        reading2: https://notes.eecs245.org/simple-linear-regression/overview/
-        reading2_text: Ch. 2.1
+        reading: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
+        reading_text: Ch. 1.3
+        reading2: https://notes.eecs245.org/introduction-to-supervised-learning/comparing-loss-functions/
+        reading2_text: Ch. 1.4
+        reading3: https://notes.eecs245.org/simple-linear-regression/overview/
+        reading3_text: Ch. 2.1
   - date: '2026-01-15'
     events:
       - name: Lab 2
