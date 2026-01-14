@@ -1,19 +1,17 @@
 name: build-site
 
 on:
-  # Normal pushes (your usual edits)
   push:
     branches: [master, main]
-    # Avoid burning a Pages run on the raw PDF upload commit from the shortcut.
-    # The "attach" workflow will finish and trigger the real build via workflow_run.
     paths-ignore:
       - "resources/lecture-pdfs/**"
       - "_incoming/**"
 
-  # Critical: run when the attach workflow completes, even if the triggering commit had [skip ci]
   workflow_run:
-    workflows: ["Attach live notes for lecture"]  # MUST match the attach workflow's `name:` exactly
+    workflows: ["Attach live lecture notes"]
     types: [completed]
+
+  workflow_dispatch: {}
 
 jobs:
   build-and-deploy:
@@ -33,10 +31,8 @@ jobs:
       id-token: write
 
     steps:
-      # For workflow_run: we want the *current* default branch HEAD (after the attach workflow pushed),
-      # not the workflow_run head_sha.
       - name: Checkout default branch
-      - uses: actions/checkout@v5
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.repository.default_branch }}
           fetch-depth: 0
@@ -50,15 +46,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # If you actually use jupyter-book caching, keep this; otherwise delete it.
       - name: Cache build artifacts
         uses: actions/cache@v4
         with:
           path: _build/.jupyter_cache
           key: site-cache-${{ hashFiles('requirements.txt') }}
 
-      # Replace this build command with whatever your gh-pages site uses.
-      # If you're still using jupyter-book, keep it. If not, change it.
       - name: Build site
         run: |
           jupyter-book build .
