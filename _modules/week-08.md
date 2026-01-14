@@ -13,6 +13,7 @@ days:
       - name: LEC 13
         type: lecture
         title: Inverses
+        live_notes: resources/lecture-pdfs/lec13-filled.pdf
   - date: "2026-02-26"
     events:
       - name: Lab 8
