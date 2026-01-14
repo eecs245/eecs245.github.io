@@ -7,7 +7,6 @@ days:
       - name: LEC 2
         type: lecture
         title: Models and Loss Functions
-        recording: https://leccap.engin.umich.edu/leccap/player/r/hO59Vx
         reading: https://notes.eecs245.org/introduction-to-supervised-learning/squared-loss-constant-model/
         reading_text: Ch. 1.2
         reading2: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
