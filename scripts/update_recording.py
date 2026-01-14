@@ -14,6 +14,11 @@ LECCAP_BASE_URL = "https://leccap.engin.umich.edu"
 MODULES_DIR = "_modules"
 LECCAP_TIMEOUT_MS = int(os.getenv("LECCAP_TIMEOUT_MS", "5000"))
 LECCAP_DEBUG_DIR = os.getenv("LECCAP_DEBUG_DIR")
+LECCAP_COOKIE = os.getenv("LECCAP_COOKIE")
+LECCAP_COOKIE_DOMAIN = os.getenv("LECCAP_COOKIE_DOMAIN", "leccap.engin.umich.edu")
+LECCAP_COOKIE_PATH = os.getenv("LECCAP_COOKIE_PATH", "/")
+LECCAP_COOKIE_FILE = os.getenv("LECCAP_COOKIE_FILE", ".leccap_cookie")
+LECCAP_HEADLESS = os.getenv("LECCAP_HEADLESS", "false").lower() in ("1", "true", "yes", "on")
 
 
 def _maybe_dump_debug(page, label):
@@ -32,6 +37,45 @@ def _maybe_dump_debug(page, label):
         pass
 
 
+def _cookies_from_header(header_value, domain, path):
+    cookies = []
+    if not header_value:
+        return cookies
+    for part in header_value.split(";"):
+        part = part.strip()
+        if not part:
+            continue
+        if "=" not in part:
+            continue
+        name, value = part.split("=", 1)
+        name = name.strip()
+        value = value.strip()
+        if not name:
+            continue
+        cookies.append(
+            {
+                "name": name,
+                "value": value,
+                "domain": domain,
+                "path": path,
+            }
+        )
+    return cookies
+
+
+def _load_cookie_header():
+    if LECCAP_COOKIE:
+        return LECCAP_COOKIE
+    if not LECCAP_COOKIE_FILE:
+        return None
+    try:
+        with open(LECCAP_COOKIE_FILE, "r", encoding="utf-8") as handle:
+            value = handle.read().strip()
+            return value or None
+    except FileNotFoundError:
+        return None
+
+
 def fetch_leccap_recordings(url):
     try:
         from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
@@ -39,8 +83,16 @@ def fetch_leccap_recordings(url):
         raise RuntimeError("playwright is required; install with `pip install playwright`") from exc
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
+        browser = p.chromium.launch(headless=LECCAP_HEADLESS)
+        context = browser.new_context()
+        cookie_header = _load_cookie_header()
+        if cookie_header:
+            cookies = _cookies_from_header(
+                cookie_header, LECCAP_COOKIE_DOMAIN, LECCAP_COOKIE_PATH
+            )
+            if cookies:
+                context.add_cookies(cookies)
+        page = context.new_page()
         try:
             page.goto(url, wait_until="domcontentloaded")
             deadline = time.monotonic() + (LECCAP_TIMEOUT_MS / 1000.0)
