@@ -10,7 +10,6 @@ days:
       - name: LEC 4
         type: lecture
         title: Simple Linear Regression
-        live_notes: resources/lecture-pdfs/lec04-filled.pdf
   - date: "2026-01-22"
     events:
       - name: Lab 3
