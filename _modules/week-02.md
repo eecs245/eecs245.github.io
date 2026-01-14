@@ -18,6 +18,7 @@ days:
       - name: LEC 3
         type: lecture
         title: Empirical Risk and Simple Linear Regression
+        recording: https://leccap.engin.umich.edu/leccap/player/r/6ownGy
         reading: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
         reading_text: Ch. 1.3
         reading2: https://notes.eecs245.org/introduction-to-supervised-learning/comparing-loss-functions/
