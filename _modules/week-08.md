@@ -7,6 +7,7 @@ days:
       - name: LEC 12
         type: lecture
         title: Rank
+        live_notes: resources/lecture-pdfs/lec12-filled.pdf
   - date: "2026-02-25"
     events:
       - name: LEC 13
