@@ -30,7 +30,10 @@ days:
     events:
       - name: Lab 2
         type: lab
-        title: Lab 2
+        title: Empirical Risk and Simple Linear Regression
+        datahub_text: Lab 2
+        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Flabs%2Flab02%2Flab02.ipynb&branch=main
+        github_link: https://github.com/eecs245/wn26-code/tree/main/labs/lab02/lab02.ipynb
   - date: '2026-01-16'
     events:
       - name: HW 1
