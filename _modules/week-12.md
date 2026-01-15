@@ -19,6 +19,9 @@ days:
         title: Lab 11
   - date: "2026-03-27"
     events:
+      - name: REV
+        type: review
+        title: Practice Midterm 2 (2:30-5:30PM, 1014 DOW)
       - name: HW 9
         type: hw
         title: Homework 9
