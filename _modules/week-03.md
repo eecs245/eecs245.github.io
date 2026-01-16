@@ -19,5 +19,7 @@ days:
     events:
       - name: HW 2
         type: hw
-        title: Homework 2
+        title: <b>Empirical Risk and Simple Linear Regression</b>
+        problems: ../resources/homeworks/hw02.pdf
+        template: https://www.overleaf.com/read/hsxnthrtwyfr#db96b9
 ---
