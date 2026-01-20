@@ -7,6 +7,8 @@ days:
   - name: LEC 7
     type: lecture
     title: Projections
+    reading: https://notes.eecs245.org/vectors/projecting-onto-a-single-vector/
+    reading_text: Ch 3.4
 - date: '2026-02-04'
   events:
   - name: LEC 8
