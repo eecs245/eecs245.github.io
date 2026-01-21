@@ -45,6 +45,7 @@ days:
         video: https://www.loom.com/share/4f02c4ba618846b79841d1bc01982d46?sid=e9d76743-c5a5-413c-83f3-7471db9d13d6
         video_text: "Template Instructions"
         problems: ../resources/homeworks/hw01.pdf
+        solutions: https://edstem.org/us/courses/89676/discussion/7536293
       - name: SUR
         type: survey
         title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor">Welcome Survey</a></b>
