@@ -10,6 +10,7 @@ days:
       - name: LEC 4
         type: lecture
         title: Simple Linear Regression
+        recording: https://leccap.engin.umich.edu/leccap/player/r/fFHyRC
         reading: https://notes.eecs245.org/simple-linear-regression/partial-derivatives/
         reading_text: Ch 2.2
         reading2: https://notes.eecs245.org/simple-linear-regression/finding-optimal-parameters/
