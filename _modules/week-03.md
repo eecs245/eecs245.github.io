@@ -22,7 +22,7 @@ days:
     events:
       - name: Lab 3
         type: lab
-        title: Lab 3
+        title: Simple Linear Regression and Partial Derivatives
   - date: "2026-01-23"
     events:
       - name: HW 2
