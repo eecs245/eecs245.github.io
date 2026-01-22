@@ -11,7 +11,8 @@ days:
     events:
       - name: LEC 20
         type: lecture
-        title: Eigenvalues and Eigenvectors
+        title: Eigenvalues and Eigenvectors (<b>no live lecture!</b>)
+        note: Live lecture is cancelled, since Suraj will be out of town. A video will be posted in advance.
   - date: "2026-04-02"
     events:
       - name: Lab 12
