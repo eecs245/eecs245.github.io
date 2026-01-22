@@ -34,6 +34,8 @@ days:
         datahub_text: Lab 2
         datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Flabs%2Flab02%2Flab02.ipynb&branch=main
         github_link: https://github.com/eecs245/wn26-code/tree/main/labs/lab02/lab02.ipynb
+        problems: resources/labs/lab02/lab02.pdf
+        solutions: resources/labs/lab02/lab02-solutions.pdf
   - date: '2026-01-16'
     events:
       - name: HW 1
@@ -43,6 +45,7 @@ days:
         video: https://www.loom.com/share/4f02c4ba618846b79841d1bc01982d46?sid=e9d76743-c5a5-413c-83f3-7471db9d13d6
         video_text: "Template Instructions"
         problems: ../resources/homeworks/hw01.pdf
+        solutions: https://edstem.org/us/courses/89676/discussion/7536293
       - name: SUR
         type: survey
         title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSelaC_Oanm3SQgFLg3IBzHIXXi9bB1DgPaaSUxizhaCwTtIPw/viewform?usp=publish-editor">Welcome Survey</a></b>
