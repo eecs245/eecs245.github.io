@@ -27,5 +27,7 @@ days:
     events:
       - name: HW 3
         type: hw
-        title: Homework 3
+        title: <b>Vectors and the Dot Product</b>
+        problems: ../resources/homeworks/hw03/hw03.pdf
+        template: https://www.overleaf.com/read/zwxkzqdmrkbj#553841
 ---
