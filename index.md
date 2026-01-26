@@ -19,6 +19,10 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
+{: .green }
+Homeworks 3 and 4 will be due on Mondays instead of Fridays. See below for the latest deadlines, and the [Calendar](calendar) for the latest office hours schedule.
+
+
 {% for module in site.modules %}
 {{ module }}
 {% endfor %}

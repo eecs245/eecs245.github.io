@@ -28,4 +28,5 @@ days:
       - name: HW 5
         type: hw
         title: Homework 5
+        note: HW 5 will have at most 3 problems.
 ---
