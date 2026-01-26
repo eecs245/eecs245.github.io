@@ -7,6 +7,9 @@ days:
       - name: LEC 9
         type: lecture
         title: Vector Spaces and Subspaces
+      - name: HW 4
+        type: hw
+        title: Homework 4
   - date: "2026-02-11"
     events:
       - name: LEC 10

@@ -25,9 +25,4 @@ days:
   - name: Lab 5
     type: lab
     title: Lab 5
-- date: '2026-02-06'
-  events:
-  - name: HW 4
-    type: hw
-    title: Homework 4
 ---
