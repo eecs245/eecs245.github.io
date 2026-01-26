@@ -32,4 +32,5 @@ days:
         title: <b>Empirical Risk and Simple Linear Regression</b>
         problems: ../resources/homeworks/hw02/hw02.pdf
         template: https://www.overleaf.com/read/hsxnthrtwyfr#db96b9
+        solutions: https://edstem.org/us/courses/89676/discussion/7564922
 ---
