@@ -23,11 +23,4 @@ days:
       - name: Lab 4
         type: lab
         title: Lab 4
-  - date: "2026-01-30"
-    events:
-      - name: HW 3
-        type: hw
-        title: <b>Vectors and the Dot Product</b>
-        problems: ../resources/homeworks/hw03/hw03.pdf
-        template: https://www.overleaf.com/read/zwxkzqdmrkbj#553841
 ---
