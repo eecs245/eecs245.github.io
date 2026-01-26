@@ -7,6 +7,7 @@ days:
       - name: LEC 5
         type: lecture
         title: Vectors
+        recording: https://leccap.engin.umich.edu/leccap/player/r/hpKdnQ
         reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
         reading_text: Ch 3.1
         reading2: https://notes.eecs245.org/vectors/norms/
