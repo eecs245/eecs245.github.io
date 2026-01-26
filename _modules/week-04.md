@@ -11,6 +11,7 @@ days:
         reading_text: Ch 3.1
         reading2: https://notes.eecs245.org/vectors/norms/
         reading2_text: Ch 3.2
+        live_notes: resources/lecture-pdfs/lec05-filled.pdf
   - date: "2026-01-28"
     events:
       - name: LEC 6
