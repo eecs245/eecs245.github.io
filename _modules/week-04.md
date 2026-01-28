@@ -20,6 +20,7 @@ days:
         title: Orthogonality and the Dot Product
         reading: https://notes.eecs245.org/vectors/dot-product/
         reading_text: Ch 3.3
+        live_notes: resources/lecture-pdfs/lec06-filled.pdf
   - date: "2026-01-29"
     events:
       - name: Lab 4
