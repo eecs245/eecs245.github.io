@@ -18,6 +18,7 @@ days:
       - name: LEC 6
         type: lecture
         title: Orthogonality and the Dot Product
+        recording: https://leccap.engin.umich.edu/leccap/player/r/C0GdHl
         reading: https://notes.eecs245.org/vectors/dot-product/
         reading_text: Ch 3.3
         live_notes: resources/lecture-pdfs/lec06-filled.pdf
