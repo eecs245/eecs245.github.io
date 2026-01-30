@@ -27,4 +27,6 @@ days:
       - name: Lab 4
         type: lab
         title: Lab 4
+        problems: resources/labs/lab04/lab04.pdf
+        solutions: resources/labs/lab04/lab04-solutions.pdf
 ---
