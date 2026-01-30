@@ -26,7 +26,7 @@ days:
     events:
       - name: Lab 4
         type: lab
-        title: Lab 4
+        title: Vectors and the Dot Product
         problems: resources/labs/lab04/lab04.pdf
         solutions: resources/labs/lab04/lab04-solutions.pdf
 ---
