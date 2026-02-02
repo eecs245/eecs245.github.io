@@ -7,6 +7,7 @@ days:
       - name: LEC 7
         type: lecture
         title: Projections
+        recording: https://leccap.engin.umich.edu/leccap/player/r/efqNGY
         reading: https://notes.eecs245.org/vectors/projecting-onto-a-single-vector/
         reading_text: Ch 3.4
         live_notes: resources/lecture-pdfs/lec07-filled.pdf
