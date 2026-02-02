@@ -9,7 +9,9 @@ days:
         title: Vector Spaces and Subspaces
       - name: HW 4
         type: hw
-        title: Homework 4
+        title: <b>Projections and Spans</b>
+        problems: ../resources/homeworks/hw04/hw04.pdf
+        template: https://www.overleaf.com/read/zmbxtrpfwkbt#674971
   - date: "2026-02-11"
     events:
       - name: LEC 10
