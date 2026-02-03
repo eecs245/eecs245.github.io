@@ -7,6 +7,10 @@ days:
       - name: LEC 9
         type: lecture
         title: Vector Spaces and Subspaces
+        reading: https://notes.eecs245.org/linear-independence/linear-independence/
+        reading_text: Ch. 4.2
+        reading2: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
+        reading2_text: Ch. 4.3
       - name: HW 4
         type: hw
         title: <b>Projections and Spans</b>
@@ -17,6 +21,8 @@ days:
       - name: LEC 10
         type: lecture
         title: Bases and Dimension
+        reading: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
+        reading_text: Ch. 4.3
   - date: "2026-02-12"
     events:
       - name: Lab 6
@@ -27,6 +33,7 @@ days:
       - name: REV
         type: review
         title: Practice Midterm 1 (2:30-5:30PM, 1014 DOW)
+        note: For the first 2 hours, you will take the Mock Midterm 1 linked <a href="resources/#past-exams">here</a>. We will take it up in the final hour.
       - name: HW 5
         type: hw
         title: Homework 5
