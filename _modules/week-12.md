@@ -7,11 +7,19 @@ days:
       - name: LEC 18
         type: lecture
         title: Gradient Descent
+        reading: https://notes.eecs245.org/gradients/gradient-descent/
+        reading_text: Ch. 8.3
+        reading2: https://notes.eecs245.org/gradients/gradient-descent-erm/
+        reading2_text: Ch. 8.4
   - date: "2026-03-25"
     events:
       - name: LEC 19
         type: lecture
         title: Convexity
+        reading: https://notes.eecs245.org/gradients/gradient-descent-erm/
+        reading_text: Ch. 8.4
+        reading2: https://notes.eecs245.org/gradients/convexity/
+        reading2_text: Ch. 8.5
   - date: "2026-03-26"
     events:
       - name: Lab 11
