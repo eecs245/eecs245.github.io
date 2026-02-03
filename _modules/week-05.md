@@ -1,5 +1,5 @@
 ---
-title: 'Week 5: Projections and Span'
+title: 'Week 5: Projections and Spans'
 weekNumber: 5
 days:
   - date: '2026-02-02'
@@ -31,5 +31,5 @@ days:
     events:
       - name: Lab 5
         type: lab
-        title: Lab 5
+        title: Projections and Spans
 ---
