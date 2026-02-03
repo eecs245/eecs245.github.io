@@ -21,7 +21,7 @@ days:
     events:
       - name: LEC 8
         type: lecture
-        title: Spans and Linear Independence
+        title: Span and Linear Independence
   - date: '2026-02-05'
     events:
       - name: Lab 5
