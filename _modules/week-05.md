@@ -22,6 +22,7 @@ days:
       - name: LEC 8
         type: lecture
         title: Span and Linear Independence
+        recording: https://leccap.engin.umich.edu/leccap/player/r/XOt6WJ
         reading: https://notes.eecs245.org/linear-independence/span/
         reading_text: Ch. 4.1
         reading2: https://notes.eecs245.org/linear-independence/linear-independence/
