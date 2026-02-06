@@ -37,7 +37,6 @@ days:
       - name: HW 5
         type: hw
         title: <b>Linear Independence and Subspaces</b>
-        note: HW 5 will have at most 3 problems.
         problems: ../resources/homeworks/hw05/hw05.pdf
         template: https://www.overleaf.com/read/ftqnctdkyyrf#329e1d
 ---
