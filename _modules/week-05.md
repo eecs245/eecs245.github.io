@@ -38,4 +38,6 @@ days:
         datahub_text: Lab 5
         datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Flabs%2Flab05%2Flab05.ipynb&branch=main
         github_link: https://github.com/eecs245/wn26-code/tree/main/labs/lab05/lab05.ipynb
+        problems: resources/labs/lab05/lab05.pdf
+        solutions: resources/labs/lab05/lab05-solutions.pdf
 ---
