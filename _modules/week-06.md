@@ -36,6 +36,8 @@ days:
         note: For the first 2 hours, you will take the Mock Midterm 1 linked <a href="resources/#past-exams">here</a>. We will take it up in the final hour.
       - name: HW 5
         type: hw
-        title: Homework 5
+        title: <b>Linear Independence and Subspaces</b>
         note: HW 5 will have at most 3 problems.
+        problems: ../resources/homeworks/hw05/hw05.pdf
+        template: https://www.overleaf.com/read/ftqnctdkyyrf#329e1d
 ---
