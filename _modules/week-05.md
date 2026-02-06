@@ -17,6 +17,7 @@ days:
         problems: ../resources/homeworks/hw03/hw03.pdf
         template: https://www.overleaf.com/read/zwxkzqdmrkbj#553841
         note: Note the extended deadline.
+        solutions: https://edstem.org/us/courses/89676/discussion/7625215
   - date: '2026-02-04'
     events:
       - name: LEC 8
