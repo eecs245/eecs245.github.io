@@ -6,7 +6,7 @@ days:
     events:
       - name: EXAM
         type: exam
-        title: <b>Midterm 1 (7-9PM)</b>
+        title: <b>Midterm 1 (7-9PM, 1670 BBB; <a href="https://edstem.org/us/courses/89676/discussion/7637745">see logistics here</a>)</b>
   - date: "2026-02-18"
     events:
       - name: LEC 11
