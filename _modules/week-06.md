@@ -11,6 +11,7 @@ days:
         reading_text: Ch. 4.2
         reading2: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading2_text: Ch. 4.3
+        live_notes: resources/lecture-pdfs/lec09-filled.pdf
       - name: HW 4
         type: hw
         title: <b>Projections and Spans</b>
