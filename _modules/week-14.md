@@ -14,9 +14,9 @@ days:
     title: Adjacency Matrices and Diagonalization
 - date: '2026-04-09'
   events:
-  - name: Lab 13
+  - name: Lab 12
     type: lab
-    title: Lab 13
+    title: Lab 12
 - date: '2026-04-10'
   events:
   - name: HW 10

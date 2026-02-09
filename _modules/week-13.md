@@ -16,7 +16,7 @@ days:
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/eigenvalues-eigenvectors/
   - date: "2026-04-02"
     events:
-      - name: Lab 12
+      - name: Lab 11
         type: lab
-        title: Lab 12
+        title: Lab 11
 ---

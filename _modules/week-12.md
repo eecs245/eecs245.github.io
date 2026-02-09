@@ -22,9 +22,9 @@ days:
         reading2_text: Ch. 8.5
   - date: "2026-03-26"
     events:
-      - name: Lab 11
+      - name: Lab 10
         type: lab
-        title: Lab 11
+        title: Lab 10
   - date: "2026-03-27"
     events:
       - name: REV

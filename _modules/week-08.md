@@ -24,9 +24,9 @@ days:
         reading3_text: Ch. 6.2
   - date: "2026-02-26"
     events:
-      - name: Lab 8
+      - name: Lab 7
         type: lab
-        title: Lab 8
+        title: Lab 7
   - date: "2026-02-27"
     events:
       - name: HW 6

@@ -7,6 +7,7 @@ days:
       - name: EXAM
         type: exam
         title: <b>Midterm 1 (7-9PM, 1670 BBB; <a href="https://edstem.org/us/courses/89676/discussion/7637745">see logistics here</a>)</b>
+        note: Lecture will be treated as office hours, in the usual lecture room.
   - date: "2026-02-18"
     events:
       - name: LEC 11
@@ -16,9 +17,4 @@ days:
         reading_text: Ch. 5.1
         reading2: https://notes.eecs245.org/matrices/special-matrices/
         reading2_text: Ch. 5.2
-  - date: "2026-02-19"
-    events:
-      - name: Lab 7
-        type: lab
-        title: Lab 7
 ---

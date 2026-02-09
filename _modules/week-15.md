@@ -14,9 +14,9 @@ days:
         title: Singular Value Decomposition
   - date: "2026-04-16"
     events:
-      - name: Lab 14
+      - name: Lab 13
         type: lab
-        title: Lab 14
+        title: Lab 13
   - date: "2026-04-17"
     events:
       - name: HW 11
