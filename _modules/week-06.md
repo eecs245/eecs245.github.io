@@ -25,6 +25,7 @@ days:
         title: Bases and Dimension
         reading: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading_text: Ch. 4.3
+        live_notes: resources/lecture-pdfs/lec10-filled.pdf
   - date: "2026-02-12"
     events:
       - name: Lab 6
