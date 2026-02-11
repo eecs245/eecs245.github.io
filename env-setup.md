@@ -32,7 +32,7 @@ Option 1 – setting up Jupyter Notebooks on your computer – requires a bit of
 
 [This video](https://www.loom.com/share/b74ed3c77fe74ef4a4fa4fcc2b247699) walks through most of the steps here, but it’s not a substitute for reading this page carefully. (The video was originally recorded for a different class, which is why some of the names are different than what we're using here.)
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/b74ed3c77fe74ef4a4fa4fcc2b247699?sid=15db74ca-5f63-401a-bdac-a86ef00ecab5" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/b74ed3c77fe74ef4a4fa4fcc2b247699?sid=15db74ca-5f63-401a-bdac-a86ef00ecab5" title="Environment setup walkthrough video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 It's a long, but useful video. In addition to walking you through the setup stages, it gives you some command-line tips and tricks, and shows you the various Jupyter Notebook interfaces you can choose between (JupyterLab, Notebook, Notebook Classic, VSCode). Here are some relevant timestamps:
 
@@ -270,7 +270,7 @@ A student on Ed once asked:
 There's actually a debugger built into JupyterLab. You might be able to access it here, by clicking the bug:
 
 <center>
-<img src="../assets/site-images/debugger.png" width="50%">
+<img src="../assets/site-images/debugger.png" alt="JupyterLab toolbar highlighting the debugger icon" width="50%">
 </center>
 
 Unfortunately, it is often greyed out by default. To enable it, go to this file on your computer, but replace `surajrampure` with your username:

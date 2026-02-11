@@ -59,9 +59,9 @@ Check out [**eecs245.org/fa25**](https://eecs245.org/fa25), which contains links
 As of **November 10, 2025**, the course counts for:
 - The linear algebra requirement for:
     - **Computer Science** majors (CS-Eng and CS-LSA*).
-    - <span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Data Science** majors (DS-Eng and DS-LSA).
-    - <span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Statistics** majors.
-    - <span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Artificial Intelligence** minors.
+    - <span style="background: #127f91; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Data Science** majors (DS-Eng and DS-LSA).
+    - <span style="background: #127f91; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Statistics** majors.
+    - <span style="background: #127f91; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> **Artificial Intelligence** minors.
 - The linear algebra prerequisite for:
     - EECS 442, EECS 445, EECS 448, EECS 474, EECS 476, and CSE 576.
     - **Any** 400-level STATS or DATASCI course with a linear algebra prerequisite.
@@ -78,7 +78,7 @@ This course has a math prerequisite and a programming prerequisite.
 
 ## Workload and Final Grade Distribution
 
-<span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> Here is distribution of letter grades earned in Fall 2025. We expect the distribution to be similar in Winter 2026.
+<span style="background: #127f91; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> Here is distribution of letter grades earned in Fall 2025. We expect the distribution to be similar in Winter 2026.
 
 <center><img src="../resources/next/fa25-dist.png" alt="Grade Distribution" width="80%"></center>
 
@@ -93,7 +93,7 @@ Our target is that the course takes a similar amount of time per week as EECS 20
 
 ## Course Evaluations
 
-<span style="background: #17a2b8; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> You can find the official end-of-semester course evaluations from Fall 2025 [here](../resources/next/fa25-evals.pdf) (and the midterm course evaluations [here](../resources/next/fa25-midterm-evals.pdf)).
+<span style="background: #127f91; color: white; font-size: 0.78em; font-weight: bold; border-radius: 0.25em; padding: 0.18em 0.7em; margin-right: 0.25em;">New!</span> You can find the official end-of-semester course evaluations from Fall 2025 [here](../resources/next/fa25-evals.pdf) (and the midterm course evaluations [here](../resources/next/fa25-midterm-evals.pdf)).
 
 ## Logistics
 

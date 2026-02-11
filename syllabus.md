@@ -344,7 +344,7 @@ confidential resources to all enrolled students, many of which are listed [here]
 
 ### CSE Resources
 
-<img src="../assets/site-images/CSE UAO Resources.png" width="600">
+<img src="../assets/site-images/CSE UAO Resources.png" alt="CSE UAO student support resources graphic" width="600">
 
 ---
 
