@@ -23,6 +23,7 @@ days:
       - name: LEC 10
         type: lecture
         title: Bases and Dimension
+        recording: https://leccap.engin.umich.edu/leccap/player/r/uJ58J9
         reading: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading_text: Ch. 4.3
         live_notes: resources/lecture-pdfs/lec10-filled.pdf
