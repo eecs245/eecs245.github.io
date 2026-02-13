@@ -40,7 +40,9 @@ days:
       - name: REV
         type: review
         title: Practice Midterm 1 (2:30-5:30PM, 1014 DOW)
-        note: For the first 2 hours, you will take the Mock Midterm 1 linked <a href="resources/#past-exams">here</a>. We will take it up in the final hour. We're also in the process of recording <a href="https://www.youtube.com/playlist?list=PLEFTQpsm47qRjWWjsENcWsxgtgJ2bJAl4">walkthrough videos</a> for last semester's real Midterm 1.
+        note: We're also in the process of recording <a href="https://www.youtube.com/playlist?list=PLEFTQpsm47qRjWWjsENcWsxgtgJ2bJAl4">walkthrough videos</a> for last semester's real Midterm 1.
+        problems: resources/exams/mock-mt1.pdf
+        solutions: resources/exams/mock-mt1-solutions.pdf
       - name: HW 5
         type: hw
         title: <b>Linear Independence and Subspaces</b>
