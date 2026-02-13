@@ -43,6 +43,7 @@ days:
         note: We're also in the process of recording <a href="https://www.youtube.com/playlist?list=PLEFTQpsm47qRjWWjsENcWsxgtgJ2bJAl4">walkthrough videos</a> for last semester's real Midterm 1.
         problems: resources/exams/mock-mt1.pdf
         solutions: resources/exams/mock-mt1-solutions.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/bcwia9
       - name: HW 5
         type: hw
         title: <b>Linear Independence and Subspaces</b>
