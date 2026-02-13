@@ -32,7 +32,7 @@ days:
     events:
       - name: Lab 6
         type: lab
-        title: Lab 6
+        title: Vector Spaces, Subspaces, and Bases
         problems: resources/labs/lab06/lab06.pdf
         solutions: resources/labs/lab06/lab06-solutions.pdf
   - date: "2026-02-13"
