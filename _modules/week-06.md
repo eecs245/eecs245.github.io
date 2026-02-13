@@ -18,6 +18,7 @@ days:
         title: <b>Projections and Spans</b>
         problems: ../resources/homeworks/hw04/hw04.pdf
         template: https://www.overleaf.com/read/zmbxtrpfwkbt#674971
+        solutions: https://edstem.org/us/courses/89676/discussion/7664381
   - date: "2026-02-11"
     events:
       - name: LEC 10
