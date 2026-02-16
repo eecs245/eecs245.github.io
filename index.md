@@ -20,7 +20,7 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
 {: .green }
-**Midterm 1 is on Monday, February 16th from 7-9PM in 1670 BBB. See [logistics here](https://edstem.org/us/courses/89676/discussion/7637745), and come to the mock exam this Friday from 2:30-5:30PM in 1014 DOW.**
+**Midterm 1 is on Monday, February 16th from 7-9PM in 1670 BBB. See [logistics here](https://edstem.org/us/courses/89676/discussion/7637745).**
 
 {% for module in site.modules %}
 {{ module }}

@@ -49,4 +49,5 @@ days:
         title: <b>Linear Independence and Subspaces</b>
         problems: ../resources/homeworks/hw05/hw05.pdf
         template: https://www.overleaf.com/read/ftqnctdkyyrf#329e1d
+        solutions: https://edstem.org/us/courses/89676/discussion/7677166
 ---
