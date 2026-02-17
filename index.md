@@ -20,7 +20,7 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
 {: .green }
-Congrats on finishing Midterm 1! There is still lecture on Wednesday, but no lab this week.
+Congrats on finishing Midterm 1! Scores are available on Gradescope. If you'd like to sign up for a 1-on-1 check-in with Suraj, do so [here](https://calendar.app.google/o63ee44PptrxdsLy5). There is still lecture on Wednesday, but no lab this week.
 
 {% for module in site.modules %}
 {{ module }}
