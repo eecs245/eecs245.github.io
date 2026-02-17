@@ -7,7 +7,7 @@ days:
       - name: EXAM
         type: exam
         title: <b>Midterm 1 (7-9PM, 1670 BBB; <a href="https://edstem.org/us/courses/89676/discussion/7637745">see logistics here</a>)</b>
-        note: Lecture will be treated as office hours, in the usual lecture room.
+        # note: Lecture will be treated as office hours, in the usual lecture room.
         problems: resources/exams/wn26-mt1.pdf
         solutions: resources/exams/wn26-mt1-solutions.pdf
   - date: "2026-02-18"
