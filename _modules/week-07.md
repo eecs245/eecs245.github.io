@@ -15,6 +15,7 @@ days:
       - name: LEC 11
         type: lecture
         title: Matrices
+        recording: https://leccap.engin.umich.edu/leccap/player/r/n1fxON
         reading: https://notes.eecs245.org/matrices/matrix-operations/
         reading_text: Ch. 5.1
         reading2: https://notes.eecs245.org/matrices/special-matrices/
