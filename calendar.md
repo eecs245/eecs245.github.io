@@ -20,10 +20,13 @@ The events are color-coded:
 <a class="btn" style="background-color: #e6804d; color: white;" href="https://umich.zoom.us/j/92715921873">Zoom link for remote office hours</a> 
 </div>
 
-{: .yellow }
+{: .green }
+If you'd like to sign up for a 1-on-1 check-in with Suraj to discuss your Midterm 1 score and performance in the course, do so [here](https://calendar.app.google/o63ee44PptrxdsLy5).
+
+<!-- {: .yellow }
 > Due to staffing shortages, **we will not be staffing the Thursday 4:30-6:30PM lab section**. If you are enrolled in this section, you should attend one of the other three sections shown in the calendar. 
 > 
-> If the only time you are free is Thursday 4:30-6:30PM, you should attend the second half of the Thursday 3:30-5:30PM section and then the office hours that follow afterwards held by the same TA.
+> If the only time you are free is Thursday 4:30-6:30PM, you should attend the second half of the Thursday 3:30-5:30PM section and then the office hours that follow afterwards held by the same TA. -->
 
 We will not be using the Office Hours Queue this semester – look for [Suraj, Angela, or Vincent](../staff) in office hours. If you can't find us, post on Ed! **Can't make it to any of the office hours? Send Suraj an email at rampure@umich.edu.** 
 
