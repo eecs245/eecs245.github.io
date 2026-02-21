@@ -31,5 +31,6 @@ days:
     events:
       - name: HW 6
         type: hw
-        title: Homework 6
----
+        title: <b>Matrices</b>
+        problems: ../resources/homeworks/hw06/hw06.pdf
+        template: https://www.overleaf.com/read/ngvpzbqxpbth#bd3476
