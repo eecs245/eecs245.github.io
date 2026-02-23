@@ -11,6 +11,7 @@ days:
         reading_text: Ch. 5.3
         reading2: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading2_text: Ch. 5.4
+        live_notes: resources/lecture-pdfs/lec12-filled.pdf
   - date: "2026-02-25"
     events:
       - name: LEC 13
