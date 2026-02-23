@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 12
         type: lecture
-        title: Rank
+        title: Rank and Column Space
         reading: https://notes.eecs245.org/matrices/rank-and-column-space/
         reading_text: Ch. 5.3
         reading2: https://notes.eecs245.org/matrices/null-space-rank-nullity/
@@ -15,7 +15,7 @@ days:
     events:
       - name: LEC 13
         type: lecture
-        title: Inverses
+        title: Null Space and Inverses
         reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading_text: Ch. 5.4
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/linear-transformations/
