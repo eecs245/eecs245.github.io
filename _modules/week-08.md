@@ -17,13 +17,11 @@ days:
     events:
       - name: LEC 13
         type: lecture
-        title: Null Space and Inverses
+        title: Null Space, Rank-Nullity, and Inverses
         reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading_text: Ch. 5.4
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/linear-transformations/
         reading2_text: Ch. 6.1
-        reading3: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
-        reading3_text: Ch. 6.2
   - date: "2026-02-26"
     events:
       - name: Lab 7
