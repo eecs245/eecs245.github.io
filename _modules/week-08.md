@@ -20,8 +20,9 @@ days:
         title: Null Space, Rank-Nullity, and Inverses
         reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading_text: Ch. 5.4
-        reading2: https://notes.eecs245.org/linear-transformations-and-projections/linear-transformations/
-        reading2_text: Ch. 6.1
+        reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
+        reading2_text: Ch. 6.2
+        note: We will skip Chapter 6.1 for now and come back to it after the break.
   - date: "2026-02-26"
     events:
       - name: Lab 7
