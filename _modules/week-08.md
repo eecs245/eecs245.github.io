@@ -28,6 +28,9 @@ days:
       - name: Lab 7
         type: lab
         title: Rank, Column Space, Null Space, and Inverses
+        datahub_text: Lab 7
+        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Flabs%2Flab07%2Flab07.ipynb&branch=main
+        github_link: https://github.com/eecs245/wn26-code/tree/main/labs/lab07/lab07.ipynb
   - date: "2026-02-27"
     events:
       - name: HW 6
