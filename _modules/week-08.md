@@ -26,7 +26,7 @@ days:
     events:
       - name: Lab 7
         type: lab
-        title: Rank, Column Space, and Null Space
+        title: Rank, Column Space, Null Space, and Inverses
   - date: "2026-02-27"
     events:
       - name: HW 6
