@@ -23,6 +23,7 @@ days:
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
         reading2_text: Ch. 6.2
         note: We will skip Chapter 6.1 for now and come back to it after the break.
+        live_notes: resources/lecture-pdfs/lec13-filled.pdf
   - date: "2026-02-26"
     events:
       - name: Lab 7
