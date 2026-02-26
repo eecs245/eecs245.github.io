@@ -18,12 +18,14 @@ days:
       - name: LEC 13
         type: lecture
         title: Null Space, Rank-Nullity, and Inverses
+        recording: https://leccap.engin.umich.edu/leccap/player/r/13I0V7
         reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading_text: Ch. 5.4
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
         reading2_text: Ch. 6.2
-        note: We will skip Chapter 6.1 for now and come back to it after the break.
+        note: We will skip Chapter 6.1 for now and come back to it after the break. Note that we've added supplementary videos for Chapter 5.4; these are linked in the playlist above.
         live_notes: resources/lecture-pdfs/lec13-filled.pdf
+        videos: https://youtube.com/playlist?list=PLEFTQpsm47qTw4_nsPMtpDG34ugpPlFkx&si=zK7Y1tURgyWx5j3b
   - date: "2026-02-26"
     events:
       - name: Lab 7
