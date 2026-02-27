@@ -11,6 +11,7 @@ days:
         reading_text: Ch. 6.1
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
         reading2_text: Ch. 6.2
+        videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qSEmQRCtKfN7dj2qg9xzgai
   - date: "2026-03-11"
     events:
       - name: LEC 15

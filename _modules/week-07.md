@@ -10,6 +10,7 @@ days:
         # note: Lecture will be treated as office hours, in the usual lecture room.
         problems: resources/exams/wn26-mt1.pdf
         solutions: resources/exams/wn26-mt1-solutions.pdf
+        videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qQWmh2Js1moAv8MqQCMEjWx
   - date: "2026-02-18"
     events:
       - name: LEC 11
