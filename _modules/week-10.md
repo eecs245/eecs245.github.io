@@ -32,5 +32,7 @@ days:
     events:
       - name: HW 7
         type: hw
-        title: Homework 7
+        title: <b>Rank and Inverses</b>
+        problems: ../resources/homeworks/hw07/hw07.pdf
+        template: https://www.overleaf.com/read/vcbjfybnjmhj#1e8061
 ---
