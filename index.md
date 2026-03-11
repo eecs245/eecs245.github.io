@@ -6,6 +6,15 @@ description: >-
 nav_order: 1
 ---
 
+<!-- Embed MathJax for LaTeX rendering -->
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+
 # Mathematics for Machine Learning 🧠
 {: .no_toc }
 {: .mb-2 }

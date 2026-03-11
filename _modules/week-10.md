@@ -14,6 +14,7 @@ days:
         reading2_text: Ch. 6.2
         videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qSEmQRCtKfN7dj2qg9xzgai
         live_notes: resources/lecture-pdfs/lec14-filled.pdf
+        note: Make sure to watch <a href="https://youtu.be/dv-ADtlgK8k">this video in particular</a>, which proves that if $A^2$ is invertible, then so is $A$.
   - date: "2026-03-11"
     events:
       - name: LEC 15
