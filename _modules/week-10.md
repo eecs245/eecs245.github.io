@@ -19,6 +19,7 @@ days:
       - name: LEC 15
         type: lecture
         title: Projections; Regression using Linear Algebra
+        recording: https://leccap.engin.umich.edu/leccap/player/r/ptUTGY
         reading: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
         reading_text: Ch. 6.3
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
