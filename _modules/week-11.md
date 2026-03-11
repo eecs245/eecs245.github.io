@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 16
         type: lecture
-        title: Multiple Linear Regression
+        title: Regression using Linear Algebra
         reading: https://notes.eecs245.org/regression-using-linear-algebra/regression-using-linear-algebra/
         reading_text: Ch. 7.1
         reading2: https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/

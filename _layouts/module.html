@@ -37,7 +37,8 @@
                 {%- if event.video -%}
                 <a href="{{ event.video }}" class="btn btn-info btn-sm">🎥 {{ event.video_text }}</a>
                 {%- endif -%}
-                {%- if event.datahub_link or event.github_link -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleCodeLinks(this)" data-event-id="{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">💻 {% if event.code_button_text %}{{ event.code_button_text }}{% else %}Code{% endif %} ▼</button>{%- endif -%}
+                {%- if event.datahub_link or event.github_link -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">💻 {% if event.code_button_text %}{{ event.code_button_text }}{% else %}Code{% endif %} ▼</button>{%- endif -%}
+                {%- if event.pl -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="pl-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="pl-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">🌽 PrairieLearn ▼</button>{%- endif -%}
                 {%- if event.reading and event.reading_text -%}
                 <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 {{ event.reading_text }}</a>
                 {%- endif -%}
@@ -104,8 +105,19 @@
               {%- if event.datahub_link or event.github_link -%}
               <div class="code-links-expanded" id="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" style="display: none;" aria-hidden="true">
                 <small>
+                  {%- if event.github_link -%}
                   <b>Preferred:</b> Clone our <a href="{{ event.github_link }}">{% include icon-github.html %} GitHub Repository</a><br>
+                  {%- endif -%}
+                  {%- if event.datahub_link -%}
                   <b>Backup:</b> 🚀 Launch <a href="{{ event.datahub_link }}">{{ event.name }}</a> on DataHub
+                  {%- endif -%}
+                </small>
+              </div>
+              {%- endif -%}
+              {%- if event.pl -%}
+              <div class="code-links-expanded" id="pl-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" style="display: none;" aria-hidden="true">
+                <small>
+                  Click <a href="{{ event.pl }}">here</a> to open PrairieLearn, then click {{ event.pl_text }}.
                 </small>
               </div>
               {%- endif -%}
@@ -128,9 +140,9 @@
 </div>
 
 <script>
-function toggleCodeLinks(button) {
-  const eventId = button.getAttribute('data-event-id');
-  const expandedDiv = document.getElementById('code-links-' + eventId);
+ function toggleExpandableLinks(button) {
+  const targetId = button.getAttribute('data-target-id');
+  const expandedDiv = document.getElementById(targetId);
   const isExpanded = button.getAttribute('aria-expanded') === 'true';
   
   if (isExpanded) {

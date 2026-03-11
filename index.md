@@ -19,9 +19,6 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
-{: .green }
-Welcome back!
-
 {% for module in site.modules %}
 {{ module }}
 {% endfor %}

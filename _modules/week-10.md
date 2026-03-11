@@ -18,7 +18,7 @@ days:
     events:
       - name: LEC 15
         type: lecture
-        title: Projections; Regression using Linear Algebra
+        title: Projections, Revisited
         recording: https://leccap.engin.umich.edu/leccap/player/r/ptUTGY
         reading: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
         reading_text: Ch. 6.3
@@ -31,7 +31,9 @@ days:
     events:
       - name: Lab 8
         type: lab
-        title: Lab 8
+        title: Inverses and Projections
+        pl: https://us.prairielearn.com/pl/course_instance/211780/join/ZMT3KE2DG4
+        pl_text: Lab 8 Activity 1
   - date: "2026-03-13"
     events:
       - name: HW 7
