@@ -25,9 +25,9 @@ days:
         reading_text: Ch. 6.3
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
         reading2_text: Ch. 6.4
-        reading3: https://notes.eecs245.org/regression-using-linear-algebra/regression-using-linear-algebra/
-        reading3_text: Ch. 7.1
         live_notes: resources/lecture-pdfs/lec15-filled.pdf
+        videos: https://youtu.be/RH5OVaJOjiY?si=FwYSzZFI9sek4ydV
+        note: The video above is an ~8 minute summary of the lecture.
   - date: "2026-03-12"
     events:
       - name: Lab 8
@@ -35,6 +35,8 @@ days:
         title: Inverses and Projections
         pl: https://us.prairielearn.com/pl/course_instance/211780/join/ZMT3KE2DG4
         pl_text: Lab 8 Activity 1
+        videos: https://youtube.com/playlist?list=PLEFTQpsm47qQeWokuNgEIryDcVJ9iVQbx
+        note: The videos above walk through Activity 3, perhaps the most important activity of the semester.
   - date: "2026-03-13"
     events:
       - name: HW 7
