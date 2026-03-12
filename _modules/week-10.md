@@ -36,7 +36,7 @@ days:
         pl: https://us.prairielearn.com/pl/course_instance/211780/join/ZMT3KE2DG4
         pl_text: Lab 8 Activity 1
         videos: https://youtube.com/playlist?list=PLEFTQpsm47qQeWokuNgEIryDcVJ9iVQbx
-        note: The videos above walk through Activity 3, perhaps the most important activity of the semester.
+        note: The videos above walk through Activity 3, perhaps the most important activity of the semester. There's also a video with <code>numpy</code> tips.
   - date: "2026-03-13"
     events:
       - name: HW 7
