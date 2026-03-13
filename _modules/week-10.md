@@ -37,6 +37,8 @@ days:
         pl_text: Lab 8 Activity 1
         videos: https://youtube.com/playlist?list=PLEFTQpsm47qQeWokuNgEIryDcVJ9iVQbx
         note: The videos above walk through Activity 3, perhaps the most important activity of the semester. There's also a video with <code>numpy</code> tips.
+        problems: resources/labs/lab08/lab08.pdf
+        solutions: resources/labs/lab08/lab08-solutions.pdf
   - date: "2026-03-13"
     events:
       - name: HW 7
