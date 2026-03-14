@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 16
         type: lecture
-        title: Regression using Linear Algebra
+        title: Multiple Linear Regression
         reading: https://notes.eecs245.org/regression-using-linear-algebra/regression-using-linear-algebra/
         reading_text: Ch. 7.1
         reading2: https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/
@@ -25,9 +25,11 @@ days:
       - name: Lab 9
         type: lab
         title: Lab 9
-  - date: "2026-03-20"
+  - date: "2026-03-21"
     events:
       - name: HW 8
         type: hw
-        title: Homework 8
+        title: <b>Projections; Regression using Linear Algebra</b>
+        problems: ../resources/homeworks/hw08/hw08.pdf
+        template: https://www.overleaf.com/read/ytcmrhxmtcbf#430dd9
 ---
