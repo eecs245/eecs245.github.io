@@ -43,4 +43,5 @@ days:
         title: <b>Matrices</b>
         problems: ../resources/homeworks/hw06/hw06.pdf
         template: https://www.overleaf.com/read/ngvpzbqxpbth#bd3476
+        solutions: https://edstem.org/us/courses/89676/discussion/7796188
 ---

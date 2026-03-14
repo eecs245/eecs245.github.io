@@ -13,6 +13,12 @@ Here, we'll provide links to past exams, as well as other materials online that 
 
 ---
 
+## Videos
+
+Several supplemental videos have been recorded for this class, and all of them can be found [here](https://www.youtube.com/@rampureatumich/videos). When relevant, you can find these videos linked in the relevant sections of the course notes, the course homepage, and assignment solutions.
+
+---
+
 ## Past Exams
 
 Note that the midterm exams in Fall 2025 were 80 minutes long and administered in lecture, while the midterm exams in Winter 2026 will be 120 minutes (2 hours) long and administered in the evenings. This change was made to give students more time to complete the exam; we plan on making the midterms roughly the same length as they were in Fall 2025.

@@ -6,6 +6,15 @@ description: >-
 nav_order: 1
 ---
 
+<!-- Embed MathJax for LaTeX rendering -->
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+
 # Mathematics for Machine Learning 🧠
 {: .no_toc }
 {: .mb-2 }
@@ -18,9 +27,6 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {% endfor %}
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
-
-{: .green }
-Enjoy your Spring Break! 🌴 Our next lecture is on Monday, March 9th. Homework 7 is due on Friday, March 13th.
 
 {% for module in site.modules %}
 {{ module }}
