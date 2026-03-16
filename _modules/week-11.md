@@ -12,6 +12,7 @@ days:
         reading_text: Ch. 7.1
         reading2: https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/
         reading2_text: Ch. 7.2
+        live_notes: resources/lecture-pdfs/lec16-filled.pdf
   - date: "2026-03-18"
     events:
       - name: LEC 17
