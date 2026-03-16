@@ -46,4 +46,5 @@ days:
         title: <b>Rank and Inverses</b>
         problems: ../resources/homeworks/hw07/hw07.pdf
         template: https://www.overleaf.com/read/vcbjfybnjmhj#1e8061
+        solutions: https://edstem.org/us/courses/89676/discussion/7818610
 ---
