@@ -18,6 +18,7 @@ days:
       - name: LEC 17
         type: lecture
         title: The Gradient Vector
+        recording: https://leccap.engin.umich.edu/leccap/player/r/yJ12Yb
         reading: https://notes.eecs245.org/gradients/gradient-vector/
         reading_text: Ch. 8.1
         reading2: https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/
