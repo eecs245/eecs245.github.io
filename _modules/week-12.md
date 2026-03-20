@@ -30,9 +30,10 @@ days:
       - name: REV
         type: review
         title: Practice Midterm 2 (2:30-5:30PM, 1014 DOW)
-      - name: HW 9
+      - name: HW 9A
         type: hw
-        title: <b>Homework 9A: Multiple Linear Regression, Gradients (Theoretical)</b>\
+        title: "<b>Multiple Linear Regression, Gradients (Theoretical)</b>"
         problems: ../resources/homeworks/hw09/hw09A.pdf
         template: https://www.overleaf.com/read/sqcjpwdhxtdj#01910c
+        note: Homeworks 9A and 9B will count as one homework assignment in your course grade, but only 9A is due before the exam.
 ---

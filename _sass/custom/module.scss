@@ -1,6 +1,13 @@
 .module {
   @extend .card;
 
+  @include mq(md) {
+    width: calc(100% + 50px);
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+  }
+
   .module-days {
     grid-template-columns: minmax(100px, 1fr) 4fr;
 

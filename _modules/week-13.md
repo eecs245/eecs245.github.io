@@ -19,4 +19,9 @@ days:
       - name: Lab 11
         type: lab
         title: Lab 11
+  - date: "2026-04-03"
+    events:
+      - name: HW 9B
+        type: hw
+        title: Multiple Linear Regression, Gradients (Practical)
 ---
