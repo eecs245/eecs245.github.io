@@ -32,5 +32,7 @@ days:
         title: Practice Midterm 2 (2:30-5:30PM, 1014 DOW)
       - name: HW 9
         type: hw
-        title: Homework 9
+        title: <b>Homework 9A: Multiple Linear Regression, Gradients (Theoretical)</b>\
+        problems: ../resources/homeworks/hw09/hw09A.pdf
+        template: https://www.overleaf.com/read/sqcjpwdhxtdj#01910c
 ---
