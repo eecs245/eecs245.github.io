@@ -29,6 +29,8 @@ days:
       - name: Lab 9
         type: lab
         title: Lab 9
+        problems: resources/labs/lab09/lab09.pdf
+        solutions: resources/labs/lab09/lab09-solutions.pdf
   - date: "2026-03-21"
     events:
       - name: HW 8
