@@ -16,6 +16,7 @@ days:
       - name: LEC 19
         type: lecture
         title: Convexity
+        note: Here, we'll review gradients and introduce the concept of convexity. Convexity will not be tested on Midterm 2, but it will appear on the final.
         reading: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading_text: Ch. 8.4
         reading2: https://notes.eecs245.org/gradients/convexity/
