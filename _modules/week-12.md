@@ -1,12 +1,12 @@
 ---
-title: "Week 12: Gradient Descent and Convexity"
+title: "Week 12: Gradient Descent"
 weekNumber: 12
 days:
   - date: "2026-03-23"
     events:
       - name: LEC 18
         type: lecture
-        title: Gradient Descent
+        title: Gradients and Gradient Descent
         reading: https://notes.eecs245.org/gradients/gradient-descent/
         reading_text: Ch. 8.3
         reading2: https://notes.eecs245.org/gradients/gradient-descent-erm/
@@ -16,8 +16,8 @@ days:
     events:
       - name: LEC 19
         type: lecture
-        title: Convexity
-        note: Here, we'll review gradients and introduce the concept of convexity. Convexity will not be tested on Midterm 2, but it will appear on the final.
+        title: Gradient Descent and Convexity
+        note: Here, we'll review gradient descent and introduce the concept of convexity. Convexity will not be tested on Midterm 2, but it will appear on the final.
         reading: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading_text: Ch. 8.4
         reading2: https://notes.eecs245.org/gradients/convexity/
