@@ -11,6 +11,7 @@ days:
         reading_text: Ch. 8.3
         reading2: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading2_text: Ch. 8.4
+        live_notes: resources/lecture-pdfs/lec18-filled.pdf
   - date: "2026-03-25"
     events:
       - name: LEC 19
