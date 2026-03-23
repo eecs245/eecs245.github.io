@@ -7,6 +7,7 @@ days:
       - name: LEC 18
         type: lecture
         title: Gradients and Gradient Descent
+        recording: https://leccap.engin.umich.edu/leccap/player/r/bAGLfH
         reading: https://notes.eecs245.org/gradients/gradient-descent/
         reading_text: Ch. 8.3
         reading2: https://notes.eecs245.org/gradients/gradient-descent-erm/
