@@ -39,4 +39,5 @@ days:
         problems: ../resources/homeworks/hw08/hw08.pdf
         template: https://www.overleaf.com/read/ytcmrhxmtcbf#430dd9
         note: There was an important typo in Problem 4c; see <a href="https://edstem.org/us/courses/89676/discussion/7829581">here</a> for details.
+        solutions: https://edstem.org/us/courses/89676/discussion/7850378
 ---
