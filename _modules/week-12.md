@@ -18,6 +18,7 @@ days:
       - name: LEC 19
         type: lecture
         title: Gradient Descent and Convexity
+        recording: https://leccap.engin.umich.edu/leccap/player/r/ghf1V2
         note: Here, we'll review gradient descent and introduce the concept of convexity. Convexity will not be tested on Midterm 2, but it will appear on the final.
         reading: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading_text: Ch. 8.4
