@@ -29,7 +29,7 @@ days:
     events:
       - name: Lab 10
         type: lab
-        title: Lab 10
+        title: Gradient Descent and Convexity
   - date: "2026-03-27"
     events:
       - name: REV
