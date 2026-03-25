@@ -24,4 +24,7 @@ days:
       - name: HW 9B
         type: hw
         title: Multiple Linear Regression, Gradients (Practical)
+        datahub_text: HW 9B
+        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2[…]ee%2Fwn26-code%2Fhomeworks%2Fhw09%2Fhw09B.ipynb&branch=main
+        github_link: https://github.com/eecs245/wn26-code/blob/main/homeworks/hw09/hw09B.ipynb
 ---
