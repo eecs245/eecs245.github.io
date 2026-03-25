@@ -23,6 +23,7 @@ days:
         reading_text: Ch. 8.4
         reading2: https://notes.eecs245.org/gradients/convexity/
         reading2_text: Ch. 8.5
+        live_notes: resources/lecture-pdfs/lec19-filled.pdf
   - date: "2026-03-26"
     events:
       - name: Lab 10
