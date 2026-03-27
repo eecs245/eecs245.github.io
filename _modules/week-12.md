@@ -30,6 +30,8 @@ days:
       - name: Lab 10
         type: lab
         title: Gradient Descent and Convexity
+        problems: resources/labs/lab10/lab10.pdf
+        solutions: resources/labs/lab10/lab10-solutions.pdf
   - date: "2026-03-27"
     events:
       - name: REV
