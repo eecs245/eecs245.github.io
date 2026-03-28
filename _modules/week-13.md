@@ -12,13 +12,14 @@ days:
       - name: LEC 20
         type: lecture
         title: Eigenvalues and Eigenvectors (<b>no live lecture!</b>)
-        note: Live lecture is cancelled, since Suraj will be out of town. A video will be posted in advance.
-        reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/eigenvalues-eigenvectors/
+        videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qThbW5etJTrCFW6Js2WZ3R2
+        note: Live lecture is cancelled, since Suraj will be out of town. Refer to the video linked above for lecture content.
+        reading: 
   - date: "2026-04-02"
     events:
       - name: Lab 11
         type: lab
-        title: Lab 11
+        title: Convexity, Eigenvalues and Eigenvectors
   - date: "2026-04-03"
     events:
       - name: HW 9B
