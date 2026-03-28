@@ -37,7 +37,8 @@ days:
       - name: REV
         type: review
         title: Practice Midterm 2 (2:30-5:30PM, 1014 DOW)
-        note: For the first 2 hours, you will take the mock Midterm 2 posted <a href="./resources/">here</a>. The final hour will be office hours. This session will not be recorded.
+        problems: ../resources/exams/mock-mt2.pdf
+        solutions: ../resources/exams/mock-mt2-solutions.pdf
       - name: HW 9A
         type: hw
         title: "<b>Multiple Linear Regression, Gradients (Theoretical)</b>"
