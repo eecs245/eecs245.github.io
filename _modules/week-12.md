@@ -45,4 +45,5 @@ days:
         problems: ../resources/homeworks/hw09/hw09A.pdf
         template: https://www.overleaf.com/read/sqcjpwdhxtdj#01910c
         note: Homeworks 9A and 9B will count as one homework assignment in your course grade, but only 9A is due before the exam.
+        solutions: https://edstem.org/us/courses/89676/discussion/7867715
 ---
