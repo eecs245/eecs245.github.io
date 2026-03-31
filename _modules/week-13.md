@@ -7,6 +7,8 @@ days:
       - name: EXAM
         type: exam
         title: <b>Midterm 2 (7-9PM)</b>
+        problems: ../resources/exams/wn26-mt2.pdf
+        solutions: ../resources/exams/wn26-mt2-solutions.pdf
   - date: "2026-04-01"
     events:
       - name: LEC 20

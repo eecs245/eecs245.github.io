@@ -27,7 +27,7 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {% endfor %}
 
 {: .green }
-Midterm 2 is on Monday, March 30th from 7-9PM in 1670 BBB. See all relevant logistics [here](https://edstem.org/us/courses/89676/discussion/7850589).
+In-person lecture on Wednesday, April 1st is cancelled. Instead, lecture videos have been posted in the calendar below under Lecture 20. Readings are coming soon.
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
