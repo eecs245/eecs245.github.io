@@ -27,7 +27,7 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {% endfor %}
 
 {: .green }
-In-person lecture on Wednesday, April 1st is cancelled. Instead, lecture videos have been posted in the calendar below under Lecture 20. Readings are coming soon.
+In-person lecture on Wednesday, April 1st is cancelled. Instead, lecture videos and readings have been posted in the calendar below [under Lecture 20](#week-13-midterm-2-eigenvalues-and-eigenvectors). Midterm 2 and its solutions can also be found in the [Resources](resources) page.
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
