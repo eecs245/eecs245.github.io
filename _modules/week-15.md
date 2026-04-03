@@ -7,6 +7,11 @@ days:
       - name: LEC 23
         type: lecture
         title: Diagonalization, Spectral Theorem, SVD
+  - date: '2026-04-14'
+    events:
+    - name: HW 10
+      type: hw
+      title: Homework 10
   - date: "2026-04-15"
     events:
       - name: LEC 24
@@ -17,9 +22,4 @@ days:
       - name: Lab 13
         type: lab
         title: Lab 13
-  - date: "2026-04-17"
-    events:
-      - name: HW 11
-        type: hw
-        title: Homework 11
 ---

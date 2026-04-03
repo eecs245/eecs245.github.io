@@ -27,12 +27,4 @@ days:
       - name: Lab 11
         type: lab
         title: Convexity, Eigenvalues and Eigenvectors
-  - date: "2026-04-03"
-    events:
-      - name: HW 9B
-        type: hw
-        title: "<b>Multiple Linear Regression, Gradients (Practical)</b>"
-        datahub_text: HW 9B
-        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Fhomeworks%2Fhw09%2Fhw09B.ipynb&branch=main
-        github_link: https://github.com/eecs245/wn26-code/blob/main/homeworks/hw09/hw09B.ipynb
 ---
