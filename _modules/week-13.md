@@ -28,4 +28,6 @@ days:
       - name: Lab 11
         type: lab
         title: Convexity, Eigenvalues and Eigenvectors
+        problems: resources/labs/lab11/lab11.pdf
+        solutions: resources/labs/lab11/lab11-solutions.pdf
 ---
