@@ -22,6 +22,7 @@ days:
         reading2_text: Ch. 9.2
         reading3: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
         reading3_text: Ch. 9.3
+        live_notes: resources/lecture-pdfs/lec20-filled.pdf
   - date: "2026-04-02"
     events:
       - name: Lab 11
