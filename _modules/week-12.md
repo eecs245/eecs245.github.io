@@ -25,6 +25,7 @@ days:
         reading2: https://notes.eecs245.org/gradients/convexity/
         reading2_text: Ch. 8.5
         live_notes: resources/lecture-pdfs/lec19-filled.pdf
+        note: Want to learn more about gradient descent and its many variants? Read <a href="https://www.ruder.io/optimizing-gradient-descent/">this blog post</a>.
   - date: "2026-03-26"
     events:
       - name: Lab 10

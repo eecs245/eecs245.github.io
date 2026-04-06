@@ -68,3 +68,9 @@ The following textbooks are more similar in style to our course notes, in that t
     - [Simple Linear Regression](https://practice.dsc40a.com/simple-linear-regression/index.html).
     - [Matrices and Vectors](https://practice.dsc40a.com/matrix-vectors-properties/index.html).
     - [Gradient Descent and Convexity](https://practice.dsc40a.com/gradient-descent-convexity/index.html).
+
+---
+
+## Other Resources
+
+- [An overview of gradient descent optimization algorithms](https://www.ruder.io/optimizing-gradient-descent/) by Sebastian Ruder, useful if you want to learn more about gradient descent and its many variants.
