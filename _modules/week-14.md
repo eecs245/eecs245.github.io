@@ -7,11 +7,13 @@ days:
       - name: LEC 21
         type: lecture
         title: "Adjacency Matrices; Linearly Independent Eigenvectors"
+        recording: https://leccap.engin.umich.edu/leccap/player/r/hwgGGU
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
         reading_text: Ch. 9.3
         reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading2_text: Ch. 9.4
         live_notes: resources/lecture-pdfs/lec21-filled.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/hwgGGU
   - date: "2026-04-07"
     events:
       - name: HW 9B
