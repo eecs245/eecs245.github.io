@@ -6,7 +6,7 @@ days:
   events:
   - name: LEC 21
     type: lecture
-    title: "Adjacency Matrices, Multiplicities, and Diagonalization"
+    title: "Adjacency Matrices and Linearly Independent Eigenvectors"
     reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
     reading_text: Ch. 9.3
     reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
