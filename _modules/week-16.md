@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 25
         type: lecture
-        title: Principal Components Analysis; Conclusion
+        title: "PCA, Continued"
   - date: "2026-04-21"
     events:
       - name: HW 11

@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 23
         type: lecture
-        title: Diagonalization, Spectral Theorem, SVD
+        title: "Singular Value Decomposition (SVD)"
   - date: '2026-04-14'
     events:
     - name: HW 10
@@ -16,7 +16,7 @@ days:
     events:
       - name: LEC 24
         type: lecture
-        title: Singular Value Decomposition
+        title: "SVD and Principal Components Analysis (PCA)"
   - date: "2026-04-16"
     events:
       - name: Lab 13

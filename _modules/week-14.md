@@ -6,7 +6,11 @@ days:
   events:
   - name: LEC 21
     type: lecture
-    title: Eigenvalues and Eigenvectors, Continued
+    title: "Adjacency Matrices, Multiplicities, and Diagonalization"
+    reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
+    reading_text: Ch. 9.3
+    reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
+    reading2_text: Ch. 9.4
 - date: "2026-04-07"
   events:
     - name: HW 9B
@@ -20,7 +24,11 @@ days:
   events:
   - name: LEC 22
     type: lecture
-    title: Adjacency Matrices and Diagonalization
+    title: "Diagonalization and the Spectral Theorem"
+    reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
+    reading_text: Ch. 9.4
+    reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/symmetric-matrices-spectral-theorem/
+    reading2_text: Ch. 9.5
 - date: '2026-04-09'
   events:
   - name: Lab 12

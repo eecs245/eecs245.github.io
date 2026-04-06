@@ -14,6 +14,7 @@ days:
       - name: LEC 20
         type: lecture
         title: Eigenvalues and Eigenvectors (<b>no live lecture!</b>)
+        recording: https://leccap.engin.umich.edu/leccap/player/r/Y6GPvD
         videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qThbW5etJTrCFW6Js2WZ3R2
         note: Live lecture is cancelled, since Suraj will be out of town. Refer to the video linked above for lecture content.
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/eigenvalues-eigenvectors/
