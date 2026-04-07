@@ -12,9 +12,8 @@ days:
     - name: HW 10
       type: hw
       title: <b>Eigenvalues and Eigenvectors</b>
-      datahub_text: HW 10
-      datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Fhomeworks%2Fhw10%2Fhw10.ipynb&branch=main
-      github_link: https://github.com/eecs245/wn26-code/blob/main/homeworks/hw10/hw10.ipynb
+      problems: ../resources/homeworks/hw10/hw10.pdf
+      template: https://www.overleaf.com/read/qjwngfnnvkck#0f74a2
   - date: "2026-04-15"
     events:
       - name: LEC 24
