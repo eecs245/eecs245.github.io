@@ -26,9 +26,11 @@ days:
       - name: LEC 22
         type: lecture
         title: "Multiplicities and Diagonalization"
+        recording: https://leccap.engin.umich.edu/leccap/player/r/pXi7aZ
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading_text: Ch. 9.4
         live_notes: resources/lecture-pdfs/lec22-filled.pdf
+        recording: https://leccap.engin.umich.edu/leccap/player/r/pXi7aZ
   - date: '2026-04-09'
     events:
       - name: Lab 12
