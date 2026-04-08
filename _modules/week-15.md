@@ -6,7 +6,11 @@ days:
     events:
       - name: LEC 23
         type: lecture
-        title: "Singular Value Decomposition (SVD)"
+        title: "Spectral Theorem, Singular Value Decomposition (SVD)"
+        reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/symmetric-matrices-spectral-theorem/
+        reading_text: Ch. 9.5
+        reading2: https://notes.eecs245.org/singular-value-decomposition/computing-svd/
+        reading2_text: Ch. 10.1
   - date: '2026-04-14'
     events:
     - name: HW 10

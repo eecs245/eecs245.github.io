@@ -25,11 +25,9 @@ days:
     events:
       - name: LEC 22
         type: lecture
-        title: "Diagonalization and the Spectral Theorem"
+        title: "Multiplicities and Diagonalization"
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading_text: Ch. 9.4
-        reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/symmetric-matrices-spectral-theorem/
-        reading2_text: Ch. 9.5
   - date: '2026-04-09'
     events:
       - name: Lab 12
