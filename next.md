@@ -86,7 +86,7 @@ Here is distribution of letter grades earned in Fall 2025. We expect the distrib
 
 This course has 11 weekly homeworks, weekly in-person labs, 2 non-cumulative midterm exams, and a cumulative final exam, which allows you to get back some of the points you lost on the midterms. 
 
-We surveyed Fall 2025 students to get their estimates for how much time they've spent on each homework:
+We surveyed Fall 2025 students to get a rough sense of the amount of time they spent on each homework.
 
 <center><img src="../resources/next/hours_per_week_bar_chart.png" alt="Hours Per Week" width="70%"></center>
 
@@ -99,7 +99,7 @@ You can find the official end-of-semester course evaluations from Fall 2025 [her
 ## Logistics
 
 In both terms:
-- Lectures are recorded and attendance is not required, though we _might_ offer extra credit or an alternative grading scheme for students who attend lectures regularly.
+- Lectures are in-person and recorded. Attendance is not required, though we _might_ offer extra credit or an alternative grading scheme for students who attend lectures regularly.
 - Labs are in-person and attendance is 10% of your grade.
 - There are 2 midterm exams and a cumulative final exam, with an opportunity to "redeem" lower scores on the midterms by doing better on the final (see [the current syllabus](../syllabus#exams) for more details).
 
@@ -108,16 +108,16 @@ In both terms:
 
 <h4 style="margin-top: 0;">Spring 2026 Half Term</h4>
 
-<b>Lectures:</b> TuTh 1-4PM<br>
-<b>Labs:</b> MW 12-2PM
-
+<b>Lectures:</b> TuTh 1-4PM, 1690 BBB<br>
+<b>Labs:</b> MW 12-2PM, 1690 BBB<br>
+<small>Lectures and labs are both in-person in 1690 BBB, except for a few specific days where we'll be in 1018 DOW.</small>
 </div>
 <div style="flex: 1; min-width: 280px; border: 1px solid #ddd; border-radius: 8px; padding: 1em;">
 
 <h4 style="margin-top: 0;">Fall 2026</h4>
 
-<b>Lectures:</b> TuTh 10:30-12PM<br>
-<b>Labs:</b> Wednesdays at <a href="https://crapuler.com/course/FA26/EECS/245">various times</a> (flexible attendance policy)
+<b>Lectures:</b> TuTh 10:30-12PM, 1365 LCSIB<br>
+<b>Labs:</b> Wednesdays at <a href="https://crapuler.com/course/FA26/EECS/245">various times</a>
 
 </div>
 </div>
