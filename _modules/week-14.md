@@ -33,5 +33,5 @@ days:
     events:
       - name: Lab 12
         type: lab
-        title: Lab 12
+        title: Adjacency Matrices and Diagonalization
 ---
