@@ -28,6 +28,7 @@ days:
         title: "Multiplicities and Diagonalization"
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading_text: Ch. 9.4
+        live_notes: resources/lecture-pdfs/lec22-filled.pdf
   - date: '2026-04-09'
     events:
       - name: Lab 12
