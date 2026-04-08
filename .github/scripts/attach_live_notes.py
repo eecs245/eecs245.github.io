@@ -1,10 +1,48 @@
 import os
+import re
+import subprocess
 from glob import glob
 from io import StringIO
 
 from ruamel.yaml import YAML
 
 MODULES_DIR = "_modules"
+
+
+def parse_lecture_number(value: str):
+    if not value:
+        return None
+    match = re.search(r"lec\s*0*(\d+)|\b0*(\d+)\b", value, re.IGNORECASE)
+    if not match:
+        return None
+    number = match.group(1) or match.group(2)
+    return int(number) if number is not None else None
+
+
+def infer_lecture_from_recent_pdf():
+    try:
+        result = subprocess.run(
+            [
+                "git",
+                "log",
+                "-1",
+                "--name-only",
+                "--pretty=format:",
+                "--",
+                "resources/lecture-pdfs",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except Exception:
+        return None
+
+    for line in result.stdout.splitlines():
+        match = re.search(r"lec0*(\d+)-filled\.pdf$", line.strip(), re.IGNORECASE)
+        if match:
+            return int(match.group(1))
+    return None
 
 def split_front_matter(text: str):
     """
@@ -39,12 +77,15 @@ def build_front_matter(yaml_obj) -> str:
     return f"---\n{dumped}---\n"
 
 def main():
-    # --- replacement for load_requests(): single lecture per run via workflow_dispatch ---
     lecture_input = os.getenv("LECTURE_INPUT") or ""
-    if not lecture_input.strip():
-        raise RuntimeError("LECTURE_INPUT is required (set by workflow_dispatch input 'lecture').")
+    lec = parse_lecture_number(lecture_input)
+    if lec is None:
+        lec = infer_lecture_from_recent_pdf()
+    if lec is None:
+        raise RuntimeError(
+            "Could not determine lecture number from LECTURE_INPUT or recent PDF history."
+        )
 
-    lec = int(lecture_input)
     pdf_path = f"resources/lecture-pdfs/lec{lec:02d}-filled.pdf"
 
     module_files = sorted(glob(f"{MODULES_DIR}/week-*.md"))
@@ -70,7 +111,7 @@ def main():
                     continue
 
                 name = (event.get("name") or "").strip()
-                if name in {f"LEC {lec}", f"LEC {lec:02d}"}:
+                if re.fullmatch(rf"LEC\s*0*{lec}\b", name, re.IGNORECASE):
                     if event.get("live_notes") != pdf_path:
                         event["live_notes"] = pdf_path
                         modified = True

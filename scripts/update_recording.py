@@ -30,6 +30,12 @@ LECCAP_INTERACTIVE_LOGIN = os.getenv("LECCAP_INTERACTIVE_LOGIN", "false").lower(
     "yes",
     "on",
 )
+LECCAP_STRICT_TITLE_UPDATE = os.getenv("LECCAP_STRICT_TITLE_UPDATE", "false").lower() in (
+    "1",
+    "true",
+    "yes",
+    "on",
+)
 
 
 def _maybe_dump_debug(page, label):
@@ -46,6 +52,10 @@ def _maybe_dump_debug(page, label):
         page.screenshot(path=os.path.join(LECCAP_DEBUG_DIR, f"{label}.png"), full_page=True)
     except Exception:
         pass
+
+
+def _warn(message):
+    print(f"Warning: {message}", file=sys.stderr)
 
 
 def _cookies_from_header(header_value, domain, path):
@@ -511,7 +521,10 @@ def update_recording_title(
         _ensure_logged_in(page, manage_url, interactive_login)
         _maybe_dump_debug(page, "manage-loaded")
         try:
-            page.wait_for_selector("text=Edit", timeout=max(LECCAP_TIMEOUT_MS, 20000))
+            page.wait_for_selector(
+                "text=Edit, a.edit-link, div.recording",
+                timeout=max(LECCAP_TIMEOUT_MS * 2, 20000),
+            )
         except PlaywrightTimeout as exc:
             _maybe_dump_debug(page, "manage-timeout")
             raise RuntimeError("timed out waiting for manage recordings page") from exc
@@ -537,10 +550,17 @@ def update_recording_title(
         frame, edit_locator = _find_locator("text=Edit")
         if not edit_locator:
             page.goto(LECCAP_SITE_URL, wait_until="domcontentloaded")
-            frame, manage_locator = _find_locator("text=Manage Recordings")
+            frame, manage_locator = _find_locator("text=Manage Recordings, a[href*='manage/site/recordings']")
             if manage_locator:
                 manage_locator.first.click()
-            frame, edit_locator = _find_locator("text=Edit")
+            try:
+                page.wait_for_selector(
+                    "text=Edit, a.edit-link, div.recording",
+                    timeout=max(LECCAP_TIMEOUT_MS * 2, 20000),
+                )
+            except PlaywrightTimeout:
+                pass
+            frame, edit_locator = _find_locator("text=Edit, a.edit-link")
         if not edit_locator:
             _maybe_dump_debug(page, "edit-missing")
             raise RuntimeError("could not find Edit button on manage recordings page")
@@ -737,14 +757,20 @@ def main():
                 print(f"Lecture title: {lecture_title}")
                 print(f"Leccap title: {recording_title}")
 
-                update_recording_title(
-                    LECCAP_MANAGE_URL,
-                    recording_title,
-                    date_obj=date_obj,
-                    recording_url=recording_url,
-                    interactive_login=args.interactive_login or LECCAP_INTERACTIVE_LOGIN,
-                    context=context,
-                )
+                if recording_title:
+                    try:
+                        update_recording_title(
+                            LECCAP_MANAGE_URL,
+                            recording_title,
+                            date_obj=date_obj,
+                            recording_url=recording_url,
+                            interactive_login=args.interactive_login or LECCAP_INTERACTIVE_LOGIN,
+                            context=context,
+                        )
+                    except Exception as title_exc:
+                        if LECCAP_STRICT_TITLE_UPDATE:
+                            raise
+                        _warn(f"title update failed but website update will continue: {title_exc}")
 
                 if updated:
                     run_git_commands(
@@ -794,13 +820,19 @@ def main():
     print(f"Leccap title: {recording_title}")
 
     if args.update_title:
-        update_recording_title(
-            LECCAP_MANAGE_URL,
-            recording_title,
-            date_obj=date_obj,
-            recording_url=recording_url,
-            interactive_login=args.interactive_login or LECCAP_INTERACTIVE_LOGIN,
-        )
+        if recording_title:
+            try:
+                update_recording_title(
+                    LECCAP_MANAGE_URL,
+                    recording_title,
+                    date_obj=date_obj,
+                    recording_url=recording_url,
+                    interactive_login=args.interactive_login or LECCAP_INTERACTIVE_LOGIN,
+                )
+            except Exception as title_exc:
+                if LECCAP_STRICT_TITLE_UPDATE:
+                    raise
+                _warn(f"title update failed but website update will continue: {title_exc}")
 
     if updated:
         run_git_commands(module_path, lecture_name or "lecture", recording_url, args.push)
