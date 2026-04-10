@@ -36,4 +36,6 @@ days:
       - name: Lab 12
         type: lab
         title: Adjacency Matrices and Diagonalization
+        problems: resources/labs/lab12/lab12.pdf
+        solutions: resources/labs/lab12/lab12-solutions.pdf
 ---
