@@ -21,6 +21,11 @@ nav_order: 2
 
 ---
 
+
+{: .yellow}
+> <b>Note about Accessibility</b><br>
+> It's important to us that all students are able to fully engage with our course content. We're working to ensure that all digital materials – the website, course notes, homework and lab PDFs, supplemental videos, etc. – meet [WCAG 2.1 AA](https://www.w3.org/TR/WCAG21/) accessibility standards, as mandated by the federal government of all public universities in the United States. If you find any accessibility issues (hard-to-read colors, missing alt text, videos with missing captions, or anything else that makes the content difficult to access), please let Suraj know as soon as possible at rampure@umich.edu.
+
 ## Overview
 
 ### Instructor

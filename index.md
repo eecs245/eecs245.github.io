@@ -14,6 +14,8 @@ window.MathJax = {
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
+{: .blue }
+Interested in taking this course in Spring 2026 or Fall 2026? Click [**here**](next) to learn more.
 
 # Mathematics for Machine Learning 🧠
 {: .no_toc }
@@ -25,9 +27,6 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {% for staffer in site.staffersnobio %}
 {{ staffer }}
 {% endfor %}
-
-{: .green }
-Midterm 2 scores are available on Gradescope. Homework 9B's deadline has been extended to **Tuesday, April 7th**.
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
