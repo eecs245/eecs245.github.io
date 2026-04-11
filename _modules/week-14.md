@@ -20,7 +20,7 @@ days:
         datahub_text: HW 9B
         datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Fhomeworks%2Fhw09%2Fhw09B.ipynb&branch=main
         github_link: https://github.com/eecs245/wn26-code/blob/main/homeworks/hw09/hw09B.ipynb
-        note: Note the extended deadline!
+        solutions: https://edstem.org/us/courses/89676/discussion/7921887
   - date: '2026-04-08'
     events:
       - name: LEC 22
