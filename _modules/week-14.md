@@ -11,7 +11,6 @@ days:
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
         reading_text: Ch. 9.3
         live_notes: resources/lecture-pdfs/lec21-filled.pdf
-        recording: https://leccap.engin.umich.edu/leccap/player/r/hwgGGU
   - date: "2026-04-07"
     events:
       - name: HW 9B
