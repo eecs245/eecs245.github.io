@@ -5,6 +5,7 @@ from glob import glob
 from io import StringIO
 
 from ruamel.yaml import YAML
+from ruamel.yaml.constructor import DuplicateKeyError
 
 MODULES_DIR = "_modules"
 
@@ -102,7 +103,10 @@ def main():
 
         ryaml = YAML()
         ryaml.preserve_quotes = True
-        doc = ryaml.load(yaml_text) or {}
+        try:
+            doc = ryaml.load(yaml_text) or {}
+        except DuplicateKeyError as exc:
+            raise RuntimeError(f"Invalid YAML in {module_path}: duplicate key detected.") from exc
         modified = False
 
         for day in doc.get("days", []) or []:

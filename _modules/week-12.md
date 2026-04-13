@@ -19,13 +19,12 @@ days:
         type: lecture
         title: Gradient Descent and Convexity
         recording: https://leccap.engin.umich.edu/leccap/player/r/ghf1V2
-        note: Here, we'll review gradient descent and introduce the concept of convexity. Convexity will not be tested on Midterm 2, but it will appear on the final.
+        note: Here, we'll review gradient descent and introduce the concept of convexity. Convexity will not be tested on Midterm 2, but it will appear on the final. Want to learn more about gradient descent and its many variants? Read <a href="https://www.ruder.io/optimizing-gradient-descent/">this blog post</a>.
         reading: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading_text: Ch. 8.4
         reading2: https://notes.eecs245.org/gradients/convexity/
         reading2_text: Ch. 8.5
         live_notes: resources/lecture-pdfs/lec19-filled.pdf
-        note: Want to learn more about gradient descent and its many variants? Read <a href="https://www.ruder.io/optimizing-gradient-descent/">this blog post</a>.
   - date: "2026-03-26"
     events:
       - name: Lab 10
