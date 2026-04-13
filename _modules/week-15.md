@@ -23,6 +23,10 @@ days:
       - name: LEC 24
         type: lecture
         title: "SVD and Principal Components Analysis (PCA)"
+        reading: https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/
+        reading_text: Ch. 10.2
+        reading2: https://notes.eecs245.org/singular-value-decomposition/best-direction/
+        reading2_text: Ch. 10.3
   - date: "2026-04-16"
     events:
       - name: Lab 13
