@@ -9,13 +9,13 @@ nav_exclude: true
 
 # Post-Midterm 2 Practice Problems
 
-_last updated on December 8th, 2025 at 2:30AM_
+_last updated on April 13, 2026 at 3:15PM_
 
 This page contains several practice problems for content introduced after Midterm 2. They are sorted by topic:
 
 - Problems 1-14 are on [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors).
-- Problems 15-21 are on the [Singular Value Decomposition](#singular-value-decomposition).
-- Problems 22-26 are on [Principal Components Analysis](#principal-components-analysis).
+- Problems 15-18 are on the [Singular Value Decomposition](#singular-value-decomposition).
+- Problems 19-21 are on [Principal Components Analysis](#principal-components-analysis).
 
 The problems range in difficulty, and aren't necessarily indicative of the difficulty or styles of problems you will see on the real exam; some problems are more open-ended than we'd ask on an exam, and are designed to encourage you to review parts of the course notes.
 
@@ -27,11 +27,35 @@ As we're able to, we will embed videos to certain problems here. A few have alre
 
 ### Problem 1
 
-Let 
+Let
 
-$$A = \begin{bmatrix} 3 & -1 & 1 \\ 0 & 5 & 4 \\ 0 & 0 & 5 \end{bmatrix}$$ 
+$$A = \begin{bmatrix} 3 & -1 & 1 \\ 0 & 5 & 4 \\ 0 & 0 & 5 \end{bmatrix}$$
 
 Find the eigenvalues and eigenvectors of $$A$$. If $$A$$ is diagonalizable, write it in the form $$A = V \Lambda V^{-1}$$, and if it is not, explain why not.
+
+<details><summary>Solution</summary>
+
+Since $$A$$ is upper triangular, its eigenvalues are the entries on its diagonal: $$3, 5, 5.$$
+
+For $$\lambda = 3$$,
+
+$$A - 3I = \begin{bmatrix} 0 & -1 & 1 \\ 0 & 2 & 4 \\ 0 & 0 & 2 \end{bmatrix}$$
+
+so $$z = 0$$, then $$y = 0$$, and $$x$$ is free. So the eigenspace for $$\lambda = 3$$ is
+
+$$\text{nullsp}(A - 3I) = \text{span}\left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \right\}.$$
+
+For $$\lambda = 5$$,
+
+$$A - 5I = \begin{bmatrix} -2 & -1 & 1 \\ 0 & 0 & 4 \\ 0 & 0 & 0 \end{bmatrix}$$
+
+so $$z = 0$$ and $$-2x - y = 0$$, meaning $$y = -2x$$. So the eigenspace for $$\lambda = 5$$ is
+
+$$\text{nullsp}(A - 5I) = \text{span}\left\{ \begin{bmatrix} 1 \\ -2 \\ 0 \end{bmatrix} \right\}.$$
+
+The eigenvalue $$5$$ has algebraic multiplicity 2 but geometric multiplicity 1, so $$A$$ is **not** diagonalizable.
+
+</details>
 
 ---
 
@@ -43,6 +67,25 @@ Suppose $$A$$ is a $$3 \times 3$$ matrix such that the eigenspace for $$\lambda 
 2. Find matrices $$V$$ and $$\Lambda$$ such that $$A = V \Lambda V^{-1}$$.
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/tGyqgj-378U?si=J5ydwrAqTIiZuKAF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+
+<details><summary>Solution</summary>
+
+The eigenspace for $$\lambda = 1$$ is 1-dimensional, and the eigenspace for $$\lambda = -5$$ is a plane, so it is 2-dimensional. That gives us 3 linearly independent eigenvectors in $$\mathbb{R}^3$$, which is exactly what we need for diagonalizability.
+
+One eigenvector for $$\lambda = 1$$ is
+
+$$\vec v_1 = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}.$$
+
+To find two eigenvectors in the plane $$2x - 3y + 4z = 0$$, we can choose convenient values:
+
+- If $$y = 2$$ and $$z = 0$$, then $$x = 3$$, so one choice is $$\vec v_2 = \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix}.$$
+- If $$y = 0$$ and $$z = 1$$, then $$x = -2$$, so another choice is $$\vec v_3 = \begin{bmatrix} -2 \\ 0 \\ 1 \end{bmatrix}.$$
+
+So one valid answer is
+
+$$V = \begin{bmatrix} 1 & 3 & -2 \\ 2 & 2 & 0 \\ 2 & 0 & 1 \end{bmatrix}, \qquad \Lambda = \begin{bmatrix} 1 & 0 & 0 \\ 0 & -5 & 0 \\ 0 & 0 & -5 \end{bmatrix}.$$
+
+</details>
 
 ---
 
@@ -58,6 +101,26 @@ In each part, answer the following questions about the $$n \times n$$ matrix $$A
 
 2. $$A$$ has characteristic polynomial $$p(\lambda) = (2 - \lambda)(4 - \lambda)(5 - \lambda)^2$$.
 
+<details><summary>Solution</summary>
+
+For part 1,
+
+$$p(\lambda) = \lambda^3 - 16\lambda = \lambda(\lambda - 4)(\lambda + 4).$$
+
+So:
+
+- $$n = 3$$, since the characteristic polynomial has degree 3.
+- $$A$$ is **not** invertible, since $$0$$ is an eigenvalue.
+- $$A$$ **is** diagonalizable, since it has 3 distinct eigenvalues.
+
+For part 2,
+
+- $$n = 4$$, since the characteristic polynomial has degree 4.
+- $$A$$ **is** invertible, since none of its eigenvalues are 0.
+- It is **impossible to tell** whether $$A$$ is diagonalizable. The repeated eigenvalue $$5$$ has algebraic multiplicity 2, but its eigenspace could be either 1-dimensional or 2-dimensional.
+
+</details>
+
 ---
 
 ### Problem 4
@@ -68,6 +131,22 @@ Fill in the blank: $$A$$ is diagonalizable if and only if $$\text{rank}(A) = \_\
 
 <center><iframe width="640" height="360" src="https://www.loom.com/embed/16e913f28c0140999769f34d52cf719e" title="Problem 4 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
+<details><summary>Solution</summary>
+
+The eigenvalue $$0$$ has algebraic multiplicity 3, while $$2$$ and $$4$$ each have algebraic multiplicity 1. So $$A$$ is diagonalizable if and only if the eigenspace for $$\lambda = 0$$ has dimension 3.
+
+But the eigenspace for $$\lambda = 0$$ is just $$\text{nullsp}(A)$$. So we need
+
+$$\text{nullity}(A) = 3.$$
+
+By rank-nullity, that means
+
+$$\text{rank}(A) = 5 - 3 = 2.$$
+
+So the blank is $$\boxed{2}.$$
+
+</details>
+
 ---
 
 ### Problem 5
@@ -75,6 +154,28 @@ Fill in the blank: $$A$$ is diagonalizable if and only if $$\text{rank}(A) = \_\
 Suppose $$A$$ is a $$2 \times 2$$ matrix with characteristic polynomial $$p(\lambda)$$, where $$p(0) = 0$$ and $$p(1) = -5$$.
 
 Find two possible matrices $$A$$.
+
+<details><summary>Solution</summary>
+
+Since $$p(0) = \det(A) = 0$$, the matrix is singular.
+
+For a $$2 \times 2$$ matrix,
+
+$$p(\lambda) = \lambda^2 - \text{tr}(A)\lambda + \det(A).$$
+
+Since $$\det(A) = 0$$, we have
+
+$$p(1) = 1 - \text{tr}(A) = -5,$$
+
+so $$\text{tr}(A) = 6$$.
+
+That means we just need a singular $$2 \times 2$$ matrix with trace 6. For example,
+
+$$A = \begin{bmatrix} 6 & 0 \\ 0 & 0 \end{bmatrix}, \qquad A = \begin{bmatrix} 1 & 5 \\ 1 & 5 \end{bmatrix}.$$
+
+There are many other correct answers too.
+
+</details>
 
 ---
 
@@ -94,6 +195,32 @@ $$x = 3 \vec v_1 - 2 \vec v_2 + 4 \vec v_3, \qquad A \vec x = 15 \vec v_1 - 8 \v
 
 <center><iframe width="640" height="360" src="https://www.loom.com/embed/ffc2db21fe4a4c0892d8de7ec5dfbde5" title="Problem 6 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
+<details><summary>Solution</summary>
+
+Since $$A$$ is diagonalizable, the columns of $$V$$ are linearly independent. So $$\vec v_1, \vec v_2, \vec v_3$$ form a basis for $$\mathbb{R}^3$$, and coordinates in a basis are unique. That is why no other linear combination of these three vectors can equal $$\vec x$$.
+
+Because $$V$$ has columns $$\vec v_1, \vec v_2, \vec v_3$$, the vector $$V^{-1}\vec x$$ is just the coordinate vector of $$\vec x$$ in that basis:
+
+$$V^{-1}\vec x = \begin{bmatrix} 3 \\ -2 \\ 4 \end{bmatrix}.$$
+
+Now write
+
+$$A \vec x = 3\lambda_1 \vec v_1 - 2\lambda_2 \vec v_2 + 4\lambda_3 \vec v_3.$$
+
+We are also told that
+
+$$A \vec x = 15 \vec v_1 - 8 \vec v_3.$$
+
+Matching coefficients gives
+
+$$3\lambda_1 = 15,\qquad -2\lambda_2 = 0,\qquad 4\lambda_3 = -8,$$
+
+so
+
+$$\lambda_1 = 5,\qquad \lambda_2 = 0,\qquad \lambda_3 = -2.$$
+
+</details>
+
 ---
 
 ### Problem 7
@@ -106,6 +233,16 @@ Identify whether each of the following statements is true or false, and justify 
 1.  There exists a non-zero $$7 \times 7$$ matrix with an eigenvalue of $$0$$ with geometric multiplicity $$\text{GM}(0) = 7$$.
 1. If two matrices have the same characteristic polynomial, then either they are both diagonalizable, or they are both not diagonalizable.
 
+<details><summary>Solution</summary>
+
+1. **False.** For example, $$\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$$ is upper triangular but not diagonalizable.
+2. **True.** A $$13 \times 13$$ matrix has a degree-13 characteristic polynomial, and every odd-degree real polynomial has at least one real root.
+3. **False.** Geometric multiplicity can never exceed algebraic multiplicity.
+4. **False.** If $$\text{GM}(0) = 7$$ for a $$7 \times 7$$ matrix, then $$\text{nullity}(A) = 7$$, so $$A\vec x = \vec 0$$ for every vector $$\vec x$$. That forces $$A = 0$$.
+5. **False.** The matrices $$I$$ and $$\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$$ have the same characteristic polynomial, $$ (1-\lambda)^2 $$, but only the first is diagonalizable.
+
+</details>
+
 ---
 
 ### Problem 8
@@ -115,6 +252,26 @@ Suppose $$A$$ and $$B$$ are both $$2 \times 2$$ matrices with an eigenvalue of $
 1. Is $$AB$$ also guaranteed to have an eigenvalue of $$5$$?
 2. Is $$A + B$$ also guaranteed to have an eigenvalue of $$5$$?
 
+<details><summary>Solution</summary>
+
+1. **No.** For example, let
+
+$$A = 5I, \qquad B = \begin{bmatrix} 5 & 0 \\ 0 & 0 \end{bmatrix}.$$
+
+Both matrices have eigenvalue 5, but
+
+$$AB = \begin{bmatrix} 25 & 0 \\ 0 & 0 \end{bmatrix},$$
+
+whose eigenvalues are 25 and 0.
+
+2. **No.** Take $$A = B = 5I$$. Then
+
+$$A + B = 10I,$$
+
+whose only eigenvalue is 10.
+
+</details>
+
 ---
 
 ### Problem 9
@@ -122,20 +279,80 @@ Suppose $$A$$ and $$B$$ are both $$2 \times 2$$ matrices with an eigenvalue of $
 1. Suppose $$A$$ has an eigenvalue of $$\lambda$$. Show that $$A^k$$ has an eigenvalue of $$\lambda^k$$ with the same eigenvector.
 1. The converse of the statement above is false --- that is, just because $$A^k$$ has an eigenvalue of $$\lambda^k$$, it does not mean $$A$$ has an eigenvalue of $$\lambda$$. Find a counterexample, by finding a matrix $$A$$ such that $$A^2$$ has an eigenvalue of $$-1$$ such that $$A$$ has no real eigenvalues. Is $$A$$ diagonalizable?
 
+<details><summary>Solution</summary>
+
+If $$A\vec v = \lambda \vec v$$, then
+
+$$A^2 \vec v = A(A\vec v) = A(\lambda \vec v) = \lambda A\vec v = \lambda^2 \vec v.$$
+
+Repeating this same argument gives
+
+$$A^k \vec v = \lambda^k \vec v.$$
+
+So $$A^k$$ has eigenvalue $$\lambda^k$$ with the same eigenvector.
+
+For a counterexample, take
+
+$$A = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}.$$
+
+Then
+
+$$A^2 = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} = -I,$$
+
+so $$A^2$$ has eigenvalue $$-1$$. But $$A$$ has no real eigenvalues; its eigenvalues are $$i$$ and $$-i$$.
+
+Over the real numbers, $$A$$ is not diagonalizable, since it does not even have a real eigenvector.
+
+</details>
+
 ---
 
 ### Problem 10
 
-Let $$A = \begin{bmatrix} 1 & 3 \\ 3 & 1 \end{bmatrix}$$. 
+Let $$A = \begin{bmatrix} 1 & 3 \\ 3 & 1 \end{bmatrix}$$.
 
 1. What is the name of the theorem that guarantees that $$A$$ is diagonalizable?
 1. What does that theorem say about the eigenvectors of $$A$$?
+
+<details><summary>Solution</summary>
+
+The theorem is the **spectral theorem**.
+
+It says that every real symmetric matrix is diagonalizable by an orthogonal matrix. In particular, $$A$$ has an orthonormal basis of eigenvectors. So eigenvectors corresponding to different eigenvalues are orthogonal.
+
+</details>
 
 ---
 
 ### Problem 11
 
 Prove that if $$\vec u$$ and $$\vec v$$ are eigenvectors of the symmetric matrix $$S$$ corresponding to different eigenvalues, then $$\vec u$$ and $$\vec v$$ are orthogonal. This is the essence of the spectral theorem.
+
+<details><summary>Solution</summary>
+
+Suppose
+
+$$S\vec u = \lambda \vec u, \qquad S\vec v = \mu \vec v,$$
+
+with $$\lambda \neq \mu$$. Since $$S$$ is symmetric, $$S^T = S$$. Now compute $$\vec u^T S \vec v$$ in two ways:
+
+$$\vec u^T S \vec v = \vec u^T (\mu \vec v) = \mu \vec u^T \vec v,$$
+
+and also
+
+$$\vec u^T S \vec v = (S\vec u)^T \vec v = (\lambda \vec u)^T \vec v = \lambda \vec u^T \vec v.$$
+
+So
+
+$$\lambda \vec u^T \vec v = \mu \vec u^T \vec v.$$
+
+Rearranging gives
+
+$$(\lambda - \mu)\vec u^T \vec v = 0.$$
+
+Since $$\lambda \neq \mu$$, it must be the case that $$\vec u^T \vec v = 0$$. Therefore, $$\vec u$$ and $$\vec v$$ are orthogonal.
+
+</details>
 
 ---
 
@@ -153,6 +370,35 @@ Note that $$V$$ is **not** an orthogonal matrix.
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/XDR_4bTFZ6s?si=dO_jrIhUeKum9Q6G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
+<details><summary>Solution</summary>
+
+This is not a contradiction of the spectral theorem because the spectral theorem says that a symmetric matrix can be diagonalized by an orthogonal matrix. It does **not** say that every possible eigenvector matrix has to be orthogonal.
+
+Here, the eigenvalue $$3$$ has multiplicity 2, so there are many possible bases for its eigenspace. Some of those bases are orthogonal, and some are not. The columns of the given $$V$$ happen to be eigenvectors, but columns 2 and 3 are not orthogonal.
+
+The process that converts a linearly independent set into an orthonormal set with the same span is the **Gram-Schmidt process**.
+
+For this matrix, one orthonormal eigenbasis is
+
+$$\vec q_1 = \frac{1}{\sqrt{3}}\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \qquad
+\vec q_2 = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix}, \qquad
+\vec q_3 = \frac{1}{\sqrt{6}}\begin{bmatrix} 1 \\ 1 \\ -2 \end{bmatrix}.$$
+
+The first vector corresponds to eigenvalue 6, and the other two correspond to eigenvalue 3. So one valid answer is
+
+$$Q = \begin{bmatrix}
+\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} \\
+\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} \\
+\frac{1}{\sqrt{3}} & 0 & -\frac{2}{\sqrt{6}}
+\end{bmatrix}, \qquad
+\Lambda = \begin{bmatrix}
+6 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 3
+\end{bmatrix}.$$
+
+</details>
+
 ---
 
 ### Problem 13
@@ -167,6 +413,20 @@ Recall, a symmetric matrix $$A$$ is positive semidefinite if $$\vec v^T A \vec v
 
 <center><iframe width="640" height="360" src="https://www.loom.com/embed/aea647a2947c4fefa5439afe0fc6acb5" title="Problem 13 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
+<details><summary>Solution</summary>
+
+1. **No.** The zero matrix is positive semidefinite but not invertible.
+2. **Yes.** Positive semidefinite matrices are symmetric, and every real symmetric matrix is diagonalizable.
+3. If we strengthen this to positive definite, then both answers become **yes**. Positive definite matrices are symmetric, hence diagonalizable, and all of their eigenvalues are strictly positive, so they are invertible.
+4. The blank is **non-negative**.
+5. In words, the clean picture is
+
+- positive definite $$\subset$$ positive semidefinite $$\subset$$ symmetric $$\subset$$ diagonalizable
+- positive definite $$\subset$$ invertible
+- positive semidefinite and invertible intersect exactly in the positive definite matrices
+
+</details>
+
 ---
 
 ### Problem 14
@@ -177,53 +437,93 @@ $$f(x, y) = \frac{8xy + 15y^2}{x^2 + y^2}$$
 
 visualized [here on Desmos](https://www.desmos.com/3d/qzawsle26j).
 
-The goal of this problem is to find the minimum and maximum values of $$f(x, y)$$, **without** taking any partial derivatives. You might want to review [this section](https://notes.eecs245.org/eigenvalues/principal-components-analysis/#the-rayleigh-quotient) of Chapter 5.4.
+The goal of this problem is to find the minimum and maximum values of $$f(x, y)$$, **without** taking any partial derivatives. You might want to review [this section](https://notes.eecs245.org/eigenvalues-and-eigenvectors/rayleigh-quotient/) of Chapter 9.6.
 
 1. Write the numerator of $$f(x, y)$$ as a quadratic form, $$\vec x^T A \vec x$$, where $$\vec x = \begin{bmatrix} x \\ y \end{bmatrix}$$ and $$A$$ is a $$2 \times 2$$ matrix.
 1. Using the quadratic form, find the minimum and maximum values of $$f(x, y)$$.
 1. There are infinitely many points that minimize $$f(x, y)$$ and infinitely many points that maximize $$f(x, y)$$. Where do these points lie?
 
+<details><summary>Solution</summary>
+
+We want
+
+$$\vec x^T A \vec x = 8xy + 15y^2.$$
+
+So we can take
+
+$$A = \begin{bmatrix} 0 & 4 \\ 4 & 15 \end{bmatrix},$$
+
+since
+
+$$\begin{bmatrix} x & y \end{bmatrix}
+\begin{bmatrix} 0 & 4 \\ 4 & 15 \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix}
+= 8xy + 15y^2.$$
+
+That means
+
+$$f(x, y) = \frac{\vec x^T A \vec x}{\vec x^T \vec x},$$
+
+which is a Rayleigh quotient. So its maximum and minimum values are the largest and smallest eigenvalues of $$A$$.
+
+The characteristic polynomial is
+
+$$\det(A - \lambda I) = \begin{vmatrix} -\lambda & 4 \\ 4 & 15 - \lambda \end{vmatrix}
+= \lambda^2 - 15\lambda - 16,$$
+
+so the eigenvalues are
+
+$$\lambda = \frac{15 \pm 17}{2},$$
+
+meaning
+
+$$\lambda_{\max} = 16, \qquad \lambda_{\min} = -1.$$
+
+So the maximum value of $$f(x, y)$$ is $$\boxed{16}$$ and the minimum value is $$\boxed{-1}$$.
+
+The maximizing points lie on the eigenspace for $$\lambda = 16$$, which is the line $$y = 4x$$. The minimizing points lie on the eigenspace for $$\lambda = -1$$, which is the line $$y = -x/4$$. Excluding $$ (0,0) $$, every point on those lines gives the corresponding extremum.
+
+</details>
+
 ---
 
 ## Singular Value Decomposition
 
-**Note**: None of these questions are of the form "find the singular value decomposition of a matrix"; you can find problems like those in [Chapter 5.3](https://notes.eecs245.org/eigenvalues/singular-value-decomposition/#examples) and in Homework 11. Make sure to practice those too.
+**Note**: None of these questions are of the form "find the singular value decomposition of a matrix"; you can find problems like those in [Chapter 10.1](https://notes.eecs245.org/singular-value-decomposition/computing-svd/) and in Homework 11. Make sure to practice those too.
 
 ### Problem 15
-
-Suppose the matrix $$X$$ has the singular value decomposition $$X = U \Sigma V^T$$ where
-
-$$U = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \Sigma = \begin{bmatrix} \sigma_1 & 0 & 0 \\ 0 & 2 & 0 \end{bmatrix}, \quad V = \begin{bmatrix} 1/\sqrt{2} & | & 0 \\ 0 & \vec v_2 & 1 \\ 1/\sqrt{2} & | & 0 \end{bmatrix}$$
-
-1. How many rows and columns does $$X$$ have? What is $$\text{rank}(X)$$?
-1. Find $$\vec v_2$$.
-1. Given that the first column of $$X$$ and third column of $$X$$ sum to $$\begin{bmatrix} 0 \\ 5 \end{bmatrix}$$, find $$\sigma_1$$. _Hint: Recall that $$X \vec v_i = \sigma_i \vec u_i$$ for $$i = 1, 2, ..., \text{rank}(X)$$._
-
----
-
-### Problem 16
-
-Consider the rank-$$2$$ matrix $$X = \begin{bmatrix} 1 & 2 & 2 \\ 1 & 3 & 3 \end{bmatrix}$$.
-
-1. Write $$X$$ as a sum of two rank-1 outer products, e.g. $$X = \vec x_1 \vec y_1^T + \vec x_2 \vec y_2^T$$.
-1. Find $$X X^T$$ and $$X^T X$$, and the trace and determinant of each.
-1. If $$X$$ is any $$n \times d$$ matrix, which of the following are guaranteed to be true, and why?
-
-$$\text{trace}(X X^T) = \text{trace}(X^T X)$$
-
-$$\text{det}(X X^T) = \text{det}(X^T X)$$
-
----
-
-### Problem 17
 
 Suppose $$X$$ is a symmetric $$n \times n$$ matrix with singular value decomposition $$X = U \Sigma V^T$$. (Note that we are assuming $$X$$ is square, which isn't typically the case for the singular value decomposition.)
 
 Show that the diagonal entries of $$\Sigma$$ are the **absolute values** of the eigenvalues of $$X$$, i.e. $$\sigma_i = \mid \lambda_i \mid$$ for all $$i = 1, 2, ..., \text{rank}(X)$$.
 
+<details><summary>Solution</summary>
+
+Since $$X$$ is symmetric, $$X^T = X$$, so
+
+$$X^T X = X^2.$$
+
+If $$\lambda_i$$ is an eigenvalue of $$X$$ with eigenvector $$\vec v_i$$, then
+
+$$X^2 \vec v_i = X(\lambda_i \vec v_i) = \lambda_i X \vec v_i = \lambda_i^2 \vec v_i.$$
+
+So the eigenvalues of $$X^T X$$ are the squares of the eigenvalues of $$X$$.
+
+But the singular values of $$X$$ are defined by
+
+$$\sigma_i = \sqrt{\text{eigenvalue}_i(X^T X)}.$$
+
+Therefore,
+
+$$\sigma_i = \sqrt{\lambda_i^2} = |\lambda_i|.$$
+
+That is exactly what we wanted to show.
+
+</details>
+
 ---
 
-### Problem 18
+### Problem 16
 
 To find the singular values of $$X$$, we take the square roots of the non-zero eigenvalues of $$X^TX$$ (which are the same as the non-zero eigenvalues of $$XX^T$$).
 
@@ -231,38 +531,86 @@ $$\sigma_i = \sqrt{\lambda_i}$$
 
 Why is it guaranteed that the eigenvalues of $$X^TX$$ are non-negative? (Hint: What does this have to do with [Problem 13](#problem-13)?)
 
+<details><summary>Solution</summary>
+
+The matrix $$X^T X$$ is always symmetric. Also, for any vector $$\vec v$$,
+
+$$\vec v^T X^T X \vec v = (X\vec v)^T (X\vec v) = \|X\vec v\|^2 \geq 0.$$
+
+So $$X^T X$$ is positive semidefinite.
+
+By Problem 13, every positive semidefinite matrix has non-negative eigenvalues. That is why taking square roots here makes sense.
+
+</details>
+
 ---
 
-### Problem 19
+### Problem 17
 
 Consider the matrix $$X$$ whose singular value decomposition is given by
 
-$$X = \underbrace{\begin{bmatrix} 1/2 & 1/2 & 1/2 & 1/2 
-\\ 1/2 & 1/2 & -1/2 & -1/2 
-\\ 1/2 & -1/2 & 1/2 & -1/2 
+$$X = \underbrace{\begin{bmatrix} 1/2 & 1/2 & 1/2 & 1/2
+\\ 1/2 & 1/2 & -1/2 & -1/2
+\\ 1/2 & -1/2 & 1/2 & -1/2
 \\ 1/2 & -1/2 & -1/2 & 1/2 \end{bmatrix}}_{U} \underbrace{\begin{bmatrix} 8 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{\Sigma} \underbrace{\begin{bmatrix} \sqrt{2}/2 & \sqrt{2}/2 & 0 \\ -\sqrt{2}/2 & \sqrt{2}/2 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{V^T}$$
 
 1. Find the best rank-1 approximation of $$X$$.
 1. Let $$X_1$$ be the matrix you found in the previous part. In Homework 11, Problem 2, you were introduced to the Frobenius norm of a matrix, which can be thought of as the length of the norm of the matrix, if you think of it as one long $$n \times d$$ vector. Explain why the Frobenius norm of $$X - X_1$$ is equal to $$\sqrt{3^2 + 1^2} = \sqrt{10}$$.
 1. Find the best rank-2 approximation of $$X$$. There's no need to work out the entire calculation, but make sure you know how to do it.
 
+<details><summary>Solution</summary>
+
+The best rank-1 approximation keeps only the largest singular value:
+
+$$X_1 = \sigma_1 \vec u_1 \vec v_1^T.$$
+
+Here,
+
+$$\vec u_1 = \frac{1}{2}\begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \qquad
+\vec v_1^T = \begin{bmatrix} \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \end{bmatrix}, \qquad
+\sigma_1 = 8.$$
+
+So
+
+$$X_1 = 8 \vec u_1 \vec v_1^T
+= \begin{bmatrix}
+2\sqrt{2} & 2\sqrt{2} & 0 \\
+2\sqrt{2} & 2\sqrt{2} & 0 \\
+2\sqrt{2} & 2\sqrt{2} & 0 \\
+2\sqrt{2} & 2\sqrt{2} & 0
+\end{bmatrix}.$$
+
+Now,
+
+$$X - X_1 = 3\vec u_2 \vec v_2^T + 1 \vec u_3 \vec v_3^T.$$
+
+These two rank-1 pieces are orthogonal to each other in the Frobenius inner product, because the left singular vectors are orthonormal and the right singular vectors are orthonormal. So their squared Frobenius norms add:
+
+$$\|X - X_1\|_F^2 = 3^2 + 1^2 = 10,$$
+
+which means
+
+$$\|X - X_1\|_F = \sqrt{10}.$$
+
+The best rank-2 approximation is
+
+$$X_2 = \sigma_1 \vec u_1 \vec v_1^T + \sigma_2 \vec u_2 \vec v_2^T.$$
+
+If you multiply that out, you get
+
+$$X_2 =
+\begin{bmatrix}
+\frac{5\sqrt{2}}{4} & \frac{11\sqrt{2}}{4} & 0 \\
+\frac{5\sqrt{2}}{4} & \frac{11\sqrt{2}}{4} & 0 \\
+\frac{11\sqrt{2}}{4} & \frac{5\sqrt{2}}{4} & 0 \\
+\frac{11\sqrt{2}}{4} & \frac{5\sqrt{2}}{4} & 0
+\end{bmatrix}.$$
+
+</details>
+
 ---
 
-### Problem 20
-
-Suppose $$X$$ is a $$5 \times 2$$ matrix with singular value decomposition $$X = U \Sigma V^T$$.
-
-Suppose $$\vec v_1$$ and $$\vec v_2$$ are the first and second columns of $$V$$, respectively. Furthermore, suppose $$\vec w \in \mathbb{R}^2$$ is a vector such that
-
-$$\vec w = 3 \vec v_1 - \vec v_2$$
-
-1. Find $$V^T \vec w$$.
-1. Suppose $$X$$'s two singular values are $$\sigma_1 = 10$$ and $$\sigma_2 = 3$$. Find $$\Sigma V^T \vec w$$.
-1. Let $$\vec z = \Sigma V^T \vec w$$. In English, what does $$\vec z$$ represent, relative to $$\vec w$$?
-
----
-
-### Problem 21
+### Problem 18
 
 Let $$X = U \Sigma V^T$$ be singular value decomposition of some $$n \times d$$ matrix $$X$$, and let $$P = U \Sigma$$. Suppose we compute the singular value decomposition of $$P$$ into
 
@@ -270,36 +618,66 @@ $$P = U_P \Sigma_P V_P^T$$
 
 What is $$V_P^T$$? Justify your answer **conceptually**, not just algebraically. *Hint: What is $$P^TP$$ in terms of $$U$$ and $$\Sigma$$?*
 
+<details><summary>Solution</summary>
+
+The answer is
+
+$$V_P^T = I$$
+
+up to the usual harmless ambiguity in any zero-singular-value directions.
+
+Here is the conceptual reason. In the factorization
+
+$$X = U \Sigma V^T,$$
+
+the matrix $$V^T$$ is the part that rotates the standard coordinate directions into the right-singular-vector directions of $$X$$. But in
+
+$$P = U\Sigma,$$
+
+that rotation is already gone. The columns of $$P$$ are just the columns of $$U$$ scaled by the singular values, with any trailing zero columns left as zero.
+
+That means the "right-side directions" of $$P$$ are already the standard basis directions. Equivalently,
+
+$$P^T P = \Sigma^T U^T U \Sigma = \Sigma^T \Sigma,$$
+
+which is already diagonal, so no additional right-side rotation is needed. Hence the natural choice is $$V_P^T = I$$.
+
+</details>
+
 ---
 
 ## Principal Components Analysis
 
-### Problem 22
+### Problem 19
 
-In Homework 11, Problem 4 (and in Chapter 5.4), we plotted a 2-dimensional representation of a higher-dimensional dataset. Let $$\tilde X$$ be the mean-centered version of the dataset.
+In Homework 11, Problem 4 (and in [Chapter 10.4](https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/)), we plotted a 2-dimensional representation of a higher-dimensional dataset. Let $$\tilde X$$ be the mean-centered version of the dataset.
 
 Fill in the blanks: to create this plot, we plotted the first 2 __(1)__ of __(2)__.
 
 1. rows / columns
-1. $$\tilde X \qquad U \qquad V \qquad V^T \qquad U \Sigma \qquad \Sigma V^T \qquad \tilde X V \qquad U \Sigma V^T$$ 
+1. $$\tilde X \qquad U \qquad V \qquad V^T \qquad U \Sigma \qquad \Sigma V^T \qquad \tilde X V \qquad U \Sigma V^T$$
 
 (there may be more than one correct answer; identify all of them)
 
+<details><summary>Solution</summary>
+
+The correct choice for blank (1) is **columns**.
+
+The correct choices for blank (2) are
+
+$$U\Sigma \qquad \text{and} \qquad \tilde X V.$$
+
+Why? Because the principal component values are
+
+$$\tilde X \vec v_j = \sigma_j \vec u_j,$$
+
+so the $$j$$-th principal component is the $$j$$-th column of both $$\tilde X V$$ and $$U\Sigma$$. Therefore, the 2-dimensional PCA plot comes from the first two **columns** of either of those matrices.
+
+</details>
+
 ---
 
-### Problem 23
-
-Suppose $$\tilde X$$ is a mean-centered $$n \times d$$ matrix, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
-
-All you are given is that $$\Sigma = \begin{bmatrix} 10 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 0.1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$.
-
-1. How many rows and columns does $$\tilde X$$ have? What is $$\text{rank}(\tilde X)$$?
-1. What is the variance of the second principal component?
-1. What is the proportion of the total variance in $$\tilde X$$ that is accounted for by the first principal component? The second? The first and second together?
-
----
-
-### Problem 24
+### Problem 20
 
 Suppose $$X$$ is a $$51 \times 5$$ matrix, whose **first 3 rows** are given by
 
@@ -325,33 +703,99 @@ Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1
 
 <center><img src="../assets/rev-imgs/pc-4-plots.png" alt="Principal component 2 vs. principal component 1" style="width: 50%; height: auto;"></center>
 
-<iframe width="640" height="448" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 24 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe width="640" height="448" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 20 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<details><summary>Solution</summary>
+
+Since the non-zero singular values are $$9, 4, 2, 1$$, the rank is
+
+$$\text{rank}(\tilde X) = 4.$$
+
+The proportion of variance explained by the first $$k$$ principal components comes from the squared singular values. Here,
+
+$$9^2 + 4^2 + 2^2 + 1^2 = 81 + 16 + 4 + 1 = 102.$$
+
+Using the first principal component alone gives
+
+$$\frac{81}{102} \approx 79.4\%.$$
+
+Using the first two gives
+
+$$\frac{81 + 16}{102} = \frac{97}{102} \approx 95.1\%.$$
+
+So the smallest possible value of $$k$$ is $$\boxed{2}$$.
+
+Now use the fact that the total variance in $$X$$ equals
+
+$$\frac{1}{n}\sum_{j=1}^r \sigma_j^2 = \frac{102}{51} = 2.$$
+
+So the five column variances must add to 2. Four of them are already given:
+
+$$0.3 + 0.3 + 0.3 + 0.3 = 1.2.$$
+
+Therefore, the missing variance is
+
+$$2 - 1.2 = 0.8.$$
+
+For the next part, the first row of $$\tilde X$$ is
+
+$$\begin{bmatrix} 3-2 & 12-3 & 5-10 & 1-5 & 5-1 \end{bmatrix}
+= \begin{bmatrix} 1 & 9 & -5 & -4 & 4 \end{bmatrix}.$$
+
+Since $$\tilde X \vec v_3 = \sigma_3 \vec u_3$$ and $$\sigma_3 = 2$$, the first entry of $$\vec u_3$$ should be
+
+$$\frac{1}{2}\begin{bmatrix} 1 & 9 & -5 & -4 & 4 \end{bmatrix}
+\begin{bmatrix} 4/5 \\ 3/5 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+= \frac{1}{2}\left(\frac{4}{5} + \frac{27}{5}\right)
+= \frac{31}{10}.$$
+
+So, using the numbers exactly as written, the answer is $$\boxed{31/10}$$. That said, this part appears to have a typo somewhere, since an entry of a unit vector cannot have absolute value larger than 1.
+
+For the fifth part, let $$\vec 1$$ be the length-51 vector of all 1s. Since $$\tilde X$$ is mean-centered, each of its columns sums to 0, which means
+
+$$\vec 1^T \tilde X = \vec 0^T.$$
+
+So for any $$\vec w \in \mathbb{R}^5$$,
+
+$$\vec 1^T (\tilde X \vec w) = (\vec 1^T \tilde X)\vec w = \vec 0^T \vec w = 0.$$
+
+But $$\vec 1^T (\tilde X \vec w)$$ is exactly the sum of the entries of $$\tilde X \vec w$$, so those entries sum to 0.
+
+For the last part, the correct plot is **Plot D**. In principal component coordinates, the data should be centered at the origin, axis-aligned, and have more spread in PC1 than in PC2 because $$\sigma_1 = 9 > \sigma_2 = 4$$. Plot D is the best match.
+
+</details>
 
 ---
 
-### Problem 25
+### Problem 21
 
 Let $$X$$ be a $$20 \times 3$$ matrix, let $$\tilde X$$ be the centered version of $$X$$, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
 
 Suppose the variances of the 3 columns of $$\tilde X$$ are $$125$$, $$20$$, and $$5$$, respectively. What is the **smallest possible value** of $$\sigma_1$$, the largest singular value of $$\tilde X$$?
 
----
+<details><summary>Solution</summary>
 
-### Problem 26
+The key is that $$\sigma_1$$ is the largest singular value, so
 
-Suppose $$A$$, $$B$$, and $$C$$ are each $$100 \times 2$$ matrices, representing $$n = 100$$ points in $$\mathbb{R}^2$$. The three datasets are shown in the scatter plots below. (Matrix $$A$$ is in Plot A, matrix $$B$$ is in Plot B, and matrix $$C$$ is in Plot C.)
+$$\sigma_1 = \max_{\|\vec v\|=1} \|\tilde X \vec v\|.$$
 
-<center><img src="../assets/rev-imgs/pc-3-plots.png" alt="Principal component 2 vs. principal component 1" style="width: 70%; height: auto;"></center>
+If we choose $$\vec v = \vec e_1$$, the first standard basis vector, then $$\tilde X \vec e_1$$ is just the first column of $$\tilde X$$. So
 
-Assume that $$A$$, $$B$$, and $$C$$ are each already centered.
+$$\sigma_1 \geq \|\text{column 1 of } \tilde X\|.$$
 
-1. If we applied PCA to each of the above datasets, and created just one principal component in each case, for which dataset would the first principal component have the smallest mean squared orthogonal error – $$A$$, $$B$$, or $$C$$?
-1. Suppose $$\tilde X = U \Sigma V^T$$ is the singular value decomposition of $$\tilde X$$, and that
-    $$\Sigma \approx \begin{bmatrix} 16 & 0 \\ 0 & 4 \\ 0 & 0 \\ \vdots & \vdots \\ 0 & 0\end{bmatrix}, \qquad \underbrace{V = \begin{bmatrix} 2/\sqrt{5} & 1/\sqrt{5} \\ -1/\sqrt{5} & 2/\sqrt{5} \end{bmatrix}}_{\textbf{not } V^T}$$
+The variance of column 1 is 125, and there are $$n = 20$$ rows, so
 
-    Which dataset is most likely to be $$\tilde X$$ – $$A$$, $$B$$, or $$C$$?
-1. Suppose that in the graph of principal component 2 vs. principal component 1 (i.e. with PC 1 on the $$x$$-axis and PC 2 on the $$y$$-axis), a particular data point is plotted at $$(4, 2)$$. What is the corresponding point in the original (mean-centered) dataset? Your answer should be a tuple of two numbers, $$(a, b)$$ (or equivalently, a vector in $$\mathbb{R}^2$$).
+$$\|\text{column 1 of } \tilde X\|^2 = 20 \cdot 125 = 2500.$$
 
+Therefore,
+
+$$\sigma_1 \geq \sqrt{2500} = 50.$$
+
+This lower bound is achievable if the three columns are orthogonal, since then $$\tilde X^T \tilde X$$ is diagonal with diagonal entries $$2500, 400, 100$$, and the singular values are $$50, 20, 10$$.
+
+So the smallest possible value of $$\sigma_1$$ is $$\boxed{50}.$$
+
+</details>
 
 ---
 

@@ -7,6 +7,7 @@ days:
       - name: LEC 23
         type: lecture
         title: "Spectral Theorem, Singular Value Decomposition (SVD)"
+        recording: https://leccap.engin.umich.edu/leccap/player/r/J8Rtuz
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/symmetric-matrices-spectral-theorem/
         reading_text: Ch. 9.5
         reading2: https://notes.eecs245.org/singular-value-decomposition/computing-svd/

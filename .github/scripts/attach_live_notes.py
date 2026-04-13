@@ -103,11 +103,15 @@ def main():
 
         ryaml = YAML()
         ryaml.preserve_quotes = True
+        modified = False
         try:
             doc = ryaml.load(yaml_text) or {}
         except DuplicateKeyError as exc:
-            raise RuntimeError(f"Invalid YAML in {module_path}: duplicate key detected.") from exc
-        modified = False
+            tolerant_yaml = YAML()
+            tolerant_yaml.preserve_quotes = True
+            tolerant_yaml.allow_duplicate_keys = True
+            doc = tolerant_yaml.load(yaml_text) or {}
+            modified = True
 
         for day in doc.get("days", []) or []:
             for event in day.get("events", []) or []:
