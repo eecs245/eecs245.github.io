@@ -18,10 +18,15 @@ days:
         template: https://www.overleaf.com/read/vjyvfvswbpnj#9556ea
   - date: "2026-04-22"
     events:
+        - name: SUR
+          type: survey
+          title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScImWpSsqu5A_yeipDcCAqattLW06cc1qlLuWBSG68ErRlNaA/viewform?usp=publish-editor">End-of-Semester Survey</a> and <a href="https://umich.bluera.com/umich/">Official Evals</a></b>
+          note: If 80% of the class fills out <b>both</b>, we will add 1% of extra credit to everyone's final grade.
+  - date: "2026-04-23"
+    events:
       - name: REV
         type: review
-        title: Post-Midterm 2 Practice Problems
-        problems: ../post-mt2-practice
-        note: The linked page has practice problems for content introduced after Midterm 2. There will be no mock exam.
-
+        title: Post-Midterm 2 Practice Problems (no mock exam)
+        # problems: ../post-mt2-practice
+        # note: The linked page has practice problems for content introduced after Midterm 2. There will be no mock exam.
 ---
