@@ -13,7 +13,7 @@ days:
     events:
       - name: HW 11
         type: hw
-        title: <b>Singular Value Decomposition<b>
+        title: <b>Singular Value Decomposition</b>
         problems: ../resources/homeworks/hw11/hw11.pdf
         template: https://www.overleaf.com/read/vjyvfvswbpnj#9556ea
   - date: "2026-04-22"
@@ -23,5 +23,4 @@ days:
         title: Post-Midterm 2 Practice Problems
         problems: ../post-mt2-practice
         note: The linked page has practice problems for content introduced after Midterm 2. There will be no mock exam.
-
 ---
