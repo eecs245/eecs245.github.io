@@ -106,7 +106,9 @@ The Frobenius norm allows us to make more precise the idea of a rank-\\(k\\) app
 Suppose \\(X = U \Sigma V^T\\) is the singular value decomposition of the \\(n \times d\\) matrix \\(X\\), where the columns of \\(U\\) are \\(\vec u_1, \vec u_2, \ldots, \vec u_n \in \mathbb{R}^n\\), the singular values of \\(X\\) are \\(\sigma_1, \sigma_2, \ldots, \sigma_r > 0\\), the columns of \\(V^T\\) are \\(\vec v_1, \vec v_2, \ldots, \vec v_d \in \mathbb{R}^d\\), and \\(r = \text{rank}(X)\\).\
 The Eckart--Young--Mirsky theorem states that, for any integer \\(k\\) between 1 and \\(r\\), the \\(n \times d\\) matrix
 
-$$X_k = \sum_{i=1}^k \sigma_i \vec u_i \vec v_i^T$$ is the closest rank-\\(k\\) matrix to \\(X\\), in terms of Frobenius norm. That is, if \\(Y\\) is any other \\(n \times d\\) matrix of rank \\(k\\), then \\(\lVert X - X_k \rVert_F \leq \lVert X - Y \rVert_F\\). More intuitively, this says that \\(X_k\\) is the matrix with the smallest mean squared error from \\(X\\), among all \\(n \times d\\) matrices of rank \\(k\\). We will not prove this theorem in class.
+$$X_k = \sum_{i=1}^k \sigma_i \vec u_i \vec v_i^T$$ 
+
+is the closest rank-\\(k\\) matrix to \\(X\\), in terms of Frobenius norm. That is, if \\(Y\\) is any other \\(n \times d\\) matrix of rank \\(k\\), then \\(\lVert X - X_k \rVert_F \leq \lVert X - Y \rVert_F\\). More intuitively, this says that \\(X_k\\) is the matrix with the smallest mean squared error from \\(X\\), among all \\(n \times d\\) matrices of rank \\(k\\). We will not prove this theorem in class.
 
 ### Part d) <span class="badge" style="background-color: #00274C; color: #FFCB05; padding: 4px 10px; border-radius: 4px; font-size: 14px; font-weight: 500; margin-left: 8px;">6 pts</span>
 
