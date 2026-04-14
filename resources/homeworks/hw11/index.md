@@ -7,9 +7,21 @@ nav_exclude: true
 
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
+<style>
+.main-content p {
+  margin-bottom: 1.15em;
+}
+</style>
+
 # Homework 11: Singular Value Decomposition
 
 **Due:** Tuesday, April 21st, 2026 at 11:59PM Ann Arbor Time
+
+{: .yellow }
+**Why is this homework a webpage instead of a PDF?**<br>Starting on April 24, 2026, all public universities must make their content digitally accessible for students with disabilities. Webpages can be more accessible than PDFs for those who use screen readers or other assistive technologies. To experiment with the best practices for accessibility, we've converted this homework to a webpage. A PDF version, and Overleaf template, are still linked below. In the End-of-Semester Survey, we'll ask for your feedback on this format.
+
+<a class="btn btn-info btn-sm" href="/resources/homeworks/hw11/hw11.pdf" target="_blank">✏️ PDF</a>
+<a class="btn btn-info btn-sm" href="https://www.overleaf.com/read/vjyvfvswbpnj#9556ea" target="_blank">🍃 LaTeX Template</a>
 
 Write your solutions to the following problems by either typing them up or handwriting them on another piece of paper. Homeworks are due to Gradescope by 11:59PM on the due date. See the [syllabus](https://eecs245.org/syllabus/#homeworks) for details on the slip day policy.
 
@@ -30,9 +42,9 @@ Total Points: 10 + 18 + 22 + 15 = 65
 
 ## Problem 1: Homework 10 Solutions Review <span class="badge" style="background-color: #00274C; color: #FFCB05; padding: 4px 10px; border-radius: 4px; font-size: 14px; font-weight: 500; margin-left: 8px;">10 pts</span>
 
-Review [the solutions to Homework 10](https://static.us.edusercontent.com/files/dJ2GtbPY9Kp4ynRXsuJ5yle9). Pick **two problem parts** (for example, Problem 6b and Problem 7c) from Homework 10 in which your solutions have the most room for improvement, i.e. where they have unsound reasoning, could be significantly more efficient or clearer, etc. Include a screenshot of your solution to each problem part, and in a few sentences, explain what was deficient and how it could be fixed.
+Review the solutions to Homework 10. Pick **two problem parts** (for example, Problem 6b and Problem 7c) from Homework 10 in which your solutions have the most room for improvement, i.e. where they have unsound reasoning, could be significantly more efficient or clearer, etc. Include a screenshot of your solution to each problem part, and in a few sentences, explain what was deficient and how it could be fixed.
 
-Alternatively, if you think one of your solutions is significantly better than the posted one, copy it here and explain why you think it is better. If you didn't do Homework 9, choose two problem parts from it that look challenging to you, and in a few sentences, explain the key ideas behind their solutions in your own words.
+Alternatively, if you think one of your solutions is significantly better than the posted one, copy it here and explain why you think it is better. If you didn't do Homework 10, choose two problem parts from it that look challenging to you, and in a few sentences, explain the key ideas behind their solutions in your own words.
 
 ---
 

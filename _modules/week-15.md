@@ -33,5 +33,5 @@ days:
     events:
       - name: Lab 13
         type: lab
-        title: Lab 13
+        title: Singular Value Decomposition
 ---

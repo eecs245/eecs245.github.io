@@ -17,6 +17,12 @@ MATHJAX_SNIPPET = (
     " </script>"
 )
 
+HOMEWORK_STYLE_SNIPPET = """<style>
+.main-content p {
+  margin-bottom: 1.15em;
+}
+</style>"""
+
 
 @dataclass
 class Metadata:
@@ -302,6 +308,8 @@ def build_homework_page(
         "---",
         "",
         MATHJAX_SNIPPET,
+        "",
+        HOMEWORK_STYLE_SNIPPET,
         "",
         f"# {metadata.assignment}",
         "",
