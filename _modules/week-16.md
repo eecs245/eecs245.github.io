@@ -13,7 +13,9 @@ days:
     events:
       - name: HW 11
         type: hw
-        title: Homework 11
+        title: <b>Singular Value Decomposition<b>
+        problems: ../resources/homeworks/hw11/hw11.pdf
+        template: https://www.overleaf.com/read/vjyvfvswbpnj#9556ea
   - date: "2026-04-22"
     events:
       - name: REV
