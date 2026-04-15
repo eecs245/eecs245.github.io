@@ -25,6 +25,7 @@ days:
       - name: LEC 24
         type: lecture
         title: "SVD and Principal Components Analysis (PCA)"
+        recording: https://leccap.engin.umich.edu/leccap/player/r/0WvNJM
         reading: https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/
         reading_text: Ch. 10.2
         reading2: https://notes.eecs245.org/singular-value-decomposition/best-direction/
