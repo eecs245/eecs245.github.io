@@ -29,6 +29,7 @@ days:
         reading_text: Ch. 10.2
         reading2: https://notes.eecs245.org/singular-value-decomposition/best-direction/
         reading2_text: Ch. 10.3
+        live_notes: resources/lecture-pdfs/lec24-filled.pdf
   - date: "2026-04-16"
     events:
       - name: Lab 13
