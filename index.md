@@ -29,7 +29,9 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {% endfor %}
 
 {: .green }
-If 80% of the class fills out <b>both</b> the <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScImWpSsqu5A_yeipDcCAqattLW06cc1qlLuWBSG68ErRlNaA/viewform?usp=publish-editor">End-of-Semester Survey</a></b> and the <b><a href="https://umich.bluera.com/umich/">Official Evals</a></b> by Wednesday 4/22 at 11:59PM, we will add 1% of extra credit to everyone's final grade.
+> If 80% of the class fills out <b>both</b> the <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScImWpSsqu5A_yeipDcCAqattLW06cc1qlLuWBSG68ErRlNaA/viewform?usp=publish-editor">End-of-Semester Survey</a></b> and the <b><a href="https://umich.bluera.com/umich/">Official Evals</a></b> by Wednesday 4/22 at 11:59PM, we will add 1% of extra credit to everyone's final grade.
+>
+> There will not be a mock final exam; instead, we've posted a [**Post-Midterm 2 Practice Problems**](../post-mt2-practice) worksheet, complete with solutions. Last semester's final exam is available [**here**](../resources#past-exams).
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 

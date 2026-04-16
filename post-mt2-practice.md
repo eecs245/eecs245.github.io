@@ -9,13 +9,13 @@ nav_exclude: true
 
 # Post-Midterm 2 Practice Problems
 
-_last updated on April 13, 2026 at 3:15PM_
+_last updated on April 15, 2026 at 4:43PM_
 
 This page contains several practice problems for content introduced after Midterm 2. They are sorted by topic:
 
 - Problems 1-14 are on [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors).
 - Problems 15-18 are on the [Singular Value Decomposition](#singular-value-decomposition).
-- Problems 19-21 are on [Principal Components Analysis](#principal-components-analysis).
+- Problems 19-22 are on [Principal Components Analysis](#principal-components-analysis).
 
 The problems range in difficulty, and aren't necessarily indicative of the difficulty or styles of problems you will see on the real exam; some problems are more open-ended than we'd ask on an exam, and are designed to encourage you to review parts of the course notes.
 
@@ -506,7 +506,7 @@ The maximizing points lie on the eigenspace for $$\lambda = 16$$, which is the l
 
 ## Singular Value Decomposition
 
-**Note**: None of these questions are of the form "find the singular value decomposition of a matrix"; you can find many problems like those in [Chapter 10.1](https://notes.eecs245.org/singular-value-decomposition/computing-svd/) and in Homework 11. Make sure to practice those too.
+**Note**: None of these questions are of the form "find the singular value decomposition of a matrix"; you can find many problems like those in [Chapter 10.1](https://notes.eecs245.org/singular-value-decomposition/computing-svd/) and in [Homework 11](../resources/homeworks/hw11). Make sure to practice those too.
 
 ### Problem 15
 
@@ -569,59 +569,48 @@ Consider the matrix $$X$$ whose singular value decomposition is given by
 $$X = \underbrace{\begin{bmatrix} 1/2 & 1/2 & 1/2 & 1/2
 \\ 1/2 & 1/2 & -1/2 & -1/2
 \\ 1/2 & -1/2 & 1/2 & -1/2
-\\ 1/2 & -1/2 & -1/2 & 1/2 \end{bmatrix}}_{U} \underbrace{\begin{bmatrix} 8 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{\Sigma} \underbrace{\begin{bmatrix} \sqrt{2}/2 & \sqrt{2}/2 & 0 \\ -\sqrt{2}/2 & \sqrt{2}/2 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{V^T}$$
+\\ 1/2 & -1/2 & -1/2 & 1/2 \end{bmatrix}}_{U} \underbrace{\begin{bmatrix} 8 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}}_{\Sigma} \underbrace{\begin{bmatrix} \sqrt{2}/2 & \sqrt{2}/2 & 0 \\ -\sqrt{2}/2 & \sqrt{2}/2 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{V^T}$$
 
-1. Find the best rank-1 approximation of $$X$$.
-1. Let $$X_1$$ be the matrix you found in the previous part. In Homework 11, Problem 2, you were introduced to the Frobenius norm of a matrix, which can be thought of as the length of the norm of the matrix, if you think of it as one long $$n \times d$$ vector. Explain why the Frobenius norm of $$X - X_1$$ is equal to $$\sqrt{3^2 + 1^2} = \sqrt{10}$$.
-1. Find the best rank-2 approximation of $$X$$. There's no need to work out the entire calculation, but make sure you know how to do it.
+1. Find the best rank-one approximation of $$X$$.
+2. Let $$X_1$$ be the matrix you found in the previous part. In [Homework 11, Problem 2](../resources/homeworks/hw11#problem-2-svd-fundamentals-18-pts), you were introduced to the Frobenius norm of a matrix, which can be thought of as the length of the norm of the matrix, if you think of it as one long $$n \times d$$ vector. Explain why the Frobenius norm of $$X - X_1$$ is equal to $$\sqrt{3^2 + 1^2} = \sqrt{10}$$.
+3. Find the best rank-two approximation of $$X$$. There's no need to work out the entire calculation, but make sure you know how to do it.
 
 <details markdown="1"><summary>Solution</summary>
 
-The best rank-1 approximation keeps only the largest singular value:
+1. The best rank-one approximation keeps only the largest singular value:
+    $$X_1 = \sigma_1 \vec u_1 \vec v_1^T$$
 
-$$X_1 = \sigma_1 \vec u_1 \vec v_1^T$$
+    Here,
 
-Here,
+    $$\vec u_1 = \begin{bmatrix} 1/2 \\ 1/2 \\ 1/2 \\ 1/2 \end{bmatrix}, \qquad
+    \vec v_1^T = \begin{bmatrix} \sqrt{2}/2 & \sqrt{2}/2 & 0 \end{bmatrix}, \qquad
+    \sigma_1 = 8$$
 
-$$\vec u_1 = \frac{1}{2}\begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}, \qquad
-\vec v_1^T = \begin{bmatrix} \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \end{bmatrix}, \qquad
-\sigma_1 = 8$$
+    So
 
-So
+    $$X_1 = 8 \vec u_1 \vec v_1^T
+    = \begin{bmatrix}
+    2\sqrt{2} & 2\sqrt{2} & 0 \\
+    2\sqrt{2} & 2\sqrt{2} & 0 \\
+    2\sqrt{2} & 2\sqrt{2} & 0 \\
+    2\sqrt{2} & 2\sqrt{2} & 0
+    \end{bmatrix}$$
 
-$$X_1 = 8 \vec u_1 \vec v_1^T
-= \begin{bmatrix}
-2\sqrt{2} & 2\sqrt{2} & 0 \\
-2\sqrt{2} & 2\sqrt{2} & 0 \\
-2\sqrt{2} & 2\sqrt{2} & 0 \\
-2\sqrt{2} & 2\sqrt{2} & 0
-\end{bmatrix}$$
+2. Now, $$X - X_1 = 3\vec u_2 \vec v_2^T + 1 \vec u_3 \vec v_3^T$$.
 
-Now,
+    Think of $$3 \vec u_2 \vec v_2^T + 1 \vec u_3 \vec v_3^T$$ itself as a rank-two matrix, made up of a sum of two rank-one matrices, broken into its SVD summation form.
 
-$$X - X_1 = 3\vec u_2 \vec v_2^T + 1 \vec u_3 \vec v_3^T$$
+    Using that logic, and the fact from [Homework 11, Problem 3](../resources/homeworks/hw11#problem-3-frobenius-norm-and-low-rank-approximation-22-pts), that the Frobenius norm of a matrix is equal to the sum of the squares of its singular values, we have
 
-These two rank-1 pieces are orthogonal to each other in the Frobenius inner product, because the left singular vectors are orthonormal and the right singular vectors are orthonormal. So their squared Frobenius norms add:
+    $$\|X - X_1\|_F^2 = 3^2 + 1^2 = 10$$
 
-$$\|X - X_1\|_F^2 = 3^2 + 1^2 = 10,$$
+    which means
 
-which means
+    $$\|X - X_1\|_F = \sqrt{10}$$
 
-$$\|X - X_1\|_F = \sqrt{10}$$
+3. The best rank-two approximation is
 
-The best rank-2 approximation is
-
-$$X_2 = \sigma_1 \vec u_1 \vec v_1^T + \sigma_2 \vec u_2 \vec v_2^T$$
-
-If you multiply that out, you get
-
-$$X_2 =
-\begin{bmatrix}
-\frac{5\sqrt{2}}{4} & \frac{11\sqrt{2}}{4} & 0 \\
-\frac{5\sqrt{2}}{4} & \frac{11\sqrt{2}}{4} & 0 \\
-\frac{11\sqrt{2}}{4} & \frac{5\sqrt{2}}{4} & 0 \\
-\frac{11\sqrt{2}}{4} & \frac{5\sqrt{2}}{4} & 0
-\end{bmatrix}$$
+    $$X_2 = \sigma_1 \vec u_1 \vec v_1^T + \sigma_2 \vec u_2 \vec v_2^T = 8 \begin{bmatrix} 1/2 \\ 1/2 \\ 1/2 \\ 1/2 \end{bmatrix} \begin{bmatrix} \sqrt{2}/2 & \sqrt{2}/2 & 0 \end{bmatrix} + 3 \begin{bmatrix} 1/2 \\ 1/2 \\ -1/2 \\ -1/2 \end{bmatrix} \begin{bmatrix} -\sqrt{2}/2 & \sqrt{2}/2 & 0 \end{bmatrix}$$
 
 </details>
 
@@ -633,68 +622,91 @@ Let $$X = U \Sigma V^T$$ be singular value decomposition of some $$n \times d$$ 
 
 $$P = U_P \Sigma_P V_P^T$$
 
-What is $$V_P^T$$? Justify your answer **conceptually**, not just algebraically. *Hint: What is $$P^TP$$ in terms of $$U$$ and $$\Sigma$$?*
+What is $$V_P^T$$? Think about your answer **conceptually**, not just algebraically. *Hint: What is $$P^TP$$ in terms of $$U$$ and $$\Sigma$$?*
 
 <details markdown="1"><summary>Solution</summary>
 
-The answer is
+$$P^TP = (U \Sigma)^T (U \Sigma) = \Sigma^T U^T U \Sigma = \Sigma^T \Sigma$$
 
-$$V_P^T = I$$
+$$P^TP$$ is a diagonal matrix! The values along the diagonal are the squares of the singular values of $$X$$. In
 
-up to the usual harmless ambiguity in any zero-singular-value directions.
+$$P = U_P \Sigma_P V_P^T$$
 
-Here is the conceptual reason. In the factorization
+the matrix $$V_P$$ contains the eigenvectors of $$P^TP$$ in its columns. But the eigenvectors of a diagonal matrix are the standard basis vectors - $$\vec v_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \vec v_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}, \ldots, \vec v_d = \begin{bmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}$$. So,
 
-$$X = U \Sigma V^T,$$
+$$V_P = I = V_P^T$$
 
-the matrix $$V^T$$ is the part that rotates the standard coordinate directions into the right-singular-vector directions of $$X$$. But in
+Note that there are actually several possible answers. For instance, if we negate the first column of $$V_P$$ (replacing the top-left value with $$-1$$), we could get the same decomposition of $$P = U_P \Sigma_P V_P^T$$ as long as we also negative the first column of $$U_P$$, maintaining the relationship that
 
-$$P = U\Sigma,$$
+$$P V_P = U_P \Sigma_P$$
 
-that rotation is already gone. The columns of $$P$$ are just the columns of $$U$$ scaled by the singular values, with any trailing zero columns left as zero.
-
-That means the "right-side directions" of $$P$$ are already the standard basis directions. Equivalently,
-
-$$P^T P = \Sigma^T U^T U \Sigma = \Sigma^T \Sigma,$$
-
-which is already diagonal, so no additional right-side rotation is needed. Hence the natural choice is $$V_P^T = I$$.
+It is also possible to shuffle some of the columns of $$V_P$$, in the event there are repeated singular values in the diagonal of $$\Sigma_P$$. The fact that $$V_P^T = I$$ is the most natural choice though. 
 
 </details>
 
----
+Suppose $$\tilde X$$ is a mean-centered $$n \times d$$ matrix, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$. All we are given is that
 
-## Principal Components Analysis
+$$
+\Sigma = \begin{bmatrix} 10 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 0.1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}
+$$
 
-### Problem 19
-
-In Homework 11, Problem 4 (and in [Chapter 10.4](https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/#example-from-mathbb-r-2-to-mathbb-r-2)), we plotted a 2-dimensional representation of a higher-dimensional dataset. Let $$\tilde X$$ be the mean-centered version of the dataset.
-
-Fill in the blanks: to create this plot, we plotted the first 2 __(1)__ of __(2)__.
-
-1. rows / columns
-1. $$\tilde X \qquad U \qquad V \qquad V^T \qquad U \Sigma \qquad \Sigma V^T \qquad \tilde X V \qquad U \Sigma V^T$$
-
-(there may be more than one correct answer; identify all of them)
+1. What is the variance of the second principal component?
+2. What proportion of the total variance in $$\tilde X$$ is accounted for by the first principal component? The second? The first and second together?
 
 <details markdown="1"><summary>Solution</summary>
 
-The correct choice for blank (1) is **columns**.
+1. The variance of the $$j$$-th principal component is $$\sigma_j^2/n$$. So the variance of the second principal component is
 
-The correct choices for blank (2) are
+    $$\frac{3^2}{n} = \frac{9}{n}$$
 
-$$U\Sigma \qquad \text{and} \qquad \tilde X V$$
+2. For the proportions of variance explained, use the squared singular values:
 
-Why? Because the principal component values are
+    $$10^2 = 100, \qquad 3^2 = 9, \qquad 0.1^2 = 0.01$$
 
-$$\tilde X \vec v_j = \sigma_j \vec u_j,$$
+    So the total variance is proportional to
 
-so the $$j$$-th principal component is the $$j$$-th column of both $$\tilde X V$$ and $$U\Sigma$$. Therefore, the 2-dimensional PCA plot comes from the first two **columns** of either of those matrices.
+    $$100 + 9 + 0.01 = 109.01$$
+
+    Therefore:
+
+    - First principal component: $$\frac{100}{109.01} \approx 91.7\%$$
+    - Second principal component: $$\frac{9}{109.01} \approx 8.3\%$$
+    - First and second together: $$\frac{109}{109.01} \approx 99.99\%$$
 
 </details>
 
 ---
 
 ### Problem 20
+
+In [Homework 11, Problem 4](../resources/homeworks/hw11#problem-4-principal-components-analysis-15-pts) (and in [Chapter 10.4](https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/#example-from-mathbb-r-2-to-mathbb-r-2)), we plotted a 2-dimensional representation of a higher-dimensional dataset. Let $$\tilde X$$ be the mean-centered version of the dataset.
+
+Fill in the blanks: to create this plot, we plotted the first 2 __(1)__ of __(2)__.
+
+1. rows / columns
+2. $$\tilde X \qquad U \qquad V \qquad V^T \qquad U \Sigma \qquad \Sigma V^T \qquad \tilde X V \qquad U \Sigma V^T$$
+
+(there may be more than one correct answer; identify all of them)
+
+<details markdown="1"><summary>Solution</summary>
+
+1. The correct choice for blank (1) is **columns**.
+
+2. The correct choices for blank (2) are
+
+    $$U\Sigma \qquad \text{and} \qquad \tilde X V$$
+
+    Why? Because the principal component values are
+
+    $$\tilde X \vec v_j = \sigma_j \vec u_j$$
+
+    so the $$j$$-th principal component is the $$j$$-th column of both $$\tilde X V$$ and $$U\Sigma$$. Therefore, the 2-dimensional PCA plot comes from the first two **columns** of either of those matrices.
+
+</details>
+
+---
+
+### Problem 21
 
 Suppose $$X$$ is a $$51 \times 5$$ matrix, whose **first 3 rows** are given by
 
@@ -711,80 +723,80 @@ Let $$\tilde X$$ be the mean-centered version of $$X$$, and let $$\tilde X = U \
 
 Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1$$, and $$0$$.
 
-1. What is $$\text{rank}(\tilde X)$$? (Note that in general, **unlike** I accidentally said in Thursday's lecture, $$\text{rank}(\tilde X)$$ is not necessarily equal to $$\text{rank}(X)$$: it is possible for $$\text{rank}(\tilde X)$$ to equal $$\text{rank}(X) - 1$$. Think about why this is the case!)
-1. We want to choose the first $$k$$ principal components, such that at least $$95\%$$ of the variance in $$X$$ is accounted for. What is the smallest possible value of $$k$$ that we can choose?
-1. Notice that the table provided does not include the variance of column $$3$$. Given all the information above, what is the variance of column $$3$$?
-1. Suppose $$\vec v_3 = \begin{bmatrix} 4/5 \\ 3/5 \\ 0 \\ 0 \\ 0 \end{bmatrix}$$ is the third column of $$V$$. What is the **first entry** of $$\vec u_3$$, the third column of $$U$$? *Hint: Remember that $$U \Sigma V^T$$ is the singular value decomposition of $$\tilde X$$, not $$X$$.*
-1. Prove that the entries of $$\tilde X \vec w$$ sum to 0, for any $$\vec w \in \mathbb{R}^5$$.
-1. Which of these four plots visualizes principal component 2 vs. principal component 1?
+1. What is $$\text{rank}(\tilde X)$$? (Note: $$\text{rank}(\tilde X)$$ is not necessarily equal to $$\text{rank}(X)$$: it is possible for $$\text{rank}(\tilde X)$$ to equal $$\text{rank}(X) - 1$$. Think about why this is the case!)
+2. We want to choose the first $$k$$ principal components, such that at least $$95\%$$ of the variance in $$X$$ is accounted for. What is the smallest possible value of $$k$$ that we can choose?
+3. Notice that the table provided does not include the variance of column $$3$$. Given all the information above, what is the variance of column $$3$$?
+4. Suppose $$\vec v_3 = \begin{bmatrix}  0 \\ 0 \\ 0 \\ 4/5 \\ 3/5 \end{bmatrix}$$ is the third column of $$V$$. What is the **first entry** of $$\vec u_3$$, the third column of $$U$$? *Hint: Remember that $$U \Sigma V^T$$ is the singular value decomposition of $$\tilde X$$, not $$X$$.*
+5. Prove that the entries of $$\tilde X \vec w$$ sum to 0, for any $$\vec w \in \mathbb{R}^5$$.
+6. Which of these four plots visualizes principal component 2 vs. principal component 1?
 
 <center><img src="../assets/rev-imgs/pc-4-plots.png" alt="Principal component 2 vs. principal component 1" style="width: 50%; height: auto;"></center>
 
-<iframe width="640" height="448" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 20 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe width="640" height="448" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 21 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <details markdown="1"><summary>Solution</summary>
 
-Since the non-zero singular values are $$9, 4, 2, 1$$, the rank is
+1. Since the non-zero singular values are $$9, 4, 2, 1$$, the rank is
 
-$$\text{rank}(\tilde X) = 4$$
+    $$\text{rank}(\tilde X) = 4$$
 
-The proportion of variance explained by the first $$k$$ principal components comes from the squared singular values. Here,
+2. The proportion of variance explained by the first $$k$$ principal components comes from the squared singular values. Here,
 
-$$9^2 + 4^2 + 2^2 + 1^2 = 81 + 16 + 4 + 1 = 102$$
+    $$9^2 + 4^2 + 2^2 + 1^2 = 81 + 16 + 4 + 1 = 102$$
 
-Using the first principal component alone gives
+    Using the first principal component alone gives
 
-$$\frac{81}{102} \approx 79.4\%$$
+    $$\frac{81}{102} \approx 79.4\%$$
 
-Using the first two gives
+    Using the first two gives
 
-$$\frac{81 + 16}{102} = \frac{97}{102} \approx 95.1\%$$
+    $$\frac{81 + 16}{102} = \frac{97}{102} \approx 95.1\%$$
 
-So the smallest possible value of $$k$$ is $$\boxed{2}$$.
+    So the smallest possible value of $$k$$ is $$\boxed{2}$$.
 
-Now use the fact that the total variance in $$X$$ equals
+3. Now use the fact that the total variance in $$X$$ equals
 
-$$\frac{1}{n}\sum_{j=1}^r \sigma_j^2 = \frac{102}{51} = 2$$
+    $$\frac{1}{n}\sum_{j=1}^r \sigma_j^2 = \frac{102}{51} = 2$$
 
-So the five column variances must add to 2. Four of them are already given:
+    So the five column variances must add to 2. Four of them are already given:
 
-$$0.3 + 0.3 + 0.3 + 0.3 = 1.2$$
+    $$0.3 + 0.3 + 0.3 + 0.3 = 1.2$$
 
-Therefore, the missing variance is
+    Therefore, the missing variance is
 
-$$2 - 1.2 = 0.8$$
+    $$2 - 1.2 = 0.8$$
 
-For the next part, the first row of $$\tilde X$$ is
+4. The first row of $$\tilde X$$ is
 
-$$\begin{bmatrix} 3-2 & 12-3 & 5-10 & 1-5 & 5-1 \end{bmatrix}
-= \begin{bmatrix} 1 & 9 & -5 & -4 & 4 \end{bmatrix}$$
+    $$\begin{bmatrix} 3-2 & 12-3 & 5-10 & 1-5 & 5-1 \end{bmatrix} \\
+    = \begin{bmatrix} 1 & 9 & -5 & -4 & 4 \end{bmatrix}$$
 
-Since $$\tilde X \vec v_3 = \sigma_3 \vec u_3$$ and $$\sigma_3 = 2$$, the first entry of $$\vec u_3$$ should be
+    Since $$\tilde X \vec v_3 = \sigma_3 \vec u_3$$ and $$\sigma_3 = 2$$, the first entry of $$\vec u_3$$ should be
 
-$$\frac{1}{2}\begin{bmatrix} 1 & 9 & -5 & -4 & 4 \end{bmatrix}
-\begin{bmatrix} 4/5 \\ 3/5 \\ 0 \\ 0 \\ 0 \end{bmatrix}
-= \frac{1}{2}\left(\frac{4}{5} + \frac{27}{5}\right)
-= \frac{31}{10}$$
+    $$\frac{1}{2}\begin{bmatrix} 1 & 9 & -5 & -4 & 4 \end{bmatrix}
+    \begin{bmatrix} 0 \\ 0 \\ 0 \\ 4/5 \\ 3/5 \end{bmatrix}
+    = \frac{1}{2}\left(-16/5 + 12/5\right)
+    = -2/5$$
 
-So, using the numbers exactly as written, the answer is $$\boxed{31/10}$$. That said, this part appears to have a typo somewhere, since an entry of a unit vector cannot have absolute value larger than 1.
+    So, the answer is $$\boxed{-2/5}$$. **Note that these numbers are slightly different than in the video.**
 
-For the fifth part, let $$\vec 1$$ be the length-51 vector of all 1s. Since $$\tilde X$$ is mean-centered, each of its columns sums to 0, which means
+5. Let $$\vec 1$$ be the length-51 vector of all 1s. Since $$\tilde X$$ is mean-centered, each of its columns sums to 0, which means
 
-$$\vec 1^T \tilde X = \vec 0^T$$
+    $$\vec 1^T \tilde X = \vec 0^T$$
 
-So for any $$\vec w \in \mathbb{R}^5$$,
+    So for any $$\vec w \in \mathbb{R}^5$$,
 
-$$\vec 1^T (\tilde X \vec w) = (\vec 1^T \tilde X)\vec w = \vec 0^T \vec w = 0$$
+    $$\vec 1^T (\tilde X \vec w) = (\vec 1^T \tilde X)\vec w = \vec 0^T \vec w = 0$$
 
-But $$\vec 1^T (\tilde X \vec w)$$ is exactly the sum of the entries of $$\tilde X \vec w$$, so those entries sum to 0.
+    But $$\vec 1^T (\tilde X \vec w)$$ is exactly the sum of the entries of $$\tilde X \vec w$$, so those entries sum to 0.
 
-For the last part, the correct plot is **Plot D**. In principal component coordinates, the data should be centered at the origin, axis-aligned, and have more spread in PC1 than in PC2 because $$\sigma_1 = 9 > \sigma_2 = 4$$. Plot D is the best match.
+6. The correct plot is **Plot D**. In principal component coordinates, the data should be centered at the origin, axis-aligned, and have more spread in PC1 than in PC2 because $$\sigma_1 = 9 > \sigma_2 = 4$$. Plot D is the best match.
 
 </details>
 
 ---
 
-### Problem 21
+### Problem 22
 
 Let $$X$$ be a $$20 \times 3$$ matrix, let $$\tilde X$$ be the centered version of $$X$$, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
 
@@ -792,26 +804,17 @@ Suppose the variances of the 3 columns of $$\tilde X$$ are $$125$$, $$20$$, and 
 
 <details markdown="1"><summary>Solution</summary>
 
-The key is that $$\sigma_1$$ is the largest singular value, so
+Remember that $$\sigma_1$$ is the largest singular value of $$\tilde X$$, meaning it is the square root of the largest eigenvalue of $$\tilde X^T \tilde X$$. It is defined such that
 
-$$\sigma_1 = \max_{\|\vec v\|=1} \|\tilde X \vec v\|$$
+$$\frac{\sigma_1^2}{n}$$
 
-If we choose $$\vec v = \vec e_1$$, the first standard basis vector, then $$\tilde X \vec e_1$$ is just the first column of $$\tilde X$$. So
+is the variance of the first principal component (new feature). What this question is really asking is **what is the lower bound on the variance of the first principal component?**
 
-$$\sigma_1 \geq \|\text{column 1 of } \tilde X\|$$
+The "base case", if you will, is when the first principal component (new feature) is just the column of $$\tilde X$$ with the largest variance. This would correspond to $$\vec v_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$$. If this is the case, then the variance of the first principal component is $$125$$, and so
 
-The variance of column 1 is 125, and there are $$n = 20$$ rows, so
+$$\frac{\sigma_1^2}{n} = 125 \implies \sigma_1^2 = 125 \cdot 20 \implies \sigma_1 = \sqrt{2500} = 50$$
 
-$$\|\text{column 1 of } \tilde X\|^2 = 20 \cdot 125 = 2500$$
-
-Therefore,
-
-$$\sigma_1 \geq \sqrt{2500} = 50$$
-
-This lower bound is achievable if the three columns are orthogonal, since then $$\tilde X^T \tilde X$$ is diagonal with diagonal entries $$2500, 400, 100$$, and the singular values are $$50, 20, 10$$.
-
-So the smallest possible value of $$\sigma_1$$ is $$\boxed{50}$$
-
+But since this is the naïve solution, we know for sure that whatever $$\vec v_1$$ actually is cannot lead to a smaller $$\sigma_1$$ than this. So, the smallest possible value of $$\sigma_1$$ is $$\boxed{50}$$.
 </details>
 
 ---

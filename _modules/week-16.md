@@ -26,7 +26,7 @@ days:
     events:
       - name: REV
         type: review
-        title: Post-Midterm 2 Practice Problems (no mock exam)
-        # problems: ../post-mt2-practice
-        # note: The linked page has practice problems for content introduced after Midterm 2. There will be no mock exam.
+        title: Post-Midterm 2 Practice Problems
+        problems: ../post-mt2-practice
+        note: The linked page has practice problems for content introduced after Midterm 2. There will be no mock exam.
 ---
