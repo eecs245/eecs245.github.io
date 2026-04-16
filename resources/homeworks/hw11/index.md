@@ -31,10 +31,10 @@ Before proceeding, make sure you're familiar with the [collaboration policy](htt
 
 ## Problems
 
-- [Problem 1: Homework 10 Solutions Review](#problem-1-homework-10-solutions-review)
-- [Problem 2: SVD Fundamentals](#problem-2-svd-fundamentals)
-- [Problem 3: Frobenius Norm and Low-Rank Approximation](#problem-3-frobenius-norm-and-low-rank-approximation)
-- [Problem 4: Principal Components Analysis](#problem-4-principal-components-analysis)
+- [Problem 1: Homework 10 Solutions Review](#problem-1-homework-10-solutions-review-10-pts)
+- [Problem 2: SVD Fundamentals](#problem-2-svd-fundamentals-18-pts)
+- [Problem 3: Frobenius Norm and Low-Rank Approximation](#problem-3-frobenius-norm-and-low-rank-approximation-22-pts)
+- [Problem 4: Principal Components Analysis](#problem-4-principal-components-analysis-15-pts)
 
 Total Points: 10 + 18 + 22 + 15 = 65
 

@@ -333,8 +333,9 @@ def generate_toc(body_markdown: str) -> str:
 
     for match in problem_pattern.finditer(body_markdown):
         full_title = match.group(1)
-
-        anchor = re.sub(r"[^\w\s-]", "", full_title.lower())
+        full_heading = re.sub(r"^##\s+", "", match.group(0))
+        anchor_text = re.sub(r"<[^>]+>", "", full_heading)
+        anchor = re.sub(r"[^\w\s-]", "", anchor_text.lower())
         anchor = re.sub(r"\s+", "-", anchor.strip())
 
         toc_lines.append(f"- [{full_title}](#{anchor})")
