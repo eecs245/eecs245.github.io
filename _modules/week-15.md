@@ -36,4 +36,6 @@ days:
       - name: Lab 13
         type: lab
         title: Singular Value Decomposition
+        problems: resources/labs/lab13/lab13.pdf
+        solutions: resources/labs/lab13/lab13-solutions.pdf
 ---
