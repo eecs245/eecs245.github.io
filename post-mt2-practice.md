@@ -9,13 +9,14 @@ nav_exclude: true
 
 # Post-Midterm 2 Practice Problems
 
-_last updated on April 16, 2026 at 4:20PM_
+_last updated on April 17, 2026 at 5:41PM_
 
 This page contains several practice problems for content introduced after Midterm 2. They are sorted by topic:
 
-- Problems 1-14 are on [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors).
-- Problems 15-18 are on the [Singular Value Decomposition](#singular-value-decomposition).
-- Problems 19-22 are on [Principal Components Analysis](#principal-components-analysis).
+- Problems 1-3 are on [Convexity](#convexity).
+- Problems 4-17 are on [Eigenvalues and Eigenvectors](#eigenvalues-and-eigenvectors).
+- Problems 18-21 are on the [Singular Value Decomposition](#singular-value-decomposition).
+- Problems 22-25 are on [Principal Components Analysis](#principal-components-analysis).
 
 The problems range in difficulty, and aren't necessarily indicative of the difficulty or styles of problems you will see on the real exam; some problems are more open-ended than we'd ask on an exam, and are designed to encourage you to review parts of the course notes.
 
@@ -23,9 +24,199 @@ As we're able to, we will embed videos to certain problems here. A few have alre
 
 ---
 
-## Eigenvalues and Eigenvectors
+## Convexity
 
 ### Problem 1
+
+In [Lab 10](https://eecs245.org/resources/labs/lab10/lab10.pdf), we proved that if $$f: \mathbb{R} \to \mathbb{R}$$ is a convex function such that $$f(0) = 0$$, then for all $$y \in \mathbb{R}$$ and $$t \in [0, 1]$$,
+
+$$f(ty) \leq t f(y)$$
+
+It turns out that this fact is true for all real numbers $$t$$, not just $$t \in [0, 1]$$ (as long as $$f$$ is convex and $$f(0) = 0$$).
+
+Using this fact, prove that if $$f: \mathbb{R} \to \mathbb{R}$$ is a convex function such that $$f(0) = 0$$, then for all $$x, y \in \mathbb{R}$$,
+
+$$f(x + y) \leq f(x) + f(y)$$
+
+_Hint: Start by using the definition of convexity on $$f$$, $$x$$, and $$y$$, using $$t = \frac{1}{2}$$. This will tell you something about $$f(x) + f(y)$$._
+
+<details markdown="1"><summary>Solution</summary>
+
+By convexity, with $$t = \frac{1}{2}$$,
+
+$$f\left(\frac{x+y}{2}\right) \leq \frac{f(x) + f(y)}{2}$$
+
+Multiplying both sides by 2 gives
+
+$$2f\left(\frac{x+y}{2}\right) \leq f(x) + f(y)$$
+
+Now use the fact that $$f(ty) \leq t f(y)$$ for all real $$t$$, with $$t = 2$$ and $$y = \frac{x+y}{2}$$. This gives
+
+$$f(x+y) = f\left(2 \cdot \frac{x+y}{2}\right) \leq 2f\left(\frac{x+y}{2}\right)$$
+
+Combining the two inequalities,
+
+$$f(x+y) \leq 2f\left(\frac{x+y}{2}\right) \leq f(x) + f(y)$$
+
+So,
+
+$$\boxed{f(x+y) \leq f(x) + f(y)}$$
+
+</details>
+
+---
+
+### Problem 2
+
+Suppose $$f: \mathbb{R} \to \mathbb{R}$$ is a convex function.
+
+1. Find scalars $$a$$ and $$b$$ such that $$f(3) \leq a f(2) + b f(6)$$.
+2. Using the result from part 1, prove that $$f(3) + f(5) \leq f(2) + f(6)$$.
+
+<details markdown="1"><summary>Solution</summary>
+
+**Part 1**
+
+Recall the definition of convexity:
+
+$$f((1-t)x + ty) \leq (1-t)f(x) + tf(y)$$
+
+We want to write $$3$$ as a convex combination of $$2$$ and $$6$$:
+
+$$3 = (1-t)\cdot 2 + t \cdot 6 = 2 + 4t$$
+
+So $$t = \frac{1}{4}$$, meaning
+
+$$a = 1-t = \frac{3}{4}, \qquad b = t = \frac{1}{4}$$
+
+Thus,
+
+$$\boxed{f(3) \leq \frac{3}{4}f(2) + \frac{1}{4}f(6)}$$
+
+**Part 2**
+
+Now write $$5$$ as a convex combination of $$2$$ and $$6$$:
+
+$$5 = (1-t)\cdot 2 + t \cdot 6 = 2 + 4t$$
+
+So here $$t = \frac{3}{4}$$, which gives
+
+$$f(5) \leq \frac{1}{4}f(2) + \frac{3}{4}f(6)$$
+
+Adding this to the inequality from Part 1,
+
+$$f(3) + f(5) \leq \left(\frac{3}{4} + \frac{1}{4}\right)f(2) + \left(\frac{1}{4} + \frac{3}{4}\right)f(6) = f(2) + f(6)$$
+
+Therefore,
+
+$$\boxed{f(3) + f(5) \leq f(2) + f(6)}$$
+
+</details>
+
+---
+
+### Problem 3
+
+As we've seen several times, the variance of a dataset $$x_1, x_2, ..., x_n$$ is defined by
+
+$$\sigma_x^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2$$
+
+where $$\bar{x} = \text{Mean}(x_1, x_2, ..., x_n)$$. By expanding the summation, we find that
+
+$$\sigma_x^2 = \frac{1}{n}\sum_{i=1}^n x_i^2 - \bar{x}^2$$
+
+Another way of writing this is
+
+$$\sigma_x^2 = \text{Mean}(x_1^2, ..., x_n^2) - (\text{Mean}(x_1, ..., x_n))^2$$
+
+Since $$\sigma_x^2 \geq 0$$, this implies
+
+$$\text{Mean}(x_1^2, ..., x_n^2) \geq (\text{Mean}(x_1, ..., x_n))^2$$
+
+The inequality above can be expressed more generally as
+
+$$\boxed{\text{Mean}(g(x_1), g(x_2), ..., g(x_n)) \ge g(\text{Mean}(x_1, ..., x_n))}$$
+
+This is known as Jensen's inequality, and it is true for all convex functions $$g(x)$$.
+
+1. Using the second derivative test, prove that $$g(x) = -\log(x)$$ is convex on $$(0, \infty)$$.
+2. Suppose $$x_1, x_2, ..., x_n$$ are all positive. Using Jensen's inequality with $$g(x) = -\log(x)$$, prove the AM-GM inequality:
+
+   $$\frac{x_1 + x_2 + ... + x_n}{n} \geq (x_1 \cdot x_2 \cdot ... \cdot x_n)^{1/n}$$
+
+3. Suppose $$x_1, x_2, ..., x_n$$ are all positive. Using Jensen's inequality with some convex function $$g(x)$$, prove the AM-HM inequality:
+
+   $$\frac{x_1 + x_2 + ... + x_n}{n} \geq \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + ... + \frac{1}{x_n}}$$
+
+<details markdown="1"><summary>Solution</summary>
+
+**Part 1**
+
+We compute derivatives of $$g(x) = -\log(x)$$:
+
+$$g'(x) = -\frac{1}{x}, \qquad g''(x) = \frac{1}{x^2}$$
+
+For all $$x > 0$$, we have $$g''(x) \ge 0$$. So $$g$$ is convex on $$(0, \infty)$$.
+
+**Part 2**
+
+Apply Jensen's inequality to $$g(x) = -\log(x)$$:
+
+$$\frac{-\log(x_1) - \cdots - \log(x_n)}{n} \ge -\log\left(\frac{x_1 + \cdots + x_n}{n}\right)$$
+
+Multiply by $$-1$$, which flips the inequality:
+
+$$\frac{\log(x_1) + \cdots + \log(x_n)}{n} \le \log\left(\frac{x_1 + \cdots + x_n}{n}\right)$$
+
+Use log rules:
+
+$$\log\left((x_1x_2\cdots x_n)^{1/n}\right) \le \log\left(\frac{x_1 + \cdots + x_n}{n}\right)$$
+
+Exponentiating both sides gives
+
+$$e^{\log\left((x_1x_2\cdots x_n)^{1/n}\right)} \le e^{\log\left(\frac{x_1 + \cdots + x_n}{n}\right)}$$
+
+so
+
+$$ (x_1x_2\cdots x_n)^{1/n} \le \frac{x_1 + x_2 + \cdots + x_n}{n} $$
+
+$$\boxed{\frac{x_1 + x_2 + \cdots + x_n}{n} \ge (x_1x_2\cdots x_n)^{1/n}}$$
+
+Lots of logarithm rules were used above. Make sure you understand the rule used at each step.
+
+**Part 3**
+
+Choose $$g(x) = \frac{1}{x}$$, which is convex on $$(0, \infty)$$ because
+
+$$g'(x) = -\frac{1}{x^2}, \qquad g''(x) = \frac{2}{x^3} > 0 \quad \text{for all } x > 0$$
+
+Apply Jensen's inequality:
+
+$$\frac{1}{n}\left(\frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_n}\right) \ge \frac{1}{\frac{x_1 + x_2 + \cdots + x_n}{n}}$$
+
+Multiply both sides by $$\text{Mean}(x_1, ..., x_n) = \frac{x_1 + \cdots + x_n}{n}$$:
+
+$$\text{Mean}(x_1, ..., x_n)\cdot \frac{1}{n}\left(\frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_n}\right) \ge 1$$
+
+So,
+
+$$\text{Mean}(x_1, ..., x_n) \ge \frac{1}{\frac{1}{n}\left(\frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_n}\right)}$$
+
+and simplifying the right-hand side gives
+
+$$\text{Mean}(x_1, ..., x_n) \ge \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_n}}$$
+
+So,
+
+$$\boxed{\frac{x_1 + x_2 + \cdots + x_n}{n} \ge \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_n}}}$$
+
+</details>
+
+---
+
+## Eigenvalues and Eigenvectors
+
+### Problem 4
 
 Let
 
@@ -59,7 +250,7 @@ The eigenvalue $$5$$ has algebraic multiplicity 2 but geometric multiplicity 1, 
 
 ---
 
-### Problem 2
+### Problem 5
 
 Suppose $$A$$ is a $$3 \times 3$$ matrix such that the eigenspace for $$\lambda = 1$$ is the line spanned by $$\begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}$$, and the eigenspace for $$\lambda = -5$$ is the plane $$2x - 3y + 4z = 0$$.
 
@@ -89,7 +280,7 @@ $$V = \begin{bmatrix} 1 & 3 & -2 \\ 2 & 2 & 0 \\ 2 & 0 & 1 \end{bmatrix}, \qquad
 
 ---
 
-### Problem 3
+### Problem 6
 
 In each part, answer the following questions about the $$n \times n$$ matrix $$A$$:
 
@@ -129,13 +320,13 @@ So:
 
 ---
 
-### Problem 4
+### Problem 7
 
 Suppose $$A$$ is an $$n \times n$$ matrix with characteristic polynomial $$p(\lambda) = \lambda^3 (2 - \lambda)(4 - \lambda)$$.
 
 Fill in the blank: $$A$$ is diagonalizable if and only if $$\text{rank}(A) = \_\_\_\_$$.
 
-<center><iframe width="640" height="360" src="https://www.loom.com/embed/16e913f28c0140999769f34d52cf719e" title="Problem 4 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+<center><iframe width="640" height="360" src="https://www.loom.com/embed/16e913f28c0140999769f34d52cf719e" title="Problem 7 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -155,7 +346,7 @@ So, $$A$$ is invertible if and only if $$\text{rank}(A) = 2$$, and the blank is 
 
 ---
 
-### Problem 5
+### Problem 8
 
 Suppose $$A$$ is a $$2 \times 2$$ matrix with characteristic polynomial $$p(\lambda)$$, where $$p(0) = 0$$ and $$p(1) = -5$$.
 
@@ -185,7 +376,7 @@ There are plenty of other possible answers too.
 
 ---
 
-### Problem 6
+### Problem 9
 
 Suppose $$A$$ is a diagonalizable $$3 \times 3$$ matrix with eigenvalue decomposition $$A = V \Lambda V^{-1}$$.
 
@@ -199,7 +390,7 @@ $$x = 3 \vec v_1 - 2 \vec v_2 + 4 \vec v_3, \qquad A \vec x = 15 \vec v_1 - 8 \v
 
 3. What are the eigenvalues of $$A$$?
 
-<center><iframe width="640" height="360" src="https://www.loom.com/embed/ffc2db21fe4a4c0892d8de7ec5dfbde5" title="Problem 6 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+<center><iframe width="640" height="360" src="https://www.loom.com/embed/ffc2db21fe4a4c0892d8de7ec5dfbde5" title="Problem 9 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -235,7 +426,7 @@ $$\lambda_1 = 5,\qquad \lambda_2 = 0,\qquad \lambda_3 = -2$$
 
 ---
 
-### Problem 7
+### Problem 10
 
 Identify whether each of the following statements is true or false, and justify your answer.
 
@@ -257,7 +448,7 @@ Identify whether each of the following statements is true or false, and justify 
 
 ---
 
-### Problem 8
+### Problem 11
 
 Suppose $$A$$ and $$B$$ are both $$2 \times 2$$ matrices with an eigenvalue of $$5$$.
 
@@ -280,7 +471,7 @@ Suppose $$A$$ and $$B$$ are both $$2 \times 2$$ matrices with an eigenvalue of $
 
 ---
 
-### Problem 9
+### Problem 12
 
 1. Suppose $$A$$ has an eigenvalue of $$\lambda$$. Show that $$A^k$$ has an eigenvalue of $$\lambda^k$$ with the same eigenvector.
 1. The converse of the statement above is false --- that is, just because $$A^k$$ has an eigenvalue of $$\lambda^k$$, it does not mean $$A$$ has an eigenvalue of $$\lambda$$. Find a counterexample, by finding a matrix $$A$$ such that $$A^2$$ has an eigenvalue of $$-1$$ such that $$A$$ has no real eigenvalues. Is $$A$$ diagonalizable?
@@ -321,7 +512,7 @@ The source of the issue is that $$A$$ is not diagonalizable, since it does not e
 
 ---
 
-### Problem 10
+### Problem 13
 
 Let $$A = \begin{bmatrix} 1 & 3 \\ 3 & 1 \end{bmatrix}$$.
 
@@ -345,7 +536,7 @@ This means that for any real-valued symmetric matrix $$A$$, there exists an orth
 
 ---
 
-### Problem 11
+### Problem 14
 
 Prove that if $$\vec u$$ and $$\vec v$$ are eigenvectors of the symmetric matrix $$S$$ corresponding to different eigenvalues, then $$\vec u$$ and $$\vec v$$ are orthogonal. This is the essence of the spectral theorem.
 
@@ -379,7 +570,7 @@ This proof was also in [Chapter 9.5](https://notes.eecs245.org/eigenvalues-and-e
 
 ---
 
-### Problem 12
+### Problem 15
 
 Consider the **symmetric** matrix $$A = \begin{bmatrix} 4 & 1 & 1 \\ 1 & 4 & 1 \\ 1 & 1 & 4 \end{bmatrix}$$. $$A$$ can be diagonalized into $$A = V \Lambda V^{-1}$$ as follows:
 
@@ -415,7 +606,7 @@ $$\Lambda$$ is the same as in the original problem statement.
 
 ---
 
-### Problem 13
+### Problem 16
 
 Recall, a symmetric matrix $$A$$ is positive semidefinite if $$\vec v^T A \vec v \geq 0$$ for all $$\vec v \in \mathbb{R}^n$$.
 
@@ -425,7 +616,7 @@ Recall, a symmetric matrix $$A$$ is positive semidefinite if $$\vec v^T A \vec v
 1. Fill in the blanks: A symmetric matrix $$A$$ is positive semidefinite if and only if all of its eigenvalues are ________.
 1. Draw a Venn diagram of the relationship between the following sets of square matrices: positive semidefinite, positive definite, symmetric, diagonalizable, and invertible.
 
-<center><iframe width="640" height="360" src="https://www.loom.com/embed/aea647a2947c4fefa5439afe0fc6acb5" title="Problem 13 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+<center><iframe width="640" height="360" src="https://www.loom.com/embed/aea647a2947c4fefa5439afe0fc6acb5" title="Problem 16 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -439,7 +630,7 @@ Recall, a symmetric matrix $$A$$ is positive semidefinite if $$\vec v^T A \vec v
 
 ---
 
-### Problem 14
+### Problem 17
 
 Consider the function
 
@@ -508,7 +699,7 @@ The maximizing points lie on the eigenspace for $$\lambda = 16$$, which is the l
 
 **Note**: None of these questions are of the form "find the singular value decomposition of a matrix"; you can find many problems like those in [Chapter 10.1](https://notes.eecs245.org/singular-value-decomposition/computing-svd/) and in [Homework 11](../resources/homeworks/hw11). Make sure to practice those too.
 
-### Problem 15
+### Problem 18
 
 Suppose $$X$$ is a symmetric $$n \times n$$ matrix with singular value decomposition $$X = U \Sigma V^T$$. (Note that we are assuming $$X$$ is square, which isn't typically the case for the singular value decomposition.)
 
@@ -540,13 +731,13 @@ That is exactly what we wanted to show.
 
 ---
 
-### Problem 16
+### Problem 19
 
 To find the singular values of $$X$$, we take the square roots of the non-zero eigenvalues of $$X^TX$$ (which are the same as the non-zero eigenvalues of $$XX^T$$).
 
 $$\sigma_i = \sqrt{\lambda_i}$$
 
-Why is it guaranteed that the eigenvalues of $$X^TX$$ are non-negative? (Hint: What does this have to do with [Problem 13](#problem-13)?)
+Why is it guaranteed that the eigenvalues of $$X^TX$$ are non-negative? (Hint: What does this have to do with [Problem 16](#problem-16)?)
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -556,13 +747,13 @@ $$\vec v^T X^T X \vec v = (X\vec v)^T (X\vec v) = \|X\vec v\|^2 \geq 0$$
 
 So $$X^T X$$ is positive semidefinite.
 
-By Problem 13, every positive semidefinite matrix has non-negative eigenvalues. That is why taking square roots here is always possible.
+By Problem 16, every positive semidefinite matrix has non-negative eigenvalues. That is why taking square roots here is always possible.
 
 </details>
 
 ---
 
-### Problem 17
+### Problem 20
 
 Consider the matrix $$X$$ whose singular value decomposition is given by
 
@@ -616,7 +807,7 @@ $$X = \underbrace{\begin{bmatrix} 1/2 & 1/2 & 1/2 & 1/2
 
 ---
 
-### Problem 18
+### Problem 21
 
 Let $$X = U \Sigma V^T$$ be singular value decomposition of some $$n \times d$$ matrix $$X$$, and let $$P = U \Sigma$$. Suppose we compute the singular value decomposition of $$P$$ into
 
@@ -643,6 +834,10 @@ $$P V_P = U_P \Sigma_P$$
 It is also possible to shuffle some of the columns of $$V_P$$, in the event there are repeated singular values in the diagonal of $$\Sigma_P$$. The fact that $$V_P^T = I$$ is the most natural choice though. 
 
 </details>
+
+## Principal Components Analysis
+
+### Problem 22
 
 Suppose $$\tilde X$$ is a mean-centered $$n \times d$$ matrix, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$. All we are given is that
 
@@ -677,7 +872,7 @@ $$
 
 ---
 
-### Problem 20
+### Problem 23
 
 In [Homework 11, Problem 4](../resources/homeworks/hw11#problem-4-principal-components-analysis-15-pts) (and in [Chapter 10.4](https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/#example-from-mathbb-r-2-to-mathbb-r-2)), we plotted a 2-dimensional representation of a higher-dimensional dataset. Let $$\tilde X$$ be the mean-centered version of the dataset.
 
@@ -706,7 +901,7 @@ Fill in the blanks: to create this plot, we plotted the first 2 __(1)__ of __(2)
 
 ---
 
-### Problem 21
+### Problem 24
 
 Suppose $$X$$ is a $$51 \times 5$$ matrix, whose **first 3 rows** are given by
 
@@ -732,7 +927,7 @@ Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1
 
 <center><img src="../assets/rev-imgs/pc-4-plots.png" alt="Principal component 2 vs. principal component 1" style="width: 50%; height: auto;"></center>
 
-<iframe width="640" height="448" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 21 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe width="640" height="448" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 24 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -796,7 +991,7 @@ Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1
 
 ---
 
-### Problem 22
+### Problem 25
 
 Let $$X$$ be a $$20 \times 3$$ matrix, let $$\tilde X$$ be the centered version of $$X$$, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
 
