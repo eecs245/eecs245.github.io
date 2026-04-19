@@ -20,6 +20,7 @@ days:
         title: <b>Eigenvalues and Eigenvectors</b>
         problems: ../resources/homeworks/hw10/hw10.pdf
         template: https://www.overleaf.com/read/qjwngfnnvkck#0f74a2
+        solutions: https://edstem.org/us/courses/89676/discussion/7958647
   - date: "2026-04-15"
     events:
       - name: LEC 24
