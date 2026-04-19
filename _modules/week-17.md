@@ -6,5 +6,5 @@ days:
     events:
       - name: EXAM
         type: exam
-        title: <b>Final Exam (1:30-3:30PM)</b>
+        title: <b>Final Exam (1:30-3:30PM, 1013 DOW)</b>
 ---
