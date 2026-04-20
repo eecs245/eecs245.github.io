@@ -7,6 +7,7 @@ days:
       - name: LEC 25
         type: lecture
         title: "PCA, Continued"
+        recording: https://leccap.engin.umich.edu/leccap/player/r/JgV7Gf
         reading: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
         reading_text: Ch. 10.4
         reading2: https://notes.eecs245.org/singular-value-decomposition/conclusion/
