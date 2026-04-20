@@ -9,7 +9,7 @@ days:
         title: "PCA, Continued"
         reading: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
         reading_text: Ch. 10.4
-        reading2: https://notes.eecs245.org/principal-components-analysis/conclusion/
+        reading2: https://notes.eecs245.org/singular-value-decomposition/conclusion/
         reading2_text: Ch. 10.5
   - date: "2026-04-21"
     events:
