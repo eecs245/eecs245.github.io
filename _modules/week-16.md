@@ -11,6 +11,7 @@ days:
         reading_text: Ch. 10.4
         reading2: https://notes.eecs245.org/singular-value-decomposition/conclusion/
         reading2_text: Ch. 10.5
+        live_notes: resources/lecture-pdfs/lec25-filled.pdf
   - date: "2026-04-21"
     events:
       - name: HW 11
@@ -20,10 +21,10 @@ days:
         template: https://www.overleaf.com/read/vjyvfvswbpnj#9556ea
   - date: "2026-04-22"
     events:
-        - name: SUR
-          type: survey
-          title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScImWpSsqu5A_yeipDcCAqattLW06cc1qlLuWBSG68ErRlNaA/viewform?usp=publish-editor">End-of-Semester Survey</a> and <a href="https://umich.bluera.com/umich/">Official Evals</a></b>
-          note: If 80% of the class fills out <b>both</b>, we will add 1% of extra credit to everyone's final grade.
+      - name: SUR
+        type: survey
+        title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScImWpSsqu5A_yeipDcCAqattLW06cc1qlLuWBSG68ErRlNaA/viewform?usp=publish-editor">End-of-Semester Survey</a> and <a href="https://umich.bluera.com/umich/">Official Evals</a></b>
+        note: If 80% of the class fills out <b>both</b>, we will add 1% of extra credit to everyone's final grade.
   - date: "2026-04-23"
     events:
       - name: REV
