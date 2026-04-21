@@ -21,6 +21,8 @@ LECCAP_COOKIE_PATH = os.getenv("LECCAP_COOKIE_PATH", "/")
 LECCAP_COOKIE_FILE = os.getenv("LECCAP_COOKIE_FILE", ".leccap_cookie")
 LECCAP_STORAGE_STATE = os.getenv("LECCAP_STORAGE_STATE", ".leccap_storage_state.json")
 LECCAP_LOGIN_URL = os.getenv("LECCAP_LOGIN_URL", "https://weblogin.umich.edu/")
+LECCAP_LOGIN_WAIT_MS = int(os.getenv("LECCAP_LOGIN_WAIT_MS", "90000"))
+LECCAP_BROWSER_CHANNEL = (os.getenv("LECCAP_BROWSER_CHANNEL", "chrome") or "").strip() or None
 UMICH_USER = os.getenv("UMICH_USER")
 UMICH_PASS = os.getenv("UMICH_PASS")
 LECCAP_HEADLESS = os.getenv("LECCAP_HEADLESS", "false").lower() in ("1", "true", "yes", "on")
@@ -56,6 +58,111 @@ def _maybe_dump_debug(page, label):
 
 def _warn(message):
     print(f"Warning: {message}", file=sys.stderr)
+
+
+def _safe_page_title(page):
+    try:
+        return page.title()
+    except Exception:
+        return ""
+
+
+def _launch_browser(playwright, interactive_login):
+    launch_kwargs = {"headless": False if interactive_login else LECCAP_HEADLESS}
+    if LECCAP_BROWSER_CHANNEL:
+        try:
+            return playwright.chromium.launch(channel=LECCAP_BROWSER_CHANNEL, **launch_kwargs)
+        except Exception as exc:
+            _warn(
+                f"failed to launch browser channel {LECCAP_BROWSER_CHANNEL!r}; "
+                f"falling back to default Chromium ({exc})"
+            )
+    return playwright.chromium.launch(**launch_kwargs)
+
+
+def _find_locator(page, selector):
+    try:
+        locator = page.locator(selector)
+        if locator.count() > 0:
+            return page, locator
+    except Exception:
+        pass
+    for frame in page.frames:
+        try:
+            locator = frame.locator(selector)
+            if locator.count() > 0:
+                return frame, locator
+        except Exception:
+            continue
+    return None, None
+
+
+def _click_first_available(page, selectors):
+    for selector in selectors:
+        _, locator = _find_locator(page, selector)
+        if locator and locator.count() > 0:
+            locator.first.click()
+            return True
+    return False
+
+
+def _fill_first_available(page, selectors, value):
+    if value is None:
+        return False
+    for selector in selectors:
+        _, locator = _find_locator(page, selector)
+        if locator and locator.count() > 0:
+            locator.first.fill(value)
+            return True
+    return False
+
+
+def _try_okta_fastpass(page):
+    return _click_first_available(
+        page,
+        (
+            "button[aria-label='Select Okta Verify.']",
+            "button:has-text('Use Okta FastPass')",
+            "button:has-text('Okta Verify')",
+        ),
+    )
+
+
+def _try_submit_login_form(page):
+    username_filled = _fill_first_available(
+        page,
+        (
+            "input[name='j_username']",
+            "input[name='identifier']",
+            "input[name='username']",
+            "input[type='email']",
+            "input[autocomplete='username']",
+        ),
+        UMICH_USER,
+    )
+    password_filled = _fill_first_available(
+        page,
+        (
+            "input[name='j_password']",
+            "input[name='credentials.passcode']",
+            "input[type='password']",
+            "input[autocomplete='current-password']",
+        ),
+        UMICH_PASS,
+    )
+    if not username_filled and not password_filled:
+        return False
+    _click_first_available(
+        page,
+        (
+            "input[type='submit']",
+            "button[type='submit']",
+            "input[value*='Sign in']",
+            "button:has-text('Sign in')",
+            "button:has-text('Next')",
+        ),
+    )
+    return True
 
 
 def _cookies_from_header(header_value, domain, path):
@@ -120,9 +227,11 @@ def _is_login_url(url):
         return False
     lowered = url.lower()
     return (
-        "weblogin" in lowered
+        "okta.umich.edu" in lowered
+        or "weblogin" in lowered
         or "shibboleth" in lowered
         or "/idp/" in lowered
+        or "/signin/" in lowered
         or "login" in lowered
     )
 
@@ -130,37 +239,53 @@ def _is_login_url(url):
 def _ensure_logged_in(page, manage_url, interactive_login):
     if not _is_login_url(page.url):
         return
-    if not interactive_login:
-        raise RuntimeError(
-            "login required; provide LECCAP_STORAGE_STATE or LECCAP_COOKIE "
-            "or use --interactive-login"
-        )
-    try:
-        if UMICH_USER:
-            page.fill("input[name='j_username']", UMICH_USER)
-        if UMICH_PASS:
-            page.fill("input[name='j_password']", UMICH_PASS)
-    except Exception:
-        pass
-    try:
-        page.wait_for_url(
-            re.compile(r"leccap\.engin\.umich\.edu"),
-            timeout=max(LECCAP_TIMEOUT_MS * 12, 60000),
-        )
-    except Exception:
-        pass
-    if not _is_login_url(page.url):
-        return
-    page.goto(manage_url, wait_until="domcontentloaded")
-    try:
-        page.wait_for_url(
-            re.compile(r"leccap\.engin\.umich\.edu"),
-            timeout=max(LECCAP_TIMEOUT_MS * 12, 60000),
-        )
-    except Exception:
-        pass
+    deadline = time.monotonic() + max(LECCAP_LOGIN_WAIT_MS, LECCAP_TIMEOUT_MS * 12) / 1000.0
+    prompted_interactive = False
+    while time.monotonic() < deadline:
+        if not _is_login_url(page.url):
+            return
+        if _try_okta_fastpass(page):
+            page.wait_for_timeout(5000)
+            continue
+        attempted_login = _try_submit_login_form(page)
+        if attempted_login:
+            page.wait_for_timeout(3000)
+            continue
+        if interactive_login:
+            if not prompted_interactive:
+                print("Complete UMich login/Okta verification in the browser, then wait...")
+                prompted_interactive = True
+            page.wait_for_timeout(3000)
+            continue
+        break
     if _is_login_url(page.url):
-        raise RuntimeError("still on UMich login page; complete login/DUO, then retry")
+        raise RuntimeError(
+            "login required; saved Leccap session is stale. "
+            "Re-run with --interactive-login or refresh storage state."
+        )
+
+
+def _wait_for_manage_recordings_page(page, manage_url, interactive_login):
+    deadline = time.monotonic() + max(LECCAP_LOGIN_WAIT_MS, LECCAP_TIMEOUT_MS * 12) / 1000.0
+    page.goto(manage_url, wait_until="domcontentloaded")
+    while time.monotonic() < deadline:
+        title = _safe_page_title(page).strip().lower()
+        if title == "just a moment...":
+            page.wait_for_timeout(2000)
+            continue
+        if _is_login_url(page.url):
+            _ensure_logged_in(page, manage_url, interactive_login)
+            page.wait_for_timeout(1000)
+            continue
+        _, recordings = _find_locator(page, "div.recording")
+        if recordings and recordings.count() > 0:
+            return
+        page.wait_for_timeout(1000)
+    _maybe_dump_debug(page, "manage-timeout")
+    raise RuntimeError(
+        "timed out waiting for manage recordings page; "
+        "the session may be stale or blocked by Okta/Cloudflare"
+    )
 
 
 def _fetch_leccap_recordings_with_context(context, url):
@@ -172,21 +297,17 @@ def _fetch_leccap_recordings_with_context(context, url):
     found = False
     last_error = None
     while time.monotonic() < deadline:
+        if _safe_page_title(page).strip().lower() == "just a moment...":
+            page.wait_for_timeout(500)
+            continue
         try:
-            page.wait_for_selector("div.recording", timeout=500)
-            found = True
-            break
+            _, recording_nodes = _find_locator(page, "div.recording")
+            if recording_nodes and recording_nodes.count() > 0:
+                found = True
+                break
         except PlaywrightTimeout as exc:
             last_error = exc
-        for frame in page.frames:
-            try:
-                if frame.query_selector("div.recording"):
-                    found = True
-                    break
-            except Exception:
-                continue
-        if found:
-            break
+        page.wait_for_timeout(250)
     if not found:
         _maybe_dump_debug(page, "timeout")
         frame_urls = []
@@ -205,16 +326,11 @@ def _fetch_leccap_recordings_with_context(context, url):
         ) from last_error
 
     recordings = []
-    recording_nodes = page.query_selector_all("div.recording")
-    if not recording_nodes:
-        for frame in page.frames:
-            try:
-                recording_nodes = frame.query_selector_all("div.recording")
-            except Exception:
-                continue
-            if recording_nodes:
-                break
-    for recording in recording_nodes:
+    owner, recording_nodes = _find_locator(page, "div.recording")
+    if owner is None or recording_nodes is None:
+        return recordings
+    for idx in range(recording_nodes.count()):
+        recording = recording_nodes.nth(idx)
         link_href = None
         link = recording.query_selector("a")
         if link:
@@ -234,7 +350,7 @@ def fetch_leccap_recordings(url):
         raise RuntimeError("playwright is required; install with `pip install playwright`") from exc
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=LECCAP_HEADLESS)
+        browser = _launch_browser(p, False)
         context = _create_context(browser)
         try:
             return _fetch_leccap_recordings_with_context(context, url)
@@ -307,6 +423,31 @@ def select_latest_recording(recordings):
     return recordings[-1]
 
 
+def select_recent_recordings(recordings, limit):
+    if limit <= 0:
+        return []
+    dated = []
+    undated = []
+    for idx, recording in enumerate(recordings):
+        date_obj = parse_date_text(recording.get("date_text", ""))
+        if date_obj is None:
+            undated.append((idx, recording))
+        else:
+            dated.append((date_obj, idx, recording))
+    if dated:
+        dated.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        selected = [item[2] for item in dated[:limit]]
+        if len(selected) < limit:
+            selected.extend(
+                recording
+                for _, recording in sorted(undated, key=lambda item: item[0], reverse=True)[
+                    : limit - len(selected)
+                ]
+            )
+        return selected
+    return recordings[-limit:]
+
+
 def find_module_by_date(date_str):
     date_pattern = re.compile(rf"^\s*-\s*date:\s*['\"]?{re.escape(date_str)}['\"]?\s*$")
     module_files = sorted(
@@ -321,6 +462,69 @@ def find_module_by_date(date_str):
                 if date_pattern.match(line):
                     return path
     return None
+
+
+def lecture_metadata_for_date(path, date_str):
+    with open(path, "r", encoding="utf-8") as handle:
+        lines = handle.readlines()
+
+    date_pattern = re.compile(rf"^(\s*)-\s*date:\s*['\"]?{re.escape(date_str)}['\"]?\s*$")
+    any_date_pattern = re.compile(r"^(\s*)-\s*date:\s*['\"]?\d{4}-\d{2}-\d{2}['\"]?\s*$")
+    day_start = None
+    day_indent = None
+    end_front_matter = None
+    for idx, line in enumerate(lines):
+        if idx > 0 and line.strip() == "---":
+            end_front_matter = idx
+            break
+    for idx, line in enumerate(lines):
+        match = date_pattern.match(line)
+        if match:
+            day_start = idx
+            day_indent = len(match.group(1))
+            break
+
+    if day_start is None:
+        raise RuntimeError(f"date {date_str} not found in {path}")
+
+    day_end = end_front_matter if end_front_matter is not None else len(lines)
+    for idx in range(day_start + 1, day_end):
+        line = lines[idx]
+        match = any_date_pattern.match(line)
+        if match and len(match.group(1)) == day_indent:
+            day_end = idx
+            break
+
+    event_starts = []
+    for idx in range(day_start + 1, day_end):
+        if re.match(r"^\s*-\s*name:\s*", lines[idx]) or re.match(r"^\s*events:\s*$", lines[idx]):
+            event_starts.append(idx)
+    if not event_starts:
+        raise RuntimeError(f"no events found for {date_str} in {path}")
+
+    event_starts.append(day_end)
+    lecture_name = None
+    lecture_title = None
+    for i in range(len(event_starts) - 1):
+        start = event_starts[i]
+        end = event_starts[i + 1]
+        block = lines[start:end]
+        if any(re.match(r"^\s*type:\s*lecture\s*$", line) for line in block):
+            for line in block:
+                match = re.match(r"^\s*-\s*name:\s*(.+)\s*$", line)
+                if match:
+                    lecture_name = match.group(1).strip()
+                    break
+            for line in block:
+                match = re.match(r"^\s*title:\s*(.+)\s*$", line)
+                if match:
+                    lecture_title = match.group(1).strip()
+                    break
+            break
+
+    if lecture_name is None and lecture_title is None:
+        raise RuntimeError(f"no lecture event found for {date_str} in {path}")
+    return _normalize_metadata_text(lecture_name), _normalize_metadata_text(lecture_title)
 
 
 def update_recording(path, date_str, recording_url):
@@ -472,6 +676,15 @@ def lecture_title_from_name(name):
     return name.strip()
 
 
+def _normalize_metadata_text(text):
+    if text is None:
+        return None
+    text = text.strip()
+    if len(text) >= 2 and text[0] == text[-1] and text[0] in ("'", '"'):
+        return text[1:-1].strip()
+    return text
+
+
 def build_recording_title(lecture_number, lecture_title, date_obj):
     if not (lecture_number and lecture_title and date_obj):
         return None
@@ -500,6 +713,57 @@ def _recording_id_from_url(recording_url):
     return parts[-1] if parts else None
 
 
+def _escape_playwright_text(text):
+    return text.replace("\\", "\\\\").replace("'", "\\'")
+
+
+def _find_recording_row(page, date_obj=None, recording_url=None, title=None):
+    selectors = []
+    recording_id = _recording_id_from_url(recording_url)
+    if recording_id:
+        selectors.append(f"div.recording:has(a[href*='{recording_id}'])")
+        selectors.append(f"div.recording:has-text('{_escape_playwright_text(recording_id)}')")
+    if date_obj:
+        for variant in _date_variants(date_obj):
+            selectors.append(f"div.recording:has-text('{_escape_playwright_text(variant)}')")
+    if title:
+        selectors.append(f"div.recording:has-text('{_escape_playwright_text(title)}')")
+    for selector in selectors:
+        _, locator = _find_locator(page, selector)
+        if locator and locator.count() > 0:
+            return locator.first
+    return None
+
+
+def build_recording_target(recording):
+    if not recording.get("href"):
+        raise RuntimeError("recording missing href")
+    recording_url = urljoin(LECCAP_BASE_URL, recording["href"])
+    date_obj = parse_date_text(recording.get("date_text", ""))
+    if not date_obj:
+        raise RuntimeError(f"unable to parse date: {recording.get('date_text', '').strip()}")
+    date_str = date_obj.strftime("%Y-%m-%d")
+    module_path = find_module_by_date(date_str)
+    if not module_path:
+        raise RuntimeError(f"no module found for date {date_str}")
+    lecture_name, lecture_title = lecture_metadata_for_date(module_path, date_str)
+    lecture_number = lecture_number_from_name(lecture_name)
+    lecture_title = lecture_title or lecture_title_from_name(lecture_name)
+    if not lecture_title:
+        raise RuntimeError(f"unable to find lecture title for {date_str} in {module_path}")
+    recording_title = build_recording_title(lecture_number, lecture_title, date_obj)
+    return {
+        "recording_url": recording_url,
+        "date_obj": date_obj,
+        "date_str": date_str,
+        "module_path": module_path,
+        "lecture_name": lecture_name,
+        "lecture_title": lecture_title,
+        "lecture_number": lecture_number,
+        "recording_title": recording_title,
+    }
+
+
 def update_recording_title(
     manage_url,
     title,
@@ -517,76 +781,19 @@ def update_recording_title(
         raise RuntimeError("playwright is required; install with `pip install playwright`") from exc
 
     def _run(page):
-        page.goto(manage_url, wait_until="domcontentloaded")
-        _ensure_logged_in(page, manage_url, interactive_login)
+        _wait_for_manage_recordings_page(page, manage_url, interactive_login)
         _maybe_dump_debug(page, "manage-loaded")
-        try:
-            page.wait_for_selector(
-                "text=Edit, a.edit-link, div.recording",
-                timeout=max(LECCAP_TIMEOUT_MS * 2, 20000),
+        row = _find_recording_row(page, date_obj=date_obj, recording_url=recording_url, title=title)
+        if row is None:
+            _maybe_dump_debug(page, "recording-row-missing")
+            raise RuntimeError(
+                "could not find the target recording row on the manage page; "
+                "refusing to fall back to a different recording"
             )
-        except PlaywrightTimeout as exc:
-            _maybe_dump_debug(page, "manage-timeout")
-            raise RuntimeError("timed out waiting for manage recordings page") from exc
-
-        def _find_locator(selector):
-            if page.locator(selector).count() > 0:
-                return page, page.locator(selector)
-            for frame in page.frames:
-                try:
-                    locator = frame.locator(selector)
-                    if locator.count() > 0:
-                        return frame, locator
-                except Exception:
-                    continue
-            return None, None
-
-        def _find_row(selector):
-            owner, locator = _find_locator(selector)
-            if locator and locator.count() > 0:
-                return owner, locator.first
-            return None, None
-
-        frame, edit_locator = _find_locator("text=Edit")
-        if not edit_locator:
-            page.goto(LECCAP_SITE_URL, wait_until="domcontentloaded")
-            frame, manage_locator = _find_locator("text=Manage Recordings, a[href*='manage/site/recordings']")
-            if manage_locator:
-                manage_locator.first.click()
-            try:
-                page.wait_for_selector(
-                    "text=Edit, a.edit-link, div.recording",
-                    timeout=max(LECCAP_TIMEOUT_MS * 2, 20000),
-                )
-            except PlaywrightTimeout:
-                pass
-            frame, edit_locator = _find_locator("text=Edit, a.edit-link")
-        if not edit_locator:
+        target_edit = row.locator("a.edit-link, a:has-text('Edit')")
+        if target_edit.count() == 0:
             _maybe_dump_debug(page, "edit-missing")
-            raise RuntimeError("could not find Edit button on manage recordings page")
-
-        target_edit = None
-        if date_obj:
-            _, row = _find_row(f"div.recording[data-date='{date_obj.strftime('%Y-%m-%d')}']")
-            if row and row.locator("a.edit-link").count() > 0:
-                target_edit = row.locator("a.edit-link").first
-
-        recording_id = _recording_id_from_url(recording_url)
-        if recording_id and not target_edit:
-            _, row = _find_row(f"div.recording:has(a.view-link[href*='{recording_id}'])")
-            if row and row.locator("a.edit-link").count() > 0:
-                target_edit = row.locator("a.edit-link").first
-
-        if not target_edit:
-            _, rows = _find_locator("div.recording")
-            if rows and rows.count() > 0:
-                row = rows.last
-                if row.locator("a.edit-link").count() > 0:
-                    target_edit = row.locator("a.edit-link").first
-
-        if not target_edit:
-            target_edit = edit_locator.last
-
+            raise RuntimeError("could not find Edit link for the target recording")
         target_edit.click()
         _maybe_dump_debug(page, "edit-clicked")
         try:
@@ -595,7 +802,7 @@ def update_recording_title(
             _maybe_dump_debug(page, "edit-timeout")
             raise RuntimeError("timed out waiting for recording edit form") from exc
 
-        _, title_locator = _find_locator("input[name='title'], input[aria-label='Title']")
+        _, title_locator = _find_locator(page, "input[name='title'], input[aria-label='Title']")
         if not title_locator:
             _maybe_dump_debug(page, "title-missing")
             raise RuntimeError("could not find Title input on recording edit form")
@@ -616,12 +823,7 @@ def update_recording_title(
             "input[value*='Save']",
             "input[value*='Update']",
         )
-        for selector in selectors:
-            _, locator = _find_locator(selector)
-            if locator and locator.count() > 0:
-                locator.first.click()
-                break
-        else:
+        if not _click_first_available(page, selectors):
             form = title_input.locator("xpath=ancestor::form[1]")
             if form.count() > 0:
                 form.evaluate("form => form.submit()")
@@ -644,7 +846,7 @@ def update_recording_title(
         return
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False if interactive_login else LECCAP_HEADLESS)
+        browser = _launch_browser(p, interactive_login)
         context = _create_context(browser)
         try:
             _run(context.new_page())
@@ -659,15 +861,10 @@ def save_storage_state(login_url, manage_url, output_path):
         raise RuntimeError("playwright is required; install with `pip install playwright`") from exc
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = _launch_browser(p, True)
         context = browser.new_context()
         page = context.new_page()
-        page.goto(manage_url, wait_until="domcontentloaded")
-        _ensure_logged_in(page, manage_url, True)
-        try:
-            page.wait_for_selector("text=Edit", timeout=max(LECCAP_TIMEOUT_MS, 20000))
-        except Exception:
-            pass
+        _wait_for_manage_recordings_page(page, manage_url, True)
         context.storage_state(path=output_path)
         browser.close()
 
@@ -697,7 +894,16 @@ def main():
         action="store_true",
         help="Launch browser to login and save storage state for Leccap.",
     )
+    parser.add_argument(
+        "--title-count",
+        type=int,
+        default=1,
+        help="When used with --update-title, update the latest N recording titles instead of just one.",
+    )
     args = parser.parse_args()
+
+    if args.title_count < 1:
+        raise SystemExit("--title-count must be at least 1.")
 
     if args.save_storage_state:
         save_storage_state(LECCAP_LOGIN_URL, LECCAP_MANAGE_URL, LECCAP_STORAGE_STATE)
@@ -711,9 +917,7 @@ def main():
             raise RuntimeError("playwright is required; install with `pip install playwright`") from exc
 
         with sync_playwright() as p:
-            browser = p.chromium.launch(
-                headless=False if (args.interactive_login or LECCAP_INTERACTIVE_LOGIN) else LECCAP_HEADLESS
-            )
+            browser = _launch_browser(p, args.interactive_login or LECCAP_INTERACTIVE_LOGIN)
             context = _create_context(browser)
             try:
                 recordings = _fetch_leccap_recordings_with_context(context, LECCAP_SITE_URL)
@@ -721,60 +925,53 @@ def main():
                     raise RuntimeError("no recordings found on Leccap page")
 
                 latest = select_latest_recording(recordings)
-                if not latest.get("href"):
-                    raise RuntimeError("latest recording missing href")
-
-                recording_url = urljoin(LECCAP_BASE_URL, latest["href"])
-                date_obj = parse_date_text(latest.get("date_text", ""))
-                if not date_obj:
-                    raise RuntimeError(
-                        f"unable to parse date: {latest.get('date_text', '').strip()}"
-                    )
-                date_str = date_obj.strftime("%Y-%m-%d")
-
-                module_path = find_module_by_date(date_str)
-                if not module_path:
-                    raise RuntimeError(f"no module found for date {date_str}")
-
-                updated, lecture_name, lecture_title = update_recording(
-                    module_path, date_str, recording_url
+                latest_target = build_recording_target(latest)
+                updated, _, _ = update_recording(
+                    latest_target["module_path"],
+                    latest_target["date_str"],
+                    latest_target["recording_url"],
                 )
-                lecture_number = lecture_number_from_name(lecture_name)
-                lecture_title = lecture_title or lecture_title_from_name(lecture_name)
-                if not lecture_title:
-                    raise RuntimeError(
-                        f"unable to find lecture title for {date_str} in {module_path}"
-                    )
-                recording_title = build_recording_title(
-                    lecture_number, lecture_title, date_obj
-                )
-                if lecture_number:
-                    print(f"Lecture {lecture_number}: {recording_url}")
-                elif lecture_name:
-                    print(f"{lecture_name}: {recording_url}")
+                if latest_target["lecture_number"]:
+                    print(f"Lecture {latest_target['lecture_number']}: {latest_target['recording_url']}")
+                elif latest_target["lecture_name"]:
+                    print(f"{latest_target['lecture_name']}: {latest_target['recording_url']}")
                 else:
-                    print(f"Lecture: {recording_url}")
-                print(f"Lecture title: {lecture_title}")
-                print(f"Leccap title: {recording_title}")
+                    print(f"Lecture: {latest_target['recording_url']}")
+                print(f"Lecture title: {latest_target['lecture_title']}")
+                print(f"Leccap title: {latest_target['recording_title']}")
 
-                if recording_title:
+                for recording in select_recent_recordings(recordings, args.title_count):
+                    title_target = build_recording_target(recording)
+                    if not title_target["recording_title"]:
+                        _warn(f"skipping title update for {title_target['date_str']}: missing lecture title")
+                        continue
+                    print(
+                        f"Updating Leccap title for {title_target['date_str']}: "
+                        f"{title_target['recording_title']}"
+                    )
                     try:
                         update_recording_title(
                             LECCAP_MANAGE_URL,
-                            recording_title,
-                            date_obj=date_obj,
-                            recording_url=recording_url,
+                            title_target["recording_title"],
+                            date_obj=title_target["date_obj"],
+                            recording_url=title_target["recording_url"],
                             interactive_login=args.interactive_login or LECCAP_INTERACTIVE_LOGIN,
                             context=context,
                         )
                     except Exception as title_exc:
                         if LECCAP_STRICT_TITLE_UPDATE:
                             raise
-                        _warn(f"title update failed but website update will continue: {title_exc}")
+                        _warn(
+                            f"title update failed for {title_target['date_str']} "
+                            f"but website update will continue: {title_exc}"
+                        )
 
                 if updated:
                     run_git_commands(
-                        module_path, lecture_name or "lecture", recording_url, args.push
+                        latest_target["module_path"],
+                        latest_target["lecture_name"] or "lecture",
+                        latest_target["recording_url"],
+                        args.push,
                     )
                 else:
                     print("Recording link already up to date; no changes made.")
@@ -787,55 +984,26 @@ def main():
         raise RuntimeError("no recordings found on Leccap page")
 
     latest = select_latest_recording(recordings)
-    if not latest.get("href"):
-        raise RuntimeError("latest recording missing href")
-
-    recording_url = urljoin(LECCAP_BASE_URL, latest["href"])
-    date_obj = parse_date_text(latest.get("date_text", ""))
-    if not date_obj:
-        raise RuntimeError(f"unable to parse date: {latest.get('date_text', '').strip()}")
-    date_str = date_obj.strftime("%Y-%m-%d")
-
-    module_path = find_module_by_date(date_str)
-    if not module_path:
-        raise RuntimeError(f"no module found for date {date_str}")
-
-    updated, lecture_name, lecture_title = update_recording(
-        module_path, date_str, recording_url
+    latest_target = build_recording_target(latest)
+    updated, _, _ = update_recording(
+        latest_target["module_path"], latest_target["date_str"], latest_target["recording_url"]
     )
-    lecture_number = lecture_number_from_name(lecture_name)
-    lecture_title = lecture_title or lecture_title_from_name(lecture_name)
-    if not lecture_title:
-        raise RuntimeError(
-            f"unable to find lecture title for {date_str} in {module_path}"
-        )
-    recording_title = build_recording_title(lecture_number, lecture_title, date_obj)
-    if lecture_number:
-        print(f"Lecture {lecture_number}: {recording_url}")
-    elif lecture_name:
-        print(f"{lecture_name}: {recording_url}")
+    if latest_target["lecture_number"]:
+        print(f"Lecture {latest_target['lecture_number']}: {latest_target['recording_url']}")
+    elif latest_target["lecture_name"]:
+        print(f"{latest_target['lecture_name']}: {latest_target['recording_url']}")
     else:
-        print(f"Lecture: {recording_url}")
-    print(f"Lecture title: {lecture_title}")
-    print(f"Leccap title: {recording_title}")
-
-    if args.update_title:
-        if recording_title:
-            try:
-                update_recording_title(
-                    LECCAP_MANAGE_URL,
-                    recording_title,
-                    date_obj=date_obj,
-                    recording_url=recording_url,
-                    interactive_login=args.interactive_login or LECCAP_INTERACTIVE_LOGIN,
-                )
-            except Exception as title_exc:
-                if LECCAP_STRICT_TITLE_UPDATE:
-                    raise
-                _warn(f"title update failed but website update will continue: {title_exc}")
+        print(f"Lecture: {latest_target['recording_url']}")
+    print(f"Lecture title: {latest_target['lecture_title']}")
+    print(f"Leccap title: {latest_target['recording_title']}")
 
     if updated:
-        run_git_commands(module_path, lecture_name or "lecture", recording_url, args.push)
+        run_git_commands(
+            latest_target["module_path"],
+            latest_target["lecture_name"] or "lecture",
+            latest_target["recording_url"],
+            args.push,
+        )
     else:
         print("Recording link already up to date; no changes made.")
 

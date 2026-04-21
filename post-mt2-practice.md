@@ -28,41 +28,96 @@ As we're able to, we will embed videos to certain problems here. A few have alre
 
 ### Problem 1
 
-In [Lab 10](https://eecs245.org/resources/labs/lab10/lab10.pdf), we proved that if $$f: \mathbb{R} \to \mathbb{R}$$ is a convex function such that $$f(0) = 0$$, then for all $$y \in \mathbb{R}$$ and $$t \in [0, 1]$$,
+Let $$f: \mathbb{R} \to \mathbb{R}$$ be convex, and suppose $$f(0)=0$$.
 
-$$f(ty) \leq t f(y)$$
+Prove that for all **non-negative** values of $$x$$ and $$y$$,
 
-It turns out that this fact is true for all real numbers $$t$$, not just $$t \in [0, 1]$$ (as long as $$f$$ is convex and $$f(0) = 0$$).
+$$
+f(x)+f(y) \leq f(x+y)
+$$
 
-Using this fact, prove that if $$f: \mathbb{R} \to \mathbb{R}$$ is a convex function such that $$f(0) = 0$$, then for all $$x, y \in \mathbb{R}$$,
+_Hints:_
 
-$$f(x + y) \leq f(x) + f(y)$$
+- First, handle the easy case, $$x+y=0$$.
+- If $$x+y>0$$, define
+  $$
+  t=\frac{x}{x+y}.
+  $$
+  Why must $$t\in[0,1]$$?
 
-_Hint: Start by using the definition of convexity on $$f$$, $$x$$, and $$y$$, using $$t = \frac{1}{2}$$. This will tell you something about $$f(x) + f(y)$$._
+- Rewrite $$x$$ as
+  $$x=t(x+y)$$ using the definition of $$t$$ above. Then, use the fact from [Lab 10](../resources/labs/lab10/lab10.pdf) that for a convex function with $$f(0)=0$$,
+  
+  $$f(tu)\leq t\,f(u)\qquad\text{for }t\in[0,1]$$
+
+- Do the same for $$y$$ by writing $$y=(1-t)(x+y)$$.
+
+- Add the two inequalities you get.
 
 <details markdown="1"><summary>Solution</summary>
 
-By convexity, with $$t = \frac{1}{2}$$,
+If $$x+y=0$$, then since $$x,y\ge 0$$, we must have $$x=y=0$$. So
 
-$$f\left(\frac{x+y}{2}\right) \leq \frac{f(x) + f(y)}{2}$$
+$$
+f(x+y)=f(0)=0=f(0)+f(0)=f(x)+f(y)
+$$
 
-Multiplying both sides by 2 gives
+Now assume $$x+y>0$$, and let
 
-$$2f\left(\frac{x+y}{2}\right) \leq f(x) + f(y)$$
+$$
+t=\frac{x}{x+y}
+$$
 
-Now use the fact that $$f(ty) \leq t f(y)$$ for all real $$t$$, with $$t = 2$$ and $$y = \frac{x+y}{2}$$. This gives
+Because $$x$$ and $$y$$ are both non-negative and $$x + y > 0$$, it must be that $$x + y \geq x$$, so $$0 \leq \frac{x}{x+y} \leq 1$$.
 
-$$f(x+y) = f\left(2 \cdot \frac{x+y}{2}\right) \leq 2f\left(\frac{x+y}{2}\right)$$
+Also, as the hint suggestions, we can write
 
-Combining the two inequalities,
+$$
+x=t(x+y)
+$$
 
-$$f(x+y) \leq 2f\left(\frac{x+y}{2}\right) \leq f(x) + f(y)$$
+Since $$f$$ is convex and $$f(0)=0$$, we know that for any $$u\in\mathbb{R}$$ and any $$t\in[0,1]$$,
 
-So,
+$$
+f(tu)\le t\,f(u)
+$$
 
-$$\boxed{f(x+y) \leq f(x) + f(y)}$$
+Applying this with $$u=x+y$$, we get
+
+$$
+f(x)=f(t(x+y))\le t\,f(x+y)
+$$
+
+Also,
+
+$$
+y=(1-t)(x+y)
+$$
+
+and $$1-t\in[0,1]$$, so similarly,
+
+$$
+f(y)=f((1-t)(x+y))\le (1-t)\,f(x+y)
+$$
+
+Adding these inequalities gives
+
+$$
+f(x)+f(y)\le t\,f(x+y)+(1-t)\,f(x+y)=f(x+y)
+$$
+
+Therefore,
+
+$$
+f(x) + f(y) \leq f(x+y)
+$$
+
+as needed!
+
+One way this is phrased is that $$f$$ is **superadditive** on the nonnegative reals, as long as it is convex and $$f(0)=0$$. "Super" means "greater than" in this context. (If $$f$$ were a linear transformation, it would just be additive: $$f(x+y) = f(x) + f(y)$$.)
 
 </details>
+
 
 ---
 
