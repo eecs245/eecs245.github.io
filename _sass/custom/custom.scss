@@ -98,6 +98,19 @@ $link-color: #0066cc;
   vertical-align: middle;
 }
 
+.aux-nav-list-item a[href*="youtube.com"]::before,
+.aux-nav-list-item a[href*="youtu.be"]::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  background-image: url("../../assets/site-images/youtube.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
 // header bar sticky scroll
 #main-header {
   position: -webkit-sticky; /* For Safari */
