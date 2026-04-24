@@ -9,7 +9,7 @@ nav_exclude: true
 
 # Post-Midterm 2 Practice Problems
 
-_last updated on April 17, 2026 at 5:41PM_
+_last updated on April 24, 2026 at 7:06PM_
 
 This page contains several practice problems for content introduced after Midterm 2. They are sorted by topic:
 
@@ -381,7 +381,7 @@ Suppose $$A$$ is an $$n \times n$$ matrix with characteristic polynomial $$p(\la
 
 Fill in the blank: $$A$$ is diagonalizable if and only if $$\text{rank}(A) = \_\_\_\_$$.
 
-<center><iframe width="640" height="360" src="https://www.loom.com/embed/16e913f28c0140999769f34d52cf719e" title="Problem 7 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.loom.com/embed/16e913f28c0140999769f34d52cf719e" title="Problem 7 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -445,7 +445,7 @@ $$x = 3 \vec v_1 - 2 \vec v_2 + 4 \vec v_3, \qquad A \vec x = 15 \vec v_1 - 8 \v
 
 3. What are the eigenvalues of $$A$$?
 
-<center><iframe width="640" height="360" src="https://www.loom.com/embed/ffc2db21fe4a4c0892d8de7ec5dfbde5" title="Problem 9 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.loom.com/embed/ffc2db21fe4a4c0892d8de7ec5dfbde5" title="Problem 9 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -671,7 +671,7 @@ Recall, a symmetric matrix $$A$$ is positive semidefinite if $$\vec v^T A \vec v
 1. Fill in the blanks: A symmetric matrix $$A$$ is positive semidefinite if and only if all of its eigenvalues are ________.
 1. Draw a Venn diagram of the relationship between the following sets of square matrices: positive semidefinite, positive definite, symmetric, diagonalizable, and invertible.
 
-<center><iframe width="640" height="360" src="https://www.loom.com/embed/aea647a2947c4fefa5439afe0fc6acb5" title="Problem 16 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.loom.com/embed/aea647a2947c4fefa5439afe0fc6acb5" title="Problem 16 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -982,7 +982,7 @@ Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1
 
 <center><img src="../assets/rev-imgs/pc-4-plots.png" alt="Principal component 2 vs. principal component 1" style="width: 50%; height: auto;"></center>
 
-<iframe width="640" height="448" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 24 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.loom.com/embed/c1db77f7a58e4d58add90e555409bab3" title="Problem 24 solution video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -1051,6 +1051,8 @@ Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1
 Let $$X$$ be a $$20 \times 3$$ matrix, let $$\tilde X$$ be the centered version of $$X$$, and let $$\tilde X = U \Sigma V^T$$ be the singular value decomposition of $$\tilde X$$.
 
 Suppose the variances of the 3 columns of $$\tilde X$$ are $$125$$, $$20$$, and $$5$$, respectively. What is the **smallest possible value** of $$\sigma_1$$, the largest singular value of $$\tilde X$$?
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/M5pWddThZEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
 <details markdown="1"><summary>Solution</summary>
 
