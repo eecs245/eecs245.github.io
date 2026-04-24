@@ -20,6 +20,7 @@ days:
         title: <b>Singular Value Decomposition</b>
         problems: ../resources/homeworks/hw11
         template: https://www.overleaf.com/read/vjyvfvswbpnj#9556ea
+        solutions: https://edstem.org/us/courses/89676/discussion/7985348
   - date: "2026-04-22"
     events:
       - name: SUR
