@@ -651,9 +651,17 @@ If we let $$\vec v_2 = \begin{bmatrix} \frac{2}{\sqrt{6}} \\ -\frac{1}{\sqrt{6}}
 
 $$\text{error} = \vec v_3 - \text{proj}_{\vec v_2}(\vec v_3) = \vec v_3 - \frac{\vec v_2 \cdot \vec v_3}{\vec v_2 \cdot \vec v_2} \vec v_2 = \vec v_3 - \frac{1}{2} \vec v_2 = \begin{bmatrix} 0 \\ -\frac{3}{2 \sqrt{6}} \\ \frac{3}{2 \sqrt{6}} \end{bmatrix}$$
 
-To construct $$Q$$, we set the first column to be $$\vec v_1$$, the second column to be $$\vec v_2$$, and the third column to be this new vector we found. So,
+To construct $$Q$$, we set the first column to be $$\vec v_1$$, the second column to be $$\vec v_2$$, and the third column to be the normalized version of this new vector we found. Since
 
-$$Q = \begin{bmatrix} \dfrac{1}{\sqrt{3}} & \dfrac{2}{\sqrt{6}} & 0 \\[1em] \dfrac{1}{\sqrt{3}} & -\dfrac{1}{\sqrt{6}} & -\dfrac{3}{2\sqrt{6}} \\[1em] \dfrac{1}{\sqrt{3}} & -\dfrac{1}{\sqrt{6}} & \dfrac{3}{2\sqrt{6}} \end{bmatrix}$$
+$$\left\lVert \begin{bmatrix} 0 \\ -\frac{3}{2 \sqrt{6}} \\ \frac{3}{2 \sqrt{6}} \end{bmatrix} \right\rVert = \frac{\sqrt{3}}{2}$$
+
+the third column of $$Q$$ should be
+
+$$\frac{1}{\sqrt{3} / 2} \begin{bmatrix} 0 \\ -\frac{3}{2 \sqrt{6}} \\ \frac{3}{2 \sqrt{6}} \end{bmatrix} = \begin{bmatrix} 0 \\ -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$$
+
+So,
+
+$$Q = \begin{bmatrix} \dfrac{1}{\sqrt{3}} & \dfrac{2}{\sqrt{6}} & 0 \\[1em] \dfrac{1}{\sqrt{3}} & -\dfrac{1}{\sqrt{6}} & -\dfrac{1}{\sqrt{2}} \\[1em] \dfrac{1}{\sqrt{3}} & -\dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{2}} \end{bmatrix}$$
 
 $$\Lambda$$ is the same as in the original problem statement.
 
