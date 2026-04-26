@@ -913,9 +913,9 @@ $$
 
 <details markdown="1"><summary>Solution</summary>
 
-1. The variance of the $$j$$-th principal component is $$\sigma_j^2/n$$. So the variance of the second principal component is
+1. The variance of the $$j$$-th principal component is $$\sigma_j^2/n$$. Since $$\Sigma$$ is $$5 \times 3$$, we have $$n = 5$$. So the variance of the second principal component is
 
-    $$\frac{3^2}{n} = \frac{9}{n}$$
+    $$\frac{3^2}{5} = \frac{9}{5}$$
 
 2. For the proportions of variance explained, use the squared singular values:
 
