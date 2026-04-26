@@ -1048,7 +1048,17 @@ Suppose the values along the diagonal of $$\Sigma$$ are $$9$$, $$4$$, $$2$$, $$1
 
     But $$\vec 1^T (\tilde X \vec w)$$ is exactly the sum of the entries of $$\tilde X \vec w$$, so those entries sum to 0.
 
-6. The correct plot is **Plot D**. In principal component coordinates, the data should be centered at the origin, axis-aligned, and have more spread in PC1 than in PC2 because $$\sigma_1 = 9 > \sigma_2 = 4$$. Plot D is the best match.
+6. The correct plot is **Plot D**.
+
+    First, since principal components are computed from the mean-centered matrix $$\tilde X$$, the plot should be centered at the origin. Also, since the two axes are principal component directions, PC1 and PC2 should be uncorrelated, rather than having a clear positive or negative correlation.
+
+    Now compare the spread along the two axes. The variance of PC1 is $$\sigma_1^2/n$$, and the variance of PC2 is $$\sigma_2^2/n$$. But when we visually compare the spread of points in a plot, we are comparing standard deviations, not variances. Standard deviations are in the same units as the original data; variance is in squared units.
+
+    So the standard deviation of PC1 is $$\sigma_1/\sqrt{n}$$, while the standard deviation of PC2 is $$\sigma_2/\sqrt{n}$$. Their ratio is therefore
+
+    $$\frac{\sigma_1/\sqrt{n}}{\sigma_2/\sqrt{n}} = \frac{\sigma_1}{\sigma_2} = \frac{9}{4}$$
+
+    So PC1 should look a little more than twice as spread out as PC2, not about five times as spread out. Plot D is centered at the origin, shows no correlation between PC1 and PC2, and has roughly this ratio of spreads, so Plot D is the best match.
 
 </details>
 
