@@ -103,7 +103,7 @@ Another equivalent formula for the Frobenius norm is $$\lVert X \rVert_F^2 = \te
 Another equivalent formula for the Frobenius norm is $$\lVert X \rVert_F^2 = \sum_{i=1}^r \sigma_i^2$$ where \\(\sigma_1, \sigma_2, \ldots, \sigma_r\\) are the singular values of \\(X\\) and \\(r = \text{rank}(X)\\). **Explain why** this is equivalent to the definition of the Frobenius norm from part **b)**. *Hint: What is the relationship between the singular values of \\(X\\) and the eigenvalues of some other matrix?*
 
 The Frobenius norm allows us to make more precise the idea of a rank-\\(k\\) approximation of a matrix, first introduced in [Chapter 10.2](https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/).\
-Suppose \\(X = U \Sigma V^T\\) is the singular value decomposition of the \\(n \times d\\) matrix \\(X\\), where the columns of \\(U\\) are \\(\vec u_1, \vec u_2, \ldots, \vec u_n \in \mathbb{R}^n\\), the singular values of \\(X\\) are \\(\sigma_1, \sigma_2, \ldots, \sigma_r > 0\\), the columns of \\(V^T\\) are \\(\vec v_1, \vec v_2, \ldots, \vec v_d \in \mathbb{R}^d\\), and \\(r = \text{rank}(X)\\).\
+Suppose \\(X = U \Sigma V^T\\) is the singular value decomposition of the \\(n \times d\\) matrix \\(X\\), where the columns of \\(U\\) are \\(\vec u_1, \vec u_2, \ldots, \vec u_n \in \mathbb{R}^n\\), the singular values of \\(X\\) are \\(\sigma_1, \sigma_2, \ldots, \sigma_r > 0\\), the rows of \\(V^T\\) are \\(\vec v_1, \vec v_2, \ldots, \vec v_d \in \mathbb{R}^d\\), and \\(r = \text{rank}(X)\\).\
 The Eckart--Young--Mirsky theorem states that, for any integer \\(k\\) between 1 and \\(r\\), the \\(n \times d\\) matrix
 
 $$X_k = \sum_{i=1}^k \sigma_i \vec u_i \vec v_i^T$$ 
