@@ -25,7 +25,7 @@ Note that the midterm exams in Fall 2025 were 80 minutes long and administered i
 
 | Semester | Midterm 1 | Midterm 2 | Final Exam |
 | --- | --- | --- | --- |
-| Winter 2026 | [Exam](../resources/exams/wn26-mt1.pdf), [Solutions](../resources/exams/wn26-mt1-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qQWmh2Js1moAv8MqQCMEjWx) | [Exam](../resources/exams/wn26-mt2.pdf), [Solutions](../resources/exams/wn26-mt2-solutions.pdf) | |
+| Winter 2026 | [Exam](../resources/exams/wn26-mt1.pdf), [Solutions](../resources/exams/wn26-mt1-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qQWmh2Js1moAv8MqQCMEjWx) | [Exam](../resources/exams/wn26-mt2.pdf), [Solutions](../resources/exams/wn26-mt2-solutions.pdf) | [Exam](../resources/exams/wn26-final.pdf), Solutions coming soon |
 | Fall 2025 | [Exam](../resources/exams/fa25-mt1.pdf), [Solutions](../resources/exams/fa25-mt1-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qRjWWjsENcWsxgtgJ2bJAl4) | [Exam](../resources/exams/fa25-mt2.pdf), [Solutions](../resources/exams/fa25-mt2-solutions.pdf) | [Exam](../resources/exams/fa25-final.pdf), [Solutions](../resources/exams/fa25-final-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qS-QgZ2hY-FJkqClfbGu7ds) |
 | Mock Exams | [Exam](../resources/exams/mock-mt1.pdf), [Solutions](../resources/exams/mock-mt1-solutions.pdf) | [Exam](../resources/exams/mock-mt2.pdf), [Solutions](../resources/exams/mock-mt2-solutions.pdf) | In lieu of a mock Final Exam, we provided these [Post-Midterm 2 practice problems](../post-mt2-practice) |
 
