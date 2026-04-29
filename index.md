@@ -29,9 +29,7 @@ EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #
 {% endfor %}
 
 {: .green }
-> The Final Exam is on <b>Monday, April 27th from 1:30-3:30PM in 1013 DOW</b>. See [**here**](https://edstem.org/us/courses/89676/discussion/7958167) for all relevant details.
->
-> There will not be a mock final exam; instead, we've posted a [**Post-Midterm 2 Practice Problems**](../post-mt2-practice) worksheet, complete with solutions. Last semester's final exam is available [**here**](../resources#past-exams), and walkthrough videos are [**here**](https://www.youtube.com/playlist?list=PLEFTQpsm47qS-QgZ2hY-FJkqClfbGu7ds).
+Congrats on finishing the course! Letter grades are available on Gradescope.
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
