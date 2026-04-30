@@ -8,4 +8,5 @@ days:
         type: exam
         title: <b>Final Exam (1:30-3:30PM, 1013 DOW)</b>
         problems: ../resources/exams/wn26-final.pdf
+        solutions: ../resources/exams/wn26-final-solutions.pdf
 ---
