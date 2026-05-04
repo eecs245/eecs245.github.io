@@ -17,7 +17,7 @@ title: EECS 245
 tagline: Mathematics for Machine Learning, Spring 2026 at the University of Michigan
 # description: A modern, highly customizable, responsive Jekyll template for course websites
 author: EECS 245 course staff
-baseurl: '/' # the subpath of your site, e.g. /blog
+baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://eecs245.org' # the base hostname & protocol for your site, e.g. http://example.com
 repository: eecs245/eecs245.github.io
 exclude:
