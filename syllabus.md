@@ -13,9 +13,6 @@ nav_order: 2
 # 📖 Syllabus
 {:.no_toc}
 
-{: .red }
-**Coming soon!**
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -114,13 +111,14 @@ You'll need to make accounts on the following sites:
 - **Slack:** We’ll be using Slack as our course message and discussion board.
   More details are in the [Communication](#communication) section below. You
   should receive an invitation to the course Slack workspace; if not, please
-  let us know as soon as possible.
+  let us know as soon as possible. [This direct link](https://um-sp26-eecs245s26.slack.com) should work,
+  once you've received an invite.
 
 - **Gradescope:** You’ll submit all assignments to
   [Gradescope](https://www.gradescope.com/courses/1307081), and this is where all of
   your grades will live as well. All homeworks must be handwritten, scanned into a PDF, and submitted to Gradescope. Some homeworks may also involve submitting code to an autograder on Gradescope; we will not be using the EECS department-specific autograder. You should have received an email invitation for Gradescope, but if not please let us know as soon as possible.
 
-- At some point in the term, we may switch from Gradescope to a different submission system: [Pensive](https://www.pensive.com/schools/). Pensive is like Gradescope, but it 
+- At some point in the term, we may switch from Gradescope to a different submission system: [Pensive](https://www.pensive.com/schools/). Pensive is like Gradescope, but it allows for AI grading of handwritten work, with human review and the ability to ask for a regrade. Not only does this enable faster and more accurate grading, but it also frees up instructor time to spend working with students one-on-one, which AI cannot do. Pensive is currently being reviewed by the College of Engineering to ensure that it meets the necessary privacy and accessibility standards; rest assured, Pensive _does not_ train AI models on your work. If and when we switch to Pensive, you are free to let the instructor know if you would like to opt-out of AI-based grading.
 
 {: .red }
 Note that we will **not** be using Canvas for anything this semester (so please don't try and send us messages on Canvas!).
@@ -158,11 +156,11 @@ messages posted there.
 
 ### Lectures
 
-Lectures will be held in-person on Tuesdays and Thursdays from 1-4PM in 1690 BBB. Because the spring term is compressed, each lecture will cover roughly two lectures' worth of material from the regular semester. Attendance is not strictly required, though each lecture you attend earns you 1 [engagement point](#engagement), and engagement points are worth 5% of your overall course grade. It is possible to earn 100% in the course without attending lecture, but this part of the grade is designed to encourage you to come.
+Lectures will be held **in-person on Tuesdays and Thursdays from 1-4PM in 1690 BBB**. Because the spring term is compressed, each lecture will cover roughly two lectures' worth of material from the regular semester. Attendance is not strictly required, though each lecture you attend earns you 1 [engagement point](#engagement-points), and engagement points are worth 5% of your overall course grade. It is possible to earn 100% in the course without attending lecture (by coming to office hours instead) but this part of the grade is designed to encourage you to come.
 
 A recording will be posted after each lecture, either from the spring or from a previous semester. (Since we only have a few students in the class, in-person lectures may feel a bit more casual and personalized to the students present than in a regular semester, hence the posting of previous semester recordings.) We will do our best to make lectures interactive and well worth your time.
 
- As part of your participation in this course, you may be recorded (e.g. if you answer a question). If you do not wish to be recorded, please email the instructor to discuss alternate arrangements.
+As part of your participation in this course, you may be recorded (e.g. if you answer a question). If you do not wish to be recorded, please email the instructor to discuss alternate arrangements.
 
 Course notes have been written specifically for EECS 245, and will be your main resource in this class. These can be found at [notes.eecs245.org](https://notes.eecs245.org).
 
@@ -178,28 +176,26 @@ Live lectures will closely follow the notes. Instead of presenting using slides 
 In a traditional semester, labs are held in person for 2 hours each week. Since
 our course is relatively small, we do not have any TAs, and we already have a
 high number of contact hours, we will not hold physical lab sections this term.
-Instead, each Sunday, we will post two lab worksheets:
-- A Monday worksheet, containing problems from the previous Thursday's lecture
-- A Wednesday worksheet, containing problems from the previous Tuesday's lecture
 
-Lab worksheets are meant to provide hands-on practice with the recent lecture material and preparation for the upcoming homeworks and exams. Each worksheet will be broken into several activities. Some activities may involve writing math, and others may involve writing code in a Jupyter Notebook.
+Instead, we will post two lab worksheets per week, each one posted the day before it is due:
+- A Monday worksheet, containing problems from the previous Thursday's lecture (due Monday 11:59PM)
+- A Wednesday worksheet, containing problems from the previous Tuesday's lecture (due Wednesday 11:59PM)
 
-(These worksheets are what students in a standard semester of EECS 245 would complete in lab.)
+These worksheets are what students in a standard semester of EECS 245 would complete in lab, and are meant to provide hands-on practice with the recent lecture material and preparation for the upcoming homeworks and exams. They may even involve some programming.
 
-We ask that you spend roughly 2 hours working on each worksheet, asking
-questions on Slack or in office hours as needed, and then submit your best
-attempt to Gradescope. There will be 13 lab worksheets in total. Each lab
-worksheet you submit will earn you 1 lab point, up to a maximum of 10 lab
-points. Your lab score will be the number of lab points you earn out of 10.
-This means **you can miss up to 3 labs for any reason** (late add, extenuating
-circumstances, etc.) and still earn a full lab score. Details can be found in
-the [Grades](#grades) section below.
+We ask that you spend roughly 2 hours working on each worksheet, asking questions on Slack or in office hours as needed, and **then submit your best attempt to Gradescope, where it will be graded for completion (not correctness)**. Don't feel the need to answer every single question if you run out of time.
 
-Lab worksheets and solutions will be posted on the course website.
+You do not need to print the worksheet itself (though you can); it is perfectly fine towrite your answers on a separate piece of paper or on a tablet and upload your work as a single PDF. As we discuss in the [Homeworks](#homeworks) section, you cannot use LaTeX or any other digital document creation tools in this class.
+
+There will be 13 lab worksheets in total. Each lab worksheet you submit will earn you 1 lab point, up to a maximum of 10 lab points. Your lab score will be the number of lab points you earn out of 10. This means **you can skip up to 3 labs for any reason** (late add, extenuating circumstances, etc.) and still earn a full lab score. Details can be found in the [Grades](#grades) section below.
+
+After the worksheet is due, solutions will be posted.
 
 ### Homeworks
 
-This class will have regular homework assignments throughout the compressed term, which are to be completed **individually**. Homework due dates may vary throughout the term; see the [course homepage](../) for the most up-to-date deadline schedule. We will try to always give you a week to work on each homework, except the first one.
+This class will have regular homework assignments throughout the compressed term, which are to be completed **individually**. Homework due dates may vary throughout the term; see the [course homepage](../) for the most up-to-date deadline schedule. We will try to give you ~one week to work on each homework.
+
+Homeworks must be **handwritten** by each student individually, scanned into a single PDF, and submitted to Gradescope. **That is, no typing and no LaTeX**, unless you have accommodations specifying otherwise. In previous terms, we used to provide students with an Overleaf template. We're intentionally not doing that this term, since we believe that handwriting the material helps you learn it better, better prepares you for exams, and is harder to cheat with AI. That said, using LaTeX and Overleaf is an important skill, and we _may_ have one designated homework that requires everyone to practice with these tools once. In general though, you should expect to handwrite your homework (writing on a tablet is fine).
 
 **Collaboration Policy**
 
@@ -221,46 +217,44 @@ All homeworks must be submitted by 11:59PM Ann Arbor time on the due date to
 be considered on time. If you make a submission after the
 deadline, your assignment will be counted as late.
 
-Every student has 4 slip days by default. A slip day extends the deadline of a homework by 24 hours, and slip days will be applied automatically to late homework submissions. You may use a maximum of 1 slip day per homework, so that we can release homework solutions shortly after the deadline.
+Every student has **5** slip days by default. A slip day extends the deadline of a homework by 24 hours, and slip days will be **applied automatically** to late homework submissions. You may use a maximum of 1 slip day per homework, so that we can release homework solutions shortly after the deadline. **Slip days do not apply to labs.**
 
-If you need more than 4 slip days, you have to ask me on Slack before the relevant deadline. If I don't hear from you before the deadline and you are out of slip days, the extension won't be granted. If a student is going to fall behind, I want to know about it.
+Slip days are designed to give you flexibility to work on your homework at your own pace, and to help you catch up if you fall behind. If you find yourself needing more than 5 slip days, please meet with the instructor to discuss your situation.
 
 In addition, your lowest 2 homework scores will be dropped from your final grade. This means that you can miss up to 2 homeworks for any reason and still earn a full homework score.
 
 **Regrade Requests**
 
-Most homework problems will be graded manually by our excellent graders, strictly adhering to a rubric. If you believe that the grader has made a mistake in applying the rubric shown to you on Gradescope, you may submit a regrade request directly on Gradescope within one week of the grades being released. If you do not submit a regrade request within one week, your original grade will be final. Part of your grade is clarity, so if your answer was mostly right but unclear you may still not be eligible for full credit.
+Most homework problems will be graded manually. If you believe that the grader has made a mistake in applying the rubric shown to you on Gradescope, you may submit a regrade request directly on Gradescope within one week of the grades being released. If you do not submit a regrade request within one week, your original grade will be final. Part of your grade is clarity, so if your answer was mostly right but unclear you may still not be eligible for full credit.
 
-Some homework problems will be graded automatically by the autograder. If you believe that the autograder has made a mistake in grading your homework, send the instructor an email, again, within one week of the grades being released. Note that it's rare that something is wrong with the autograder, and if that's the case, we'll typically fix the necessary test cases and re-run the autograder for the entire class.
-
-Homeworks must be handwritten by each student individually, scanned into a single PDF, and submitted to Gradescope. In past semesters we provided an Overleaf template for students who wanted to typeset solutions, but we will not be doing that this term.
+Some programming problems will be graded automatically by the autograder. If you believe that the autograder has made a mistake in grading your homework, send the instructor an email, again, within one week of the grades being released. Note that it's rare that something is wrong with the autograder, and if that's the case, we'll typically fix the necessary test cases and re-run the autograder for the entire class.
 
 ### Office Hours
 
 The instructor will usually be free shortly before and shortly after lecture to
-answer homework questions. The standard way to attend office hours is to make an
+answer questions. That said, the standard way to attend office hours is to make an
 appointment using [this Google Calendar
 link](https://calendar.app.google/TNqfWMxkjuaLGi6n9). Appointments are 15
 minutes long, though they can run longer if needed, and are available both on
 Zoom and in person. If you'd like to meet with the instructor but no times are
 available, let them know on Slack.
 
-Each office hours appointment counts as 1 engagement point, up to a maximum of
-2 office hours engagement points per week.
+Each office hours appointment counts as 1 [engagement point](#engagement-points), up to a maximum of
+2 office hours engagement points per week. As is discussed below, engagement points are worth 5% of your overall course grade, and attending office hours is therefore expected any time you miss a lecture.
 
-In a theoretical class such as this one, it's important to make good use of office hours. Homework assignments will be challenging, so you should plan to attend office hours at least once a week. Even if you don’t have specific questions, you will likely get a lot out of conversing about the material and hearing others' questions. And even if you've mastered the material, still come and say hi – take advantage of the fact that this is a relatively small class.
+In a theoretical class such as this one, it's important to make good use of office hours. Homework assignments will be challenging, so you should plan to attend office hours at least once a week. And even if you've mastered the material, still come and say hi – take advantage of the fact that this is a relatively small class.
 
 ---
 
 ## Exams
 
-This class has two Midterm Exams and one Final Exam, all of which will be administered in-person and on paper.
+This class has two Midterm Exams and one Final Exam, all of which will be administered **in-person and on paper**.
 
 | Exam | Date and Time | Content |
 | --- | --- | --- |
 | Midterm 1 | Monday, May 25th, 12-2PM | Chapters 1-4 of the [course notes](https://notes.eecs245.org) |
 | Midterm 2 | Tuesday, June 9th, 1-3PM | Chapters 5-8 of the [course notes](https://notes.eecs245.org) |
-| Final Exam | Wednesday, June 24th, 8-10AM | Cumulative; see the homepage for the latest review materials |
+| Final Exam | Wednesday, June 24th, 8-10AM | 40% content from Chapters 9-10; 30% content from Chapters 1-4; 30% content from Chapters 5-8 |
 
 Midterm 2 is not cumulative. The Final Exam will be cumulative, and broken into three parts:
 
@@ -272,20 +266,23 @@ Midterm 2 is not cumulative. The Final Exam will be cumulative, and broken into 
 
 This "redemption policy" for Parts 1 and 2 is designed to help you boost your Midterm 1 and Midterm 2 scores if you didn't do as well as you'd hoped. This policy can only help your grade; it can't hurt. To be clear, all three parts of the Final Exam are required and part of your Final Exam score.
 
-If you have conflicts with any of the exams, please let us know on the [Welcome Survey](#TODO). We may provide alternate exam times for students with a valid, documented conflict with a required activity in another course or official university-affiliated activity, or to help students avoid negative academic consequences when their religious obligations conflict with academic requirements.
+If you have conflicts with any of the exams, please let us know on the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSee14997ZWHuI-eYwNZHh4tI6i9Xu0kRLYMm_ve9uoSxbjVgA/viewform?usp=dialog). We may provide alternate exam times for students with a valid, documented conflict with a required activity in another course or official university-affiliated activity, or to help students avoid negative academic consequences when their religious obligations conflict with academic requirements.
 
-Exams are to be completed individually, with absolutely no collaboration allowed. Any suspected violations will be reported to the [Honor Council](https://ecas.engin.umich.edu/honor-council/).
+Exams are to be completed **individually**, with absolutely no collaboration allowed. Any suspected violations will be reported to the [Honor Council](https://ecas.engin.umich.edu/honor-council/).
 
 ---
 
 ## Grades
 
+### Engagement Points
+
 In addition to exams, homeworks, and labs, the course includes an **engagement**
-component. You can earn 1 engagement point for each lecture you attend and each
+component. For full credit, you must earn at least 14 engagement points (the number of lecture days in the term, not including exams).
+
+You can earn 1 engagement point for each lecture you attend and each
 office hours appointment you attend, up to a maximum of 2 office hours
-engagement points per week. There will be more than 14 opportunities to earn
-points during the term; earning at least 14 engagement points gives you full
-engagement credit.
+engagement points per week. There are many more than 14 opportunities to earn engagement points
+during the term, so you shouldn't worry about not being able to make it to every lecture.
 
 ### Weights
 
@@ -315,7 +312,7 @@ student master the material?”. With that said, grades will not be any stricter
 than the standard grading scale (where an A+ is a 97+, A is 93+, A- is 90+,
 etc). For instance, the threshold for an “A” will never be higher than 93%.
 
-You can see Fall 2025's letter grade distribution [here](https://eecs245.org/next/#workload-and-final-grade-distribution); we will aim to achieve a similar distribution this semester, but minor variations are expected.
+You can see Fall 2025's letter grade distribution [here](https://eecs245.org/next/#workload-and-final-grade-distribution); Winter 2026's distribution was similar, and we will aim to achieve a similar distribution this semester, but minor variations are expected. Frankly, given that this is a small class, we are perfectly happy with every single student earning an A, if they truly master the material. We're here to work with you to make this happen.
 
 Try your best not to worry about grades, and we’ll reciprocate by being fair.
 We’re in this together ❤️.
