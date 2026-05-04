@@ -1,25 +1,40 @@
 ---
-title: "Week 7: Midterm 1; Matrices"
+title: "Week 7: SVD and PCA"
 weekNumber: 7
 days:
-  - date: "2026-02-16"
+  - date: "2026-06-15"
     events:
-      - name: EXAM
-        type: exam
-        title: <b>Midterm 1 (7-9PM, 1670 BBB; <a href="https://edstem.org/us/courses/89676/discussion/7637745">see logistics here</a>)</b>
-        # note: Lecture will be treated as office hours, in the usual lecture room.
-        problems: resources/exams/wn26-mt1.pdf
-        solutions: resources/exams/wn26-mt1-solutions.pdf
-        videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qQWmh2Js1moAv8MqQCMEjWx
-  - date: "2026-02-18"
+      - name: Lab 10
+        type: lab
+        title: Gradient Descent and Convexity
+  - date: "2026-06-16"
     events:
-      - name: LEC 11
+      - name: LEC 12
         type: lecture
-        title: Matrices
-        recording: https://leccap.engin.umich.edu/leccap/player/r/n1fxON
-        reading: https://notes.eecs245.org/matrices/matrix-operations/
-        reading_text: Ch. 5.1
-        reading2: https://notes.eecs245.org/matrices/special-matrices/
-        reading2_text: Ch. 5.2
-        live_notes: resources/lecture-pdfs/lec11-filled.pdf
+        title: Spectral Theorem, Singular Value Decomposition
+        reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/symmetric-matrices-spectral-theorem/
+        reading_text: Ch. 9.5
+        reading2: https://notes.eecs245.org/singular-value-decomposition/computing-svd/
+        reading2_text: Ch. 10.1
+        reading3: https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/
+        reading3_text: Ch. 10.2
+        reading4: https://notes.eecs245.org/singular-value-decomposition/best-direction/
+        reading4_text: Ch. 10.3
+  - date: "2026-06-17"
+    events:
+      - name: Lab 11
+        type: lab
+        title: Convexity, Eigenvalues and Eigenvectors
+      - name: HW 11
+        type: hw
+        title: <b>Singular Value Decomposition</b>
+  - date: "2026-06-18"
+    events:
+      - name: LEC 13
+        type: lecture
+        title: Principal Components Analysis and Applications
+        reading: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
+        reading_text: Ch. 10.4
+  - date: "2026-06-21"
+    events:
 ---

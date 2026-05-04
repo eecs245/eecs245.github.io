@@ -39,15 +39,28 @@
                 {%- endif -%}
                 {%- if event.datahub_link or event.github_link -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">💻 {% if event.code_button_text %}{{ event.code_button_text }}{% else %}Code{% endif %} ▼</button>{%- endif -%}
                 {%- if event.pl -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="pl-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="pl-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">🌽 PrairieLearn ▼</button>{%- endif -%}
-                {%- if event.reading and event.reading_text -%}
-                <a href="{{ event.reading }}" class="btn btn-info btn-sm">📕 {{ event.reading_text }}</a>
-                {%- endif -%}
-                {%- if event.reading2 and event.reading2_text -%}
-                <a href="{{ event.reading2 }}" class="btn btn-info btn-sm">📕 {{ event.reading2_text }}</a>
-                {%- endif -%}
-                {%- if event.reading3 and event.reading3_text -%}
-                <a href="{{ event.reading3 }}" class="btn btn-info btn-sm">📕 {{ event.reading3_text }}</a>
-                {%- endif -%}
+                {%- assign rendered_readings = "|" -%}
+                {%- assign reading_count = 0 -%}
+                {%- capture reading_links -%}
+                  {%- for i in (1..6) -%}
+                    {%- if i == 1 -%}
+                      {%- assign reading_key = "reading" -%}
+                      {%- assign reading_text_key = "reading_text" -%}
+                    {%- else -%}
+                      {%- assign reading_key = "reading" | append: i -%}
+                      {%- assign reading_text_key = "reading" | append: i | append: "_text" -%}
+                    {%- endif -%}
+                    {%- assign reading_url = event[reading_key] -%}
+                    {%- assign reading_label = event[reading_text_key] -%}
+                    {%- capture reading_token -%}|{{ reading_url }}|{%- endcapture -%}
+                    {%- unless reading_url == nil or reading_label == nil or rendered_readings contains reading_token -%}
+                      {%- if reading_count > 0 -%}, {% endif -%}<a href="{{ reading_url }}">{{ reading_label }}</a>
+                      {%- assign reading_count = reading_count | plus: 1 -%}
+                      {%- assign rendered_readings = rendered_readings | append: reading_url | append: "|" -%}
+                    {%- endunless -%}
+                  {%- endfor -%}
+                {%- endcapture -%}
+                {%- if reading_count > 0 -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="reading-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="reading-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">📕 Readings ▼</button>{%- endif -%}
                 {%- if event.live_notes -%}
                 <small><a href="{{ event.live_notes }}" class="btn btn-info btn-sm">📝 In-Class Notes</a></small>
                 {%- endif -%}
@@ -119,6 +132,11 @@
                 <small>
                   Click <a href="{{ event.pl }}">here</a> to open PrairieLearn, then click {{ event.pl_text }}.
                 </small>
+              </div>
+              {%- endif -%}
+              {%- if reading_count > 0 -%}
+              <div class="code-links-expanded reading-links-expanded" id="reading-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" style="display: none;" aria-hidden="true">
+                <small>{{ reading_links }}</small>
               </div>
               {%- endif -%}
               {%- if event.note -%}

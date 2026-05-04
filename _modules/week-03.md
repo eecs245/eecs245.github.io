@@ -1,36 +1,41 @@
 ---
-title: "Week 3: Simple Linear Regression"
+title: "Week 3: Vector Spaces and Matrices"
 weekNumber: 3
 days:
-  - date: "2026-01-19"
+  - date: "2026-05-18"
     events:
-      - title: "No Lecture: MLK Day"
-  - date: "2026-01-21"
-    events:
-      - name: LEC 4
-        type: lecture
-        title: Simple Linear Regression
-        recording: https://leccap.engin.umich.edu/leccap/player/r/fFHyRC
-        reading: https://notes.eecs245.org/simple-linear-regression/partial-derivatives/
-        reading_text: Ch 2.2
-        reading2: https://notes.eecs245.org/simple-linear-regression/finding-optimal-parameters/
-        reading2_text: Ch 2.3
-        reading3: https://notes.eecs245.org/simple-linear-regression/correlation/
-        reading3_text: Ch 2.4
-        live_notes: resources/lecture-pdfs/lec04-filled.pdf
-  - date: "2026-01-22"
-    events:
-      - name: Lab 3
+      - name: Lab 4
         type: lab
-        title: Simple Linear Regression and Partial Derivatives
-        problems: resources/labs/lab03/lab03.pdf
-        solutions: resources/labs/lab03/lab03-solutions.pdf
-  - date: "2026-01-23"
+        title: Projections, Span, and Linear Independence
+  - date: "2026-05-19"
     events:
-      - name: HW 2
+      - name: LEC 5
+        type: lecture
+        title: Vector Spaces, Subspaces, Bases, and Dimension
+        reading: https://notes.eecs245.org/linear-independence/linear-independence/
+        reading_text: Ch. 4.2
+        reading2: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
+        reading2_text: Ch. 4.3
+  - date: "2026-05-20"
+    events:
+      - name: Lab 5
+        type: lab
+        title: Vector Spaces, Subspaces, Bases, and Dimension
+      - name: HW 4
         type: hw
-        title: <b>Empirical Risk and Simple Linear Regression</b>
-        problems: ../resources/homeworks/hw02/hw02.pdf
-        template: https://www.overleaf.com/read/hsxnthrtwyfr#db96b9
-        solutions: https://edstem.org/us/courses/89676/discussion/7564922
+        title: <b>Projections and Spans</b>
+  - date: "2026-05-21"
+    events:
+      - name: LEC 6
+        type: lecture
+        title: Matrices
+        reading: https://notes.eecs245.org/matrices/matrix-operations/
+        reading_text: Ch. 5.1
+        reading2: https://notes.eecs245.org/matrices/special-matrices/
+        reading2_text: Ch. 5.2
+  - date: "2026-05-24"
+    events:
+      - name: HW 5
+        type: hw
+        title: <b>Linear Independence and Subspaces</b>
 ---

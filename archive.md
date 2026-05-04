@@ -11,4 +11,5 @@ Here, you can find links to the course websites of previous offerings of the cou
 
 | Semester | Website |
 | --- | --- |
+| Winter 2026 | [eecs245.org/wn26](https://eecs245.org/wn26) |
 | Fall 2025 | [eecs245.org/fa25](https://eecs245.org/fa25) |

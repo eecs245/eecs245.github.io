@@ -2,7 +2,7 @@
 layout: page
 title: 🏡 Home
 description: >-
-  "Information about EECS 245: Mathematics for Machine Learning in Fall 2025 at the University of Michigan."
+  "Information about EECS 245: Mathematics for Machine Learning in Spring 2026 at the University of Michigan."
 nav_order: 1
 ---
 
@@ -14,22 +14,16 @@ window.MathJax = {
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
-{: .blue }
-Interested in taking this course in Spring 2026 or Fall 2026? Click [**here**](next) to learn more.
-
 # Mathematics for Machine Learning 🧠
 {: .no_toc }
 {: .mb-2 }
-EECS 245, Winter 2026 at the <b><span style="background-color: #FFCB05; color: #00274C">University of Michigan</span></b>
+EECS 245, Spring 2026 🌸 at the <b><span style="background-color: #FFCB05; color: #00274C">University of Michigan</span></b>
 {: .no_toc }
 {: .fs-6 .fw-300 .mb-2 }
 
 {% for staffer in site.staffersnobio %}
 {{ staffer }}
 {% endfor %}
-
-{: .green }
-Congrats on finishing the course! Letter grades are available on Gradescope.
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 

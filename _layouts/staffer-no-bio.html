@@ -22,6 +22,11 @@
     <p><b>Lecture</b>: {{ page.lecture }}</p>
     {% endif %}
 
+    {% if page.office_hours %}
+    {% assign office_hours = page.office_hours | markdownify | remove: '<p>' | remove: '</p>' %}
+    <p><b>Office Hours</b>: {{ office_hours }}</p>
+    {% endif %}
+
     {% if page.note %}
     <p>{{ page.note }}</p>
     {% endif %}

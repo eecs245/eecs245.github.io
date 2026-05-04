@@ -1,47 +1,20 @@
 ---
-title: "Week 8: Rank and Inverses"
+title: "Week 8: Review and Final Exam"
 weekNumber: 8
 days:
-  - date: "2026-02-23"
+  - date: "2026-06-22"
     events:
-      - name: LEC 12
-        type: lecture
-        title: Rank and Column Space
-        recording: https://leccap.engin.umich.edu/leccap/player/r/IjquOm
-        reading: https://notes.eecs245.org/matrices/rank-and-column-space/
-        reading_text: Ch. 5.3
-        reading2: https://notes.eecs245.org/matrices/null-space-rank-nullity/
-        reading2_text: Ch. 5.4
-        live_notes: resources/lecture-pdfs/lec12-filled.pdf
-  - date: "2026-02-25"
-    events:
-      - name: LEC 13
-        type: lecture
-        title: Null Space, Rank-Nullity, and Inverses
-        recording: https://leccap.engin.umich.edu/leccap/player/r/13I0V7
-        reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
-        reading_text: Ch. 5.4
-        reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
-        reading2_text: Ch. 6.2
-        note: We will skip Chapter 6.1 for now and come back to it after the break. Note that we've added supplementary videos for Chapter 5.4; these are linked in the playlist above.
-        live_notes: resources/lecture-pdfs/lec13-filled.pdf
-        videos: https://youtube.com/playlist?list=PLEFTQpsm47qTw4_nsPMtpDG34ugpPlFkx&si=zK7Y1tURgyWx5j3b
-  - date: "2026-02-26"
-    events:
-      - name: Lab 7
+      - name: Lab 12
         type: lab
-        title: Rank, Column Space, Null Space, and Inverses
-        datahub_text: Lab 7
-        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fwn26-code&urlpath=tree%2Fwn26-code%2Flabs%2Flab07%2Flab07.ipynb&branch=main
-        github_link: https://github.com/eecs245/wn26-code/tree/main/labs/lab07/lab07.ipynb
-        problems: resources/labs/lab07/lab07.pdf
-        solutions: resources/labs/lab07/lab07-solutions.pdf
-  - date: "2026-02-27"
+        title: Adjacency Matrices and Diagonalization
+  - date: "2026-06-23"
     events:
-      - name: HW 6
-        type: hw
-        title: <b>Matrices</b>
-        problems: ../resources/homeworks/hw06/hw06.pdf
-        template: https://www.overleaf.com/read/ngvpzbqxpbth#bd3476
-        solutions: https://edstem.org/us/courses/89676/discussion/7796188
+      - name: LEC 14
+        type: lecture
+        title: "Review"
+  - date: "2026-06-24"
+    events:
+      - name: EXAM
+        type: exam
+        title: "<b>Final Exam (8-10AM)</b>"
 ---

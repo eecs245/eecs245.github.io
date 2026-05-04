@@ -1,32 +1,49 @@
 ---
-title: "Week 4: Introduction to Vectors"
+title: "Week 4: Midterm 1 and Linear Transformations"
 weekNumber: 4
 days:
-  - date: "2026-01-26"
+  - date: "2026-05-25"
     events:
-      - name: LEC 5
+      - name: EXAM
+        type: exam
+        title: "<b>Midterm 1 (12-2PM)</b>"
+  - date: "2026-05-26"
+    events:
+      - name: LEC 7
         type: lecture
-        title: Vectors
-        recording: https://leccap.engin.umich.edu/leccap/player/r/hpKdnQ
-        reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
-        reading_text: Ch 3.1
-        reading2: https://notes.eecs245.org/vectors/norms/
-        reading2_text: Ch 3.2
-        live_notes: resources/lecture-pdfs/lec05-filled.pdf
-  - date: "2026-01-28"
+        title: Rank, Column Space, Null Space, and Inverses
+        reading: https://notes.eecs245.org/matrices/rank-and-column-space/
+        reading_text: Ch. 5.3
+        reading2: https://notes.eecs245.org/matrices/null-space-rank-nullity/
+        reading2_text: Ch. 5.4
+        reading3: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
+        reading3_text: Ch. 6.2
+        reading4: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
+        reading4_text: Ch. 6.4
+  - date: "2026-05-27"
     events:
-      - name: LEC 6
-        type: lecture
-        title: Orthogonality and the Dot Product
-        recording: https://leccap.engin.umich.edu/leccap/player/r/C0GdHl
-        reading: https://notes.eecs245.org/vectors/dot-product/
-        reading_text: Ch 3.3
-        live_notes: resources/lecture-pdfs/lec06-filled.pdf
-  - date: "2026-01-29"
-    events:
-      - name: Lab 4
+      - name: Lab 6
         type: lab
-        title: Vectors and the Dot Product
-        problems: resources/labs/lab04/lab04.pdf
-        solutions: resources/labs/lab04/lab04-solutions.pdf
+        title: Vector Spaces, Subspaces, and Bases
+      - name: HW 6
+        type: hw
+        title: <b>Matrices</b>
+  - date: "2026-05-28"
+    events:
+      - name: LEC 8
+        type: lecture
+        title: Linear Transformations, Inverses, and Projections
+        reading: https://notes.eecs245.org/linear-transformations-and-projections/linear-transformations/
+        reading_text: Ch. 6.1
+        reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
+        reading2_text: Ch. 6.2
+        reading3: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
+        reading3_text: Ch. 6.3
+        reading4: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
+        reading4_text: Ch. 6.4
+  - date: "2026-05-31"
+    events:
+      - name: HW 7
+        type: hw
+        title: <b>Rank and Inverses</b>
 ---

@@ -116,7 +116,7 @@ In both terms:
 
 <h4 style="margin-top: 0;">Fall 2026</h4>
 
-<b>Lectures:</b> TuTh 10:30-12PM, 1010 DOW<br>
+<b>Lectures:</b> TuTh 10:30-12PM, 1571 GGBL<br>
 <b>Labs:</b> Wednesdays at <a href="https://crapuler.com/course/FA26/EECS/245">various times</a>
 
 </div>
