@@ -117,8 +117,10 @@ You'll need to make accounts on the following sites:
   let us know as soon as possible.
 
 - **Gradescope:** You’ll submit all assignments to
-  [Gradescope](TODO), and this is where all of
+  [Gradescope](https://www.gradescope.com/courses/1307081), and this is where all of
   your grades will live as well. All homeworks must be handwritten, scanned into a PDF, and submitted to Gradescope. Some homeworks may also involve submitting code to an autograder on Gradescope; we will not be using the EECS department-specific autograder. You should have received an email invitation for Gradescope, but if not please let us know as soon as possible.
+
+- At some point in the term, we may switch from Gradescope to a different submission system: [Pensive](https://www.pensive.com/schools/). Pensive is like Gradescope, but it 
 
 {: .red }
 Note that we will **not** be using Canvas for anything this semester (so please don't try and send us messages on Canvas!).
@@ -129,7 +131,7 @@ Some labs and homeworks will involve writing Python code in Jupyter Notebooks. *
 
 ### Forms
 
-Please fill out the required [Welcome Survey](#TODO) to tell us a bit more about your background and whether you need alternate exams **no later than Sunday, May 10th**.
+Please fill out the required [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSee14997ZWHuI-eYwNZHh4tI6i9Xu0kRLYMm_ve9uoSxbjVgA/viewform?usp=dialog) to tell us a bit more about your background and whether you need alternate exams **no later than Sunday, May 10th**.
 
 ---
 

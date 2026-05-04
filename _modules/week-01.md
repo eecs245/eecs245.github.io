@@ -41,8 +41,8 @@ days:
     events:
       - name: SUR
         type: survey
-        title: Welcome Survey
-        url: "#TODO"
+        title: <b>Welcome Survey</b>
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSee14997ZWHuI-eYwNZHh4tI6i9Xu0kRLYMm_ve9uoSxbjVgA/viewform?usp=dialog"
       - name: HW 1
         type: hw
         title: <b>Means, Sums, and Calculus</b>
