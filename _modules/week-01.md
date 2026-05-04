@@ -19,7 +19,7 @@ days:
     events:
       - name: Lab 1
         type: lab
-        title: Math Foundations and Environment Setup
+        title: <b>Math Foundations and Environment Setup</b>
         problems: resources/labs/lab01/lab01.pdf
   - date: "2026-05-07"
     events:

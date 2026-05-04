@@ -23,7 +23,7 @@ days:
         title: Vector Spaces, Subspaces, Bases, and Dimension
       - name: HW 4
         type: hw
-        title: <b>Projections and Spans</b>
+        title: Projections and Spans
   - date: "2026-05-21"
     events:
       - name: LEC 6
@@ -37,5 +37,5 @@ days:
     events:
       - name: HW 5
         type: hw
-        title: <b>Linear Independence and Subspaces</b>
+        title: Linear Independence and Subspaces
 ---

@@ -27,7 +27,7 @@ days:
         title: Vector Spaces, Subspaces, and Bases
       - name: HW 6
         type: hw
-        title: <b>Matrices</b>
+        title: Matrices
   - date: "2026-05-28"
     events:
       - name: LEC 8
@@ -45,5 +45,5 @@ days:
     events:
       - name: HW 7
         type: hw
-        title: <b>Rank and Inverses</b>
+        title: Rank and Inverses
 ---

@@ -16,7 +16,7 @@ days:
     events:
       - name: HW 10
         type: hw
-        title: <b>Eigenvalues and Eigenvectors</b>
+        title: Eigenvalues and Eigenvectors
   - date: "2026-06-11"
     events:
       - name: LEC 11

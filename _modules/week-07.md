@@ -27,7 +27,7 @@ days:
         title: Convexity, Eigenvalues and Eigenvectors
       - name: HW 11
         type: hw
-        title: <b>Singular Value Decomposition</b>
+        title: Singular Value Decomposition
   - date: "2026-06-18"
     events:
       - name: LEC 13

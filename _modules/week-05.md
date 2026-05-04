@@ -27,7 +27,7 @@ days:
         title: Inverses and Projections
       - name: HW 8
         type: hw
-        title: <b>Projections; Regression using Linear Algebra</b>
+        title: Projections; Regression using Linear Algebra
   - date: "2026-06-04"
     events:
       - name: LEC 10
@@ -45,5 +45,5 @@ days:
     events:
       - name: HW 9
         type: hw
-        title: "<b>Multiple Linear Regression, Gradients</b>"
+        title: "Multiple Linear Regression, Gradients"
 ---

@@ -25,7 +25,7 @@ days:
         title: Projections, Span, and Linear Independence
       - name: HW 2
         type: hw
-        title: <b>Empirical Risk and Simple Linear Regression</b>
+        title: Empirical Risk and Simple Linear Regression
   - date: "2026-05-14"
     events:
       - name: LEC 4
@@ -43,5 +43,5 @@ days:
     events:
       - name: HW 3
         type: hw
-        title: <b>Vectors and the Dot Product</b>
+        title: Vectors and the Dot Product
 ---
