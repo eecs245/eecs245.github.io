@@ -148,7 +148,7 @@ You can also use [VSCode](https://code.visualstudio.com/) (not the same as Visua
 {:.no_toc}
 
 All of our course materials, including your assignments, are hosted on
-GitHub in [this Git repository](https://github.com/eecs245/wn26-code). (If you follow Option 2 and use DataHub, the magic links we provide automatically pull from this repository.)
+GitHub in [this Git repository](https://github.com/eecs245/sp26-code). (If you follow Option 2 and use DataHub, the magic links we provide automatically pull from this repository.)
 
 If following Option 1 and using your own computer, you'll need to pull from this repository any time we release a new assignment. This means that you'll need to download and use Git in order to work with the course
 materials. You can do so [here](https://git-scm.com/).
@@ -163,7 +163,7 @@ There are Git GUIs, and you can use them for this class. You can also
 use the command-line version of Git. To get started, you\'ll need to
 \"clone\" the course repository. The command to do this is:
 
-    git clone https://github.com/eecs245/wn26-code
+    git clone https://github.com/eecs245/sp26-code
 
 This will copy the repository to a directory on your computer. You should only need to do this once. (If you're doing this before the first lab, the repository will be pretty empty, and that's fine.)
 

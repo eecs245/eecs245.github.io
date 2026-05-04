@@ -35,6 +35,4 @@ days:
         title: Principal Components Analysis and Applications
         reading: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
         reading_text: Ch. 10.4
-  - date: "2026-06-21"
-    events:
 ---
