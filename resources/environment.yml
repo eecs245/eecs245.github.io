@@ -1,15 +1,10 @@
-# https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#exporting-an-environment-file-across-platforms
-# File created using:
-#
-# conda env export --from-history
-#
-# with otter-grader manually added.
+# Last updated May 4, 2026 for Spring 2026
 name: eecs245
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.10
+  - python=3.12
   - pip=24.2
   - matplotlib==3.9.2
   - matplotlib-inline==0.1.6
@@ -42,5 +37,5 @@ dependencies:
   - lxml==5.3.0
   - setuptools<81
   - pip:
-    - otter-grader==3.1.4
+    - otter-grader==6.1.6
     - kaleido==0.2.1
