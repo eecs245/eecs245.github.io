@@ -15,6 +15,7 @@ days:
         reading3_text: Ch. 1.2
         reading4: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
         reading4_text: Ch. 1.3
+        live_notes: resources/lecture-pdfs/lec01-filled.pdf
   - date: "2026-05-06"
     events:
       - name: Lab 1
