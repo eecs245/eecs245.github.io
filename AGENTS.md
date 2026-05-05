@@ -1,3 +1,8 @@
+---
+title: "Agents"
+nav_exclude: true
+---
+
 # Website Agent Notes
 
 - In `_modules/week-*.md`, lab and homework titles should be bolded only after release.
