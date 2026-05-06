@@ -7,6 +7,7 @@ days:
       - name: LEC 1
         type: lecture
         title: Introduction, Models, and Loss Functions
+        recording: https://leccap.engin.umich.edu/leccap/player/r/MljzLL
         reading: https://notes.eecs245.org/advice/
         reading_text: Advice
         reading2: https://notes.eecs245.org/introduction-to-supervised-learning/what-is-machine-learning/
