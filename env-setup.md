@@ -95,9 +95,12 @@ To create the environment, in your Terminal, run:
 mamba env create -f environment.yml
 ```
 
-Note that if you put `environment.yml` in your Downloads or Desktop folder, you should replace `environment.yml` with the path to the file, for example: `mamba env create -f /Users/yourusername/Desktop/environment.yml`. Otherwise, you might get an error saying `environment.yml` does not exist. Alternatively, you can `cd` to the directory on your computer in which `environment.yml` lives before running the above command.
+Note that if you put `environment.yml` in your Downloads or Desktop folder, you should replace `environment.yml` with the path to the file, for example: `mamba env create -f /Users/yourusername/Desktop/environment.yml`. Otherwise, you might get an error saying `environment.yml` does not exist. Alternatively, you can `cd` to the directory on your computer in which `environment.yml` lives before running the above command. For example, if `environment.yml` is in your Downloads folder, run `cd Downloads` and then the command above.
 
 This step may take several minutes, and that's fine!
+
+{: . yellow }
+**If you get an error using `mamba`, replace `mamba` with `conda` in the command above and the commands below.** `conda` and `mamba` are interchangeable; `mamba` is just faster.
 
 ### Step 4: Activate the environment
 {:.no_toc}
@@ -110,7 +113,7 @@ mamba activate eecs245
 
 _Where did the name `eecs245` come from, you might ask? We defined it for you at the top of `environment.yml` with `name: eecs245`._
 
-If you get an error saying `mamba` isn't defined, try closing and reopening your Terminal first and then rerunning the command.
+If you get an error saying `mamba` isn't defined, try closing and reopening your Terminal first and then rerunning the command. If that doesn't work, then try replacing `mamba` with `conda`.
 
 {: .yellow }
 **The four steps above only need to be run once!**
@@ -176,6 +179,17 @@ git pull
 This will **not** overwrite your work. In fact, Git is designed to make it very difficult
 to lose work (although it\'s still possible!).
 
+### Summary
+
+After setting up your environment and running `git clone` once, here's all you need to do to get started on an assignment if using Jupyter Notebooks/JupyterLab:
+
+1. Open your Terminal.
+2. Run `mamba activate eecs245` to activate your environment.
+3. `cd` to the directory where your local copy of the course repository is stored. The course repository is called `sp26-code`, so you might run something like `cd Desktop/EECS245/sp26-code` if you made an `EECS245` folder on your Desktop to store course materials.
+4. Once you're in `sp26-code`, run `git pull` to get the latest version of the course materials.
+5. Open a Jupyter Notebook/JupyterLab instance by running `jupyter notebook` or `jupyter lab` in your Terminal, or open in VSCode.
+
+If using VSCode, you activate your environment directly in VSCode as we described above (so steps 1-3 aren't necessary), but you still need to run `git pull` in your Terminal. (The VSCode integrated Terminal works too.)
 
 ---
 
