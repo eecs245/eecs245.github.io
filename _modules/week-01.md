@@ -8,6 +8,8 @@ days:
         type: lecture
         title: Introduction, Models, and Loss Functions
         recording: https://leccap.engin.umich.edu/leccap/player/r/MljzLL
+        recording1: https://leccap.engin.umich.edu/leccap/player/r/UdXYVi
+        recording2: https://leccap.engin.umich.edu/leccap/player/r/hO59Vx
         reading: https://notes.eecs245.org/advice/
         reading_text: Advice
         reading2: https://notes.eecs245.org/introduction-to-supervised-learning/what-is-machine-learning/
@@ -17,6 +19,7 @@ days:
         reading4: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
         reading4_text: Ch. 1.3
         live_notes: resources/lecture-pdfs/lec01-filled.pdf
+        note: "The posted recordings are from last semester, though ignore the syllabus details discussed, as those are different this semester."
   - date: "2026-05-06"
     events:
       - name: Lab 1
