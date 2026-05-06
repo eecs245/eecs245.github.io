@@ -9,11 +9,15 @@ import time
 from urllib.parse import urljoin
 
 
-LECCAP_SITE_URL = "https://leccap.engin.umich.edu/leccap/site/0t929w2oc176a98jk69"
 LECCAP_BASE_URL = "https://leccap.engin.umich.edu"
-LECCAP_MANAGE_URL = "https://leccap.engin.umich.edu/leccap/manage/site/recordings/0t929w2oc176a98jk69/?q=&f=any"
+LECCAP_SITE_ID = os.getenv("LECCAP_SITE_ID", "4fgnuv5ves61c0958rk")
+LECCAP_SITE_URL = os.getenv("LECCAP_SITE_URL", f"{LECCAP_BASE_URL}/leccap/site/{LECCAP_SITE_ID}")
+LECCAP_MANAGE_URL = os.getenv(
+    "LECCAP_MANAGE_URL",
+    f"{LECCAP_BASE_URL}/leccap/manage/site/recordings/{LECCAP_SITE_ID}/?q=&f=any",
+)
 MODULES_DIR = "_modules"
-LECCAP_TIMEOUT_MS = int(os.getenv("LECCAP_TIMEOUT_MS", "5000"))
+LECCAP_TIMEOUT_MS = int(os.getenv("LECCAP_TIMEOUT_MS", "20000"))
 LECCAP_DEBUG_DIR = os.getenv("LECCAP_DEBUG_DIR")
 LECCAP_COOKIE = os.getenv("LECCAP_COOKIE")
 LECCAP_COOKIE_DOMAIN = os.getenv("LECCAP_COOKIE_DOMAIN", "leccap.engin.umich.edu")
@@ -332,12 +336,12 @@ def _fetch_leccap_recordings_with_context(context, url):
     for idx in range(recording_nodes.count()):
         recording = recording_nodes.nth(idx)
         link_href = None
-        link = recording.query_selector("a")
-        if link:
+        link = recording.locator("a").first
+        if link.count() > 0:
             link_href = link.get_attribute("href")
         date_text = ""
-        date_node = recording.query_selector("div.rec-date")
-        if date_node:
+        date_node = recording.locator("div.rec-date").first
+        if date_node.count() > 0:
             date_text = date_node.inner_text() or ""
         recordings.append({"href": link_href, "date_text": date_text})
     return recordings
@@ -735,6 +739,51 @@ def _find_recording_row(page, date_obj=None, recording_url=None, title=None):
     return None
 
 
+def _find_title_input(page):
+    _, title_locator = _find_locator(page, "input[name='title'], input[aria-label='Title']")
+    if title_locator and title_locator.count() > 0:
+        return title_locator.first
+    return None
+
+
+def _verify_recording_title(page, manage_url, title, date_obj, recording_url, interactive_login):
+    _wait_for_manage_recordings_page(page, manage_url, interactive_login)
+    row = _find_recording_row(page, date_obj=date_obj, recording_url=recording_url)
+    if row is None:
+        _maybe_dump_debug(page, "verify-recording-row-missing")
+        raise RuntimeError("could not re-find the target recording row after saving title")
+
+    try:
+        if title in (row.inner_text() or ""):
+            return
+    except Exception:
+        pass
+
+    target_edit = row.locator("a.edit-link, a:has-text('Edit')")
+    if target_edit.count() == 0:
+        _maybe_dump_debug(page, "verify-edit-missing")
+        raise RuntimeError("could not re-open target recording to verify saved title")
+    target_edit.first.click()
+    try:
+        page.wait_for_selector("input[name='title'], input[aria-label='Title']", timeout=LECCAP_TIMEOUT_MS)
+    except Exception as exc:
+        _maybe_dump_debug(page, "verify-edit-timeout")
+        raise RuntimeError("timed out reopening recording edit form to verify saved title") from exc
+
+    title_input = _find_title_input(page)
+    if title_input is None:
+        _maybe_dump_debug(page, "verify-title-input-missing")
+        raise RuntimeError("could not find Title input while verifying saved title")
+
+    actual = (title_input.input_value() or "").strip()
+    expected = title.strip()
+    if actual != expected:
+        _maybe_dump_debug(page, "title-save-not-confirmed")
+        raise RuntimeError(
+            f"title save was not confirmed; expected {expected!r}, found {actual!r}"
+        )
+
+
 def build_recording_target(recording):
     if not recording.get("href"):
         raise RuntimeError("recording missing href")
@@ -794,7 +843,7 @@ def update_recording_title(
         if target_edit.count() == 0:
             _maybe_dump_debug(page, "edit-missing")
             raise RuntimeError("could not find Edit link for the target recording")
-        target_edit.click()
+        target_edit.first.click()
         _maybe_dump_debug(page, "edit-clicked")
         try:
             page.wait_for_selector("input[name='title'], input[aria-label='Title']", timeout=LECCAP_TIMEOUT_MS)
@@ -802,11 +851,10 @@ def update_recording_title(
             _maybe_dump_debug(page, "edit-timeout")
             raise RuntimeError("timed out waiting for recording edit form") from exc
 
-        _, title_locator = _find_locator(page, "input[name='title'], input[aria-label='Title']")
-        if not title_locator:
+        title_input = _find_title_input(page)
+        if title_input is None:
             _maybe_dump_debug(page, "title-missing")
             raise RuntimeError("could not find Title input on recording edit form")
-        title_input = title_locator.first
         title_input.fill(title)
         title_input.evaluate(
             "(el, value) => { el.value = value; el.dispatchEvent(new Event('input', {bubbles:true})); }",
@@ -835,8 +883,7 @@ def update_recording_title(
             page.wait_for_load_state("networkidle", timeout=max(LECCAP_TIMEOUT_MS, 20000))
         except Exception:
             pass
-        if page.locator(f"input[name='title'][value=\"{title}\"]").count() == 0:
-            _maybe_dump_debug(page, "title-not-confirmed")
+        _verify_recording_title(page, manage_url, title, date_obj, recording_url, interactive_login)
         if save_storage_state and LECCAP_STORAGE_STATE:
             page.context.storage_state(path=LECCAP_STORAGE_STATE)
 
@@ -946,7 +993,7 @@ def main():
                         _warn(f"skipping title update for {title_target['date_str']}: missing lecture title")
                         continue
                     print(
-                        f"Updating Leccap title for {title_target['date_str']}: "
+                        f"Attempting Leccap title update for {title_target['date_str']}: "
                         f"{title_target['recording_title']}"
                     )
                     try:
@@ -958,6 +1005,7 @@ def main():
                             interactive_login=args.interactive_login or LECCAP_INTERACTIVE_LOGIN,
                             context=context,
                         )
+                        print(f"Updated Leccap title for {title_target['date_str']}")
                     except Exception as title_exc:
                         if LECCAP_STRICT_TITLE_UPDATE:
                             raise

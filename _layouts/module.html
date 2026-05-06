@@ -79,6 +79,12 @@
                 {%- if event.recording -%}
                 <a href="{{ event.recording }}" class="btn btn-info btn-sm">📺 Recording</a>
                 {%- endif -%}
+                {%- if event.recording1 -%}
+                <a href="{{ event.recording1 }}" class="btn btn-info btn-sm">📺 Recording (Part 1)</a>
+                {%- endif -%}
+                {%- if event.recording2 -%}
+                <a href="{{ event.recording2 }}" class="btn btn-info btn-sm">📺 Recording (Part 2)</a>
+                {%- endif -%}
                 {%- if event.guide -%}
                 <small><a href="{{ event.guide }}" class="btn btn-info btn-sm">🧑‍🤝‍🧑 Guides: {{ event.guide_title }}</a></small>
                 {%- endif -%}
