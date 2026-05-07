@@ -38,6 +38,18 @@ nav_exclude: true
 .assignment-part-content > :first-child {
   margin-top: 0;
 }
+.mc-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  margin: 0.9rem 0 1.1rem;
+}
+.mc-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
 </style>
 
 # Lab 2: Empirical Risk and Simple Linear Regression
@@ -66,7 +78,7 @@ Feel free to work with others in the course, but you must submit individually.
 
 ---
 
-**Recap: The Modeling Recipe**
+## Recap: The Modeling Recipe
 
 In [Chapter 1.3](https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/), we introduced the three-step modeling recipe for finding optimal model parameters, which ultimately helps us make the best possible predictions.
 
@@ -104,8 +116,6 @@ $$
 $$
 </div>
 
-Different loss functions have different pros and cons, e.g. squared loss is sensitive to outliers.
-
 ## Activity 1: Relative Squared Loss
 
 Suppose we'd like to find the optimal parameter, <span class="math-inline">\\(w^*\\)</span>, for the constant model <span class="math-inline">\\(h(x_i) = w\\)</span>. To do so, we use the following loss function, called the **relative squared loss**:
@@ -142,7 +152,7 @@ $$
 $$
 </div>
 
-<span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span>
+<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
 
 </div>
 </div>
@@ -158,7 +168,7 @@ $$
 $$
 </div>
 
-<span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span>
+<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
 
 </div>
 </div>
@@ -174,7 +184,7 @@ $$
 $$
 </div>
 
-<span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span>
+<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
 
 </div>
 </div>
@@ -192,7 +202,7 @@ $$
 
 <em>Hint: Think about the effect of outliers.</em>
 
-<span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span> <span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span>
+<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
 
 </div>
 </div>
@@ -216,7 +226,7 @@ This is a piecewise linear function that changes slope at each data point. The s
 
 <div class="math-display">
 $$
-\frac{\text{d}}{\text{d}w} R_{\text{abs}}(w) = \frac{\text{\# left of } w - \text{\# right of } w}{n}
+\frac{\text{d}}{\text{d}w} R_{\text{abs}}(w) = \frac{\text{# left of } w - \text{# right of } w}{n}
 $$
 </div>
 
@@ -236,7 +246,7 @@ There are two ways to access the supplemental Jupyter Notebook:
 
 -   **Option 2**: Click [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fsp26-code&urlpath=tree%2Fsp26-code%2Flabs%2Flab02%2Flab02.ipynb&branch=main) to open `lab02.ipynb` on DataHub. Before doing so, read the instructions on the [Environment Setup](https://eecs245.org/env-setup/#option-2-using-the-eecs-245-datahub) page on how to use the DataHub.
 
-To receive credit for Activity 4, you'll need to show your lab TA that you've completed all of the tasks.
+Once you're done, include a screenshot of your completed Activity 4 implementation in your PDF submission of Lab 2 to Gradescope, making sure to include proof that the (local) autograder passed.
 
 ---
 

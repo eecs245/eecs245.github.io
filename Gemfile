@@ -5,4 +5,4 @@ gem "webrick", "~> 1.8"
 
 gem "csv", "~> 3.3"
 
-gem "just-the-docs", "0.10.1"
+gem "just-the-docs", "~> 0.11.0"

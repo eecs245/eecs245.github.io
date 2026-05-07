@@ -38,6 +38,18 @@ nav_exclude: true
 .assignment-part-content > :first-child {
   margin-top: 0;
 }
+.mc-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  margin: 0.9rem 0 1.1rem;
+}
+.mc-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
 </style>
 
 # Lab 3: Simple Linear Regression and Partial Derivatives
@@ -67,7 +79,7 @@ Feel free to work with others in the course, but you must submit individually.
 
 ---
 
-**Recap: Simple Linear Regression**
+## Recap: Simple Linear Regression
 
 We've spent all of [Chapter 2](https://notes.eecs245.org/simple-linear-regression/finding-optimal-parameters/) learning about the simple linear regression model, <span class="math-inline">\\(h(x_i) = w_0 + w_1 x_i\\)</span>.
 

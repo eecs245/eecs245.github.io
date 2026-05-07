@@ -7,6 +7,8 @@ days:
       - name: Lab 2
         type: lab
         title: Empirical Risk and Simple Linear Regression
+        # title: <b>Empirical Risk and Simple Linear Regression</b>
+        # problems: ../resources/labs/lab02/
   - date: "2026-05-12"
     events:
       - name: LEC 3
@@ -23,6 +25,8 @@ days:
       - name: Lab 3
         type: lab
         title: Projections, Span, and Linear Independence
+        # title: <b>Projections, Span, and Linear Independence</b>
+        # problems: ../resources/labs/lab03/
       - name: HW 2
         type: hw
         title: <b>Empirical Risk and Simple Linear Regression</b>

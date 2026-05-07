@@ -50,6 +50,18 @@ HOMEWORK_STYLE_SNIPPET = """<style>
 .assignment-part-content > :first-child {
   margin-top: 0;
 }
+.mc-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  margin: 0.9rem 0 1.1rem;
+}
+.mc-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
 </style>"""
 
 
@@ -84,6 +96,18 @@ def parse_args() -> argparse.Namespace:
             "Defaults to the generated homework directory, relative to the week file."
         ),
     )
+    parser.add_argument(
+        "--include-solutions",
+        action="store_true",
+        help="Embed LaTeX solution environments inline as collapsible dropdowns.",
+    )
+    parser.add_argument(
+        "--solutions-link",
+        help=(
+            "Solutions PDF link to write into the week file. "
+            "Defaults to /.../<assignment>-solutions.pdf when present."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -99,8 +123,11 @@ def main() -> int:
 
     metadata = extract_metadata(source_tex.read_text())
     expanded_tex = expand_inputs(source_tex)
-    transformed_tex = transform_assignment_tex(expanded_tex)
+    transformed_tex = transform_assignment_tex(
+        expanded_tex, include_solutions=args.include_solutions
+    )
     pdf_link = compute_pdf_link(repo_root, output_md)
+    solutions_pdf_link = compute_solutions_pdf_link(repo_root, output_md)
 
     output_md.parent.mkdir(parents=True, exist_ok=True)
 
@@ -121,6 +148,7 @@ def main() -> int:
             submission_instructions=submission_instructions,
             body_markdown=body_markdown,
             pdf_link=pdf_link,
+            solutions_pdf_link=solutions_pdf_link,
             output_md=output_md,
         )
 
@@ -138,6 +166,7 @@ def main() -> int:
             week_file=week_file,
             event_title=args.event_title,
             problems_link=problems_link,
+            solutions_link=(args.solutions_link or solutions_pdf_link),
         )
 
     return 0
@@ -227,14 +256,14 @@ def expand_inputs_from_text(text: str, base_dir: Path) -> str:
     return pattern.sub(replace, text)
 
 
-def transform_assignment_tex(text: str) -> str:
+def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_document_wrapper(text)
     text = expand_labcodelinks(text)
     text = wrap_bare_alignment_environments(text)
     text = replace_prob_markers(text)
     text = replace_activity_markers(text)
     text = replace_subitem_markers(text)
-    text = replace_solution_markers(text)
+    text = replace_solution_markers(text, include_solutions=include_solutions)
     text = re.sub(r"\\emptybox\{[^}]*\}", "", text)
     text = text.replace("\\newpage", "")
     text = text.replace("\\makemytitle", "% stripped makemytitle")
@@ -357,9 +386,21 @@ def replace_subitem_markers(text: str) -> str:
     return text.replace("\\end{subactivity}", "")
 
 
-def replace_solution_markers(text: str) -> str:
-    text = re.sub(r"\\begin\{solution\}.*?\\end\{solution\}", "", text, flags=re.S)
-    return text
+def replace_solution_markers(text: str, include_solutions: bool = False) -> str:
+    solution_env_pattern = r"(?ms)^[ \t]*\\begin\{solution\}[ \t]*\n?(.*?)[ \t]*^[ \t]*\\end\{solution\}[ \t]*"
+
+    if not include_solutions:
+        return re.sub(solution_env_pattern, "", text)
+
+    def replace(match: re.Match[str]) -> str:
+        solution_body = match.group(1).strip()
+        return (
+            "\n<details markdown=\"1\"><summary>Solution</summary>\n\n"
+            f"{solution_body}\n\n"
+            "</details>\n"
+        )
+
+    return re.sub(solution_env_pattern, replace, text)
 
 
 def expand_labcodelinks(text: str) -> str:
@@ -413,6 +454,7 @@ def build_homework_page(
     submission_instructions: str,
     body_markdown: str,
     pdf_link: str | None,
+    solutions_pdf_link: str | None,
     output_md: Path,
 ) -> str:
     cleaned_body = cleanup_markdown(
@@ -423,6 +465,11 @@ def build_homework_page(
     pdf_button = (
         f'<a class="btn btn-info assignment-pdf-button" href="{pdf_link}" target="_blank">View as PDF ✏️</a>'
         if pdf_link
+        else ""
+    )
+    solutions_button = (
+        f'<a class="btn btn-info assignment-pdf-button" href="{solutions_pdf_link}" target="_blank">Solutions PDF ✅</a>'
+        if solutions_pdf_link
         else ""
     )
     preamble = (
@@ -451,6 +498,8 @@ def build_homework_page(
     ]
     if pdf_button:
         parts.extend([pdf_button, ""])
+    if solutions_button:
+        parts.extend([solutions_button, ""])
     parts.extend(
         [
             preamble,
@@ -518,7 +567,11 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = convert_points_badges(text, use_badges=use_point_badges)
     text = convert_part_headings_to_lists(text)
     text = fix_leading_italics(text)
+    text = replace_recap_markers(text)
+    text = format_multiple_choice_rows(text)
+    text = text.replace(r"\#", "#")
     text = add_total_points_separator(text)
+    text = fix_accidental_indented_prose(text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
 
@@ -671,6 +724,52 @@ def fix_leading_italics(text: str) -> str:
     return text
 
 
+def replace_recap_markers(text: str) -> str:
+    lines = text.splitlines()
+    converted: list[str] = []
+    for line in lines:
+        stripped = line.strip()
+        recap_match = re.match(r"^\*\*Recap:\s*(.+?)\*\*(?:\s*\\\\)?$", stripped)
+        if recap_match:
+            converted.append(f"## Recap: {recap_match.group(1)}")
+            converted.append("")
+            continue
+
+        recap_match = re.match(r"^<strong>Recap:\s*(.+?)</strong>(?:\s*\\\\)?$", stripped)
+        if recap_match:
+            converted.append(f"## Recap: {recap_match.group(1)}")
+            converted.append("")
+            continue
+
+        converted.append(line)
+
+    return "\n".join(converted)
+
+
+def format_multiple_choice_rows(text: str) -> str:
+    lines = text.splitlines()
+    converted: list[str] = []
+
+    for line in lines:
+        if "\\bigcirc" not in line:
+            converted.append(line)
+            continue
+
+        spans = re.findall(r'<span class="math-inline">.*?</span>', line)
+        if len(spans) < 4 or len(spans) % 2 != 0:
+            converted.append(line)
+            continue
+
+        rendered_options = []
+        for idx in range(0, len(spans), 2):
+            circle_html = spans[idx]
+            option_html = spans[idx + 1]
+            rendered_options.append(f'<span class="mc-option">{circle_html} {option_html}</span>')
+        converted.append(f'<div class="mc-options">{"".join(rendered_options)}</div>')
+
+    return "\n".join(converted)
+
+
 def add_total_points_separator(text: str) -> str:
     """Add horizontal rule after Total Points line."""
     return re.sub(
@@ -679,6 +778,55 @@ def add_total_points_separator(text: str) -> str:
         text,
         flags=re.M,
     )
+
+
+def fix_accidental_indented_prose(text: str) -> str:
+    """Convert unintended 4-space-indented prose lines into normal paragraphs.
+
+    Markdown treats lines beginning with 4 spaces as code blocks. In our assignment
+    sources, this occasionally appears for normal English instructions. We only
+    unindent lines that look like prose to avoid changing real code blocks.
+    """
+
+    def is_prose_line(content: str) -> bool:
+        stripped = content.strip()
+        if not stripped:
+            return False
+        if stripped.startswith(("-", "*", "1.", "2.", "3.", "`", "<", "|", "$$")):
+            return False
+        if re.search(r"[{};=<>]|\\begin\{|\\end\{", stripped):
+            return False
+        return bool(re.search(r"[A-Za-z].*[.?!:]$", stripped))
+
+    lines = text.splitlines()
+    fixed: list[str] = []
+    in_list_item = False
+    list_base_indent = 0
+
+    for line in lines:
+        list_item_match = re.match(r"^(\s*)(?:\d+\.\s+|[-*]\s+)", line)
+        if list_item_match:
+            in_list_item = True
+            list_base_indent = len(list_item_match.group(1))
+        elif line.strip() == "":
+            pass
+        elif re.match(r"^\s*---\s*$", line):
+            in_list_item = False
+            list_base_indent = 0
+
+        if line.startswith("    "):
+            candidate = line[4:]
+            if is_prose_line(candidate):
+                if in_list_item:
+                    # Within list items, 4-space indentation often triggers code blocks.
+                    # Keep it as a continuation paragraph by using 3 spaces.
+                    fixed.append(" " * max(0, list_base_indent + 3) + candidate.lstrip())
+                else:
+                    fixed.append(candidate)
+                continue
+
+        fixed.append(line)
+    return "\n".join(fixed)
 
 
 def fix_latex_for_mathjax(text: str) -> str:
@@ -771,6 +919,19 @@ def compute_pdf_link(repo_root: Path, output_md: Path) -> str | None:
     return "/" + web_path.as_posix()
 
 
+def compute_solutions_pdf_link(repo_root: Path, output_md: Path) -> str | None:
+    solutions_pdf_path = output_md.parent / f"{output_md.parent.name}-solutions.pdf"
+    if not solutions_pdf_path.exists():
+        return None
+
+    website_root = repo_root / "website"
+    try:
+        web_path = solutions_pdf_path.relative_to(website_root)
+    except ValueError:
+        return None
+    return "/" + web_path.as_posix()
+
+
 def fix_image_syntax(text: str) -> str:
     text = re.sub(r"^:::\s*center\s*$", "", text, flags=re.M)
     text = re.sub(r"^:::\s*$", "", text, flags=re.M)
@@ -791,7 +952,12 @@ def compute_default_problems_link(week_file: Path, output_md: Path) -> str:
     return f"../{relative_target.as_posix()}/"
 
 
-def update_week_file(week_file: Path, event_title: str, problems_link: str) -> None:
+def update_week_file(
+    week_file: Path,
+    event_title: str,
+    problems_link: str,
+    solutions_link: str | None = None,
+) -> None:
     lines = week_file.read_text().splitlines()
     updated = False
 
@@ -810,7 +976,12 @@ def update_week_file(week_file: Path, event_title: str, problems_link: str) -> N
                 if stripped.startswith("problems:") and current_indent >= event_indent:
                     lines[j] = " " * current_indent + f"problems: {problems_link}"
                     updated = True
-                    break
+                if (
+                    solutions_link
+                    and stripped.startswith("solutions:")
+                    and current_indent >= event_indent
+                ):
+                    lines[j] = " " * current_indent + f"solutions: {solutions_link}"
                 j += 1
 
             if not updated:
@@ -825,7 +996,28 @@ def update_week_file(week_file: Path, event_title: str, problems_link: str) -> N
                     insert_at += 1
 
                 lines.insert(index + 1, " " * event_indent + f"problems: {problems_link}")
+                if solutions_link:
+                    lines.insert(
+                        index + 2,
+                        " " * event_indent + f"solutions: {solutions_link}",
+                    )
                 updated = True
+            elif solutions_link:
+                has_solutions = False
+                j = index + 1
+                while j < len(lines):
+                    stripped = lines[j].strip()
+                    current_indent = len(lines[j]) - len(lines[j].lstrip())
+                    if stripped.startswith("- name:") and current_indent <= event_indent:
+                        break
+                    if stripped.startswith("title:") and current_indent <= event_indent and j != index:
+                        break
+                    if stripped.startswith("solutions:") and current_indent >= event_indent:
+                        has_solutions = True
+                        break
+                    j += 1
+                if not has_solutions:
+                    lines.insert(index + 2, " " * event_indent + f"solutions: {solutions_link}")
             break
 
     if not updated:

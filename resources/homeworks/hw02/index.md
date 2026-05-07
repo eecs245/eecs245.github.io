@@ -61,10 +61,11 @@ Before proceeding, make sure you're familiar with the [collaboration policy](htt
 
 - [Problem 1: Homework 1 Solutions Review](#problem-1-homework-1-solutions-review-10-pts)
 - [Problem 2: Stonks](#problem-2-stonks-7-pts)
-- [Problem 3: Slippery Slope](#problem-3-slippery-slope-9-pts)
-- [Problem 4: Fun with Correlation](#problem-4-fun-with-correlation-8-pts)
-- [Problem 5: Switching Sides](#problem-5-switching-sides-9-pts)
-- [Problem 6: Simple LAD](#problem-6-simple-lad-9-pts)
+- [Problem 3: Pythagorean Means](#problem-3-pythagorean-means-7-pts)
+- [Problem 4: Slippery Slope](#problem-4-slippery-slope-9-pts)
+- [Problem 5: Fun with Correlation](#problem-5-fun-with-correlation-8-pts)
+- [Problem 6: Switching Sides](#problem-6-switching-sides-9-pts)
+- [Problem 7: Simple LAD](#problem-7-simple-lad-9-pts)
 
 ---
 
@@ -166,7 +167,7 @@ $$
 $$
 </div>
 
-Like the arithmetic mean, as we saw in [Chapter 1.2](https://notes.eecs245.org/introduction-to-supervised-learning/squared-loss-constant-model/), and the harmonic mean, as we saw in Lab 2, the geometric mean is the constant prediction that minimizes average loss for some loss function.
+Like the arithmetic mean, as we saw in [Chapter 1.2](https://notes.eecs245.org/supervised-learning/loss-functions-constant-model/), and the harmonic mean, as we saw in Lab 2, the geometric mean is the constant prediction that minimizes average loss for some loss function.
 
 In this case, the loss function is the log-quotient loss, defined as:
 
@@ -188,13 +189,81 @@ R_{LQ}(w) = \frac{1}{n} \sum_{i=1}^n \left[\log\left(\frac{y_i}{w}\right)\right]
 $$
 </div>
 
-<em>Hint: This is a question involving the three-step modeling process. You'll want to start by finding <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} R_{LQ}(w)\\)</span> and setting that to 0. As a sub-problem, you'll need to find <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} \left[\log\left(\frac{y_i}{w}\right)\right]\\)</span>. Work one step at a time and make sure your logic is clearly justified. Review the logarithm rules presented in [Homework 1, Problem 5](https://eecs245.org/resources/homeworks/hw01/#problem-5-mean-imputation-6-pts), and also use the fact that if <span class="math-inline">\\(b = \log(a)\\)</span>, then <span class="math-inline">\\(a = e^b\\)</span>.</em>
+<em>Hint: As in Lecture 3, you'll want to start by finding <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} R_{LQ}(w)\\)</span> and setting that to 0. As a sub-problem, you'll need to find <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} \left[\log\left(\frac{y_i}{w}\right)\right]\\)</span>. Work one step at a time and make sure your logic is clearly justified. Review the logarithm rules presented in [Homework 1, Problem 5](https://eecs245.org/resources/homeworks/hw01/hw01.pdf), and also use the fact that if <span class="math-inline">\\(b = \log(a)\\)</span>, then <span class="math-inline">\\(a = e^b\\)</span>.</em>
 
 ---
 
-## Problem 3: Slippery Slope (9 pts)
+## Problem 3: Pythagorean Means (7 pts)
 
-In [Chapter 1.3](https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/), we found that <span class="math-inline">\\(w^* = \mathrm{Median}(y_1, y_2, \ldots, y_n)\\)</span> is the constant prediction that minimizes mean absolute error: 
+In Problem 1, you discovered the geometric mean, and saw that it's useful in computing the average of growth rates. In Labs 1 and 2, you discovered the harmonic mean, and saw that it's useful to compute the average of rates, like speeds. The geometric mean, harmonic mean, and the "regular" arithmetic mean are collectively known as "Pythagorean means".
+
+For an arbitrary dataset of **positive** numbers <span class="math-inline">\\(y_1, \ldots, y_n\\)</span>, they are defined as follows:
+
+-   **Arithmetic mean:** <span class="math-inline">\\(\displaystyle \frac{1}{n} \sum_{i=1}^n y_i\\)</span>
+
+-   **Geometric mean:** <span class="math-inline">\\(\displaystyle \left( \prod_{i=1}^n y_i \right)^{1/n}\\)</span>
+
+-   **Harmonic mean:** <span class="math-inline">\\(\displaystyle \frac{n}{\sum_{i=1}^n \frac{1}{y_i}}\\)</span>
+
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
+(3 pts) For the following dataset, compute all three of the means defined above.
+
+<div class="math-display">
+$$
+1, 2, 2, 4, 8
+$$
+</div>
+
+Then, think about why the definitions of the geometric and harmonic means require the numbers to be positive. (You don't need to write your answer anywhere.)
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+(4 pts) In the above example, you may have noticed that:
+
+<div class="math-display">
+$$
+\text{arithmetic mean} \geq \text{geometric mean} \geq \text{harmonic mean}
+$$
+</div>
+
+This inequality is true in general, for any dataset of positive numbers <span class="math-inline">\\(y_1, \ldots, y_n\\)</span>. This is known as the AM-GM-HM inequality.
+
+Use the fact that the AM-GM inequality holds true to prove the GM-HM inequality. That is, given that: 
+
+<div class="math-display">
+$$
+\frac{1}{n} \sum_{i=1}^n y_i \geq \left( \prod_{i=1}^n y_i \right)^{1/n}
+$$
+</div>
+
+ Prove that: 
+
+<div class="math-display">
+$$
+\left( \prod_{i=1}^n y_i \right)^{1/n} \geq \frac{n}{\sum_{i=1}^n \frac{1}{y_i}}
+$$
+</div>
+
+<em>Hint: Start by assuming the AM-GM inequality holds true, and define <span class="math-inline">\\(z_i = \frac{1}{y_i}\\)</span>. Then, try and re-write the right side of the inequality to look like <span class="math-inline">\\(\frac{1}{n} \sum_{i=1}^n z_i\\)</span>.</em>
+
+If you're curious, read more about the history of the Pythagorean means [here](https://historyofdsc.com/resources/slides/lec03-annotated.pdf#page=4). These means were developed by the followers of ancient mathematician Pythagoras (whose namesake theorem you're familiar with) in the context of understanding harmonies in music. And you now know how to derive each one by minimizing average loss for the constant model, each one through a different loss function!
+
+</div>
+</div>
+
+</div>
+---
+
+## Problem 4: Slippery Slope (9 pts)
+
+In [Chapter 1.3](https://notes.eecs245.org/supervised-learning/empirical-risk-minimization/), we found that <span class="math-inline">\\(w^* = \mathrm{Median}(y_1, y_2, \ldots, y_n)\\)</span> is the constant prediction that minimizes mean absolute error: 
 
 <div class="math-display">
 $$
@@ -222,8 +291,6 @@ Suppose we modify our dataset by replacing the value <span class="math-inline">\
 
 Both of your answers should be expressions involving <span class="math-inline">\\(V\\)</span>, <span class="math-inline">\\(\alpha\\)</span>, <span class="math-inline">\\(\beta\\)</span>, and/or constants.
 
-<em>Hint: Think about the problem on your own for a while. If you're stuck, watch this [hint video](https://www.loom.com/share/f0980c9f4d5f4fada99b307014e05cd8?sid=2807514e-c1aa-42d8-8883-7e6d1fab5168).</em>
-
 </div>
 </div>
 
@@ -240,9 +307,9 @@ Suppose we introduce a new value to our dataset that is less than <span class="m
 </div>
 ---
 
-## Problem 4: Fun with Correlation (8 pts)
+## Problem 5: Fun with Correlation (8 pts)
 
-As we will see in [Chapter 2.4](https://notes.eecs245.org/simple-linear-regression/correlation/), the correlation coefficient <span class="math-inline">\\(r\\)</span> between two variables <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span> measures the strength of the linear association between them, or intuitively, how tightly the points cluster around a line. Formally, <span class="math-inline">\\(r\\)</span> is defined as: 
+As we saw in Chapter 1.4, the correlation coefficient <span class="math-inline">\\(r\\)</span> between two variables <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span> measures the strength of the linear association between them, or intuitively, how tightly the points cluster around a line. Formally, <span class="math-inline">\\(r\\)</span> is defined as: 
 
 <div class="math-display">
 $$
@@ -256,17 +323,17 @@ where <span class="math-inline">\\(\bar{x}\\)</span> and <span class="math-inlin
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(3 pts) Let <span class="math-inline">\\(r\\)</span> be the correlation coefficient between <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span>. Let <span class="math-inline">\\(t\\)</span> be a new variable defined as:
+(3 pts) Let <span class="math-inline">\\(r\\)</span> be the correlation coefficient between <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span>. Let <span class="math-inline">\\(z\\)</span> be a new variable defined as:
 
 <div class="math-display">
 $$
-t_i = -2x_i + 5, \qquad i = 1, \ldots, n
+z_i = -2x_i + 5, \qquad i = 1, \ldots, n
 $$
 </div>
 
-Let <span class="math-inline">\\(r'\\)</span> be the correlation coefficient between <span class="math-inline">\\(t\\)</span> and <span class="math-inline">\\(y\\)</span>. Prove that <span class="math-inline">\\(r' = -r\\)</span>.
+Let <span class="math-inline">\\(r'\\)</span> be the correlation coefficient between <span class="math-inline">\\(z\\)</span> and <span class="math-inline">\\(y\\)</span>. Prove that <span class="math-inline">\\(r' = -r\\)</span>.
 
-<em>Hint: You can use the facts that if <span class="math-inline">\\(t_i = ax_i + b\\)</span>, then <span class="math-inline">\\(\bar{t} = a\bar{x} + b\\)</span> and <span class="math-inline">\\(\sigma_t = |a|\sigma_x\\)</span>, without proof. Everything else must be derived from the definition of the correlation coefficient.</em>
+<em>Hint: You can use the facts that if <span class="math-inline">\\(z_i = ax_i + b\\)</span>, then <span class="math-inline">\\(\bar{z} = a\bar{x} + b\\)</span> and <span class="math-inline">\\(\sigma_z = |a|\sigma_x\\)</span>, without proof. Everything else must be derived from the definition of the correlation coefficient.</em>
 
 </div>
 </div>
@@ -278,7 +345,7 @@ Let <span class="math-inline">\\(r'\\)</span> be the correlation coefficient bet
 
 -   Model 1: <span class="math-inline">\\(\text{predicted } y_i = h(x_i) = w_0^* + w_1^* x_i\\)</span>
 
--   Model 2: <span class="math-inline">\\(\text{predicted } y_i = h'(t_i) = w_0' + w_1' t_i\\)</span>
+-   Model 2: <span class="math-inline">\\(\text{predicted } y_i = h'(z_i) = w_0' + w_1' z_i\\)</span>
 
 (The <span class="math-inline">\\('\\)</span> does not indicate a derivative here!)
 
@@ -294,11 +361,11 @@ We already know that <span class="math-inline">\\(r' = -r\\)</span>. How do the 
 
 <div class="math-display">
 $$
-\frac{1}{n} \sum_{i=1}^n (y_i - (w_0' + w_1' t_i))^2 = \frac{1}{n} \sum_{i=1}^n (y_i - (w_0^* + w_1^* x_i))^2
+\frac{1}{n} \sum_{i=1}^n (y_i - (w_0' + w_1' z_i))^2 = \frac{1}{n} \sum_{i=1}^n (y_i - (w_0^* + w_1^* x_i))^2
 $$
 </div>
 
-    Give a two-sentence English explanation of why this is the case.
+   Give a two-sentence English explanation of why this is the case.
 
 </div>
 </div>
@@ -322,13 +389,13 @@ $$
 </div>
 ---
 
-## Problem 5: Switching Sides (9 pts)
+## Problem 6: Switching Sides (9 pts)
 
 Consider two datasets, <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(B\\)</span>. Both datasets have <span class="math-inline">\\(n = 50\\)</span> points, of which 49 are identical, and only one is different between the two datasets:
 
--   **Dataset <span class="math-inline">\\(A\\)</span>**: <span class="math-inline">\\((22, 10), (x_2, y_2), \ldots, (x_{49}, y_{49}), (x_{50}, y_{50})\\)</span>
+-   **Dataset <span class="math-inline">\\(A\\)</span>**: <span class="math-inline">\\((26, 10), (x_2, y_2), \ldots, (x_{49}, y_{49}), (x_{50}, y_{50})\\)</span>
 
--   **Dataset <span class="math-inline">\\(B\\)</span>**: <span class="math-inline">\\((22, 50), \underbrace{(x_2, y_2), \ldots, (x_{49}, y_{49}), (x_{50}, y_{50})}_{\text{identical in both datasets}}\\)</span>
+-   **Dataset <span class="math-inline">\\(B\\)</span>**: <span class="math-inline">\\((26, 50), \underbrace{(x_2, y_2), \ldots, (x_{49}, y_{49}), (x_{50}, y_{50})}_{\text{identical in both datasets}}\\)</span>
 
 Suppose that in both datasets, the <span class="math-inline">\\(x\\)</span>-values have a mean of <span class="math-inline">\\(\bar{x} = 26\\)</span> and a standard deviation of <span class="math-inline">\\(\sigma_x = \sqrt{\frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2} = 3\\)</span>.
 
@@ -336,7 +403,7 @@ Suppose that in both datasets, the <span class="math-inline">\\(x\\)</span>-valu
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(5 pts) Suppose we fit a simple linear regression model by minimizing mean squared error, separately for each dataset.
+(4 pts) Suppose we fit a simple linear regression model by minimizing mean squared error, separately for each dataset.
 
 Let <span class="math-inline">\\(w_1^A\\)</span> and <span class="math-inline">\\(w_1^B\\)</span> be the optimal slopes for datasets <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(B\\)</span>, respectively. Determine the difference between <span class="math-inline">\\(w_1^B\\)</span> and <span class="math-inline">\\(w_1^A\\)</span>. That is, find:
 
@@ -361,11 +428,21 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts) Let <span class="math-inline">\\(h_A\\)</span> and <span class="math-inline">\\(h_B\\)</span> be the simple linear regression lines for datasets <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(B\\)</span>, respectively. That is, <span class="math-inline">\\(h_A(x_i) = w_0^A + w_1^A x_i\\)</span> and <span class="math-inline">\\(h_B(x_i) = w_0^B + w_1^B x_i\\)</span>.
+(3 pts) Let <span class="math-inline">\\(h_A\\)</span> and <span class="math-inline">\\(h_B\\)</span> be the simple linear regression lines for datasets <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(B\\)</span>, respectively. That is, <span class="math-inline">\\(h_A(x_i) = w_0^A + w_1^A x_i\\)</span> and <span class="math-inline">\\(h_B(x_i) = w_0^B + w_1^B x_i\\)</span>.
 
-Which of the following values is greater: <span class="math-inline">\\(|h_A(40) - h_B(40)|\\)</span> or <span class="math-inline">\\(|h_A(42) - h_B(42)|\\)</span>? Why?
+Which of the following values is greater: <span class="math-inline">\\(|h_A(43) - h_B(43)|\\)</span> or <span class="math-inline">\\(|h_A(24) - h_B(24)|\\)</span>? Why?
 
-<em>Hint: Intuitively, we're asking which input's predicted value changes more by switching from <span class="math-inline">\\(A\\)</span> to <span class="math-inline">\\(B\\)</span>. Don't try and expand the absolute differences or find their values exactly. Instead, draw a picture of both lines. For each line, there is one point that it is guaranteed to pass through. Using your knowledge of that point, and the slopes of the lines, you should be able to reason about which difference is greater. In your picture, assume that the lines intersect at some point to the left of <span class="math-inline">\\(x = 40\\)</span>.</em>
+<em>Hint: Intuitively, we're asking which input's predicted value changes more by switching from <span class="math-inline">\\(A\\)</span> to <span class="math-inline">\\(B\\)</span>. Don't try and expand the absolute differences or find their values exactly. Instead, draw a picture of both lines. For each line, there is one point that it is guaranteed to pass through. Using your knowledge of that point, and the slopes of the lines, you should be able to reason about which difference is greater.</em>
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">c)</div>
+<div class="assignment-part-content" markdown="1">
+(2 pts) When initially writing this problem, we gave it a real-world theme involving athletes and their salaries. However, we decided that the story made the problem too long, and made it more difficult to understand the relevant ideas. But, you may feel that the resulting problem seemed too abstract.
+
+Would you have preferred a real-world theme in this problem, or do you prefer the simplified, straight-forward version, and why? (As long as you provide an answer and a reason, you'll receive full credit. There is no right answer.)
 
 </div>
 </div>
@@ -373,14 +450,14 @@ Which of the following values is greater: <span class="math-inline">\\(|h_A(40) 
 </div>
 ---
 
-## Problem 6: Simple LAD (9 pts)
+## Problem 7: Simple LAD (9 pts)
 
 This problem involves writing code and submitting it to the Gradescope autograder.
 
 There are two ways to access the supplemental Jupyter Notebook:
 
--   **Option 1 (preferred)**: Set up a Jupyter Notebook environment locally, use `git` to clone our course repository, and open `homeworks/hw02/hw02.ipynb`. For instructions on how to do this, see the [Environment Setup](https://eecs245.org/env-setup) page of the course website.
+-   **Option 1**: Click [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa25&urlpath=tree%2Ffa25%2Fhomeworks%2Fhw02%2Fhw02.ipynb&branch=main) to open `hw02.ipynb` on DataHub. Before doing so, read the instructions on the [Tech Support](https://eecs245.org/tech-support/#option-1-using-the-eecs-245-datahub) page on how to use the DataHub.
 
--   **Option 2**: Click [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fsp26-code&urlpath=tree%2Fsp26-code%2Fhomeworks%2Fhw02%2Fhw02.ipynb&branch=main) to open `hw02.ipynb` on DataHub. Before doing so, read the instructions on the [Environment Setup](https://eecs245.org/env-setup/#option-2-using-the-eecs-245-datahub) page on how to use the DataHub.
+-   **Option 2**: Set up a Jupyter Notebook environment locally, use `git` to clone our [course repository](https://github.com/eecs245/fa25), and open `homeworks/hw02/hw02.ipynb`. For instructions on how to do this, see the [Tech Support](https://eecs245.org/tech-support) page of the course website.
 
 To receive credit for the programming portion of the homework, you'll need to submit your completed notebook to the autograder on Gradescope. Your submission time for Homework 2 is the **latter** of your PDF and code submission times.
