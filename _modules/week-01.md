@@ -43,6 +43,7 @@ days:
         reading5_text: Ch. 2.3
         reading6: https://notes.eecs245.org/simple-linear-regression/correlation/
         reading6_text: Ch. 2.4
+        live_notes: resources/lecture-pdfs/lec02-filled.pdf
   - date: "2026-05-10"
     events:
       - name: SUR
