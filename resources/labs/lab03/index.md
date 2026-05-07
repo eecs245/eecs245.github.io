@@ -3,9 +3,15 @@ layout: page
 title: "Lab 3: Simple Linear Regression and Partial Derivatives"
 description: "Lab 3: Simple Linear Regression and Partial Derivatives activities."
 nav_exclude: true
+hide_footer_hr: true
 ---
 
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
 <style>
 .main-content p {
@@ -14,6 +20,13 @@ nav_exclude: true
 .assignment-pdf-button {
   font-size: 0.95rem;
   padding: 0.35rem 0.65rem;
+}
+.assignment-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
 }
 .answer-blank {
   border-bottom: 1px solid currentColor;
@@ -50,13 +63,40 @@ nav_exclude: true
   gap: 0.35rem;
   white-space: nowrap;
 }
+.mc-bubble,
+.mc-square {
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 0.95em;
+  width: 0.95em;
+  vertical-align: -0.12em;
+}
+.mc-bubble {
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+.mc-square {
+  border: 1.5px solid currentColor;
+}
+.main-content table {
+  font-size: 0.9rem;
+  width: auto;
+  max-width: 100%;
+}
+.main-content table th,
+.main-content table td {
+  padding: 0.35rem 0.5rem;
+  white-space: nowrap;
+}
 </style>
 
 # Lab 3: Simple Linear Regression and Partial Derivatives
 
 **due** for completion at 11:59PM Ann Arbor Time on Wednesday, May 13th, 2026
 
+<div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab03/lab03.pdf" target="_blank">View as PDF ✏️</a>
+</div>
 
 {: .yellow }
 <div markdown="1">
@@ -83,7 +123,7 @@ Feel free to work with others in the course, but you must submit individually.
 
 We've spent all of [Chapter 2](https://notes.eecs245.org/simple-linear-regression/finding-optimal-parameters/) learning about the simple linear regression model, <span class="math-inline">\\(h(x_i) = w_0 + w_1 x_i\\)</span>.
 
-To find the optimal intercept, <span class="math-inline">\\(w_0^*\\)</span>, and slope, <span class="math-inline">\\(w_1^*\\)</span>, we minimized mean squared error: 
+To find the optimal intercept, <span class="math-inline">\\(w_0^&#42;\\)</span>, and slope, <span class="math-inline">\\(w_1^&#42;\\)</span>, we minimized mean squared error: 
 
 <div class="math-display">
 $$
@@ -91,7 +131,7 @@ R_\text{sq}(w_0, w_1) = \frac{1}{n} \sum_{i=1}^{n} (y_i - (w_0 + w_1 x_i))^2
 $$
 </div>
 
--   **<span class="math-inline">\\(R_\text{sq}\\)</span> is a function of <span class="math-inline">\\(w_0\\)</span> and <span class="math-inline">\\(w_1\\)</span>, and looks like a bowl in 3D.** Since it has two input variables, we found its minimum by taking the partial derivatives of <span class="math-inline">\\(R_\text{sq}(w_0, w_1)\\)</span> with respect to <span class="math-inline">\\(w_0\\)</span> and <span class="math-inline">\\(w_1\\)</span>, setting both of them equal to 0, and then solving for the resulting <span class="math-inline">\\(w_0^*\\)</span> and <span class="math-inline">\\(w_1^*\\)</span>.
+-   **<span class="math-inline">\\(R_\text{sq}\\)</span> is a function of <span class="math-inline">\\(w_0\\)</span> and <span class="math-inline">\\(w_1\\)</span>, and looks like a bowl in 3D.** Since it has two input variables, we found its minimum by taking the partial derivatives of <span class="math-inline">\\(R_\text{sq}(w_0, w_1)\\)</span> with respect to <span class="math-inline">\\(w_0\\)</span> and <span class="math-inline">\\(w_1\\)</span>, setting both of them equal to 0, and then solving for the resulting <span class="math-inline">\\(w_0^&#42;\\)</span> and <span class="math-inline">\\(w_1^&#42;\\)</span>.
 
 -   A partial derivative is defined as the derivative with respect to one variable **while treating all others as constants**. 
 
@@ -101,15 +141,17 @@ f(x, y) = x^2 + 3xy^2 \implies \frac{\partial f}{\partial x} = 2x + 3y^2
 $$
 </div>
 
--   An important fact about the line <span class="math-inline">\\(h^*(x_i)=w_0^*+w_1^*x_i\\)</span> is that it is guaranteed to pass through <span class="math-inline">\\((\bar x, \bar y)\\)</span> --- in other words, an average input always predicts an average output.
+-   An important fact about the line <span class="math-inline">\\(h^&#42;(x_i)=w_0^&#42;+w_1^&#42;x_i\\)</span> is that it is guaranteed to pass through <span class="math-inline">\\((\bar x, \bar y)\\)</span> --- in other words, an average input always predicts an average output.
 
--   There are several equivalent ways to write the optimal slope, <span class="math-inline">\\(w_1^*\\)</span>. One of them involves the correlation coefficient, <span class="math-inline">\\(r\\)</span>. 
+-   There are several equivalent ways to write the optimal slope, <span class="math-inline">\\(w_1^&#42;\\)</span>. One of them involves the correlation coefficient, <span class="math-inline">\\(r\\)</span>. 
 
 <div class="math-display">
 $$
-\underbrace{r = \frac{1}{n} \sum_{i=1}^n \left( \frac{x_i-\bar x}{\sigma_x} \right) \left( \frac{y_i-\bar y}{\sigma_y} \right)}_{\text{average product of <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span>, once both are standardized}} \qquad w_1^* = r \frac{\sigma_y}{\sigma_x} = \frac{\sum_{i=1}^n (x_i-\bar x)(y_i-\bar y)}{\sum_{i=1}^n (x_i-\bar x)^2}, \quad w_0^* = \bar y - w_1^* \bar x
+\underbrace{r = \frac{1}{n} \sum_{i=1}^n \left( \frac{x_i-\bar x}{\sigma_x} \right) \left( \frac{y_i-\bar y}{\sigma_y} \right)}_{\text{average product of x and y, once both are standardized}} \qquad w_1^* = r \frac{\sigma_y}{\sigma_x} = \frac{\sum_{i=1}^n (x_i-\bar x)(y_i-\bar y)}{\sum_{i=1}^n (x_i-\bar x)^2}, \quad w_0^* = \bar y - w_1^* \bar x
 $$
 </div>
+
+---
 
 ## Activity 1: The Meaning of Mean Squared Error
 
@@ -131,13 +173,15 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Fill in the :
+Fill in the <span class="math-inline">\\(\boxed{???}\\)</span>:
 
 <div class="math-display">
 $$
-\displaystyle \sum_{i=1}^{n}(y_i-F(x_i))^2  \quad \fbox{???} \quad \sum_{i=1}^{n}(y_i-G(x_i))^2
+\displaystyle \sum_{i=1}^{n}(y_i-F(x_i))^2  \quad \boxed{???} \quad \sum_{i=1}^{n}(y_i-G(x_i))^2
 $$
 </div>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&gt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\geq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $=$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\leq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&lt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Impossible to tell</span></div>
 
 </div>
 </div>
@@ -145,13 +189,15 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Fill in the :
+Fill in the <span class="math-inline">\\(\boxed{???}\\)</span>:
 
 <div class="math-display">
 $$
-\displaystyle \left(\sum_{i=1}^{n}|y_i-F(x_i)|\right)^2  \quad \fbox{???} \quad \left(\sum_{i=1}^{n}|y_i-G(x_i)|\right)^2
+\displaystyle \left(\sum_{i=1}^{n}|y_i-F(x_i)|\right)^2  \quad \boxed{???} \quad \left(\sum_{i=1}^{n}|y_i-G(x_i)|\right)^2
 $$
 </div>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&gt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\geq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $=$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\leq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&lt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Impossible to tell</span></div>
 
 </div>
 </div>
@@ -163,29 +209,30 @@ Below, we've drawn the lines for both <span class="math-inline">\\(F\\)</span> a
 
 ![image](imgs/regression.png)
 
-Which line corresponds to <span class="math-inline">\\(F\\)</span>?
+Which line corresponds to <span class="math-inline">\\(F\\)</span>? <span class="mc-bubble" aria-hidden="true"></span> Line 1 <span class="mc-bubble" aria-hidden="true"></span> Line 2
 
 </div>
 </div>
 
 </div>
+
 ---
 
 ## Activity 2: What Do You Mean?
 
 Suppose we want to fit a simple linear model (using squared loss) that predicts the number of ingredients in a product given its price. We're given that:
 
--   The average cost of a product in our dataset is \<span class="math-inline">\\(40, i.e. \\)</span>\bar x=40$
+-   The average cost of a product in our dataset is &#36;40, i.e. <span class="math-inline">\\(\bar x=40\\)</span>
 
 -   The average number of ingredients in a product in our dataset is 15, i.e. <span class="math-inline">\\(\bar y =15\\)</span>
 
-The intercept and slope of the regression line are <span class="math-inline">\\(w_0^*=11\\)</span> and <span class="math-inline">\\(w_1^*=\frac{1}{10}\\)</span>, respectively.
+The intercept and slope of the regression line are <span class="math-inline">\\(w_0^&#42;=11\\)</span> and <span class="math-inline">\\(w_1^&#42;=\frac{1}{10}\\)</span>, respectively.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Suppose Victors' Veil (a skincare product) costs \$40 and has 11 ingredients. What is the squared loss of our model's predicted number of ingredients for Victors' Veil?
+Suppose Victors' Veil (a skincare product) costs &#36;40 and has 11 ingredients. What is the squared loss of our model's predicted number of ingredients for Victors' Veil?
 
 </div>
 </div>
@@ -193,19 +240,22 @@ Suppose Victors' Veil (a skincare product) costs \$40 and has 11 ingredients. Wh
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Is it possible to answer part **a)** above **just** by knowing <span class="math-inline">\\(\bar x\\)</span> and <span class="math-inline">\\(\bar y\\)</span>, i.e. **without** knowing the values of <span class="math-inline">\\(w_0^*\\)</span> and <span class="math-inline">\\(w_1^*\\)</span>? Once you select an answer, explain it to your peers.
+Is it possible to answer part **a)** above **just** by knowing <span class="math-inline">\\(\bar x\\)</span> and <span class="math-inline">\\(\bar y\\)</span>, i.e. **without** knowing the values of <span class="math-inline">\\(w_0^&#42;\\)</span> and <span class="math-inline">\\(w_1^&#42;\\)</span>? Once you select an answer, explain it to your peers.
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Yes, it's possible</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> No, it's not possible</span></div>
 
 </div>
 </div>
 
 </div>
+
 ---
 
 ## Activity 3: Reverse Regression
 
 Suppose we have a dataset of <span class="math-inline">\\(n\\)</span> houses that were recently sold in the Ann Arbor area. For each house, we have its square footage and most recent sale price. The correlation between square footage and price is <span class="math-inline">\\(r\\)</span>.
 
-First, we minimize mean squared error to fit a simple linear model that uses square footage to predict price. The resulting regression line has an intercept of <span class="math-inline">\\(w_0^*\\)</span> and slope of <span class="math-inline">\\(w_1^*\\)</span>. 
+First, we minimize mean squared error to fit a simple linear model that uses square footage to predict price. The resulting regression line has an intercept of <span class="math-inline">\\(w_0^&#42;\\)</span> and slope of <span class="math-inline">\\(w_1^&#42;\\)</span>. 
 
 <div class="math-display">
 $$
@@ -213,9 +263,9 @@ $$
 $$
 </div>
 
- We're now interested in minimizing mean squared error to fit a simple linear model **that uses price to predict square footage** --- that is, we're "reversing" the <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span> variables. Suppose this new regression line has an intercept of <span class="math-inline">\\(\beta_0^*\\)</span> and slope of <span class="math-inline">\\(\beta_1^*\\)</span>.
+ We're now interested in minimizing mean squared error to fit a simple linear model **that uses price to predict square footage** --- that is, we're "reversing" the <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span> variables. Suppose this new regression line has an intercept of <span class="math-inline">\\(\beta_0^&#42;\\)</span> and slope of <span class="math-inline">\\(\beta_1^&#42;\\)</span>.
 
-Find <span class="math-inline">\\(\beta_1^*\\)</span>. Give your answer in terms of one or more of <span class="math-inline">\\(n\\)</span>, <span class="math-inline">\\(r\\)</span>, <span class="math-inline">\\(w_0^*\\)</span>, and <span class="math-inline">\\(w_1^*\\)</span>.
+Find <span class="math-inline">\\(\beta_1^&#42;\\)</span>. Give your answer in terms of one or more of <span class="math-inline">\\(n\\)</span>, <span class="math-inline">\\(r\\)</span>, <span class="math-inline">\\(w_0^&#42;\\)</span>, and <span class="math-inline">\\(w_1^&#42;\\)</span>.
 
 ---
 
@@ -247,6 +297,7 @@ Find the values of <span class="math-inline">\\(x_1\\)</span> and <span class="m
 </div>
 
 </div>
+
 ---
 
 ## Activity 5: Systems of Equations
@@ -285,19 +336,21 @@ x_1+2x_2-x_3&=4
 $$
 </div>
 
-**The rest of this worksheet is extra practice (taken from past exams that Suraj wrote). Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.**
-
 </div>
 </div>
 
 </div>
+
 ---
+
+{: .yellow }
+> **The rest of this worksheet is extra practice (taken from past exams that Suraj wrote). Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.**
 
 ## Activity 6: Transformed Data
 
 Suppose we're given a dataset of <span class="math-inline">\\(n\\)</span> points, <span class="math-inline">\\((x_1, y_1), (x_2,y_2), \dots, (x_n,y_n)\\)</span>, where <span class="math-inline">\\(\bar x\\)</span> is the mean of <span class="math-inline">\\(x_1, x_2, \dots, x_n\\)</span> and <span class="math-inline">\\(\bar y\\)</span> is the mean of <span class="math-inline">\\(y_1, y_2, \dots, y_n\\)</span>.
 
-Using this dataset, we create a *transformed* dataset of <span class="math-inline">\\(n\\)</span> points, <span class="math-inline">\\((x_1', y_1'), (x_2',y_2'), \dots, (x_n',y_n')\\)</span>, where: 
+Using this dataset, we create a *transformed* dataset of <span class="math-inline">\\(n\\)</span> points, <span class="math-inline">\\((x_1&#39;, y_1&#39;), (x_2&#39;,y_2&#39;), \dots, (x_n&#39;,y_n&#39;)\\)</span>, where: 
 
 <div class="math-display">
 $$
@@ -313,7 +366,7 @@ $$
 $$
 </div>
 
- We decide to fit a simple linear model <span class="math-inline">\\(h(x_i')=w_0+w_1x_i'\\)</span> on the transformed dataset using squared loss. We find that <span class="math-inline">\\(w_0^*=7\\)</span> and <span class="math-inline">\\(w_1^*=2\\)</span>, so <span class="math-inline">\\(h^*(x_i')=7+2x_i'\\)</span>.
+ We decide to fit a simple linear model <span class="math-inline">\\(h(x_i&#39;)=w_0+w_1x_i&#39;\\)</span> on the transformed dataset using squared loss. We find that <span class="math-inline">\\(w_0^&#42;=7\\)</span> and <span class="math-inline">\\(w_1^&#42;=2\\)</span>, so <span class="math-inline">\\(h^&#42;(x_i&#39;)=7+2x_i&#39;\\)</span>.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
@@ -321,25 +374,28 @@ $$
 <div class="assignment-part-content" markdown="1">
 Suppose we were to fit a simple linear model through the original dataset, <span class="math-inline">\\((x_1, y_1), (x_2,y_2), \dots, (x_n,y_n)\\)</span>, again using squared loss. What would the optimal slope on the original dataset be?
 
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 2</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 4</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 8</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 12</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 24</span></div>
+
 </div>
 </div>
 
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Recall, the model <span class="math-inline">\\(h^*(x_i')=w_0+w_1x_i'\\)</span> was fit on the transformed dataset, <span class="math-inline">\\((x_1', y_1'), (x_2',y_2'), \dots, (x_n',y_n')\\)</span>. <span class="math-inline">\\(h^*(x_i')\\)</span> happens to pass through the point <span class="math-inline">\\((\bar x, \bar y)\\)</span>. What is the value of <span class="math-inline">\\(\bar x\\)</span>? Give your answer as an integer with no variables. *Hint: What else does <span class="math-inline">\\(h^*(x_i')\\)</span> pass through?*
+Recall, the model <span class="math-inline">\\(h^&#42;(x_i&#39;)=w_0+w_1x_i&#39;\\)</span> was fit on the transformed dataset, <span class="math-inline">\\((x_1&#39;, y_1&#39;), (x_2&#39;,y_2&#39;), \dots, (x_n&#39;,y_n&#39;)\\)</span>. <span class="math-inline">\\(h^&#42;(x_i&#39;)\\)</span> happens to pass through the point <span class="math-inline">\\((\bar x, \bar y)\\)</span>. What is the value of <span class="math-inline">\\(\bar x\\)</span>? Give your answer as an integer with no variables. *Hint: What else does <span class="math-inline">\\(h^&#42;(x_i&#39;)\\)</span> pass through?*
 
 </div>
 </div>
 
 </div>
+
 ---
 
 ## Activity 7: A Refresher
 
 Consider a dataset of <span class="math-inline">\\(y_1, y_2, \dots, y_n\\)</span>, all of which are **positive**. We want to fit a constant model, <span class="math-inline">\\(h(x_i)=w\\)</span>, to the data.
 
-Let <span class="math-inline">\\(w_p^*\\)</span> be the optimal constant prediction that minimizes average degree-<span class="math-inline">\\(p\\)</span> loss, <span class="math-inline">\\(R_p(w)\\)</span>, defined below: 
+Let <span class="math-inline">\\(w_p^&#42;\\)</span> be the optimal constant prediction that minimizes average degree-<span class="math-inline">\\(p\\)</span> loss, <span class="math-inline">\\(R_p(w)\\)</span>, defined below: 
 
 <div class="math-display">
 $$
@@ -347,7 +403,7 @@ R_p(w)= \displaystyle \frac{1}{n} \sum_{i=1}^{n}|y_i-w|^p
 $$
 </div>
 
- For example, <span class="math-inline">\\(w_2^*\\)</span> is the optimal constant prediction that minimizes <span class="math-inline">\\(R_2(w)= \displaystyle \frac{1}{n} \sum_{i=1}^{n}|y_i-w|^2\\)</span>
+ For example, <span class="math-inline">\\(w_2^&#42;\\)</span> is the optimal constant prediction that minimizes <span class="math-inline">\\(R_2(w)= \displaystyle \frac{1}{n} \sum_{i=1}^{n}|y_i-w|^2\\)</span>
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
@@ -355,28 +411,27 @@ $$
 <div class="assignment-part-content" markdown="1">
 In each of the parts below, determine the value of the quantity provided. By "the data", we are referring to <span class="math-inline">\\(y_1, y_2, \dots, y_n\\)</span>. The answer choices are as follows; **select one item in each row**.
 
--   The standard deviation of the data
+-   **A:** The standard deviation of the data
 
--   The variance of the data
+-   **B:** The variance of the data
 
--   The mean of the data
+-   **C:** The mean of the data
 
--   The median of the data
+-   **D:** The median of the data
 
--   The midrange of the data, <span class="math-inline">\\(\frac{y_\text{min} + y_\text{max}}{2}\\)</span>
+-   **E:** The midrange of the data, <span class="math-inline">\\(\frac{y_\text{min} + y_\text{max}}{2}\\)</span>
 
--   The mode of the data
+-   **F:** The mode of the data
 
--   None of these
+-   **G:** None of these
 
-|         |              |     |     |     |     |     |     |     |
-|--------:|:-------------|:----|:----|:----|:----|:----|:----|:----|
-|         |              | A   | B   | C   | D   | E   | F   | G   |
-|   <span class="math-inline">\\(i\\)</span> | <span class="math-inline">\\(h_0^*\\)</span>      |     |     |     |     |     |     |     |
-|  <span class="math-inline">\\(ii\\)</span> | <span class="math-inline">\\(h_1^*\\)</span>      |     |     |     |     |     |     |     |
-| <span class="math-inline">\\(iii\\)</span> | <span class="math-inline">\\(R_1(h_1^*)\\)</span> |     |     |     |     |     |     |     |
-|  <span class="math-inline">\\(iv\\)</span> | <span class="math-inline">\\(h_2^*\\)</span>      |     |     |     |     |     |     |     |
-|   <span class="math-inline">\\(v\\)</span> | <span class="math-inline">\\(R_2(h_2^*)\\)</span> |     |     |     |     |     |     |     |
+|  |  | A | B | C | D | E | F | G |
+|---:|:---|:---|:---|:---|:---|:---|:---|:---|
+| <span class="math-inline">\\(i\\)</span> | <span class="math-inline">\\(h_0^&#42;\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(ii\\)</span> | <span class="math-inline">\\(h_1^&#42;\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(iii\\)</span> | <span class="math-inline">\\(R_1(h_1^&#42;)\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(iv\\)</span> | <span class="math-inline">\\(h_2^&#42;\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(v\\)</span> | <span class="math-inline">\\(R_2(h_2^&#42;)\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
 
 </div>
 </div>
@@ -384,7 +439,7 @@ In each of the parts below, determine the value of the quantity provided. By "th
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Now, suppose we want to find the optimal constant prediction, <span class="math-inline">\\(h_\text{U}^*\\)</span>, using the "Ulta" loss function, defined below:
+Now, suppose we want to find the optimal constant prediction, <span class="math-inline">\\(h_\text{U}^&#42;\\)</span>, using the "Ulta" loss function, defined below:
 
 <div class="math-display">
 $$
@@ -392,7 +447,9 @@ L_\text{U}(y_i, w) = y_i(y_i-w)^2
 $$
 </div>
 
-To find <span class="math-inline">\\(h_\text{U}^*\\)</span>, we minimize <span class="math-inline">\\(R_\text{U}(w)\\)</span>, the average Ulta loss. How does <span class="math-inline">\\(h_\text{U}^*\\)</span> compare to the mean of the data, <span class="math-inline">\\(M\\)</span>?
+To find <span class="math-inline">\\(h_\text{U}^&#42;\\)</span>, we minimize <span class="math-inline">\\(R_\text{U}(w)\\)</span>, the average Ulta loss. How does <span class="math-inline">\\(h_\text{U}^&#42;\\)</span> compare to the mean of the data, <span class="math-inline">\\(M\\)</span>?
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h_\text{U}^&#42; &gt; M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h_\text{U}^&#42; \geq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h_\text{U}^&#42; = M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h_\text{U}^&#42; \leq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h_\text{U}^&#42; &lt; M$</span></div>
 
 </div>
 </div>
@@ -408,9 +465,9 @@ $$
 $$
 </div>
 
-Here, assume <span class="math-inline">\\(\lambda > 0\\)</span> is some positive constant. (We will cover regularization in more detail later in the term.)
+Here, assume <span class="math-inline">\\(\lambda &gt; 0\\)</span> is some positive constant. (We will cover regularization in more detail later in the term.)
 
-Find <span class="math-inline">\\(w^*\\)</span>, the constant prediction that minimizes <span class="math-inline">\\(R_\lambda(w)\\)</span>. Give your answer as an expression in terms of the <span class="math-inline">\\(y_i\\)</span>'s, <span class="math-inline">\\(n\\)</span>, and/or <span class="math-inline">\\(\lambda\\)</span>.
+Find <span class="math-inline">\\(w^&#42;\\)</span>, the constant prediction that minimizes <span class="math-inline">\\(R_\lambda(w)\\)</span>. Give your answer as an expression in terms of the <span class="math-inline">\\(y_i\\)</span>'s, <span class="math-inline">\\(n\\)</span>, and/or <span class="math-inline">\\(\lambda\\)</span>.
 </div>
 </div>
 

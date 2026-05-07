@@ -5,7 +5,12 @@ description: "Homework 1: Means, Sums, and Calculus problems."
 nav_exclude: true
 ---
 
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
 <style>
 .main-content p {
@@ -37,6 +42,33 @@ nav_exclude: true
 }
 .assignment-part-content > :first-child {
   margin-top: 0;
+}
+.mc-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  margin: 0.9rem 0 1.1rem;
+}
+.mc-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+.mc-bubble,
+.mc-square {
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 0.95em;
+  width: 0.95em;
+  vertical-align: -0.12em;
+}
+.mc-bubble {
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+.mc-square {
+  border: 1.5px solid currentColor;
 }
 </style>
 
@@ -97,9 +129,8 @@ To receive credit for the programming portion of the homework, you'll need to su
 
 In this problem, we'll look at an example of how "simple" data analysis is not always so simple. Consider two students, Lisa and Bart, who have completed three semesters at Michigan. **In each semester, Lisa earns a higher GPA than Bart.**
 
-|              |          |         |          |         |
-|:------------:|:--------:|:-------:|:--------:|:-------:|
 | **Semester** | **Lisa** |         | **Bart** |         |
+|:------------:|:--------:|:-------:|:--------:|:-------:|
 |              |   GPA    | Credits |   GPA    | Credits |
 |     FA24     |   2.3    |   20    |   2.0    |    5    |
 |     WN25     |   3.0    |   18    |   2.7    |    5    |
@@ -119,9 +150,8 @@ Why does this happen? Even though Lisa has a higher GPA in every semester, Bart 
 
 In a similar vein, consider the following data on the weights of dogs in Veterinarian Kyle's care, separated by district and breed.
 
-|              |                      |       |                     |       |
-|:------------:|:--------------------:|:-----:|:-------------------:|:-----:|
 |              | **Golden Retriever** |       | **German Shepherd** |       |
+|:------------:|:--------------------:|:-----:|:-------------------:|:-----:|
 | **District** |     Mean Weight      | Count |     Mean Weight     | Count |
 |  District 1  |          30          |   4   |         20          |   3   |
 |  District 2  |          45          |   1   |         <span class="math-inline">\\(a\\)</span>         |  <span class="math-inline">\\(b\\)</span>  |
@@ -152,6 +182,7 @@ There are infinitely many solutions. Give a solution with the **smallest possibl
 </div>
 
 </div>
+
 ---
 
 ## Problem 4: The Proof is in the Pudding (8 pts)
@@ -228,6 +259,7 @@ Consider a dataset of numbers <span class="math-inline">\\(y_1, y_2, \ldots, y_n
 </div>
 
 </div>
+
 ---
 
 ## Problem 5: Mean Imputation (6 pts)
@@ -274,6 +306,7 @@ Let the new mean and standard deviation of all <span class="math-inline">\\(n + 
 </div>
 
 </div>
+
 ---
 
 ## Problem 6: Bias-Variance Decomposition (8 pts)
@@ -370,6 +403,7 @@ of the data.
 </div>
 
 </div>
+
 ---
 
 ## Problem 7: Coin Flipping (9 pts)

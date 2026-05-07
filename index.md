@@ -26,8 +26,7 @@ EECS 245, Spring 2026 🌸 at the <b><span style="background-color: #FFCB05; col
 {% endfor %}
 
 {: .green }
-> **Welcome to EECS 245!** Our first lecture is on Tuesday, May 5th at 1PM in 1690 BBB.
-> Make sure to read the [**Syllabus**](./syllabus) and join our [**Slack workspace**](https://um-sp26-eecs245s26.slack.com).
+> **Welcome to EECS 245!** Make sure to read the [**Syllabus**](./syllabus) and join our [**Slack workspace**](https://um-sp26-eecs245s26.slack.com). Note that the date of Midterm 1 has been moved; scroll down for the latest date.
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 

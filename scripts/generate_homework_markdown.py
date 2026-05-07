@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import re
 import shutil
 import subprocess
@@ -11,11 +12,12 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-MATHJAX_SNIPPET = (
-    '<script type="text/javascript" async '
-    'src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">'
-    " </script>"
-)
+MATHJAX_SNIPPET = """<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\\\(', '\\\\)']]}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>"""
 
 SECTION_SEPARATOR = "---"
 
@@ -26,6 +28,13 @@ HOMEWORK_STYLE_SNIPPET = """<style>
 .assignment-pdf-button {
   font-size: 0.95rem;
   padding: 0.35rem 0.65rem;
+}
+.assignment-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
 }
 .answer-blank {
   border-bottom: 1px solid currentColor;
@@ -60,6 +69,31 @@ HOMEWORK_STYLE_SNIPPET = """<style>
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  white-space: nowrap;
+}
+.mc-bubble,
+.mc-square {
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 0.95em;
+  width: 0.95em;
+  vertical-align: -0.12em;
+}
+.mc-bubble {
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+.mc-square {
+  border: 1.5px solid currentColor;
+}
+.main-content table {
+  font-size: 0.9rem;
+  width: auto;
+  max-width: 100%;
+}
+.main-content table th,
+.main-content table td {
+  padding: 0.35rem 0.5rem;
   white-space: nowrap;
 }
 </style>"""
@@ -259,15 +293,41 @@ def expand_inputs_from_text(text: str, base_dir: Path) -> str:
 def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_document_wrapper(text)
     text = expand_labcodelinks(text)
+    text = replace_fbox_markers(text)
+    text = replace_choice_markers(text, include_solutions=include_solutions)
     text = wrap_bare_alignment_environments(text)
     text = replace_prob_markers(text)
     text = replace_activity_markers(text)
     text = replace_subitem_markers(text)
+    text = replace_labeled_items(text)
     text = replace_solution_markers(text, include_solutions=include_solutions)
     text = re.sub(r"\\emptybox\{[^}]*\}", "", text)
     text = text.replace("\\newpage", "")
     text = text.replace("\\makemytitle", "% stripped makemytitle")
     return text
+
+
+def replace_fbox_markers(text: str) -> str:
+    # Pandoc drops \fbox in prose. \ensuremath preserves the placeholder there,
+    # and cleanup strips the wrapper again inside display math.
+    return re.sub(r"\\fbox\{([^{}]*)\}", r"\\ensuremath{\\boxed{\1}}", text)
+
+
+def replace_choice_markers(text: str, include_solutions: bool = False) -> str:
+    def replace_circle(match: re.Match[str]) -> str:
+        content = match.group(1).strip()
+        return rf"$\bigcirc$ {content} \quad "
+
+    def replace_square(match: re.Match[str]) -> str:
+        content = match.group(1).strip()
+        return rf"$\square$ {content} \quad "
+
+    text = re.sub(r"\\(?:correct|filled)?bubble\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}", replace_circle, text)
+    return re.sub(
+        r"\\(?:correct|filled)?squarebubble\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}",
+        replace_square,
+        text,
+    )
 
 
 def clean_align_content(content: str) -> str:
@@ -386,6 +446,17 @@ def replace_subitem_markers(text: str) -> str:
     return text.replace("\\end{subactivity}", "")
 
 
+def replace_labeled_items(text: str) -> str:
+    r"""Convert LaTeX \item[X:] to labeled HTML spans for answer choice lists."""
+    pattern = re.compile(r"\\item\[([A-Z]):\]")
+
+    def replace(match: re.Match[str]) -> str:
+        label = match.group(1)
+        return f"\\item \\textbf{{{label}:}}"
+
+    return pattern.sub(replace, text)
+
+
 def replace_solution_markers(text: str, include_solutions: bool = False) -> str:
     solution_env_pattern = r"(?ms)^[ \t]*\\begin\{solution\}[ \t]*\n?(.*?)[ \t]*^[ \t]*\\end\{solution\}[ \t]*"
 
@@ -472,6 +543,8 @@ def build_homework_page(
         if solutions_pdf_link
         else ""
     )
+    action_buttons = "\n".join(button for button in (pdf_button, solutions_button) if button)
+    actions = f'<div class="assignment-actions">\n{action_buttons}\n</div>' if action_buttons else ""
     preamble = (
         '{: .yellow }\n'
         '<div markdown="1">\n'
@@ -485,6 +558,7 @@ def build_homework_page(
         f'title: "{escape_frontmatter(metadata.assignment)}"',
         f'description: "{escape_frontmatter(metadata.assignment)} {description_noun_for(metadata.assignment)}."',
         "nav_exclude: true",
+        "hide_footer_hr: true",
         "---",
         "",
         MATHJAX_SNIPPET,
@@ -496,10 +570,8 @@ def build_homework_page(
         f"**due** {metadata.due_date}",
         "",
     ]
-    if pdf_button:
-        parts.extend([pdf_button, ""])
-    if solutions_button:
-        parts.extend([solutions_button, ""])
+    if actions:
+        parts.extend([actions, ""])
     parts.extend(
         [
             preamble,
@@ -562,17 +634,23 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = fix_latex_for_mathjax(text)
     text = fix_image_syntax(text)
+    text = remove_blank_table_headers(text)
     text = escape_blank_rules(text)
+    text = replace_recap_markers(text)
     text = add_item_separators(text)
+    text = promote_interstitial_callouts(text)
+    text = add_separator_after_recap(text)
+    text = indent_ordered_list_display_math(text)
     text = convert_points_badges(text, use_badges=use_point_badges)
     text = convert_part_headings_to_lists(text)
     text = fix_leading_italics(text)
-    text = replace_recap_markers(text)
     text = format_multiple_choice_rows(text)
     text = text.replace(r"\#", "#")
     text = add_total_points_separator(text)
     text = fix_accidental_indented_prose(text)
+    text = re.sub(r"(</div>)\n---", r"\1\n\n---", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
+    text = remove_trailing_section_separator(text)
     return text.strip()
 
 
@@ -588,6 +666,87 @@ def add_item_separators(text: str) -> str:
         return f"{SECTION_SEPARATOR}\n\n{match.group(1)}"
 
     return pattern.sub(replace, text)
+
+
+def remove_trailing_section_separator(text: str) -> str:
+    return re.sub(rf"\s*{re.escape(SECTION_SEPARATOR)}\s*$", "", text)
+
+
+def promote_interstitial_callouts(text: str) -> str:
+    """Move standalone prose before the next item boundary into that item block."""
+    pattern = re.compile(
+        rf"\n\n(?P<message>(?:\*\*|<strong>)(?:(?!\n\n).)+?(?:\*\*|</strong>))[ \t]*"
+        rf"\n\n{re.escape(SECTION_SEPARATOR)}\n\n(?P<heading>## (?:Problem|Activity) \d+)",
+        flags=re.S,
+    )
+
+    def replace(match: re.Match[str]) -> str:
+        message = match.group("message").strip()
+        heading = match.group("heading")
+        return (
+            f"\n\n{SECTION_SEPARATOR}\n\n"
+            "{: .yellow }\n"
+            f"> {message}\n\n"
+            f"{heading}"
+        )
+
+    return pattern.sub(replace, text)
+
+
+def add_separator_after_recap(text: str) -> str:
+    recap_match = re.search(r"(?m)^## Recap:", text)
+    if not recap_match:
+        return text
+
+    next_item_match = re.search(
+        r"(?m)^## (?:Problem|Activity) \d+",
+        text[recap_match.end() :],
+    )
+    if not next_item_match:
+        return text
+
+    next_item_start = recap_match.end() + next_item_match.start()
+    before_recap = text[: recap_match.start()]
+    recap_block = text[recap_match.start() : next_item_start]
+    after_recap = text[next_item_start:]
+    recap_block = re.sub(
+        rf"\s*(?:{re.escape(SECTION_SEPARATOR)}\s*)+$",
+        "",
+        recap_block.rstrip(),
+    )
+    return f"{before_recap}{recap_block}\n\n{SECTION_SEPARATOR}\n\n{after_recap}"
+
+
+def indent_ordered_list_display_math(text: str) -> str:
+    lines = text.splitlines()
+    converted: list[str] = []
+    in_ordered_list = False
+    index = 0
+
+    while index < len(lines):
+        line = lines[index]
+        if re.match(r"^\d+\.\s+", line):
+            in_ordered_list = True
+            converted.append(line)
+            index += 1
+            continue
+
+        if in_ordered_list and line.startswith('<div class="math-display">'):
+            while index < len(lines):
+                converted.append("    " + lines[index])
+                if lines[index].strip() == "</div>":
+                    index += 1
+                    break
+                index += 1
+            continue
+
+        if line.startswith((SECTION_SEPARATOR, "## ")):
+            in_ordered_list = False
+
+        converted.append(line)
+        index += 1
+
+    return "\n".join(converted)
 
 
 def convert_points_badges(text: str, use_badges: bool = True) -> str:
@@ -746,28 +905,61 @@ def replace_recap_markers(text: str) -> str:
     return "\n".join(converted)
 
 
+def mc_bubble_html() -> str:
+    return '<span class="mc-bubble" aria-hidden="true"></span>'
+
+
+def mc_square_html() -> str:
+    return '<span class="mc-square" aria-hidden="true"></span>'
+
+
+def escape_inline_math_content(content: str) -> str:
+    content = html.unescape(content)
+    content = html.escape(content, quote=False)
+    return content.replace("*", "&#42;").replace("'", "&#39;")
+
+
 def format_multiple_choice_rows(text: str) -> str:
     lines = text.splitlines()
     converted: list[str] = []
+    circle_html = mc_bubble_html()
 
     for line in lines:
-        if "\\bigcirc" not in line:
+        if circle_html not in line:
+            converted.append(line)
+            continue
+        if line.lstrip().startswith("|"):
             converted.append(line)
             continue
 
-        spans = re.findall(r'<span class="math-inline">.*?</span>', line)
-        if len(spans) < 4 or len(spans) % 2 != 0:
+        pieces = line.split(circle_html)
+        if len(pieces) < 3 or pieces[0].strip():
             converted.append(line)
             continue
 
         rendered_options = []
-        for idx in range(0, len(spans), 2):
-            circle_html = spans[idx]
-            option_html = spans[idx + 1]
+        for option_html in pieces[1:]:
+            option_html = normalize_mc_option_html(option_html.strip())
+            if not option_html:
+                continue
             rendered_options.append(f'<span class="mc-option">{circle_html} {option_html}</span>')
         converted.append(f'<div class="mc-options">{"".join(rendered_options)}</div>')
 
     return "\n".join(converted)
+
+
+def normalize_mc_option_html(option_html: str) -> str:
+    def inline_math_to_dollars(match: re.Match[str]) -> str:
+        return f"${escape_inline_math_content(match.group(1))}$"
+
+    option_html = re.sub(
+        r'<span class="math-inline">\\\\\((.*?)\\\\\)</span>',
+        inline_math_to_dollars,
+        option_html,
+    )
+    option_html = re.sub(r"\\\\\((.*?)\\\\\)", inline_math_to_dollars, option_html)
+    option_html = re.sub(r"\\\((.*?)\\\)", inline_math_to_dollars, option_html)
+    return option_html
 
 
 def add_total_points_separator(text: str) -> str:
@@ -830,14 +1022,34 @@ def fix_accidental_indented_prose(text: str) -> str:
 
 
 def fix_latex_for_mathjax(text: str) -> str:
+    display_block_pattern = re.compile(
+        r'(<div class="math-display">\n\$\$.*?\$\$\n</div>)',
+        flags=re.S,
+    )
+
+    def cleanup_display_content(content: str) -> str:
+        content = re.sub(r"\\ensuremath\{\\boxed\{([^{}]*)\}\}", r"\\boxed{\1}", content)
+
+        def clean_text_command(match: re.Match[str]) -> str:
+            inner = match.group(1).replace("$", "")
+            return rf"\text{{{inner}}}"
+
+        return re.sub(r"\\text\{([^{}]*)\}", clean_text_command, content)
+
     def fix_backslashes_in_math(content: str) -> str:
         return content.replace("\\\\", "\\\\\\\\")
 
     def protect_inline_math(content: str) -> str:
+        if content.strip() == r"\bigcirc":
+            return mc_bubble_html()
+        if content.strip() == r"\square":
+            return mc_square_html()
+        content = escape_inline_math_content(content)
         return f'<span class="math-inline">\\\\({content}\\\\)</span>'
 
     def protect_display_math(content: str) -> str:
-        content = fix_backslashes_in_math(content.strip())
+        content = cleanup_display_content(content.strip())
+        content = fix_backslashes_in_math(content)
         return f'\n\n<div class="math-display">\n$$\n{content}\n$$\n</div>\n\n'
 
     def process_latex_display_math(match: re.Match[str]) -> str:
@@ -854,24 +1066,35 @@ def fix_latex_for_mathjax(text: str) -> str:
     )
     text = re.sub(r"\$\$(.*?)\$\$", process_display_math, text, flags=re.S)
 
-    def process_latex_inline_math(match: re.Match[str]) -> str:
-        content = match.group(2)
-        return protect_inline_math(content)
+    def protect_inline_math_outside_display(segment: str) -> str:
+        def process_latex_inline_math(match: re.Match[str]) -> str:
+            content = match.group(2)
+            return protect_inline_math(content)
 
-    text = re.sub(
-        r"(?P<slash>\\{1,2})\((.*?)(?P=slash)\)",
-        process_latex_inline_math,
-        text,
-    )
+        segment = re.sub(
+            r"(?P<slash>\\{1,2})\((.*?)(?P=slash)\)",
+            process_latex_inline_math,
+            segment,
+        )
 
-    def convert_inline_math(match: re.Match[str]) -> str:
-        content = match.group(1)
-        if "\n\n" in content or content.startswith("$"):
-            return match.group(0)
-        content = fix_backslashes_in_math(content)
-        return protect_inline_math(content)
+        def convert_inline_math(match: re.Match[str]) -> str:
+            content = match.group(1)
+            if "\n\n" in content or content.startswith("$"):
+                return match.group(0)
+            content = fix_backslashes_in_math(content)
+            return protect_inline_math(content)
 
-    text = re.sub(r"(?<!\$)\$([^\$\n]+?)\$(?!\$)", convert_inline_math, text)
+        segment = re.sub(
+            r"(?<![\\$])\$([^\$\n]+?)\$(?!\$)",
+            convert_inline_math,
+            segment,
+        )
+        return segment.replace(r"\$", "&#36;")
+
+    parts = display_block_pattern.split(text)
+    for index in range(0, len(parts), 2):
+        parts[index] = protect_inline_math_outside_display(parts[index])
+    text = "".join(parts)
 
     text = convert_linebreaks_outside_display_math(text)
 
@@ -937,6 +1160,51 @@ def fix_image_syntax(text: str) -> str:
     text = re.sub(r"^:::\s*$", "", text, flags=re.M)
     text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)\{[^}]*\}", r"![\1](\2)", text)
     return text
+
+
+def remove_blank_table_headers(text: str) -> str:
+    lines = text.splitlines()
+    cleaned: list[str] = []
+    index = 0
+
+    while index < len(lines):
+        if (
+            index + 2 < len(lines)
+            and is_blank_table_row(lines[index])
+            and is_table_separator(lines[index + 1])
+            and is_table_row(lines[index + 2])
+        ):
+            cleaned.append(lines[index + 2])
+            cleaned.append(lines[index + 1])
+            index += 3
+            continue
+
+        cleaned.append(lines[index])
+        index += 1
+
+    return "\n".join(cleaned)
+
+
+def is_table_row(line: str) -> bool:
+    stripped = line.strip()
+    return stripped.startswith("|") and stripped.endswith("|")
+
+
+def table_cells(line: str) -> list[str]:
+    return line.strip().strip("|").split("|")
+
+
+def is_blank_table_row(line: str) -> bool:
+    return is_table_row(line) and all(not cell.strip() for cell in table_cells(line))
+
+
+def is_table_separator(line: str) -> bool:
+    if not is_table_row(line):
+        return False
+    return all(
+        bool(re.fullmatch(r":?-{3,}:?", cell.strip()))
+        for cell in table_cells(line)
+    )
 
 
 def collapse_whitespace(text: str) -> str:

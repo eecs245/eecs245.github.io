@@ -2,11 +2,16 @@
 title: "Week 8: Review and Final Exam"
 weekNumber: 8
 days:
+  - date: "2026-06-21"
+    events:
+      - name: HW 11
+        type: hw
+        title: Singular Value Decomposition
   - date: "2026-06-22"
     events:
       - name: Lab 12
         type: lab
-        title: Adjacency Matrices and Diagonalization
+        title: Singular Value Decomposition
   - date: "2026-06-23"
     events:
       - name: LEC 14

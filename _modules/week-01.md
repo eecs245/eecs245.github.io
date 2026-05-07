@@ -23,7 +23,7 @@ days:
     events:
       - name: Lab 1
         type: lab
-        title: <b>Math Foundations and Environment Setup</b>
+        title: Math Foundations and Environment Setup
         problems: ../resources/labs/lab01/
         solutions: true
   - date: "2026-05-07"
@@ -47,10 +47,10 @@ days:
     events:
       - name: SUR
         type: survey
-        title: <b>Welcome Survey</b>
+        title: Welcome Survey
         url: "https://docs.google.com/forms/d/e/1FAIpQLSee14997ZWHuI-eYwNZHh4tI6i9Xu0kRLYMm_ve9uoSxbjVgA/viewform?usp=dialog"
       - name: HW 1
         type: hw
-        title: <b>Means, Sums, and Calculus</b>
+        title: Means, Sums, and Calculus
         problems: ../resources/homeworks/hw01/
 ---

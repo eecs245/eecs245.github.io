@@ -28,11 +28,17 @@ days:
     events:
       - name: LEC 6
         type: lecture
-        title: Matrices
+        title: Matrices, Exam Review
         reading: https://notes.eecs245.org/matrices/matrix-operations/
         reading_text: Ch. 5.1
         reading2: https://notes.eecs245.org/matrices/special-matrices/
         reading2_text: Ch. 5.2
+  - date: "2026-05-22"
+    events:
+      - name: EXAM
+        type: exam
+        title: "<b>Midterm 1 (1-3PM)</b>"
+        note: Note that this is the updated date/time.
   - date: "2026-05-24"
     events:
       - name: HW 5

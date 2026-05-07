@@ -1,12 +1,7 @@
 ---
-title: "Week 4: Midterm 1 and Linear Transformations"
+title: "Week 4: Linear Transformations"
 weekNumber: 4
 days:
-  - date: "2026-05-25"
-    events:
-      - name: EXAM
-        type: exam
-        title: "<b>Midterm 1 (12-2PM)</b>"
   - date: "2026-05-26"
     events:
       - name: LEC 7
@@ -24,7 +19,7 @@ days:
     events:
       - name: Lab 6
         type: lab
-        title: Vector Spaces, Subspaces, and Bases
+        title: Rank, Column Space, Null Space, and Inverses
       - name: HW 6
         type: hw
         title: Matrices

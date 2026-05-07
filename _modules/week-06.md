@@ -6,17 +6,12 @@ days:
     events:
       - name: Lab 9
         type: lab
-        title: Multiple Linear Regression; The Gradient Vector
+        title: Gradient Descent and Convexity
   - date: "2026-06-09"
     events:
       - name: EXAM
         type: exam
         title: "<b>Midterm 2 (1-3PM)</b>"
-  - date: "2026-06-10"
-    events:
-      - name: HW 10
-        type: hw
-        title: Eigenvalues and Eigenvectors
   - date: "2026-06-11"
     events:
       - name: LEC 11
@@ -30,4 +25,9 @@ days:
         reading3_text: Ch. 9.3
         reading4: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading4_text: Ch. 9.4
+  - date: "2026-06-14"
+    events:
+      - name: HW 9
+        type: hw
+        title: "Multiple Linear Regression, Gradients"
 ---

@@ -6,7 +6,7 @@ days:
     events:
       - name: Lab 7
         type: lab
-        title: Rank, Column Space, Null Space, and Inverses
+        title: Inverses and Projections
   - date: "2026-06-02"
     events:
       - name: LEC 9
@@ -24,10 +24,7 @@ days:
     events:
       - name: Lab 8
         type: lab
-        title: Inverses and Projections
-      - name: HW 8
-        type: hw
-        title: Projections; Regression using Linear Algebra
+        title: Multiple Linear Regression; The Gradient Vector
   - date: "2026-06-04"
     events:
       - name: LEC 10
@@ -43,7 +40,7 @@ days:
         reading4_text: Ch. 8.6
   - date: "2026-06-07"
     events:
-      - name: HW 9
+      - name: HW 8
         type: hw
-        title: "Multiple Linear Regression, Gradients"
+        title: Projections; Regression using Linear Algebra
 ---

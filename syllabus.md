@@ -252,7 +252,7 @@ This class has two Midterm Exams and one Final Exam, all of which will be admini
 
 | Exam | Date and Time | Content |
 | --- | --- | --- |
-| Midterm 1 | Monday, May 25th, 12-2PM | Chapters 1-4 of the [course notes](https://notes.eecs245.org) |
+| Midterm 1 | Friday, May 22nd, 1-3PM | Chapters 1-4 of the [course notes](https://notes.eecs245.org) |
 | Midterm 2 | Tuesday, June 9th, 1-3PM | Chapters 5-8 of the [course notes](https://notes.eecs245.org) |
 | Final Exam | Wednesday, June 24th, 8-10AM | 40% content from Chapters 9-10; 30% content from Chapters 1-4; 30% content from Chapters 5-8 |
 

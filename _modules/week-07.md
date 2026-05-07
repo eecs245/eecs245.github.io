@@ -6,7 +6,7 @@ days:
     events:
       - name: Lab 10
         type: lab
-        title: Gradient Descent and Convexity
+        title: Convexity, Eigenvalues and Eigenvectors
   - date: "2026-06-16"
     events:
       - name: LEC 12
@@ -24,10 +24,10 @@ days:
     events:
       - name: Lab 11
         type: lab
-        title: Convexity, Eigenvalues and Eigenvectors
-      - name: HW 11
+        title: Adjacency Matrices and Diagonalization
+      - name: HW 10
         type: hw
-        title: Singular Value Decomposition
+        title: Eigenvalues and Eigenvectors
   - date: "2026-06-18"
     events:
       - name: LEC 13

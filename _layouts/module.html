@@ -17,14 +17,20 @@
                 {{ event.name }}
               </strong>
               {% endif %}
-              {% if event.url %}
+              {% if event.type == "lab" or event.type == "hw" %}
+                {% if event.problems %}
+                <a href="{{ event.problems }}">{{ event.title }}</a>
+                {% else %}
+                {{ event.title }}
+                {% endif %}
+              {% elsif event.url %}
                 <a href="{{ event.url }}">{{ event.title }}</a>
               {% else %}
                 {{ event.title }}
               {% endif %}
             </p>
             <div class="event-links">
-                {%- if event.type == "lecture" or event.type == "review" or event.type == "lab" or event.type == "exam" or event.type == "hw" -%}
+                {%- if event.type == "lecture" or event.type == "review" or event.type == "exam" -%}
                 {%- if event.problems and event.solutions == true -%}
                 <a href="{{ event.problems }}" class="btn btn-info btn-sm">✅ Problems and Solutions</a>
                 {%- elsif event.problems -%}

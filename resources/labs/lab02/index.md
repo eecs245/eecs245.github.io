@@ -3,9 +3,15 @@ layout: page
 title: "Lab 2: Empirical Risk and Simple Linear Regression"
 description: "Lab 2: Empirical Risk and Simple Linear Regression activities."
 nav_exclude: true
+hide_footer_hr: true
 ---
 
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
 <style>
 .main-content p {
@@ -14,6 +20,13 @@ nav_exclude: true
 .assignment-pdf-button {
   font-size: 0.95rem;
   padding: 0.35rem 0.65rem;
+}
+.assignment-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
 }
 .answer-blank {
   border-bottom: 1px solid currentColor;
@@ -50,13 +63,40 @@ nav_exclude: true
   gap: 0.35rem;
   white-space: nowrap;
 }
+.mc-bubble,
+.mc-square {
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 0.95em;
+  width: 0.95em;
+  vertical-align: -0.12em;
+}
+.mc-bubble {
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+.mc-square {
+  border: 1.5px solid currentColor;
+}
+.main-content table {
+  font-size: 0.9rem;
+  width: auto;
+  max-width: 100%;
+}
+.main-content table th,
+.main-content table td {
+  padding: 0.35rem 0.5rem;
+  white-space: nowrap;
+}
 </style>
 
 # Lab 2: Empirical Risk and Simple Linear Regression
 
 **due** for completion at 11:59PM Ann Arbor Time on Monday, May 11th, 2026
 
+<div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab02/lab02.pdf" target="_blank">View as PDF ✏️</a>
+</div>
 
 {: .yellow }
 <div markdown="1">
@@ -86,39 +126,41 @@ In [Chapter 1.3](https://notes.eecs245.org/introduction-to-supervised-learning/a
 
     
 
-<div class="math-display">
-$$
-\underbrace{h(x_i) = w}_{\text{constant model}} \quad\quad \underbrace{h(x_i) = w_0 + w_1 x_i}_{\text{simple linear regression model}}
-$$
-</div>
+    <div class="math-display">
+    $$
+    \underbrace{h(x_i) = w}_{\text{constant model}} \quad\quad \underbrace{h(x_i) = w_0 + w_1 x_i}_{\text{simple linear regression model}}
+    $$
+    </div>
 
 2.  **Choose a loss function.**
 
     
 
-<div class="math-display">
-$$
-\underbrace{L_{\text{sq}}(y_i, h(x_i)) = (y_i - h(x_i))^2}_{\text{squared loss}} \quad\quad \underbrace{L_{\text{abs}}(y_i, h(x_i)) = |y_i - h(x_i)|}_{\text{absolute loss}}
-$$
-</div>
+    <div class="math-display">
+    $$
+    \underbrace{L_{\text{sq}}(y_i, h(x_i)) = (y_i - h(x_i))^2}_{\text{squared loss}} \quad\quad \underbrace{L_{\text{abs}}(y_i, h(x_i)) = |y_i - h(x_i)|}_{\text{absolute loss}}
+    $$
+    </div>
 
 3.  **Minimize *average loss* (also called *empirical risk*) to find optimal model parameters.**
 
-    -   Constant model, squared loss: <span class="math-inline">\\(\displaystyle R_{\text{sq}}(w) = \frac{1}{n} \sum_{i=1}^n (y_i - w)^2 \implies w^* = \bar{y}\\)</span>
+    -   Constant model, squared loss: <span class="math-inline">\\(\displaystyle R_{\text{sq}}(w) = \frac{1}{n} \sum_{i=1}^n (y_i - w)^2 \implies w^&#42; = \bar{y}\\)</span>
 
-    -   Constant model, absolute loss: <span class="math-inline">\\(\displaystyle R_{\text{abs}}(w) = \frac{1}{n} \sum_{i=1}^n |y_i - w| \implies w^* = \text{Median}(y_1, y_2, \ldots, y_n)\\)</span>
+    -   Constant model, absolute loss: <span class="math-inline">\\(\displaystyle R_{\text{abs}}(w) = \frac{1}{n} \sum_{i=1}^n |y_i - w| \implies w^&#42; = \text{Median}(y_1, y_2, \ldots, y_n)\\)</span>
 
     -   Simple linear regression model, squared loss: 
 
-<div class="math-display">
-$$
-\displaystyle R_{\text{sq}}(w_0, w_1) = \frac{1}{n} \sum_{i=1}^n (y_i - (w_0 + w_1 x_i))^2 \implies w_1^* = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}, \quad w_0^* = \bar{y} - w_1^* \bar{x}
-$$
-</div>
+    <div class="math-display">
+    $$
+    \displaystyle R_{\text{sq}}(w_0, w_1) = \frac{1}{n} \sum_{i=1}^n (y_i - (w_0 + w_1 x_i))^2 \implies w_1^* = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}, \quad w_0^* = \bar{y} - w_1^* \bar{x}
+    $$
+    </div>
+
+---
 
 ## Activity 1: Relative Squared Loss
 
-Suppose we'd like to find the optimal parameter, <span class="math-inline">\\(w^*\\)</span>, for the constant model <span class="math-inline">\\(h(x_i) = w\\)</span>. To do so, we use the following loss function, called the **relative squared loss**:
+Suppose we'd like to find the optimal parameter, <span class="math-inline">\\(w^&#42;\\)</span>, for the constant model <span class="math-inline">\\(h(x_i) = w\\)</span>. To do so, we use the following loss function, called the **relative squared loss**:
 
 <div class="math-display">
 $$
@@ -126,7 +168,7 @@ L_{\text{rsq}}(y_i, h(x_i)) = \frac{(y_i - h(x_i))^2}{y_i}
 $$
 </div>
 
-What value of <span class="math-inline">\\(w\\)</span> minimizes the average loss (i.e. empirical risk) when using the relative squared loss function -- that is, what is <span class="math-inline">\\(w^*\\)</span>? Your answer should only be in terms of the variables <span class="math-inline">\\(n, y_1, y_2, \ldots, y_n\\)</span>, and any constants.
+What value of <span class="math-inline">\\(w\\)</span> minimizes the average loss (i.e. empirical risk) when using the relative squared loss function -- that is, what is <span class="math-inline">\\(w^&#42;\\)</span>? Your answer should only be in terms of the variables <span class="math-inline">\\(n, y_1, y_2, \ldots, y_n\\)</span>, and any constants.
 
 ---
 
@@ -140,7 +182,7 @@ Consider a dataset of <span class="math-inline">\\(n\\)</span> **integers**, <sp
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Which of the following is closest to the constant prediction <span class="math-inline">\\(w^*\\)</span> that minimizes:
+Which of the following is closest to the constant prediction <span class="math-inline">\\(w^&#42;\\)</span> that minimizes:
 
 <div class="math-display">
 $$
@@ -152,7 +194,7 @@ $$
 $$
 </div>
 
-<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 </div>
 </div>
@@ -160,7 +202,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Which of the following is closest to the constant prediction <span class="math-inline">\\(w^*\\)</span> that minimizes:
+Which of the following is closest to the constant prediction <span class="math-inline">\\(w^&#42;\\)</span> that minimizes:
 
 <div class="math-display">
 $$
@@ -168,7 +210,7 @@ $$
 $$
 </div>
 
-<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 </div>
 </div>
@@ -176,7 +218,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-Which of the following is closest to the constant prediction <span class="math-inline">\\(w^*\\)</span> that minimizes:
+Which of the following is closest to the constant prediction <span class="math-inline">\\(w^&#42;\\)</span> that minimizes:
 
 <div class="math-display">
 $$
@@ -184,7 +226,7 @@ $$
 $$
 </div>
 
-<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 </div>
 </div>
@@ -192,7 +234,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
-Which of the following is closest to the constant prediction <span class="math-inline">\\(w^*\\)</span> that minimizes:
+Which of the following is closest to the constant prediction <span class="math-inline">\\(w^&#42;\\)</span> that minimizes:
 
 <div class="math-display">
 $$
@@ -202,17 +244,18 @@ $$
 
 <em>Hint: Think about the effect of outliers.</em>
 
-<div class="mc-options"><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(1\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(5\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(6\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(7\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(11\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(15\\)</span></span><span class="mc-option"><span class="math-inline">\\(\bigcirc\\)</span> <span class="math-inline">\\(30\\)</span></span></div>
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 </div>
 </div>
 
 </div>
+
 ---
 
 ## Activity 3: Slope of Mean Absolute Error
 
-Consider a dataset of 8 points, <span class="math-inline">\\(y_1, y_2, \ldots, y_8\\)</span> that are in sorted order, i.e. <span class="math-inline">\\(y_1 < y_2 < \ldots < y_8\\)</span>.
+Consider a dataset of 8 points, <span class="math-inline">\\(y_1, y_2, \ldots, y_8\\)</span> that are in sorted order, i.e. <span class="math-inline">\\(y_1 &lt; y_2 &lt; \ldots &lt; y_8\\)</span>.
 
 Recall that mean absolute error, <span class="math-inline">\\(R_{\text{abs}}(w)\\)</span>, for the constant model <span class="math-inline">\\(h(x_i) = w\\)</span> is defined as: 
 
@@ -288,13 +331,15 @@ Which move will change the slope of the regression line more? Why? *Hint: We're 
 
 ![image](imgs/dsc-prob-10-bw-arrows.png)
 
-**The rest of this worksheet is extra practice. Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.**
-
 </div>
 </div>
 
 </div>
+
 ---
+
+{: .yellow }
+> **The rest of this worksheet is extra practice. Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.**
 
 ## Activity 6: Relative Squared Loss, Continued
 
@@ -310,7 +355,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Let <span class="math-inline">\\(C(y_1, y_2, ..., y_n)\\)</span> be your minimizer <span class="math-inline">\\(w^*\\)</span> from Activity 1. That is, for a particular dataset <span class="math-inline">\\(y_1, y_2, ..., y_n\\)</span>, <span class="math-inline">\\(C(y_1, y_2, ..., y_n)\\)</span> is the value of <span class="math-inline">\\(w\\)</span> that minimizes empirical risk for relative squared loss on that dataset.
+Let <span class="math-inline">\\(C(y_1, y_2, ..., y_n)\\)</span> be your minimizer <span class="math-inline">\\(w^&#42;\\)</span> from Activity 1. That is, for a particular dataset <span class="math-inline">\\(y_1, y_2, ..., y_n\\)</span>, <span class="math-inline">\\(C(y_1, y_2, ..., y_n)\\)</span> is the value of <span class="math-inline">\\(w\\)</span> that minimizes empirical risk for relative squared loss on that dataset.
 
 What is the value of <span class="math-inline">\\(\displaystyle\lim_{y_4 \rightarrow \infty} C(1, 3, 5, y_4)\\)</span> in terms of <span class="math-inline">\\(C(1, 3, 5)\\)</span>? Your answer should involve the function <span class="math-inline">\\(C\\)</span> and/or one or more constants.
 
