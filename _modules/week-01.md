@@ -7,6 +7,7 @@ days:
       - name: LEC 1
         type: lecture
         title: Introduction, Models, and Loss Functions
+        recording: https://leccap.engin.umich.edu/leccap/player/r/MljzLL
         recording1: https://leccap.engin.umich.edu/leccap/player/r/UdXYVi
         recording2: https://leccap.engin.umich.edu/leccap/player/r/hO59Vx
         reading: https://notes.eecs245.org/advice/
