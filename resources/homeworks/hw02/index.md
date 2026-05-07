@@ -188,7 +188,7 @@ R_{LQ}(w) = \frac{1}{n} \sum_{i=1}^n \left[\log\left(\frac{y_i}{w}\right)\right]
 $$
 </div>
 
-\*Hint: This is a question involving the three-step modeling process. You'll want to start by finding <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} R_{LQ}(w)\\)</span> and setting that to 0. As a sub-problem, you'll need to find <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} \left[\log\left(\frac{y_i}{w}\right)\right]\\)</span>. Work one step at a time and make sure your logic is clearly justified. Review the logarithm rules presented in [Homework 1, Problem 5](https://eecs245.org/resources/homeworks/hw01.pdf), and also use the fact that if <span class="math-inline">\\(b = \log(a)\\)</span>, then <span class="math-inline">\\(a = e^b\\)</span>.*
+<em>Hint: This is a question involving the three-step modeling process. You'll want to start by finding <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} R_{LQ}(w)\\)</span> and setting that to 0. As a sub-problem, you'll need to find <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} \left[\log\left(\frac{y_i}{w}\right)\right]\\)</span>. Work one step at a time and make sure your logic is clearly justified. Review the logarithm rules presented in [Homework 1, Problem 5](https://eecs245.org/resources/homeworks/hw01.pdf), and also use the fact that if <span class="math-inline">\\(b = \log(a)\\)</span>, then <span class="math-inline">\\(a = e^b\\)</span>.</em>
 
 ---
 
@@ -222,7 +222,7 @@ Suppose we modify our dataset by replacing the value <span class="math-inline">\
 
 Both of your answers should be expressions involving <span class="math-inline">\\(V\\)</span>, <span class="math-inline">\\(\alpha\\)</span>, <span class="math-inline">\\(\beta\\)</span>, and/or constants.
 
-\*Hint: Think about the problem on your own for a while. If you're stuck, watch this [hint video](https://www.loom.com/share/f0980c9f4d5f4fada99b307014e05cd8?sid=2807514e-c1aa-42d8-8883-7e6d1fab5168).*
+<em>Hint: Think about the problem on your own for a while. If you're stuck, watch this [hint video](https://www.loom.com/share/f0980c9f4d5f4fada99b307014e05cd8?sid=2807514e-c1aa-42d8-8883-7e6d1fab5168).</em>
 
 </div>
 </div>
@@ -266,7 +266,7 @@ $$
 
 Let <span class="math-inline">\\(r'\\)</span> be the correlation coefficient between <span class="math-inline">\\(t\\)</span> and <span class="math-inline">\\(y\\)</span>. Prove that <span class="math-inline">\\(r' = -r\\)</span>.
 
-\*Hint: You can use the facts that if <span class="math-inline">\\(t_i = ax_i + b\\)</span>, then <span class="math-inline">\\(\bar{t} = a\bar{x} + b\\)</span> and <span class="math-inline">\\(\sigma_t = |a|\sigma_x\\)</span>, without proof. Everything else must be derived from the definition of the correlation coefficient.*
+<em>Hint: You can use the facts that if <span class="math-inline">\\(t_i = ax_i + b\\)</span>, then <span class="math-inline">\\(\bar{t} = a\bar{x} + b\\)</span> and <span class="math-inline">\\(\sigma_t = |a|\sigma_x\\)</span>, without proof. Everything else must be derived from the definition of the correlation coefficient.</em>
 
 </div>
 </div>
@@ -348,7 +348,7 @@ $$
 
 Your answer should be a number with no variables.
 
-\*Hint: There are many equivalent formulas for the slope of the regression line. We recommend using this one for this problem: 
+<em>Hint: There are many equivalent formulas for the slope of the regression line. We recommend using this one for this problem: 
 
 <div class="math-display">
 $$
@@ -356,8 +356,7 @@ w_1^* = \displaystyle\frac{\displaystyle\sum_{i=1}^n (x_i - \overline x)y_i}{\di
 $$
 </div>
 
-*
-
+</em>
 </div>
 </div>
 
@@ -368,7 +367,7 @@ $$
 
 Which of the following values is greater: <span class="math-inline">\\(|h_A(40) - h_B(40)|\\)</span> or <span class="math-inline">\\(|h_A(42) - h_B(42)|\\)</span>? Why?
 
-\*Hint: Intuitively, we're asking which input's predicted value changes more by switching from <span class="math-inline">\\(A\\)</span> to <span class="math-inline">\\(B\\)</span>. Don't try and expand the absolute differences or find their values exactly. Instead, draw a picture of both lines. For each line, there is one point that it is guaranteed to pass through. Using your knowledge of that point, and the slopes of the lines, you should be able to reason about which difference is greater. In your picture, assume that the lines intersect at some point to the left of <span class="math-inline">\\(x = 40\\)</span>.*
+<em>Hint: Intuitively, we're asking which input's predicted value changes more by switching from <span class="math-inline">\\(A\\)</span> to <span class="math-inline">\\(B\\)</span>. Don't try and expand the absolute differences or find their values exactly. Instead, draw a picture of both lines. For each line, there is one point that it is guaranteed to pass through. Using your knowledge of that point, and the slopes of the lines, you should be able to reason about which difference is greater. In your picture, assume that the lines intersect at some point to the left of <span class="math-inline">\\(x = 40\\)</span>.</em>
 
 </div>
 </div>

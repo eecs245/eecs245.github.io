@@ -247,9 +247,9 @@ def wrap_bare_alignment_environments(text: str) -> str:
     def replace(match: re.Match[str]) -> str:
         start = match.start()
         end = match.end()
-        before = text[max(0, start - 3):start]
-        after = text[end:end + 3]
-        if before.endswith("$$") or after.startswith("$$"):
+        before = text[max(0, start - 50):start]
+        after = text[end:end + 50]
+        if "$$" in before.split('\n')[-1] or "$$" in after.split('\n')[0]:
             return match.group(0)
         return "\n$$\n" + match.group(0) + "\n$$\n"
 
@@ -629,12 +629,18 @@ def can_join_part_first_line(line: str) -> bool:
 def fix_leading_italics(text: str) -> str:
     """Fix italics at line start being interpreted as bullet points.
     
-    When a line starts with *text (italics), markdown may interpret it as
-    a bullet point if there's whitespace after the *. We fix this by escaping
-    the leading asterisk when it's followed immediately by a non-space character
-    (which indicates italics, not a bullet point).
+    When a line starts with *text* (italics), markdown may interpret the leading
+    asterisk as a bullet point. We fix this by converting such lines to use
+    HTML <em> tags instead. Handles both single-line and multi-line italics.
     """
-    return re.sub(r"^(\*)([^\s*])", r"\\*\2", text, flags=re.M)
+    def convert_to_em(match: re.Match[str]) -> str:
+        content = match.group(1)
+        return f"<em>{content}</em>"
+    
+    text = re.sub(r"^\*([^*\n]+)\*$", convert_to_em, text, flags=re.M)
+    text = re.sub(r"^\*([A-Z][a-z]+:)", r"<em>\1", text, flags=re.M)
+    text = re.sub(r"^\*\s*$", "</em>", text, flags=re.M)
+    return text
 
 
 def add_total_points_separator(text: str) -> str:

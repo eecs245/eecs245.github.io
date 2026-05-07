@@ -25,7 +25,7 @@ days:
         title: Projections, Span, and Linear Independence
       - name: HW 2
         type: hw
-        title: Empirical Risk and Simple Linear Regression
+        title: <b>Empirical Risk and Simple Linear Regression</b>
         problems: ../resources/homeworks/hw02/
   - date: "2026-05-14"
     events:
