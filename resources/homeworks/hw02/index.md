@@ -188,7 +188,7 @@ R_{LQ}(w) = \frac{1}{n} \sum_{i=1}^n \left[\log\left(\frac{y_i}{w}\right)\right]
 $$
 </div>
 
-<em>Hint: This is a question involving the three-step modeling process. You'll want to start by finding <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} R_{LQ}(w)\\)</span> and setting that to 0. As a sub-problem, you'll need to find <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} \left[\log\left(\frac{y_i}{w}\right)\right]\\)</span>. Work one step at a time and make sure your logic is clearly justified. Review the logarithm rules presented in [Homework 1, Problem 5](https://eecs245.org/resources/homeworks/hw01.pdf), and also use the fact that if <span class="math-inline">\\(b = \log(a)\\)</span>, then <span class="math-inline">\\(a = e^b\\)</span>.</em>
+<em>Hint: This is a question involving the three-step modeling process. You'll want to start by finding <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} R_{LQ}(w)\\)</span> and setting that to 0. As a sub-problem, you'll need to find <span class="math-inline">\\(\frac{\text{d}}{\text{d}w} \left[\log\left(\frac{y_i}{w}\right)\right]\\)</span>. Work one step at a time and make sure your logic is clearly justified. Review the logarithm rules presented in [Homework 1, Problem 5](https://eecs245.org/resources/homeworks/hw01/#problem-5-mean-imputation-6-pts), and also use the fact that if <span class="math-inline">\\(b = \log(a)\\)</span>, then <span class="math-inline">\\(a = e^b\\)</span>.</em>
 
 ---
 
@@ -298,7 +298,7 @@ $$
 $$
 </div>
 
-    Give a two-sentence English explanation of why this is the case.
+Give a two-sentence English explanation of why this is the case.
 
 </div>
 </div>
@@ -348,15 +348,13 @@ $$
 
 Your answer should be a number with no variables.
 
-<em>Hint: There are many equivalent formulas for the slope of the regression line. We recommend using this one for this problem: 
+<em>Hint: There are many equivalent formulas for the slope of the regression line. We recommend using this one for this problem:</em>
 
 <div class="math-display">
 $$
 w_1^* = \displaystyle\frac{\displaystyle\sum_{i=1}^n (x_i - \overline x)y_i}{\displaystyle\sum_{i=1}^n (x_i - \overline x)^2}
 $$
 </div>
-
-</em>
 </div>
 </div>
 

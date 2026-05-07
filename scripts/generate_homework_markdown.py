@@ -638,8 +638,18 @@ def fix_leading_italics(text: str) -> str:
         return f"<em>{content}</em>"
     
     text = re.sub(r"^\*([^*\n]+)\*$", convert_to_em, text, flags=re.M)
-    text = re.sub(r"^\*([A-Z][a-z]+:)", r"<em>\1", text, flags=re.M)
-    text = re.sub(r"^\*\s*$", "</em>", text, flags=re.M)
+    
+    def convert_multiline_to_em(match: re.Match[str]) -> str:
+        first_line = match.group(1)
+        rest = match.group(2)
+        return f"<em>{first_line}</em>{rest}"
+    
+    text = re.sub(
+        r"^\*([A-Z][a-z]+:[^\n]+)\n(.*?)^\*\s*$",
+        convert_multiline_to_em,
+        text,
+        flags=re.M | re.S,
+    )
     return text
 
 
