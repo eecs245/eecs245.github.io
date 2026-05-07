@@ -446,7 +446,7 @@ def build_homework_page(
         "",
         f"# {metadata.assignment}",
         "",
-        f"**Due:** {metadata.due_date}",
+        f"**due** {metadata.due_date}",
         "",
     ]
     if pdf_button:

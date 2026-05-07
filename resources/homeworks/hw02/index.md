@@ -42,7 +42,7 @@ nav_exclude: true
 
 # Homework 2: Empirical Risk and Simple Linear Regression
 
-**Due:** Wednesday, May 13th, 2026 at 11:59PM Ann Arbor Time
+**due** Wednesday, May 13th, 2026 at 11:59PM Ann Arbor Time
 
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw02/hw02.pdf" target="_blank">View as PDF ✏️</a>
 
@@ -298,7 +298,7 @@ $$
 $$
 </div>
 
-Give a two-sentence English explanation of why this is the case.
+    Give a two-sentence English explanation of why this is the case.
 
 </div>
 </div>
@@ -348,13 +348,13 @@ $$
 
 Your answer should be a number with no variables.
 
-<em>Hint: There are many equivalent formulas for the slope of the regression line. We recommend using this one for this problem:</em>
-
+<em>Hint: There are many equivalent formulas for the slope of the regression line. We recommend using this one for this problem: </em>
 <div class="math-display">
 $$
 w_1^* = \displaystyle\frac{\displaystyle\sum_{i=1}^n (x_i - \overline x)y_i}{\displaystyle\sum_{i=1}^n (x_i - \overline x)^2}
 $$
 </div>
+
 </div>
 </div>
 
