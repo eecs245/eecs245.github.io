@@ -25,10 +25,11 @@
             </p>
             <div class="event-links">
                 {%- if event.type == "lecture" or event.type == "review" or event.type == "lab" or event.type == "exam" or event.type == "hw" -%}
-                {%- if event.problems -%}
+                {%- if event.problems and event.solutions == true -%}
+                <a href="{{ event.problems }}" class="btn btn-info btn-sm">✅ Problems and Solutions</a>
+                {%- elsif event.problems -%}
                 <a href="{{ event.problems }}" class="btn btn-info btn-sm">🧠 Problems</a>
-                {%- endif -%}
-                {%- if event.solutions -%}
+                {%- elsif event.solutions and event.solutions != true -%}
                 <a href="{{ event.solutions }}" class="btn btn-info btn-sm">✅ Solutions</a>
                 {%- endif -%}
                 {%- if event.template -%}
