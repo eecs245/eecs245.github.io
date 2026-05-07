@@ -289,7 +289,7 @@ There are two ways to access the supplemental Jupyter Notebook:
 
 -   **Option 2**: Click [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fsp26-code&urlpath=tree%2Fsp26-code%2Flabs%2Flab02%2Flab02.ipynb&branch=main) to open `lab02.ipynb` on DataHub. Before doing so, read the instructions on the [Environment Setup](https://eecs245.org/env-setup/#option-2-using-the-eecs-245-datahub) page on how to use the DataHub.
 
-Once you're done, include a screenshot of your completed Activity 4 implementation in your PDF submission of Lab 2 to Gradescope, making sure to include proof that the (local) autograder passed.
+Once you're done, run `grader.check_all()` in `lab02.ipynb`. At the very bottom of your PDF submission of Lab 2 to Gradescope, include a screenshot of the output showing that all test cases passed.
 
 ---
 
