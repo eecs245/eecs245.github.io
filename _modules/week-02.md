@@ -23,7 +23,7 @@ days:
     events:
       - name: Lab 3
         type: lab
-        title: Projections, Span, and Linear Independence
+        title: Simple Linear Regression and Partial Derivatives
         problems: ../resources/labs/lab03/
       - name: HW 2
         type: hw
