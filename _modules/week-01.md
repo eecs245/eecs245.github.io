@@ -24,7 +24,8 @@ days:
       - name: Lab 1
         type: lab
         title: <b>Math Foundations and Environment Setup</b>
-        problems: resources/labs/lab01/lab01.pdf
+        problems: ../resources/labs/lab01/
+        solutions: true
   - date: "2026-05-07"
     events:
       - name: LEC 2
@@ -51,5 +52,5 @@ days:
       - name: HW 1
         type: hw
         title: <b>Means, Sums, and Calculus</b>
-        problems: resources/homeworks/hw01/hw01.pdf
+        problems: ../resources/homeworks/hw01/
 ---

@@ -29,6 +29,291 @@ Note that the midterm exams in Fall 2025 were 80 minutes long and administered i
 | Fall 2025 | [Exam](../resources/exams/fa25-mt1.pdf), [Solutions](../resources/exams/fa25-mt1-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qRjWWjsENcWsxgtgJ2bJAl4) | [Exam](../resources/exams/fa25-mt2.pdf), [Solutions](../resources/exams/fa25-mt2-solutions.pdf) | [Exam](../resources/exams/fa25-final.pdf), [Solutions](../resources/exams/fa25-final-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qS-QgZ2hY-FJkqClfbGu7ds) |
 | Mock Exams | [Exam](../resources/exams/mock-mt1.pdf), [Solutions](../resources/exams/mock-mt1-solutions.pdf) | [Exam](../resources/exams/mock-mt2.pdf), [Solutions](../resources/exams/mock-mt2-solutions.pdf) | In lieu of a mock Final Exam, we provided these [Post-Midterm 2 practice problems](../post-mt2-practice) |
 
+### Problems by Topic
+
+Problems are linked based on the chapter they correspond to in the [course notes](https://notes.eecs245.org). Generally, Chapters 1-4 correspond to Midterm 1 and Chapters 5-8 correspond to Midterm 2. If any questions seem miscategorized, let us know.
+
+<style>
+.exam-topic-browser {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.exam-topic-list {
+  border: 1px solid #d0d7de;
+  border-radius: 3px;
+  padding: 0.5rem;
+  background: #f6f8fa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+.exam-topic-btn {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-radius: 3px;
+  padding: 0.55rem 0.65rem;
+  margin: 0.2rem 0;
+  background: transparent;
+  color: #24292f;
+  cursor: pointer;
+  font: inherit;
+}
+.exam-topic-btn small {
+  display: block;
+  margin-top: 0.2rem;
+  color: #57606a;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.exam-topic-btn:hover {
+  background: #eaeef2;
+}
+.exam-topic-btn.active {
+  background: #dbeafe;
+  font-weight: 600;
+}
+.exam-topic-content {
+  border: 1px solid #d0d7de;
+  border-radius: 3px;
+  padding: 0.9rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 430px;
+  justify-self: start;
+}
+@media (max-width: 900px) {
+  .exam-topic-browser {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="exam-topic-browser">
+  <div id="exam-topic-list" class="exam-topic-list" aria-label="Notes chapters"></div>
+  <div class="exam-topic-content">
+    <ul id="exam-topic-links"></ul>
+  </div>
+</div>
+
+<script>
+const examTopics = [
+  {
+    title: "1. Introduction to Supervised Learning",
+    summary: "squared loss and the constant model, absolute loss, comparing loss functions",
+    links: [
+      ["FA25 MT1 Problem 1", "../resources/exams/fa25-mt1.pdf#page=3"],
+      ["FA25 MT1 Problem 2", "../resources/exams/fa25-mt1.pdf#page=4"],
+      ["FA25 Final Problem 1", "../resources/exams/fa25-final.pdf#page=3"],
+      ["Mock MT1 Problem 1", "../resources/exams/mock-mt1.pdf#page=3"],
+      ["Mock MT1 Problem 2", "../resources/exams/mock-mt1.pdf#page=4"],
+      ["WN26 MT1 Problem 1", "../resources/exams/wn26-mt1.pdf#page=3"],
+      ["WN26 MT1 Problem 7", "../resources/exams/wn26-mt1.pdf#page=10"],
+      ["WN26 Final Problem 1", "../resources/exams/wn26-final.pdf#page=3"]
+    ]
+  },
+  {
+    title: "2. Simple Linear Regression",
+    summary: "partial derivatives, finding optimal parameters, correlation",
+    links: [
+      ["FA25 MT1 Problem 3", "../resources/exams/fa25-mt1.pdf#page=6"],
+      ["FA25 Final Problem 2", "../resources/exams/fa25-final.pdf#page=4"],
+      ["Mock MT1 Problem 3", "../resources/exams/mock-mt1.pdf#page=6"],
+      ["WN26 MT1 Problem 2", "../resources/exams/wn26-mt1.pdf#page=5"],
+      ["WN26 Final Problem 2", "../resources/exams/wn26-final.pdf#page=4"]
+    ]
+  },
+  {
+    title: "3. Vectors",
+    summary: "vectors and linear combinations, norms, dot product, projecting onto a single vector",
+    links: [
+      ["FA25 MT1 Problem 4", "../resources/exams/fa25-mt1.pdf#page=7"],
+      ["FA25 MT1 Problem 8", "../resources/exams/fa25-mt1.pdf#page=11"],
+      ["FA25 Final Problem 3", "../resources/exams/fa25-final.pdf#page=5"],
+      ["Mock MT1 Problem 4", "../resources/exams/mock-mt1.pdf#page=7"],
+      ["Mock MT1 Problem 7", "../resources/exams/mock-mt1.pdf#page=11"],
+      ["WN26 MT1 Problem 4", "../resources/exams/wn26-mt1.pdf#page=7"],
+      ["WN26 Final Problem 3", "../resources/exams/wn26-final.pdf#page=5"]
+    ]
+  },
+  {
+    title: "4. Linear Independence",
+    summary: "span, linear independence, lines/planes/hyperplanes, vector spaces/basis/dimension",
+    links: [
+      ["FA25 MT1 Problem 6", "../resources/exams/fa25-mt1.pdf#page=9"],
+      ["FA25 MT1 Problem 7", "../resources/exams/fa25-mt1.pdf#page=10"],
+      ["FA25 Final Problem 4", "../resources/exams/fa25-final.pdf#page=6"],
+      ["Mock MT1 Problem 5", "../resources/exams/mock-mt1.pdf#page=9"],
+      ["Mock MT1 Problem 6", "../resources/exams/mock-mt1.pdf#page=10"],
+      ["WN26 MT1 Problem 6", "../resources/exams/wn26-mt1.pdf#page=9"],
+      ["WN26 Final Problem 4", "../resources/exams/wn26-final.pdf#page=6"]
+    ]
+  },
+  {
+    title: "5. Matrices",
+    summary: "matrix operations, special matrices, rank and column space, null space and rank-nullity",
+    links: [
+      ["FA25 MT2 Problem 1", "../resources/exams/fa25-mt2.pdf#page=3"],
+      ["FA25 MT2 Problem 2", "../resources/exams/fa25-mt2.pdf#page=4"],
+      ["FA25 MT2 Problem 3", "../resources/exams/fa25-mt2.pdf#page=6"],
+      ["FA25 Final Problem 5", "../resources/exams/fa25-final.pdf#page=7"],
+      ["Mock MT2 Problem 1", "../resources/exams/mock-mt2.pdf#page=3"],
+      ["Mock MT2 Problem 2", "../resources/exams/mock-mt2.pdf#page=4"],
+      ["Mock MT2 Problem 4", "../resources/exams/mock-mt2.pdf#page=8"],
+      ["WN26 MT2 Problem 2", "../resources/exams/wn26-mt2.pdf#page=4"],
+      ["WN26 MT2 Problem 3", "../resources/exams/wn26-mt2.pdf#page=5"],
+      ["WN26 MT2 Problem 5", "../resources/exams/wn26-mt2.pdf#page=7"],
+      ["WN26 Final Problem 5", "../resources/exams/wn26-final.pdf#page=6"]
+    ]
+  },
+  {
+    title: "6. Linear Transformations and Projections",
+    summary: "linear transformations, inverses, projecting onto column space, complete solution to the normal equations",
+    links: [
+      ["FA25 MT1 Problem 5", "../resources/exams/fa25-mt1.pdf#page=8"],
+      ["FA25 MT2 Problem 5", "../resources/exams/fa25-mt2.pdf#page=9"],
+      ["Mock MT2 Problem 3", "../resources/exams/mock-mt2.pdf#page=5"],
+      ["WN26 MT1 Problem 3", "../resources/exams/wn26-mt1.pdf#page=6"],
+      ["WN26 MT1 Problem 5", "../resources/exams/wn26-mt1.pdf#page=8"],
+      ["WN26 MT2 Problem 4", "../resources/exams/wn26-mt2.pdf#page=6"],
+      ["WN26 Final Problem 6", "../resources/exams/wn26-final.pdf#page=7"],
+      ["WN26 Final Problem 5", "../resources/exams/wn26-final.pdf#page=6"]
+    ]
+  },
+  {
+    title: "7. Regression Using Linear Algebra",
+    summary: "regression using linear algebra, design matrices",
+    links: [
+      ["FA25 MT2 Problem 4", "../resources/exams/fa25-mt2.pdf#page=7"],
+      ["FA25 Final Problem 8", "../resources/exams/fa25-final.pdf#page=9"],
+      ["Mock MT2 Problem 5", "../resources/exams/mock-mt2.pdf#page=9"],
+      ["WN26 MT2 Problem 6", "../resources/exams/wn26-mt2.pdf#page=8"],
+      ["WN26 Final Problem 7", "../resources/exams/wn26-final.pdf#page=8"]
+    ]
+  },
+  {
+    title: "8. Gradients",
+    summary: "gradient vector, gradients + matrix/vector operations, gradient descent, convexity, positive definite matrices",
+    links: [
+      ["FA25 MT2 Problem 6", "../resources/exams/fa25-mt2.pdf#page=10"],
+      ["FA25 MT2 Problem 7", "../resources/exams/fa25-mt2.pdf#page=11"],
+      ["FA25 Final Problem 6", "../resources/exams/fa25-final.pdf#page=8"],
+      ["FA25 Final Problem 7", "../resources/exams/fa25-final.pdf#page=8"],
+      ["Mock MT2 Problem 6", "../resources/exams/mock-mt2.pdf#page=11"],
+      ["Mock MT2 Problem 7", "../resources/exams/mock-mt2.pdf#page=12"],
+      ["Mock MT2 Problem 8", "../resources/exams/mock-mt2.pdf#page=13"],
+      ["WN26 MT2 Problem 7", "../resources/exams/wn26-mt2.pdf#page=10"],
+      ["WN26 MT2 Problem 8", "../resources/exams/wn26-mt2.pdf#page=11"],
+      ["WN26 Final Problem 8", "../resources/exams/wn26-final.pdf#page=9"]
+    ]
+  },
+  {
+    title: "9. Eigenvalues and Eigenvectors",
+    summary: "eigenvalues and eigenvectors, characteristic polynomial, markov chains + adjacency matrices, multiplicities + diagonalization",
+    links: [
+      ["FA25 Final Problem 9", "../resources/exams/fa25-final.pdf#page=10"],
+      ["FA25 Final Problem 10", "../resources/exams/fa25-final.pdf#page=11"],
+      ["FA25 Final Problem 11", "../resources/exams/fa25-final.pdf#page=12"],
+      ["WN26 MT2 Problem 1", "../resources/exams/wn26-mt2.pdf#page=3"],
+      ["WN26 Final Problem 9", "../resources/exams/wn26-final.pdf#page=10"],
+      ["WN26 Final Problem 10", "../resources/exams/wn26-final.pdf#page=11"],
+      ["WN26 Final Problem 11", "../resources/exams/wn26-final.pdf#page=12"]
+    ]
+  },
+  {
+    title: "10. Singular Value Decomposition",
+    summary: "computing SVD, low-rank approximation, best direction, principal components analysis",
+    links: [
+      ["FA25 Final Problem 12", "../resources/exams/fa25-final.pdf#page=13"],
+      ["WN26 Final Problem 12", "../resources/exams/wn26-final.pdf#page=13"]
+    ]
+  }
+];
+
+const topicList = document.getElementById("exam-topic-list");
+const topicLinks = document.getElementById("exam-topic-links");
+const TOPIC_STORAGE_KEY = "resources_exam_topic_index_v1";
+
+function termRank(label) {
+  if (label.startsWith("Mock ")) return 0;
+  if (label.startsWith("FA25 ")) return 1;
+  if (label.startsWith("WN26 ")) return 2;
+  if (label.startsWith("SP26 ")) return 3;
+  return 99;
+}
+
+function examTypeRank(label) {
+  if (label.includes(" MT1 ")) return 0;
+  if (label.includes(" MT2 ")) return 1;
+  if (label.includes(" Final ")) return 2;
+  return 99;
+}
+
+function problemNumber(label) {
+  const match = label.match(/Problem\\s+(\\d+)/);
+  return match ? Number(match[1]) : 999;
+}
+
+function sortTopicLinks(links) {
+  return [...links].sort((a, b) => {
+    const labelA = a[0];
+    const labelB = b[0];
+    const byTerm = termRank(labelA) - termRank(labelB);
+    if (byTerm !== 0) return byTerm;
+    const byType = examTypeRank(labelA) - examTypeRank(labelB);
+    if (byType !== 0) return byType;
+    return problemNumber(labelA) - problemNumber(labelB);
+  });
+}
+
+function renderTopic(index) {
+  topicLinks.innerHTML = "";
+  const sortedLinks = sortTopicLinks(examTopics[index].links);
+  for (const [label, href] of sortedLinks) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = href;
+    a.textContent = label;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    li.appendChild(a);
+    topicLinks.appendChild(li);
+  }
+  const buttons = topicList.querySelectorAll(".exam-topic-btn");
+  buttons.forEach((btn, i) => {
+    btn.classList.toggle("active", i === index);
+    btn.setAttribute("aria-selected", i === index ? "true" : "false");
+  });
+  try {
+    localStorage.setItem(TOPIC_STORAGE_KEY, String(index));
+  } catch (err) {}
+}
+
+examTopics.forEach((topic, index) => {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "exam-topic-btn";
+  btn.innerHTML = `${topic.title}<small>${topic.summary}</small>`;
+  btn.setAttribute("role", "tab");
+  btn.onclick = () => renderTopic(index);
+  topicList.appendChild(btn);
+});
+
+let initialTopicIndex = 0;
+try {
+  const saved = localStorage.getItem(TOPIC_STORAGE_KEY);
+  const parsed = Number(saved);
+  if (Number.isInteger(parsed) && parsed >= 0 && parsed < examTopics.length) {
+    initialTopicIndex = parsed;
+  }
+} catch (err) {}
+
+renderTopic(initialTopicIndex);
+</script>
 
 ---
 
