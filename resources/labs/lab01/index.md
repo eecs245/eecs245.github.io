@@ -283,10 +283,9 @@ Consider the following summations involving the first <span class="math-inline">
 <div class="math-display">
 $$
 \begin{align*}
-    1 + 2 + 3 + \ldots + n &= \sum_{i=1}^n i = \frac{n(n+1)}{2} \\\\
-    1^2 + 2^2 + 3^2 + \ldots + n^2 &= \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}
-    % 1^3 + 2^3 + 3^3 + \ldots + n^3 &= \sum_{i=1}^n i^3 = \left( \frac{n(n+1)}{2} \right)^2
-  \end{align*}
+1 + 2 + 3 + \ldots + n &= \sum_{i=1}^n i = \frac{n(n+1)}{2} \\\\
+1^2 + 2^2 + 3^2 + \ldots + n^2 &= \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}
+\end{align*}
 $$
 </div>
 

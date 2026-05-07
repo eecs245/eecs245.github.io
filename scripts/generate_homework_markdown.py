@@ -241,17 +241,35 @@ def transform_assignment_tex(text: str) -> str:
     return text
 
 
+def clean_align_content(content: str) -> str:
+    """Clean up align environment content for markdown rendering."""
+    lines = content.split('\n')
+    cleaned = []
+    for line in lines:
+        line = re.sub(r'%.*$', '', line)
+        line = line.strip()
+        if line:
+            cleaned.append(line)
+    return '\n'.join(cleaned)
+
+
 def wrap_bare_alignment_environments(text: str) -> str:
-    pattern = re.compile(r"\\begin\{(align\*?|aligned)\}.*?\\end\{\1\}", re.S)
+    pattern = re.compile(r"(\\begin\{(align\*?|aligned)\})(.*?)(\\end\{\2\})", re.S)
 
     def replace(match: re.Match[str]) -> str:
         start = match.start()
         end = match.end()
         before = text[max(0, start - 50):start]
         after = text[end:end + 50]
+        begin_tag = match.group(1)
+        env_name = match.group(2)
+        content = match.group(3)
+        end_tag = match.group(4)
+        cleaned_content = clean_align_content(content)
+        result = f"{begin_tag}\n{cleaned_content}\n{end_tag}"
         if "$$" in before.split('\n')[-1] or "$$" in after.split('\n')[0]:
-            return match.group(0)
-        return "\n$$\n" + match.group(0) + "\n$$\n"
+            return result
+        return f"\n$$\n{result}\n$$\n"
 
     return pattern.sub(replace, text)
 
