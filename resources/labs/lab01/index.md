@@ -42,7 +42,7 @@ nav_exclude: true
 
 # Lab 1: Math Foundations and Environment Setup
 
-**Due:** for completion at 11:59PM Ann Arbor Time on Wednesday, May 6th, 2026
+**due** for completion at 11:59PM Ann Arbor Time on Wednesday, May 6th, 2026
 
 <a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab01/lab01.pdf" target="_blank">View as PDF ✏️</a>
 

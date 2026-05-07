@@ -42,7 +42,7 @@ nav_exclude: true
 
 # Homework 1: Means, Sums, and Calculus
 
-**Due:** Sunday, May 10th, 2026 at 11:59PM Ann Arbor Time
+**due** Sunday, May 10th, 2026 at 11:59PM Ann Arbor Time
 
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw01/hw01.pdf" target="_blank">View as PDF ✏️</a>
 
@@ -431,10 +431,10 @@ First, some useful properties of logarithms:
 <div class="math-display">
 $$
 \begin{align*}
-    \log(ab) &= \log(a) + \log(b) \\\\
-    \log(a^b) &= b \log(a) \\\\
-    \frac{\text{d} \log(x)}{\text{d}x} &= \frac{1}{x} \\\\
-    \frac{\text{d} \log(f(x))}{\text{d}x} &= \frac{1}{f(x)} \cdot \frac{\text{d} f}{\text{d}x} \quad \text{(by the chain rule)}
+\log(ab) &= \log(a) + \log(b) \\\\
+\log(a^b) &= b \log(a) \\\\
+\frac{\text{d} \log(x)}{\text{d}x} &= \frac{1}{x} \\\\
+\frac{\text{d} \log(f(x))}{\text{d}x} &= \frac{1}{f(x)} \cdot \frac{\text{d} f}{\text{d}x} \quad \text{(by the chain rule)}
 \end{align*}
 $$
 </div>
