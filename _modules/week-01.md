@@ -32,6 +32,7 @@ days:
       - name: LEC 2
         type: lecture
         title: Empirical Risk Minimization and Simple Linear Regression
+        recording: https://leccap.engin.umich.edu/leccap/player/r/yxUqqL
         reading: https://notes.eecs245.org/introduction-to-supervised-learning/absolute-loss/
         reading_text: Ch. 1.3
         reading2: https://notes.eecs245.org/introduction-to-supervised-learning/comparing-loss-functions/
