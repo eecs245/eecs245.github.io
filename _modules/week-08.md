@@ -21,5 +21,5 @@ days:
     events:
       - name: EXAM
         type: exam
-        title: "<b>Final Exam (8-10AM)</b>"
+        title: "<b>Final Exam (8-10AM, 1018 DOW)</b>"
 ---

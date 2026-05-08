@@ -37,7 +37,7 @@ days:
     events:
       - name: EXAM
         type: exam
-        title: "<b>Midterm 1 (1-3PM)</b>"
+        title: "<b>Midterm 1 (1-3PM, 1690 BBB)</b>"
         note: Note that this is the updated date/time.
   - date: "2026-05-24"
     events:
