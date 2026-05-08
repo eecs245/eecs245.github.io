@@ -113,8 +113,12 @@ Feel free to work with others in the course, but you must submit individually.
 - [Activity 2: Rapid Fire](#activity-2-rapid-fire)
 - [Activity 3: Slope of Mean Absolute Error](#activity-3-slope-of-mean-absolute-error)
 - [Activity 4: Programming](#activity-4-programming)
-- [Activity 5: Visualizing Changes in the Data](#activity-5-visualizing-changes-in-the-data)
-- [Activity 6: Relative Squared Loss, Continued](#activity-6-relative-squared-loss-continued)
+- [Activity 5: Reverse Regression](#activity-5-reverse-regression)
+- [Activity 6: Transformed Data](#activity-6-transformed-data)
+- [Activity 7: Relative Squared Loss, Continued](#activity-7-relative-squared-loss-continued)
+- [Activity 8: The Meaning of Mean Squared Error](#activity-8-the-meaning-of-mean-squared-error)
+- [Activity 9: What Do You Mean?](#activity-9-what-do-you-mean)
+- [Activity 10: A Refresher](#activity-10-a-refresher)
 
 ---
 
@@ -126,41 +130,41 @@ In [Chapter 1.3](https://notes.eecs245.org/introduction-to-supervised-learning/a
 
     
 
-    <div class="math-display">
-    $$
-    \underbrace{h(x_i) = w}_{\text{constant model}} \quad\quad \underbrace{h(x_i) = w_0 + w_1 x_i}_{\text{simple linear regression model}}
-    $$
-    </div>
+<div class="math-display">
+$$
+\underbrace{h(x_i) = w}_{\text{constant model}} \quad\quad \underbrace{h(x_i) = w_0 + w_1 x_i}_{\text{simple linear regression model}}
+$$
+</div>
 
 2.  **Choose a loss function.**
 
     
 
-    <div class="math-display">
-    $$
-    \underbrace{L_{\text{sq}}(y_i, h(x_i)) = (y_i - h(x_i))^2}_{\text{squared loss}} \quad\quad \underbrace{L_{\text{abs}}(y_i, h(x_i)) = |y_i - h(x_i)|}_{\text{absolute loss}}
-    $$
-    </div>
+<div class="math-display">
+$$
+\underbrace{L_{\text{sq}}(y_i, h(x_i)) = (y_i - h(x_i))^2}_{\text{squared loss}} \quad\quad \underbrace{L_{\text{abs}}(y_i, h(x_i)) = |y_i - h(x_i)|}_{\text{absolute loss}}
+$$
+</div>
 
 3.  **Minimize *average loss* (also called *empirical risk*) to find optimal model parameters.**
 
-    -   Constant model, squared loss: <span class="math-inline">\\(\displaystyle R_{\text{sq}}(w) = \frac{1}{n} \sum_{i=1}^n (y_i - w)^2 \implies w^&#42; = \bar{y}\\)</span>
+    -   Constant model, squared loss: <span class="math-inline">\\(\displaystyle R&#95;{\text{sq}}(w) = \frac{1}{n} \sum&#95;{i=1}^n (y&#95;i - w)^2 \implies w^&#42; = \bar{y}\\)</span>
 
-    -   Constant model, absolute loss: <span class="math-inline">\\(\displaystyle R_{\text{abs}}(w) = \frac{1}{n} \sum_{i=1}^n |y_i - w| \implies w^&#42; = \text{Median}(y_1, y_2, \ldots, y_n)\\)</span>
+    -   Constant model, absolute loss: <span class="math-inline">\\(\displaystyle R&#95;{\text{abs}}(w) = \frac{1}{n} \sum&#95;{i=1}^n |y&#95;i - w| \implies w^&#42; = \text{Median}(y&#95;1, y&#95;2, \ldots, y&#95;n)\\)</span>
 
     -   Simple linear regression model, squared loss: 
 
-    <div class="math-display">
-    $$
-    \displaystyle R_{\text{sq}}(w_0, w_1) = \frac{1}{n} \sum_{i=1}^n (y_i - (w_0 + w_1 x_i))^2 \implies w_1^* = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}, \quad w_0^* = \bar{y} - w_1^* \bar{x}
-    $$
-    </div>
+<div class="math-display">
+$$
+\displaystyle R_{\text{sq}}(w_0, w_1) = \frac{1}{n} \sum_{i=1}^n (y_i - (w_0 + w_1 x_i))^2 \implies w_1^* = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}, \quad w_0^* = \bar{y} - w_1^* \bar{x}
+$$
+</div>
 
 ---
 
 ## Activity 1: Relative Squared Loss
 
-Suppose we'd like to find the optimal parameter, <span class="math-inline">\\(w^&#42;\\)</span>, for the constant model <span class="math-inline">\\(h(x_i) = w\\)</span>. To do so, we use the following loss function, called the **relative squared loss**:
+Suppose we'd like to find the optimal parameter, <span class="math-inline">\\(w^&#42;\\)</span>, for the constant model <span class="math-inline">\\(h(x&#95;i) = w\\)</span>. To do so, we use the following loss function, called the **relative squared loss**:
 
 <div class="math-display">
 $$
@@ -168,13 +172,13 @@ L_{\text{rsq}}(y_i, h(x_i)) = \frac{(y_i - h(x_i))^2}{y_i}
 $$
 </div>
 
-What value of <span class="math-inline">\\(w\\)</span> minimizes the average loss (i.e. empirical risk) when using the relative squared loss function -- that is, what is <span class="math-inline">\\(w^&#42;\\)</span>? Your answer should only be in terms of the variables <span class="math-inline">\\(n, y_1, y_2, \ldots, y_n\\)</span>, and any constants.
+What value of <span class="math-inline">\\(w\\)</span> minimizes the average loss (i.e. empirical risk) when using the relative squared loss function -- that is, what is <span class="math-inline">\\(w^&#42;\\)</span>? Your answer should only be in terms of the variables <span class="math-inline">\\(n, y&#95;1, y&#95;2, \ldots, y&#95;n\\)</span>, and any constants.
 
 ---
 
 ## Activity 2: Rapid Fire
 
-Consider a dataset of <span class="math-inline">\\(n\\)</span> **integers**, <span class="math-inline">\\(y_1, y_2, \ldots, y_n\\)</span>, whose histogram is given below:
+Consider a dataset of <span class="math-inline">\\(n\\)</span> **integers**, <span class="math-inline">\\(y&#95;1, y&#95;2, \ldots, y&#95;n\\)</span>, whose histogram is given below:
 
 ![image](imgs/hist-dist.png)
 
@@ -255,9 +259,9 @@ $$
 
 ## Activity 3: Slope of Mean Absolute Error
 
-Consider a dataset of 8 points, <span class="math-inline">\\(y_1, y_2, \ldots, y_8\\)</span> that are in sorted order, i.e. <span class="math-inline">\\(y_1 &lt; y_2 &lt; \ldots &lt; y_8\\)</span>.
+Consider a dataset of 8 points, <span class="math-inline">\\(y&#95;1, y&#95;2, \ldots, y&#95;8\\)</span> that are in sorted order, i.e. <span class="math-inline">\\(y&#95;1 &lt; y&#95;2 &lt; \ldots &lt; y&#95;8\\)</span>.
 
-Recall that mean absolute error, <span class="math-inline">\\(R_{\text{abs}}(w)\\)</span>, for the constant model <span class="math-inline">\\(h(x_i) = w\\)</span> is defined as: 
+Recall that mean absolute error, <span class="math-inline">\\(R&#95;{\text{abs}}(w)\\)</span>, for the constant model <span class="math-inline">\\(h(x&#95;i) = w\\)</span> is defined as: 
 
 <div class="math-display">
 $$
@@ -265,7 +269,7 @@ R_{\text{abs}}(w)=\frac{1}{n} \sum_{i=1}^n |y_i - w|
 $$
 </div>
 
-This is a piecewise linear function that changes slope at each data point. The slope of <span class="math-inline">\\(R_{\text{abs}}(w)\\)</span> at any <span class="math-inline">\\(w\\)</span> that is not a data point is:
+This is a piecewise linear function that changes slope at each data point. The slope of <span class="math-inline">\\(R&#95;{\text{abs}}(w)\\)</span> at any <span class="math-inline">\\(w\\)</span> that is not a data point is:
 
 <div class="math-display">
 $$
@@ -273,9 +277,9 @@ $$
 $$
 </div>
 
-Suppose that <span class="math-inline">\\(y_4=10\\)</span>, <span class="math-inline">\\(y_5=14\\)</span>, <span class="math-inline">\\(y_6=22\\)</span>, and <span class="math-inline">\\(R_{\text{abs}}(11)=9\\)</span>. What is <span class="math-inline">\\(R_{\text{abs}}(22)\\)</span>?
+Suppose that <span class="math-inline">\\(y&#95;4=10\\)</span>, <span class="math-inline">\\(y&#95;5=14\\)</span>, <span class="math-inline">\\(y&#95;6=22\\)</span>, and <span class="math-inline">\\(R&#95;{\text{abs}}(11)=9\\)</span>. What is <span class="math-inline">\\(R&#95;{\text{abs}}(22)\\)</span>?
 
-<em>Hint: You don't have all 8 of the <span class="math-inline">\\(y\\)</span>-values, so you can't find <span class="math-inline">\\(R_\text{abs}(22)\\)</span> just by plugging in numbers into the formula for <span class="math-inline">\\(R_\text{abs}(w)\\)</span>. Instead, think about how to use the slope formula.</em>
+<em>Hint: You don't have all 8 of the <span class="math-inline">\\(y\\)</span>-values, so you can't find <span class="math-inline">\\(R&#95;\text{abs}(22)\\)</span> just by plugging in numbers into the formula for <span class="math-inline">\\(R&#95;\text{abs}(w)\\)</span>. Instead, think about how to use the slope formula.</em>
 
 ---
 
@@ -289,31 +293,55 @@ There are two ways to access the supplemental Jupyter Notebook:
 
 -   **Option 2**: Click [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fsp26-code&urlpath=tree%2Fsp26-code%2Flabs%2Flab02%2Flab02.ipynb&branch=main) to open `lab02.ipynb` on DataHub. Before doing so, read the instructions on the [Environment Setup](https://eecs245.org/env-setup/#option-2-using-the-eecs-245-datahub) page on how to use the DataHub.
 
-Once you're done, run `grader.check_all()` in `lab02.ipynb`. At the very bottom of your PDF submission of Lab 2 to Gradescope, include a screenshot of the output showing that all test cases passed.
+Once you're done, include a screenshot of your completed Activity 4 implementation in your PDF submission of Lab 2 to Gradescope, making sure to include proof that the (local) autograder passed.
 
 ---
 
-## Activity 5: Visualizing Changes in the Data
+## Activity 5: Reverse Regression
 
-The problems in this final activity will help you visualize how changes in the data affect the optimal simple linear regression line. To recap, this is the line <span class="math-inline">\\(h(x_i) = w_0 + w_1 x_i\\)</span> defined by:
+Suppose we have a dataset of <span class="math-inline">\\(n\\)</span> houses that were recently sold in the Ann Arbor area. For each house, we have its square footage and most recent sale price. The correlation between square footage and price is <span class="math-inline">\\(r\\)</span>.
+
+First, we minimize mean squared error to fit a simple linear model that uses square footage to predict price. The resulting regression line has an intercept of <span class="math-inline">\\(w&#95;0^&#42;\\)</span> and slope of <span class="math-inline">\\(w&#95;1^&#42;\\)</span>. 
 
 <div class="math-display">
 $$
-w_1^* = r \frac{\sigma_y}{\sigma_x} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2} \qquad w_0^* = \bar{y} - w_1^* \bar{x}
+\text{predicted price}_i=w_0^*+w_1^* \cdot \text{square footage}_i
 $$
 </div>
 
-<span class="math-inline">\\(r\\)</span> is the correlation coefficient between <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span>, <span class="math-inline">\\(\sigma_x\\)</span> is the standard deviation of <span class="math-inline">\\(x\\)</span>, and <span class="math-inline">\\(\sigma_y\\)</span> is the standard deviation of <span class="math-inline">\\(y\\)</span>.
+ We're now interested in minimizing mean squared error to fit a simple linear model **that uses price to predict square footage** --- that is, we're "reversing" the <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span> variables. Suppose this new regression line has an intercept of <span class="math-inline">\\(\beta&#95;0^&#42;\\)</span> and slope of <span class="math-inline">\\(\beta&#95;1^&#42;\\)</span>.
 
-Assume all data is in the first quadrant, i.e. all <span class="math-inline">\\(x_i\\)</span> and <span class="math-inline">\\(y_i\\)</span> are positive.
+Find <span class="math-inline">\\(\beta&#95;1^&#42;\\)</span>. Give your answer in terms of one or more of <span class="math-inline">\\(n\\)</span>, <span class="math-inline">\\(r\\)</span>, <span class="math-inline">\\(w&#95;0^&#42;\\)</span>, and <span class="math-inline">\\(w&#95;1^&#42;\\)</span>.
+
+---
+
+## Activity 6: Transformed Data
+
+Suppose we're given a dataset of <span class="math-inline">\\(n\\)</span> points, <span class="math-inline">\\((x&#95;1, y&#95;1), (x&#95;2, y&#95;2), \dots, (x&#95;n, y&#95;n)\\)</span>, where <span class="math-inline">\\(\bar{x}\\)</span> is the mean of <span class="math-inline">\\(x&#95;1, x&#95;2, \dots, x&#95;n\\)</span> and <span class="math-inline">\\(\bar{y}\\)</span> is the mean of <span class="math-inline">\\(y&#95;1, y&#95;2, \dots, y&#95;n\\)</span>.
+
+Using this dataset, we create a *transformed* dataset of <span class="math-inline">\\(n\\)</span> points, <span class="math-inline">\\((x&#95;1&#39;, y&#95;1&#39;), (x&#95;2&#39;, y&#95;2&#39;), \dots, (x&#95;n&#39;, y&#95;n&#39;)\\)</span>, where: 
+
+<div class="math-display">
+$$
+x_i' = 4x_i - 3 \qquad y_i' = y_i + 24
+$$
+</div>
+
+So the transformed dataset is of the form 
+
+<div class="math-display">
+$$
+(4x_1-3, y_1+24), (4x_2-3, y_2+24), \dots, (4x_n-3, y_n+24)
+$$
+</div>
+
+We decide to fit a simple linear model <span class="math-inline">\\(h(x&#95;i&#39;) = w&#95;0 + w&#95;1 x&#95;i&#39;\\)</span> on the transformed dataset using squared loss. We find that <span class="math-inline">\\(w&#95;0^&#42; = 7\\)</span> and <span class="math-inline">\\(w&#95;1^&#42; = 2\\)</span>, so <span class="math-inline">\\(h^&#42;(x&#95;i&#39;) = 7 + 2x&#95;i&#39;\\)</span>.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-In each dataset shown below, how will the slope and intercept of the regression line change if we move the red point in the direction of the arrow?
-
-![image](imgs/dsc-prob-6.png) ![image](imgs/dsc-prob-7.png)
+Suppose we were to fit a simple linear model through the original dataset, <span class="math-inline">\\((x&#95;1, y&#95;1), (x&#95;2, y&#95;2), \dots, (x&#95;n, y&#95;n)\\)</span>, again using squared loss. What would the optimal slope on the original dataset be?
 
 </div>
 </div>
@@ -321,15 +349,7 @@ In each dataset shown below, how will the slope and intercept of the regression 
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Compare two different possible changes to the dataset shown below.
-
--   Move the dashed point down <span class="math-inline">\\(c\\)</span> units.
-
--   Move the solid point down <span class="math-inline">\\(c\\)</span> units.
-
-Which move will change the slope of the regression line more? Why? *Hint: We're not looking for a formal proof. But, if you want to read more, look at [Chapter 2.3](https://notes.eecs245.org/simple-linear-regression/finding-optimal-parameters/#regression-line-passes-through-the-mean).*
-
-![image](imgs/dsc-prob-10-bw-arrows.png)
+Recall, the model <span class="math-inline">\\(h^&#42;(x&#95;i&#39;) = w&#95;0 + w&#95;1 x&#95;i&#39;\\)</span> was fit on the transformed dataset, <span class="math-inline">\\((x&#95;1&#39;, y&#95;1&#39;), (x&#95;2&#39;, y&#95;2&#39;), \dots, (x&#95;n&#39;, y&#95;n&#39;)\\)</span>. <span class="math-inline">\\(h^&#42;(x&#95;i&#39;)\\)</span> happens to pass through the point <span class="math-inline">\\((\bar{x}, \bar{y})\\)</span>. What is the value of <span class="math-inline">\\(\bar{x}\\)</span>? Give your answer as an integer with no variables. <em>Hint: What else does <span class="math-inline">\\(h^&#42;(x&#95;i&#39;)\\)</span> pass through?</em>
 
 </div>
 </div>
@@ -339,9 +359,9 @@ Which move will change the slope of the regression line more? Why? *Hint: We're 
 ---
 
 {: .yellow }
-> **The rest of this worksheet is extra practice. Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.**
+> **The following are extra practice. Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.**
 
-## Activity 6: Relative Squared Loss, Continued
+## Activity 7: Relative Squared Loss, Continued
 
 Recall the formula for **relative squared loss** from Activity 1:
 
@@ -355,9 +375,9 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Let <span class="math-inline">\\(C(y_1, y_2, ..., y_n)\\)</span> be your minimizer <span class="math-inline">\\(w^&#42;\\)</span> from Activity 1. That is, for a particular dataset <span class="math-inline">\\(y_1, y_2, ..., y_n\\)</span>, <span class="math-inline">\\(C(y_1, y_2, ..., y_n)\\)</span> is the value of <span class="math-inline">\\(w\\)</span> that minimizes empirical risk for relative squared loss on that dataset.
+Let <span class="math-inline">\\(C(y&#95;1, y&#95;2, ..., y&#95;n)\\)</span> be your minimizer <span class="math-inline">\\(w^&#42;\\)</span> from Activity 1. That is, for a particular dataset <span class="math-inline">\\(y&#95;1, y&#95;2, ..., y&#95;n\\)</span>, <span class="math-inline">\\(C(y&#95;1, y&#95;2, ..., y&#95;n)\\)</span> is the value of <span class="math-inline">\\(w\\)</span> that minimizes empirical risk for relative squared loss on that dataset.
 
-What is the value of <span class="math-inline">\\(\displaystyle\lim_{y_4 \rightarrow \infty} C(1, 3, 5, y_4)\\)</span> in terms of <span class="math-inline">\\(C(1, 3, 5)\\)</span>? Your answer should involve the function <span class="math-inline">\\(C\\)</span> and/or one or more constants.
+What is the value of <span class="math-inline">\\(\displaystyle\lim&#95;{y&#95;4 \rightarrow \infty} C(1, 3, 5, y&#95;4)\\)</span> in terms of <span class="math-inline">\\(C(1, 3, 5)\\)</span>? Your answer should involve the function <span class="math-inline">\\(C\\)</span> and/or one or more constants.
 
 <em>Hint: To notice the pattern, evaluate <span class="math-inline">\\(C(1, 3, 5, 100)\\)</span>, <span class="math-inline">\\(C(1, 3, 5, 10000)\\)</span>, and <span class="math-inline">\\(C(1, 3, 5, 1000000)\\)</span>.</em>
 
@@ -367,7 +387,7 @@ What is the value of <span class="math-inline">\\(\displaystyle\lim_{y_4 \righta
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-What is the value of <span class="math-inline">\\(\displaystyle\lim_{y_4 \rightarrow 0} C(1, 3, 5, y_4)\\)</span>? Again, your answer should involve the function <span class="math-inline">\\(C\\)</span> and/or one or more constants.
+What is the value of <span class="math-inline">\\(\displaystyle\lim&#95;{y&#95;4 \rightarrow 0} C(1, 3, 5, y&#95;4)\\)</span>? Again, your answer should involve the function <span class="math-inline">\\(C\\)</span> and/or one or more constants.
 
 </div>
 </div>
@@ -375,7 +395,191 @@ What is the value of <span class="math-inline">\\(\displaystyle\lim_{y_4 \righta
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-Based on the results of the previous two parts, when is the prediction <span class="math-inline">\\(C(y_1, y_2, ..., y_n)\\)</span> robust to outliers? When is it not robust to outliers?
+Based on the results of the previous two parts, when is the prediction <span class="math-inline">\\(C(y&#95;1, y&#95;2, ..., y&#95;n)\\)</span> robust to outliers? When is it not robust to outliers?
+
+</div>
+</div>
+
+</div>
+
+---
+
+## Activity 8: The Meaning of Mean Squared Error
+
+Suppose we'd like to predict the number of minutes a delivery will take, <span class="math-inline">\\(y\\)</span>, as a function of distance, <span class="math-inline">\\(x\\)</span>. To do so, we look to our dataset of <span class="math-inline">\\(n\\)</span> deliveries, <span class="math-inline">\\((x&#95;1, y&#95;1), (x&#95;2,y&#95;2), \dots, (x&#95;n,y&#95;n)\\)</span>, and fit two simple linear models:
+
+-   <span class="math-inline">\\(F(x&#95;i)=a&#95;0+a&#95;1x&#95;i\\)</span>, where: 
+
+<div class="math-display">
+$$
+a_1=r\frac{\sigma_y}{\sigma_x}, \qquad  a_0=\bar y - a_1 \bar x
+$$
+</div>
+
+ Here, <span class="math-inline">\\(r\\)</span> is the correlation coefficient between <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span>, <span class="math-inline">\\(\bar x\\)</span> and <span class="math-inline">\\(\bar y\\)</span> are their respective means, and <span class="math-inline">\\(\sigma&#95;x\\)</span> and <span class="math-inline">\\(\sigma&#95;y\\)</span> are their respective standard deviations.
+
+-   <span class="math-inline">\\(G(x&#95;i)=b&#95;0+b&#95;1x&#95;i\\)</span>, where <span class="math-inline">\\(b&#95;0\\)</span> and <span class="math-inline">\\(b&#95;1\\)</span> are chosen such that <span class="math-inline">\\(G(x&#95;i)=b&#95;0+b&#95;1x&#95;i\\)</span> minimizes **mean absolute error** on the dataset. Assume that no other line minimizes mean absolute error on the dataset, i.e. that the values of <span class="math-inline">\\(b&#95;0\\)</span> and <span class="math-inline">\\(b&#95;1\\)</span> are unique.
+
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
+Fill in the <span class="math-inline">\\(\boxed{???}\\)</span>:
+
+<div class="math-display">
+$$
+\displaystyle \sum_{i=1}^{n}(y_i-F(x_i))^2  \quad \boxed{???} \quad \sum_{i=1}^{n}(y_i-G(x_i))^2
+$$
+</div>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&gt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\geq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $=$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\leq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&lt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Impossible to tell</span></div>
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+Fill in the <span class="math-inline">\\(\boxed{???}\\)</span>:
+
+<div class="math-display">
+$$
+\displaystyle \left(\sum_{i=1}^{n}|y_i-F(x_i)|\right)^2  \quad \boxed{???} \quad \left(\sum_{i=1}^{n}|y_i-G(x_i)|\right)^2
+$$
+</div>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&gt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\geq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $=$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\leq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&lt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Impossible to tell</span></div>
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">c)</div>
+<div class="assignment-part-content" markdown="1">
+Below, we've drawn the lines for both <span class="math-inline">\\(F\\)</span> and <span class="math-inline">\\(G\\)</span> along with a scatter plot for the original <span class="math-inline">\\(n\\)</span> deliveries:
+
+![image](imgs/regression.png)
+
+Which line corresponds to <span class="math-inline">\\(F\\)</span>?
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Line 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Line 2</span></div>
+
+</div>
+</div>
+
+</div>
+
+---
+
+## Activity 9: What Do You Mean?
+
+Suppose we want to fit a simple linear model (using squared loss) that predicts the number of ingredients in a product given its price. We're given that:
+
+-   The average cost of a product in our dataset is &#36;40, i.e. <span class="math-inline">\\(\bar x=40\\)</span>
+
+-   The average number of ingredients in a product in our dataset is 15, i.e. <span class="math-inline">\\(\bar y =15\\)</span>
+
+The intercept and slope of the regression line are <span class="math-inline">\\(w&#95;0^&#42;=11\\)</span> and <span class="math-inline">\\(w&#95;1^&#42;=\frac{1}{10}\\)</span>, respectively.
+
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
+Suppose Victors' Veil (a skincare product) costs &#36;40 and has 11 ingredients. What is the squared loss of our model's predicted number of ingredients for Victors' Veil?
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+Is it possible to answer part **a)** above **just** by knowing <span class="math-inline">\\(\bar x\\)</span> and <span class="math-inline">\\(\bar y\\)</span>, i.e. **without** knowing the values of <span class="math-inline">\\(w&#95;0^&#42;\\)</span> and <span class="math-inline">\\(w&#95;1^&#42;\\)</span>? Once you select an answer, explain it to your peers.
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Yes, it's possible</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> No, it's not possible</span></div>
+
+</div>
+</div>
+
+</div>
+
+---
+
+## Activity 10: A Refresher
+
+Consider a dataset of <span class="math-inline">\\(y&#95;1, y&#95;2, \dots, y&#95;n\\)</span>, all of which are **positive**. We want to fit a constant model, <span class="math-inline">\\(h(x&#95;i)=w\\)</span>, to the data.
+
+Let <span class="math-inline">\\(w&#95;p^&#42;\\)</span> be the optimal constant prediction that minimizes average degree-<span class="math-inline">\\(p\\)</span> loss, <span class="math-inline">\\(R&#95;p(w)\\)</span>, defined below: 
+
+<div class="math-display">
+$$
+R_p(w)= \displaystyle \frac{1}{n} \sum_{i=1}^{n}|y_i-w|^p
+$$
+</div>
+
+ For example, <span class="math-inline">\\(w&#95;2^&#42;\\)</span> is the optimal constant prediction that minimizes <span class="math-inline">\\(R&#95;2(w)= \displaystyle \frac{1}{n} \sum&#95;{i=1}^{n}|y&#95;i-w|^2\\)</span>
+
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
+In each of the parts below, determine the value of the quantity provided. By "the data", we are referring to <span class="math-inline">\\(y&#95;1, y&#95;2, \dots, y&#95;n\\)</span>. The answer choices are as follows; **select one item in each row**.
+
+-   **A:** The standard deviation of the data
+
+-   **B:** The variance of the data
+
+-   **C:** The mean of the data
+
+-   **D:** The median of the data
+
+-   **E:** The midrange of the data, <span class="math-inline">\\(\frac{y&#95;\text{min} + y&#95;\text{max}}{2}\\)</span>
+
+-   **F:** The mode of the data
+
+-   **G:** None of these
+
+|  |  | A | B | C | D | E | F | G |
+|---:|:---|:---|:---|:---|:---|:---|:---|:---|
+| <span class="math-inline">\\(i\\)</span> | <span class="math-inline">\\(h&#95;0^&#42;\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(ii\\)</span> | <span class="math-inline">\\(h&#95;1^&#42;\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(iii\\)</span> | <span class="math-inline">\\(R&#95;1(h&#95;1^&#42;)\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(iv\\)</span> | <span class="math-inline">\\(h&#95;2^&#42;\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+| <span class="math-inline">\\(v\\)</span> | <span class="math-inline">\\(R&#95;2(h&#95;2^&#42;)\\)</span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> | <span class="mc-bubble" aria-hidden="true"></span> |
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+Now, suppose we want to find the optimal constant prediction, <span class="math-inline">\\(h&#95;\text{U}^&#42;\\)</span>, using the "Ulta" loss function, defined below:
+
+<div class="math-display">
+$$
+L_\text{U}(y_i, w) = y_i(y_i-w)^2
+$$
+</div>
+
+To find <span class="math-inline">\\(h&#95;\text{U}^&#42;\\)</span>, we minimize <span class="math-inline">\\(R&#95;\text{U}(w)\\)</span>, the average Ulta loss. How does <span class="math-inline">\\(h&#95;\text{U}^&#42;\\)</span> compare to the mean of the data, <span class="math-inline">\\(M\\)</span>?
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; &gt; M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; \geq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; = M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; \leq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; &lt; M$</span></div>
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">c)</div>
+<div class="assignment-part-content" markdown="1">
+Finally, to find the optimal constant prediction, we will instead minimize **regularized** average Ulta loss, <span class="math-inline">\\(R&#95;\lambda(w)\\)</span>, defined below:
+
+<div class="math-display">
+$$
+\displaystyle R_\lambda(w) = \left(\frac{1}{n} \sum_{i=1}^{n} y_i(y_i-w)^2\right)+\lambda w^2
+$$
+</div>
+
+Here, assume <span class="math-inline">\\(\lambda &gt; 0\\)</span> is some positive constant. (We will cover regularization in more detail later in the term.)
+
+Find <span class="math-inline">\\(w^&#42;\\)</span>, the constant prediction that minimizes <span class="math-inline">\\(R&#95;\lambda(w)\\)</span>. Give your answer as an expression in terms of the <span class="math-inline">\\(y&#95;i\\)</span>'s, <span class="math-inline">\\(n\\)</span>, and/or <span class="math-inline">\\(\lambda\\)</span>.
 </div>
 </div>
 

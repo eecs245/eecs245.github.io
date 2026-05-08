@@ -157,11 +157,17 @@ def main() -> int:
 
     metadata = extract_metadata(source_tex.read_text())
     expanded_tex = expand_inputs(source_tex)
+    if not args.include_solutions:
+        assert_solutions_disabled(expanded_tex, source_tex)
     transformed_tex = transform_assignment_tex(
         expanded_tex, include_solutions=args.include_solutions
     )
     pdf_link = compute_pdf_link(repo_root, output_md)
-    solutions_pdf_link = compute_solutions_pdf_link(repo_root, output_md)
+    solutions_pdf_link = (
+        compute_solutions_pdf_link(repo_root, output_md)
+        if args.include_solutions
+        else None
+    )
 
     output_md.parent.mkdir(parents=True, exist_ok=True)
 
@@ -191,6 +197,8 @@ def main() -> int:
     copy_referenced_assets(output_md, source_tex.parent, repo_root / "website")
 
     if args.week_file:
+        if args.solutions_link and not args.include_solutions:
+            raise SystemExit("--solutions-link requires --include-solutions.")
         week_file = resolve_repo_path(repo_root, Path(args.week_file))
         problems_link = args.problems_link or compute_default_problems_link(
             week_file=week_file,
@@ -292,6 +300,9 @@ def expand_inputs_from_text(text: str, base_dir: Path) -> str:
 
 def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_document_wrapper(text)
+    text = strip_false_blocks(text)
+    text = strip_latex_comment_lines(text)
+    text = strip_layout_commands(text)
     text = expand_labcodelinks(text)
     text = replace_fbox_markers(text)
     text = replace_choice_markers(text, include_solutions=include_solutions)
@@ -305,6 +316,32 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = text.replace("\\newpage", "")
     text = text.replace("\\makemytitle", "% stripped makemytitle")
     return text
+
+
+def strip_false_blocks(text: str) -> str:
+    return re.sub(r"(?s)\\iffalse\b.*?\\fi\b", "", text)
+
+
+def strip_latex_comment_lines(text: str) -> str:
+    return re.sub(r"(?m)^[ \t]*%.*(?:\n|$)", "", text)
+
+
+def strip_layout_commands(text: str) -> str:
+    text = re.sub(r"\\begin\{minipage\}(?:\[[^\]]*\])?\{[^{}]*\}", "", text)
+    text = text.replace(r"\end{minipage}", "")
+    text = text.replace(r"\begin{center}", "")
+    text = text.replace(r"\end{center}", "")
+    text = re.sub(r"(?m)^[ \t]*\\(?:hfill|centering)\b[ \t]*$", "", text)
+    return text
+
+
+def assert_solutions_disabled(text: str, source_tex: Path) -> None:
+    if re.search(r"(?m)^[ \t]*\\enablesolutions\b", text):
+        raise SystemExit(
+            f"{source_tex} has \\enablesolutions enabled. "
+            "Do not generate a student-facing release until it is commented out, "
+            "unless this is an explicit solutions release with --include-solutions."
+        )
 
 
 def replace_fbox_markers(text: str) -> str:
@@ -365,7 +402,7 @@ def wrap_bare_alignment_environments(text: str) -> str:
 
 def strip_document_wrapper(text: str) -> str:
     text = re.sub(r"(?s)^.*?\\begin\{document\}", "", text)
-    text = re.sub(r"\\end\{document\}\s*$", "", text)
+    text = re.sub(r"(?s)\\end\{document\}.*$", "", text)
     text = re.sub(r"\\makemytitle\s*\{.*?\}\s*\{.*?\}\s*\{.*?\}\s*\{.*?\}\s*\{.*?\}", "", text, count=1, flags=re.S)
     return text
 
@@ -644,14 +681,20 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = convert_points_badges(text, use_badges=use_point_badges)
     text = convert_part_headings_to_lists(text)
     text = fix_leading_italics(text)
+    text = normalize_markdown_inside_emphasis(text)
     text = format_multiple_choice_rows(text)
     text = text.replace(r"\#", "#")
     text = add_total_points_separator(text)
     text = fix_accidental_indented_prose(text)
+    text = remove_pandoc_layout_fences(text)
     text = re.sub(r"(</div>)\n---", r"\1\n\n---", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = remove_trailing_section_separator(text)
     return text.strip()
+
+
+def remove_pandoc_layout_fences(text: str) -> str:
+    return re.sub(r"(?m)^:::\s*minipage\s*$\n?", "", text)
 
 
 def add_item_separators(text: str) -> str:
@@ -718,35 +761,24 @@ def add_separator_after_recap(text: str) -> str:
 
 
 def indent_ordered_list_display_math(text: str) -> str:
+    # Older output indented raw HTML math blocks after ordered lists, which
+    # Kramdown rendered as literal code. Raw math-display blocks render cleanly
+    # when left unindented.
     lines = text.splitlines()
-    converted: list[str] = []
-    in_ordered_list = False
+    fixed: list[str] = []
     index = 0
-
     while index < len(lines):
-        line = lines[index]
-        if re.match(r"^\d+\.\s+", line):
-            in_ordered_list = True
-            converted.append(line)
-            index += 1
-            continue
-
-        if in_ordered_list and line.startswith('<div class="math-display">'):
+        if lines[index].startswith('    <div class="math-display">'):
             while index < len(lines):
-                converted.append("    " + lines[index])
+                fixed.append(lines[index][4:] if lines[index].startswith("    ") else lines[index])
                 if lines[index].strip() == "</div>":
                     index += 1
                     break
                 index += 1
             continue
-
-        if line.startswith((SECTION_SEPARATOR, "## ")):
-            in_ordered_list = False
-
-        converted.append(line)
+        fixed.append(lines[index])
         index += 1
-
-    return "\n".join(converted)
+    return "\n".join(fixed)
 
 
 def convert_points_badges(text: str, use_badges: bool = True) -> str:
@@ -868,6 +900,10 @@ def fix_leading_italics(text: str) -> str:
         return f"<em>{content}</em>"
     
     text = re.sub(r"^\*([^*\n]+)\*$", convert_to_em, text, flags=re.M)
+    text = re.sub(r"\*(Hint:[^\n]+)\*", r"<em>\1</em>", text)
+    text = re.sub(r"(?m)^\*(Hint:[^\n]+)$", r"<em>\1</em>", text)
+    text = re.sub(r"(?m)^(<em>Hint:[^\n]*?)\*</em>$", r"\1</em>", text)
+    text = re.sub(r"(?m)^\*\s*$\n?", "", text)
     
     def convert_multiline_to_em(match: re.Match[str]) -> str:
         first_line = match.group(1)
@@ -881,6 +917,16 @@ def fix_leading_italics(text: str) -> str:
         flags=re.M | re.S,
     )
     return text
+
+
+def normalize_markdown_inside_emphasis(text: str) -> str:
+    def replace_em(match: re.Match[str]) -> str:
+        content = match.group(1)
+        content = re.sub(r"\*\*([^*\n]+?)\*\*", r"<strong>\1</strong>", content)
+        content = re.sub(r"\[([^\]\n]+)\]\(([^)\n]+)\)", r'<a href="\2">\1</a>', content)
+        return f"<em>{content}</em>"
+
+    return re.sub(r"<em>(.*?)</em>", replace_em, text, flags=re.S)
 
 
 def replace_recap_markers(text: str) -> str:
@@ -916,7 +962,7 @@ def mc_square_html() -> str:
 def escape_inline_math_content(content: str) -> str:
     content = html.unescape(content)
     content = html.escape(content, quote=False)
-    return content.replace("*", "&#42;").replace("'", "&#39;")
+    return content.replace("*", "&#42;").replace("'", "&#39;").replace("_", "&#95;")
 
 
 def format_multiple_choice_rows(text: str) -> str:
@@ -933,9 +979,10 @@ def format_multiple_choice_rows(text: str) -> str:
             continue
 
         pieces = line.split(circle_html)
-        if len(pieces) < 3 or pieces[0].strip():
+        if len(pieces) < 3:
             converted.append(line)
             continue
+        prompt = pieces[0].strip()
 
         rendered_options = []
         for option_html in pieces[1:]:
@@ -943,6 +990,8 @@ def format_multiple_choice_rows(text: str) -> str:
             if not option_html:
                 continue
             rendered_options.append(f'<span class="mc-option">{circle_html} {option_html}</span>')
+        if prompt:
+            converted.append(prompt)
         converted.append(f'<div class="mc-options">{"".join(rendered_options)}</div>')
 
     return "\n".join(converted)
@@ -1230,8 +1279,12 @@ def update_week_file(
     updated = False
 
     for index, line in enumerate(lines):
-        if line.strip() == f"title: {event_title}":
+        if event_line_matches(line, event_title):
             event_indent = len(line) - len(line.lstrip())
+            field_indent = event_indent + 2 if line.lstrip().startswith("- name:") else event_indent
+            if line.strip().startswith("title:"):
+                value = line.strip().removeprefix("title:").strip()
+                lines[index] = " " * event_indent + f"title: {plain_title_value(value)}"
             j = index + 1
             while j < len(lines):
                 stripped = lines[j].strip()
@@ -1241,7 +1294,12 @@ def update_week_file(
                     break
                 if stripped.startswith("title:") and current_indent <= event_indent and j != index:
                     break
+                if stripped.startswith("title:") and current_indent >= event_indent:
+                    lines[j] = " " * current_indent + f"title: {plain_title_value(stripped.removeprefix('title:').strip())}"
                 if stripped.startswith("problems:") and current_indent >= event_indent:
+                    lines[j] = " " * current_indent + f"problems: {problems_link}"
+                    updated = True
+                if stripped.startswith("# problems:") and current_indent >= event_indent:
                     lines[j] = " " * current_indent + f"problems: {problems_link}"
                     updated = True
                 if (
@@ -1263,11 +1321,11 @@ def update_week_file(
                         break
                     insert_at += 1
 
-                lines.insert(index + 1, " " * event_indent + f"problems: {problems_link}")
+                lines.insert(index + 1, " " * field_indent + f"problems: {problems_link}")
                 if solutions_link:
                     lines.insert(
                         index + 2,
-                        " " * event_indent + f"solutions: {solutions_link}",
+                        " " * field_indent + f"solutions: {solutions_link}",
                     )
                 updated = True
             elif solutions_link:
@@ -1285,7 +1343,7 @@ def update_week_file(
                         break
                     j += 1
                 if not has_solutions:
-                    lines.insert(index + 2, " " * event_indent + f"solutions: {solutions_link}")
+                    lines.insert(index + 2, " " * field_indent + f"solutions: {solutions_link}")
             break
 
     if not updated:
@@ -1294,6 +1352,31 @@ def update_week_file(
         )
 
     week_file.write_text("\n".join(lines) + "\n")
+
+
+def event_line_matches(line: str, event_title: str) -> bool:
+    stripped = line.strip()
+    return stripped in {
+        f"name: {event_title}",
+        f"- name: {event_title}",
+        f"title: {event_title}",
+        f'title: "{event_title}"',
+    } or (
+        stripped.startswith("title:")
+        and plain_title_value(stripped.removeprefix("title:").strip()).strip('"') == event_title
+    )
+
+
+def plain_title_value(value: str) -> str:
+    quote = ""
+    stripped = value.strip()
+    if len(stripped) >= 2 and stripped[0] == stripped[-1] and stripped[0] in {"'", '"'}:
+        quote = stripped[0]
+        stripped = stripped[1:-1]
+    stripped = re.sub(r"</?b>", "", stripped)
+    stripped = re.sub(r"</?strong>", "", stripped)
+    stripped = re.sub(r"^\*\*(.*?)\*\*$", r"\1", stripped)
+    return f"{quote}{stripped}{quote}" if quote else stripped
 
 
 def copy_referenced_assets(output_md: Path, source_base_dir: Path, website_root: Path) -> None:
