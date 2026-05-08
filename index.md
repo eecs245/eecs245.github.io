@@ -27,6 +27,8 @@ EECS 245, Spring 2026 🌸 at the <b><span style="background-color: #FFCB05; col
 
 {: .green }
 > **Welcome to EECS 245!** Make sure to read the [**Syllabus**](./syllabus) and join our [**Slack workspace**](https://um-sp26-eecs245s26.slack.com). Note that the date of Midterm 1 has been moved; scroll down for the latest date.
+>
+> The lecture recordings this semester are private to the students in the class, given the small class size. For publicly available recordings, see [last semester's course website](https://eecs245.org/wn26).
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
