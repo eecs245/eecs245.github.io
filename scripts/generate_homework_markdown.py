@@ -43,20 +43,6 @@ HOMEWORK_STYLE_SNIPPET = """<style>
   height: 1em;
   vertical-align: baseline;
 }
-.assignment-solution {
-  background: #f5f5f5;
-  border: 1px solid #b8b8b8;
-  border-radius: 4px;
-  margin: 1rem 0;
-  padding: 0.75rem 0.9rem;
-}
-.assignment-solution summary {
-  cursor: pointer;
-  font-weight: 600;
-}
-.assignment-solution > :last-child {
-  margin-bottom: 0;
-}
 .assignment-parts {
   margin: 1rem 0;
 }
@@ -480,7 +466,7 @@ def replace_solution_markers(text: str, include_solutions: bool = False) -> str:
     def replace(match: re.Match[str]) -> str:
         solution_body = match.group(1).strip()
         return (
-            "\n<details class=\"assignment-solution\" markdown=\"1\"><summary>Solution</summary>\n\n"
+            "\n<details markdown=\"1\"><summary>Solution</summary>\n\n"
             f"{solution_body}\n\n"
             "</details>\n"
         )

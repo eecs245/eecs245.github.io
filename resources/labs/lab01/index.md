@@ -35,20 +35,6 @@ window.MathJax = {
   height: 1em;
   vertical-align: baseline;
 }
-.assignment-solution {
-  background: #f5f5f5;
-  border: 1px solid #b8b8b8;
-  border-radius: 4px;
-  margin: 1rem 0;
-  padding: 0.75rem 0.9rem;
-}
-.assignment-solution summary {
-  cursor: pointer;
-  font-weight: 600;
-}
-.assignment-solution > :last-child {
-  margin-bottom: 0;
-}
 .assignment-parts {
   margin: 1rem 0;
 }
@@ -157,7 +143,7 @@ Then, open the notebook `labs/lab01/lab01.ipynb`, read it, and complete the task
 
 Over the break, you ran a hot chocolate stand. On days 1 through 5 (inclusive), you averaged 50 dollars per day in sales. On days 6 and 7, you averaged 22 dollars per day in sales. What were your average daily sales from days 1 through 7?
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 The key fact being assessed here is:
 
@@ -205,7 +191,7 @@ Over the break, in addition to running your hot chocolate stand, you took a road
 <div class="assignment-part-content" markdown="1">
 For the first 120 miles, you averaged 80 miles per hour (mph). For the second 120 miles, you averaged 50 mph. What was your average speed throughout the entire journey? Leave your answer unsimplified in terms of fractions, but plug it into a calculator to get an approximation.
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 Following the same principle of <span class="math-inline">\\(\text{mean} = \frac{\text{sum}}{\text{count}}\\)</span> from the Running Mean activity, we have that:
 
@@ -263,7 +249,7 @@ $$
 <div class="assignment-part-content" markdown="1">
 Suppose, instead, you drove 3 segments of 80 miles each, in which you averaged 80 mph, 80 mph, and 50 mph. What was your average speed throughout the entire journey?
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 Following the same pattern, we'd have:
 
@@ -283,7 +269,7 @@ $$
 <div class="assignment-part-content" markdown="1">
 In general, suppose you drove <span class="math-inline">\\(n\\)</span> segments of equal length, and averaged <span class="math-inline">\\(x_i\\)</span> mph in segment <span class="math-inline">\\(i\\)</span> (<span class="math-inline">\\(i = 1, 2, ..., n\\)</span>). What was your average speed throughout the entire journey? Give your answer using **summation notation**. Your answer is the formula for the **harmonic mean** of the numbers <span class="math-inline">\\(x_1, x_2, ..., x_n\\)</span>.
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 If we generalize the calculations from the previous two parts, we have:
 
@@ -328,7 +314,7 @@ $$
 <div class="assignment-part-content" markdown="1">
 What is the shape of <span class="math-inline">\\(f(x)\\)</span>? Your answer should be a single word.
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(f(x)\\)</span> is a quadratic function, i.e. a parabola. We're not sure where it's centered yet --- that's the goal of parts (b) and (c).
 
@@ -342,7 +328,7 @@ What is the shape of <span class="math-inline">\\(f(x)\\)</span>? Your answer sh
 <div class="assignment-part-content" markdown="1">
 Find <span class="math-inline">\\(\frac{\text{d}f}{\text{d}x}\\)</span>, the derivative of <span class="math-inline">\\(f(x)\\)</span>.
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 <div class="math-display">
 $$
@@ -363,7 +349,7 @@ $$
 <div class="assignment-part-content" markdown="1">
 Find <span class="math-inline">\\(x^&#42;\\)</span>, the value of <span class="math-inline">\\(x\\)</span> that minimizes <span class="math-inline">\\(f(x)\\)</span>, and prove that it is indeed a minimum, rather than a maximum.
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 First, we'll set the derivative we found in part (b) to 0:
 
@@ -409,7 +395,7 @@ Since the second derivative is positive everywhere, <span class="math-inline">\\
 <div class="assignment-part-content" markdown="1">
 What does the value of <span class="math-inline">\\(x^&#42;\\)</span> have to do with the numbers 3, 4, 5, and 16?
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(x^&#42;\\)</span> is the mean of the numbers 3, 4, 5, and 16.
 
@@ -442,7 +428,7 @@ $$
 
  **Using the fact above**, find <span class="math-inline">\\(\displaystyle \sum_{k = 4}^{12} (k+2)\\)</span>. Verify your answer by calculating the sum directly.
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 We can separate the sum into two smaller sums:
 
@@ -501,7 +487,7 @@ For each of the following functions <span class="math-inline">\\(g(x)\\)</span>,
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(g(x) = \frac{1}{4} f(x)\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(g(x)\\)</span> is minimized at <span class="math-inline">\\(x^&#42; = 7\\)</span>.
 
@@ -530,7 +516,7 @@ $$
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(g(x) = -f(2x)\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(g(x)\\)</span> is maximized at <span class="math-inline">\\(x^&#42; = \frac{7}{2}\\)</span>.
 
@@ -574,7 +560,7 @@ Intuitively, if we set <span class="math-inline">\\(u = 2x\\)</span>, then <span
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(g(x) = \sqrt{f(x)}\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(g(x)\\)</span> is minimized at <span class="math-inline">\\(x^&#42; = 7\\)</span>.
 
@@ -611,7 +597,7 @@ Visualize <span class="math-inline">\\(f(x)\\)</span> and <span class="math-inli
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(g(x) = f(x) + cx^2\\)</span>, where <span class="math-inline">\\(c \in \mathbb{R}\\)</span> (Hint: This may take more effort than the previous 4 did.)
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(g(x)\\)</span> is minimized at <span class="math-inline">\\(x^&#42; = \frac{28}{4 + c}\\)</span>.
 
@@ -690,7 +676,7 @@ Suppose <span class="math-inline">\\(x_1, x_2, \dots, x_n\\)</span> and <span cl
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(\displaystyle \sum_{i=1}^n (a x_i + b) = a \sum_{i=1}^n x_i + bn\\)</span>, where <span class="math-inline">\\(a\\)</span> and <span class="math-inline">\\(b\\)</span> are constants.
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 We'll start by splitting the sum into two parts: 
 
@@ -714,7 +700,7 @@ The second sum, <span class="math-inline">\\(\displaystyle \sum_{i=1}^n b\\)</sp
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(\displaystyle \sum_{i=1}^n (x_i + y_i)^2=\sum_{i=1}^n x_i^2 + \sum_{i=1}^n y_i^2\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 Expanding out the square in the sum gives us the following: 
 
@@ -744,7 +730,7 @@ There's no way for us to get rid of the second term, so the answer is false in g
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(\displaystyle \sum_{i=2}^n x_i=\sum_{i=2}^k x_i + \sum_{i=k}^n x_i\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 False, this is an off by one error. Since summations are inclusive, the right hand side is double counting <span class="math-inline">\\(x_k\\)</span>.
 
@@ -758,7 +744,7 @@ False, this is an off by one error. Since summations are inclusive, the right ha
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(\displaystyle \sum_{i=1}^n (x_i - \bar{x})=\sum_{i=1}^n x_i - n\bar x\\)</span>, where <span class="math-inline">\\(\displaystyle \bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 Once again, we'll start by splitting the sum into two parts: 
 
@@ -808,7 +794,7 @@ Using the formulas above, determine the values of each of the following sums.
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(\displaystyle \sum_{i = 5}^{15} i^2\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 The key is recognizing that we can express the sum we're looking for as the difference of two other sums that have closed-form expressions:
 
@@ -841,7 +827,7 @@ $$
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(\displaystyle \sum_{i = 4}^{9} 3\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 Notice that the sum we're looking for is just <span class="math-inline">\\(3\\)</span> added together, several times --- it does not involve <span class="math-inline">\\(i\\)</span>.
 
@@ -865,7 +851,7 @@ $$
 <div class="assignment-part-content" markdown="1">
 <span class="math-inline">\\(\displaystyle \sum_{j = 1}^{20} (1 - 3j)^2\\)</span>
 
-<details class="assignment-solution" markdown="1"><summary>Solution</summary>
+<details markdown="1"><summary>Solution</summary>
 
 We'll have to expand a fair bit here:
 
