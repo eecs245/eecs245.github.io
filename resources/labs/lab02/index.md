@@ -231,11 +231,7 @@ $$
 $$
 </div>
 
-</details>
-
-<details markdown="1"><summary>Solution</summary>
-
-(continued) Setting this equal to 0 yields:
+Setting this equal to 0 yields:
 
 <div class="math-display">
 $$
@@ -385,7 +381,7 @@ This is a piecewise linear function that changes slope at each data point. The s
 
 <div class="math-display">
 $$
-\frac{\text{d}}{\text{d}w} R_{\text{abs}}(w) = \frac{\text{# left of } w - \text{# right of } w}{n}
+\frac{\text{d}}{\text{d}w} R_{\text{abs}}(w) = \frac{\text{number left of } w - \text{number right of } w}{n}
 $$
 </div>
 
@@ -413,7 +409,7 @@ Once we move beyond <span class="math-inline">\\(14\\)</span>, the balance break
 
 <div class="math-display">
 $$
-\frac{d}{dw}R_{\text{abs}}(w) = \frac{# \text{ left of } w - # \text{ right of } w}{n}
+\frac{d}{dw}R_{\text{abs}}(w) = \frac{\text{number left of } w - \text{number right of } w}{n}
 $$
 </div>
 

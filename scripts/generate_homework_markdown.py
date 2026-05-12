@@ -133,13 +133,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--include-solutions",
         action="store_true",
-        help="Embed LaTeX solution environments inline as collapsible dropdowns.",
+        help="Embed LaTeX solution environments inline in the generated Markdown as collapsible dropdowns.",
     )
     parser.add_argument(
         "--solutions-link",
         help=(
-            "Solutions PDF link to write into the week file. "
-            "Defaults to /.../<assignment>-solutions.pdf when present."
+            "Deprecated. Solutions releases set the week-file release state to solutions: true; "
+            "the solutions PDF link is generated in assignment Markdown."
         ),
     )
     return parser.parse_args()
@@ -208,7 +208,7 @@ def main() -> int:
             week_file=week_file,
             event_title=args.event_title,
             problems_link=problems_link,
-            solutions_link=(args.solutions_link or solutions_pdf_link),
+            solutions_link=("true" if args.include_solutions else None),
         )
 
     return 0

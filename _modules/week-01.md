@@ -54,6 +54,7 @@ days:
         url: "https://docs.google.com/forms/d/e/1FAIpQLSee14997ZWHuI-eYwNZHh4tI6i9Xu0kRLYMm_ve9uoSxbjVgA/viewform?usp=dialog"
       - name: HW 1
         type: hw
+        solutions: true
         title: Means, Sums, and Calculus
         problems: ../resources/homeworks/hw01/
 ---
