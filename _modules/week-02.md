@@ -14,6 +14,7 @@ days:
       - name: LEC 3
         type: lecture
         title: Vectors and the Dot Product
+        recording: https://leccap.engin.umich.edu/leccap/player/r/d7QmsC
         reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
         reading_text: Ch. 3.1
         reading2: https://notes.eecs245.org/vectors/norms/
