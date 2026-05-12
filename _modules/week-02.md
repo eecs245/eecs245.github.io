@@ -12,7 +12,7 @@ days:
     events:
       - name: LEC 3
         type: lecture
-        title: Vectors, Orthogonality, and the Dot Product
+        title: Vectors and the Dot Product
         reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
         reading_text: Ch. 3.1
         reading2: https://notes.eecs245.org/vectors/norms/
