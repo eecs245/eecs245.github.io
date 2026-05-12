@@ -19,6 +19,7 @@ days:
         reading2_text: Ch. 3.2
         reading3: https://notes.eecs245.org/vectors/dot-product/
         reading3_text: Ch. 3.3
+        note: This lecture is in 1018 DOW instead of the usual room.
   - date: "2026-05-13"
     events:
       - name: Lab 3
