@@ -8,6 +8,7 @@ days:
         type: lab
         title: Empirical Risk and Simple Linear Regression
         problems: ../resources/labs/lab02/
+        solutions: true
   - date: "2026-05-12"
     events:
       - name: LEC 3
