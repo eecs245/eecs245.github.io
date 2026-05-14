@@ -38,6 +38,7 @@ days:
       - name: LEC 4
         type: lecture
         title: Projections, Span, and Linear Independence
+        recording: https://leccap.engin.umich.edu/leccap/player/r/lgiSae
         reading: https://notes.eecs245.org/vectors/projecting-onto-a-single-vector/
         reading_text: Ch. 3.4
         reading2: https://notes.eecs245.org/linear-independence/span/
