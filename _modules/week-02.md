@@ -28,6 +28,7 @@ days:
         type: lab
         title: Vectors and the Dot Product
         problems: ../resources/labs/lab03/
+        solutions: true
       - name: HW 2
         type: hw
         title: Empirical Risk and Simple Linear Regression

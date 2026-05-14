@@ -78,6 +78,9 @@ window.MathJax = {
 .mc-square {
   border: 1.5px solid currentColor;
 }
+.mc-correct {
+  background: currentColor;
+}
 .main-content table {
   font-size: 0.9rem;
   width: auto;
@@ -276,6 +279,8 @@ $$
 
 <details markdown="1"><summary>Solution</summary>
 
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
+
 **<span class="math-inline">\\(30\\)</span>.**
 
 The minimizer of average 0-1 loss is the **mode**.
@@ -302,6 +307,8 @@ $$
 
 <details markdown="1"><summary>Solution</summary>
 
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
+
 **<span class="math-inline">\\(7\\)</span>.**
 
 The minimizer of average absolute loss is the **median**. The outliers near <span class="math-inline">\\(30\\)</span> shift it from <span class="math-inline">\\(6\\)</span> to <span class="math-inline">\\(7\\)</span>.
@@ -325,6 +332,8 @@ $$
 <div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 <details markdown="1"><summary>Solution</summary>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 **<span class="math-inline">\\(11\\)</span>.**
 
@@ -351,6 +360,8 @@ $$
 <div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 <details markdown="1"><summary>Solution</summary>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 5</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 6</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 7</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 11</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 15</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> 30</span></div>
 
 **<span class="math-inline">\\(15\\)</span>.**
 
@@ -743,6 +754,8 @@ $$
 
 <details markdown="1"><summary>Solution</summary>
 
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&gt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\geq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $=$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\leq$</span><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> $&lt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Impossible to tell</span></div>
+
 The quantity on the left hand side is the **total squared error** of model <span class="math-inline">\\(F\\)</span>. By definition, <span class="math-inline">\\(F\\)</span>, is the line that minimizes MSE over all possible linear models.
 
 The quantity on the right hand side is the total squared error of model <span class="math-inline">\\(G\\)</span>. However, <span class="math-inline">\\(G\\)</span> is optimized for **mean absolute error**, not MSE.
@@ -769,6 +782,8 @@ $$
 
 <details markdown="1"><summary>Solution</summary>
 
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> $&gt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\geq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $=$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $\leq$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $&lt;$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Impossible to tell</span></div>
+
 The quantity on the left hand side is the **squared total absolute error** of model <span class="math-inline">\\(F\\)</span>.
 
 The quantity on the right hand side is the **squared total absolute error** of model <span class="math-inline">\\(G\\)</span>. By definition, <span class="math-inline">\\(G\\)</span>, is the line that minimizes MAE over all possible linear models.
@@ -793,6 +808,8 @@ Which line corresponds to <span class="math-inline">\\(F\\)</span>?
 <div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Line 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Line 2</span></div>
 
 <details markdown="1"><summary>Solution</summary>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> Line 1</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> Line 2</span></div>
 
 Line 1
 
@@ -869,6 +886,8 @@ Is it possible to answer part **a)** above **just** by knowing <span class="math
 
 <details markdown="1"><summary>Solution</summary>
 
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> Yes, it's possible</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> No, it's not possible</span></div>
+
 Yes, the values of <span class="math-inline">\\(w&#95;0^&#42;\\)</span> and <span class="math-inline">\\(w&#95;1^&#42;\\)</span> don't impact the answer to part a).
 
 The simple linear model minimizing mean squared error will always go through the point <span class="math-inline">\\((\bar x, \bar y)\\)</span>. We're given <span class="math-inline">\\(\bar x=40\\)</span> and <span class="math-inline">\\(\bar y=15\\)</span>, meaning that for a product that costs &#36;40 we will predict that it has 15 ingredients, no matter what the slope and intercept end up being.
@@ -926,6 +945,8 @@ In each of the parts below, determine the value of the quantity provided. By "th
 
 <details markdown="1"><summary>Solution</summary>
 
+<div class="mc-options"></div>
+
 -   <span class="math-inline">\\(h&#95;0^&#42;\\)</span> is none of the these. The original intention was to have <span class="math-inline">\\(R&#95;0\\)</span> be 0-1 loss, in which case <span class="math-inline">\\(h&#95;0^&#42;\\)</span> would be the mode.
 
 -   <span class="math-inline">\\(h&#95;1^&#42;\\)</span> is the median of the data, since <span class="math-inline">\\(R&#95;1(w)= \displaystyle \frac{1}{n} \sum&#95;{i=1}^{n}|y&#95;i-w|\\)</span>
@@ -969,6 +990,8 @@ To find <span class="math-inline">\\(h&#95;\text{U}^&#42;\\)</span>, we minimize
 <div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; &gt; M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; \geq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; = M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; \leq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; &lt; M$</span></div>
 
 <details markdown="1"><summary>Solution</summary>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> $h&#95;\text{U}^&#42; &gt; M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; \geq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; = M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; \leq M$</span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> $h&#95;\text{U}^&#42; &lt; M$</span></div>
 
 Minimizing the average Ulta loss means minimizing the empirical risk: 
 

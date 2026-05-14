@@ -86,6 +86,9 @@ HOMEWORK_STYLE_SNIPPET = """<style>
 .mc-square {
   border: 1.5px solid currentColor;
 }
+.mc-correct {
+  background: currentColor;
+}
 .main-content table {
   font-size: 0.9rem;
   width: auto;
@@ -155,8 +158,9 @@ def main() -> int:
     if (args.week_file is None) ^ (args.event_title is None):
         raise SystemExit("--week-file and --event-title must be provided together.")
 
-    metadata = extract_metadata(source_tex.read_text())
-    expanded_tex = expand_inputs(source_tex)
+    source_text = source_tex.read_text()
+    metadata = extract_metadata(source_text)
+    expanded_tex = expand_inputs_from_text(strip_latex_comments(source_text), source_tex.parent)
     if not args.include_solutions:
         assert_solutions_disabled(expanded_tex, source_tex)
     transformed_tex = transform_assignment_tex(
@@ -190,6 +194,12 @@ def main() -> int:
             pdf_link=pdf_link,
             solutions_pdf_link=solutions_pdf_link,
             output_md=output_md,
+        )
+        validate_visible_items_match_source(
+            assignment=metadata.assignment,
+            source_tex=expanded_tex,
+            generated_markdown=final_markdown,
+            source_path=source_tex,
         )
 
         output_md.write_text(final_markdown)
@@ -280,7 +290,7 @@ def extract_braced(text: str, brace_start: int) -> tuple[str, int]:
 
 
 def expand_inputs(path: Path) -> str:
-    return expand_inputs_from_text(path.read_text(), path.parent)
+    return expand_inputs_from_text(strip_latex_comments(path.read_text()), path.parent)
 
 
 def expand_inputs_from_text(text: str, base_dir: Path) -> str:
@@ -298,13 +308,41 @@ def expand_inputs_from_text(text: str, base_dir: Path) -> str:
     return pattern.sub(replace, text)
 
 
+def strip_latex_comments(text: str) -> str:
+    """Remove TeX comments while preserving escaped percent signs like \%."""
+    stripped_lines: list[str] = []
+    for line in text.splitlines(keepends=True):
+        body = line[:-1] if line.endswith("\n") else line
+        newline = "\n" if line.endswith("\n") else ""
+        comment_start = find_unescaped_percent(body)
+        if comment_start is not None:
+            body = body[:comment_start].rstrip()
+        stripped_lines.append(body + newline)
+    return "".join(stripped_lines)
+
+
+def find_unescaped_percent(line: str) -> int | None:
+    for index, char in enumerate(line):
+        if char != "%":
+            continue
+        backslash_count = 0
+        cursor = index - 1
+        while cursor >= 0 and line[cursor] == "\\":
+            backslash_count += 1
+            cursor -= 1
+        if backslash_count % 2 == 0:
+            return index
+    return None
+
+
 def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_document_wrapper(text)
     text = strip_false_blocks(text)
-    text = strip_latex_comment_lines(text)
+    text = strip_latex_comments(text)
     text = strip_layout_commands(text)
     text = expand_labcodelinks(text)
     text = replace_fbox_markers(text)
+    text = add_solution_choice_summaries(text) if include_solutions else text
     text = replace_choice_markers(text, include_solutions=include_solutions)
     text = wrap_bare_alignment_environments(text)
     text = replace_prob_markers(text)
@@ -320,6 +358,10 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
 
 def strip_false_blocks(text: str) -> str:
     return re.sub(r"(?s)\\iffalse\b.*?\\fi\b", "", text)
+
+
+def strip_showsolutions_blocks(text: str) -> str:
+    return re.sub(r"(?s)\\ifshowsolutions\b.*?\\fi\b", "", text)
 
 
 def strip_latex_comment_lines(text: str) -> str:
@@ -352,19 +394,118 @@ def replace_fbox_markers(text: str) -> str:
 
 def replace_choice_markers(text: str, include_solutions: bool = False) -> str:
     def replace_circle(match: re.Match[str]) -> str:
-        content = match.group(1).strip()
+        command = match.group(1)
+        content = match.group(2).strip()
+        if command == "solutioncorrectbubble":
+            return rf"$\eecsfilledcircle$ {content} \quad "
         return rf"$\bigcirc$ {content} \quad "
 
     def replace_square(match: re.Match[str]) -> str:
-        content = match.group(1).strip()
+        command = match.group(1)
+        content = match.group(2).strip()
+        if command == "solutioncorrectsquarebubble":
+            return rf"$\eecsfilledsquare$ {content} \quad "
         return rf"$\square$ {content} \quad "
 
-    text = re.sub(r"\\(?:correct|filled)?bubble\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}", replace_circle, text)
+    text = re.sub(
+        r"\\((?:correct|filled)?bubble|solution(?:correct)?bubble)\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}",
+        replace_circle,
+        text,
+    )
     return re.sub(
-        r"\\(?:correct|filled)?squarebubble\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}",
+        r"\\((?:correct|filled)?squarebubble|solution(?:correct)?squarebubble)\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}",
         replace_square,
         text,
     )
+
+
+CHOICE_COMMAND_PATTERN = re.compile(
+    r"\\(?P<command>(?:correct|filled)?(?:square)?bubble)\{",
+)
+
+
+@dataclass
+class ChoiceOption:
+    command: str
+    content: str
+
+    @property
+    def is_square(self) -> bool:
+        return "squarebubble" in self.command
+
+    @property
+    def is_correct(self) -> bool:
+        return self.command.startswith(("correct", "filled"))
+
+
+def add_solution_choice_summaries(text: str) -> str:
+    solution_env_pattern = re.compile(
+        r"(?ms)^[ \t]*\\begin\{solution\}[ \t]*\n?(.*?)[ \t]*^[ \t]*\\end\{solution\}[ \t]*"
+    )
+    parts: list[str] = []
+    cursor = 0
+
+    for match in solution_env_pattern.finditer(text):
+        before_solution = text[cursor : match.start()]
+        parts.append(before_solution)
+        options = extract_last_choice_group(before_solution)
+        solution_body = match.group(1)
+        if options:
+            summary = render_solution_choice_summary(options)
+            solution_body = f"\n{summary}\n\n{solution_body.lstrip()}"
+        parts.append(f"\\begin{{solution}}\n{solution_body.rstrip()}\n\\end{{solution}}\n")
+        cursor = match.end()
+
+    parts.append(text[cursor:])
+    return "".join(parts)
+
+
+def extract_last_choice_group(text: str) -> list[ChoiceOption]:
+    boundary_markers = [
+        "\\begin{prob}",
+        "\\begin{subprob}",
+        "\\begin{activity}",
+        "\\begin{subactivity}",
+        "\\end{solution}",
+    ]
+    boundary = max(text.rfind(marker) for marker in boundary_markers)
+    search_region = text[boundary + 1 :] if boundary >= 0 else text
+    options = parse_choice_options(search_region)
+    if not options:
+        return []
+
+    last_option_start = search_region.rfind("\\" + options[-1].command + "{")
+    group_start = max(
+        search_region.rfind("\n\n", 0, last_option_start),
+        search_region.rfind("\\\\", 0, last_option_start),
+        search_region.rfind("\\item", 0, last_option_start),
+    )
+    group_region = search_region[group_start + 1 :] if group_start >= 0 else search_region
+    return parse_choice_options(group_region)
+
+
+def parse_choice_options(text: str) -> list[ChoiceOption]:
+    options: list[ChoiceOption] = []
+    cursor = 0
+    while True:
+        match = CHOICE_COMMAND_PATTERN.search(text, cursor)
+        if not match:
+            break
+        content, end = extract_braced(text, match.end() - 1)
+        options.append(ChoiceOption(match.group("command"), content.strip()))
+        cursor = end
+    return options
+
+
+def render_solution_choice_summary(options: list[ChoiceOption]) -> str:
+    rendered_options = []
+    for option in options:
+        if option.is_square:
+            command = "solutioncorrectsquarebubble" if option.is_correct else "solutionsquarebubble"
+        else:
+            command = "solutioncorrectbubble" if option.is_correct else "solutionbubble"
+        rendered_options.append(f"\\{command}{{{option.content}}}")
+    return "\n".join(rendered_options)
 
 
 def clean_align_content(content: str) -> str:
@@ -951,12 +1092,14 @@ def replace_recap_markers(text: str) -> str:
     return "\n".join(converted)
 
 
-def mc_bubble_html() -> str:
-    return '<span class="mc-bubble" aria-hidden="true"></span>'
+def mc_bubble_html(correct: bool = False) -> str:
+    classes = "mc-bubble mc-correct" if correct else "mc-bubble"
+    return f'<span class="{classes}" aria-hidden="true"></span>'
 
 
-def mc_square_html() -> str:
-    return '<span class="mc-square" aria-hidden="true"></span>'
+def mc_square_html(correct: bool = False) -> str:
+    classes = "mc-square mc-correct" if correct else "mc-square"
+    return f'<span class="{classes}" aria-hidden="true"></span>'
 
 
 def escape_inline_math_content(content: str) -> str:
@@ -968,28 +1111,31 @@ def escape_inline_math_content(content: str) -> str:
 def format_multiple_choice_rows(text: str) -> str:
     lines = text.splitlines()
     converted: list[str] = []
-    circle_html = mc_bubble_html()
+    choice_marker_pattern = re.compile(
+        r'(<span class="(?:mc-bubble|mc-square)(?: mc-correct)?" aria-hidden="true"></span>)'
+    )
 
     for line in lines:
-        if circle_html not in line:
+        if not choice_marker_pattern.search(line):
             converted.append(line)
             continue
         if line.lstrip().startswith("|"):
             converted.append(line)
             continue
 
-        pieces = line.split(circle_html)
-        if len(pieces) < 3:
+        pieces = choice_marker_pattern.split(line)
+        markers = pieces[1::2]
+        if len(markers) < 2:
             converted.append(line)
             continue
         prompt = pieces[0].strip()
 
         rendered_options = []
-        for option_html in pieces[1:]:
+        for marker_html, option_html in zip(markers, pieces[2::2]):
             option_html = normalize_mc_option_html(option_html.strip())
             if not option_html:
                 continue
-            rendered_options.append(f'<span class="mc-option">{circle_html} {option_html}</span>')
+            rendered_options.append(f'<span class="mc-option">{marker_html} {option_html}</span>')
         if prompt:
             converted.append(prompt)
         converted.append(f'<div class="mc-options">{"".join(rendered_options)}</div>')
@@ -1091,8 +1237,12 @@ def fix_latex_for_mathjax(text: str) -> str:
     def protect_inline_math(content: str) -> str:
         if content.strip() == r"\bigcirc":
             return mc_bubble_html()
+        if content.strip() == r"\eecsfilledcircle":
+            return mc_bubble_html(correct=True)
         if content.strip() == r"\square":
             return mc_square_html()
+        if content.strip() == r"\eecsfilledsquare":
+            return mc_square_html(correct=True)
         content = escape_inline_math_content(content)
         return f'<span class="math-inline">\\\\({content}\\\\)</span>'
 
@@ -1176,6 +1326,119 @@ def escape_blank_rules(text: str) -> str:
 
 def escape_underscores(match: re.Match[str]) -> str:
     return "\\_" * len(match.group(0))
+
+
+@dataclass
+class AssignmentItem:
+    number: int
+    title: str
+    body: str
+
+
+def validate_visible_items_match_source(
+    assignment: str,
+    source_tex: str,
+    generated_markdown: str,
+    source_path: Path,
+) -> None:
+    item_kind = "Activity" if assignment.startswith("Lab ") else "Problem"
+    source_items = extract_source_items(source_tex)
+    generated_items = extract_generated_items(generated_markdown, item_kind)
+    source_labels = [format_item_label(item_kind, item.number, item.title) for item in source_items]
+    generated_labels = [format_item_label(item_kind, item.number, item.title) for item in generated_items]
+
+    if source_labels != generated_labels:
+        raise SystemExit(
+            "Generated Markdown visible items do not match the TeX/PDF source of truth.\n"
+            f"Source: {source_path}\n"
+            f"TeX/PDF visible {item_kind.lower()}s: {source_labels}\n"
+            f"Markdown {item_kind.lower()}s: {generated_labels}"
+        )
+
+    if item_kind == "Problem":
+        report_programming_problem_positions(source_items, generated_items)
+
+
+def extract_source_items(source_tex: str) -> list[AssignmentItem]:
+    source_tex = strip_false_blocks(source_tex)
+    source_tex = strip_showsolutions_blocks(source_tex)
+    items: list[AssignmentItem] = []
+    pattern = re.compile(r"\\begin\{(?:prob|activity)\}(?:\[(.*?)\])?")
+    matches = list(pattern.finditer(source_tex))
+    for index, match in enumerate(matches):
+        body_start = match.end()
+        body_end = matches[index + 1].start() if index + 1 < len(matches) else len(source_tex)
+        title = normalize_item_title(match.group(1) or "")
+        items.append(AssignmentItem(index + 1, title, source_tex[body_start:body_end]))
+    return items
+
+
+def extract_generated_items(markdown: str, item_kind: str) -> list[AssignmentItem]:
+    items: list[AssignmentItem] = []
+    pattern = re.compile(
+        rf"^## {item_kind} (\d+)(?::\s*(.*?))?(?:\s+(?:<span.*?</span>|\(\d+\s+pts?\)))?$",
+        re.M,
+    )
+    matches = list(pattern.finditer(markdown))
+    for index, match in enumerate(matches):
+        body_start = match.end()
+        body_end = matches[index + 1].start() if index + 1 < len(matches) else len(markdown)
+        items.append(
+            AssignmentItem(
+                int(match.group(1)),
+                normalize_item_title(match.group(2) or ""),
+                markdown[body_start:body_end],
+            )
+        )
+    return items
+
+
+def normalize_item_title(title: str) -> str:
+    title = collapse_whitespace(re.sub(r"<[^>]*>", "", title))
+    title = title.replace("–", "--")
+    return re.sub(r"\s*\(\d+\s+pts?\)\s*$", "", title)
+
+
+def format_item_label(item_kind: str, number: int, title: str) -> str:
+    return f"{item_kind} {number}: {title}" if title else f"{item_kind} {number}"
+
+
+def report_programming_problem_positions(
+    source_items: list[AssignmentItem],
+    generated_items: list[AssignmentItem],
+) -> None:
+    for source_item in source_items:
+        if not is_programming_problem(source_item):
+            continue
+        generated_match = next(
+            (item for item in generated_items if item.title == source_item.title),
+            None,
+        )
+        if generated_match and generated_match.number != source_item.number:
+            print(
+                "WARNING: Programming problem numbering mismatch: "
+                f'"{source_item.title}" is Problem {source_item.number} in TeX/PDF '
+                f"but Problem {generated_match.number} in generated Markdown.",
+                file=sys.stderr,
+            )
+        else:
+            print(
+                f'Programming problem check: "{source_item.title}" is Problem {source_item.number}.',
+                file=sys.stderr,
+            )
+
+
+def is_programming_problem(item: AssignmentItem) -> bool:
+    text = f"{item.title}\n{item.body}".lower()
+    return any(
+        keyword in text
+        for keyword in (
+            "programming",
+            "jupyter notebook",
+            "gradescope autograder",
+            "autograder",
+        )
+    )
 
 
 def compute_pdf_link(repo_root: Path, output_md: Path) -> str | None:
