@@ -38,7 +38,7 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Midterm 1 (1-3PM, 1690 BBB)</b>"
-        note: Note that this is the updated date/time.
+        note: Find past exams <a href="resources">here</a>.
   - date: "2026-05-24"
     events:
       - name: HW 5
