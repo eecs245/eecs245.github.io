@@ -46,6 +46,7 @@ days:
         reading3_text: Ch. 4.2
         reading4: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
         reading4_text: Ch. 4.4
+        live_notes: resources/lecture-pdfs/lec04-filled.pdf
   - date: "2026-05-17"
     events:
       - name: HW 3
