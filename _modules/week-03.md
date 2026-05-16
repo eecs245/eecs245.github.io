@@ -25,7 +25,7 @@ days:
         problems: ../resources/labs/lab05/
       - name: HW 4
         type: hw
-        title: Projections, Span, and Linear Independence
+        title: Projections, Span, and Linear Independence (no slip days!)
         problems: ../resources/homeworks/hw04/
   - date: "2026-05-21"
     events:
