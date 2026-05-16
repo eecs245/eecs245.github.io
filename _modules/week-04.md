@@ -20,7 +20,7 @@ days:
       - name: Lab 6
         type: lab
         title: Rank, Column Space, Null Space, and Inverses
-      - name: HW 6
+      - name: HW 5
         type: hw
         title: Matrices
   - date: "2026-05-28"
@@ -38,7 +38,7 @@ days:
         reading4_text: Ch. 6.4
   - date: "2026-05-31"
     events:
-      - name: HW 7
+      - name: HW 6
         type: hw
         title: Rank and Inverses
 ---

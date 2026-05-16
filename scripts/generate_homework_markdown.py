@@ -739,6 +739,8 @@ def build_homework_page(
         "hide_footer_hr: true",
         "---",
         "",
+        "{% raw %}",
+        "",
         MATHJAX_SNIPPET,
         "",
         HOMEWORK_STYLE_SNIPPET,
@@ -762,6 +764,8 @@ def build_homework_page(
             "",
             cleaned_body,
             "",
+            "{% endraw %}",
+            "",
         ]
     )
     return "\n".join(parts)
@@ -778,12 +782,12 @@ def description_noun_for(assignment: str) -> str:
 def generate_toc(body_markdown: str, toc_title: str) -> str:
     toc_lines = [f"## {toc_title}", ""]
     problem_pattern = re.compile(
-        r"^## ((?:Problem|Activity) \d+(?::\s*(.+?))?)(?:\s+(?:<span.*?</span>|\(\d+\s+pts?\)))?$",
+        r"^## ((?:Problem|Activity) \d+(?::\s*(.+?))?)(?:\s+(?:<span class=\"badge\"[^<]*</span>|\(\d+\s+pts?\)))?$",
         re.M,
     )
 
     for match in problem_pattern.finditer(body_markdown):
-        full_title = match.group(1)
+        full_title = format_heading_for_toc(match.group(1))
         full_heading = re.sub(r"^##\s+", "", match.group(0))
         anchor_text = re.sub(r"<[^>]+>", "", full_heading)
         anchor = re.sub(r"[^\w\s-]", "", anchor_text.lower())
@@ -795,6 +799,13 @@ def generate_toc(body_markdown: str, toc_title: str) -> str:
         return ""
 
     return "\n".join(toc_lines)
+
+
+def format_heading_for_toc(heading: str) -> str:
+    heading = replace_inline_math_spans_with_dollars(heading)
+    heading = re.sub(r"<[^>]+>", "", heading)
+    heading = html.unescape(heading)
+    return heading.replace("\\\\", "\\")
 
 
 def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
@@ -819,16 +830,18 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = promote_interstitial_callouts(text)
     text = add_separator_after_recap(text)
     text = indent_ordered_list_display_math(text)
+    text = unindent_accidental_list_code_blocks(text)
     text = convert_points_badges(text, use_badges=use_point_badges)
     text = convert_part_headings_to_lists(text)
     text = fix_leading_italics(text)
     text = normalize_markdown_inside_emphasis(text)
     text = format_multiple_choice_rows(text)
-    text = text.replace(r"\#", "#")
     text = add_total_points_separator(text)
+    text = collapse_repeated_section_separators(text)
     text = fix_accidental_indented_prose(text)
     text = remove_pandoc_layout_fences(text)
     text = re.sub(r"(</div>)\n---", r"\1\n\n---", text)
+    text = collapse_repeated_section_separators(text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = remove_trailing_section_separator(text)
     return text.strip()
@@ -846,6 +859,9 @@ def add_item_separators(text: str) -> str:
         nonlocal first_match
         if first_match:
             first_match = False
+            prior_content = text[: match.start()].strip()
+            if prior_content and not prior_content.endswith(SECTION_SEPARATOR):
+                return f"{SECTION_SEPARATOR}\n\n{match.group(1)}"
             return match.group(1)
         return f"{SECTION_SEPARATOR}\n\n{match.group(1)}"
 
@@ -854,6 +870,15 @@ def add_item_separators(text: str) -> str:
 
 def remove_trailing_section_separator(text: str) -> str:
     return re.sub(rf"\s*{re.escape(SECTION_SEPARATOR)}\s*$", "", text)
+
+
+def collapse_repeated_section_separators(text: str) -> str:
+    """Collapse adjacent horizontal rules into one rendered divider."""
+    return re.sub(
+        rf"(?m)(?:^{re.escape(SECTION_SEPARATOR)}$[ \t]*\n\s*){{2,}}",
+        f"{SECTION_SEPARATOR}\n\n",
+        text,
+    )
 
 
 def promote_interstitial_callouts(text: str) -> str:
@@ -1104,8 +1129,13 @@ def mc_square_html(correct: bool = False) -> str:
 
 def escape_inline_math_content(content: str) -> str:
     content = html.unescape(content)
-    content = html.escape(content, quote=False)
-    return content.replace("*", "&#42;").replace("'", "&#39;").replace("_", "&#95;")
+    content = content.replace(r"\{", r"\lbrace")
+    content = content.replace(r"\}", r"\rbrace")
+    return html.escape(content, quote=False)
+
+
+def unindent_accidental_list_code_blocks(text: str) -> str:
+    return re.sub(r"(?m)^ {4}(-\s+)", r"\1", text)
 
 
 def format_multiple_choice_rows(text: str) -> str:
@@ -1144,17 +1174,25 @@ def format_multiple_choice_rows(text: str) -> str:
 
 
 def normalize_mc_option_html(option_html: str) -> str:
-    def inline_math_to_dollars(match: re.Match[str]) -> str:
-        return f"${escape_inline_math_content(match.group(1))}$"
+    def inline_math_to_span(match: re.Match[str]) -> str:
+        return f'<span class="math-inline">\\\\({escape_inline_math_content(match.group(1))}\\\\)</span>'
 
     option_html = re.sub(
         r'<span class="math-inline">\\\\\((.*?)\\\\\)</span>',
-        inline_math_to_dollars,
+        inline_math_to_span,
         option_html,
     )
-    option_html = re.sub(r"\\\\\((.*?)\\\\\)", inline_math_to_dollars, option_html)
-    option_html = re.sub(r"\\\((.*?)\\\)", inline_math_to_dollars, option_html)
+    option_html = re.sub(r"\\\\\((.*?)\\\\\)", inline_math_to_span, option_html)
+    option_html = re.sub(r"\\\((.*?)\\\)", inline_math_to_span, option_html)
     return option_html
+
+
+def replace_inline_math_spans_with_dollars(text: str) -> str:
+    def replace(match: re.Match[str]) -> str:
+        content = html.unescape(match.group(1)).replace("\\\\", "\\")
+        return f"${content}$"
+
+    return re.sub(r'<span class="math-inline">\\\\\((.*?)\\\\\)</span>', replace, text)
 
 
 def add_total_points_separator(text: str) -> str:
@@ -1376,7 +1414,7 @@ def extract_source_items(source_tex: str) -> list[AssignmentItem]:
 def extract_generated_items(markdown: str, item_kind: str) -> list[AssignmentItem]:
     items: list[AssignmentItem] = []
     pattern = re.compile(
-        rf"^## {item_kind} (\d+)(?::\s*(.*?))?(?:\s+(?:<span.*?</span>|\(\d+\s+pts?\)))?$",
+        rf"^## {item_kind} (\d+)(?::\s*(.*?))?(?:\s+(?:<span class=\"badge\"[^<]*</span>|\(\d+\s+pts?\)))?$",
         re.M,
     )
     matches = list(pattern.finditer(markdown))
@@ -1395,6 +1433,8 @@ def extract_generated_items(markdown: str, item_kind: str) -> list[AssignmentIte
 
 def normalize_item_title(title: str) -> str:
     title = collapse_whitespace(re.sub(r"<[^>]*>", "", title))
+    title = title.replace(r"\\(", "$").replace(r"\\)", "$")
+    title = title.replace("\\\\", "\\")
     title = title.replace("–", "--")
     return re.sub(r"\s*\(\d+\s+pts?\)\s*$", "", title)
 

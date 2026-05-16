@@ -25,6 +25,9 @@ days:
       - name: Lab 8
         type: lab
         title: Multiple Linear Regression; The Gradient Vector
+      - name: HW 7
+        type: hw
+        title: Linear Transformations and Projections
   - date: "2026-06-04"
     events:
       - name: LEC 10

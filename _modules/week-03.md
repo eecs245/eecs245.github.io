@@ -7,6 +7,7 @@ days:
       - name: Lab 4
         type: lab
         title: Projections, Span, and Linear Independence
+        problems: ../resources/labs/lab04/
   - date: "2026-05-19"
     events:
       - name: LEC 5
@@ -21,9 +22,11 @@ days:
       - name: Lab 5
         type: lab
         title: Vector Spaces, Subspaces, Bases, and Dimension
+        problems: ../resources/labs/lab05/
       - name: HW 4
         type: hw
-        title: Projections and Spans
+        title: Projections, Span, and Linear Independence
+        problems: ../resources/homeworks/hw04/
   - date: "2026-05-21"
     events:
       - name: LEC 6
@@ -39,9 +42,4 @@ days:
         type: exam
         title: "<b>Midterm 1 (1-3PM, 1690 BBB)</b>"
         note: Find past exams <a href="resources">here</a>.
-  - date: "2026-05-24"
-    events:
-      - name: HW 5
-        type: hw
-        title: Linear Independence and Subspaces
 ---

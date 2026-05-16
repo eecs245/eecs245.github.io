@@ -33,6 +33,7 @@ days:
         type: hw
         title: Empirical Risk and Simple Linear Regression
         problems: ../resources/homeworks/hw02/
+        solutions: true
   - date: "2026-05-14"
     events:
       - name: LEC 4

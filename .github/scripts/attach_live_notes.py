@@ -193,6 +193,18 @@ def update_modules(lecture: int, pdf_path: str):
     return changed_files
 
 
+def require_pdf_ready(lecture: int, pdf_path: str):
+    if os.path.isfile(pdf_path):
+        return
+
+    incoming_dirs = ", ".join(INCOMING_DIRS)
+    raise RuntimeError(
+        f"Refusing to attach live notes for Lecture {lecture}: {pdf_path} does not exist. "
+        "Upload the PDF first through the GitHub Contents API, or provide it as an incoming "
+        f"lec*.pdf file under one of: {incoming_dirs}."
+    )
+
+
 def main():
     requests = collect_requests()
     if not requests:
@@ -222,6 +234,7 @@ def main():
         if request.get("incoming_json"):
             consumed_paths.append(request["incoming_json"])
 
+        require_pdf_ready(lecture, pdf_path)
         changed_files.extend(update_modules(lecture, pdf_path))
 
     for path in consumed_paths:

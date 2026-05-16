@@ -98,8 +98,16 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
 
     if re.search(r"(?m)^ {4}<div class=\"math-display\">", text):
         failures.append(f"{source_md}: indented math-display block will render as code")
+    if re.search(r"(?m)^- \[[^\n\]]*<span class=\"math-inline\"", text):
+        failures.append(f"{source_md}: raw inline-math HTML leaked into the table of contents")
+    if re.search(r'<span class="math-inline">[^<]*(?:&#95;|&#42;|&#39;)[^<]*</span>', text):
+        failures.append(f"{source_md}: escaped punctuation leaked into inline math")
+    if re.search(r"(?m)^ {4,}[-*]\s+.*<span class=\"math-inline\"", text):
+        failures.append(f"{source_md}: indented math list item will render as code")
     if re.search(r"(?m)^:::\s*minipage\s*$", text):
         failures.append(f"{source_md}: LaTeX minipage fence leaked into markdown")
+    if re.search(r"(?m)(?:^---$[ \t]*\n\s*){2,}", text):
+        failures.append(f"{source_md}: repeated horizontal rule separators")
     if re.search(r"(?m)(?:^|\s)\*Hint:", text):
         failures.append(f"{source_md}: hint emphasis starts with a raw markdown asterisk")
     if re.search(r"(?m)^<em>Hint:[^\n]*\*</em>$", text):
@@ -157,10 +165,16 @@ def check_built_html(built_html: Path, website_root: Path) -> list[str]:
         if '<div class="math-display">' in decoded or "$$" in decoded:
             failures.append(f"{built_html}: math display rendered as a code block")
             break
+        if '<span class="math-inline">' in decoded:
+            failures.append(f"{built_html}: inline math rendered as a code block")
+            break
 
     for pattern in BAD_TEXT_PATTERNS:
         if pattern in text:
             failures.append(f"{built_html}: possible mangled math text `{pattern}`")
+
+    if re.search(r"(?s)<hr\s*/?>\s*<hr\s*/?>", text):
+        failures.append(f"{built_html}: repeated horizontal rules")
 
     failures.extend(check_html_images(built_html, website_root, text))
     return failures
