@@ -97,7 +97,7 @@ window.MathJax = {
 
 # Homework 4: Projections, Span, and Linear Independence
 
-**due** Wednesday, May 20th, 2026 at 11:59PM Ann Arbor Time
+**due** Wednesday, May 20th, 2026 at 11:59PM Ann Arbor Time <span style="color: red;">(no slip days allowed!)</span>
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw04/hw04.pdf" target="_blank">View as PDF ✏️</a>
