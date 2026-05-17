@@ -1,5 +1,5 @@
 ---
-title: "Week 3: Vector Spaces and Matrices"
+title: "Week 3: Vector Spaces and Matrices; Midterm 1"
 weekNumber: 3
 days:
   - date: "2026-05-18"
@@ -25,8 +25,9 @@ days:
         problems: ../resources/labs/lab05/
       - name: HW 4
         type: hw
-        title: Projections, Span, and Linear Independence (no slip days!)
+        title: Projections, Span, and Linear Independence
         problems: ../resources/homeworks/hw04/
+        note: You <b>cannot</b> use slip days on Homework 4.
   - date: "2026-05-21"
     events:
       - name: LEC 6
@@ -40,6 +41,5 @@ days:
     events:
       - name: EXAM
         type: exam
-        title: "<b>Midterm 1 (1-3PM, 1690 BBB)</b>"
-        note: Find past exams <a href="resources">here</a>.
+        title: "<b>Midterm 1 (1-3PM, 1690 BBB; <a href='../mt1'>see logistics here</a>)</b>"
 ---
