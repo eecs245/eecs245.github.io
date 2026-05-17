@@ -54,7 +54,7 @@ Note that past Final Exams have relevant content as well, since the Final Exam i
 
 A few other ways to prepare:
 
-- Continue to make office hours appointments to ask questions!
+- Continue to make [office hours appointments](https://calendar.app.google/TNqfWMxkjuaLGi6n9) to ask questions!
 - Post on Slack! If any of the solutions to past homeworks, labs, or exams are unclear, let us know on Slack. We can update them if need be.
 - Come to Lecture 6 (the day before the exam) with questions to ask; we'll have time to take up anything you'd like.
 
