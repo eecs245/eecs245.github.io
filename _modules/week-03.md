@@ -12,7 +12,7 @@ days:
     events:
       - name: LEC 5
         type: lecture
-        title: Vector Spaces, Subspaces, Bases, and Dimension
+        title: Vector Spaces and Subspaces
         reading: https://notes.eecs245.org/linear-independence/linear-independence/
         reading_text: Ch. 4.2
         reading2: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
