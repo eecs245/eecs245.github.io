@@ -55,4 +55,5 @@ days:
         type: hw
         title: Vectors and the Dot Product
         problems: ../resources/homeworks/hw03/
+        solutions: true
 ---

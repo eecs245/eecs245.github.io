@@ -21,6 +21,11 @@ window.MathJax = {
 
 SECTION_SEPARATOR = "---"
 
+HTML_COLOR_NAMES = {
+    "3D81F6": "blue",
+    "D81B60": "magenta",
+}
+
 HOMEWORK_STYLE_SNIPPET = """<style>
 .main-content p {
   margin-bottom: 1.15em;
@@ -202,6 +207,7 @@ def main() -> int:
             source_path=source_tex,
         )
 
+        final_markdown = "\n".join(line.rstrip() for line in final_markdown.splitlines()) + "\n"
         output_md.write_text(final_markdown)
 
     copy_referenced_assets(output_md, source_tex.parent, repo_root / "website")
@@ -822,6 +828,7 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     )
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = fix_latex_for_mathjax(text)
+    text = convert_pandoc_attribute_spans(text)
     text = fix_image_syntax(text)
     text = remove_blank_table_headers(text)
     text = escape_blank_rules(text)
@@ -839,6 +846,7 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = add_total_points_separator(text)
     text = collapse_repeated_section_separators(text)
     text = fix_accidental_indented_prose(text)
+    text = keep_ordered_list_display_math_items(text)
     text = remove_pandoc_layout_fences(text)
     text = re.sub(r"(</div>)\n---", r"\1\n\n---", text)
     text = collapse_repeated_section_separators(text)
@@ -849,6 +857,21 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
 
 def remove_pandoc_layout_fences(text: str) -> str:
     return re.sub(r"(?m)^:::\s*minipage\s*$\n?", "", text)
+
+
+def convert_pandoc_attribute_spans(text: str) -> str:
+    def replace(match: re.Match[str]) -> str:
+        label = match.group("label")
+        color = match.group("color").strip()
+        if re.fullmatch(r"[0-9A-Fa-f]{6}", color):
+            color = f"#{color}"
+        return f'<span style="color: {color}">{label}</span>'
+
+    return re.sub(
+        r'\[(?P<label>[^\]]+)\]\{style="color:\s*(?P<color>[^"]+)"\}',
+        replace,
+        text,
+    )
 
 
 def add_item_separators(text: str) -> str:
@@ -945,6 +968,19 @@ def indent_ordered_list_display_math(text: str) -> str:
         fixed.append(lines[index])
         index += 1
     return "\n".join(fixed)
+
+
+def keep_ordered_list_display_math_items(text: str) -> str:
+    def replace(match: re.Match[str]) -> str:
+        marker = match.group("marker")
+        math = match.group("math").strip()
+        return f"{marker}  $$\n{math}\n$$"
+
+    return re.sub(
+        r'(?ms)^(?P<marker>\d+\.)[ \t]*\n\n<div class="math-display">\n\$\$\n(?P<math>.*?)\n\$\$\n</div>',
+        replace,
+        text,
+    )
 
 
 def convert_points_badges(text: str, use_badges: bool = True) -> str:
@@ -1129,9 +1165,29 @@ def mc_square_html(correct: bool = False) -> str:
 
 def escape_inline_math_content(content: str) -> str:
     content = html.unescape(content)
+    content = normalize_xcolor_for_mathjax(content)
+    content = strip_inline_math_spacing_commands(content)
     content = content.replace(r"\{", r"\lbrace")
     content = content.replace(r"\}", r"\rbrace")
-    return html.escape(content, quote=False)
+    content = html.escape(content, quote=False)
+    return content.replace("_", "&#95;")
+
+
+def normalize_xcolor_for_mathjax(content: str) -> str:
+    def replace(match: re.Match[str]) -> str:
+        command = match.group("command")
+        color = match.group("color").upper()
+        return rf"\{command}{{{HTML_COLOR_NAMES.get(color, 'black')}}}"
+
+    return re.sub(
+        r"\\(?P<command>textcolor|color)\[HTML\]\{(?P<color>[0-9A-Fa-f]{6})\}",
+        replace,
+        content,
+    )
+
+
+def strip_inline_math_spacing_commands(content: str) -> str:
+    return re.sub(r"\\[!,;:]", "", content)
 
 
 def unindent_accidental_list_code_blocks(text: str) -> str:
@@ -1261,6 +1317,7 @@ def fix_latex_for_mathjax(text: str) -> str:
     )
 
     def cleanup_display_content(content: str) -> str:
+        content = normalize_xcolor_for_mathjax(content)
         content = re.sub(r"\\ensuremath\{\\boxed\{([^{}]*)\}\}", r"\\boxed{\1}", content)
 
         def clean_text_command(match: re.Match[str]) -> str:

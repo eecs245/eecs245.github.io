@@ -17,6 +17,7 @@ BAD_TEXT_PATTERNS = (
     "Whatis",
     "minipage",
     "<em>{",
+    r"!\cdot!",
 )
 
 
@@ -100,8 +101,16 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: indented math-display block will render as code")
     if re.search(r"(?m)^- \[[^\n\]]*<span class=\"math-inline\"", text):
         failures.append(f"{source_md}: raw inline-math HTML leaked into the table of contents")
-    if re.search(r'<span class="math-inline">[^<]*(?:&#95;|&#42;|&#39;)[^<]*</span>', text):
+    if re.search(r'<span class="math-inline">[^<]*(?:&#42;|&#39;)[^<]*</span>', text):
         failures.append(f"{source_md}: escaped punctuation leaked into inline math")
+    if re.search(r'<span class="math-inline">[^<]*_[^<]*</span>', text):
+        failures.append(f"{source_md}: raw underscore in inline math may render as emphasis")
+    if re.search(r"\\(?:textcolor|color)\[HTML\]", text):
+        failures.append(f"{source_md}: xcolor HTML color model will not render in MathJax")
+    if re.search(r'\[[^\]]+\]\{style="color:', text):
+        failures.append(f"{source_md}: Pandoc attribute span leaked into Markdown")
+    if re.search(r'(?m)^\d+\.[ \t]*$\n\n<div class="math-display">', text):
+        failures.append(f"{source_md}: ordered-list display math will break numbering")
     if re.search(r"(?m)^ {4,}[-*]\s+.*<span class=\"math-inline\"", text):
         failures.append(f"{source_md}: indented math list item will render as code")
     if re.search(r"(?m)^:::\s*minipage\s*$", text):

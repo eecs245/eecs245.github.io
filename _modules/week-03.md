@@ -8,6 +8,7 @@ days:
         type: lab
         title: Projections, Span, and Linear Independence
         problems: ../resources/labs/lab04/
+        solutions: true
   - date: "2026-05-19"
     events:
       - name: LEC 5
