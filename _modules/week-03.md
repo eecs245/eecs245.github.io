@@ -14,6 +14,7 @@ days:
       - name: LEC 5
         type: lecture
         title: Vector Spaces and Subspaces
+        recording: https://leccap.engin.umich.edu/leccap/player/r/rE4ICu
         reading: https://notes.eecs245.org/linear-independence/linear-independence/
         reading_text: Ch. 4.2
         reading2: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
