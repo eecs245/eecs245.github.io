@@ -25,9 +25,6 @@ days:
       - name: Lab 11
         type: lab
         title: Adjacency Matrices and Diagonalization
-      - name: HW 10
-        type: hw
-        title: Eigenvalues and Eigenvectors
   - date: "2026-06-18"
     events:
       - name: LEC 13
@@ -35,4 +32,12 @@ days:
         title: Principal Components Analysis and Applications
         reading: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
         reading_text: Ch. 10.4
+      - name: HW 10
+        type: hw
+        title: Eigenvalues and Eigenvectors
+  - date: "2026-06-21"
+    events:
+      - name: HW 11
+        type: hw
+        title: Singular Value Decomposition
 ---

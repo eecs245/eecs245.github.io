@@ -25,9 +25,6 @@ days:
       - name: Lab 8
         type: lab
         title: Multiple Linear Regression; The Gradient Vector
-      - name: HW 7
-        type: hw
-        title: Linear Transformations and Projections
   - date: "2026-06-04"
     events:
       - name: LEC 10
@@ -41,6 +38,9 @@ days:
         reading3_text: Ch. 8.5
         reading4: https://notes.eecs245.org/gradients/positive-definite-matrices/
         reading4_text: Ch. 8.6
+      - name: HW 7
+        type: hw
+        title: Linear Transformations and Projections
   - date: "2026-06-07"
     events:
       - name: HW 8

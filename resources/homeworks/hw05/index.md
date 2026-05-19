@@ -95,7 +95,7 @@ window.MathJax = {
 
 # Homework 5: Linear Independence and Subspaces
 
-**due** Wednesday, May 27th, 2026 at 11:59PM Ann Arbor Time
+**due** Thursday, May 28th, 2026 at 11:59PM Ann Arbor Time
 
 {: .yellow }
 <div markdown="1">

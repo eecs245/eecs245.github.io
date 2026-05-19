@@ -20,9 +20,6 @@ days:
       - name: Lab 6
         type: lab
         title: Rank, Column Space, Null Space, and Inverses
-      - name: HW 5
-        type: hw
-        title: Matrices
   - date: "2026-05-28"
     events:
       - name: LEC 8
@@ -36,6 +33,9 @@ days:
         reading3_text: Ch. 6.3
         reading4: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
         reading4_text: Ch. 6.4
+      - name: HW 5
+        type: hw
+        title: Matrices
   - date: "2026-05-31"
     events:
       - name: HW 6
