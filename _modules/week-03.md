@@ -42,6 +42,7 @@ days:
         reading_text: Ch. 5.1
         reading2: https://notes.eecs245.org/matrices/special-matrices/
         reading2_text: Ch. 5.2
+        live_notes: resources/lecture-pdfs/lec06-filled.pdf
   - date: "2026-05-22"
     events:
       - name: EXAM
