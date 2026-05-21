@@ -254,7 +254,7 @@ def extract_metadata(text: str) -> Metadata:
     submission_instructions = extract_newcommand(text, "submissioninstructions")
     return Metadata(
         assignment=assignment,
-        due_date=collapse_whitespace(due_date),
+        due_date=format_metadata_inline_latex(due_date),
         submission_instructions_latex=submission_instructions.strip(),
     )
 
@@ -293,6 +293,33 @@ def extract_braced(text: str, brace_start: int) -> tuple[str, int]:
         i += 1
 
     raise ValueError("Unbalanced braces while parsing metadata.")
+
+
+def format_metadata_inline_latex(text: str) -> str:
+    """Convert simple inline LaTeX metadata fragments used in titles/dates."""
+
+    def replace_html_textcolor(match: re.Match[str]) -> str:
+        color = f"#{match.group('color')}"
+        body = match.group("body")
+        return f'<span style="color: {color};">{body}</span>'
+
+    def replace_named_textcolor(match: re.Match[str]) -> str:
+        color = match.group("color")
+        body = match.group("body")
+        return f'<span style="color: {color};">{body}</span>'
+
+    text = re.sub(
+        r"\\textcolor\[HTML\]\{(?P<color>[0-9A-Fa-f]{6})\}\{(?P<body>[^{}]*)\}",
+        replace_html_textcolor,
+        text,
+    )
+    text = re.sub(
+        r"\\textcolor\{(?P<color>[^{}]+)\}\{(?P<body>[^{}]*)\}",
+        replace_named_textcolor,
+        text,
+    )
+    text = text.replace(r"\#", "#")
+    return collapse_whitespace(text)
 
 
 def expand_inputs(path: Path) -> str:

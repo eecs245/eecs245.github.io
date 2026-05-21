@@ -105,8 +105,8 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: escaped punctuation leaked into inline math")
     if re.search(r'<span class="math-inline">[^<]*_[^<]*</span>', text):
         failures.append(f"{source_md}: raw underscore in inline math may render as emphasis")
-    if re.search(r"\\(?:textcolor|color)\[HTML\]", text):
-        failures.append(f"{source_md}: xcolor HTML color model will not render in MathJax")
+    if re.search(r"\\(?:textcolor|color)(?:\[[^\]]+\])?\{", text):
+        failures.append(f"{source_md}: LaTeX color command leaked into generated Markdown")
     if re.search(r'\[[^\]]+\]\{style="color:', text):
         failures.append(f"{source_md}: Pandoc attribute span leaked into Markdown")
     if re.search(r'(?m)^\d+\.[ \t]*$\n\n<div class="math-display">', text):

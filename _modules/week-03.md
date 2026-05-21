@@ -24,10 +24,12 @@ days:
     events:
       - name: Lab 5
         type: lab
+        solutions: true
         title: Vector Spaces, Subspaces, Bases, and Dimension
         problems: ../resources/labs/lab05/
       - name: HW 4
         type: hw
+        solutions: true
         title: Projections, Span, and Linear Independence
         problems: ../resources/homeworks/hw04/
         note: You <b>cannot</b> use slip days on Homework 4.
