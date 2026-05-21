@@ -32,7 +32,6 @@ days:
         solutions: true
         title: Projections, Span, and Linear Independence
         problems: ../resources/homeworks/hw04/
-        note: You <b>cannot</b> use slip days on Homework 4.
   - date: "2026-05-21"
     events:
       - name: LEC 6
