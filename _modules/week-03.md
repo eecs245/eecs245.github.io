@@ -37,6 +37,7 @@ days:
       - name: LEC 6
         type: lecture
         title: Matrices, Exam Review
+        recording: https://leccap.engin.umich.edu/leccap/player/r/CdGUVk
         reading: https://notes.eecs245.org/matrices/matrix-operations/
         reading_text: Ch. 5.1
         reading2: https://notes.eecs245.org/matrices/special-matrices/
