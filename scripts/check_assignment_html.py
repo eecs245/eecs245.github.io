@@ -113,6 +113,8 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: ordered-list display math will break numbering")
     if re.search(r"(?m)^ {4,}[-*]\s+.*<span class=\"math-inline\"", text):
         failures.append(f"{source_md}: indented math list item will render as code")
+    if re.search(r"(?m)^ {4}(?!\d+\.|[-*]\s)\S.*<span class=\"math-inline\"", text):
+        failures.append(f"{source_md}: indented inline-math HTML will render as code")
     if re.search(r"(?m)^:::\s*minipage\s*$", text):
         failures.append(f"{source_md}: LaTeX minipage fence leaked into markdown")
     if re.search(r"(?m)(?:^---$[ \t]*\n\s*){2,}", text):

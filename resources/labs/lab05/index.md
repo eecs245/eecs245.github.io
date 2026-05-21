@@ -133,11 +133,11 @@ Feel free to work with others in the course, but you must submit individually.
 
     3.  <span class="math-inline">\\(\vec{u} \in S, c \in \mathbb{R} \rightarrow c\vec{u} \in S\\)</span>
 
-    If you take any two vectors <span class="math-inline">\\(\vec{u}, \vec{v} \in S\\)</span>, then any linear combination <span class="math-inline">\\(c\vec{u}+d\vec{v}\\)</span> must also be in <span class="math-inline">\\(S\\)</span>.
+       If you take any two vectors <span class="math-inline">\\(\vec{u}, \vec{v} \in S\\)</span>, then any linear combination <span class="math-inline">\\(c\vec{u}+d\vec{v}\\)</span> must also be in <span class="math-inline">\\(S\\)</span>.
 
 -   As an example, let's consider <span class="math-inline">\\(\mathbb{R}^2\\)</span>, which itself is a vector space.
 
-    ![image](imgs/lab06-lines.jpg)
+   ![image](imgs/lab06-lines.jpg)
 
 -   The line through the origin **is** a subspace of <span class="math-inline">\\(\mathbb{R}^2\\)</span>, with dimension 1. It is the span of the vector <span class="math-inline">\\(\begin{bmatrix}1 \\\\ 1\end{bmatrix}\\)</span>.
 
@@ -149,7 +149,7 @@ Feel free to work with others in the course, but you must submit individually.
 
     2.  are linearly independent
 
-    A basis for a subspace is a minimal set of vectors that spans the whole subspace. All subspaces have infinitely many bases. For example, <span class="math-inline">\\(\left \lbrace \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \right\rbrace\\)</span> and <span class="math-inline">\\(\left \lbrace \begin{bmatrix} 1 \\\\ 1 \end{bmatrix}, \begin{bmatrix} 2 \\\\ 3 \end{bmatrix} \right\rbrace\\)</span> are both bases for <span class="math-inline">\\(\mathbb{R}^2\\)</span>.
+       A basis for a subspace is a minimal set of vectors that spans the whole subspace. All subspaces have infinitely many bases. For example, <span class="math-inline">\\(\left \lbrace \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \right\rbrace\\)</span> and <span class="math-inline">\\(\left \lbrace \begin{bmatrix} 1 \\\\ 1 \end{bmatrix}, \begin{bmatrix} 2 \\\\ 3 \end{bmatrix} \right\rbrace\\)</span> are both bases for <span class="math-inline">\\(\mathbb{R}^2\\)</span>.
 
 -   The **dimension** of a subspace <span class="math-inline">\\(S\\)</span>, denoted <span class="math-inline">\\(\text{dim}(S)\\)</span>, is the number of vectors in any basis for <span class="math-inline">\\(S\\)</span>.
 
@@ -278,15 +278,25 @@ Suppose <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2, \ldots, \vec v&
 
 1.  These vectors \_\_\_\_\_\_\_\_ span all of <span class="math-inline">\\(\mathbb{R}^5\\)</span>.
 
-    (options: do, do not, might)
+   (options: do, do not, might)
 
 2.  These vectors \_\_\_\_\_\_\_\_ linearly independent.
 
-    (options: are, are not, might be)
+   (options: are, are not, might be)
 
 3.  Any 5 of these vectors \_\_\_\_\_\_\_\_ span all of <span class="math-inline">\\(\mathbb{R}^5\\)</span>.
 
-    (options: do, do not, might)
+   (options: do, do not, might)
+
+<details markdown="1"><summary>Solution</summary>
+
+1.  These vectors **might** span all of <span class="math-inline">\\(\mathbb{R}^5\\)</span>. We need at least 5 vectors to span <span class="math-inline">\\(\mathbb{R}^5\\)</span>, but it's possible that these vectors only span a lower-dimensional subspace of <span class="math-inline">\\(\mathbb{R}^5\\)</span>. (For a smaller example, it's possible that 10 vectors in <span class="math-inline">\\(\mathbb{R}^2\\)</span> all point in the same direction and only span a line, which is a 1-dimensional subspace of <span class="math-inline">\\(\mathbb{R}^2\\)</span>.)
+
+2.  These vectors **are not** linearly independent. 5-dimensional space only has 5 "directions", so any set of 6 or more vectors must be linearly dependent. (For a smaller example, any 3 or more vectors in <span class="math-inline">\\(\mathbb{R}^2\\)</span> are linearly dependent.)
+
+3.  Any 5 of these vectors **might** span all of <span class="math-inline">\\(\mathbb{R}^5\\)</span>. It may be the case that even together, all 8 vectors don't span <span class="math-inline">\\(\mathbb{R}^5\\)</span>, which means that any subset of them also wouldn't. But even if all 8 together do span <span class="math-inline">\\(\mathbb{R}^5\\)</span>, meaning that there exists a subset of 5 of them that is linearly independent and spans <span class="math-inline">\\(\mathbb{R}^5\\)</span>, it's not necessarily the case that **any** subset of 5 of them would, only a particular subset.
+
+</details>
 
 </div>
 </div>
@@ -301,6 +311,36 @@ Furthermore, suppose that <span class="math-inline">\\(\text{span}(\lbrace\vec u
 1.  Let <span class="math-inline">\\(k\\)</span> be the dimension of the subspace spanned by a subset of 4 of these vectors. What are all possible values of <span class="math-inline">\\(k\\)</span>?
 
 2.  Let <span class="math-inline">\\(m\\)</span> be the dimension of the subspace spanned by a subset of 7 of these vectors. What are all possible values of <span class="math-inline">\\(m\\)</span>?
+
+<details markdown="1"><summary>Solution</summary>
+
+Since the span of the 10 vectors is a 6-dimensional subspace of <span class="math-inline">\\(\mathbb{R}^{11}\\)</span>, it means that there exists a linearly independent subset of 6 of these vectors that spans the same 6-dimensional subspace. We just don't know which 6 are linearly independent. The other 4 vectors must all be linear combinations of the 6 linearly independent vectors.
+
+Just for the sake of example, one possible arrangement is
+
+<div class="math-display">
+$$
+\vec a, \vec b, \vec c, \vec d, \vec e, \vec f, 2 \vec a, 3 \vec a, 4 \vec a, 5 \vec a
+$$
+</div>
+
+where <span class="math-inline">\\(\vec a, \vec b, \vec c, \vec d, \vec e, \vec f\\)</span> are the linearly independent vectors, and <span class="math-inline">\\(2 \vec a, 3 \vec a, 4 \vec a, 5 \vec a\\)</span> are the redundant vectors.
+
+1.  If we're choosing 4 of the 10 vectors, <span class="math-inline">\\(k\\)</span> must be between 1 and 4, inclusive.
+
+-   In the best case, we pick 4 of the 6 linearly independent vectors. This gives us a 4-dimensional subspace.
+
+-   In the worst case, we pick none of the 6 linearly independent vectors, and pick the other 4. We don't know what the nature of these other 4 vectors are, but the "smallest" their span could be is if all 4 of them are scalar multiples of one of the 6 linearly independent vectors. This would give us a 1-dimensional subspace.
+
+-   <span class="math-inline">\\(k = 2\\)</span> or <span class="math-inline">\\(k = 3\\)</span> are possible by choosing some number out of the 6 and a remaining number out of the other 4.
+
+2.  If we're choosing 7 of the 10 vectors, <span class="math-inline">\\(m\\)</span> must be between 3 and 6, inclusive.
+
+-   In the best case, we pick all 6 linearly independent vectors, and one of the 4 redundant ones, which together span a 6-dimensional subspace. (No subset of these vectors can span a subspace with greater than 6 dimensions.)
+
+-   No matter what, we must always pick at least 3 of the linearly independent vectors, because we're choosing 7 in total. So if we want to "minimize" how "useful" the subspace is, we should pick all 4 of the redundant vectors but that still forces us to take 3 of the linearly independent vectors. Those 3 linearly independent vectors together with all 4 redundant vectors span at least a 3-dimensional subspace, say if we pick <span class="math-inline">\\(\vec a, \vec b, \vec c, 2 \vec a, 3 \vec a, 4 \vec a, 5 \vec a\\)</span>.
+
+</details>
 
 </div>
 </div>
@@ -345,7 +385,7 @@ $$
 $$
 </div>
 
-    then
+   then
 
 <div class="math-display">
 $$
@@ -353,7 +393,7 @@ c \vec u + d \vec v = \begin{bmatrix} 0 \\\\ ca + db \\\\ 0 \end{bmatrix}
 $$
 </div>
 
-    is also in the set. So, the set of vectors in <span class="math-inline">\\(\mathbb{R}^3\\)</span> that satisfy <span class="math-inline">\\(x = -z\\)</span> and <span class="math-inline">\\(x = z\\)</span> is a subspace.
+   is also in the set. So, the set of vectors in <span class="math-inline">\\(\mathbb{R}^3\\)</span> that satisfy <span class="math-inline">\\(x = -z\\)</span> and <span class="math-inline">\\(x = z\\)</span> is a subspace.
 
 5.  <span class="math-inline">\\(x^2 + y^2 = z\\)</span> is **not a subspace**. The zero vector is the set, since plugging in <span class="math-inline">\\((x, y, z) = (0, 0, 0)\\)</span> gives us <span class="math-inline">\\(0^2 + 0^2 = 0\\)</span>, which is fine. But, the set is not closed under scalar multiplication. For example, consider <span class="math-inline">\\(\begin{bmatrix} 3 \\\\ 4 \\\\ 25 \end{bmatrix}\\)</span>, which is in the set, but <span class="math-inline">\\(2 \begin{bmatrix} 3 \\\\ 4 \\\\ 25 \end{bmatrix} = \begin{bmatrix} 6 \\\\ 8 \\\\ 50 \end{bmatrix}\\)</span> is not in the set, since <span class="math-inline">\\(6^2 + 8^2 = 100 \neq 50\\)</span>.
 
@@ -466,7 +506,7 @@ $$
 $$
 </div>
 
-    Subtracting equations 2 and 3 gives <span class="math-inline">\\(6b = 3 \implies b = \frac{1}{2}\\)</span>, and plugging this into equation 1 gives <span class="math-inline">\\(a + \frac{1}{2} = 2 \implies a = \frac{3}{2}\\)</span>. Let's check if this system is consistent. Evaluating <span class="math-inline">\\(\frac{3}{2} \begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix} + \frac{1}{2} \begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span> gives us
+   Subtracting equations 2 and 3 gives <span class="math-inline">\\(6b = 3 \implies b = \frac{1}{2}\\)</span>, and plugging this into equation 1 gives <span class="math-inline">\\(a + \frac{1}{2} = 2 \implies a = \frac{3}{2}\\)</span>. Let's check if this system is consistent. Evaluating <span class="math-inline">\\(\frac{3}{2} \begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix} + \frac{1}{2} \begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span> gives us
 
 
 
@@ -479,7 +519,7 @@ $$
 $$
 </div>
 
-    So, <span class="math-inline">\\(\begin{bmatrix} 2 \\\\ 7 \\\\ 4 \end{bmatrix}\\)</span> is a linear combination of <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span>, so we won't add it to <span class="math-inline">\\(B\\)</span>. (Remember, the point of <span class="math-inline">\\(B\\)</span> is that it is linearly independent and spans <span class="math-inline">\\(S\\)</span>.)
+   So, <span class="math-inline">\\(\begin{bmatrix} 2 \\\\ 7 \\\\ 4 \end{bmatrix}\\)</span> is a linear combination of <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span>, so we won't add it to <span class="math-inline">\\(B\\)</span>. (Remember, the point of <span class="math-inline">\\(B\\)</span> is that it is linearly independent and spans <span class="math-inline">\\(S\\)</span>.)
 
 -   What's left is <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 4 \\\\ 1 \end{bmatrix}\\)</span>. Is it a linear combination of <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span>? To determine whether it is, we'll look for scalars <span class="math-inline">\\(a\\)</span> and <span class="math-inline">\\(b\\)</span> such that
 
@@ -505,9 +545,9 @@ $$
 $$
 </div>
 
-    Subtracting equations 2 and 3 gives <span class="math-inline">\\(6b = 3 \implies b = \frac{1}{2}\\)</span>, and plugging this into equation 1 gives <span class="math-inline">\\(a + \frac{1}{2} = 1 \implies a = \frac{1}{2}\\)</span>. Let's check if this system is consistent. Evaluating <span class="math-inline">\\(\frac{1}{2} \begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix} + \frac{1}{2} \begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span> gives us <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 4 \\\\ 1 \end{bmatrix}\\)</span>.
+   Subtracting equations 2 and 3 gives <span class="math-inline">\\(6b = 3 \implies b = \frac{1}{2}\\)</span>, and plugging this into equation 1 gives <span class="math-inline">\\(a + \frac{1}{2} = 1 \implies a = \frac{1}{2}\\)</span>. Let's check if this system is consistent. Evaluating <span class="math-inline">\\(\frac{1}{2} \begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix} + \frac{1}{2} \begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span> gives us <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 4 \\\\ 1 \end{bmatrix}\\)</span>.
 
-    So, <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 4 \\\\ 1 \end{bmatrix}\\)</span> is a linear combination of <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span>, so we won't add it to <span class="math-inline">\\(B\\)</span>.
+   So, <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 4 \\\\ 1 \end{bmatrix}\\)</span> is a linear combination of <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix}\\)</span>, so we won't add it to <span class="math-inline">\\(B\\)</span>.
 
 So, <span class="math-inline">\\(B = \left\lbrace \begin{bmatrix} 1 \\\\ 3 \\\\ 3 \end{bmatrix}, \begin{bmatrix} 1 \\\\ 5 \\\\ -1 \end{bmatrix} \right\rbrace\\)</span> is a linearly independent subset of <span class="math-inline">\\(S\\)</span> that spans <span class="math-inline">\\(S\\)</span>, i.e. it is a basis for <span class="math-inline">\\(S\\)</span>. **The dimension of <span class="math-inline">\\(S\\)</span> is 2.**
 

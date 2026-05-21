@@ -1300,11 +1300,16 @@ def fix_accidental_indented_prose(text: str) -> str:
         stripped = content.strip()
         if not stripped:
             return False
-        if stripped.startswith(("-", "*", "1.", "2.", "3.", "`", "<", "|", "$$")):
+        if stripped.startswith(("-", "*", "1.", "2.", "3.", "`", "|", "$$")):
             return False
-        if re.search(r"[{};=<>]|\\begin\{|\\end\{", stripped):
+        if stripped.startswith("<") and not stripped.startswith('<span class="math-inline">'):
             return False
-        return bool(re.search(r"[A-Za-z].*[.?!:]$", stripped))
+        if '<span class="math-inline">' in stripped and re.search(r"[A-Za-z]", stripped):
+            return True
+        normalized = re.sub(r'<span class="math-inline">.*?</span>', "MATH", stripped)
+        if re.search(r"[{};=<>]|\\begin\{|\\end\{", normalized):
+            return False
+        return bool(re.search(r"[A-Za-z].*[.?!:)]$", normalized) or normalized in {"then"})
 
     lines = text.splitlines()
     fixed: list[str] = []
