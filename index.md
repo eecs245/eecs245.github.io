@@ -26,8 +26,6 @@ EECS 245, Spring 2026 🌸 at the <b><span style="background-color: #FFCB05; col
 {% endfor %}
 
 {: .green }
-> Midterm 1 is on **Friday, May 22nd from 1-3PM in 1690 BBB**. See the [**Midterm 1 Logistics**](./mt1) page for more details.
->
 > The lecture recordings this semester are private to the students in the class, given the small class size. For publicly available recordings, see [last semester's course website](https://eecs245.org/wn26).
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>

@@ -1393,6 +1393,21 @@ def fix_latex_for_mathjax(text: str) -> str:
     text = re.sub(r"\$\$(.*?)\$\$", process_display_math, text, flags=re.S)
 
     def protect_inline_math_outside_display(segment: str) -> str:
+        def convert_multiline_inline_math(match: re.Match[str]) -> str:
+            content = match.group(1)
+            if "\n\n" in content:
+                return match.group(0)
+            content = re.sub(r"[ \t]*\n[ \t]*", " ", content).strip()
+            content = fix_backslashes_in_math(content)
+            return protect_inline_math(content)
+
+        segment = re.sub(
+            r"(?<![\\$])\$([^$]*\\begin\{(?:[bpvV]?matrix|array|aligned|cases)\}[^$]*\n[^$]*?)\$(?!\$)",
+            convert_multiline_inline_math,
+            segment,
+            flags=re.S,
+        )
+
         def process_latex_inline_math(match: re.Match[str]) -> str:
             content = match.group(2)
             return protect_inline_math(content)
@@ -1414,6 +1429,12 @@ def fix_latex_for_mathjax(text: str) -> str:
             r"(?<![\\$])\$([^\$\n]+?)\$(?!\$)",
             convert_inline_math,
             segment,
+        )
+        segment = re.sub(
+            r'<span class="math-inline"><span class="math-inline">(.*?)</span></span>',
+            r'<span class="math-inline">\1</span>',
+            segment,
+            flags=re.S,
         )
         return segment.replace(r"\$", "&#36;")
 

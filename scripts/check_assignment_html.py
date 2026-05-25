@@ -103,6 +103,8 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: raw inline-math HTML leaked into the table of contents")
     if re.search(r'<span class="math-inline">[^<]*(?:&#42;|&#39;)[^<]*</span>', text):
         failures.append(f"{source_md}: escaped punctuation leaked into inline math")
+    if '<span class="math-inline"><span class="math-inline">' in text:
+        failures.append(f"{source_md}: nested inline-math span")
     if re.search(r'<span class="math-inline">[^<]*_[^<]*</span>', text):
         failures.append(f"{source_md}: raw underscore in inline math may render as emphasis")
     if re.search(r"\\(?:textcolor|color)(?:\[[^\]]+\])?\{", text):
@@ -111,6 +113,11 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: Pandoc attribute span leaked into Markdown")
     if re.search(r'(?m)^\d+\.[ \t]*$\n\n<div class="math-display">', text):
         failures.append(f"{source_md}: ordered-list display math will break numbering")
+    if re.search(
+        r"(?ms)^\d+\.[^\n]*\$[^\n]*\\begin\{(?:[bpvV]?matrix|array|aligned|cases)\}.*?\\end\{(?:[bpvV]?matrix|array|aligned|cases)\}\$",
+        text,
+    ):
+        failures.append(f"{source_md}: multiline inline math in an ordered list may render as code")
     if re.search(r"(?m)^ {4,}[-*]\s+.*<span class=\"math-inline\"", text):
         failures.append(f"{source_md}: indented math list item will render as code")
     if re.search(r"(?m)^ {4}(?!\d+\.|[-*]\s)\S.*<span class=\"math-inline\"", text):

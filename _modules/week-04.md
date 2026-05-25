@@ -18,6 +18,7 @@ days:
   - date: "2026-05-27"
     events:
       - name: Lab 6
+        problems: ../resources/labs/lab06/
         type: lab
         title: Rank, Column Space, Null Space, and Inverses
   - date: "2026-05-28"
@@ -34,11 +35,13 @@ days:
         reading4: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
         reading4_text: Ch. 6.4
       - name: HW 5
+        problems: ../resources/homeworks/hw05/
         type: hw
         title: Matrices
   - date: "2026-05-31"
     events:
       - name: HW 6
+        problems: ../resources/homeworks/hw06/
         type: hw
         title: Rank and Inverses
 ---

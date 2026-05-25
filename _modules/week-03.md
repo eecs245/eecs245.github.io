@@ -48,4 +48,6 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Midterm 1 (1-3PM, 1690 BBB; <a href='../mt1'>see logistics here</a>)</b>"
+        problems: ../resources/exams/sp26-mt1.pdf
+        solutions: ../resources/exams/sp26-mt1-solutions.pdf
 ---
