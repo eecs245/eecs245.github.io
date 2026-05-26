@@ -7,14 +7,17 @@ days:
       - name: LEC 7
         type: lecture
         title: Rank, Column Space, Null Space, and Rank-Nullity
-        reading: https://notes.eecs245.org/matrices/rank-and-column-space/
-        reading_text: Ch. 5.3
-        reading2: https://notes.eecs245.org/matrices/null-space-rank-nullity/
-        reading2_text: Ch. 5.4
-        reading3: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
-        reading3_text: Ch. 6.2
+        reading: https://notes.eecs245.org/matrices/special-matrices/
+        reading_text: Ch. 5.2
+        reading2: https://notes.eecs245.org/matrices/rank-and-column-space/
+        reading2_text: Ch. 5.3
+        reading3: https://notes.eecs245.org/matrices/null-space-rank-nullity/
+        reading3_text: Ch. 5.4
+        reading4: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
+        reading4_text: Ch. 6.2
         videos: https://youtube.com/playlist?list=PLEFTQpsm47qTw4_nsPMtpDG34ugpPlFkx&si=zK7Y1tURgyWx5j3b
         note: Watch the supplemental videos!
+        live_notes: resources/lecture-pdfs/lec07-filled.pdf
   - date: "2026-05-27"
     events:
       - name: Lab 6
