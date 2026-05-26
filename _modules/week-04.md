@@ -11,10 +11,8 @@ days:
         reading_text: Ch. 5.3
         reading2: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading2_text: Ch. 5.4
-        reading3: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
-        reading3_text: Ch. 6.2
-        reading4: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
-        reading4_text: Ch. 6.4
+        reading3: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
+        reading3_text: Ch. 6.4
   - date: "2026-05-27"
     events:
       - name: Lab 6
