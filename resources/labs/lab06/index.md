@@ -283,7 +283,9 @@ Suppose <span class="math-inline">\\(A\\)</span> is an <span class="math-inline"
 
 ## Activity 7: Programming
 
-Complete the tasks in the `lab06.ipynb` notebook.
+Complete the tasks in the `lab06.ipynb` notebook. Watch [this video](https://youtu.be/HZtoekU9NcE) first with tips on using `numpy` for linear algebra.
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/HZtoekU9NcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
 There are two ways to access the supplemental Jupyter Notebook:
 

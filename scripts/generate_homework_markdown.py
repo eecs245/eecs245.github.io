@@ -373,6 +373,7 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_false_blocks(text)
     text = strip_latex_comments(text)
     text = strip_layout_commands(text)
+    text = replace_youtube_embed_markers(text)
     text = expand_labcodelinks(text)
     text = replace_fbox_markers(text)
     text = add_solution_choice_summaries(text) if include_solutions else text
@@ -875,11 +876,40 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = fix_accidental_indented_prose(text)
     text = keep_ordered_list_display_math_items(text)
     text = remove_pandoc_layout_fences(text)
+    text = render_youtube_embeds(text)
     text = re.sub(r"(</div>)\n---", r"\1\n\n---", text)
     text = collapse_repeated_section_separators(text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = remove_trailing_section_separator(text)
     return text.strip()
+
+
+def replace_youtube_embed_markers(text: str) -> str:
+    return re.sub(
+        r"\\youtubeembed\{([A-Za-z0-9_-]+)\}",
+        r"\n\nYOUTUBE_EMBED:\1\n\n",
+        text,
+    )
+
+
+def youtube_embed_html(video_id: str) -> str:
+    return (
+        '<center><iframe width="560" height="315" '
+        f'src="https://www.youtube.com/embed/{video_id}" '
+        'title="YouTube video player" frameborder="0" '
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; '
+        'gyroscope; picture-in-picture; web-share" '
+        'referrerpolicy="strict-origin-when-cross-origin" '
+        "allowfullscreen></iframe></center>"
+    )
+
+
+def render_youtube_embeds(text: str) -> str:
+    return re.sub(
+        r"(?m)^YOUTUBE_EMBED:([A-Za-z0-9_-]+)$",
+        lambda match: youtube_embed_html(match.group(1)),
+        text,
+    )
 
 
 def remove_pandoc_layout_fences(text: str) -> str:

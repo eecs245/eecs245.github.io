@@ -129,7 +129,9 @@ Total Points: 10 + 15 + 11 + 14 + 15 + 9 = 74
 
 ---
 
-**Note**: In some of the problems in this homework, we'll explicitly mention that you can use Python and `numpy` to perform some of the relevant calculations. For a reference on how to do so, consult [Chapter 5.1](https://notes.eecs245.org/matrices/matrix-operations/#computation). In other problems, we'll explicitly state that you must execute all calculations by hand.
+**Note**: In some of the problems in this homework, we'll explicitly mention that you can use Python and `numpy` to perform some of the relevant calculations. For a reference on how to do so, consult [Chapter 5.1](https://notes.eecs245.org/matrices/matrix-operations/#computation) or [this video](https://youtu.be/HZtoekU9NcE). In other problems, we'll explicitly state that you must execute all calculations by hand.
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/HZtoekU9NcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
 ---
 
@@ -334,7 +336,7 @@ Think of <span class="math-inline">\\(P\\)</span> as a matrix that transforms <s
 
 2.  The projection matrix <span class="math-inline">\\(P\\)</span> you found in part **a)**
 
-<em>Feel free to use Python and `numpy` to compute the relevant products as we do in <a href="https://notes.eecs245.org/matrices/special-matrices/#symmetric-matrices">Chapter 5.2</a>, but if you do so, include screenshots of your code and results, and also write out the final result by hand. If you just write the final result with no work shown, you will not receive any credit.</em>
+<em>Feel free to use Python and `numpy` to compute the relevant products as we do in <a href="https://notes.eecs245.org/matrices/special-matrices/#symmetric-matrices">Chapter 5.2</a> and <a href="https://youtu.be/HZtoekU9NcE">this video</a>, but if you do so, include screenshots of your code and results, and also write out the final result by hand. If you just write the final result with no work shown, you will not receive any credit.</em>
 
 </div>
 </div>
@@ -377,7 +379,7 @@ A = \begin{bmatrix} 3 & 0 \\\\ 0 & 2 \\\\ 4 & 0 \end{bmatrix}, \quad B = \begin{
 $$
 </div>
 
-<em>Note: Feel free to use Python and `numpy` to compute the relevant products as we do in <a href="https://notes.eecs245.org/matrices/special-matrices/#symmetric-matrices">Chapter 5.2</a>, but if you do so, include screenshots of your code and results, and also write out the final result by hand. If you just write the final result with no work shown, you will not receive any credit.</em>
+<em>Note: Feel free to use Python and `numpy` to compute the relevant products as we do in <a href="https://notes.eecs245.org/matrices/special-matrices/#symmetric-matrices">Chapter 5.2</a> and <a href="https://youtu.be/HZtoekU9NcE">this video</a>, but if you do so, include screenshots of your code and results, and also write out the final result by hand. If you just write the final result with no work shown, you will not receive any credit.</em>
 
 </div>
 </div>
