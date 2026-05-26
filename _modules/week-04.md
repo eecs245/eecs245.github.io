@@ -7,6 +7,7 @@ days:
       - name: LEC 7
         type: lecture
         title: Rank, Column Space, Null Space, and Rank-Nullity
+        recording: https://leccap.engin.umich.edu/leccap/player/r/NYGWo5
         reading: https://notes.eecs245.org/matrices/special-matrices/
         reading_text: Ch. 5.2
         reading2: https://notes.eecs245.org/matrices/rank-and-column-space/
