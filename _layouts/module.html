@@ -99,7 +99,10 @@
                 <a href="{{ event.animations }}" class="btn btn-info btn-sm">🧮 Animations</a>
                 {%- endif -%}
                 {%- if event.videos -%}
-                <a href="{{ event.videos }}" class="btn btn-info btn-sm">⏯️ Videos</a>
+                <a href="{{ event.videos }}" class="btn btn-info btn-sm">⏯️ Videos{%- if event.videos_text -%}: {{ event.videos_text }}{%- endif -%}</a>
+                {%- endif -%}
+                {%- if event.videos2 -%}
+                <a href="{{ event.videos2 }}" class="btn btn-info btn-sm">⏯️ Videos{%- if event.videos2_text -%}: {{ event.videos2_text }}{%- endif -%}</a>
                 {%- endif -%}
               {%- endif -%}
               <!-- {%- if event.type == "hw" or event.type == "disc" -%}

@@ -38,8 +38,11 @@ days:
         reading3_text: Ch. 6.3
         reading4: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
         reading4_text: Ch. 6.4
-        videos: https://youtu.be/RH5OVaJOjiY
-        note: Watch the supplemental video!
+        videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qSEmQRCtKfN7dj2qg9xzgai
+        videos_text: Determinants and Invertibility
+        videos2: https://www.youtube.com/playlist?list=PLEFTQpsm47qQeWokuNgEIryDcVJ9iVQbx
+        videos2_text: Projections
+        note: Watch the supplemental videos!
       - name: HW 5
         problems: ../resources/homeworks/hw05/
         type: hw
