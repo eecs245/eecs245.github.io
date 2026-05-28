@@ -44,6 +44,7 @@ days:
         videos2: https://www.youtube.com/playlist?list=PLEFTQpsm47qQeWokuNgEIryDcVJ9iVQbx
         videos2_text: Projections
         note: Watch the supplemental videos!
+        live_notes: resources/lecture-pdfs/lec08-filled.pdf
       - name: HW 5
         problems: ../resources/homeworks/hw05/
         type: hw
