@@ -31,6 +31,7 @@ days:
       - name: LEC 8
         type: lecture
         title: Linear Transformations, Inverses, and Projections
+        recording: https://leccap.engin.umich.edu/leccap/player/r/yf3sHp
         reading: https://notes.eecs245.org/linear-transformations-and-projections/linear-transformations/
         reading_text: Ch. 6.1
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
