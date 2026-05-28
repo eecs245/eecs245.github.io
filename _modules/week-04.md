@@ -23,6 +23,7 @@ days:
     events:
       - name: Lab 6
         problems: ../resources/labs/lab06/
+        solutions: true
         type: lab
         title: Rank, Column Space, Null Space, and Inverses
   - date: "2026-05-28"
