@@ -21,11 +21,6 @@ window.MathJax = {
 
 SECTION_SEPARATOR = "---"
 
-HTML_COLOR_NAMES = {
-    "3D81F6": "blue",
-    "D81B60": "magenta",
-}
-
 HOMEWORK_STYLE_SNIPPET = """<style>
 .main-content p {
   margin-bottom: 1.15em;
@@ -40,6 +35,18 @@ HOMEWORK_STYLE_SNIPPET = """<style>
   flex-wrap: wrap;
   gap: 0.55rem;
   margin: 0 0 1rem;
+}
+.math-display,
+mjx-container[jax="CHTML"][display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.math-display {
+  padding-bottom: 0.2rem;
+}
+.math-display mjx-container[jax="CHTML"][display="true"] {
+  padding-bottom: 0.2rem;
 }
 .answer-blank {
   border-bottom: 1px solid currentColor;
@@ -844,7 +851,7 @@ def format_heading_for_toc(heading: str) -> str:
 
 def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = text.replace("\\\u2019", "'")
-    text = text.replace("\\&", "&")
+    text = re.sub(r"(?<!\\)\\&", "&", text)
     text = text.replace('\\"', '"')
     text = text.replace("\\<", "<")
     text = text.replace("\\>", ">")
@@ -1231,14 +1238,22 @@ def escape_inline_math_content(content: str) -> str:
 
 
 def normalize_xcolor_for_mathjax(content: str) -> str:
-    def replace(match: re.Match[str]) -> str:
-        command = match.group("command")
-        color = match.group("color").upper()
-        return rf"\{command}{{{HTML_COLOR_NAMES.get(color, 'black')}}}"
+    def strip_textcolor(match: re.Match[str]) -> str:
+        return match.group("body")
 
+    content = re.sub(
+        r"\\textcolor\[HTML\]\{[0-9A-Fa-f]{6}\}\{(?P<body>[^{}]*)\}",
+        strip_textcolor,
+        content,
+    )
+    content = re.sub(
+        r"\\textcolor\{[^{}]+\}\{(?P<body>[^{}]*)\}",
+        strip_textcolor,
+        content,
+    )
     return re.sub(
-        r"\\(?P<command>textcolor|color)\[HTML\]\{(?P<color>[0-9A-Fa-f]{6})\}",
-        replace,
+        r"\\color(?:\[HTML\])?\{(?:[0-9A-Fa-f]{6}|[^{}]+)\}\s*",
+        "",
         content,
     )
 

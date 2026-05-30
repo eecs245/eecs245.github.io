@@ -109,6 +109,12 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: raw underscore in inline math may render as emphasis")
     if re.search(r"\\(?:textcolor|color)(?:\[[^\]]+\])?\{", text):
         failures.append(f"{source_md}: LaTeX color command leaked into generated Markdown")
+    if re.search(r"(?m)^\\&", text):
+        failures.append(f"{source_md}: escaped alignment marker leaked into display math")
+    if r"\hdots" in text:
+        failures.append(f"{source_md}: unsupported \\hdots command leaked into generated Markdown")
+    if re.search(r"\\text\{[^}]*\\vec", text):
+        failures.append(f"{source_md}: vector command leaked inside a \\text{{...}} block")
     if re.search(r'\[[^\]]+\]\{style="color:', text):
         failures.append(f"{source_md}: Pandoc attribute span leaked into Markdown")
     if re.search(r'(?m)^\d+\.[ \t]*$\n\n<div class="math-display">', text):

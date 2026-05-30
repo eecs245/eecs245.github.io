@@ -48,6 +48,7 @@ days:
         live_notes: resources/lecture-pdfs/lec08-filled.pdf
       - name: HW 5
         problems: ../resources/homeworks/hw05/
+        solutions: true
         type: hw
         title: Matrices
   - date: "2026-05-31"
