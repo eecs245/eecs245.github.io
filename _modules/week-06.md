@@ -11,7 +11,7 @@ days:
     events:
       - name: EXAM
         type: exam
-        title: "<b>Midterm 2 (1-3PM, 1690 BBB)</b>"
+        title: "<b>Midterm 2 (1-3PM, 1690 BBB; <a href='../mt2'>see logistics here</a>)</b>"
   - date: "2026-06-11"
     events:
       - name: LEC 11
