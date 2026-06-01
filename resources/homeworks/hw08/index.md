@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Homework 8: Projections; Regression using Linear Algebra"
-description: "Homework 8: Projections; Regression using Linear Algebra problems."
+title: "Homework 8: Multiple Linear Regression, Gradients"
+description: "Homework 8: Multiple Linear Regression, Gradients problems."
 nav_exclude: true
 hide_footer_hr: true
 ---
@@ -107,7 +107,7 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 </style>
 
-# Homework 8: Projections; Regression using Linear Algebra
+# Homework 8: Multiple Linear Regression, Gradients
 
 **due** Sunday, June 7th, 2026 at 11:59PM Ann Arbor Time
 
@@ -129,76 +129,59 @@ Before proceeding, make sure you're familiar with the [collaboration policy](htt
 ## Problems
 
 - [Problem 1: Homework 7 Solutions Review](#problem-1-homework-7-solutions-review-10-pts)
-- [Problem 2: Anonymous Feedback](#problem-2-anonymous-feedback-6-pts)
-- [Problem 3: The Complete Solution](#problem-3-the-complete-solution-18-pts)
-- [Problem 4: Orthogonalization](#problem-4-orthogonalization-27-pts)
-- [Problem 5: Same, but Different](#problem-5-same-but-different-13-pts)
-- [Problem 6: Putting it into Practice](#problem-6-putting-it-into-practice-8-pts)
-- [Problem 7: Billy the Waiter](#problem-7-billy-the-waiter-14-pts)
+- [Problem 2: The Sum of Errors](#problem-2-the-sum-of-errors-8-pts)
+- [Problem 3: Moving Things Around](#problem-3-moving-things-around-10-pts)
+- [Problem 4: Gradient Descent Fundamentals](#problem-4-gradient-descent-fundamentals-8-pts)
+- [Problem 5: Product and Chain Rules](#problem-5-product-and-chain-rules-13-pts)
+- [Problem 6: Convexity](#problem-6-convexity-12-pts)
 
 ---
 
-Total Points: 10 + 6 + 18 + 27 + 13 + 8 + 14 = 96
+Total Points: 10 + 8 + 10 + 8 + 13 + 12 = 61
 
 ---
 
 ## Problem 1: Homework 7 Solutions Review (10 pts)
 
-Once they're available, review the solutions to Homework 7. Pick **two problem parts** (for example, Problem 2b and Problem 3c) from Homework 7 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
+Review the solutions to Homework 7 and pick **two problem parts** (for example, Problem 3c and Problem 5b) from Homework 7 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
 
 Alternatively, if you think one of your solutions is significantly better than the posted one, copy it here and explain why you think it is better. If you didn't do Homework 7, choose two problem parts from it that look challenging to you, and in a few sentences, explain the key ideas behind their solutions in your own words.
 
 ---
 
-## Problem 2: Anonymous Feedback (6 pts)
+## Problem 2: The Sum of Errors (8 pts)
 
-We'd like to get your feedback on how the course has been going so far, now that we're past the halfway point and Midterm 2 is fast approaching.
-
-You can find the survey [at this link](https://forms.gle/6dBV5Qvm2pXHU3t17), which you should complete **after you've finished the rest of Homework 8**. Unlike the Homework 3 survey, **it is anonymous**, so feel free to provide candid feedback.
-
-In order to earn the 6 points for Homework 8, Problem 2, include a screenshot of the confirmation message you see after submitting the form. (We consider it an honor code violation to include a screenshot if you didn't actually submit the form!)
-
-Thank you for your feedback once again!
-
----
-
-## Problem 3: The Complete Solution (18 pts)
-
-Before beginning this problem, make sure you've read both [Chapter 6.3](https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/) and [Chapter 6.4](https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/).
+Consider a set of <span class="math-inline">\\(n\\)</span> points, <span class="math-inline">\\((\vec x&#95;1, y&#95;1), (\vec x&#95;2, y&#95;2), ..., (\vec x&#95;n, y&#95;n)\\)</span>, where each <span class="math-inline">\\(\vec x&#95;i\\)</span> is a feature vector in <span class="math-inline">\\(\mathbb{R}^d\\)</span> and each <span class="math-inline">\\(y&#95;i\\)</span> is a scalar.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts) Consider the matrix <span class="math-inline">\\(A\\)</span> and vector <span class="math-inline">\\(\vec b\\)</span> defined below.
+(4 pts) To fit the model
 
 <div class="math-display">
 $$
-A = \begin{bmatrix}
-1 & 1 \\\\
-0 & 1 \\\\
-2 & -1 \\\\
-1 & -1 \\\\
-\end{bmatrix}, \quad \vec b = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\\\ 2 \end{bmatrix}
+h(\vec x_i) = w_0 + w_1 x_i^{(1)} + w_2 x_i^{(2)} + ... + w_d x_i^{(d)} = \vec w \cdot \text{Aug}(\vec x_i)
 $$
 </div>
 
-Find the vector <span class="math-inline">\\(\vec x^*\\)</span> that minimizes <span class="math-inline">\\(\lVert \vec b - A \vec x \rVert^2\\)</span>. Show your work, but feel free to use `numpy` to compute some of the matrix operations; [here](https://youtu.be/HZtoekU9NcE?si=X6O8fJ19OdPIgpwq) is a video that walks through how to do this. (We're intentionally using different variables here than in the notes to have you think about the problem in general terms.)
-
-For the remainder of the problem, we will use the same vector <span class="math-inline">\\(\vec b\\)</span>, but instead use the following matrix <span class="math-inline">\\(A\\)</span>.
+we minimize mean squared error,
 
 <div class="math-display">
 $$
-A = \begin{bmatrix}
-1 & 0 & 1 & -4 & 4 \\\\
-0 & 2 & 1 & -5 & 3 \\\\
-2 & -6 & -1 & 7 & -1 \\\\
-1 & -4 & -1 & 6 & -2
-\end{bmatrix}
+R(\vec w) = \frac{1}{n} \sum_{i=1}^n (y_i - \vec w \cdot \text{Aug}(\vec x_i))^2 = \frac{1}{n} \lVert \vec y - X \vec w \rVert^2
 $$
 </div>
 
-Note that this new matrix <span class="math-inline">\\(A\\)</span> has **a rank of 2**.
+meaning that <span class="math-inline">\\(\vec w^{\ast}\\)</span> is chosen to satisfy the normal equations. Explain why the components of the error vector,
+
+<div class="math-display">
+$$
+\vec e = \vec y - X \vec w^*
+$$
+</div>
+
+are **guaranteed** to sum to 0.
 
 </div>
 </div>
@@ -206,41 +189,15 @@ Note that this new matrix <span class="math-inline">\\(A\\)</span> has **a rank 
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(2 pts) Now, find **one** vector <span class="math-inline">\\(\vec x^*\\)</span> that minimizes <span class="math-inline">\\(\lVert \vec b - A \vec x \rVert^2\\)</span> for this new matrix <span class="math-inline">\\(A\\)</span>. Again, show your work. If you've read [Chapter 6.4](https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/) closely, this should not require much calculation.
+(4 pts) If we decide instead to fit the model
 
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">c)</div>
-<div class="assignment-part-content" markdown="1">
-(4 pts) Find a basis for <span class="math-inline">\\(\text{nullsp}(A)\\)</span>. <em>Hint: Try and do so efficiently, since this is the type of problem we'll see on Midterm 2.</em>
-
-</div>
+<div class="math-display">
+$$
+h(\vec x_i) = w_1 x_i^{(1)} + w_2 x_i^{(2)} + ... + w_d x_i^{(d)} = \vec w \cdot \vec x_i
+$$
 </div>
 
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">d)</div>
-<div class="assignment-part-content" markdown="1">
-(2 pts) Show that if <span class="math-inline">\\(\vec x'\\)</span> satisfies the normal equation, <span class="math-inline">\\(A^TA \vec x' = A^T \vec b\\)</span>, and <span class="math-inline">\\(\vec x&#95;0 \in \text{nullsp}(A)\\)</span>, then <span class="math-inline">\\(\vec x' + \vec x&#95;0\\)</span> also satisfies the normal equation. <em>Hint: This is two-line solution; we're mostly asking it so that you interalize <strong>what</strong> this means and why it's true.</em>
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">e)</div>
-<div class="assignment-part-content" markdown="1">
-(3 pts) Describe, using set notation, the complete set of vectors <span class="math-inline">\\(\vec x^*\\)</span> that minimize <span class="math-inline">\\(\lVert \vec b - A \vec x \rVert^2\\)</span>. Is this set a subspace?
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">f)</div>
-<div class="assignment-part-content" markdown="1">
-(3 pts) There are infinitely many vectors <span class="math-inline">\\(\vec x^*\\)</span> that minimize <span class="math-inline">\\(\lVert \vec b - A \vec x \rVert^2\\)</span>. If we try and use code to find a solution, it can't return all of them --- it'll pick a particular one.
-
-In Python, use `np.linalg.lstsq` to find a vector <span class="math-inline">\\(\vec x^*\\)</span> that minimizes <span class="math-inline">\\(\lVert \vec b - A \vec x \rVert^2\\)</span>. Include a screenshot of your code and the vector <span class="math-inline">\\(\vec x^*\\)</span> it returns, and in your PDF, write out the coefficients of <span class="math-inline">\\(\vec x^*\\)</span> as a vector (in addition to the screenshot). Then, provide an educated guess of **why** you think it picked the <span class="math-inline">\\(\vec x^*\\)</span> that it did.
+which has no intercept term, are the components of the error vector <span class="math-inline">\\(\vec e = \vec y - X \vec w^{\ast}\\)</span> still guaranteed to sum to 0? If they are, explain why. If they are not, explain why not, but give at least one example dataset where they still do sum to 0.
 
 </div>
 </div>
@@ -249,19 +206,25 @@ In Python, use `np.linalg.lstsq` to find a vector <span class="math-inline">\\(\
 
 ---
 
-## Problem 4: Orthogonalization (27 pts)
+## Problem 3: Moving Things Around (10 pts)
 
-**Before starting, refer to [Chapter 6.5](https://notes.eecs245.org/linear-transformations-and-projections/gram-schmidt-process/), written just for this problem.** It won't be possible to do this problem without referencing it.
+Let <span class="math-inline">\\(X\\)</span> be an <span class="math-inline">\\(n \times 4\\)</span> design matrix whose first column is all 1s, let <span class="math-inline">\\(\vec y\\)</span> be an observation vector, and let <span class="math-inline">\\(\vec w^{\ast} = (X^TX)^{-1}X^T \vec y\\)</span>.
 
-In parts **a)** through **d)**, we'll refer to the vectors <span class="math-inline">\\(\vec v&#95;1 = \begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\\\ 0 \end{bmatrix}\\)</span>, <span class="math-inline">\\(\vec v&#95;2 = \begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\\\ 0 \end{bmatrix}\\)</span>, and <span class="math-inline">\\(\vec v&#95;3 = \begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\\\ 1 \end{bmatrix}\\)</span>.
+<div class="math-display">
+$$
+\vec w^* = \begin{bmatrix} w_0^* \\\\ w_1^* \\\\ w_2^* \\\\ w_3^* \end{bmatrix}
+$$
+</div>
+
+In this problem, you'll reason about modifications to the design matrix and see how they affect the components of <span class="math-inline">\\(\vec w^{\ast}\\)</span>.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(6 pts) By hand, apply the Gram-Schmidt process to the vectors <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2, \vec v&#95;3\\)</span> to find an orthonormal set of vectors <span class="math-inline">\\(\vec q&#95;1, \vec q&#95;2, \vec q&#95;3\\)</span>. Show your work; you cannot use `numpy` for this.
+(3 pts) Let <span class="math-inline">\\(X&#95;a\\)</span> be the design matrix that results from **swapping the first two columns of <span class="math-inline">\\(X\\)</span>**. Let
 
-Then, create the matrix <span class="math-inline">\\(Q = \begin{bmatrix} | &amp; | &amp; | \\\\ \vec q&#95;1 &amp; \vec q&#95;2 &amp; \vec q&#95;3 \\\\ | &amp; | &amp; | \end{bmatrix}\\)</span> and confirm that <span class="math-inline">\\(Q^TQ = I\\)</span>, but that <span class="math-inline">\\(QQ^T \neq I\\)</span>.
+<span class="math-inline">\\(\vec v^{\ast} = (X&#95;a^TX&#95;a)^{-1}X&#95;a^T \vec y\\)</span>. Express the components of <span class="math-inline">\\(\vec v^{\ast}\\)</span> in terms of <span class="math-inline">\\(w&#95;0^{\ast}, w&#95;1^{\ast}, w&#95;2^{\ast}, w&#95;3^{\ast}\\)</span>.
 
 </div>
 </div>
@@ -269,7 +232,7 @@ Then, create the matrix <span class="math-inline">\\(Q = \begin{bmatrix} | &amp;
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(3 pts) Suppose <span class="math-inline">\\(\vec v&#95;4 = \begin{bmatrix} 2 \\\\ 2 \\\\ 3 \\\\ 3 \end{bmatrix}\\)</span>. If you were to apply the Gram-Schmidt process to the vectors <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2, \vec v&#95;3, \vec v&#95;4\\)</span>, what would the vector <span class="math-inline">\\(\vec Q&#95;4\\)</span> be? Why?
+(3 pts) Let <span class="math-inline">\\(X&#95;b\\)</span> be the design matrix that results from **adding 3 to each entry in the *first* column of <span class="math-inline">\\(X\\)</span>**. Let <span class="math-inline">\\(\vec v^{\ast} = (X&#95;b^TX&#95;b)^{-1}X&#95;b^T \vec y\\)</span>. Express the components of <span class="math-inline">\\(\vec v^{\ast}\\)</span> in terms of <span class="math-inline">\\(w&#95;0^{\ast}, w&#95;1^{\ast}, w&#95;2^{\ast}, w&#95;3^{\ast}\\)</span>.
 
 </div>
 </div>
@@ -277,82 +240,7 @@ Then, create the matrix <span class="math-inline">\\(Q = \begin{bmatrix} | &amp;
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts)
-<div class="math-display">
-
-<div class="math-display">
-$$
-**Updated version**
-$$
-</div>
-
-</div>
-
- Consider <span class="math-inline">\\(\vec y = \begin{bmatrix} 3 \\\\ 1 \\\\ 2 \\\\ 4 \end{bmatrix}\\)</span>. <span class="math-inline">\\(\vec y\\)</span> **is** in <span class="math-inline">\\(\text{span}(\lbrace \vec v&#95;1, \vec v&#95;2, \vec v&#95;3 \rbrace) = \text{span}(\lbrace \vec q&#95;1, \vec q&#95;2, \vec q&#95;3 \rbrace)\\)</span>.
-
-Find scalars <span class="math-inline">\\(a\\)</span>, <span class="math-inline">\\(b\\)</span>, and <span class="math-inline">\\(c\\)</span> such that <span class="math-inline">\\(a\vec q&#95;1 + b\vec q&#95;2 + c\vec q&#95;3 = \vec y\\)</span>, **without** solving a system of 3 equations and 3 unknowns. Instead, use the fact that <span class="math-inline">\\(\vec q&#95;1, \vec q&#95;2, \vec q&#95;3\\)</span> are orthonormal. <em>Hint: There's a relevant problem from Lab 5.</em>
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">d)</div>
-<div class="assignment-part-content" markdown="1">
-(4 pts) Consider <span class="math-inline">\\(\vec y = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span>. Unlike in **c)**, <span class="math-inline">\\(\vec y\\)</span> **is not** in <span class="math-inline">\\(\text{span}(\lbrace \vec v&#95;1, \vec v&#95;2, \vec v&#95;3 \rbrace)\\)</span>.
-
-Find the vector in <span class="math-inline">\\(\text{span}(\lbrace \vec v&#95;1, \vec v&#95;2, \vec v&#95;3 \rbrace)\\)</span> that is closest to <span class="math-inline">\\(\vec y\\)</span>. **Do not** stack the <span class="math-inline">\\(\vec v&#95;i\\)</span>'s into a matrix <span class="math-inline">\\(X\\)</span> and then use <span class="math-inline">\\(X(X^TX)^{-1}X^T\vec y\\)</span>. Instead, use the fact that <span class="math-inline">\\(\vec q&#95;1, \vec q&#95;2, \vec q&#95;3\\)</span> are orthonormal and have the same span as <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2, \vec v&#95;3\\)</span>. How does this simplify the problem?
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">e)</div>
-<div class="assignment-part-content" markdown="1">
-(5 pts) Open the **the supplemental Jupyter Notebook** we've created for Homework 8, which can either be found [here](https://github.com/eecs245/sp26-code/blob/main/homeworks/hw08/hw08.ipynb) in the course GitHub repository, or [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fsp26-code&urlpath=tree%2Fsp26-code%2Fhomeworks%2Fhw08%2Fhw08.ipynb&branch=main) on DataHub.
-
-There, you're asked to implement the function `orthogonalize`, which takes in an <span class="math-inline">\\(n \times d\\)</span> matrix <span class="math-inline">\\(V\\)</span> whose columns are linearly independent, and returns a matrix <span class="math-inline">\\(Q\\)</span> whose columns are orthonormal and have the same span as <span class="math-inline">\\(V\\)</span>. This problem is **not autograded**. Rather, in your submission to this part, include a screenshot of your implementation and sample output in your PDF for Homework 8.
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">f)</div>
-<div class="assignment-part-content" markdown="1">
-(5 pts) A QR decomposition of a matrix <span class="math-inline">\\(A\\)</span> is a factorization of the form
-
-<div class="math-display">
-$$
-A = QR
-$$
-</div>
-
-where <span class="math-inline">\\(Q\\)</span> is an <span class="math-inline">\\(n \times d\\)</span> matrix with orthonormal columns and <span class="math-inline">\\(R\\)</span> is an <span class="math-inline">\\(d \times d\\)</span> **upper triangular** matrix (a matrix that has 0s below the diagonal).
-
-For example, if <span class="math-inline">\\(A = \begin{bmatrix} 1 &amp; 1 &amp; 1 \\\\ -1 &amp; 0 &amp; 1 \\\\ 1 &amp; 1 &amp; 2 \end{bmatrix}\\)</span>, a <span class="math-inline">\\(QR\\)</span> decomposition of <span class="math-inline">\\(A\\)</span> is
-
-<div class="math-display">
-$$
-A = \begin{bmatrix} 1 & 1 & 1 \\\\ -1 & 0 & 1 \\\\ 1 & 1 & 2 \end{bmatrix} =
-  \underbrace{\begin{bmatrix}
-    1 / \sqrt{3} & 1 / \sqrt{6} & -1 / \sqrt{2} \\\\
-    -1 / \sqrt{3} & 2 / \sqrt{6} & 0 \\\\
-    1 / \sqrt{3} & 1 / \sqrt{6} & 1 / \sqrt{2}
-  \end{bmatrix}}_{Q}
-  \underbrace{\begin{bmatrix}
-    \sqrt{3} & 2 \sqrt{3} / 3 & 2 \sqrt{3} / 3 \\\\
-    0 & \sqrt{6} / 3 & 5 \sqrt{6} / 6 \\\\
-    0 & 0 & 1 / \sqrt{2}
-  \end{bmatrix}}_{R}
-$$
-</div>
-
-Finding the <span class="math-inline">\\(Q\\)</span> in a <span class="math-inline">\\(QR\\)</span> decomposition is straightforward: apply Gram-Schmidt to the columns of <span class="math-inline">\\(A\\)</span>, assuming <span class="math-inline">\\(A\\)</span>'s columns are linearly independent. The question is how to find <span class="math-inline">\\(R\\)</span>.
-
-1.  In the supplemental Jupyter Notebook, we've defined an arbitrary matrix <span class="math-inline">\\(A\\)</span> and call your `orthogonalize` function on it, and give you hints as to how to find <span class="math-inline">\\(R\\)</span>. Using the experimentation there, and what you know about <span class="math-inline">\\(Q\\)</span>, **explain how to find <span class="math-inline">\\(R\\)</span>.**
-
-2.  Find a <span class="math-inline">\\(QR\\)</span> decomposition of <span class="math-inline">\\(A = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\\\ 1 &amp; 1 &amp; 0 \\\\ 0 &amp; 1 &amp; 1 \\\\ 0 &amp; 0 &amp; 1 \end{bmatrix}\\)</span>. Note that the columns of <span class="math-inline">\\(A\\)</span> are made up of the same three vectors you worked with in parts **a)** through **d)** of this problem.
-
-3.  Given **a** <span class="math-inline">\\(QR\\)</span> decomposition of <span class="math-inline">\\(A\\)</span>, explain how to find **another** <span class="math-inline">\\(QR\\)</span> decomposition of <span class="math-inline">\\(A\\)</span> with a (slightly) different <span class="math-inline">\\(Q\\)</span> and/or <span class="math-inline">\\(R\\)</span>.
+(4 pts) Let <span class="math-inline">\\(X&#95;c\\)</span> be the design matrix that results from **adding 3 to each entry in the *second* column of <span class="math-inline">\\(X\\)</span>**. Let <span class="math-inline">\\(\vec v^{\ast} = (X&#95;c^TX&#95;c)^{-1}X&#95;c^T \vec y\\)</span>. Express the components of <span class="math-inline">\\(\vec v^{\ast}\\)</span> in terms of <span class="math-inline">\\(w&#95;0^{\ast}, w&#95;1^{\ast}, w&#95;2^{\ast}, w&#95;3^{\ast}\\)</span>.
 
 </div>
 </div>
@@ -361,39 +249,15 @@ Finding the <span class="math-inline">\\(Q\\)</span> in a <span class="math-inli
 
 ---
 
-## Problem 5: Same, but Different (13 pts)
+## Problem 4: Gradient Descent Fundamentals (8 pts)
 
-In [Chapter 2.4](https://notes.eecs245.org/simple-linear-regression/correlation/#correlation-and-the-regression-line/), we were introduced to one of many formulas for the optimal slope, <span class="math-inline">\\(w&#95;1^*\\)</span>, and optimal intercept, <span class="math-inline">\\(w&#95;0^*\\)</span>, for the simple linear regression model <span class="math-inline">\\(h(x&#95;i) = w&#95;0 + w&#95;1 x&#95;i\\)</span> when using squared loss:
-
-<div class="math-display">
-$$
-w_1^* = r \frac{\sigma_{y}}{\sigma_{x}} \qquad w_0^* = \bar y - w_1^* \bar x
-$$
-</div>
-
-The end goal of Chapters 3 through 6 has been to give us the tools to revisit the simple linear regression model in terms of linear algebra, so that we can extend our model to allow for multiple input variables. As we see in [Chapter 7.1](https://notes.eecs245.org/regression-using-linear-algebra/regression-using-linear-algebra/), the solution is to define the <span class="math-inline">\\(n \times 2\\)</span> "**design matrix**" <span class="math-inline">\\(X\\)</span> and observation vector <span class="math-inline">\\(\vec y \in \mathbb{R}^n\\)</span> as follows:
-
-<div class="math-display">
-$$
-X = \begin{bmatrix} 1 & x_1 \\\\ 1 & x_2 \\\\ \vdots & \vdots \\\\ 1 & x_n \end{bmatrix}, \quad \vec y = \begin{bmatrix} y_1 \\\\ y_2 \\\\ \vdots \\\\ y_n \end{bmatrix}
-$$
-</div>
-
-Then, the vector containing the optimal model parameters is
-
-<div class="math-display">
-$$
-\vec w^* = (X^TX)^{-1}X^T \vec y = \begin{bmatrix} w_0^* \\\\ w_1^* \end{bmatrix}
-$$
-</div>
-
- **It's not immediately obvious why the components of <span class="math-inline">\\(\vec w^*\\)</span> should have anything to do with the correlation, means of <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span>, and standard deviations of <span class="math-inline">\\(x\\)</span> and <span class="math-inline">\\(y\\)</span>.** In this problem, we will prove that both of these formulations are equivalent, for any dataset <span class="math-inline">\\((x&#95;1, y&#95;1)\\)</span>, <span class="math-inline">\\((x&#95;2, y&#95;2)\\)</span>, \..., <span class="math-inline">\\((x&#95;n, y&#95;n)\\)</span>.
+Let <span class="math-inline">\\(f(\vec x) = (x&#95;1 - 5)^2 + (x&#95;1^2 - x&#95;2)^2 + 1\\)</span>.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(5 pts) Express the matrix <span class="math-inline">\\((X^TX)^{-1}\\)</span> using constants and/or summations involving <span class="math-inline">\\(x&#95;i\\)</span> and/or <span class="math-inline">\\(y&#95;i\\)</span>.
+(4 pts) Find <span class="math-inline">\\(\nabla f(\vec x)\\)</span>, the gradient of <span class="math-inline">\\(f(\vec x)\\)</span>.
 
 </div>
 </div>
@@ -401,33 +265,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(3 pts) Prove that
-
-<div class="math-display">
-$$
-(X^TX)^{-1} = \frac{1}{n\sigma_x^2} \begin{bmatrix} \sigma_x^2 + \bar{x}^2 & -\bar{x} \\\\ -\bar{x} & 1 \end{bmatrix}
-$$
-</div>
-
-<em>Hint: Start by proving <span class="math-inline">\\(\sum&#95;{i = 1}^n x&#95;i^2 = n \sigma&#95;x^2 + n \bar{x}^2\\)</span>.</em>
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">c)</div>
-<div class="assignment-part-content" markdown="1">
-(5 pts) Finally, prove that
-
-<div class="math-display">
-$$
-(X^TX)^{-1}X^T \vec{y} = \begin{bmatrix} \bar{y} - r \frac{\sigma_y}{\sigma_x} \bar{x} \\\\ r \frac{\sigma_y}{\sigma_x}  \end{bmatrix}
-$$
-</div>
-
-<em>Hint: Start by proving that <span class="math-inline">\\(\sum&#95;{i=1}^n x&#95;i y&#95;i = nr \sigma&#95;x \sigma&#95;y + n \bar{x}\bar{y}\\)</span>.</em>
-
-Note that the second component of the vector above is <span class="math-inline">\\(w&#95;1^* =  r \frac{\sigma&#95;y}{\sigma&#95;x}\\)</span> and the first component of the vector above is <span class="math-inline">\\(w&#95;0^* = \bar{y} -  r \frac{\sigma&#95;y}{\sigma&#95;x} \bar{x} = \bar{y} - w&#95;1^* \bar{x}\\)</span>, as we first saw in Chapter 2.4! I think this is beautiful.
+(4 pts) To minimize <span class="math-inline">\\(f(\vec x)\\)</span>, we'll use gradient descent. Perform one iteration of gradient descent by hand, using the initial guess <span class="math-inline">\\(\vec x^{(0)} = \begin{bmatrix} 0 \\\\ 1 \end{bmatrix}\\)</span> and learning rate <span class="math-inline">\\(\alpha = \frac{1}{2}\\)</span>. What is <span class="math-inline">\\(\vec x^{(1)}\\)</span>?
 
 </div>
 </div>
@@ -436,36 +274,57 @@ Note that the second component of the vector above is <span class="math-inline">
 
 ---
 
-## Problem 6: Putting it into Practice (8 pts)
+## Problem 5: Product and Chain Rules (13 pts)
 
-This problem asks you to apply the concepts in [Chapter 7.2](https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/), and follows the last problem.
-
-Suppose we'd like to fit a hypothesis function of the form <span class="math-inline">\\(h(x&#95;i) = w&#95;0 + w&#95;1 x&#95;i^2\\)</span>. Notice the squared term; this is **not** a simple linear regression line.
-
-To do so, we'll find the optimal parameter vector <span class="math-inline">\\(\vec w^*\\)</span> that satisfies the normal equations. The first 5 rows of our dataset are as follows, though note that our dataset has <span class="math-inline">\\(n\\)</span> rows in total.
+Our goal in this problem is to study the behavior of the function
 
 <div class="math-display">
 $$
-\begin{array}{c|c}
-x_i & y_i \\\\
-\hline
-2   & 4 \\\\
--1  & 2 \\\\
-3   & 5 \\\\
--7  & 3 \\\\
-3   & -7 \\\\
-\vdots & \vdots
-\end{array}
+f(\vec x) = \frac{\vec x^T A \vec x}{\vec x^T \vec x}
 $$
 </div>
 
-Suppose <span class="math-inline">\\(x&#95;1, x&#95;2, ..., x&#95;n\\)</span> have a mean of <span class="math-inline">\\(\bar{x} = 5\\)</span> and a variance of <span class="math-inline">\\(\sigma&#95;x^2 = 8\\)</span>.
+where <span class="math-inline">\\(x \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(A\\)</span> is a symmetric <span class="math-inline">\\(n \times n\\)</span> matrix (meaning <span class="math-inline">\\(A = A^T\\)</span>). This function, called the **Rayleigh quotient**, will play an important role in Chapter 5 of the course, when we eventually study the **dimensionality reduction** problem first introduced in [Chapter 1.1](https://notes.eecs245.org/introduction-to-supervised-learning/what-is-machine-learning/#dimensionality-reduction).
+
+But first, we have to get a handle on a few gradient rules.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(2 pts) Write the first five rows of the design matrix, <span class="math-inline">\\(X\\)</span>.
+(4 pts) As described in the [Norm and Chain Rule in Chapter 8.2](https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/#example-norm-and-chain-rule), the chain rule for gradients says that if
+
+-   <span class="math-inline">\\(g: \mathbb{R}^d \to \mathbb{R}\\)</span> is a **vector**-to-scalar function, and
+
+-   <span class="math-inline">\\(h: \mathbb{R} \to \mathbb{R}\\)</span> is a **scalar**-to-scalar function,
+
+then the gradient of the **vector**-to-scalar function <span class="math-inline">\\(f(\vec x) = h(g(\vec x))\\)</span> is given by
+
+<div class="math-display">
+$$
+\nabla f(\vec x) = \left( \frac{\text{d}h}{\text{d}x} (g(\vec x)) \right) \nabla g(\vec x)
+$$
+</div>
+
+ or, perhaps more intuitively,
+
+<div class="math-display">
+$$
+\nabla f(\vec x) = h'(g(\vec x)) \nabla g(\vec x)
+$$
+</div>
+
+Note that we need to pay close attention to the types of functions we're working with. <span class="math-inline">\\(h(g(\vec x))\\)</span> is well-defined, but <span class="math-inline">\\(g(h(\vec x))\\)</span> is not, since <span class="math-inline">\\(h\\)</span> doesn't take in vectors (it takes in scalars).
+
+Find the gradients of each of the following functions.
+
+1.  <span class="math-inline">\\(f&#95;1(\vec x) = \log(\vec x^T A \vec x)\\)</span>, where <span class="math-inline">\\(\vec x \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(A\\)</span> is a symmetric <span class="math-inline">\\(n \times n\\)</span> matrix
+
+2.  <span class="math-inline">\\(f&#95;2(\vec x) = e^{-\sin(\vec a^T\vec x)}\\)</span>, where <span class="math-inline">\\(\vec x, \vec a \in \mathbb{R}^n\\)</span>
+
+Here, <span class="math-inline">\\(\log(x)\\)</span> denotes the base-<span class="math-inline">\\(e\\)</span> logarithm, i.e. <span class="math-inline">\\(\ln(x)\\)</span>.
+
+<em>Hint: You can use any of the <a href="https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/#the-big-three-rules">three important gradient rules from Chapter 8.2</a> without proof.</em>
 
 </div>
 </div>
@@ -473,7 +332,19 @@ Suppose <span class="math-inline">\\(x&#95;1, x&#95;2, ..., x&#95;n\\)</span> ha
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(3 pts) Suppose that after solving the normal equations, we find <span class="math-inline">\\(\vec w^* = \begin{bmatrix} 5 \\\\ -2 \end{bmatrix}\\)</span>. Find the augmented feature vector <span class="math-inline">\\(\text{Aug}(\vec x&#95;3)\\)</span> and squared loss for row 3 of the dataset.
+(4 pts) The product rule for gradients is a natural extension of the product rule for derivatives. If <span class="math-inline">\\(f(\vec x) = g(\vec x) h(\vec x)\\)</span>, then
+
+<div class="math-display">
+$$
+\nabla f(\vec x) = \nabla (g(\vec x) h(\vec x)) = g(\vec x) \nabla h(\vec x) + h(\vec x) \nabla g(\vec x)
+$$
+</div>
+
+Find the gradients of each of the following functions.
+
+1.  <span class="math-inline">\\(f&#95;3(\vec x) = (\vec a \cdot \vec x)(\vec b \cdot \vec x)\\)</span>, where <span class="math-inline">\\(\vec x, \vec a, \vec b \in \mathbb{R}^n\\)</span>
+
+2.  <span class="math-inline">\\(f&#95;4(\vec x) = \vec a^T \vec x \vec x^T A \vec x\\)</span>, where <span class="math-inline">\\(\vec x, \vec a \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(A\\)</span> is a symmetric <span class="math-inline">\\(n \times n\\)</span> matrix
 
 </div>
 </div>
@@ -481,7 +352,21 @@ Suppose <span class="math-inline">\\(x&#95;1, x&#95;2, ..., x&#95;n\\)</span> ha
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-(3 pts) Let <span class="math-inline">\\(X&#95;\text{tri} = 3X\\)</span>, where <span class="math-inline">\\(X\\)</span> is the full design matrix for our dataset with <span class="math-inline">\\(n\\)</span> rows. Determine the bottom-left value in the matrix <span class="math-inline">\\(X&#95;\text{tri}^TX&#95;\text{tri}\\)</span>, i.e. the value in the second row and first column. Your answer should be an expression involving <span class="math-inline">\\(n\\)</span>. <em>Hint: You can use any of the hints or results from Problem 2 without needing to re-prove them.</em>
+(5 pts) Putting together the chain rule and product rule, show that if
+
+<div class="math-display">
+$$
+f(\vec x) = \frac{\vec x^T A \vec x}{\vec x^T \vec x}
+$$
+</div>
+
+where <span class="math-inline">\\(\vec x \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(A\\)</span> is a symmetric <span class="math-inline">\\(n \times n\\)</span> matrix, then
+
+<div class="math-display">
+$$
+\nabla f(\vec x) = \frac{2}{\vec x^T \vec x} \left( A \vec x - f(\vec x) \vec x \right)
+$$
+</div>
 
 </div>
 </div>
@@ -490,12 +375,54 @@ Suppose <span class="math-inline">\\(x&#95;1, x&#95;2, ..., x&#95;n\\)</span> ha
 
 ---
 
-## Problem 7: Billy the Waiter (14 pts)
+## Problem 6: Convexity (12 pts)
 
-This problem involves writing code and submitting it to the Gradescope autograder. The goal of this problem is to give you a taste of how linear algebra can be used to implement linear regression in code, and show you how to build models that involve multiple features (including categorical variables).
+In [this video](https://www.loom.com/share/0b459d47827d4a2093d58a0632c9a97e), we introduce the formal definition of **convexity** for vector-to-scalar functions. Intuitively, a function <span class="math-inline">\\(f: \mathbb{R}^d \to \mathbb{R}\\)</span> is convex if its graph is a bowl-shaped surface. Formally, <span class="math-inline">\\(f\\)</span> is convex if for all <span class="math-inline">\\(\vec x, \vec y \in \mathbb{R}^d\\)</span> and all <span class="math-inline">\\(t \in [0,1]\\)</span>,
 
-Open the **the supplemental Jupyter Notebook** we've created for Homework 8, which can either be found [here](https://github.com/eecs245/sp26-code/blob/main/homeworks/hw08/hw08.ipynb) in the course GitHub repository, or [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Fsp26-code&urlpath=tree%2Fsp26-code%2Fhomeworks%2Fhw08%2Fhw08.ipynb&branch=main) on DataHub.
+<div class="math-display">
+$$
+f((1-t)\vec x + t \vec y) \le (1-t) f(\vec x) + t f(\vec y)
+$$
+</div>
 
-**This problem is entirely autograded; to receive credit for Problem 7 of this homework, you'll need to submit your completed notebook to the autograder on Gradescope.** Your submission time for Homework 8 is the **latter** of your PDF and code submission times.
+This is a formal way of saying that when you connect any two points on the graph of <span class="math-inline">\\(f\\)</span> with a line segment, the line segment lies on or above the graph of <span class="math-inline">\\(f\\)</span>, never below.
+
+The second derivative test for convexity is more convenient, but it doesn't apply to non-differentiable functions, e.g. <span class="math-inline">\\(f(x) = |x|\\)</span> is convex, but it isn't differentiable.
+
+For each statement below, prove that the statement is true using the formal definition above, or give a counterexample.
+
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
+(4 pts) The sum of two convex functions must also be convex.
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+(4 pts) The difference of two convex functions must also be convex.
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">c)</div>
+<div class="assignment-part-content" markdown="1">
+(4 pts) Suppose <span class="math-inline">\\(f(x)\\)</span> and <span class="math-inline">\\(g(x)\\)</span> are both scalar-to-scalar convex functions and that, for some scalar <span class="math-inline">\\(a\\)</span>, <span class="math-inline">\\(f(a) = g(a)\\)</span>. Then, <span class="math-inline">\\(h(x)\\)</span> is also convex, where
+
+<div class="math-display">
+$$
+h(x) = \begin{cases} f(x) & x \leq a \\\\ g(x) & x > a \end{cases}
+$$
+</div>
+
+<em>Hint: The statement is false, so focus your energy on finding a counterexample.</em>
+</div>
+</div>
+
+</div>
 
 {% endraw %}

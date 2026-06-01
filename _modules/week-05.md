@@ -41,11 +41,13 @@ days:
         reading4: https://notes.eecs245.org/gradients/positive-definite-matrices/
         reading4_text: Ch. 8.6
       - name: HW 7
+        problems: ../resources/homeworks/hw07/
         type: hw
-        title: Linear Transformations and Projections
+        title: Projections; Regression using Linear Algebra
   - date: "2026-06-07"
     events:
       - name: HW 8
+        problems: ../resources/homeworks/hw08/
         type: hw
-        title: Projections; Regression using Linear Algebra
+        title: Multiple Linear Regression, Gradients
 ---

@@ -5,6 +5,7 @@ days:
   - date: "2026-06-08"
     events:
       - name: Lab 9
+        problems: ../resources/labs/lab09/
         type: lab
         title: Gradient Descent and Convexity
   - date: "2026-06-09"

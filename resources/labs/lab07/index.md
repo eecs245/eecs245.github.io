@@ -231,7 +231,7 @@ $$
 $$
 </div>
 
- where <span class="math-inline">\\(\vec w^* \in \mathbb{R}^d\\)</span> is chosen to satisfy the **normal equation**,
+ where <span class="math-inline">\\(\vec w^{\ast} \in \mathbb{R}^d\\)</span> is chosen to satisfy the **normal equation**,
 
 <div class="math-display">
 $$
@@ -239,7 +239,7 @@ X^TX \vec w = X^T \vec y
 $$
 </div>
 
- If <span class="math-inline">\\(X\\)</span>'s columns are linearly independent, <span class="math-inline">\\(\vec w^*\\)</span> is the unique vector
+ If <span class="math-inline">\\(X\\)</span>'s columns are linearly independent, <span class="math-inline">\\(\vec w^{\ast}\\)</span> is the unique vector
 
 <div class="math-display">
 $$
@@ -247,7 +247,7 @@ $$
 $$
 </div>
 
-Of all vectors in <span class="math-inline">\\(\text{colsp}(X)\\)</span>, <span class="math-inline">\\(X \vec w^*\\)</span> is the one that is closest to <span class="math-inline">\\(\vec y\\)</span>, meaning it minimizes
+Of all vectors in <span class="math-inline">\\(\text{colsp}(X)\\)</span>, <span class="math-inline">\\(X \vec w^{\ast}\\)</span> is the one that is closest to <span class="math-inline">\\(\vec y\\)</span>, meaning it minimizes
 
 <div class="math-display">
 $$
@@ -259,13 +259,13 @@ $$
 <img src="imgs/colsp-projection.png" alt="image" style="width: 45%; max-width: 100%;">
 </div>
 
-As we will see in Tuesday's lecture, <span class="math-inline">\\(\vec w^*\\)</span> contains the **optimal model parameters** for linear regression, when we fill our <span class="math-inline">\\(X\\)</span> (carefully) with our input variables and <span class="math-inline">\\(\vec y\\)</span> with our output variables.
+As we will see in Tuesday's lecture, <span class="math-inline">\\(\vec w^{\ast}\\)</span> contains the **optimal model parameters** for linear regression, when we fill our <span class="math-inline">\\(X\\)</span> (carefully) with our input variables and <span class="math-inline">\\(\vec y\\)</span> with our output variables.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Let <span class="math-inline">\\(X = \begin{bmatrix} 2 &amp; 1 \\\\ 0 &amp; -3 \\\\ 0 &amp; 0 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\vec y = \begin{bmatrix} 2 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span>. Find <span class="math-inline">\\(\vec w^*\\)</span>, <span class="math-inline">\\(\vec p\\)</span>, and <span class="math-inline">\\(\vec e = \vec y - \vec p\\)</span>, and verify that <span class="math-inline">\\(\vec e\\)</span> is orthogonal to <span class="math-inline">\\(\text{colsp}(X)\\)</span> by showing that it is orthogonal to each of <span class="math-inline">\\(X\\)</span>'s columns.
+Let <span class="math-inline">\\(X = \begin{bmatrix} 2 &amp; 1 \\\\ 0 &amp; -3 \\\\ 0 &amp; 0 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\vec y = \begin{bmatrix} 2 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span>. Find <span class="math-inline">\\(\vec w^{\ast}\\)</span>, <span class="math-inline">\\(\vec p\\)</span>, and <span class="math-inline">\\(\vec e = \vec y - \vec p\\)</span>, and verify that <span class="math-inline">\\(\vec e\\)</span> is orthogonal to <span class="math-inline">\\(\text{colsp}(X)\\)</span> by showing that it is orthogonal to each of <span class="math-inline">\\(X\\)</span>'s columns.
 
 </div>
 </div>
@@ -281,7 +281,7 @@ Find scalars <span class="math-inline">\\(a\\)</span> and <span class="math-inli
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-Now, suppose <span class="math-inline">\\(X = \begin{bmatrix} 1 &amp; 1 \\\\ 1 &amp; -1 \\\\ 1 &amp; 0 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\vec y = \begin{bmatrix} 2 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span>. We've already computed <span class="math-inline">\\(\vec w^*\\)</span>, <span class="math-inline">\\(\vec p\\)</span>, and <span class="math-inline">\\(\vec e\\)</span> here:
+Now, suppose <span class="math-inline">\\(X = \begin{bmatrix} 1 &amp; 1 \\\\ 1 &amp; -1 \\\\ 1 &amp; 0 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\vec y = \begin{bmatrix} 2 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span>. We've already computed <span class="math-inline">\\(\vec w^{\ast}\\)</span>, <span class="math-inline">\\(\vec p\\)</span>, and <span class="math-inline">\\(\vec e\\)</span> here:
 
 <div class="math-display">
 $$
@@ -291,7 +291,7 @@ $$
 
 Notice that the components of this <span class="math-inline">\\(\vec e\\)</span> add up to 0, but this doesn't happen with your <span class="math-inline">\\(\vec e\\)</span> from part **a)**. **Why?** <em>Hint: The answer is not that <span class="math-inline">\\(\vec y\\)</span> is in <span class="math-inline">\\(\text{colsp}(X)\\)</span> --- it isn't in part <strong>a)</strong> and it isn't here either. Rather, it has something to do with the difference between the two <span class="math-inline">\\(X\\)</span>'s. This is a hugely important result, and one that will 100% appear on Midterm 2.</em>
 
-Taking another look at the formula <span class="math-inline">\\(\vec p = X \vec w^*\\)</span>, we see that it's equivalent to
+Taking another look at the formula <span class="math-inline">\\(\vec p = X \vec w^{\ast}\\)</span>, we see that it's equivalent to
 
 <div class="math-display">
 $$
@@ -319,7 +319,7 @@ Fill in the blanks: <span class="math-inline">\\(X^TX\\)</span> is invertible if
 <div class="assignment-part-content" markdown="1">
 In this part only, suppose <span class="math-inline">\\(X\\)</span> is an <span class="math-inline">\\(n \times 1\\)</span> matrix, i.e. it is a vector. Then,
 
-1.  What is the value of <span class="math-inline">\\(\vec w^*\\)</span>, and how does it relate to what we learned in [Chapter 3.4](https://notes.eecs245.org/vectors/projecting-onto-a-single-vector/#orthogonal-projections)? (What type of object is <span class="math-inline">\\((X^TX)^{-1}\\)</span> when <span class="math-inline">\\(X\\)</span> is a vector?)
+1.  What is the value of <span class="math-inline">\\(\vec w^{\ast}\\)</span>, and how does it relate to what we learned in [Chapter 3.4](https://notes.eecs245.org/vectors/projecting-onto-a-single-vector/#orthogonal-projections)? (What type of object is <span class="math-inline">\\((X^TX)^{-1}\\)</span> when <span class="math-inline">\\(X\\)</span> is a vector?)
 
 2.  What is the value of the matrix <span class="math-inline">\\(P\\)</span>, and how does it relate to what we learned in [Homework 6, Problem 5](https://eecs245.org/resources/homeworks/hw06/#problem-5-projecting-onto-a-single-vector-12-pts)?
 

@@ -1244,10 +1244,15 @@ def escape_inline_math_content(content: str) -> str:
     content = html.unescape(content)
     content = normalize_xcolor_for_mathjax(content)
     content = strip_inline_math_spacing_commands(content)
+    content = protect_markdown_sensitive_math(content)
     content = content.replace(r"\{", r"\lbrace")
     content = content.replace(r"\}", r"\rbrace")
     content = html.escape(content, quote=False)
     return content.replace("_", "&#95;")
+
+
+def protect_markdown_sensitive_math(content: str) -> str:
+    return content.replace("^{*}", r"^{\ast}").replace("^*", r"^{\ast}")
 
 
 def normalize_xcolor_for_mathjax(content: str) -> str:
@@ -1315,6 +1320,9 @@ def format_multiple_choice_rows(text: str) -> str:
 
 
 def normalize_mc_option_html(option_html: str) -> str:
+    if '<span class="math-inline">' in option_html:
+        return option_html
+
     def inline_math_to_span(match: re.Match[str]) -> str:
         return f'<span class="math-inline">\\\\({escape_inline_math_content(match.group(1))}\\\\)</span>'
 
@@ -1682,7 +1690,7 @@ def fix_image_syntax(text: str) -> str:
         if not width_match:
             return f"![{alt}]({src})"
 
-        width = html.escape(width_match.group(1), quote=True)
+        width = normalize_image_width(width_match.group(1))
         escaped_src = html.escape(src, quote=True)
         escaped_alt = html.escape(alt, quote=True)
         return (
@@ -1703,6 +1711,20 @@ def fix_image_syntax(text: str) -> str:
     text = re.sub(r"^:::\s*center\s*$", "", text, flags=re.M)
     text = re.sub(r"^:::\s*$", "", text, flags=re.M)
     return text
+
+
+def normalize_image_width(width: str) -> str:
+    width = html.unescape(width).strip()
+    width = width.replace("\\\\", "\\")
+    if width in {r"\textwidth", r"\linewidth"}:
+        return "100%"
+
+    relative_match = re.fullmatch(r"([0-9]*\.?[0-9]+)\\(?:textwidth|linewidth)", width)
+    if relative_match:
+        percent = float(relative_match.group(1)) * 100
+        return f"{percent:g}%"
+
+    return html.escape(width, quote=True)
 
 
 def remove_blank_table_headers(text: str) -> str:

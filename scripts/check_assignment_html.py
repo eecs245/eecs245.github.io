@@ -107,6 +107,10 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: nested inline-math span")
     if re.search(r'<span class="math-inline">[^<]*_[^<]*</span>', text):
         failures.append(f"{source_md}: raw underscore in inline math may render as emphasis")
+    if re.search(r'<span class="math-inline">[^<]*\^\*[^<]*</span>', text):
+        failures.append(f"{source_md}: bare superscript star in inline math may render as emphasis")
+    if re.search(r'<span class="math-inline">[^<]*\*[^<]*</span>', text):
+        failures.append(f"{source_md}: raw asterisk in inline math may render as emphasis")
     if re.search(r"\\(?:textcolor|color)(?:\[[^\]]+\])?\{", text):
         failures.append(f"{source_md}: LaTeX color command leaked into generated Markdown")
     if re.search(r"(?m)^\\&", text):
@@ -117,6 +121,8 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: vector command leaked inside a \\text{{...}} block")
     if re.search(r'\[[^\]]+\]\{style="color:', text):
         failures.append(f"{source_md}: Pandoc attribute span leaked into Markdown")
+    if re.search(r'<img\b[^>]*style="[^"]*width:\s*\\', text):
+        failures.append(f"{source_md}: LaTeX image width leaked into generated Markdown")
     if re.search(r'(?m)^\d+\.[ \t]*$\n\n<div class="math-display">', text):
         failures.append(f"{source_md}: ordered-list display math will break numbering")
     if re.search(

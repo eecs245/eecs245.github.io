@@ -172,7 +172,7 @@ y_n
 $$
 </div>
 
-Our goal is to find the optimal parameter vector, <span class="math-inline">\\(\vec w^{*}\\)</span>, which minimizes the mean squared error of our model's predictions on the training data.
+Our goal is to find the optimal parameter vector, <span class="math-inline">\\(\vec w^{\ast}\\)</span>, which minimizes the mean squared error of our model's predictions on the training data.
 
 <div class="math-display">
 $$
@@ -180,11 +180,11 @@ $$
 $$
 </div>
 
-The optimal <span class="math-inline">\\(\vec w^*\\)</span> satisfies the normal equation, <span class="math-inline">\\(X^TX \vec w = X^T \vec y\\)</span>. To make predictions:
+The optimal <span class="math-inline">\\(\vec w^{\ast}\\)</span> satisfies the normal equation, <span class="math-inline">\\(X^TX \vec w = X^T \vec y\\)</span>. To make predictions:
 
--   <span class="math-inline">\\(\vec p = X\vec w^*\\)</span> is a vector containing the prediction for all <span class="math-inline">\\(n\\)</span> observations.
+-   <span class="math-inline">\\(\vec p = X\vec w^{\ast}\\)</span> is a vector containing the prediction for all <span class="math-inline">\\(n\\)</span> observations.
 
--   <span class="math-inline">\\(h(\vec x&#95;i)=\vec w^* \cdot \text{Aug}(\vec x&#95;i)\\)</span> is the prediction for any one observation <span class="math-inline">\\(\vec x&#95;i\\)</span>.
+-   <span class="math-inline">\\(h(\vec x&#95;i)=\vec w^{\ast} \cdot \text{Aug}(\vec x&#95;i)\\)</span> is the prediction for any one observation <span class="math-inline">\\(\vec x&#95;i\\)</span>.
 
 ---
 
@@ -243,7 +243,7 @@ Every week, Lauren goes to her local grocery store and buys exactly one pound of
 <img src="imgs/lab08_act2.png" alt="image" style="width: 80%; max-width: 100%;">
 </div>
 
-In each part below, we provide you with a model that predicts `total` (her total grocery bill), fit to the dataset by minimizing mean squared error. For each model, determine whether **each optimal parameter <span class="math-inline">\\(w^*\\)</span> is positive, negative or exactly 0**. For example, in part (iv), you'll need to provide 3 answers: one for <span class="math-inline">\\(w&#95;0^*\\)</span>, one for <span class="math-inline">\\(w&#95;1^*\\)</span>, and one for <span class="math-inline">\\(w&#95;2^*\\)</span>.
+In each part below, we provide you with a model that predicts `total` (her total grocery bill), fit to the dataset by minimizing mean squared error. For each model, determine whether **each optimal parameter <span class="math-inline">\\(w^{\ast}\\)</span> is positive, negative or exactly 0**. For example, in part (iv), you'll need to provide 3 answers: one for <span class="math-inline">\\(w&#95;0^{\ast}\\)</span>, one for <span class="math-inline">\\(w&#95;1^{\ast}\\)</span>, and one for <span class="math-inline">\\(w&#95;2^{\ast}\\)</span>.
 
 1.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0\\)</span>
 
