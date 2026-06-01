@@ -410,10 +410,14 @@ def strip_latex_comment_lines(text: str) -> str:
 
 
 def strip_layout_commands(text: str) -> str:
+    text = re.sub(r"\\noindent\s*\\rule\{\\textwidth\}\{[^{}]*\}", "", text)
+    text = re.sub(
+        r"\\noindent\s*\\makebox\[[^\]]+\]\{\\rule\{\\textwidth\}\{[^{}]*\}\}",
+        "",
+        text,
+    )
     text = re.sub(r"\\begin\{minipage\}(?:\[[^\]]*\])?\{[^{}]*\}", "", text)
     text = text.replace(r"\end{minipage}", "")
-    text = text.replace(r"\begin{center}", "")
-    text = text.replace(r"\end{center}", "")
     text = re.sub(r"(?m)^[ \t]*\\(?:hfill|centering)\b[ \t]*$", "", text)
     return text
 
@@ -870,6 +874,7 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = replace_recap_markers(text)
     text = add_item_separators(text)
     text = promote_interstitial_callouts(text)
+    text = promote_extra_practice_callouts(text)
     text = add_separator_after_recap(text)
     text = indent_ordered_list_display_math(text)
     text = unindent_accidental_list_code_blocks(text)
@@ -987,6 +992,14 @@ def promote_interstitial_callouts(text: str) -> str:
         )
 
     return pattern.sub(replace, text)
+
+
+def promote_extra_practice_callouts(text: str) -> str:
+    pattern = re.compile(
+        r"(?m)^(?P<message>\*\*(?:(?:The rest of this worksheet is)|(?:The following are)) extra practice\.[^\n]*\*\*)$"
+    )
+
+    return pattern.sub(lambda match: "{: .yellow }\n> " + match.group("message"), text)
 
 
 def add_separator_after_recap(text: str) -> str:
@@ -1305,11 +1318,9 @@ def normalize_mc_option_html(option_html: str) -> str:
     def inline_math_to_span(match: re.Match[str]) -> str:
         return f'<span class="math-inline">\\\\({escape_inline_math_content(match.group(1))}\\\\)</span>'
 
-    option_html = re.sub(
-        r'<span class="math-inline">\\\\\((.*?)\\\\\)</span>',
-        inline_math_to_span,
-        option_html,
-    )
+    # Math has usually already been protected by fix_latex_for_mathjax before
+    # we group multiple-choice rows. Re-wrapping those spans creates nested
+    # inline-math HTML, so only protect raw \( ... \) fragments here.
     option_html = re.sub(r"\\\\\((.*?)\\\\\)", inline_math_to_span, option_html)
     option_html = re.sub(r"\\\((.*?)\\\)", inline_math_to_span, option_html)
     return option_html
@@ -1663,9 +1674,34 @@ def compute_solutions_pdf_link(repo_root: Path, output_md: Path) -> str | None:
 
 
 def fix_image_syntax(text: str) -> str:
+    def replace_image(match: re.Match[str]) -> str:
+        alt = match.group("alt")
+        src = match.group("src")
+        attrs = match.group("attrs")
+        width_match = re.search(r'width="([^"]+)"', attrs)
+        if not width_match:
+            return f"![{alt}]({src})"
+
+        width = html.escape(width_match.group(1), quote=True)
+        escaped_src = html.escape(src, quote=True)
+        escaped_alt = html.escape(alt, quote=True)
+        return (
+            f'<img src="{escaped_src}" alt="{escaped_alt}" '
+            f'style="width: {width}; max-width: 100%;">'
+        )
+
+    text = re.sub(
+        r"!\[(?P<alt>[^\]]*)\]\((?P<src>[^)]+)\)\{(?P<attrs>[^}]*)\}",
+        replace_image,
+        text,
+    )
+    text = re.sub(
+        r'(?ms)^:::\s*center\s*\n\s*(<img\b[^>]*>)\s*\n:::\s*$',
+        r'<div style="text-align: center;">\n\1\n</div>\n',
+        text,
+    )
     text = re.sub(r"^:::\s*center\s*$", "", text, flags=re.M)
     text = re.sub(r"^:::\s*$", "", text, flags=re.M)
-    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)\{[^}]*\}", r"![\1](\2)", text)
     return text
 
 
@@ -1865,6 +1901,7 @@ def copy_referenced_assets(output_md: Path, source_base_dir: Path, website_root:
         updated_markdown = markdown
         for old_path, new_path in path_updates.items():
             updated_markdown = updated_markdown.replace(f"]({old_path})", f"]({new_path})")
+            updated_markdown = updated_markdown.replace(f'src="{old_path}"', f'src="{new_path}"')
         output_md.write_text(updated_markdown)
 
 
@@ -1893,6 +1930,14 @@ def find_relative_paths(markdown: str) -> set[Path]:
             continue
         if candidate.startswith("<") and candidate.endswith(">"):
             candidate = candidate[1:-1]
+        if " " in candidate and not candidate.startswith("imgs/"):
+            continue
+        matches.add(Path(candidate))
+    image_pattern = re.compile(r"<img\b[^>]*\bsrc=[\"']([^\"']+)[\"']", re.I)
+    for match in image_pattern.finditer(markdown):
+        candidate = match.group(1).strip()
+        if candidate.startswith(("http://", "https://", "#", "mailto:")):
+            continue
         if " " in candidate and not candidate.startswith("imgs/"):
             continue
         matches.add(Path(candidate))

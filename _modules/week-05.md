@@ -5,6 +5,7 @@ days:
   - date: "2026-06-01"
     events:
       - name: Lab 7
+        problems: ../resources/labs/lab07/
         type: lab
         title: Inverses and Projections
   - date: "2026-06-02"
@@ -23,6 +24,7 @@ days:
   - date: "2026-06-03"
     events:
       - name: Lab 8
+        problems: ../resources/labs/lab08/
         type: lab
         title: Multiple Linear Regression; The Gradient Vector
   - date: "2026-06-04"
