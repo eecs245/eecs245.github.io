@@ -14,6 +14,7 @@ days:
       - name: LEC 9
         type: lecture
         title: Regression using Linear Algebra; The Gradient Vector
+        recording: https://leccap.engin.umich.edu/leccap/player/r/2Sq5nG
         reading: https://notes.eecs245.org/regression-using-linear-algebra/regression-using-linear-algebra/
         reading_text: Ch. 7.1
         reading2: https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/
