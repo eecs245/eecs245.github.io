@@ -55,6 +55,7 @@ days:
     events:
       - name: HW 6
         problems: ../resources/homeworks/hw06/
+        solutions: true
         type: hw
         title: Rank and Inverses
 ---

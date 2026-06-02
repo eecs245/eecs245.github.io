@@ -6,6 +6,7 @@ days:
     events:
       - name: Lab 7
         problems: ../resources/labs/lab07/
+        solutions: true
         type: lab
         title: Inverses and Projections
   - date: "2026-06-02"
