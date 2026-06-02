@@ -22,6 +22,7 @@ days:
         reading3_text: Ch. 8.1
         reading4: https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/
         reading4_text: Ch. 8.2
+        live_notes: resources/lecture-pdfs/lec09-filled.pdf
   - date: "2026-06-03"
     events:
       - name: Lab 8
