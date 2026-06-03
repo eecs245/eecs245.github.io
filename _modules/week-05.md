@@ -53,4 +53,5 @@ days:
         problems: ../resources/homeworks/hw08/
         type: hw
         title: Multiple Linear Regression, Gradients
+        note: No slip days allowed!
 ---
