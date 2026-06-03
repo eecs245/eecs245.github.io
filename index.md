@@ -26,7 +26,7 @@ EECS 245, Spring 2026 🌸 at the <b><span style="background-color: #FFCB05; col
 {% endfor %}
 
 {: .green }
-> Midterm 2 is on **Tuesday, June 9th from 1-3PM** in **1690 BBB**. See [logistics](../mt2) for more information.
+> Midterm 2 is on **Tuesday, June 9th from 1-3PM** in **1690 BBB**. See [logistics](../mt2) for more information and new practice conceptual questions.
 >
 > The lecture recordings this semester are private to the students in the class, given the small class size. For publicly available recordings, see [last semester's course website](https://eecs245.org/wn26).
 

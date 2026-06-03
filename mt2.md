@@ -6,9 +6,24 @@ permalink: /mt2/
 nav_exclude: true
 ---
 
+
+<!-- KaTeX for LaTeX-style math rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+</script>
+
+
+
 # Midterm 2 Logistics
 
-This post contains important information about Midterm 2.
+This post contains important information about Midterm 2, and some new [practice conceptual questions](#practice-conceptual-questions).
 
 ---
 
@@ -24,14 +39,12 @@ Students with SSD accommodations will start at 1PM and finish according to their
 
 Midterm 2 is **not cumulative**. Midterm 2 will contain content from:
 
-- Chapters 5-8 of the [course notes](https://notes.eecs245.org)
-- Lecture 6's matrix material and Lectures 7-10
+- Chapters 5-8 of the [course notes](https://notes.eecs245.org), except Chapter 8.5 on convexity
+- Lectures 6-10, except convexity from Lecture 10 (will appear on the Final Exam)
 - Homeworks 5-8
 - Labs 6-9
 
 That said, the ideas above build upon ideas from before Midterm 2 (e.g. linear independence, span, etc.).
-
-The first lecture after Midterm 2 starts Chapter 9, so eigenvalues, eigenvectors, diagonalization, and later material are not Midterm 2 content.
 
 The exam will be a **120 minute**, on-paper, closed-notes exam, with the exception of **two double-sided 8.5x11" notes sheets that you handwrite yourself** (no typing, no writing on an iPad and printing, no screenshotting lecture slides, etc.). Feel free to bring your Midterm 1 notes sheet as one of your two sheets, if you'd like. We will be checking notes sheets to ensure compliance with this policy. Other than that, you may not refer to any resources or technology during the exam (no phones, no smart watches, no computers, and no calculators).
 
@@ -59,5 +72,19 @@ A few other ways to prepare:
 
 - Continue to make [office hours appointments](https://calendar.app.google/TNqfWMxkjuaLGi6n9) to ask questions!
 - Post on Slack! If any of the solutions to past homeworks, labs, or exams are unclear, let us know on Slack. We can update them if need be.
+
+---
+
+## Practice Conceptual Questions
+
+It's often said that the best way to learn something is by teaching it. In IA interviews for this class, we usually ask conceptual questions like the ones below. It's a good idea to study for Midterm 2 by trying to explain the questions below to your peers and having them ask questions of your explanation.
+
+1. Explain where the normal equations came from.
+2. How does finding the line of best fit have anything to do with the normal equations?
+3. Prove that the null space is a subspace.
+4. Prove that every element in the column space is orthogonal to every element in the null space of $A^T$.
+5. What does the rank-nullity theorem say?
+
+---
 
 Best of luck studying!

@@ -109,7 +109,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 # Homework 8: Multiple Linear Regression, Gradients
 
-**due** Sunday, June 7th, 2026 at 11:59PM Ann Arbor Time
+**due** Sunday, June 7th, 2026 at 11:59PM Ann Arbor Time <span style="color: red;">(no slip days allowed!)</span>
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw08/hw08.pdf" target="_blank">View as PDF ✏️</a>
