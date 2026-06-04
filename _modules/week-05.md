@@ -36,6 +36,7 @@ days:
       - name: LEC 10
         type: lecture
         title: Gradients and Gradient Descent
+        recording: https://www.youtube.com/playlist?list=PLEFTQpsm47qRM-ukb-_bBZrDNpv2YYCpj
         note: Convexity will not appear on Midterm 2, but will be on the Final Exam.
         reading: https://notes.eecs245.org/gradients/gradient-descent/
         reading_text: Ch. 8.3
