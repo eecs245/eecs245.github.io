@@ -113,6 +113,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab08/lab08.pdf" target="_blank">View as PDF ✏️</a>
+<a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab08/lab08-solutions.pdf" target="_blank">Solutions PDF ✅</a>
 </div>
 
 {: .yellow }
@@ -220,6 +221,22 @@ Which of the following are true about the new <span class="math-inline">\\(n \ti
 
 <span class="mc-square" aria-hidden="true"></span> <span class="math-inline">\\(X&#95;\text{new}^TX&#95;\text{new}\\)</span> is not invertible
 
+<details markdown="1"><summary>Solution</summary>
+
+<span class="mc-square mc-correct" aria-hidden="true"></span> <span class="math-inline">\\(X&#95;\text{new}^TX&#95;\text{new}\\)</span> is not invertible
+
+Let's look at the correct options:
+
+-   The columns of <span class="math-inline">\\(X&#95;\text{new}\\)</span> are linearly dependent because the new added column, consisting of values of the form <span class="math-inline">\\(x&#95;i^{(1)}+x&#95;i^{(2)}\\)</span>, is a linear combination of columns 1 and 2 of <span class="math-inline">\\(X\\)</span>. By definition, this means the columns of <span class="math-inline">\\(X&#95;\text{new}\\)</span> are linearly dependent.
+
+-   The new added column does not change the set of possible linear combinations of the columns of <span class="math-inline">\\(X\\)</span>, since this added column was already in <span class="math-inline">\\(\text{colsp}(X)\\)</span>. Therefore, <span class="math-inline">\\(\text{colsp}(X)=\text{colsp}(X&#95;\text{new})\\)</span>.
+
+-   <span class="math-inline">\\(X&#95;\text{new}^TX&#95;\text{new}\\)</span> is not a full rank matrix because <span class="math-inline">\\(X&#95;\text{new}\\)</span>'s columns aren't linearly independent, meaning <span class="math-inline">\\(\text{rank}(X&#95;\text{new}) &lt; 4\\)</span>, and <span class="math-inline">\\(\text{rank}(X&#95;\text{new}^TX&#95;\text{new}) = \text{rank}(X&#95;\text{new})\\)</span>, so <span class="math-inline">\\(\text{rank}(X&#95;\text{new}^TX&#95;\text{new}) &lt; 4\\)</span>, meaning <span class="math-inline">\\(X&#95;\text{new}^TX&#95;\text{new}\\)</span> is not invertible.
+
+Note that <span class="math-inline">\\(\vec y\\)</span> has no orthogonality relationship to the columns of <span class="math-inline">\\(X\\)</span> or <span class="math-inline">\\(X&#95;\text{new}\\)</span>. Instead, it's the case that the error vector, <span class="math-inline">\\(\vec e = \vec y - X \vec w^{\ast}\\)</span>, is orthogonal to the columns of both <span class="math-inline">\\(X\\)</span> and <span class="math-inline">\\(X&#95;\text{new}\\)</span>.
+
+</details>
+
 </div>
 </div>
 
@@ -227,6 +244,34 @@ Which of the following are true about the new <span class="math-inline">\\(n \ti
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
 Find a basis for <span class="math-inline">\\(\text{nullsp}(X&#95;\text{new})\\)</span>. (This should be quick!)
+
+<details markdown="1"><summary>Solution</summary>
+
+Let's look at <span class="math-inline">\\(X&#95;\text{new}\\)</span>:
+
+<div class="math-display">
+$$
+X_\text{new} = \begin{bmatrix} | & | & | & | \\\\ \vec{1} & \vec x^{(1)} & \vec x^{(2)} & \vec x^{(1)} + \vec x^{(2)} \\\\ | & | & | & | \end{bmatrix}
+$$
+</div>
+
+ By construction, the fourth column of <span class="math-inline">\\(X&#95;\text{new}\\)</span> is the sum of <span class="math-inline">\\(\vec x^{(1)}\\)</span> and <span class="math-inline">\\(\vec x^{(2)}\\)</span>. So, multiplying <span class="math-inline">\\(X&#95;\text{new}\\)</span> by <span class="math-inline">\\(\begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\\\ -1 \end{bmatrix}\\)</span> --- or any scalar multiple of it --- will give the zero vector!
+
+<div class="math-display">
+$$
+X_\text{new} \begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\\\ -1 \end{bmatrix} = \begin{bmatrix} | & | & | & | \\\\ \vec{1} & \vec x^{(1)} & \vec x^{(2)} & \vec x^{(1)} + \vec x^{(2)} \\\\ | & | & | & | \end{bmatrix} \begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\\\ -1 \end{bmatrix} = \vec x^{(1)} + \vec x^{(2)} - (\vec x^{(1)} + \vec x^{(2)}) = \vec 0
+$$
+</div>
+
+ Since <span class="math-inline">\\(\text{rank}(X) = 3\\)</span> (because we were told the original design matrix <span class="math-inline">\\(X\\)</span> was full rank), <span class="math-inline">\\(\text{rank}(X&#95;\text{new}) = 3\\)</span> also, meaning <span class="math-inline">\\(\text{nullsp}(X&#95;\text{new})\\)</span> is 1-dimensional (from the rank-nullity theorem). So, this vector we've found is a basis for <span class="math-inline">\\(\text{nullsp}(X&#95;\text{new})\\)</span>.
+
+<div class="math-display">
+$$
+\boxed{\text{nullsp}(X_\text{new}) = \text{span}\left(\left\{\begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\\\ -1 \end{bmatrix}\right\}\right)}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -255,6 +300,72 @@ In each part below, we provide you with a model that predicts `total` (her total
 
 5.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{meat=beef}&#95;i+ w&#95;2 \cdot \text{meat=chicken}&#95;i + w&#95;3 \cdot \text{meat=fish}&#95;i\\)</span>
 
+<details markdown="1"><summary>Solution</summary>
+
+1.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0\\)</span>
+
+   This is the constant model. Since we're minimizing mean squared error, <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> is the mean of all total bills in the dataset, which we can tell from the scatter plot is positive.
+
+    ::: center
+   <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>
+    :::
+
+2.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{veg}&#95;i\\)</span>
+
+   <span class="math-inline">\\(w&#95;0\\)</span> is the intercept and <span class="math-inline">\\(w&#95;1\\)</span> corresponds to pounds of vegetables. As vegetable purchases increase, the total bill increases, so <span class="math-inline">\\(w&#95;1&gt;0\\)</span>. The intercept looks positive as well, though this is a little less clear, admittedly.
+
+    ::: center
+   <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>, <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{positive}}\\)</span>
+    :::
+
+3.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{meat=chicken}&#95;i\\)</span>
+
+   Let's think in terms of two cases: Lauren buys chicken, and Lauren doesn't buy chicken.
+
+-   Lauren buys chicken: <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1\\)</span>
+
+-   Lauren doesn't buy chicken: <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0\\)</span>
+
+   Since we're picking <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> and <span class="math-inline">\\(w&#95;1^{\ast}\\)</span> so that they minimize mean squared error, <span class="math-inline">\\(w&#95;0^{\ast} + w&#95;1^{\ast}\\)</span> should be the average total bill for purchases involving chicken, and <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> should be the average total bill for purchases not involving chicken. Meaning,
+
+
+
+<div class="math-display">
+$$
+w_1^* = \text{mean(chicken)} - \text{mean(no chicken)}
+$$
+</div>
+
+   Both averages are positive, so <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> is positive. But, purchases involving chicken tend to be cheaper than purchases not involving chicken (as is evident in the third box plot), so <span class="math-inline">\\(w&#95;1^{\ast}\\)</span> is negative.
+
+    ::: center
+   <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>, <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{negative}}\\)</span>
+    :::
+
+4.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{meat=beef}&#95;i+ w&#95;2 \cdot \text{meat=chicken}&#95;i\\)</span>
+
+   Following similar logic to the previous part, <span class="math-inline">\\(w&#95;0\\)</span> is the mean total for the reference group (fish), <span class="math-inline">\\(w&#95;1\\)</span> is the difference between the mean of beef and the mean of fish, <span class="math-inline">\\(w&#95;2\\)</span> is the difference between the mean of chicken and the mean of fish.
+
+    ::: center
+   <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>
+
+   <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{negative}}\\)</span> (beef purchases tend to be less expensive than fish purchases)
+
+   <span class="math-inline">\\(w&#95;2^{\ast}=\boxed{\text{negative}}\\)</span> (chicken purchases tend to be less expensive than fish purchases)
+    :::
+
+5.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{meat=beef}&#95;i+ w&#95;2 \cdot \text{meat=chicken}&#95;i + w&#95;3 \cdot \text{meat=fish}&#95;i\\)</span>
+
+   This model has a parameter for each meat and an intercept, but since the sum of one hot encoded features for meat is always one, the design matrix is not full rank. Therefore, the optimal solution is not unique, and there are infinitely many optimal parameter vectors <span class="math-inline">\\(\vec w^{\ast}\\)</span> that minimize mean squared error.
+
+    ::: center
+   <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{N/A}}\\)</span> <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{N/A}}\\)</span> <span class="math-inline">\\(w&#95;2^{\ast}=\boxed{\text{N/A}}\\)</span> <span class="math-inline">\\(w&#95;3^{\ast}=\boxed{\text{N/A}}\\)</span>
+    :::
+
+   For example, <span class="math-inline">\\(\vec w^{\ast} = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\vec w^{\ast} = \begin{bmatrix} 2 \\\\ 1 \\\\ 2 \\\\ 3 \end{bmatrix}\\)</span> both yield the same predictions. (Don't believe me? Write out all three cases for both <span class="math-inline">\\(\vec w^{\ast}\\)</span> vectors and see for yourself.)
+
+</details>
+
 ---
 
 ## Activity 3: Gradients and Partial Derivatives
@@ -267,6 +378,44 @@ Suppose <span class="math-inline">\\(\vec x \in \mathbb{R}^3\\)</span>. Let <spa
 <div class="assignment-part-content" markdown="1">
 Find <span class="math-inline">\\(\nabla g(\vec x)\\)</span>. <em>Hint: Start by finding the partial derivatives of <span class="math-inline">\\(g\\)</span> with respect to <span class="math-inline">\\(x&#95;1\\)</span>, <span class="math-inline">\\(x&#95;2\\)</span>, and <span class="math-inline">\\(x&#95;3\\)</span>.</em>
 
+<details markdown="1"><summary>Solution</summary>
+
+Let's start by finding the partial derivatives of <span class="math-inline">\\(g\\)</span> with respect to <span class="math-inline">\\(x&#95;1\\)</span>, <span class="math-inline">\\(x&#95;2\\)</span>, and <span class="math-inline">\\(x&#95;3\\)</span>. We'll need to make heavy use of the (regular, scalar-to-scalar) chain rule.
+
+<div class="math-display">
+$$
+\frac{\partial g}{\partial x_1} = 2(x_1^2+x_2-3)(2x_1) + 2(x_1+x_2^2-4)(1) = 4x_1 (x_1^2+x_2-3) + 2(x_1+x_2^2-4)
+$$
+</div>
+
+
+
+<div class="math-display">
+$$
+\frac{\partial g}{\partial x_2} = 2(x_1^2+x_2-3) + 4x_2(x_1+x_2^2-4) \: \text{(notice the symmetry with the first case)}
+$$
+</div>
+
+
+
+<div class="math-display">
+$$
+\frac{\partial g}{\partial x_3} = 2x_3
+$$
+</div>
+
+So,
+
+<div class="math-display">
+$$
+\boxed{\nabla g(\vec x) = \begin{bmatrix} 4x_1 (x_1^2+x_2-3) + 2(x_1+x_2^2-4) \\\\ 2(x_1^2+x_2-3) + 4x_2(x_1+x_2^2-4) \\\\ 2x_3 \end{bmatrix}}
+$$
+</div>
+
+No need to simplify the expression any further --- doing so won't make it any easier to evaluate at a specific point.
+
+</details>
+
 </div>
 </div>
 
@@ -275,6 +424,34 @@ Find <span class="math-inline">\\(\nabla g(\vec x)\\)</span>. <em>Hint: Start by
 <div class="assignment-part-content" markdown="1">
 Evaluate <span class="math-inline">\\(\nabla g\left( \begin{bmatrix} 2 \\\\ 1 \\\\ 0 \end{bmatrix} \right)\\)</span>. The result is a vector in <span class="math-inline">\\(\mathbb{R}^3\\)</span>. What does it mean?
 
+<details markdown="1"><summary>Solution</summary>
+
+<div class="math-display">
+$$
+\nabla g(\vec x) = \begin{bmatrix} 4x_1 (x_1^2+x_2-3) + 2(x_1+x_2^2-4) \\\\ 2(x_1^2+x_2-3) + 4x_2(x_1+x_2^2-4) \\\\ 2x_3 \end{bmatrix}
+$$
+</div>
+
+Notice the shared terms of <span class="math-inline">\\(x&#95;1^2 + x&#95;2 - 3\\)</span> and <span class="math-inline">\\(x&#95;1 + x&#95;2^2 - 4\\)</span> in the first and second components. To make the computation of the gradient at <span class="math-inline">\\(\begin{bmatrix} 2 \\\\ 1 \\\\ 0 \end{bmatrix}\\)</span> easier, let's compute these values first.
+
+<div class="math-display">
+$$
+x_1^2 + x_2 - 3 = 2^2 + 1 - 3 = 2, \quad x_1 + x_2^2 - 4 = 2 + 1^2 - 4 = -1
+$$
+</div>
+
+Then,
+
+<div class="math-display">
+$$
+\boxed{\nabla g\left( \begin{bmatrix} 2 \\\\ 1 \\\\ 0 \end{bmatrix} \right) = \begin{bmatrix} 4x_1(x_1^2+x_2-3) + 2(x_1+x_2^2-4) \\\\ 2(x_1^2+x_2-3) + 4x_2(x_1+x_2^2-4) \\\\ 2x_3 \end{bmatrix} = \begin{bmatrix} 4(2)(2) + 2(-1) \\\\ 2(2) + 4(1)(-1) \\\\ 0 \end{bmatrix} = \begin{bmatrix} 14 \\\\ 0 \\\\ 0 \end{bmatrix}}
+$$
+</div>
+
+The vector <span class="math-inline">\\(\begin{bmatrix} 14 \\\\ 0 \\\\ 0 \end{bmatrix}\\)</span> describes the direction of steepest ascent at the point <span class="math-inline">\\(\begin{bmatrix} 2 \\\\ 1 \\\\ 0 \end{bmatrix}\\)</span>.
+
+</details>
+
 </div>
 </div>
 
@@ -282,6 +459,12 @@ Evaluate <span class="math-inline">\\(\nabla g\left( \begin{bmatrix} 2 \\\\ 1 \\
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
 Why is it guaranteed that <span class="math-inline">\\(g(\vec x)\\)</span> **has** a global minimum?
+
+<details markdown="1"><summary>Solution</summary>
+
+<span class="math-inline">\\(g(\vec x) = (x&#95;1^2 + x&#95;2 - 3)^2 + (x&#95;1 + x&#95;2^2 - 4)^2 + x&#95;3^2\\)</span> is a sum of three squares, each of which is <span class="math-inline">\\(\geq 0\\)</span>. So, knowing nothing else about what is being squared, we know that <span class="math-inline">\\(g(\vec x) \geq 0\\)</span> for all <span class="math-inline">\\(\vec x\\)</span>, and so <span class="math-inline">\\(g(\vec x)\\)</span> has a global minimum of **something**, whether it's 0 or some positive number.
+
+</details>
 
 </div>
 </div>
@@ -308,6 +491,26 @@ In each part below, assume <span class="math-inline">\\(\vec x, \vec a, \vec b \
 <div class="assignment-part-content" markdown="1">
 Given <span class="math-inline">\\(f(\vec x) = \vec x^T A \vec x + \vec b^T \vec x + c\\)</span>, find <span class="math-inline">\\(\nabla f(\vec x)\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+The key idea is that the gradient of a sum is a sum of the gradients of the terms, just like with standard derivatives.
+
+<div class="math-display">
+$$
+\nabla f(\vec x) = \nabla (\vec x^T A \vec x + \vec b^T \vec x + c) = \nabla (\vec x^T A \vec x) + \nabla (\vec b^T \vec x) + \nabla (c) = (A + A^T) \vec x + \vec b
+$$
+</div>
+
+Therefore,
+
+<div class="math-display">
+$$
+\boxed{\nabla f(\vec x) = (A + A^T) \vec x + \vec b}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -315,6 +518,26 @@ Given <span class="math-inline">\\(f(\vec x) = \vec x^T A \vec x + \vec b^T \vec
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
 Given <span class="math-inline">\\(f(\vec x) = \sum&#95;{i=1}^n x&#95;i\\)</span>, find <span class="math-inline">\\(\nabla f(\vec x)\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+Remember that the sum of a vector's components is the same as the dot product of that vector with the vector of all 1's:
+
+<div class="math-display">
+$$
+f(\vec x) = \sum_{i=1}^n x_i = \vec x \cdot \begin{bmatrix} 1 \\\\ 1 \\\\ \vdots \\\\ 1 \end{bmatrix}
+$$
+</div>
+
+So,
+
+<div class="math-display">
+$$
+\boxed{\nabla f(\vec x) = \begin{bmatrix} 1 \\\\ 1 \\\\ \vdots \\\\ 1 \end{bmatrix}}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -324,6 +547,33 @@ Given <span class="math-inline">\\(f(\vec x) = \sum&#95;{i=1}^n x&#95;i\\)</span
 <div class="assignment-part-content" markdown="1">
 Given <span class="math-inline">\\(f(\vec x) = \lVert A \vec x \rVert^2\\)</span>, find <span class="math-inline">\\(\nabla f(\vec x)\\)</span>. <em>Hint: Use the fact that <span class="math-inline">\\(\lVert \vec v \rVert^2 = \vec v^T \vec v\\)</span>.</em>
 
+<details markdown="1"><summary>Solution</summary>
+
+Let's start by expanding <span class="math-inline">\\(\lVert A \vec x \rVert^2\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+f(\vec x) &= \lVert A \vec x \rVert^2 \\\\
+&= (A \vec x)^T (A \vec x) \\\\
+&= \vec x^T A^T A \vec x \\\\
+&= \vec x^T (A^TA) \vec x
+\end{align*}
+$$
+</div>
+
+<span class="math-inline">\\(f(\vec x)\\)</span> is a quadratic form, with the matrix <span class="math-inline">\\(A^TA\\)</span>. So,
+
+<div class="math-display">
+$$
+\boxed{\nabla f(\vec x) = (A^TA + (A^TA)^T) \vec x = 2A^TA \vec x}
+$$
+</div>
+
+Note that <span class="math-inline">\\(A^TA\\)</span> is symmetric, since <span class="math-inline">\\((A^TA)^T = A^TA\\)</span>.
+
+</details>
+
 </div>
 </div>
 
@@ -331,6 +581,18 @@ Given <span class="math-inline">\\(f(\vec x) = \lVert A \vec x \rVert^2\\)</span
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
 Given <span class="math-inline">\\(f(\vec x) = \lVert \vec x \rVert\\)</span>, find <span class="math-inline">\\(\nabla f(\vec x)\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+<div class="math-display">
+$$
+\boxed{\nabla f(\vec x) = \frac{\vec x}{\lVert \vec x \rVert}}
+$$
+</div>
+
+For the derivation, see the [Norm and Chain Rule example in Chapter 8.2](https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/#example-norm-and-chain-rule).
+
+</details>
 
 </div>
 </div>
@@ -341,6 +603,31 @@ Given <span class="math-inline">\\(f(\vec x) = \lVert \vec x \rVert\\)</span>, f
 Given <span class="math-inline">\\(f(\vec x) = (\vec a \cdot \vec x)^2\\)</span>, find <span class="math-inline">\\(\nabla f(\vec x)\\)</span>.
 
 <em>Hint: Expand <span class="math-inline">\\(f(\vec x)\\)</span> so that you can use one of the "big three" rules.</em>
+
+<details markdown="1"><summary>Solution</summary>
+
+Let's follow the hint.
+
+<div class="math-display">
+$$
+\begin{align*}
+f(\vec x) &= (\vec a \cdot \vec x)^2
+\\\\ &= (\vec a^T \vec x)^2
+\\\\ &= (\vec x^T \vec a)(\vec a^T \vec x)
+\\\\ &= \vec x^T (\vec a \vec a^T) \vec x
+\end{align*}
+$$
+</div>
+
+<span class="math-inline">\\(f(\vec x)\\)</span> is a quadratic form too, with the matrix <span class="math-inline">\\(\vec a \vec a^T\\)</span>. This is a symmetric matrix (<span class="math-inline">\\(\vec a \vec a^T = (\vec a \vec a^T)^T\\)</span>). So,
+
+<div class="math-display">
+$$
+\boxed{\nabla f(\vec x) = 2(\vec a \vec a^T) \vec x = 2 \vec a (\vec a^T \vec x) = 2 (\vec a \cdot \vec x) \vec a}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -358,5 +645,11 @@ Suppose <span class="math-inline">\\(f(\vec x) = \vec x^T \begin{bmatrix} a &amp
 2.  Find <span class="math-inline">\\(\frac{\partial f}{\partial x&#95;1}\\)</span>, <span class="math-inline">\\(\frac{\partial f}{\partial x&#95;2}\\)</span>, and show that <span class="math-inline">\\(\nabla f(\vec x) = \begin{bmatrix} \frac{\partial f}{\partial x&#95;1} \\\\ \frac{\partial f}{\partial x&#95;2} \end{bmatrix}\\)</span> satisfies the quadratic form gradient rule.
 
 3.  Discuss: Why do we typically assume that <span class="math-inline">\\(A\\)</span> is symmetric when defining a quadratic form?
+
+<details markdown="1"><summary>Solution</summary>
+
+This problem is the same as the [Quadratic Forms example in Chapter 8.2](https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/#example-quadratic-forms).
+
+</details>
 
 {% endraw %}
