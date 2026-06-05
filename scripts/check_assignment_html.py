@@ -99,6 +99,15 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
 
     if re.search(r"(?m)^ {4}<div class=\"math-display\">", text):
         failures.append(f"{source_md}: indented math-display block will render as code")
+    if re.search(r"(?m)^[ \t]*:::[ \t]*(?:[A-Za-z].*)?$", text):
+        failures.append(f"{source_md}: Pandoc fenced div marker leaked into Markdown")
+    if re.search(r"(?m)^ {4,}(?:<span class=\"math-inline\"|<div class=\"math-display\"|:::)", text):
+        failures.append(f"{source_md}: indented raw Markdown/HTML will render as code")
+    if re.search(
+        r"(?ms)^```[^\n]*\n(?:(?!^```).)*(?:<span class=\"math-inline\"|<div class=\"math-display\"|\$\$|:::)(?:(?!^```).)*^```",
+        text,
+    ):
+        failures.append(f"{source_md}: math or raw HTML rendered inside a fenced code block")
     if re.search(r"(?m)^- \[[^\n\]]*<span class=\"math-inline\"", text):
         failures.append(f"{source_md}: raw inline-math HTML leaked into the table of contents")
     if re.search(r'<span class="math-inline">[^<]*(?:&#42;|&#39;)[^<]*</span>', text):

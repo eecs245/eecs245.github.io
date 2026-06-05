@@ -306,17 +306,13 @@ In each part below, we provide you with a model that predicts `total` (her total
 
    This is the constant model. Since we're minimizing mean squared error, <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> is the mean of all total bills in the dataset, which we can tell from the scatter plot is positive.
 
-    ::: center
    <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>
-    :::
 
 2.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{veg}&#95;i\\)</span>
 
    <span class="math-inline">\\(w&#95;0\\)</span> is the intercept and <span class="math-inline">\\(w&#95;1\\)</span> corresponds to pounds of vegetables. As vegetable purchases increase, the total bill increases, so <span class="math-inline">\\(w&#95;1&gt;0\\)</span>. The intercept looks positive as well, though this is a little less clear, admittedly.
 
-    ::: center
    <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>, <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{positive}}\\)</span>
-    :::
 
 3.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{meat=chicken}&#95;i\\)</span>
 
@@ -338,29 +334,23 @@ $$
 
    Both averages are positive, so <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> is positive. But, purchases involving chicken tend to be cheaper than purchases not involving chicken (as is evident in the third box plot), so <span class="math-inline">\\(w&#95;1^{\ast}\\)</span> is negative.
 
-    ::: center
    <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>, <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{negative}}\\)</span>
-    :::
 
 4.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{meat=beef}&#95;i+ w&#95;2 \cdot \text{meat=chicken}&#95;i\\)</span>
 
    Following similar logic to the previous part, <span class="math-inline">\\(w&#95;0\\)</span> is the mean total for the reference group (fish), <span class="math-inline">\\(w&#95;1\\)</span> is the difference between the mean of beef and the mean of fish, <span class="math-inline">\\(w&#95;2\\)</span> is the difference between the mean of chicken and the mean of fish.
 
-    ::: center
    <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{positive}}\\)</span>
 
    <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{negative}}\\)</span> (beef purchases tend to be less expensive than fish purchases)
 
    <span class="math-inline">\\(w&#95;2^{\ast}=\boxed{\text{negative}}\\)</span> (chicken purchases tend to be less expensive than fish purchases)
-    :::
 
 5.  <span class="math-inline">\\(h(\vec x&#95;i)=w&#95;0+w&#95;1 \cdot \text{meat=beef}&#95;i+ w&#95;2 \cdot \text{meat=chicken}&#95;i + w&#95;3 \cdot \text{meat=fish}&#95;i\\)</span>
 
    This model has a parameter for each meat and an intercept, but since the sum of one hot encoded features for meat is always one, the design matrix is not full rank. Therefore, the optimal solution is not unique, and there are infinitely many optimal parameter vectors <span class="math-inline">\\(\vec w^{\ast}\\)</span> that minimize mean squared error.
 
-    ::: center
    <span class="math-inline">\\(w&#95;0^{\ast}=\boxed{\text{N/A}}\\)</span> <span class="math-inline">\\(w&#95;1^{\ast}=\boxed{\text{N/A}}\\)</span> <span class="math-inline">\\(w&#95;2^{\ast}=\boxed{\text{N/A}}\\)</span> <span class="math-inline">\\(w&#95;3^{\ast}=\boxed{\text{N/A}}\\)</span>
-    :::
 
    For example, <span class="math-inline">\\(\vec w^{\ast} = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\vec w^{\ast} = \begin{bmatrix} 2 \\\\ 1 \\\\ 2 \\\\ 3 \end{bmatrix}\\)</span> both yield the same predictions. (Don't believe me? Write out all three cases for both <span class="math-inline">\\(\vec w^{\ast}\\)</span> vectors and see for yourself.)
 

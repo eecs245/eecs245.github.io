@@ -213,6 +213,7 @@ def main() -> int:
             generated_markdown=final_markdown,
             source_path=source_tex,
         )
+        validate_generated_markdown_structure(final_markdown, output_md)
 
         final_markdown = "\n".join(line.rstrip() for line in final_markdown.splitlines()) + "\n"
         output_md.write_text(final_markdown)
@@ -925,7 +926,20 @@ def render_youtube_embeds(text: str) -> str:
 
 
 def remove_pandoc_layout_fences(text: str) -> str:
-    return re.sub(r"(?m)^:::\s*minipage\s*$\n?", "", text)
+    lines = text.splitlines()
+    cleaned: list[str] = []
+    suppress_next_closing = 0
+
+    for line in lines:
+        if re.fullmatch(r"[ \t]*:::[ \t]*(?:center|minipage)[ \t]*", line):
+            suppress_next_closing += 1
+            continue
+        if suppress_next_closing and re.fullmatch(r"[ \t]*:::[ \t]*", line):
+            suppress_next_closing -= 1
+            continue
+        cleaned.append(line)
+
+    return "\n".join(cleaned)
 
 
 def convert_pandoc_attribute_spans(text: str) -> str:
@@ -1569,6 +1583,13 @@ def validate_visible_items_match_source(
 
     if item_kind == "Problem":
         report_programming_problem_positions(source_items, generated_items)
+
+
+def validate_generated_markdown_structure(markdown: str, output_md: Path) -> None:
+    if re.search(r"(?m)^[ \t]*:::[ \t]*(?:[A-Za-z].*)?$", markdown):
+        raise SystemExit(
+            f"{output_md}: Pandoc fenced div marker leaked into generated Markdown."
+        )
 
 
 def extract_source_items(source_tex: str) -> list[AssignmentItem]:
