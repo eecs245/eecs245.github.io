@@ -44,8 +44,6 @@ days:
         reading2_text: Ch. 8.4
         reading3: https://notes.eecs245.org/gradients/convexity/
         reading3_text: Ch. 8.5
-        reading4: https://notes.eecs245.org/gradients/positive-definite-matrices/
-        reading4_text: Ch. 8.6
         live_notes: resources/lecture-pdfs/lec10-filled.pdf
       - name: HW 7
         problems: ../resources/homeworks/hw07/
