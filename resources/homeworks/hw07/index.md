@@ -109,7 +109,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 # Homework 7: Projections; Regression using Linear Algebra
 
-**due** Thursday, June 4th, 2026 at 11:59PM Ann Arbor Time <span style="color: red;">(no slip days allowed!)</span>
+**due** Thursday, June 4th, 2026 at 11:59PM Ann Arbor Time
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw07/hw07.pdf" target="_blank">View as PDF ✏️</a>
@@ -277,18 +277,7 @@ Then, create the matrix <span class="math-inline">\\(Q = \begin{bmatrix} | &amp;
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts)
-<div class="math-display">
-
-<div class="math-display">
-$$
-**Updated version**
-$$
-</div>
-
-</div>
-
- Consider <span class="math-inline">\\(\vec y = \begin{bmatrix} 3 \\\\ 1 \\\\ 2 \\\\ 4 \end{bmatrix}\\)</span>. <span class="math-inline">\\(\vec y\\)</span> **is** in <span class="math-inline">\\(\text{span}(\lbrace \vec v&#95;1, \vec v&#95;2, \vec v&#95;3 \rbrace) = \text{span}(\lbrace \vec q&#95;1, \vec q&#95;2, \vec q&#95;3 \rbrace)\\)</span>.
+(4 pts) Consider <span class="math-inline">\\(\vec y = \begin{bmatrix} 3 \\\\ 1 \\\\ 2 \\\\ 4 \end{bmatrix}\\)</span>. <span class="math-inline">\\(\vec y\\)</span> **is** in <span class="math-inline">\\(\text{span}(\lbrace \vec v&#95;1, \vec v&#95;2, \vec v&#95;3 \rbrace) = \text{span}(\lbrace \vec q&#95;1, \vec q&#95;2, \vec q&#95;3 \rbrace)\\)</span>.
 
 Find scalars <span class="math-inline">\\(a\\)</span>, <span class="math-inline">\\(b\\)</span>, and <span class="math-inline">\\(c\\)</span> such that <span class="math-inline">\\(a\vec q&#95;1 + b\vec q&#95;2 + c\vec q&#95;3 = \vec y\\)</span>, **without** solving a system of 3 equations and 3 unknowns. Instead, use the fact that <span class="math-inline">\\(\vec q&#95;1, \vec q&#95;2, \vec q&#95;3\\)</span> are orthonormal. <em>Hint: There's a relevant problem from Lab 5.</em>
 
