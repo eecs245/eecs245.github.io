@@ -6,6 +6,7 @@ days:
     events:
       - name: Lab 9
         problems: ../resources/labs/lab09/
+        solutions: true
         type: lab
         title: Gradient Descent and Convexity
   - date: "2026-06-09"
