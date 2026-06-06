@@ -47,6 +47,7 @@ days:
         live_notes: resources/lecture-pdfs/lec10-filled.pdf
       - name: HW 7
         problems: ../resources/homeworks/hw07/
+        solutions: true
         type: hw
         title: Projections; Regression using Linear Algebra
   - date: "2026-06-07"
