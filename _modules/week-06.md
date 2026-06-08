@@ -27,6 +27,7 @@ days:
         reading3_text: Ch. 9.3
         reading4: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading4_text: Ch. 9.4
+        note: Suraj will be out of town, so there is <b>no live lecture</b>. A video playlist will be posted before the scheduled lecture time.
   - date: "2026-06-14"
     events:
       - name: HW 9
