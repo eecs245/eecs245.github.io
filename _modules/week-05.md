@@ -54,6 +54,7 @@ days:
     events:
       - name: HW 8
         problems: ../resources/homeworks/hw08/
+        solutions: true
         type: hw
         title: Multiple Linear Regression, Gradients
         note: No slip days allowed!

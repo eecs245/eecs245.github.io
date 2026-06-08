@@ -887,6 +887,7 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = add_total_points_separator(text)
     text = collapse_repeated_section_separators(text)
     text = fix_accidental_indented_prose(text)
+    text = flatten_solution_ordered_lists(text)
     text = keep_ordered_list_display_math_items(text)
     text = remove_pandoc_layout_fences(text)
     text = render_youtube_embeds(text)
@@ -1374,21 +1375,6 @@ def fix_accidental_indented_prose(text: str) -> str:
     unindent lines that look like prose to avoid changing real code blocks.
     """
 
-    def is_prose_line(content: str) -> bool:
-        stripped = content.strip()
-        if not stripped:
-            return False
-        if stripped.startswith(("-", "*", "1.", "2.", "3.", "`", "|", "$$")):
-            return False
-        if stripped.startswith("<") and not stripped.startswith('<span class="math-inline">'):
-            return False
-        if '<span class="math-inline">' in stripped and re.search(r"[A-Za-z]", stripped):
-            return True
-        normalized = re.sub(r'<span class="math-inline">.*?</span>', "MATH", stripped)
-        if re.search(r"[{};=<>]|\\begin\{|\\end\{", normalized):
-            return False
-        return bool(re.search(r"[A-Za-z].*[.?!:)]$", normalized) or normalized in {"then"})
-
     lines = text.splitlines()
     fixed: list[str] = []
     in_list_item = False
@@ -1407,7 +1393,7 @@ def fix_accidental_indented_prose(text: str) -> str:
 
         if line.startswith("    "):
             candidate = line[4:]
-            if is_prose_line(candidate):
+            if looks_like_accidental_indented_prose(candidate):
                 if in_list_item:
                     # Within list items, 4-space indentation often triggers code blocks.
                     # Keep it as a continuation paragraph by using 3 spaces.
@@ -1418,6 +1404,103 @@ def fix_accidental_indented_prose(text: str) -> str:
 
         fixed.append(line)
     return "\n".join(fixed)
+
+
+def looks_like_accidental_indented_prose(content: str) -> bool:
+    stripped = content.strip()
+    if not stripped:
+        return False
+    if stripped.startswith(("-", "*", "1.", "2.", "3.", "`", "|", "$$")):
+        return False
+    if stripped.startswith("<") and not stripped.startswith('<span class="math-inline">'):
+        return False
+    if '<span class="math-inline">' in stripped and re.search(r"[A-Za-z]", stripped):
+        return True
+    normalized = re.sub(r'<span class="math-inline">.*?</span>', "MATH", stripped)
+    if re.search(r"[{};=<>]|\\begin\{|\\end\{", normalized):
+        return False
+    return bool(
+        re.search(r"[A-Za-z].*[.?!:)]$", normalized)
+        or re.fullmatch(r"[A-Z][A-Za-z0-9 ,.'\"()/-]+", normalized)
+        or normalized in {"then"}
+    )
+
+
+def flatten_solution_ordered_lists(text: str) -> str:
+    """Keep solution dropdown lists from rendering as reset lists/code blocks.
+
+    Pandoc emits LaTeX enumerate environments as Markdown ordered lists. Inside
+    `<details markdown="1">`, Kramdown can split those lists around raw HTML
+    math blocks and treat indented continuation prose as literal code. Explicit
+    labels preserve the intended part structure without relying on nested
+    Markdown-list continuation rules.
+    """
+
+    solution_pattern = re.compile(
+        r'(?ms)(<details markdown="1"><summary>Solution</summary>\n\n)(.*?)(\n</details>)'
+    )
+
+    def replace_solution(match: re.Match[str]) -> str:
+        return (
+            match.group(1)
+            + flatten_top_level_ordered_list(match.group(2))
+            + match.group(3)
+        )
+
+    return solution_pattern.sub(replace_solution, text)
+
+
+def flatten_top_level_ordered_list(text: str) -> str:
+    lines = text.splitlines()
+    flattened: list[str] = []
+    saw_top_level_ordered_item = False
+    item_pattern = re.compile(r"^(\d+)\.\s+(.*)$")
+
+    for line in lines:
+        item_match = item_pattern.match(line)
+        if item_match:
+            saw_top_level_ordered_item = True
+            number = int(item_match.group(1))
+            flattened.append(
+                f"**({to_lower_roman(number)})** {item_match.group(2).strip()}"
+            )
+            continue
+
+        if saw_top_level_ordered_item and line.startswith(("    ", "   ")):
+            flattened.append(re.sub(r"^ {1,4}", "", line))
+            continue
+
+        flattened.append(line)
+
+    return "\n".join(flattened)
+
+
+def to_lower_roman(number: int) -> str:
+    if number <= 0:
+        return str(number)
+
+    values = [
+        (1000, "m"),
+        (900, "cm"),
+        (500, "d"),
+        (400, "cd"),
+        (100, "c"),
+        (90, "xc"),
+        (50, "l"),
+        (40, "xl"),
+        (10, "x"),
+        (9, "ix"),
+        (5, "v"),
+        (4, "iv"),
+        (1, "i"),
+    ]
+    parts: list[str] = []
+    remaining = number
+    for value, symbol in values:
+        count, remaining = divmod(remaining, value)
+        if count:
+            parts.append(symbol * count)
+    return "".join(parts)
 
 
 def fix_latex_for_mathjax(text: str) -> str:
@@ -1590,6 +1673,23 @@ def validate_generated_markdown_structure(markdown: str, output_md: Path) -> Non
         raise SystemExit(
             f"{output_md}: Pandoc fenced div marker leaked into generated Markdown."
         )
+    bad_solution_line = find_accidental_solution_code_block(markdown)
+    if bad_solution_line:
+        raise SystemExit(
+            f"{output_md}: solution prose would render as a code block: "
+            f"{bad_solution_line!r}"
+        )
+
+
+def find_accidental_solution_code_block(markdown: str) -> str | None:
+    solution_pattern = re.compile(
+        r'(?ms)<details markdown="1"><summary>Solution</summary>\n\n(.*?)\n</details>'
+    )
+    for match in solution_pattern.finditer(markdown):
+        for line in match.group(1).splitlines():
+            if line.startswith("    ") and looks_like_accidental_indented_prose(line[4:]):
+                return line.strip()
+    return None
 
 
 def extract_source_items(source_tex: str) -> list[AssignmentItem]:
