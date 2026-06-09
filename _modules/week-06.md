@@ -14,6 +14,8 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Midterm 2 (1-3PM, 1690 BBB; <a href='../mt2'>see logistics here</a>)</b>"
+        problems: ../resources/exams/sp26-mt2.pdf
+        solutions: ../resources/exams/sp26-mt2-solutions.pdf
   - date: "2026-06-11"
     events:
       - name: LEC 11

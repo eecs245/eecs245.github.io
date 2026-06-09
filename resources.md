@@ -25,7 +25,7 @@ Note that the midterm exams in Fall 2025 were 80 minutes long and administered i
 
 | Semester | Midterm 1 | Midterm 2 | Final Exam |
 | --- | --- | --- | --- |
-| Spring 2026 | [Exam](../resources/exams/sp26-mt1.pdf), [Solutions](../resources/exams/sp26-mt1-solutions.pdf) |  |  |
+| Spring 2026 | [Exam](../resources/exams/sp26-mt1.pdf), [Solutions](../resources/exams/sp26-mt1-solutions.pdf) | [Exam](../resources/exams/sp26-mt2.pdf), [Solutions](../resources/exams/sp26-mt2-solutions.pdf) |  |
 | Winter 2026 | [Exam](../resources/exams/wn26-mt1.pdf), [Solutions](../resources/exams/wn26-mt1-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qQWmh2Js1moAv8MqQCMEjWx) | [Exam](../resources/exams/wn26-mt2.pdf), [Solutions](../resources/exams/wn26-mt2-solutions.pdf) | [Exam](../resources/exams/wn26-final.pdf), [Solutions](../resources/exams/wn26-final-solutions.pdf) |
 | Fall 2025 | [Exam](../resources/exams/fa25-mt1.pdf), [Solutions](../resources/exams/fa25-mt1-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qRjWWjsENcWsxgtgJ2bJAl4) | [Exam](../resources/exams/fa25-mt2.pdf), [Solutions](../resources/exams/fa25-mt2-solutions.pdf) | [Exam](../resources/exams/fa25-final.pdf), [Solutions](../resources/exams/fa25-final-solutions.pdf), [Videos 🎥](https://www.youtube.com/playlist?list=PLEFTQpsm47qS-QgZ2hY-FJkqClfbGu7ds) |
 | Mock Exams | [Exam](../resources/exams/mock-mt1.pdf), [Solutions](../resources/exams/mock-mt1-solutions.pdf) | [Exam](../resources/exams/mock-mt2.pdf), [Solutions](../resources/exams/mock-mt2-solutions.pdf) | In lieu of a mock Final Exam, we provided these [Post-Midterm 2 practice problems](../post-mt2-practice) |
@@ -114,7 +114,9 @@ const examTopics = [
       ["Mock MT1 Problem 2", "../resources/exams/mock-mt1.pdf#page=4"],
       ["WN26 MT1 Problem 1", "../resources/exams/wn26-mt1.pdf#page=3"],
       ["WN26 MT1 Problem 7", "../resources/exams/wn26-mt1.pdf#page=10"],
-      ["WN26 Final Problem 1", "../resources/exams/wn26-final.pdf#page=3"]
+      ["WN26 Final Problem 1", "../resources/exams/wn26-final.pdf#page=3"],
+      ["SP26 MT1 Problem 1", "../resources/exams/sp26-mt1.pdf#page=3"],
+      ["SP26 MT1 Problem 2", "../resources/exams/sp26-mt1.pdf#page=4"]
     ]
   },
   {
@@ -125,7 +127,8 @@ const examTopics = [
       ["FA25 Final Problem 2", "../resources/exams/fa25-final.pdf#page=4"],
       ["Mock MT1 Problem 3", "../resources/exams/mock-mt1.pdf#page=6"],
       ["WN26 MT1 Problem 2", "../resources/exams/wn26-mt1.pdf#page=5"],
-      ["WN26 Final Problem 2", "../resources/exams/wn26-final.pdf#page=4"]
+      ["WN26 Final Problem 2", "../resources/exams/wn26-final.pdf#page=4"],
+      ["SP26 MT1 Problem 3", "../resources/exams/sp26-mt1.pdf#page=5"]
     ]
   },
   {
@@ -138,7 +141,10 @@ const examTopics = [
       ["Mock MT1 Problem 4", "../resources/exams/mock-mt1.pdf#page=7"],
       ["Mock MT1 Problem 7", "../resources/exams/mock-mt1.pdf#page=11"],
       ["WN26 MT1 Problem 4", "../resources/exams/wn26-mt1.pdf#page=7"],
-      ["WN26 Final Problem 3", "../resources/exams/wn26-final.pdf#page=5"]
+      ["WN26 Final Problem 3", "../resources/exams/wn26-final.pdf#page=5"],
+      ["SP26 MT1 Problem 4", "../resources/exams/sp26-mt1.pdf#page=6"],
+      ["SP26 MT1 Problem 5", "../resources/exams/sp26-mt1.pdf#page=7"],
+      ["SP26 MT1 Problem 9", "../resources/exams/sp26-mt1.pdf#page=11"]
     ]
   },
   {
@@ -151,7 +157,10 @@ const examTopics = [
       ["Mock MT1 Problem 5", "../resources/exams/mock-mt1.pdf#page=9"],
       ["Mock MT1 Problem 6", "../resources/exams/mock-mt1.pdf#page=10"],
       ["WN26 MT1 Problem 6", "../resources/exams/wn26-mt1.pdf#page=9"],
-      ["WN26 Final Problem 4", "../resources/exams/wn26-final.pdf#page=6"]
+      ["WN26 Final Problem 4", "../resources/exams/wn26-final.pdf#page=6"],
+      ["SP26 MT1 Problem 6", "../resources/exams/sp26-mt1.pdf#page=8"],
+      ["SP26 MT1 Problem 7", "../resources/exams/sp26-mt1.pdf#page=9"],
+      ["SP26 MT1 Problem 8", "../resources/exams/sp26-mt1.pdf#page=10"]
     ]
   },
   {
@@ -168,7 +177,10 @@ const examTopics = [
       ["WN26 MT2 Problem 2", "../resources/exams/wn26-mt2.pdf#page=4"],
       ["WN26 MT2 Problem 3", "../resources/exams/wn26-mt2.pdf#page=5"],
       ["WN26 MT2 Problem 5", "../resources/exams/wn26-mt2.pdf#page=7"],
-      ["WN26 Final Problem 5", "../resources/exams/wn26-final.pdf#page=6"]
+      ["WN26 Final Problem 5", "../resources/exams/wn26-final.pdf#page=6"],
+      ["SP26 MT2 Problem 1", "../resources/exams/sp26-mt2.pdf#page=3"],
+      ["SP26 MT2 Problem 2", "../resources/exams/sp26-mt2.pdf#page=4"],
+      ["SP26 MT2 Problem 3", "../resources/exams/sp26-mt2.pdf#page=6"]
     ]
   },
   {
@@ -182,7 +194,8 @@ const examTopics = [
       ["WN26 MT1 Problem 5", "../resources/exams/wn26-mt1.pdf#page=8"],
       ["WN26 MT2 Problem 4", "../resources/exams/wn26-mt2.pdf#page=6"],
       ["WN26 Final Problem 6", "../resources/exams/wn26-final.pdf#page=7"],
-      ["WN26 Final Problem 5", "../resources/exams/wn26-final.pdf#page=6"]
+      ["WN26 Final Problem 5", "../resources/exams/wn26-final.pdf#page=6"],
+      ["SP26 MT2 Problem 4", "../resources/exams/sp26-mt2.pdf#page=7"]
     ]
   },
   {
@@ -193,7 +206,8 @@ const examTopics = [
       ["FA25 Final Problem 8", "../resources/exams/fa25-final.pdf#page=9"],
       ["Mock MT2 Problem 5", "../resources/exams/mock-mt2.pdf#page=9"],
       ["WN26 MT2 Problem 6", "../resources/exams/wn26-mt2.pdf#page=8"],
-      ["WN26 Final Problem 7", "../resources/exams/wn26-final.pdf#page=8"]
+      ["WN26 Final Problem 7", "../resources/exams/wn26-final.pdf#page=8"],
+      ["SP26 MT2 Problem 5", "../resources/exams/sp26-mt2.pdf#page=8"]
     ]
   },
   {
@@ -209,7 +223,9 @@ const examTopics = [
       ["Mock MT2 Problem 8", "../resources/exams/mock-mt2.pdf#page=13"],
       ["WN26 MT2 Problem 7", "../resources/exams/wn26-mt2.pdf#page=10"],
       ["WN26 MT2 Problem 8", "../resources/exams/wn26-mt2.pdf#page=11"],
-      ["WN26 Final Problem 8", "../resources/exams/wn26-final.pdf#page=9"]
+      ["WN26 Final Problem 8", "../resources/exams/wn26-final.pdf#page=9"],
+      ["SP26 MT2 Problem 6", "../resources/exams/sp26-mt2.pdf#page=10"],
+      ["SP26 MT2 Problem 7", "../resources/exams/sp26-mt2.pdf#page=11"]
     ]
   },
   {
