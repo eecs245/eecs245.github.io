@@ -35,4 +35,5 @@ days:
       - name: HW 9
         type: hw
         title: "Multiple Linear Regression, Gradients"
+        problems: ../resources/homeworks/hw09/
 ---
