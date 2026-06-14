@@ -5,6 +5,7 @@ days:
   - date: "2026-06-22"
     events:
       - name: Lab 12
+        problems: ../resources/labs/lab12/
         type: lab
         title: Singular Value Decomposition
   - date: "2026-06-23"

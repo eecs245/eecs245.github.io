@@ -5,8 +5,9 @@ days:
   - date: "2026-06-15"
     events:
       - name: Lab 10
+        problems: ../resources/labs/lab10/
         type: lab
-        title: Convexity, Eigenvalues and Eigenvectors
+        title: Eigenvalues and Eigenvectors, Convexity
   - date: "2026-06-16"
     events:
       - name: LEC 12
@@ -23,6 +24,7 @@ days:
   - date: "2026-06-17"
     events:
       - name: Lab 11
+        problems: ../resources/labs/lab11/
         type: lab
         title: Adjacency Matrices and Diagonalization
   - date: "2026-06-18"
@@ -33,11 +35,13 @@ days:
         reading: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
         reading_text: Ch. 10.4
       - name: HW 10
+        problems: ../resources/homeworks/hw10/
         type: hw
         title: Eigenvalues and Eigenvectors
   - date: "2026-06-21"
     events:
       - name: HW 11
+        problems: ../resources/homeworks/hw11/
         type: hw
         title: Singular Value Decomposition
 ---

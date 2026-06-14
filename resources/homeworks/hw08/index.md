@@ -144,7 +144,7 @@ Total Points: 10 + 8 + 10 + 8 + 13 + 12 = 61
 
 ## Problem 1: Homework 7 Solutions Review (10 pts)
 
-Review the solutions to Homework 7 and pick **two problem parts** (for example, Problem 3c and Problem 5b) from Homework 7 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
+Review [the solutions to Homework 7](https://eecs245.org/resources/homeworks/hw07/) and pick **two problem parts** (for example, Problem 3c and Problem 5b) from Homework 7 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
 
 Alternatively, if you think one of your solutions is significantly better than the posted one, copy it here and explain why you think it is better. If you didn't do Homework 7, choose two problem parts from it that look challenging to you, and in a few sentences, explain the key ideas behind their solutions in your own words.
 

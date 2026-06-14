@@ -103,9 +103,9 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: Pandoc fenced div marker leaked into Markdown")
     if re.search(r"(?m)^ {4,}(?:<span class=\"math-inline\"|<div class=\"math-display\"|:::)", text):
         failures.append(f"{source_md}: indented raw Markdown/HTML will render as code")
-    if re.search(
-        r"(?ms)^```[^\n]*\n(?:(?!^```).)*(?:<span class=\"math-inline\"|<div class=\"math-display\"|\$\$|:::)(?:(?!^```).)*^```",
-        text,
+    if any(
+        re.search(r"<span class=\"math-inline\"|<div class=\"math-display\"|\$\$|:::", block)
+        for block in iter_fenced_code_blocks(text)
     ):
         failures.append(f"{source_md}: math or raw HTML rendered inside a fenced code block")
     if re.search(r"(?m)^- \[[^\n\]]*<span class=\"math-inline\"", text):
@@ -143,6 +143,8 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
         failures.append(f"{source_md}: indented math list item will render as code")
     if re.search(r"(?m)^ {4}(?!\d+\.|[-*]\s)\S.*<span class=\"math-inline\"", text):
         failures.append(f"{source_md}: indented inline-math HTML will render as code")
+    if re.search(r"(?m)^ {1,3}(?:>>>|import |from |array\(|np\.)", text):
+        failures.append(f"{source_md}: code-looking line is indented but not fenced as code")
     if re.search(r"(?m)^:::\s*minipage\s*$", text):
         failures.append(f"{source_md}: LaTeX minipage fence leaked into markdown")
     if re.search(r"(?m)(?:^---$[ \t]*\n\s*){2,}", text):
@@ -193,6 +195,26 @@ def check_markdown_images(source_md: Path, text: str) -> list[str]:
         if not target.exists():
             failures.append(f"{source_md}: missing image target `{image_path}`")
     return failures
+
+
+def iter_fenced_code_blocks(text: str) -> list[str]:
+    blocks: list[str] = []
+    in_block = False
+    current: list[str] = []
+
+    for line in text.splitlines():
+        if line.startswith("```"):
+            if in_block:
+                blocks.append("\n".join(current))
+                current = []
+                in_block = False
+            else:
+                in_block = True
+            continue
+        if in_block:
+            current.append(line)
+
+    return blocks
 
 
 def check_built_html(built_html: Path, website_root: Path) -> list[str]:

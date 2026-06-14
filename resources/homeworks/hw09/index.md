@@ -8,6 +8,8 @@ hide_footer_hr: true
 
 # Homework 9: Multiple Linear Regression, Gradients
 
+**due** Sunday, June 14th, 2026 at 11:59PM Ann Arbor Time
+
 Homework 9 is contained entirely in a Jupyter notebook. There is no PDF submission for this homework.
 
 To access the notebook, either:

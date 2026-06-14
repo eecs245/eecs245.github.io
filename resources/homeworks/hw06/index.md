@@ -146,7 +146,7 @@ Total Points: 10 + 9 + 16 + 12 + 12 + 5 + 5 + 22 = 91
 
 ## Problem 1: Homework 5 Solutions Review (10 pts)
 
-Review the solutions to Homework 5. Pick **two problem parts** (for example, Problem 2a and Problem 4b) from Homework 5 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
+Review [the solutions to Homework 5](https://eecs245.org/resources/homeworks/hw05/). Pick **two problem parts** (for example, Problem 2a and Problem 4b) from Homework 5 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
 
 Alternatively, if you think one of your solutions is significantly better than the posted one, copy it here and explain why you think it is better. If you didn't do Homework 5, choose two problem parts from it that look challenging to you, and in a few sentences, explain the key ideas behind their solutions in your own words.
 
@@ -177,7 +177,6 @@ In each part, identify whether the statement is true or false, and explain why.
 <details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(\boxed{\text{False}}\\)</span>. <span class="math-inline">\\(\text{rank}(A) = \text{dim}(\text{colsp}(A))\\)</span> for any matrix <span class="math-inline">\\(A\\)</span> by definition.
-
 </details>
 
 </div>
@@ -201,7 +200,6 @@ $$
 </div>
 
  so if <span class="math-inline">\\(\text{rank}(B) = 3\\)</span>, then <span class="math-inline">\\(\text{dim}(\text{nullsp}(B)) = 2\\)</span>.
-
 </details>
 
 </div>
@@ -233,7 +231,6 @@ $$
 </div>
 
 But, the question states that <span class="math-inline">\\(\text{dim}(\text{nullsp}(C^T)) = 1\\)</span>, so we have a contradiction. Therefore, no such matrix <span class="math-inline">\\(C\\)</span> exists.
-
 </details>
 
 </div>
@@ -263,11 +260,11 @@ What is <span class="math-inline">\\(\text{rank}(A)\\)</span>?
 
 Recall, <span class="math-inline">\\(\text{nullsp}(A)\\)</span> is the set of all vectors <span class="math-inline">\\(\vec x\\)</span> such that <span class="math-inline">\\(A\vec x = \vec 0\\)</span>. We have that:
 
-1.  <span class="math-inline">\\(\text{nullsp}(A)\\)</span> is a 1-dimensional subspace of <span class="math-inline">\\(\mathbb{R}^4\\)</span>.
+**(i)** <span class="math-inline">\\(\text{nullsp}(A)\\)</span> is a 1-dimensional subspace of <span class="math-inline">\\(\mathbb{R}^4\\)</span>.
 
-2.  <span class="math-inline">\\(A\\)</span> has 4 columns, because the null space is made up of vectors in <span class="math-inline">\\(\mathbb{R}^4\\)</span>; <span class="math-inline">\\(A\\)</span> must have 4 columns in order for <span class="math-inline">\\(A \begin{bmatrix} 2 \\\\ 1 \\\\ 0 \\\\ 1 \end{bmatrix}\\)</span> to be a valid product.
+**(ii)** <span class="math-inline">\\(A\\)</span> has 4 columns, because the null space is made up of vectors in <span class="math-inline">\\(\mathbb{R}^4\\)</span>; <span class="math-inline">\\(A\\)</span> must have 4 columns in order for <span class="math-inline">\\(A \begin{bmatrix} 2 \\\\ 1 \\\\ 0 \\\\ 1 \end{bmatrix}\\)</span> to be a valid product.
 
-3.  The above two facts imply, from the rank-nullity theorem, that <span class="math-inline">\\(\text{rank}(A) + 1 = 4 \implies \text{rank}(A) = 3\\)</span>.
+**(iii)** The above two facts imply, from the rank-nullity theorem, that <span class="math-inline">\\(\text{rank}(A) + 1 = 4 \implies \text{rank}(A) = 3\\)</span>.
 
 We know that <span class="math-inline">\\(A\\)</span> has 3 linearly independent columns, and 4 total columns. We don't know how many rows it has, but it must have at least 3 rows since <span class="math-inline">\\(\text{rank}(A) = 3\\)</span>.
 
@@ -298,7 +295,6 @@ $$
 </div>
 
 So, one possible <span class="math-inline">\\(A\\)</span> is <span class="math-inline">\\(\boxed{A = \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; -2 \\\\ 0 &amp; 1 &amp; 0 &amp; -1 \\\\ 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}}\\)</span>, which has <span class="math-inline">\\(\boxed{\text{rank}(A) = 3}\\)</span>.
-
 </details>
 
 </div>
@@ -376,7 +372,6 @@ $$
 </div>
 
 so it seems like we found a valid <span class="math-inline">\\(A\\)</span>.
-
 </details>
 
 </div>
@@ -430,7 +425,6 @@ $$
 </div>
 
 This is satisfied by <span class="math-inline">\\(c&#95;1 = -\frac{1}{2}\\)</span>, <span class="math-inline">\\(c&#95;2 = -2\\)</span>, and <span class="math-inline">\\(c&#95;3 = -3\\)</span>, so one possible <span class="math-inline">\\(A\\)</span> is <span class="math-inline">\\(\boxed{A = \begin{bmatrix} 1 &amp; 0 &amp; -\frac{1}{2} \\\\ 1 &amp; 3 &amp; -2 \\\\ 5 &amp; 1 &amp; -3 \end{bmatrix}}\\)</span>, with <span class="math-inline">\\(\boxed{\text{rank}(A) = 2}\\)</span>.
-
 </details>
 
 </div>
@@ -532,12 +526,11 @@ The first part has been done for you as an example.
 
 <details markdown="1"><summary>Solution</summary>
 
-1.  If there are either 0 or 1 solutions, we know that <span class="math-inline">\\(A\\)</span>'s columns must be linearly independent. This is because if a given set of vectors is linearly independent, then any linear combination of them can only be written in one way (a fact that we proved in Chapter 2.6). <span class="math-inline">\\(A\\)</span>'s columns must also **not** span all of <span class="math-inline">\\(\mathbb{R}^n\\)</span>, since there are some <span class="math-inline">\\(\vec b \in \mathbb{R}^n\\)</span> with no solutions for <span class="math-inline">\\(\vec x\\)</span>, so <span class="math-inline">\\(A\\)</span> must have fewer columns than rows.
+**(i)** If there are either 0 or 1 solutions, we know that <span class="math-inline">\\(A\\)</span>'s columns must be linearly independent. This is because if a given set of vectors is linearly independent, then any linear combination of them can only be written in one way (a fact that we proved in Chapter 2.6). <span class="math-inline">\\(A\\)</span>'s columns must also **not** span all of <span class="math-inline">\\(\mathbb{R}^n\\)</span>, since there are some <span class="math-inline">\\(\vec b \in \mathbb{R}^n\\)</span> with no solutions for <span class="math-inline">\\(\vec x\\)</span>, so <span class="math-inline">\\(A\\)</span> must have fewer columns than rows.
 
-   One possible <span class="math-inline">\\(A\\)</span> is <span class="math-inline">\\(A = \begin{bmatrix} 1 &amp; 0 \\\\ 0 &amp; 2 \\\\ 0 &amp; 0 \end{bmatrix}\\)</span>. For example, <span class="math-inline">\\(\vec b = \begin{bmatrix} -3 \\\\ 4 \\\\ 0 \end{bmatrix}\\)</span> only has a single solution for <span class="math-inline">\\(\vec x\\)</span>, which is <span class="math-inline">\\(\vec x = \begin{bmatrix} -3 \\\\ 2 \end{bmatrix}\\)</span>, while <span class="math-inline">\\(\vec c = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \end{bmatrix}\\)</span> has no solution for <span class="math-inline">\\(\vec x\\)</span>.
+One possible <span class="math-inline">\\(A\\)</span> is <span class="math-inline">\\(A = \begin{bmatrix} 1 &amp; 0 \\\\ 0 &amp; 2 \\\\ 0 &amp; 0 \end{bmatrix}\\)</span>. For example, <span class="math-inline">\\(\vec b = \begin{bmatrix} -3 \\\\ 4 \\\\ 0 \end{bmatrix}\\)</span> only has a single solution for <span class="math-inline">\\(\vec x\\)</span>, which is <span class="math-inline">\\(\vec x = \begin{bmatrix} -3 \\\\ 2 \end{bmatrix}\\)</span>, while <span class="math-inline">\\(\vec c = \begin{bmatrix} 1 \\\\ 2 \\\\ 3 \end{bmatrix}\\)</span> has no solution for <span class="math-inline">\\(\vec x\\)</span>.
 
-2.  The function <span class="math-inline">\\(f(\vec x) = A \vec x\\)</span> is one-to-one, but not onto. It is one-to-one because of the fact that any linear combination of <span class="math-inline">\\(A\\)</span>'s columns can only be written in one way, so if <span class="math-inline">\\(\vec x \neq \vec y\\)</span>, then <span class="math-inline">\\(A \vec x\\)</span> and <span class="math-inline">\\(A \vec y\\)</span> must also be different. It is not onto, since there are vectors in <span class="math-inline">\\(\mathbb{R}^3\\)</span> (like <span class="math-inline">\\(\vec c\\)</span> above) that aren't the output of <span class="math-inline">\\(f(\vec x)\\)</span>.
-
+**(ii)** The function <span class="math-inline">\\(f(\vec x) = A \vec x\\)</span> is one-to-one, but not onto. It is one-to-one because of the fact that any linear combination of <span class="math-inline">\\(A\\)</span>'s columns can only be written in one way, so if <span class="math-inline">\\(\vec x \neq \vec y\\)</span>, then <span class="math-inline">\\(A \vec x\\)</span> and <span class="math-inline">\\(A \vec y\\)</span> must also be different. It is not onto, since there are vectors in <span class="math-inline">\\(\mathbb{R}^3\\)</span> (like <span class="math-inline">\\(\vec c\\)</span> above) that aren't the output of <span class="math-inline">\\(f(\vec x)\\)</span>.
 </details>
 
 </div>
@@ -560,7 +553,6 @@ The function <span class="math-inline">\\(f(\vec x) = A \vec x\\)</span>\...
 -   **is onto**, because the columns of <span class="math-inline">\\(A\\)</span> span all of <span class="math-inline">\\(\mathbb{R}^n\\)</span>, meaning that all vectors in <span class="math-inline">\\(\mathbb{R}^n\\)</span> are possible outputs of <span class="math-inline">\\(f(\vec x)\\)</span>.
 
 -   **is not one-to-one**, because it's possible for two different vectors <span class="math-inline">\\(\vec x, \vec y \in \mathbb{R}^4\\)</span> to result in <span class="math-inline">\\(A \vec x = A \vec y\\)</span>. For example, <span class="math-inline">\\(A \begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\\\ 1 \end{bmatrix} = A \begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 2 \end{bmatrix} = \begin{bmatrix} 2 \\\\ 2 \\\\ 2 \end{bmatrix}\\)</span>.
-
 </details>
 
 </div>
@@ -583,7 +575,6 @@ The function <span class="math-inline">\\(f(\vec x) = A\vec x\\)</span>\...
 -   **is not onto**, because the columns of <span class="math-inline">\\(A\\)</span> do not span all of <span class="math-inline">\\(\mathbb{R}^n\\)</span> (e.g., we can't reach <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \end{bmatrix}\\)</span>).
 
 -   **is not one-to-one**, because it's possible for two different vectors <span class="math-inline">\\(\vec x, \vec y \in \mathbb{R}^3\\)</span> to result in <span class="math-inline">\\(A \vec x = A \vec y\\)</span> as we saw above with <span class="math-inline">\\(\begin{bmatrix} 0 \\\\ 0 \\\\ 2 \end{bmatrix}\\)</span> and <span class="math-inline">\\(\begin{bmatrix} -6 \\\\ -6 \\\\ 8 \end{bmatrix}\\)</span>.
-
 </details>
 
 </div>
@@ -608,7 +599,6 @@ The function <span class="math-inline">\\(f(\vec x) = A \vec x\\)</span>\...
 -   **is one-to-one**, because the columns are linearly independent; if <span class="math-inline">\\(A\vec x&#95;1 = A\vec x&#95;2\\)</span> then <span class="math-inline">\\(\vec x&#95;1 = \vec x&#95;2\\)</span>.
 
 Therefore, <span class="math-inline">\\(A\\)</span> is invertible.
-
 </details>
 
 </div>
@@ -644,24 +634,22 @@ $$
 
 <details markdown="1"><summary>Solution</summary>
 
-1.  <span class="math-inline">\\(\boxed{\text{rank}(P)=1}\\)</span>. Both columns are scalar multiples of <span class="math-inline">\\(\begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix}\\)</span>. Another way of looking at it is that <span class="math-inline">\\(\text{column 2} = \frac{v&#95;2}{v&#95;1} (\text{column 1})\\)</span>.
+**(i)** <span class="math-inline">\\(\boxed{\text{rank}(P)=1}\\)</span>. Both columns are scalar multiples of <span class="math-inline">\\(\begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix}\\)</span>. Another way of looking at it is that <span class="math-inline">\\(\text{column 2} = \frac{v&#95;2}{v&#95;1} (\text{column 1})\\)</span>.
 
-2.  A basis for <span class="math-inline">\\(\text{colsp}(P)\\)</span> is <span class="math-inline">\\(\boxed{\left\lbrace \begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix} \right\rbrace}\\)</span>; any linear combination of <span class="math-inline">\\(P\\)</span>'s columns is a scalar multiple of <span class="math-inline">\\(\begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix}\\)</span>.
+**(ii)** A basis for <span class="math-inline">\\(\text{colsp}(P)\\)</span> is <span class="math-inline">\\(\boxed{\left\lbrace \begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix} \right\rbrace}\\)</span>; any linear combination of <span class="math-inline">\\(P\\)</span>'s columns is a scalar multiple of <span class="math-inline">\\(\begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix}\\)</span>.
 
-3.  Since <span class="math-inline">\\(P\\)</span> has <span class="math-inline">\\(2\\)</span> columns and <span class="math-inline">\\(\text{rank}(P) = 1\\)</span>, the null space of <span class="math-inline">\\(P\\)</span> has dimension <span class="math-inline">\\(2 - 1 = 1\\)</span>, so a basis for <span class="math-inline">\\(\text{nullsp}(P)\\)</span> will contain just a single vector, and <span class="math-inline">\\(\text{nullsp}(P)\\)</span> will be the set of scalar multiples of that vector.
+**(iii)** Since <span class="math-inline">\\(P\\)</span> has <span class="math-inline">\\(2\\)</span> columns and <span class="math-inline">\\(\text{rank}(P) = 1\\)</span>, the null space of <span class="math-inline">\\(P\\)</span> has dimension <span class="math-inline">\\(2 - 1 = 1\\)</span>, so a basis for <span class="math-inline">\\(\text{nullsp}(P)\\)</span> will contain just a single vector, and <span class="math-inline">\\(\text{nullsp}(P)\\)</span> will be the set of scalar multiples of that vector.
 
-   Let <span class="math-inline">\\(\vec{x} = \begin{bmatrix} x&#95;1 \\\\ x&#95;2 \end{bmatrix}\\)</span> be a vector in <span class="math-inline">\\(\text{nullsp}(P)\\)</span>. Then,
+Let <span class="math-inline">\\(\vec{x} = \begin{bmatrix} x&#95;1 \\\\ x&#95;2 \end{bmatrix}\\)</span> be a vector in <span class="math-inline">\\(\text{nullsp}(P)\\)</span>. Then,
 
 <div class="math-display">
 $$
 P \vec{x} = \begin{bmatrix} v_1^2 & v_1 v_2 \\\\ v_1 v_2 & v_2^2 \end{bmatrix} \begin{bmatrix} x_1 \\\\ x_2 \end{bmatrix}
-          = \begin{bmatrix} v_1^2 x_1 + v_1 v_2 x_2 \\\\ v_1 v_2 x_1 + v_2^2 x_2 \end{bmatrix} = \vec{0}
+      = \begin{bmatrix} v_1^2 x_1 + v_1 v_2 x_2 \\\\ v_1 v_2 x_1 + v_2^2 x_2 \end{bmatrix} = \vec{0}
 $$
 </div>
 
-   By inspection, one possible solution is <span class="math-inline">\\(\vec x = \begin{bmatrix} - v&#95;2 \\\\ v&#95;1 \end{bmatrix}\\)</span>. Plugging this into both components of <span class="math-inline">\\(P \vec x = \vec 0\\)</span> gives us:
-
-
+By inspection, one possible solution is <span class="math-inline">\\(\vec x = \begin{bmatrix} - v&#95;2 \\\\ v&#95;1 \end{bmatrix}\\)</span>. Plugging this into both components of <span class="math-inline">\\(P \vec x = \vec 0\\)</span> gives us:
 
 <div class="math-display">
 $$
@@ -669,12 +657,11 @@ v_1^2 (-v_2) + v_1 v_2 (v_1) = 0 \\\\ v_1v_2(-v_2) + v_2^2 (v_1) = 0
 $$
 </div>
 
-   which is satisfied, so <span class="math-inline">\\(\boxed{\left\lbrace \begin{bmatrix} - v&#95;2 \\\\ v&#95;1 \end{bmatrix} \right\rbrace}\\)</span> is a basis for <span class="math-inline">\\(\text{nullsp}(P)\\)</span>. Any scalar multiple of <span class="math-inline">\\(\begin{bmatrix} - v&#95;2 \\\\ v&#95;1 \end{bmatrix}\\)</span> will also work.
+which is satisfied, so <span class="math-inline">\\(\boxed{\left\lbrace \begin{bmatrix} - v&#95;2 \\\\ v&#95;1 \end{bmatrix} \right\rbrace}\\)</span> is a basis for <span class="math-inline">\\(\text{nullsp}(P)\\)</span>. Any scalar multiple of <span class="math-inline">\\(\begin{bmatrix} - v&#95;2 \\\\ v&#95;1 \end{bmatrix}\\)</span> will also work.
 
-4.  Note that <span class="math-inline">\\(P = P^T\\)</span>, i.e. <span class="math-inline">\\(P\\)</span> is symmetric, so a basis for <span class="math-inline">\\(\text{colsp}(P)\\)</span> is also a basis for <span class="math-inline">\\(\text{colsp}(P^T)\\)</span>. So, <span class="math-inline">\\(\boxed{\left\lbrace \begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix} \right\rbrace}\\)</span> is a basis for <span class="math-inline">\\(\text{colsp}(P^T)\\)</span>.
+**(iv)** Note that <span class="math-inline">\\(P = P^T\\)</span>, i.e. <span class="math-inline">\\(P\\)</span> is symmetric, so a basis for <span class="math-inline">\\(\text{colsp}(P)\\)</span> is also a basis for <span class="math-inline">\\(\text{colsp}(P^T)\\)</span>. So, <span class="math-inline">\\(\boxed{\left\lbrace \begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix} \right\rbrace}\\)</span> is a basis for <span class="math-inline">\\(\text{colsp}(P^T)\\)</span>.
 
 A worthwhile observation is that <span class="math-inline">\\(P\\)</span> is the outer product of <span class="math-inline">\\(\vec v = \begin{bmatrix} v&#95;1 \\\\ v&#95;2 \end{bmatrix}\\)</span> with itself, i.e. <span class="math-inline">\\(P = \vec v \vec v^T\\)</span>.
-
 </details>
 
 </div>
@@ -690,7 +677,6 @@ A worthwhile observation is that <span class="math-inline">\\(P\\)</span> is the
 <span class="math-inline">\\(P\\)</span> is not invertible because <span class="math-inline">\\(\text{rank}(P)\neq 2\\)</span>, and an <span class="math-inline">\\(n \times n\\)</span> matrix must have rank <span class="math-inline">\\(n\\)</span> to be invertible.
 
 When you project <span class="math-inline">\\(\vec u\\)</span> onto <span class="math-inline">\\(\vec v\\)</span>, you're "losing information" because you no longer know the direction of the original <span class="math-inline">\\(\vec u\\)</span>. Different vectors <span class="math-inline">\\(\vec u\\)</span> and <span class="math-inline">\\(\vec w\\)</span> might end up with the same projection onto <span class="math-inline">\\(\vec v\\)</span>, despite being different vectors, meaning the transformation isn't one-to-one, and hence can't be undone.
-
 </details>
 
 </div>
@@ -754,26 +740,24 @@ The linking fact is that <span class="math-inline">\\(\text{rank}(X) = \text{ran
 
 Our goal is to show that <span class="math-inline">\\(\text{nullsp}(X^T) = \text{nullsp}(XX^T)\\)</span>. Both sides of this equation are sets, so to show they're equal, we need to show that any element in one set is also in the other, and vice versa.
 
-1.  **Prove <span class="math-inline">\\(\vec v \in \text{nullsp}(X^T) \implies \vec v \in \text{nullsp}(XX^T)\\)</span>**:
+**(i)** **Prove <span class="math-inline">\\(\vec v \in \text{nullsp}(X^T) \implies \vec v \in \text{nullsp}(XX^T)\\)</span>**:
 
-   Let <span class="math-inline">\\(\vec v \in \text{nullsp}(X^T)\\)</span>. This means <span class="math-inline">\\(\vec v \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(X^T \vec v = \vec 0\\)</span>. Multiplying both sides by <span class="math-inline">\\(X\\)</span> on the left gives us <span class="math-inline">\\(XX^T \vec v = X \vec 0 = \vec 0\\)</span>. So, <span class="math-inline">\\(\vec v \in \text{nullsp}(XX^T)\\)</span>.
+Let <span class="math-inline">\\(\vec v \in \text{nullsp}(X^T)\\)</span>. This means <span class="math-inline">\\(\vec v \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(X^T \vec v = \vec 0\\)</span>. Multiplying both sides by <span class="math-inline">\\(X\\)</span> on the left gives us <span class="math-inline">\\(XX^T \vec v = X \vec 0 = \vec 0\\)</span>. So, <span class="math-inline">\\(\vec v \in \text{nullsp}(XX^T)\\)</span>.
 
-2.  **Prove <span class="math-inline">\\(\vec v \in \text{nullsp}(XX^T) \implies \vec v \in \text{nullsp}(X^T)\\)</span>**:
+**(ii)** **Prove <span class="math-inline">\\(\vec v \in \text{nullsp}(XX^T) \implies \vec v \in \text{nullsp}(X^T)\\)</span>**:
 
-   Let <span class="math-inline">\\(\vec v \in \text{nullsp}(XX^T)\\)</span>. Again, this means that <span class="math-inline">\\(\vec v \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(XX^T \vec v = \vec 0\\)</span>. Let's multiply both sides by <span class="math-inline">\\(\vec v^T\\)</span> on the left:
-
-
+Let <span class="math-inline">\\(\vec v \in \text{nullsp}(XX^T)\\)</span>. Again, this means that <span class="math-inline">\\(\vec v \in \mathbb{R}^n\\)</span> and <span class="math-inline">\\(XX^T \vec v = \vec 0\\)</span>. Let's multiply both sides by <span class="math-inline">\\(\vec v^T\\)</span> on the left:
 
 <div class="math-display">
 $$
 \begin{align*}
-    XX^T \vec v &= \vec 0 \\\\
-    \vec v^T XX^T \vec v &= \vec v^T \vec 0 \\\\
-    (X^T \vec v)^T (X^T \vec v) &= 0 \\\\
-    (X^T \vec v) \cdot (X^T \vec v) &= 0 \\\\
-    \| X^T \vec v \|^2 &= 0 \\\\
-    X^T \vec v &= \vec 0
-    \end{align*}
+XX^T \vec v &= \vec 0 \\\\
+\vec v^T XX^T \vec v &= \vec v^T \vec 0 \\\\
+(X^T \vec v)^T (X^T \vec v) &= 0 \\\\
+(X^T \vec v) \cdot (X^T \vec v) &= 0 \\\\
+\| X^T \vec v \|^2 &= 0 \\\\
+X^T \vec v &= \vec 0
+\end{align*}
 $$
 </div>
 
@@ -816,7 +800,6 @@ So, to summarize:
 -   <span class="math-inline">\\(n \leq d\\)</span>
 
 -   (implied by the above two) <span class="math-inline">\\(r \leq d\\)</span>
-
 </details>
 
 ---
@@ -850,7 +833,6 @@ $$
 </div>
 
 A simpler answer might be <span class="math-inline">\\(\boxed{A = \begin{bmatrix} 0 &amp; 1 \\\\ 1 &amp; 0 \end{bmatrix}}\\)</span>, since <span class="math-inline">\\(A^2 = I\\)</span> and so <span class="math-inline">\\(A^6 = (A^2)^3 = I^3 = I\\)</span>.
-
 </details>
 
 ---
@@ -923,7 +905,6 @@ $$
 </div>
 
 When <span class="math-inline">\\(1+\vec v^T\vec u=0\\)</span>, then <span class="math-inline">\\(B\vec u=\vec 0\\)</span>. This means that <span class="math-inline">\\(\vec u \in \text{nullsp}(B)\\)</span>. But, this means that <span class="math-inline">\\(B\\)</span>'s null space contains more than just the zero vector, so <span class="math-inline">\\(\text{dim}(\text{nullsp}(B)) &gt; 0\\)</span>, so <span class="math-inline">\\(\text{rank}(B) &lt; n\\)</span>, meaning <span class="math-inline">\\(B\\)</span> is not invertible.
-
 </details>
 
 </div>
@@ -985,7 +966,6 @@ This problem is **not autograded**. Rather, in your submission to this part, inc
 <details markdown="1"><summary>Solution</summary>
 
 <img src="imgs/7c_generate.png" alt="image" style="width: 100%; max-width: 100%;"> <img src="imgs/7c_invert_direct.png" alt="image" style="width: 100%; max-width: 100%;"> <img src="imgs/7c_invert_sherman.png" alt="image" style="width: 100%; max-width: 100%;"> <img src="imgs/7c_run_one.png" alt="image" style="width: 100%; max-width: 100%;"> <img src="imgs/7c_run_many.png" alt="image" style="width: 100%; max-width: 100%;">
-
 </details>
 
 </div>
@@ -1001,7 +981,6 @@ This problem is **not autograded**. Rather, in your submission to this part, inc
 <div style="text-align: center;">
 <img src="imgs/7d.png" alt="image" style="width: 100%; max-width: 100%;">
 </div>
-
 </details>
 
 </div>
@@ -1017,7 +996,6 @@ This problem is **not autograded**. Rather, in your submission to this part, inc
 Once <span class="math-inline">\\(n\\)</span> increases past a point, the pre-computed inverse <span class="math-inline">\\(A^{-1}\\)</span> no longer fits in the computer's cache, and has to be stored in memory (RAM), which is slower to access than the cache. At that point, the cost of retrieving <span class="math-inline">\\(A^{-1}\\)</span> from memory to apply the Sherman-Morrison formula becomes larger than just computing the inverse directly.
 
 This may seem unintuitive, but note that `numpy` has highly optimized linear algebra routines, written in C which solve systems and invert matrices very quickly. So, even though the Sherman-Morrison formula is more efficient than inverting <span class="math-inline">\\(B\\)</span> directly, the difference in execution time becomes negligible as <span class="math-inline">\\(n\\)</span> increases.
-
 </details>
 
 If you're curious, look into [Low-Rank Adaptions (LoRA)](https://www.ibm.com/think/topics/lora), a relatively recent development in large language model research! The general idea is the same as we've worked with here.

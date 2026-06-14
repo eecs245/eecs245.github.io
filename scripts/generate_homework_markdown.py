@@ -887,6 +887,7 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = add_total_points_separator(text)
     text = collapse_repeated_section_separators(text)
     text = fix_accidental_indented_prose(text)
+    text = fence_indented_code_blocks(text)
     text = flatten_solution_ordered_lists(text)
     text = keep_ordered_list_display_math_items(text)
     text = remove_pandoc_layout_fences(text)
@@ -1297,6 +1298,66 @@ def strip_inline_math_spacing_commands(content: str) -> str:
 
 def unindent_accidental_list_code_blocks(text: str) -> str:
     return re.sub(r"(?m)^ {4}(-\s+)", r"\1", text)
+
+
+def fence_indented_code_blocks(text: str) -> str:
+    """Convert real Pandoc-indented code blocks to fenced blocks for Kramdown.
+
+    Assignment pages put Markdown inside raw HTML wrappers. Kramdown handles
+    fenced code there more reliably than four-space-indented code, while the
+    prose cleanup above has already removed accidental indentation.
+    """
+
+    lines = text.splitlines()
+    converted: list[str] = []
+    i = 0
+
+    while i < len(lines):
+        indent_width = code_block_indent_width(lines[i])
+        if indent_width is None:
+            converted.append(lines[i])
+            i += 1
+            continue
+
+        block_start = i
+        block: list[str] = []
+        while i < len(lines):
+            line_indent_width = code_block_indent_width(lines[i])
+            if lines[i].strip() == "":
+                block.append("")
+                i += 1
+                continue
+            if line_indent_width is None or line_indent_width < indent_width:
+                break
+            block.append(lines[i][indent_width:])
+            i += 1
+
+        if any(looks_like_code_line(line) for line in block):
+            while block and block[-1] == "":
+                block.pop()
+            converted.append("```python")
+            converted.extend(block)
+            converted.append("```")
+        else:
+            converted.extend(lines[block_start:i])
+
+    return "\n".join(converted)
+
+
+def code_block_indent_width(line: str) -> int | None:
+    match = re.match(r"^( {3,})(?=\S)", line)
+    return len(match.group(1)) if match else None
+
+
+def looks_like_code_line(line: str) -> bool:
+    stripped = line.strip()
+    if not stripped:
+        return False
+    if stripped.startswith((">>>", "...", "import ", "from ", "array(", "np.", "#")):
+        return True
+    if stripped.startswith(("[", "]")) and re.search(r"[\[\],]", stripped):
+        return True
+    return bool(re.match(r"[A-Za-z_][\w.]*\s*(?:=|\(|@)", stripped))
 
 
 def format_multiple_choice_rows(text: str) -> str:
@@ -1939,12 +2000,12 @@ def update_week_file(
                 if stripped.startswith("# problems:") and current_indent >= event_indent:
                     lines[j] = " " * current_indent + f"problems: {problems_link}"
                     updated = True
-                if (
-                    solutions_link
-                    and stripped.startswith("solutions:")
-                    and current_indent >= event_indent
-                ):
-                    lines[j] = " " * current_indent + f"solutions: {solutions_link}"
+                if stripped.startswith("solutions:") and current_indent >= event_indent:
+                    if solutions_link:
+                        lines[j] = " " * current_indent + f"solutions: {solutions_link}"
+                    else:
+                        del lines[j]
+                        continue
                 j += 1
 
             if not updated:

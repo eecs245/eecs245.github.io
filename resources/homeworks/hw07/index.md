@@ -145,7 +145,7 @@ Total Points: 10 + 6 + 18 + 27 + 13 + 8 + 14 = 96
 
 ## Problem 1: Homework 6 Solutions Review (10 pts)
 
-Review the solutions to Homework 6. Pick **two problem parts** (for example, Problem 2a and Problem 5b) from Homework 6 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
+Review [the solutions to Homework 6](https://eecs245.org/resources/homeworks/hw06/). Pick **two problem parts** (for example, Problem 2a and Problem 5b) from Homework 6 in which your solutions have the most room for improvement, i.e., where they have unsound reasoning, could be significantly more efficient or clearer, etc. **Include a screenshot of your solution to each problem part**, and in a few sentences, explain what was deficient and how it could be fixed.
 
 Alternatively, if you think one of your solutions is significantly better than the posted one, copy it here and explain why you think it is better. If you didn't do Homework 6, choose two problem parts from it that look challenging to you, and in a few sentences, explain the key ideas behind their solutions in your own words.
 
@@ -343,7 +343,6 @@ $$
 </div>
 
 Geometrically, <span class="math-inline">\\(A\vec{x}^{\ast}\\)</span> is the projection of <span class="math-inline">\\(\vec{b}\\)</span> onto the column space of <span class="math-inline">\\(A\\)</span>, and <span class="math-inline">\\(\vec{x}^{\ast}\\)</span> are the coordinates of that projection in the basis given by the two columns of <span class="math-inline">\\(A\\)</span>.
-
 </details>
 
 For the remainder of the problem, we will use the same vector <span class="math-inline">\\(\vec b\\)</span>, but instead use the following matrix <span class="math-inline">\\(A\\)</span>.
@@ -428,7 +427,6 @@ $$
 </div>
 
 This <span class="math-inline">\\(\vec{x}^{\ast}\\)</span> satisfies the normal equation <span class="math-inline">\\(A^T A \vec{x} = A^T \vec{b}\\)</span> and therefore minimizes <span class="math-inline">\\(\lVert \vec{b} - A\vec{x}\rVert^2\\)</span>.
-
 </details>
 
 </div>
@@ -555,7 +553,6 @@ $$
 </div>
 
  Thus, <span class="math-inline">\\(\vec x' + \vec x&#95;0\\)</span> also satisfies the normal equation. This means adding any vector in <span class="math-inline">\\(\text{nullsp}(A)\\)</span> to a solution <span class="math-inline">\\(\vec x'\\)</span> of the normal equation gives another valid solution.
-
 </details>
 
 </div>
@@ -579,7 +576,6 @@ $$
 </div>
 
 This set is *not* a subspace, because it does not necessarily pass through the origin (for instance, <span class="math-inline">\\(\vec{x}^{\ast}\\)</span> itself may not be <span class="math-inline">\\(\vec{0}\\)</span>).
-
 </details>
 
 </div>
@@ -613,7 +609,6 @@ $$
 However, if <span class="math-inline">\\(A\\)</span> does not have full rank, then <span class="math-inline">\\(A^TA\\)</span> cannot be inverted, and there are infinitely many <span class="math-inline">\\(\vec{w}\\)</span> that give the same minimum error.
 
 In this case, `np.linalg.lstsq` uses the **singular value decomposition (SVD)** of <span class="math-inline">\\(A\\)</span> to find a stable and well-defined <span class="math-inline">\\(\vec{w}^{\ast}\\)</span>. Without getting into the details, know that among all possible minimizers, this particular <span class="math-inline">\\(\vec{w}^{\ast}\\)</span> also has the smallest possible length <span class="math-inline">\\(\lVert \vec{w} \rVert\\)</span>. In other words, it fits the data as well as possible while keeping the parameter vector as small as possible. It is called the "min-norm" solution.
-
 </details>
 
 </div>
@@ -678,7 +673,6 @@ $$
 (Tip: Instead of converting <span class="math-inline">\\(\vec Q&#95;3 = \begin{bmatrix} 1/3 \\\\ -1/3 \\\\ 1/3 \\\\ 1 \end{bmatrix}\\)</span> to a unit vector, it's easier to instead convert <span class="math-inline">\\(\begin{bmatrix} 1 \\\\ -1 \\\\ 1 \\\\ 3 \end{bmatrix}\\)</span>, which points in the same direction as <span class="math-inline">\\(\vec Q&#95;3\\)</span>, to a unit vector. The result will be the same in both cases, but by multiplying through by 3 you get to avoid messier fractions.)
 
 Finally, we need to construct <span class="math-inline">\\(Q = \begin{bmatrix} 1/\sqrt{2} &amp; -1/\sqrt{6} &amp; \sqrt{3}/6 \\\\ 1/\sqrt{2} &amp; 1/\sqrt{6} &amp; -\sqrt{3}/6 \\\\ 0 &amp; 2/\sqrt{6} &amp; \sqrt{3}/6 \\\\ 0 &amp; 0 &amp; \sqrt{3}/2 \end{bmatrix}\\)</span>. Indeed, <span class="math-inline">\\(Q^TQ = I\\)</span> because all pairs of columns are orthogonal and have length 1. However, <span class="math-inline">\\(QQ^T \neq I\\)</span> because, for instance, row 3 and row 4 are not orthogonal, so <span class="math-inline">\\((QQ^T)&#95;{3, 4} = 3/12 = 1/4 \neq 0\\)</span>.
-
 </details>
 
 </div>
@@ -702,7 +696,6 @@ $$
 </div>
 
 Gram-Schmidt already gave us <span class="math-inline">\\(Q = \begin{bmatrix} 1/\sqrt{2} &amp; -1/\sqrt{6} &amp; \sqrt{3}/6 \\\\ 1/\sqrt{2} &amp; 1/\sqrt{6} &amp; -\sqrt{3}/6 \\\\ 0 &amp; 2/\sqrt{6} &amp; \sqrt{3}/6 \\\\ 0 &amp; 0 &amp; \sqrt{3}/2 \end{bmatrix}\\)</span>, which has a column space that is equal to the span of <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2, \vec v&#95;3\\)</span>.
-
 </details>
 
 </div>
@@ -754,7 +747,6 @@ Let's test out our logic in Python.
 <div style="text-align: center;">
 <img src="imgs/q4-ss1.png" alt="image" style="width: 80%; max-width: 100%;">
 </div>
-
 </details>
 
 </div>
@@ -800,7 +792,6 @@ $$
 </div>
 
 So, the vector in <span class="math-inline">\\(\text{span}(\lbrace \vec v&#95;1, \vec v&#95;2, \vec v&#95;3 \rbrace)\\)</span> that is closest to <span class="math-inline">\\(\vec y\\)</span> is <span class="math-inline">\\(\boxed{\begin{bmatrix} 3/2 \\\\ 3/2 \\\\ 7/2 \\\\ 7/2 \end{bmatrix}}\\)</span>.
-
 </details>
 
 </div>
@@ -822,7 +813,6 @@ There, you're asked to implement the function `orthogonalize`, which takes in an
 <div style="text-align: center;">
 <img src="imgs/q4-ss3.png" alt="image" style="width: 80%; max-width: 100%;">
 </div>
-
 </details>
 
 </div>
@@ -869,9 +859,7 @@ Finding the <span class="math-inline">\\(Q\\)</span> in a <span class="math-inli
 
 <details markdown="1"><summary>Solution</summary>
 
-1.  The big idea is that if <span class="math-inline">\\(Q\\)</span> is a matrix with orthonormal columns, then <span class="math-inline">\\(Q^TQ = I\\)</span>. So, if we're trying to find an <span class="math-inline">\\(R\\)</span> such that <span class="math-inline">\\(A = QR\\)</span>, then multiplying both sides by <span class="math-inline">\\(Q^T\\)</span> on the left gives us
-
-
+**(i)** The big idea is that if <span class="math-inline">\\(Q\\)</span> is a matrix with orthonormal columns, then <span class="math-inline">\\(Q^TQ = I\\)</span>. So, if we're trying to find an <span class="math-inline">\\(R\\)</span> such that <span class="math-inline">\\(A = QR\\)</span>, then multiplying both sides by <span class="math-inline">\\(Q^T\\)</span> on the left gives us
 
 <div class="math-display">
 $$
@@ -879,11 +867,9 @@ A = QR \implies Q^TA = Q^TQR \implies Q^TA = R
 $$
 </div>
 
-   meaning that <span class="math-inline">\\(R = Q^TA\\)</span>.
+meaning that <span class="math-inline">\\(R = Q^TA\\)</span>.
 
-   All that's left to explain is **why <span class="math-inline">\\(R\\)</span> is upper triangular**. The product <span class="math-inline">\\(Q^TA\\)</span> contains the dot products of the rows of <span class="math-inline">\\(Q^T\\)</span> with the columns of <span class="math-inline">\\(A\\)</span>. But, the rows of <span class="math-inline">\\(Q^T\\)</span> are the columns of <span class="math-inline">\\(Q\\)</span>, so <span class="math-inline">\\(R = Q^TA\\)</span> contains the dot products of columns of <span class="math-inline">\\(Q\\)</span> with columns of <span class="math-inline">\\(A\\)</span>. Specifically,
-
-
+All that's left to explain is **why <span class="math-inline">\\(R\\)</span> is upper triangular**. The product <span class="math-inline">\\(Q^TA\\)</span> contains the dot products of the rows of <span class="math-inline">\\(Q^T\\)</span> with the columns of <span class="math-inline">\\(A\\)</span>. But, the rows of <span class="math-inline">\\(Q^T\\)</span> are the columns of <span class="math-inline">\\(Q\\)</span>, so <span class="math-inline">\\(R = Q^TA\\)</span> contains the dot products of columns of <span class="math-inline">\\(Q\\)</span> with columns of <span class="math-inline">\\(A\\)</span>. Specifically,
 
 <div class="math-display">
 $$
@@ -891,33 +877,29 @@ R_{i, j} = \vec q_i \cdot \vec v_j
 $$
 </div>
 
-   where <span class="math-inline">\\(\vec q&#95;i\\)</span> is the <span class="math-inline">\\(i\\)</span>-th column of <span class="math-inline">\\(Q\\)</span> and <span class="math-inline">\\(\vec v&#95;j\\)</span> is the <span class="math-inline">\\(j\\)</span>-th column of <span class="math-inline">\\(A\\)</span>.
+where <span class="math-inline">\\(\vec q&#95;i\\)</span> is the <span class="math-inline">\\(i\\)</span>-th column of <span class="math-inline">\\(Q\\)</span> and <span class="math-inline">\\(\vec v&#95;j\\)</span> is the <span class="math-inline">\\(j\\)</span>-th column of <span class="math-inline">\\(A\\)</span>.
 
-   Remember, we constructed each <span class="math-inline">\\(\vec q&#95;i\\)</span> to be orthogonal to all previously constructed <span class="math-inline">\\(\vec q&#95;j\\)</span>'s for <span class="math-inline">\\(j &lt; i\\)</span>. Put in English, <span class="math-inline">\\(\vec q&#95;2\\)</span> is orthogonal to <span class="math-inline">\\(\vec q&#95;1\\)</span>, <span class="math-inline">\\(\vec q&#95;3\\)</span> is orthogonal to <span class="math-inline">\\(\vec q&#95;1\\)</span> and <span class="math-inline">\\(\vec q&#95;2\\)</span>, and so on.
+Remember, we constructed each <span class="math-inline">\\(\vec q&#95;i\\)</span> to be orthogonal to all previously constructed <span class="math-inline">\\(\vec q&#95;j\\)</span>'s for <span class="math-inline">\\(j &lt; i\\)</span>. Put in English, <span class="math-inline">\\(\vec q&#95;2\\)</span> is orthogonal to <span class="math-inline">\\(\vec q&#95;1\\)</span>, <span class="math-inline">\\(\vec q&#95;3\\)</span> is orthogonal to <span class="math-inline">\\(\vec q&#95;1\\)</span> and <span class="math-inline">\\(\vec q&#95;2\\)</span>, and so on.
 
-   Each <span class="math-inline">\\(\vec q&#95;i\\)</span> was found by taking <span class="math-inline">\\(\vec v&#95;i\\)</span> and subtracting off **a linear combination of** <span class="math-inline">\\(\vec q&#95;{i - 1}, \vec q&#95;{i - 2}, \ldots, \vec q&#95;1\\)</span>. (More precisely, we built the <span class="math-inline">\\(\vec Q&#95;i\\)</span>'s this way and then normalized them to get the <span class="math-inline">\\(\vec q&#95;i\\)</span>'s, but the directions of the <span class="math-inline">\\(\vec Q&#95;i\\)</span>'s are the same as the directions of the <span class="math-inline">\\(\vec q&#95;i\\)</span>'s, so this reasoning still holds.) As an example, consider how we would construct <span class="math-inline">\\(\vec q&#95;4\\)</span> if we were to apply Gram-Schmidt to the vectors <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2, \vec v&#95;3, \vec v&#95;4\\)</span>:
-
-
+Each <span class="math-inline">\\(\vec q&#95;i\\)</span> was found by taking <span class="math-inline">\\(\vec v&#95;i\\)</span> and subtracting off **a linear combination of** <span class="math-inline">\\(\vec q&#95;{i - 1}, \vec q&#95;{i - 2}, \ldots, \vec q&#95;1\\)</span>. (More precisely, we built the <span class="math-inline">\\(\vec Q&#95;i\\)</span>'s this way and then normalized them to get the <span class="math-inline">\\(\vec q&#95;i\\)</span>'s, but the directions of the <span class="math-inline">\\(\vec Q&#95;i\\)</span>'s are the same as the directions of the <span class="math-inline">\\(\vec q&#95;i\\)</span>'s, so this reasoning still holds.) As an example, consider how we would construct <span class="math-inline">\\(\vec q&#95;4\\)</span> if we were to apply Gram-Schmidt to the vectors <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2, \vec v&#95;3, \vec v&#95;4\\)</span>:
 
 <div class="math-display">
 $$
 \begin{align*}
-    \vec q_4 &= \vec v_4 - \text{proj}_{\vec q_1}(\vec v_4) - \text{proj}_{\vec q_2}(\vec v_4) - \text{proj}_{\vec q_3}(\vec v_4) \\\\
-    \vec q_4 &= \vec v_4
+\vec q_4 &= \vec v_4 - \text{proj}_{\vec q_1}(\vec v_4) - \text{proj}_{\vec q_2}(\vec v_4) - \text{proj}_{\vec q_3}(\vec v_4) \\\\
+\vec q_4 &= \vec v_4
 - \frac{\vec v_4 \cdot \vec q_1}{\vec q_1 \cdot \vec q_1} \vec q_1
 - \frac{\vec v_4 \cdot \vec q_2}{\vec q_2 \cdot \vec q_2} \vec q_2
 - \frac{\vec v_4 \cdot \vec q_3}{\vec q_3 \cdot \vec q_3} \vec q_3 \\\\
-    \vec q_4 &= \vec v_4 - a \vec q_1 - b \vec q_2 - c \vec q_3 \\\\
-    \implies a \vec q_1 + b \vec q_2 + c \vec q_3 + \vec q_4 &= \vec v_4
-    \end{align*}
+\vec q_4 &= \vec v_4 - a \vec q_1 - b \vec q_2 - c \vec q_3 \\\\
+\implies a \vec q_1 + b \vec q_2 + c \vec q_3 + \vec q_4 &= \vec v_4
+\end{align*}
 $$
 </div>
 
-   But, since all the <span class="math-inline">\\(\vec q&#95;i\\)</span>'s are orthogonal to each other, if we were to take the dot product of both sides of the equation with <span class="math-inline">\\(\vec q&#95;5\\)</span>, or <span class="math-inline">\\(\vec q&#95;6\\)</span>, or any other <span class="math-inline">\\(\vec q&#95;i\\)</span> for <span class="math-inline">\\(i &gt; 4\\)</span>, we would get 0.
+But, since all the <span class="math-inline">\\(\vec q&#95;i\\)</span>'s are orthogonal to each other, if we were to take the dot product of both sides of the equation with <span class="math-inline">\\(\vec q&#95;5\\)</span>, or <span class="math-inline">\\(\vec q&#95;6\\)</span>, or any other <span class="math-inline">\\(\vec q&#95;i\\)</span> for <span class="math-inline">\\(i &gt; 4\\)</span>, we would get 0.
 
-   This illustrates that <span class="math-inline">\\(\vec q&#95;i \cdot \vec v&#95;j = 0\\)</span> when <span class="math-inline">\\(i &gt; j\\)</span>. But, a matrix with 0's where <span class="math-inline">\\(i &gt; j\\)</span> is a matrix with 0's everywhere below the diagonal of <span class="math-inline">\\(i = j\\)</span>, which is precisely an upper triangular matrix.
-
-
+This illustrates that <span class="math-inline">\\(\vec q&#95;i \cdot \vec v&#95;j = 0\\)</span> when <span class="math-inline">\\(i &gt; j\\)</span>. But, a matrix with 0's where <span class="math-inline">\\(i &gt; j\\)</span> is a matrix with 0's everywhere below the diagonal of <span class="math-inline">\\(i = j\\)</span>, which is precisely an upper triangular matrix.
 
 <div class="math-display">
 $$
@@ -925,11 +907,9 @@ $$
 $$
 </div>
 
-   So, since <span class="math-inline">\\(\vec q&#95;i \cdot \vec v&#95;j = 0\\)</span> when <span class="math-inline">\\(i &gt; j\\)</span>, <span class="math-inline">\\(R = Q^TA\\)</span> --- which is made up of these dot products --- is upper triangular.
+So, since <span class="math-inline">\\(\vec q&#95;i \cdot \vec v&#95;j = 0\\)</span> when <span class="math-inline">\\(i &gt; j\\)</span>, <span class="math-inline">\\(R = Q^TA\\)</span> --- which is made up of these dot products --- is upper triangular.
 
-2.  We have already found the <span class="math-inline">\\(Q\\)</span> in a <span class="math-inline">\\(QR\\)</span> decomposition of <span class="math-inline">\\(A = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\\\ 1 &amp; 1 &amp; 0 \\\\ 0 &amp; 1 &amp; 1 \\\\ 0 &amp; 0 &amp; 1 \end{bmatrix}\\)</span>: these are the vectors we found in part **a)** of the problem.
-
-
+**(ii)** We have already found the <span class="math-inline">\\(Q\\)</span> in a <span class="math-inline">\\(QR\\)</span> decomposition of <span class="math-inline">\\(A = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\\\ 1 &amp; 1 &amp; 0 \\\\ 0 &amp; 1 &amp; 1 \\\\ 0 &amp; 0 &amp; 1 \end{bmatrix}\\)</span>: these are the vectors we found in part **a)** of the problem.
 
 <div class="math-display">
 $$
@@ -937,9 +917,7 @@ Q = \begin{bmatrix} 1/\sqrt{2} & -1/\sqrt{6} & \sqrt{3}/6 \\\\ 1/\sqrt{2} & 1/\s
 $$
 </div>
 
-   Then, <span class="math-inline">\\(R = Q^TA\\)</span> is
-
-
+Then, <span class="math-inline">\\(R = Q^TA\\)</span> is
 
 <div class="math-display">
 $$
@@ -947,8 +925,7 @@ R = Q^TA = \underbrace{\begin{bmatrix} 1/\sqrt{2} & 1/\sqrt{2} & 0 & 0 \\\\ -1/\
 $$
 </div>
 
-3.  An easy solution is to negate one or more of the columns of <span class="math-inline">\\(Q\\)</span>; the resulting columns of <span class="math-inline">\\(Q\\)</span> will still be orthonormal with the same column space. This will lead to a slightly different <span class="math-inline">\\(R\\)</span>. (There are other ways of finding a <span class="math-inline">\\(QR\\)</span> decomposition as well.)
-
+**(iii)** An easy solution is to negate one or more of the columns of <span class="math-inline">\\(Q\\)</span>; the resulting columns of <span class="math-inline">\\(Q\\)</span> will still be orthonormal with the same column space. This will lead to a slightly different <span class="math-inline">\\(R\\)</span>. (There are other ways of finding a <span class="math-inline">\\(QR\\)</span> decomposition as well.)
 </details>
 
 </div>
@@ -1200,7 +1177,6 @@ $$
 </div>
 
 Finally!
-
 </details>
 
 Note that the second component of the vector above is <span class="math-inline">\\(w&#95;1^{\ast} =  r \frac{\sigma&#95;y}{\sigma&#95;x}\\)</span> and the first component of the vector above is <span class="math-inline">\\(w&#95;0^{\ast} = \bar{y} -  r \frac{\sigma&#95;y}{\sigma&#95;x} \bar{x} = \bar{y} - w&#95;1^{\ast} \bar{x}\\)</span>, as we first saw in Chapter 2.4! I think this is beautiful.
@@ -1269,7 +1245,6 @@ $$
 </div>
 
 Here, each entry in the second column corresponds to <span class="math-inline">\\(x&#95;i^2\\)</span> for the given <span class="math-inline">\\(x&#95;i\\)</span> values in the dataset.
-
 </details>
 
 </div>
