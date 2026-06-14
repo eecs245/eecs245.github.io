@@ -9,7 +9,7 @@ nav_exclude: true
 
 # Post-Midterm 2 Practice Problems
 
-_last updated on April 24, 2026 at 7:06PM_
+<!-- _last updated on April 24, 2026 at 7:06PM_ -->
 
 This page contains several practice problems for content introduced after Midterm 2. They are sorted by topic:
 

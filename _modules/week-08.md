@@ -13,6 +13,11 @@ days:
       - name: LEC 14
         type: lecture
         title: "Review"
+      - name: REV
+        type: review
+        title: Post-Midterm 2 Practice Problems
+        url: ../post-mt2-practice
+        # problems: ../post-mt2-practice
   - date: "2026-06-24"
     events:
       - name: EXAM
