@@ -22,6 +22,7 @@ days:
         reading3_text: Ch. 10.1
         reading4: https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/
         reading4_text: Ch. 10.2
+        live_notes: resources/lecture-pdfs/lec12-filled.pdf
   - date: "2026-06-17"
     events:
       - name: Lab 11
