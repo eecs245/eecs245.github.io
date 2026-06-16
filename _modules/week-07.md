@@ -14,6 +14,7 @@ days:
       - name: LEC 12
         type: lecture
         title: Diagonalization, Spectral Theorem, SVD
+        recording: https://leccap.engin.umich.edu/leccap/player/r/e992Vp
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading_text: Ch. 9.4
         reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/symmetric-matrices-spectral-theorem/
