@@ -20,9 +20,13 @@ days:
         title: Post-Midterm 2 Practice Problems
         url: ../post-mt2-practice
         # problems: ../post-mt2-practice
+      - name: SUR
+        type: survey
+        title: <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJWqWNigvfgkTmLlnkAObVmshZ7TW9wXmNVFBWxk90fi8gLA/viewform?usp=publish-editor">End-of-Semester Survey</a> and <a href="https://umich.bluera.com/umich/">Official Evaluations</a>
+        note: Fill out both surveys by Tuesday, June 23rd for <b>1% of extra credit</b> to your overall grade.
   - date: "2026-06-24"
     events:
       - name: EXAM
         type: exam
-        title: "<b>Final Exam (8-10AM, 1018 DOW)</b>"
+        title: "<b>Final Exam (8-10AM, 1018 DOW; <a href='../final'>see logistics here</a>)</b>"
 ---
