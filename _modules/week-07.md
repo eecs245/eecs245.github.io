@@ -6,8 +6,9 @@ days:
     events:
       - name: Lab 10
         problems: ../resources/labs/lab10/
+        solutions: true
         type: lab
-        title: Eigenvalues and Eigenvectors, Convexity
+        title: Gradient Descent and Convexity
   - date: "2026-06-16"
     events:
       - name: LEC 12
