@@ -19,18 +19,6 @@ Several supplemental videos have been recorded for this class, and all of them c
 
 ---
 
-## Assignment Pages
-
-The current assignment pages are available here:
-
-- [Homework 10](../resources/homeworks/hw10/)
-- [Homework 11](../resources/homeworks/hw11/)
-- [Lab 10](../resources/labs/lab10/)
-- [Lab 11](../resources/labs/lab11/)
-- [Lab 12](../resources/labs/lab12/)
-
----
-
 ## Past Exams
 
 Note that the midterm exams in Fall 2025 were 80 minutes long and administered in lecture, while the midterm exams in Winter 2026 will be 120 minutes (2 hours) long and administered in the evenings. This change was made to give students more time to complete the exam; we plan on making the midterms roughly the same length as they were in Fall 2025.
