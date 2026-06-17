@@ -12,6 +12,12 @@ hide_footer_hr: true
 
 Homework 9 is contained entirely in a Jupyter notebook. There is no PDF submission for this homework.
 
+<div class="assignment-actions">
+<a class="btn btn-info assignment-pdf-button" href="https://github.com/eecs245/sp26-code/blob/main/homeworks/hw09/hw09-solutions.ipynb" target="_blank">Solutions Notebook ✅</a>
+</div>
+
+Homework 9 solutions are posted as a Jupyter notebook in the course GitHub repository.
+
 To access the notebook, either:
 
 1. **Clone the [course GitHub repository](https://github.com/eecs245/sp26-code) locally** and open `homeworks/hw09/hw09.ipynb` from `sp26-code`.
