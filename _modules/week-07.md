@@ -42,6 +42,7 @@ days:
         reading2_text: Ch. 10.3
         reading3: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
         reading3_text: Ch. 10.4
+        live_notes: resources/lecture-pdfs/lec13-filled.pdf
       - name: HW 10
         problems: ../resources/homeworks/hw10/
         type: hw
