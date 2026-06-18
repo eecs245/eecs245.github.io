@@ -36,6 +36,7 @@ days:
       - name: LEC 13
         type: lecture
         title: SVD and PCA
+        recording: https://leccap.engin.umich.edu/leccap/player/r/WGIAjp
         reading: https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/
         reading_text: Ch. 10.2
         reading2: https://notes.eecs245.org/singular-value-decomposition/best-direction/
