@@ -28,6 +28,7 @@ days:
     events:
       - name: Lab 11
         problems: ../resources/labs/lab11/
+        solutions: true
         type: lab
         title: Adjacency Matrices and Diagonalization
   - date: "2026-06-18"

@@ -1471,6 +1471,8 @@ def looks_like_accidental_indented_prose(content: str) -> bool:
     stripped = content.strip()
     if not stripped:
         return False
+    if looks_like_code_line(stripped):
+        return False
     if stripped.startswith(("-", "*", "1.", "2.", "3.", "`", "|", "$$")):
         return False
     if stripped.startswith("<") and not stripped.startswith('<span class="math-inline">'):
@@ -1515,9 +1517,18 @@ def flatten_top_level_ordered_list(text: str) -> str:
     lines = text.splitlines()
     flattened: list[str] = []
     saw_top_level_ordered_item = False
+    in_fenced_code = False
     item_pattern = re.compile(r"^(\d+)\.\s+(.*)$")
 
     for line in lines:
+        if line.startswith("```"):
+            in_fenced_code = not in_fenced_code
+            flattened.append(line)
+            continue
+        if in_fenced_code:
+            flattened.append(line)
+            continue
+
         item_match = item_pattern.match(line)
         if item_match:
             saw_top_level_ordered_item = True
