@@ -15,6 +15,7 @@ days:
         title: "PCA Applications; Review"
         reading: https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/
         reading_text: Ch. 10.4
+        note: We will start by reviewing PCA, and then take up the solutions to the Winter 2026 Final Exam, found <a href="../resources/">here</a>.
       - name: REV
         type: review
         title: Post-Midterm 2 Practice Problems
