@@ -46,6 +46,7 @@ days:
         live_notes: resources/lecture-pdfs/lec13-filled.pdf
       - name: HW 10
         problems: ../resources/homeworks/hw10/
+        solutions: true
         type: hw
         title: Eigenvalues and Eigenvectors
   - date: "2026-06-21"
