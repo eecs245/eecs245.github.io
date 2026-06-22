@@ -133,7 +133,7 @@ Feel free to work with others in the course, but you must submit individually.
 
 ---
 
-**Recap: Singular Value Decomposition** ([Chapters 10.1](https://notes.eecs245.org/singular-value-decomposition/computing-svd/) and [10.2](https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/))
+## Recap: Singular Value Decomposition ([Chapters 10.1](https://notes.eecs245.org/singular-value-decomposition/computing-svd/) and [10.2](https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/))
 
 Suppose <span class="math-inline">\\(X\\)</span> is any <span class="math-inline">\\(n \times d\\)</span> matrix. Then, there exists a **singular value decomposition (SVD)** of <span class="math-inline">\\(X\\)</span> of the form
 
@@ -268,7 +268,14 @@ Suppose <span class="math-inline">\\(X\\)</span>'s two singular values are <span
 <div class="assignment-part-content" markdown="1">
 Let <span class="math-inline">\\(\vec z = \Sigma V^T\vec w\\)</span>. In English, what does <span class="math-inline">\\(\vec z\\)</span> represent, relative to <span class="math-inline">\\(\vec w\\)</span>?
 
-**Recap: Principal Component Analysis** ([Chapters 10.3](https://notes.eecs245.org/singular-value-decomposition/best-direction/) and [10.4](https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/))
+</div>
+</div>
+
+</div>
+
+---
+
+## Recap: Principal Component Analysis ([Chapters 10.3](https://notes.eecs245.org/singular-value-decomposition/best-direction/) and [10.4](https://notes.eecs245.org/singular-value-decomposition/principal-components-analysis/))
 
 -   The goal of **principal component analysis (PCA)** is reducing the dimensionality of a dataset by constructing new features --- called **principal components**.
 
@@ -310,11 +317,6 @@ $$
 $$
 \text{proportion of variance explained by PC } j = \frac{\sigma_j^2}{\sum_{k=1}^r \sigma_k^2}
 $$
-</div>
-
-</div>
-</div>
-
 </div>
 
 ---

@@ -876,7 +876,7 @@ def cleanup_markdown(text: str, use_point_badges: bool = True) -> str:
     text = add_item_separators(text)
     text = promote_interstitial_callouts(text)
     text = promote_extra_practice_callouts(text)
-    text = add_separator_after_recap(text)
+    text = add_separators_around_recaps(text)
     text = indent_ordered_list_display_math(text)
     text = unindent_accidental_list_code_blocks(text)
     text = convert_points_badges(text, use_badges=use_point_badges)
@@ -1018,28 +1018,21 @@ def promote_extra_practice_callouts(text: str) -> str:
     return pattern.sub(lambda match: "{: .yellow }\n> " + match.group("message"), text)
 
 
-def add_separator_after_recap(text: str) -> str:
-    recap_match = re.search(r"(?m)^## Recap:", text)
-    if not recap_match:
-        return text
+def add_separators_around_recaps(text: str) -> str:
+    lines = text.splitlines()
+    converted: list[str] = []
 
-    next_item_match = re.search(
-        r"(?m)^## (?:Problem|Activity) \d+",
-        text[recap_match.end() :],
-    )
-    if not next_item_match:
-        return text
+    for line in lines:
+        if line.startswith("## Recap:"):
+            previous_nonblank = next(
+                (prior.strip() for prior in reversed(converted) if prior.strip()),
+                "",
+            )
+            if previous_nonblank and previous_nonblank != SECTION_SEPARATOR:
+                converted.extend(["", SECTION_SEPARATOR, ""])
+        converted.append(line)
 
-    next_item_start = recap_match.end() + next_item_match.start()
-    before_recap = text[: recap_match.start()]
-    recap_block = text[recap_match.start() : next_item_start]
-    after_recap = text[next_item_start:]
-    recap_block = re.sub(
-        rf"\s*(?:{re.escape(SECTION_SEPARATOR)}\s*)+$",
-        "",
-        recap_block.rstrip(),
-    )
-    return f"{before_recap}{recap_block}\n\n{SECTION_SEPARATOR}\n\n{after_recap}"
+    return "\n".join(converted)
 
 
 def indent_ordered_list_display_math(text: str) -> str:
@@ -1120,7 +1113,9 @@ def convert_part_headings_to_lists(text: str) -> str:
     converted: list[str] = []
     index = 0
     part_heading = re.compile(r"^### Part ([a-z])\)(.*)$")
-    block_boundary = re.compile(rf"^(?:## (?:Problem|Activity) \d+|{re.escape(SECTION_SEPARATOR)}$)")
+    block_boundary = re.compile(
+        rf"^(?:## (?:Problem|Activity) \d+|## Recap:|{re.escape(SECTION_SEPARATOR)}$)"
+    )
 
     while index < len(lines):
         match = part_heading.match(lines[index])
@@ -1229,21 +1224,33 @@ def replace_recap_markers(text: str) -> str:
     converted: list[str] = []
     for line in lines:
         stripped = line.strip()
-        recap_match = re.match(r"^\*\*Recap:\s*(.+?)\*\*(?:\s*\\\\)?$", stripped)
+        recap_match = re.match(
+            r"^\*\*Recap:\s*(?P<title>.+?)\*\*(?P<tail>.*?)(?:\s*\\\\)?$",
+            stripped,
+        )
         if recap_match:
-            converted.append(f"## Recap: {recap_match.group(1)}")
+            converted.append(format_recap_heading(recap_match))
             converted.append("")
             continue
 
-        recap_match = re.match(r"^<strong>Recap:\s*(.+?)</strong>(?:\s*\\\\)?$", stripped)
+        recap_match = re.match(
+            r"^<strong>Recap:\s*(?P<title>.+?)</strong>(?P<tail>.*?)(?:\s*\\\\)?$",
+            stripped,
+        )
         if recap_match:
-            converted.append(f"## Recap: {recap_match.group(1)}")
+            converted.append(format_recap_heading(recap_match))
             converted.append("")
             continue
 
         converted.append(line)
 
     return "\n".join(converted)
+
+
+def format_recap_heading(match: re.Match[str]) -> str:
+    title = match.group("title").strip()
+    tail = re.sub(r"\s*\\\\$", "", match.group("tail").strip())
+    return f"## Recap: {title}{(' ' + tail) if tail else ''}"
 
 
 def mc_bubble_html(correct: bool = False) -> str:
@@ -1751,6 +1758,12 @@ def validate_generated_markdown_structure(markdown: str, output_md: Path) -> Non
             f"{output_md}: solution prose would render as a code block: "
             f"{bad_solution_line!r}"
         )
+    bad_recap_line = find_recap_inside_assignment_part(markdown)
+    if bad_recap_line:
+        raise SystemExit(
+            f"{output_md}: recap section is nested inside an assignment part: "
+            f"{bad_recap_line!r}"
+        )
 
 
 def find_accidental_solution_code_block(markdown: str) -> str | None:
@@ -1761,6 +1774,19 @@ def find_accidental_solution_code_block(markdown: str) -> str | None:
         for line in match.group(1).splitlines():
             if line.startswith("    ") and looks_like_accidental_indented_prose(line[4:]):
                 return line.strip()
+    return None
+
+
+def find_recap_inside_assignment_part(markdown: str) -> str | None:
+    part_pattern = re.compile(
+        r'(?ms)<div class="assignment-part-content" markdown="1">\n(.*?)\n</div>\n</div>'
+    )
+    recap_pattern = re.compile(r"(?m)^(?:##\s+)?(?:\*\*)?Recap:")
+
+    for part_match in part_pattern.finditer(markdown):
+        recap_match = recap_pattern.search(part_match.group(1))
+        if recap_match:
+            return recap_match.group(0)
     return None
 
 
