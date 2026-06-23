@@ -53,6 +53,7 @@ days:
     events:
       - name: HW 11
         problems: ../resources/homeworks/hw11/
+        solutions: true
         type: hw
         title: Singular Value Decomposition
 ---

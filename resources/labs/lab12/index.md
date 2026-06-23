@@ -113,6 +113,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab12/lab12.pdf" target="_blank">View as PDF ✏️</a>
+<a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab12/lab12-solutions.pdf" target="_blank">Solutions PDF ✅</a>
 </div>
 
 {: .yellow }
@@ -171,6 +172,11 @@ $$
 <div class="assignment-part-content" markdown="1">
 How many rows and columns does <span class="math-inline">\\(X\\)</span> have? What is <span class="math-inline">\\(\text{rank}(X)\\)</span>?
 
+<details markdown="1"><summary>Solution</summary>
+
+<span class="math-inline">\\(X\\)</span> is a <span class="math-inline">\\(2 \times 3\\)</span> matrix, matching the dimensions of <span class="math-inline">\\(\Sigma\\)</span>. <span class="math-inline">\\(\text{rank}(X)\\)</span> is 2, since there are 2 non-zero singular values.
+</details>
+
 </div>
 </div>
 
@@ -179,6 +185,11 @@ How many rows and columns does <span class="math-inline">\\(X\\)</span> have? Wh
 <div class="assignment-part-content" markdown="1">
 Find <span class="math-inline">\\(\vec v&#95;2\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+<span class="math-inline">\\(\vec v&#95;2\\)</span> is the eigenvector of <span class="math-inline">\\(X^TX\\)</span> corresponding to the eigenvalue 2. It's also a unit vector, meaning we need to find a unit vector that's orthogonal to the other two columns, so <span class="math-inline">\\(\vec v&#95;2 = \begin{bmatrix}\sqrt{2} / 2 \\\\ 0 \\\\ -\sqrt{2} / 2 \end{bmatrix}\\)</span>
+</details>
+
 </div>
 </div>
 
@@ -186,6 +197,31 @@ Find <span class="math-inline">\\(\vec v&#95;2\\)</span>.
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
 Given that the first column of <span class="math-inline">\\(X\\)</span> and third column of <span class="math-inline">\\(X\\)</span> sum to <span class="math-inline">\\(\begin{bmatrix}0 \\\\ 5\end{bmatrix}\\)</span>, find <span class="math-inline">\\(\sigma&#95;1\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+<div class="math-display">
+$$
+\begin{align*}
+X\vec v_1 &= \sigma_1 \vec u_1
+\\\\X\begin{bmatrix}1/\sqrt{2} \\\\ 0 \\\\ 1/\sqrt{2}\end{bmatrix} &= \sigma_1 \begin{bmatrix}0 \\\\ 1\end{bmatrix}
+\end{align*}
+$$
+</div>
+
+The left side of the equation is the sum of <span class="math-inline">\\(X\\)</span>'s first and third columns, scaled by <span class="math-inline">\\(1 / \sqrt{2}\\)</span>, so we can use the fact given in the problem here:
+
+<div class="math-display">
+$$
+\begin{align*}
+\frac{1}{\sqrt{2}}\begin{bmatrix}0 \\\\ 5\end{bmatrix} &= \sigma_1\begin{bmatrix}0 \\\\ 1\end{bmatrix}
+\\\\ \begin{bmatrix}0 \\\\ 5/\sqrt{2}\end{bmatrix} &= \begin{bmatrix}0 \\\\ \sigma_1\end{bmatrix}
+\\\\ \sigma_1 &= \frac{5\sqrt{2}}{2}
+\end{align*}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -204,6 +240,18 @@ Consider the rank-<span class="math-inline">\\(2\\)</span> matrix <span class="m
 <div class="assignment-part-content" markdown="1">
 Write <span class="math-inline">\\(X\\)</span> as a sum of two rank-1 outer products, e.g. <span class="math-inline">\\(X=\vec x&#95;1 \vec y&#95;1^T + \vec x&#95;2 \vec y&#95;2^T\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+<span class="math-inline">\\(X\\)</span> has a unique first column, while the second and third columns are the same. So, we can use a similar idea to the CR decomposition:
+
+<div class="math-display">
+$$
+X = \begin{bmatrix}1 \\\\ 1\end{bmatrix}\begin{bmatrix}1 & 0 & 0\end{bmatrix} + \begin{bmatrix}2 \\\\ 3\end{bmatrix}\begin{bmatrix}0 & 1 & 1\end{bmatrix}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -211,6 +259,34 @@ Write <span class="math-inline">\\(X\\)</span> as a sum of two rank-1 outer prod
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
 Find <span class="math-inline">\\(XX^T\\)</span> and <span class="math-inline">\\(X^TX\\)</span>, and the trace and determinant of each. Feel free to use `numpy`.
+
+<details markdown="1"><summary>Solution</summary>
+
+<div class="math-display">
+$$
+\begin{align*}
+XX^T &= \begin{bmatrix}1 & 2 & 2 \\\\ 1 & 3 & 3\end{bmatrix} \begin{bmatrix} 1 & 1 \\\\ 2 & 3 \\\\ 2 & 3\end{bmatrix}
+\\\\&=\begin{bmatrix}1 + 4 + 4 & 1 + 6 + 6 \\\\ 1 + 6 + 6 & 1 + 9 + 9\end{bmatrix}
+\\\\&=\begin{bmatrix}9 & 13 \\\\ 13 & 19\end{bmatrix}
+\\\\\text{det}(XX^T)&=9\cdot 19 - 13 \cdot 13 = 2
+\\\\\text{trace}(XX^T)&=9 + 19 = 28
+\end{align*}
+$$
+</div>
+
+<div class="math-display">
+$$
+\begin{align*}
+X^TX &= \begin{bmatrix} 1 & 1 \\\\ 2 & 3 \\\\ 2 & 3\end{bmatrix}\begin{bmatrix}1 & 2 & 2 \\\\ 1 & 3 & 3\end{bmatrix}
+\\\\&=\begin{bmatrix}1 + 1 & 2 + 3 & 2 + 3 \\\\ 2 + 3 & 4 + 9 & 4 + 9 \\\\ 2 + 3 & 4 + 9 & 4 + 9\end{bmatrix}
+\\\\&=\begin{bmatrix}2 & 5 & 5 \\\\ 5 & 13 & 13 \\\\ 5 & 13 & 13\end{bmatrix}
+\\\\\text{det}(X^TX)&=0 \text{, } X^TX \text{ is not invertible}
+\\\\\text{trace}(X^TX)&=2 + 13 + 13 = 28
+\end{align*}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -228,6 +304,13 @@ $$
 \end{align*}
 $$
 </div>
+
+<details markdown="1"><summary>Solution</summary>
+
+<span class="math-inline">\\(XX^T\\)</span> and <span class="math-inline">\\(X^TX\\)</span> share the same **non-zero** values. Since the trace is equivalent to the sum of the eigenvalues, the non-zero eigenvalues being the same results in the same sum, as the zero eigenvalues don't affect it.
+
+However, the same is not true for the determinant. In the case where <span class="math-inline">\\(n \neq d\\)</span>, one of <span class="math-inline">\\(XX^T\\)</span> or <span class="math-inline">\\(X^TX\\)</span> will be larger. The larger matrix **must** have a zero eigenvalue because <span class="math-inline">\\(\text{rank}(XX^T) = \text{rank}(X^TX)\\)</span>, so its determinant will be 0. We can't guarantee that <span class="math-inline">\\(X^TX\\)</span> won't be full rank, so its possible for the determinant to not be 0.
+</details>
 
 </div>
 </div>
@@ -252,6 +335,32 @@ $$
 <div class="assignment-part-content" markdown="1">
 Find <span class="math-inline">\\(V^T\vec w\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+<div class="math-display">
+$$
+\begin{align*}
+V^T\vec w &= V^T(3\vec v_1 - \vec v_2)
+\\\\&= 3V^T\vec v_1 - V^T\vec v_2
+\\\\&= 3\begin{bmatrix}\vec v_1 \cdot \vec v_1  \\\\ \vec v_2 \cdot \vec v_1\end{bmatrix} - \begin{bmatrix}\vec v_1 \cdot \vec v_2  \\\\ \vec v_2 \cdot \vec v_2\end{bmatrix}
+\end{align*}
+$$
+</div>
+
+We can simplify this further thanks to <span class="math-inline">\\(V\\)</span> being an orthogonal matrix. <span class="math-inline">\\(\vec v&#95;1\\)</span> and <span class="math-inline">\\(\vec v&#95;2\\)</span> are orthogonal, and their norms are both 1.
+
+<div class="math-display">
+$$
+\begin{align*}
+V^T\vec w3 &= \begin{bmatrix}||\vec v_1||^2  \\\\ 0\end{bmatrix} - \begin{bmatrix}0 \\\\ ||\vec v_2||^2 \end{bmatrix}
+\\\\&=3\begin{bmatrix}1  \\\\ 0\end{bmatrix} - \begin{bmatrix}0 \\\\ 1 \end{bmatrix}
+\\\\&=\begin{bmatrix}3  \\\\ -1\end{bmatrix}
+\end{align*}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -260,6 +369,20 @@ Find <span class="math-inline">\\(V^T\vec w\\)</span>.
 <div class="assignment-part-content" markdown="1">
 Suppose <span class="math-inline">\\(X\\)</span>'s two singular values are <span class="math-inline">\\(\sigma&#95;1 = 10\\)</span> and <span class="math-inline">\\(\sigma&#95;2 = 3\\)</span>. Find <span class="math-inline">\\(\Sigma V^T\vec w\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+<div class="math-display">
+$$
+\begin{align*}
+\Sigma V^T\vec w &= \Sigma \begin{bmatrix}3  \\\\ -1\end{bmatrix}
+\\\\&= \begin{bmatrix}10 & 0 \\\\ 0 & 3 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \end{bmatrix} \begin{bmatrix}3  \\\\ -1\end{bmatrix}
+\\\\&= \begin{bmatrix}30 \\\\ -3 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix}
+\end{align*}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -267,6 +390,11 @@ Suppose <span class="math-inline">\\(X\\)</span>'s two singular values are <span
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
 Let <span class="math-inline">\\(\vec z = \Sigma V^T\vec w\\)</span>. In English, what does <span class="math-inline">\\(\vec z\\)</span> represent, relative to <span class="math-inline">\\(\vec w\\)</span>?
+
+<details markdown="1"><summary>Solution</summary>
+
+<span class="math-inline">\\(V^T\vec w\\)</span> rotates <span class="math-inline">\\(\vec w\\)</span> using the right singular vectors as the basis. Since <span class="math-inline">\\(\vec w\\)</span> is already composed of those vectors, it returns the coefficients back in a vector. <span class="math-inline">\\(\Sigma\\)</span> then shifts the resulting vector by scaling each component using the singular values.
+</details>
 
 </div>
 </div>
@@ -337,6 +465,11 @@ Assume that <span class="math-inline">\\(A\\)</span>, <span class="math-inline">
 <div class="assignment-part-content" markdown="1">
 If we applied PCA to each of the above datasets, and created just one principal component in each case, for which dataset would the first principal component have the smallest mean squared orthogonal error --- <span class="math-inline">\\(A\\)</span>, <span class="math-inline">\\(B\\)</span>, or <span class="math-inline">\\(C\\)</span>?
 
+<details markdown="1"><summary>Solution</summary>
+
+<span class="math-inline">\\(B\\)</span> has a strong negative correlation, with little spread in the perpendicular direction, while <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(C\\)</span>'s dominant directions aren't as clear.
+</details>
+
 </div>
 </div>
 
@@ -352,6 +485,11 @@ $$
 </div>
 
 Which dataset is most likely to be <span class="math-inline">\\(\tilde{X}\\)</span> --- <span class="math-inline">\\(A\\)</span>, <span class="math-inline">\\(B\\)</span>, or <span class="math-inline">\\(C\\)</span>?
+
+<details markdown="1"><summary>Solution</summary>
+
+The singular values tell us that one direction is being scaled by 16, while the other is scaled by 4, meaning most of the variance is captured in the <span class="math-inline">\\(\vec v&#95;1\\)</span> direction. <span class="math-inline">\\(\vec v&#95;1\\)</span> has a positive <span class="math-inline">\\(x\\)</span> component and a negative <span class="math-inline">\\(y\\)</span> component, which matches the slope of plot <span class="math-inline">\\(B\\)</span>'s dominant direction, since <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(B\\)</span>'s dominant directions are more positive.
+</details>
 
 </div>
 </div>
@@ -369,6 +507,18 @@ $$
 
 What is the proportion of the total variance in <span class="math-inline">\\(\tilde{X}\\)</span> that is accounted for by the first principal component?
 
+<details markdown="1"><summary>Solution</summary>
+
+<div class="math-display">
+$$
+\begin{align*}
+\displaystyle \frac{\sigma_1^2}{\sigma_1^2 + \sigma_2^2} = \frac{16^2}{16^2 + 4^2} = \frac{256}{272}
+\end{align*}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -376,6 +526,77 @@ What is the proportion of the total variance in <span class="math-inline">\\(\ti
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
 Suppose that in the graph of principal component 2 vs. principal component 1 (i.e. with PC 1 on the <span class="math-inline">\\(x\\)</span>-axis and PC 2 on the <span class="math-inline">\\(y\\)</span>-axis), a particular data point is plotted at <span class="math-inline">\\((4, 2)\\)</span>. What is the corresponding point in the original (mean-centered) dataset? Your answer should be a tuple of two numbers, <span class="math-inline">\\((x, y)\\)</span> (or equivalently, a vector in <span class="math-inline">\\(\mathbb{R}^2\\)</span>). <em>Hint: Start by understanding the plot on Page 4.</em>
+
+<details markdown="1"><summary>Solution</summary>
+
+There are two ways to approach this problem:
+
+**Option 1: Dot Products and Transformation**
+
+In the PC2 vs PC1 plot in the recap, you may have noticed the coordinates of <span class="math-inline">\\(\vec x&#95;{12}\\)</span> were <span class="math-inline">\\((\vec x&#95;{12} \cdot \vec v&#95;1, \vec x&#95;{12} \cdot \vec v&#95;2)\\)</span>. This comes from multiplying <span class="math-inline">\\(V^T\vec x&#95;{12}\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+V^T\vec x_{12} &= \begin{bmatrix} — & \vec v_1 & — \\\\ — & \vec v_2 & —\end{bmatrix}\vec x_{12}
+\\\\&= \begin{bmatrix}  \vec v_1 \cdot \vec x_{12} \\\\ \vec v_2 \cdot \vec x_{12} \end{bmatrix}
+\end{align*}
+$$
+</div>
+
+If this looks familiar, that's because it's similar to 3c! In 3c, <span class="math-inline">\\(V^T\vec w\\)</span> rotated <span class="math-inline">\\(\vec w\\)</span> by translating it into a space with {<span class="math-inline">\\(\vec v&#95;1,\vec v&#95;2\\)</span>} as its basis. So, if we know a point's coordinates in <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2\\)</span> space, we can work backwards to solve for the point's coordinates in <span class="math-inline">\\(x,y\\)</span> space:
+
+<div class="math-display">
+$$
+\begin{align*}
+\begin{bmatrix}4 \\\\ 2\end{bmatrix} &= \begin{bmatrix}\vec v_1 \cdot \vec w \\\\ \vec v_2 \cdot \vec w\end{bmatrix}
+\\\\
+\\\\ 4 &= \vec v_1 \cdot \vec w = \frac{2}{\sqrt{5}}w_1 + \frac{-1}{\sqrt{5}}w_2
+\\\\ 2 &= \vec v_2 \cdot \vec w = \frac{1}{\sqrt{5}}w_1 + \frac{2}{\sqrt{5}}w_2
+\end{align*}
+$$
+</div>
+
+Now we have a system of equations to solve for the coordinate of <span class="math-inline">\\(\vec w\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+4 &= \frac{2}{\sqrt{5}}w_1 + \frac{-1}{\sqrt{5}}w_2
+\\\\2 &=\frac{1}{\sqrt{5}}w_1 + \frac{2}{\sqrt{5}}w_2
+\\\\
+\\\\8 &= \frac{4}{\sqrt{5}}w_1 + \frac{-2}{\sqrt{5}}w_2
+\\\\8+2 &= \frac{4}{\sqrt{5}}w_1 + \frac{1}{\sqrt{5}}w_1 + \frac{-2}{\sqrt{5}}w_2 + \frac{2}{\sqrt{5}}w_2
+\\\\10 &= \frac{5}{\sqrt{5}}w_1
+\\\\w_1 &= \frac{10\sqrt{5}}{5} = 2\sqrt{5}
+\\\\
+\\\\4 &= \frac{2}{\sqrt{5}}(2\sqrt{5}) + \frac{-1}{\sqrt{5}}w_2
+\\\\4 &= 4 + \frac{-1}{\sqrt{5}}w_2
+\\\\w_2&=0
+\\\\
+\\\\ 2 &= \frac{1}{\sqrt{5}}(2\sqrt{5}) + \frac{2}{\sqrt{5}}w_2
+\\\\ 2 &= 2 + \frac{2}{\sqrt{5}}w_2
+\\\\ w_2 &= 0 \quad \checkmark
+\\\\ \vec w &= \begin{bmatrix}2\sqrt{5} \\\\ 0\end{bmatrix}
+\end{align*}
+$$
+</div>
+
+**Option 2: Thinking in Terms of Linear Combinations**
+
+<span class="math-inline">\\((4, 2)\\)</span> are coefficients in the basis <span class="math-inline">\\(\lbrace \vec v&#95;1, \vec v&#95;2\rbrace\\)</span>. Since we know <span class="math-inline">\\(\vec v&#95;1\\)</span> and <span class="math-inline">\\(\vec v&#95;2\\)</span>'s directions in <span class="math-inline">\\(x,y\\)</span> space, getting the point's coordinates in <span class="math-inline">\\(x,y\\)</span> space just involves computing the linear combination, using the coordinates in <span class="math-inline">\\(\vec v&#95;1, \vec v&#95;2\\)</span> space as coefficients:
+
+<div class="math-display">
+$$
+\begin{align*}
+4 \vec v_1 + 2\vec v_2 &= 4\begin{bmatrix} 2/\sqrt{5} \\\\ -1/\sqrt{5} \end{bmatrix} + 2\begin{bmatrix} 1/\sqrt{5} \\\\ 2/\sqrt{5}\end{bmatrix}
+\\\\&= \begin{bmatrix} 8/\sqrt{5} \\\\ -4/\sqrt{5} \end{bmatrix} + \begin{bmatrix} 2/\sqrt{5} \\\\ 4/\sqrt{5}\end{bmatrix}
+\\\\&= \begin{bmatrix} 10/\sqrt{5} \\\\ 0 \end{bmatrix} = \begin{bmatrix} 2\sqrt{5} \\\\ 0 \end{bmatrix}
+\end{align*}
+$$
+</div>
+
+</details>
 </div>
 </div>
 
