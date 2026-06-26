@@ -32,4 +32,6 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Final Exam (8-10AM, 1018 DOW; <a href='../final'>see logistics here</a>)</b>"
+        problems: ../resources/exams/sp26-final.pdf
+        solutions: ../resources/exams/sp26-final-solutions.pdf
 ---
