@@ -14,8 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: EECS 245
-tagline: Mathematics for Machine Learning, Spring 2026 at the University of Michigan
-# description: A modern, highly customizable, responsive Jekyll template for course websites
+tagline: Mathematics for Machine Learning, Fall 2026 at the University of Michigan
+description: "Information about EECS 245: Mathematics for Machine Learning in Fall 2026 at the University of Michigan."
 author: EECS 245 course staff
 baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://eecs245.org' # the base hostname & protocol for your site, e.g. http://example.com
@@ -116,17 +116,18 @@ liquid:
 # callouts
 callouts:
   red:
-    title: 
+    title:
     color: red
   yellow:
-    title: 
+    title:
     color: yellow
   blue:
-    title: 
+    title:
     color: blue
   green:
-    title: 
+    title:
     color: green
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-seo-tag

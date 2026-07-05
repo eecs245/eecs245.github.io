@@ -1,5 +1,6 @@
 **/.DS_Store
 _site/
+.jekyll-cache/
 CURSOR.md
 .leccap_cookie
 .leccap_storage_state.json
