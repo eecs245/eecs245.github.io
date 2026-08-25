@@ -24,6 +24,10 @@
     @extend .d-inline-block;
   }
 
+  .staffer-role {
+    font-weight: 400;
+  }
+
   .staffer-pronouns {
     @extend .label, .text-grey-dk-300, .bg-grey-lt-000;
 

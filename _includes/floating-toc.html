@@ -1,0 +1,68 @@
+<aside class="floating-toc" aria-label="Table of contents" markdown="1">
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+</aside>
+
+<script>
+(() => {
+  const initializeFloatingToc = () => {
+    const toc = document.querySelector('.floating-toc #markdown-toc');
+    if (!toc) return;
+
+    const items = Array.from(toc.querySelectorAll('a[href^="#"]'))
+      .map((link) => ({
+        link,
+        section: document.getElementById(link.getAttribute('href').slice(1))
+      }))
+      .filter((item) => item.section);
+
+    if (!items.length) return;
+
+    let updatePending = false;
+
+    const updateActiveSection = () => {
+      let activeItem = items[0];
+
+      for (const item of items) {
+        if (item.section.getBoundingClientRect().top <= 110) {
+          activeItem = item;
+        } else {
+          break;
+        }
+      }
+
+      for (const item of items) {
+        const isActive = item === activeItem;
+        item.link.classList.toggle('active', isActive);
+        if (isActive) {
+          item.link.setAttribute('aria-current', 'location');
+        } else {
+          item.link.removeAttribute('aria-current');
+        }
+      }
+
+      updatePending = false;
+    };
+
+    const requestUpdate = () => {
+      if (!updatePending) {
+        updatePending = true;
+        window.requestAnimationFrame(updateActiveSection);
+      }
+    };
+
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+    updateActiveSection();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeFloatingToc, { once: true });
+  } else {
+    initializeFloatingToc();
+  }
+})();
+</script>

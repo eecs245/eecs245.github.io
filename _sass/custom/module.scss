@@ -130,10 +130,11 @@
     }
 
     .label-lecture { background-color: #ECEBED; text-align: center; border-radius: 6px; width: 60px; }
-    .label-hw { background-color: #E94C4B; text-align: center; border-radius: 6px; width: 60px; }
-    .label-exam { background-color: #000000; text-align: center; border-radius: 6px; width: 60px; }
-    .label-lab { background-color: #F2C76E; text-align: center; border-radius: 6px; width: 60px; }
-    .label-survey { background-color: #15c791; text-align: center; border-radius: 6px; width: 60px; }
+    .label-hw { background-color: #0072B2; color: #FFFFFF !important; text-align: center; border-radius: 6px; width: 60px; }
+    .label-lab { background-color: #9C5700; color: #FFFFFF !important; text-align: center; border-radius: 6px; width: 60px; }
+    .label-quiz { background-color: #007A59; color: #FFFFFF !important; text-align: center; border-radius: 6px; width: 60px; }
+    .label-exam { background-color: #984F7B; color: #FFFFFF !important; text-align: center; border-radius: 6px; width: 60px; }
+    .label-survey { background-color: #C2185B; color: #FFFFFF !important; text-align: center; border-radius: 6px; width: 60px; }
     .label-review { background-color: #779fcd; text-align: center; border-radius: 6px; width: 60px; }
 
     // .label-vit { background-color: #c1443c; text-align: center; border-radius: 9px; }

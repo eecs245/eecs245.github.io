@@ -6,7 +6,6 @@
 @import 'module';
 @import 'schedule';
 @import 'staffer';
-
 @import 'mixins';
 
 
@@ -34,6 +33,81 @@ iframe {
 .main-content-wrap {
   max-width: $content-width;
   margin: auto;
+}
+
+.floating-toc {
+  margin-bottom: $sp-6;
+
+  #markdown-toc {
+    margin-bottom: 0;
+    padding-left: $sp-2;
+  }
+
+  #markdown-toc,
+  #markdown-toc ol {
+    list-style: none;
+  }
+
+  #markdown-toc ol {
+    padding-left: $sp-4;
+  }
+
+  #markdown-toc li::before {
+    content: none;
+  }
+
+  #markdown-toc a {
+    display: block;
+    padding: 0.15rem $sp-2;
+    border-left: 3px solid transparent;
+    border-radius: $border-radius;
+  }
+
+  #markdown-toc a.active {
+    color: $link-color;
+    font-weight: 700;
+    text-decoration: none;
+    background: rgba(0, 102, 204, 0.1);
+    border-left-color: $link-color;
+  }
+}
+
+@media (min-width: 80rem) {
+  .floating-toc {
+    position: fixed;
+    top: calc(#{$header-height} + #{$sp-4});
+    right: calc((100vw - 97rem) / 2);
+    z-index: 10;
+    width: 13.75rem;
+    max-height: calc(100vh - #{$header-height} - #{$sp-8});
+    margin: 0;
+    padding: $sp-4;
+    overflow-y: auto;
+    background: $body-background-color;
+    border: $border $border-color;
+    border-radius: $border-radius;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+    .text-delta {
+      margin-top: 0;
+    }
+
+    #markdown-toc {
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+  }
+}
+
+@include mq(md) {
+  .site-header {
+    height: 120px;
+    max-height: 120px;
+  }
+}
+
+.site-logo {
+  background-position: center center;
 }
 
 // .main-content {
@@ -98,12 +172,12 @@ $link-color: #0066cc;
   vertical-align: middle;
 }
 
-.aux-nav-list-item a[href*="gradescope.com"]::before {
+.aux-nav-list-item a[href*="pensive.com"]::before {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image: url("../../assets/site-images/gradescope.jpg");
+  width: 15px;
+  height: 15px;
+  background-image: url("../../assets/site-images/pensive.png");
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
