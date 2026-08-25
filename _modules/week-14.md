@@ -15,7 +15,7 @@ days:
         reading3_text: Ch. 10.1
   - date: "2026-12-02"
     events:
-      - name: LAB 12
+      - name: LAB 11
         type: lab
         title: Adjacency Matrices and Diagonalization
   - date: "2026-12-03"

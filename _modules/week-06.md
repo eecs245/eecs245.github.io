@@ -10,11 +10,6 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Midterm 1 (7-9PM; location TBD)</b>"
-  - date: "2026-10-07"
-    events:
-      - name: LAB 6
-        type: lab
-        title: Vector Spaces, Subspaces, and Bases
   - date: "2026-10-08"
     events:
       - name: LEC 11

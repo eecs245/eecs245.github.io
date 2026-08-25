@@ -13,7 +13,7 @@ days:
         reading2_text: Ch. 10.4
   - date: "2026-12-09"
     events:
-      - name: LAB 13
+      - name: LAB 12
         type: lab
         title: Singular Value Decomposition
   - date: "2026-12-10"

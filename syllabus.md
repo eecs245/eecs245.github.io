@@ -6,9 +6,6 @@ description: >-
 nav_order: 2
 ---
 
-{: .red }
-> **The site is currently under construction.** Information here is subject to change before the start of the semester.
-
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
 
@@ -17,7 +14,9 @@ nav_order: 2
 
 {% include floating-toc.html %}
 
----
+
+{: .green }
+> Welcome to EECS 245! We’re so excited to have you in the course. Make sure to read the syllabus carefully so that you understand what is expected of you.
 
 
 ## Overview
@@ -75,7 +74,7 @@ If you're not sure if you meet the prerequisites – or if you don't, but are st
 The course website, [eecs245.org](../), will contain links to all
 course content. There are also a few things you'll need to do to get set up.
 
-### Computer and Network Recommendations
+<!-- ### Computer and Network Recommendations
 
 Make sure you have a laptop consistent with [CAEN recommendations](https://caen.engin.umich.edu/percomps/).
 
@@ -95,7 +94,7 @@ Resources for help with computing equipment:
 
 You may also use computer workstations in CAEN labs on campus or <a href="https://caen.engin.umich.edu/connect/">connect remotely</a>.
 
-</details>
+</details> -->
 
 ### Websites
 
@@ -106,8 +105,7 @@ You'll need to make accounts on the following sites:
   didn’t already get an invitation to our Ed course, [sign up
   here](https://edstem.org/us/join/spf65h).
 
-- **Pensive:** You’ll submit all assignments to [Pensive](https://www.pensive.com/student/classes/umich_eecs245_fa26), and this is where all of your grades will live as well. Pensive is like Gradescope, but it supports AI-assisted grading of written work. TODO few sentences.
-<br>All homeworks will involve creating a PDF with your answers and submitting that to Pensive. Some homeworks will also involve submitting code to an autograder on Pensive; we will not be using the EECS department-specific autograder. You should have received an email invitation for Pensive, but if not please let us know as soon as possible.
+- **Pensive:** [Pensive](https://www.pensive.com/student/classes/umich_eecs245_fa26) is where you’ll submit your homeworks and where all of your grades will live. As is discussed below, all homeworks must be handwritten, scanned into a PDF, and submitted to Gradescope. Some homeworks will contain autograded Jupyter Notebooks; these will be submitted to Pensive as well (not the EECS department autograder). If you didn’t already receive an invitation to Pensive, please let an instructor know. Pensive is like Gradescope, but it allows for AI grading of handwritten work, with human review and the ability to ask for a regrade. Not only does this enable faster and more accurate grading, but it also frees up instructor time to spend working with students one-on-one, which AI cannot do. Pensive has been approved by the College of Engineering, who ensured that it meets the necessary privacy and accessibility standards; rest assured, Pensive does not train AI models on your work.
 
 {: .red }
 Note that we will **not** be using Canvas for anything this semester (so please don't try and send us messages on Canvas!).
@@ -118,7 +116,7 @@ Some labs and homeworks will involve writing Python code in Jupyter Notebooks. *
 
 ### Forms
 
-Please fill out the required [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform?usp=header) to tell us a bit more about your background and whether you need alternate exams **no later than Friday, September 11th**, along with Homework 1.
+Please fill out the required [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform?usp=publish-editor) to tell us a bit more about your background and whether you need alternate exams **no later than Friday, September 11th**, along with Homework 1.
 
 ---
 
@@ -130,8 +128,7 @@ added.
 
 If you have a question about anything to do with the course — if you’re stuck
 on a problem, didn’t understand something from lecture, want clarification on
-course logistics, or just have a general question about machine learning — you can
-make a post on Ed. We only ask that if your question includes some or all of an
+course logistics, or just have a general question about machine learning — **please ask on Ed**! We know that generative AI tools can answer your questions, and while we encourage you to use those tools responsibly as well, part of the benefit of attending a school like Michigan is the ability to form connections with your instructors and peers. We only ask that if your question includes some or all of an
 answer (even if you’re not sure it’s right), please make your post private so
 that others cannot see it. You can also post anonymously to other students if
 you prefer.
@@ -142,13 +139,16 @@ Explaining something is a great way to solidify your understanding of it!
 
 ---
 
-## Course Components
-
-### Lectures
+## Lectures
 
 Lectures will be held in-person on Tuesdays and Thursdays from 10:30AM-12PM in 1010 DOW. Lectures will be recorded and linked directly on the course homepage. Recordings will be made publicly available so that students who are not enrolled – including students not at Michigan – can benefit from the recordings. As part of your participation in this course, you may be recorded (e.g. if you answer a question). If you do not wish to be recorded, please email the instructor to discuss alternate arrangements.
 
-**New for Fall 2026**: Lecture attendance is a part of your grade.
+**New for Fall 2026**: Lecture attendance is required, and is worth 5% of your overall course grade. How is this assessed?
+
+- There will be 26 regular lectures throughout the term; each lecture you attend will earn you 1 "lecture point", up to a maximum of 22 lecture points. (Lectures on the day of the two midterms will not count for lecture points.)
+- Your lecture score will be the number of lecture points you earn out of 22. This means you can miss up to 4 lectures for any reason (late add, extenuating circumstances, etc.) and still earn a full lecture attendance score.
+
+If you have a regularly scheduled conflicting class, let Suraj know and we can discuss alternatives.
 
 Course notes have been written specifically for EECS 245, and will be your main resource in this class. These can be found at [notes.eecs245.org](https://notes.eecs245.org). We are constantly refining the notes, and will link them directly underneath the relevant lecture once they are ready.
 
@@ -159,7 +159,9 @@ If you find any typos or ways to improve the notes, please fill out [this form](
 
 Live lectures will closely follow the notes. Instead of presenting using slides in lecture, we will start with a blank document on a tablet, and write out the lecture content in real time, allowing us to move at a pace that is appropriate for the class and to focus on the high-level ideas (details can be found in the notes). Anything we write in live lectures will be posted as a PDF on the course website after lecture.
 
-### Labs
+---
+
+## Labs
 
 Labs will be held in-person on Wednesdays at several times. **You can attend any lab section on any given week, regardless of which section you're enrolled in.** Exact times and rooms will be posted on the [Calendar](../calendar) page.
 
@@ -169,29 +171,35 @@ Each lab session will have an accompanying **physical worksheet** that is distri
 
 To earn credit for a lab, you must make an effort to attempt all "required" activities and **show the lab TA an almost completed worksheet** by the end of the lab session. **This means that there is no option to receive credit for labs remotely.** Worksheets will usually include additional practice problems for you to work through after lab.
 
-There will be 13 labs in total. Each week you attend and submit the lab will earn you 1 "lab point", up to a maximum of 10 lab points. Your lab score will be the number of lab points you earn out of 10. This means **you can miss up to 3 labs for any reason** (late add, extenuating circumstances, etc.) and still earn a full lab score. This flexibility is provided in lieu of allowing for remote submissions, since we really believe in the power of working on problems in-person and on-paper with other students. Details can be found in the [Grades](#grades) section below.
+There will be 12 labs in total, and labs are worth 10% of your grade. Each week you attend and submit the lab will earn you 1 "lab point", up to a maximum of 9 lab points. Your lab score will be the number of lab points you earn out of 9. This means **you can miss up to 3 labs for any reason** (late add, extenuating circumstances, etc.) and still earn a full lab score. This flexibility is provided in lieu of allowing for remote submissions, since we really believe in the power of working on problems in-person and on-paper with other students. Details can be found in the [Grades](#grades) section below.
 
 Lab worksheets and solutions will be posted on the course website after all lab sessions have concluded.
 
-### Homeworks
+---
 
-This class will have 11 **weekly** homework assignments, which are to be completed **individually**. Homeworks will usually be released on Friday afternoons and be due the following **Friday at 11:59PM**, though this may change in any given week. See the [course homepage](../) for the most up-to-date deadline schedule.
+## Homeworks
 
-**Collaboration Policy**
+This class will have 11 **weekly** homework assignments, which are to be completed **individually**; homeworks are worth 15% of your grade. Homeworks will usually be released on Friday afternoons and be due the following **Friday at 11:59PM**, though this may change in any given week. See the [course homepage](../) for the most up-to-date deadline schedule.
 
-The majority of homework problems will involve writing solutions to math problems, but some will involve writing code in a Jupyter Notebook. The point of a homework problem is not really to "find the answer" – we know the answers, and ChatGPT can easily provide answers to any homework problem we could ask you. Rather, the point of a homework problem is to help you **deeply understand the material**, **apply it to new problems**, and build **problem-solving skills** along the way that will pay dividends in future courses and in your life as a graduate of the University of Michigan.
+### Collaboration and Generative AI Policy
+
+The majority of homework problems will involve writing solutions to math problems, but some will involve writing code in a Jupyter Notebook. The point of a homework problem is not really to "find the answer" – we know the answers, and ChatGPT can easily provide answers to any homework problem we could ask you. Rather, the point of a homework problem is to help you **deeply understand the material**, **apply it to new problems**, and build **problem-solving skills** along the way that will pay dividends in future courses and in your life as a graduate of the University of Michigan. See [What's the Point?](#whats-the-point) below.
 
 Think of it like this: driving 10 miles is a lot easier than running 10 miles, and in many cases, driving makes total sense. But, if you're trying to exercise, driving 10 miles won't really help you achieve your goals. If you buy that analogy, just think of driving as "copying the answers from someone else" and running as "thinking through problems yourself" – both may earn you the same score on homeworks, but only the latter will help you in the long run.
 
-**With that in mind, you can – and are actually encouraged to! – talk to other students in the class about the problems and discuss solution strategies. Talking and debating about challenging ideas is a great way to solidify your own understanding of the material.** That said, you should not share any written communication. You can tell someone how to approach a homework problem if they're stuck, but you cannot show them how to do it. One way to tell if you are respecting this boundary is to ask yourself whether your collaboration could take place over the phone. Additionally, the content of your verbal communication should involve the problem-solving strategy and approach, and you should not directly compare answers with classmates.
+**With all of that in mind, you can – and are actually encouraged to! – talk to other students in the class about the problems and discuss solution strategies. Talking and debating about challenging ideas is a great way to solidify your own understanding of the material.** That said, you should not share any written communication. You can tell someone how to approach a homework problem if they're stuck, but you cannot show them how to do it. One way to tell if you are respecting this boundary is to ask yourself whether your collaboration could take place over the phone. Additionally, the content of your verbal communication should involve the problem-solving strategy and approach, and you should not directly compare answers with classmates.
 
-Similarly, you can ask generative AI tools like ChatGPT for help with concepts, because these tools _can_ be genuinely useful. Just be cautious that they can also lead you astray. If you find a particularly useful explanation online, either on a website or from a generative AI tool, please let us know! **You cannot ask generative AI tools to solve homework problems for you or to verify your answers.** Doing so is only cheating yourself. **Remember you will not be able to use these tools during the exams, which are worth 70% of your overall grade.**
+Similarly, you can ask generative AI tools like ChatGPT for help with concepts, because these tools _can_ be genuinely useful. If you find a particularly useful explanation online, either on a website or from a generative AI tool, please let us know! **You cannot ask generative AI tools to solve homework problems for you or to verify your answers.** Doing so is only cheating yourself. **Remember you will not be able to use these tools during the exams, which are worth 70% of your overall grade.**
 
 If we suspect that your homework answers are not the result of your own work, we reserve the right to interview you in-person and ask you to answer and explain similar questions, and submit a case to the [Honor Council](https://ecas.engin.umich.edu/honor-council/).
 
 You may post homework-related questions on Ed, though your questions and answers should be about approaches, not answers to specific problems. If your question includes some or all of an answer (even if you’re not sure it’s right), you must make your post private so that others cannot see it. We are not able to tell you whether your answer is correct.
 
-**Late Policy, Slip Days, and Drops**
+One final thought: Demis Hassabis, the co-founder of Google's DeepMind AI research organization and a 2024 Nobel Prize winner, said
+
+> Those people who understand the deep technical, they’ll be able to use these tools 10 times more effectively than people who don’t have that technical knowledge ([source](https://thenextweb.com/news/hassabis-stem-degree-ai-computer-science))
+
+### Late Policy, Slip Days, and Drops
 
 All homeworks must be submitted by 11:59PM Ann Arbor time on the due date to
 be considered on time. If you make a submission after the
@@ -217,19 +225,19 @@ we calculate grades at the end of the semester.
 
 In addition, your lowest 2 homework scores will be dropped from your final grade. This means that you can miss up to 2 homeworks for any reason and still earn a full homework score. You do not use up any slip days on homeworks you don't submit, e.g. if you choose not to submit Homework 2, it costs you 0 slip days.
 
-**Regrade Requests**
+### Regrade Requests
 
-Most homework problems will be graded manually by our excellent graders, strictly adhering to a rubric. If you believe that the grader has made a mistake in applying the rubric shown to you on Pensive, you may submit a regrade request directly on Pensive within one week of the grades being released. If you do not submit a regrade request within one week, your original grade will be final. Part of your grade is clarity, so if your answer was mostly right but unclear you may still not be eligible for full credit.
+If you believe that we have made a mistake in applying the rubric shown to you on Pensive, you may submit a regrade request directly on Pensive within one week of the grades being released. If you do not submit a regrade request within one week, your original grade will be final. Part of your grade is clarity, so if your answer was mostly right but unclear you may still not be eligible for full credit.
 
 Some homework problems will be graded automatically by the autograder. If you believe that the autograder has made a mistake in grading your homework, send the instructor an email, again, within one week of the grades being released. Note that it's rare that something is wrong with the autograder, and if that's the case, we'll typically fix the necessary test cases and re-run the autograder for the entire class.
 
-Homeworks should be written or typed up and turned in by each student individually. If you want to type up your answers, we will provide a LaTeX template through Overleaf; click the 🍃 emoji next to each homework on the homepage to access the template. Homework 1 will include instructions on how to use the template. This template will be optional, except for one homework assignment, for which it will be mandatory.
+---
 
-### Office Hours
+## Office Hours
 
-To get help on assignments and concepts, course staff will be hosting several office hours per week. The vast majority of office hours will be held in-person on North Campus, though we will hold remote office hours, depending on staff availability. See the [Calendar](../calendar) tab of the course website for the most up-to-date schedule and directions. If you aren't able to consistently attend at least one office hours slot a week, please email the instructor – we will try our best to move things around to get you the support you need.
+To get help on assignments and concepts, course staff will be hosting several office hours per week. The vast majority of office hours will be held in-person on North Campus, though we may hold a few remote office hours, depending on staff availability. See the [Calendar](../calendar) tab of the course website for the most up-to-date schedule and directions. If you aren't able to consistently attend at least one office hours slot a week, please email the instructor – we will try our best to move things around to get you the support you need.
 
-In a theoretical class such as this one, it's important to make good use of office hours. Homework assignments will be challenging, so you should plan to attend office hours at least once a week. Even if you don’t have specific questions, you will likely get a lot out of conversing about the material and hearing others' questions. And even if you've mastered the material, still come and say hi – take advantage of the fact that this is a relatively small class.
+In a theoretical class such as this one, it's important to make good use of office hours. Homework assignments will be challenging, so you should plan to attend office hours at least once a week. Even if you don’t have specific questions, you will likely get a lot out of conversing about the material and hearing others' questions. **And even if you've mastered the material, still come and say hi – take advantage of the fact that this is a relatively small class!**
 
 ---
 
@@ -237,11 +245,11 @@ In a theoretical class such as this one, it's important to make good use of offi
 
 This class has two Midterm Exams and one Final Exam, all of which will be administered in-person and on paper.
 
-| Exam | Date and Time | Content |
-| --- | --- | --- |
-| Midterm 1 | Tuesday, October 6th, 7-9PM | Lectures 1-10, Chapters 1-4 only |
-| Midterm 2 | Tuesday, November 17th, 7-9PM | Lectures 11-19, Chapters 5-8 only |
-| Final Exam | Wednesday, December 16th, 1:30-3:30PM | ~30% Lectures 1-10<br>~30% Lectures 11-19<br>~40% Lectures 20-26 |
+| Exam | Date and Time | Content | Weight |
+| --- | --- | --- | --- |
+| Midterm 1 | Tuesday, October 6th, 7-9PM | Lectures 1-10, Chapters 1-4 only | 20% |
+| Midterm 2 | Tuesday, November 17th, 7-9PM | Lectures 11-19, Chapters 5-8 only | 20% |
+| Final Exam | Wednesday, December 16th, 1:30-3:30PM | ~30% Lectures 1-10<br>~30% Lectures 11-19<br>~40% Lectures 20-26 | 30% |
 
 The specific lecture numbers above are subject to change slightly. Midterm 2 is not cumulative. The Final Exam will be cumulative, and broken into three parts:
 
@@ -268,8 +276,9 @@ Exams are to be completed individually, with absolutely no collaboration allowed
 | Midterm 1                                    | 20% | see [Exams](#exams) section above |
 | Midterm 2                                    | 20% | see [Exams](#exams) section above  |
 | Final Exam                                   | 30%                 |  |
-| Homeworks | 20% | • 11 total; 2 lowest scores dropped <br> • 8 slip days available to use with a max of 2 per homework  |
-| Labs | 10% | 13 total; 3 lowest scores dropped  |
+| Homeworks | 15% | • 11 total; 2 lowest scores dropped <br> • 8 slip days available to use with a max of 2 per homework  |
+| Labs | 10% | 12 total; 3 lowest scores dropped  |
+| Lecture Attendance | 5% | 26 total; 4 lowest dropped |
 
 
 ### Letter Grades
@@ -327,9 +336,9 @@ confidential resources to all enrolled students, many of which are listed [here]
 - Psychiatric Emergency Services: 734-996-4747
 - [Services for Students with Disabilities (SSD)](https://ssd.umich.edu); 734-763-3000; ssdoffice@umich.edu
 
-### CSE Resources
+<!-- ### CSE Resources
 
-<img src="../assets/site-images/CSE UAO Resources.png" alt="CSE UAO student support resources graphic" width="600">
+<img src="../assets/site-images/CSE UAO Resources.png" alt="CSE UAO student support resources graphic" width="600"> -->
 
 ---
 

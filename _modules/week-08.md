@@ -9,7 +9,7 @@ days:
         title: "No Lecture: Fall Break 🍂"
   - date: "2026-10-21"
     events:
-      - name: LAB 8
+      - name: LAB 7
         type: lab
         title: Rank, Column Space, Null Space, and Inverses
   - date: "2026-10-22"

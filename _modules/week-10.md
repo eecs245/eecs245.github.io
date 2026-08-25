@@ -13,7 +13,7 @@ days:
         reading2_text: Ch. 8.2
   - date: "2026-11-04"
     events:
-      - name: LAB 10
+      - name: LAB 9
         type: lab
         title: Multiple Linear Regression; The Gradient Vector
   - date: "2026-11-05"

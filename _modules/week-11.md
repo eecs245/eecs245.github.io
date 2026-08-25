@@ -13,7 +13,7 @@ days:
         reading2_text: Ch. 8.5
   - date: "2026-11-11"
     events:
-      - name: LAB 11
+      - name: LAB 10
         type: lab
         title: Gradient Descent and Convexity
   - date: "2026-11-12"

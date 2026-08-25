@@ -13,7 +13,7 @@ days:
         reading2_text: Ch. 6.4
   - date: "2026-10-28"
     events:
-      - name: LAB 9
+      - name: LAB 8
         type: lab
         title: Inverses and Projections
   - date: "2026-10-29"

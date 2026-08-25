@@ -6,8 +6,9 @@ description: >-
 nav_order: 1
 ---
 
-{: .red }
-> **Welcome to EECS 245! The site is currently under construction.**
+{: .green }
+> **Welcome to EECS 245!** Make sure to read the [syllabus](syllabus) and complete the action items in the [Getting Started](syllabus#getting-started) section.
+
 
 <!-- Embed MathJax for LaTeX rendering -->
 <script>
@@ -23,7 +24,6 @@ window.MathJax = {
 EECS 245, Fall 2026 at the <b><span style="background-color: #FFCB05; color: #00274C">University of Michigan</span></b>
 {: .no_toc }
 {: .fs-6 .fw-300 .mb-0 }
-See the schedule here
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 

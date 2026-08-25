@@ -13,7 +13,7 @@ days:
         reading2_text: Ch. 5.4
   - date: "2026-10-14"
     events:
-      - name: LAB 7
+      - name: LAB 6
         type: lab
         title: Rank, Column Space, and Null Space
   - date: "2026-10-15"
