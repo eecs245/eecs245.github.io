@@ -143,12 +143,16 @@ Explaining something is a great way to solidify your understanding of it!
 
 Lectures will be held in-person on Tuesdays and Thursdays from 10:30AM-12PM in 1010 DOW. Lectures will be recorded and linked directly on the course homepage. Recordings will be made publicly available so that students who are not enrolled – including students not at Michigan – can benefit from the recordings. As part of your participation in this course, you may be recorded (e.g. if you answer a question). If you do not wish to be recorded, please email the instructor to discuss alternate arrangements.
 
-**New for Fall 2026**: Lecture attendance is required, and is worth 5% of your overall course grade. How is this assessed?
+### Attendance
+
+Lecture attendance is required, and is worth 5% of your overall course grade. How is this assessed?
 
 - There will be 26 regular lectures throughout the term; each lecture you attend will earn you 1 "lecture point", up to a maximum of 22 lecture points. (Lectures on the day of the two midterms will not count for lecture points.)
 - Your lecture score will be the number of lecture points you earn out of 22. This means you can miss up to 4 lectures for any reason (late add, extenuating circumstances, etc.) and still earn a full lecture attendance score.
 
-If you have a regularly scheduled conflicting class, let Suraj know and we can discuss alternatives.
+We will use [PollEverywhere](https://pollev.com/rampure) to take attendance. **It is an academic integrity violation to check into attendance if you are not physically present in lecture**, so please do not consider doing that! If you have a regularly scheduled conflicting class, let Suraj know and we can discuss alternatives.
+
+### Course Notes
 
 Course notes have been written specifically for EECS 245, and will be your main resource in this class. These can be found at [notes.eecs245.org](https://notes.eecs245.org). We are constantly refining the notes, and will link them directly underneath the relevant lecture once they are ready.
 
