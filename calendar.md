@@ -10,7 +10,6 @@ nav_order: 3
 The times and locations of office hours, as well as lectures and labs, are all in the calendar below. **The times of office hours are subject to change week-to-week, so make sure to check the calendar before attending.**
 
 The events are color-coded:
-- Deadlines appear in <span style="color:#d50000"><b>red</b></span> and are labeled as deadline items in event titles.
 - Lectures and labs appear in <span style="color:#0066cc"><b>blue</b></span>. These are all held on North Campus.
 - In-person North Campus office hours appear in <span style="color:#00796b"><b>turquoise</b></span>. These are typically held either in a BBB or Leinweber conference room, Suraj's office, or the BBB Atrium.
 <!-- - In-person Central Campus office hours – if we hold any – appear in <span style="color:#c0ca33"><b>lime green</b></span>. These are typically held in the UgLi Basement. -->
