@@ -1,5 +1,5 @@
 ---
-title: "Week 12: Midterm 2 and Eigenvalues"
+title: "Week 12: Midterm 2; Eigenvalues"
 weekNumber: 12
 days:
   - date: "2026-11-17"

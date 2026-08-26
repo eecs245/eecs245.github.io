@@ -1,5 +1,5 @@
 ---
-title: "Week 13: Eigenvalues and Thanksgiving"
+title: "Week 13: Eigenvalues; Thanksgiving 🍁"
 weekNumber: 13
 days:
   - date: "2026-11-23"

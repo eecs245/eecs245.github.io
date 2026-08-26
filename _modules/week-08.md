@@ -1,5 +1,5 @@
 ---
-title: "Week 8: Fall Break and Linear Transformations"
+title: "Week 8: Fall Break 🍂; Linear Transformations"
 weekNumber: 8
 days:
   - date: "2026-10-20"

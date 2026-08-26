@@ -108,6 +108,10 @@ iframe {
 
 .site-logo {
   background-position: center center;
+
+  @include mq(md) {
+    background-size: 130px 130px;
+  }
 }
 
 // .main-content {

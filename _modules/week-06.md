@@ -1,5 +1,5 @@
 ---
-title: "Week 6: Midterm 1 and Matrices"
+title: "Week 6: Midterm 1; Matrices"
 weekNumber: 6
 days:
   - date: "2026-10-06"

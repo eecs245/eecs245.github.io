@@ -1,5 +1,5 @@
 ---
-title: "Week 1: Introduction and Regression"
+title: "Week 1: Welcome! 👋"
 weekNumber: 1
 days:
   - date: "2026-09-01"
