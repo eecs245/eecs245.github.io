@@ -197,7 +197,9 @@ You may post homework-related questions on Ed, though your questions and answers
 
 One final thought: Demis Hassabis, the co-founder of Google's DeepMind AI research organization and a 2024 Nobel Prize winner, said
 
-> Those people who understand the deep technical, they’ll be able to use these tools 10 times more effectively than people who don’t have that technical knowledge ([source](https://thenextweb.com/news/hassabis-stem-degree-ai-computer-science))
+> Those people who understand the deep technical, they’ll be able to use these tools 10 times more effectively than people who don’t have that technical knowledge. ([source](https://thenextweb.com/news/hassabis-stem-degree-ai-computer-science))
+
+While it's true that generative AI tools can answer any question we'd ever ask you in the course, remember that the point is to gain _independent_ critical thinking skills. Keep this at the back of your mind throughout the semester!
 
 ### Late Policy, Slip Days, and Drops
 
