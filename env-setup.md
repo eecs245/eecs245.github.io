@@ -47,14 +47,12 @@ Here, we'll detail how to:
 We'll use the command-line (Terminal on macOS and Linux, or WSL on Windows) here extensively. This tutorial contains all of the commands you'll need to follow, but if you'd like more details, you can check out the [EECS 280 Command-Line Tutorial](https://eecs280staff.github.io/tutorials/cli.html).
 
 ### Step 0: If using Windows, install WSL
-{:.no_toc}
 
 If you're using macOS or Linux, you can skip to Step 1.
 
 If you're using a Windows machine, you'll need to install the Windows Subsystem for Linux (WSL). This will run an Ubuntu Linux guest virtual machine on your Windows computer, giving you access to a Terminal that behaves the same way as on macOS and Linux. Follow the [EECS 280 tutorial on how to install and use it](https://eecs280staff.github.io/tutorials/setup_wsl.html) then come back here.
 
 ### Step 1: Install `mamba`
-{:.no_toc}
     
 1. Download the `mamba` installer. To do this, open your Terminal and run:
 
@@ -78,12 +76,10 @@ Now, if you restart your Terminal, it should show `(base)` at the start of each 
 Run into an error saying `ERROR: File or directory already exists: /Users/<username>/miniforge3`? Check out [the Troubleshooting section below](#issue-error-file-or-directory-already-exists-usersusernameminiforge3-when-setting-up-environment).
 
 ### Step 2: Download [`environment.yml`](https://github.com/eecs245/eecs245.github.io/blob/main/resources/environment.yml)
-{:.no_toc}
 
 [This file](https://github.com/eecs245/eecs245.github.io/blob/main/resources/environment.yml) contains the necessary details to configure your environment. If you take a look at it, you'll see that it contains a specific Python version (`python=3.10`) along with specific package versions (like `pandas==2.1.0` and `scikit-learn==1.5.1`, for example).
 
 ### Step 3: Create a new `conda` environment
-{:.no_toc}
 
 To create the environment, in your Terminal, run:
 
@@ -95,11 +91,10 @@ Note that if you put `environment.yml` in your Downloads or Desktop folder, you 
 
 This step may take several minutes, and that's fine!
 
-{: . yellow }
+{: .yellow }
 **If you get an error using `mamba`, replace `mamba` with `conda` in the command above and the commands below.** `conda` and `mamba` are interchangeable; `mamba` is just faster.
 
 ### Step 4: Activate the environment
-{:.no_toc}
 
 To do so, run:
 
@@ -124,7 +119,6 @@ mamba activate eecs245
 in your Terminal. If you need to install any packages into your `eecs245` environment using `mamba install` or `pip install`, make sure to activate the environment first.
 
 ### Launching Jupyter Notebooks
-{:.no_toc}
 
 There are a few different-looking IDEs in the Jupyter universe, all built on JupyterLab, **all of which you run in your browser (e.g. Google Chrome)**. You can launch each one with a different command in your Terminal:
 
