@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 12
         type: lab
-        title: Singular Value Decomposition
+        title: Singular Value Decomposition and Principal Components Analysis
   - date: "2026-12-10"
     events:
       - name: LEC 26
@@ -29,5 +29,5 @@ days:
     events:
       - name: HW 11
         type: hw
-        title: Singular Value Decomposition
+        title: Singular Value Decomposition and Principal Components Analysis
 ---

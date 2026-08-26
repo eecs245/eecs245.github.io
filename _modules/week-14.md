@@ -17,7 +17,7 @@ days:
     events:
       - name: LAB 11
         type: lab
-        title: Adjacency Matrices and Diagonalization
+        title: Diagonalization, the Spectral Theorem, and Singular Value Decomposition
   - date: "2026-12-03"
     events:
       - name: LEC 24
@@ -31,5 +31,5 @@ days:
     events:
       - name: HW 10
         type: hw
-        title: Eigenvalues and Eigenvectors
+        title: Eigenvalues, Eigenvectors, and Diagonalization
 ---

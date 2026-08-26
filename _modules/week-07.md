@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 6
         type: lab
-        title: Rank, Column Space, and Null Space
+        title: Matrices, Rank, and Column Space
   - date: "2026-10-15"
     events:
       - name: LEC 13
@@ -29,5 +29,5 @@ days:
     events:
       - name: HW 5
         type: hw
-        title: Linear Independence and Subspaces
+        title: Vector Spaces, Subspaces, Bases, and Dimension
 ---

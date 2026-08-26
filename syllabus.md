@@ -243,7 +243,7 @@ In a theoretical class such as this one, it's important to make good use of offi
 
 ## Exams
 
-This class has two Midterm Exams and one Final Exam, all of which will be administered in-person and on paper.
+This class has two Midterm Exams and one Final Exam, all of which will be administered in-person and on paper. You can view past exams at [exams.eecs245.org](https://exams.eecs245.org).
 
 | Exam | Date and Time | Content | Weight |
 | --- | --- | --- | --- |

@@ -13,7 +13,7 @@ days:
     events:
       - name: LAB 4
         type: lab
-        title: Vectors and the Dot Product
+        title: Orthogonality, the Dot Product, and Projections
   - date: "2026-09-24"
     events:
       - name: LEC 8

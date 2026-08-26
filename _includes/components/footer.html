@@ -1,9 +1,6 @@
 {% capture footer_custom %}
   {%- include footer_custom.html -%}
 {% endcapture %}
-{% unless page.hide_footer_hr %}
-<hr>
-{% endunless %}
 <footer>
   {% if site.back_to_top %}
     <p><a href="#top" id="back-to-top">{{ site.back_to_top_text }}</a></p>

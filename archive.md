@@ -3,7 +3,6 @@ layout: page
 title: 💾 Archive
 description: Links to previous offerings of the course.
 nav_order: 7
-hide_footer_hr: true
 ---
 
 # 💾 Archive

@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 9
         type: lab
-        title: Multiple Linear Regression; The Gradient Vector
+        title: Multiple Linear Regression and the Gradient Vector
   - date: "2026-11-05"
     events:
       - name: LEC 18
@@ -29,5 +29,5 @@ days:
     events:
       - name: HW 8
         type: hw
-        title: Projections; Regression using Linear Algebra
+        title: Linear Transformations, Projections, and Regression
 ---
