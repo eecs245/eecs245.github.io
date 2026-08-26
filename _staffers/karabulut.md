@@ -5,7 +5,7 @@ staff_order: 2
 pronouns: he/him
 email: tugrulk@umich.edu
 website: https://tugrulhkarabulut.github.io
-photo: assets/staff-images/tugrul.png
+photo: assets/staff-images/tugrul.jpeg
 description: 2nd year CS PhD student
 hometown: Istanbul, Turkey
 askabout: classical guitar, video games, films
