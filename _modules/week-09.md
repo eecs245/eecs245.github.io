@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 8
         type: lab
-        title: Linear Transformations, Inverses, and Projections
+        title: Inverses and Projections
   - date: "2026-10-29"
     events:
       - name: LEC 16
@@ -29,5 +29,5 @@ days:
     events:
       - name: HW 7
         type: hw
-        title: Null Space, Rank-Nullity, and Inverses
+        title: Inverses, Projecting onto the Column Space
 ---

@@ -11,7 +11,7 @@ days:
     events:
       - name: LAB 7
         type: lab
-        title: Null Space, Rank-Nullity, and Inverses
+        title: Rank, Column Space, Null Space, and Inverses
   - date: "2026-10-22"
     events:
       - name: LEC 14
@@ -25,5 +25,5 @@ days:
     events:
       - name: HW 6
         type: hw
-        title: Matrices, Rank, and Column Space
+        title: Rank and Inverses
 ---

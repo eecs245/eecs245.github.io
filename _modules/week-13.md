@@ -2,6 +2,11 @@
 title: "Week 13: Eigenvalues and Thanksgiving"
 weekNumber: 13
 days:
+  - date: "2026-11-23"
+    events:
+      - name: HW 10
+        type: hw
+        title: Practical Machine Learning, Eigenvalues
   - date: "2026-11-24"
     events:
       - name: LEC 22

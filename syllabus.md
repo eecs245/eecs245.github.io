@@ -179,7 +179,7 @@ Lab worksheets and solutions will be posted on the course website after all lab 
 
 ## Homeworks
 
-This class will have 11 **weekly** homework assignments, which are to be completed **individually**; homeworks are worth 15% of your grade. Homeworks will usually be released on Friday afternoons and be due the following **Friday at 11:59PM**, though this may change in any given week. See the [course homepage](../) for the most up-to-date deadline schedule.
+This class will have 12 **weekly** homework assignments, which are to be completed **individually**; homeworks are worth 15% of your grade. Homeworks will usually be released on Friday afternoons and be due the following **Friday at 11:59PM**, though this may change in any given week. See the [course homepage](../) for the most up-to-date deadline schedule.
 
 ### Collaboration and Generative AI Policy
 
@@ -233,6 +233,16 @@ Some homework problems will be graded automatically by the autograder. If you be
 
 ---
 
+## A Typical Week
+
+To summarize the details above, here's what a typical week looks like in EECS 245:
+
+| Monday | Tuesday | Wednesday | Thursday | Friday |
+| --- | --- | --- | --- | --- |
+| | Lecture | Lab | Lecture | Homework $$N-1$$ Due<br>Homework $$N$$ Released |
+
+---
+
 ## Office Hours
 
 To get help on assignments and concepts, course staff will be hosting several office hours per week. The vast majority of office hours will be held in-person on North Campus, though we may hold a few remote office hours, depending on staff availability. See the [Calendar](../calendar) tab of the course website for the most up-to-date schedule and directions. If you aren't able to consistently attend at least one office hours slot a week, please email the instructor – we will try our best to move things around to get you the support you need.
@@ -276,7 +286,7 @@ Exams are to be completed individually, with absolutely no collaboration allowed
 | Midterm 1                                    | 20% | see [Exams](#exams) section above |
 | Midterm 2                                    | 20% | see [Exams](#exams) section above  |
 | Final Exam                                   | 30%                 |  |
-| Homeworks | 15% | • 11 total; 2 lowest scores dropped <br> • 8 slip days available to use with a max of 2 per homework  |
+| Homeworks | 15% | • 12 total; 2 lowest scores dropped <br> • 8 slip days available to use with a max of 2 per homework  |
 | Labs | 10% | 12 total; 3 lowest scores dropped  |
 | Lecture Attendance | 5% | 26 total; 4 lowest dropped |
 
@@ -297,7 +307,7 @@ student master the material?”. With that said, grades will not be any stricter
 than the standard grading scale (where an A+ is a 97+, A is 93+, A- is 90+,
 etc). For instance, the threshold for an “A” will never be higher than 93%.
 
-You can see Fall 25's letter grade distribution [here](https://eecs245.org/resources/next/fa25-dist.png); we will aim to achieve a similar distribution this semester, but minor variations are expected.
+The median grade both semesters last year was a B+, and we expect this semester's distribution to be similar.
 
 Try your best not to worry about grades, and we’ll reciprocate by being fair.
 We’re in this together ❤️.

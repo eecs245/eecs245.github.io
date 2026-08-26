@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 12
         type: lab
-        title: Singular Value Decomposition and Principal Components Analysis
+        title: SVD and PCA
   - date: "2026-12-10"
     events:
       - name: LEC 26
@@ -27,7 +27,7 @@ days:
         reading2_text: Ch. 10.5
   - date: "2026-12-11"
     events:
-      - name: HW 11
+      - name: HW 12
         type: hw
-        title: Singular Value Decomposition and Principal Components Analysis
+        title: SVD and PCA
 ---

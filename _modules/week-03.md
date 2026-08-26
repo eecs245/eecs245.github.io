@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 3
         type: lab
-        title: Simple Linear Regression and Vectors
+        title: Simple Linear Regression and Partial Derivatives
   - date: "2026-09-17"
     events:
       - name: LEC 6

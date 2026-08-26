@@ -17,7 +17,7 @@ days:
     events:
       - name: LAB 11
         type: lab
-        title: Diagonalization, the Spectral Theorem, and Singular Value Decomposition
+        title: Diagonalization, Spectral Theorem, SVD
   - date: "2026-12-03"
     events:
       - name: LEC 24
@@ -29,7 +29,7 @@ days:
         reading2_text: Ch. 10.2
   - date: "2026-12-04"
     events:
-      - name: HW 10
+      - name: HW 11
         type: hw
-        title: Eigenvalues, Eigenvectors, and Diagonalization
+        title: Diagonalization
 ---
