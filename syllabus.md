@@ -105,7 +105,7 @@ You'll need to make accounts on the following sites:
   didn’t already get an invitation to our Ed course, [sign up
   here](https://edstem.org/us/join/spf65h).
 
-- **Pensive:** [Pensive](https://www.pensive.com/student/classes/umich_eecs245_fa26) is where you’ll submit your homeworks and where all of your grades will live. As is discussed below, all homeworks must be handwritten, scanned into a PDF, and submitted to Gradescope. Some homeworks will contain autograded Jupyter Notebooks; these will be submitted to Pensive as well (not the EECS department autograder). If you didn’t already receive an invitation to Pensive, please let an instructor know. Pensive is like Gradescope, but it allows for AI grading of handwritten work, with human review and the ability to ask for a regrade. Not only does this enable faster and more accurate grading, but it also frees up instructor time to spend working with students one-on-one, which AI cannot do. Pensive has been approved by the College of Engineering, who ensured that it meets the necessary privacy and accessibility standards; rest assured, Pensive does not train AI models on your work.
+- **Pensive:** [Pensive](https://www.pensive.com/student/classes/umich_eecs245_fa26) is where you’ll submit your homeworks and where all of your grades will live. As is discussed below, all homeworks must be handwritten, scanned into a PDF, and submitted to Pensive. Some homeworks will contain autograded Jupyter Notebooks; these will be submitted to Pensive as well (not the EECS department autograder). If you didn’t already receive an invitation to Pensive, please let an instructor know. Pensive is like Gradescope, but it allows for AI grading of handwritten work, with human review and the ability to ask for a regrade. Not only does this enable faster and more accurate grading, but it also frees up instructor time to spend working with students one-on-one, which AI cannot do. Pensive has been approved by the College of Engineering, who ensured that it meets the necessary privacy and accessibility standards; rest assured, Pensive does not train AI models on your work.
 
 {: .red }
 Note that we will **not** be using Canvas for anything this semester (so please don't try and send us messages on Canvas!).
@@ -183,7 +183,7 @@ This class will have 11 **weekly** homework assignments, which are to be complet
 
 ### Collaboration and Generative AI Policy
 
-The majority of homework problems will involve writing solutions to math problems, but some will involve writing code in a Jupyter Notebook. The point of a homework problem is not really to "find the answer" – we know the answers, and ChatGPT can easily provide answers to any homework problem we could ask you. Rather, the point of a homework problem is to help you **deeply understand the material**, **apply it to new problems**, and build **problem-solving skills** along the way that will pay dividends in future courses and in your life as a graduate of the University of Michigan. See [What's the Point?](#whats-the-point) below.
+The majority of homework problems will involve writing solutions to math problems, but some will involve writing code in a Jupyter Notebook. The point of a homework problem is not really to "find the answer" – we know the answers, and ChatGPT can easily provide answers to any homework problem we could ask you. Rather, the point of a homework problem is to help you **deeply understand the material**, **apply it to new problems**, and build **problem-solving skills** along the way that will pay dividends in future courses and in your life as a graduate of the University of Michigan.
 
 Think of it like this: driving 10 miles is a lot easier than running 10 miles, and in many cases, driving makes total sense. But, if you're trying to exercise, driving 10 miles won't really help you achieve your goals. If you buy that analogy, just think of driving as "copying the answers from someone else" and running as "thinking through problems yourself" – both may earn you the same score on homeworks, but only the latter will help you in the long run.
 
@@ -297,7 +297,7 @@ student master the material?”. With that said, grades will not be any stricter
 than the standard grading scale (where an A+ is a 97+, A is 93+, A- is 90+,
 etc). For instance, the threshold for an “A” will never be higher than 93%.
 
-You can see last semester's letter grade distribution [here](https://eecs245.org/next/#workload-and-final-grade-distribution); we will aim to achieve a similar distribution this semester, but minor variations are expected.
+You can see Fall 25's letter grade distribution [here](https://eecs245.org/resources/next/fa25-dist.png); we will aim to achieve a similar distribution this semester, but minor variations are expected.
 
 Try your best not to worry about grades, and we’ll reciprocate by being fair.
 We’re in this together ❤️.
@@ -347,7 +347,7 @@ confidential resources to all enrolled students, many of which are listed [here]
 This course is new at the University of Michigan. With that said, many of the materials we will use are adopted from content created by countless other instructors for courses at other institutions.
 
 - In particular, some materials are adopted from [EECS 398: Practical Data Science](https://practicaldsc.org), which itself was based on content from DSC 10, DSC 40A, and DSC 80 at the University of California, San Diego; and Data 6 and Data 100 at the University of California, Berkeley.
-- Some homework problems have been adapted from various linear algebra courses and textbooks online and at other institutions. Some of these sources are listed at the bottom of the introduction to the [course notes](https://notes.eecs245.org/) and on the [resources](resources) page.
+- Some homework problems have been adapted from various linear algebra courses and textbooks online and at other institutions. Some of these sources are listed at the bottom of the introduction to the [course notes](https://notes.eecs245.org/) and on the [resources](https://eecs245.org/resources/) page.
 - Language in this syllabus has been adopted from other courses as well, including EECS 203, EECS 280, EECS 376, and EECS 485 here at the University of Michigan, and CSE 160 at the University of Washington.
 
 ---
