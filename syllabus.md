@@ -18,6 +18,7 @@ nav_order: 2
 {: .green }
 > Welcome to EECS 245! We’re so excited to have you in the course. Make sure to read the syllabus carefully so that you understand what is expected of you.
 
+---
 
 ## Overview
 
@@ -143,15 +144,6 @@ Explaining something is a great way to solidify your understanding of it!
 
 Lectures will be held in-person on Tuesdays and Thursdays from 10:30AM-12PM in 1010 DOW. Lectures will be recorded and linked directly on the course homepage. Recordings will be made publicly available so that students who are not enrolled – including students not at Michigan – can benefit from the recordings. As part of your participation in this course, you may be recorded (e.g. if you answer a question). If you do not wish to be recorded, please email the instructor to discuss alternate arrangements.
 
-### Attendance
-
-Lecture attendance is required, and is worth 5% of your overall course grade. How is this assessed?
-
-- There will be 26 regular lectures throughout the term; each lecture you attend will earn you 1 "lecture point", up to a maximum of 22 lecture points. (Lectures on the day of the two midterms will not count for lecture points.)
-- Your lecture score will be the number of lecture points you earn out of 22. This means you can miss up to 4 lectures for any reason (late add, extenuating circumstances, etc.) and still earn a full lecture attendance score.
-
-We will use [PollEverywhere](https://pollev.com/rampure) to take attendance. **It is an academic integrity violation to check into attendance if you are not physically present in lecture**, so please do not consider doing that! If you have a regularly scheduled conflicting class, let Suraj know and we can discuss alternatives.
-
 ### Course Notes
 
 Course notes have been written specifically for EECS 245, and will be your main resource in this class. These can be found at [notes.eecs245.org](https://notes.eecs245.org). We are constantly refining the notes, and will link them directly underneath the relevant lecture once they are ready.
@@ -162,6 +154,17 @@ Course notes have been written specifically for EECS 245, and will be your main 
 If you find any typos or ways to improve the notes, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSfrAu2o3eBa9ZvjerOFxqDHV63GlR9NoYdA4TOgK8BBoSguCg/viewform?usp=dialog).
 
 Live lectures will closely follow the notes. Instead of presenting using slides in lecture, we will start with a blank document on a tablet, and write out the lecture content in real time, allowing us to move at a pace that is appropriate for the class and to focus on the high-level ideas (details can be found in the notes). Anything we write in live lectures will be posted as a PDF on the course website after lecture.
+
+### Attendance
+
+Lecture attendance is taken, and is **optionally** worth 5% of your overall course grade. How is this assessed?
+
+- There will be 26 regular lectures throughout the term; each lecture you attend will earn you 1 "lecture point", up to a maximum of 22 lecture points. (Lectures on the days of the two midterms will not count for lecture points.)
+- Your lecture score will be the number of lecture points you earn out of 22. This means you can miss up to 4 lectures for any reason (late add, extenuating circumstances, etc.) and still earn a full lecture attendance score.
+
+5% of your overall grade in the class either comes from your attendance score OR your Final Exam score – **whichever is higher**. This policy is designed to encourage you to come to lecture as often as you can. We will do our best to make lectures engaging, active, and well worth your time.
+
+We will use [PollEverywhere](https://pollev.com/rampure) to take attendance. **It is an academic integrity violation to check into attendance if you are not physically present in lecture**, so please do not consider doing that! If you have a regularly scheduled conflicting class, let Suraj know and we can discuss alternatives.
 
 ---
 
@@ -215,8 +218,7 @@ You have **8 "slip days"** to use throughout the semester. A slip day extends
 the deadline of a homework by 24 hours. **You may use up to 2 slip days on any one homework assignment**. (Since lab worksheets must be submitted in-person, they cannot be submitted late, and can't use up slip days.)
 
 Slip days are designed to be a transparent and predictable source of leniency
-in deadlines. You can use a slip day if you are too busy to complete a homework on its original due date (or if you forgot about it). But slip days are also meant for things like the internet going down at 11:58PM just as you
-go to submit your homework. Slip days are meant to be used in exceptional
+in deadlines. You can use a slip day if you are too busy to complete a homework on its original due date (or if you forgot about it). But slip days are also meant for things like the internet going down at 11:58PM just as you go to submit your homework. Slip days are meant to be used in exceptional
 circumstances, so you probably should not need to use all 8, but if you have
 something going on in your life that is impeding your ability to do your
 classwork on time, please reach out to us as soon as possible so we can work
@@ -265,7 +267,7 @@ This class has two Midterm Exams and one Final Exam, all of which will be admini
 | --- | --- | --- | --- |
 | Midterm 1 | Tuesday, October 6th, 7-9PM | Lectures 1-10, Chapters 1-4 only | 20% |
 | Midterm 2 | Tuesday, November 17th, 7-9PM | Lectures 11-19, Chapters 5-8 only | 20% |
-| Final Exam | Wednesday, December 16th, 1:30-3:30PM | ~30% Lectures 1-10<br>~30% Lectures 11-19<br>~40% Lectures 20-26 | 30% |
+| Final Exam | Wednesday, December 16th, 1:30-3:30PM | ~30% Lectures 1-10<br>~30% Lectures 11-19<br>~40% Lectures 20-26 | 30% or 35% |
 
 The specific lecture numbers above are subject to change slightly. Midterm 2 is not cumulative. The Final Exam will be cumulative, and broken into three parts:
 
@@ -294,7 +296,7 @@ Exams are to be completed individually, with absolutely no collaboration allowed
 | Final Exam                                   | 30%                 |  |
 | Homeworks | 15% | • 12 total; 2 lowest scores dropped <br> • 8 slip days available to use with a max of 2 per homework  |
 | Labs | 10% | 12 total; 3 lowest scores dropped  |
-| Lecture Attendance | 5% | 26 total; 4 lowest dropped |
+| max(Lecture Attendance, Final Exam) | 5% | Lecture Attendance score: 26 total; 4 lowest dropped |
 
 
 ### Letter Grades
@@ -306,14 +308,13 @@ everyone does well and shows mastery of the material, everyone can receive an A
 can receive a C.
 
 Grading for this class is curved in the sense that we do not have a pre-defined
-mapping from project and exam scores to a final GPA. There is no pre-determined
+mapping from overall scores to a final GPA. There is no pre-determined
 score (e.g., 90% of all possible points) that earns an A or a B or a C or any
 other grade. To determine the final grade, we will ask questions like “Did this
-student master the material?”. With that said, grades will not be any stricter
-than the standard grading scale (where an A+ is a 97+, A is 93+, A- is 90+,
-etc). For instance, the threshold for an “A” will never be higher than 93%.
+student master the material?”. 
 
-The median grade both semesters last year was a B+, and we expect this semester's distribution to be similar.
+With that said, grades will not be any stricter than the standard grading scale, where an A+ is a 97+, A is 93+, A- is 90+,
+etc. For instance, the threshold for an "A" will never be higher than 93%. The median grade both semesters last year was a B+, and we expect this semester's distribution to be similar.
 
 Try your best not to worry about grades, and we’ll reciprocate by being fair.
 We’re in this together ❤️.
