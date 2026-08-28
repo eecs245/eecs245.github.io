@@ -32,8 +32,9 @@ days:
   - date: "2026-09-11"
     events:
       - name: HW 1
+        problems: ../resources/homeworks/hw01/
         type: hw
-        title: Means, Sums, and Calculus
+        title: <b>Means, Sums, and Calculus</b>
       - name: SUR
         type: survey
         title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform?usp=header">Welcome Survey</a></b>
