@@ -188,6 +188,8 @@ Lab worksheets and solutions will be posted on the course website after all lab 
 
 This class will have 12 **weekly** homework assignments, which are to be completed **individually**; homeworks are worth 15% of your grade. Homeworks will usually be released on Friday afternoons and be due the following **Friday at 11:59PM**, though this may change in any given week. See the [course homepage](../) for the most up-to-date deadline schedule.
 
+Homeworks must be handwritten on paper or tablet by each student individually, scanned into a single PDF, and submitted to Pensive. That is, no typing and no LaTeX, unless you have accommodations specifying otherwise. We believe that handwriting the material helps you learn it better, better prepares you for exams, and frankly is harder to cheat with AI.
+
 ### Collaboration and Generative AI Policy
 
 The majority of homework problems will involve writing solutions to math problems, but some will involve writing code in a Jupyter Notebook. The point of a homework problem is not really to "find the answer" – we know the answers, and ChatGPT can easily provide answers to any homework problem we could ask you. Rather, the point of a homework problem is to help you **deeply understand the material**, **apply it to new problems**, and build **problem-solving skills** along the way that will pay dividends in future courses and in your life as a graduate of the University of Michigan.

@@ -44,7 +44,6 @@
                 {%- if event.video -%}
                 <a href="{{ event.video }}" class="btn btn-info btn-sm">🎥 {{ event.video_text }}</a>
                 {%- endif -%}
-                {%- if event.datahub_link or event.github_link -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">💻 {% if event.code_button_text %}{{ event.code_button_text }}{% else %}Code{% endif %} ▼</button>{%- endif -%}
                 {%- if event.pl -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="pl-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="pl-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">🌽 PrairieLearn ▼</button>{%- endif -%}
                 {%- assign rendered_readings = "|" -%}
                 {%- assign reading_count = 0 -%}
@@ -105,6 +104,7 @@
                 <a href="{{ event.videos2 }}" class="btn btn-info btn-sm">⏯️ Videos{%- if event.videos2_text -%}: {{ event.videos2_text }}{%- endif -%}</a>
                 {%- endif -%}
               {%- endif -%}
+              {%- if event.datahub_link or event.github_link -%}<button type="button" class="btn btn-info btn-sm expandable-code-btn" onclick="toggleExpandableLinks(this)" data-target-id="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}" aria-expanded="false" aria-controls="code-links-{{ page.weekNumber }}-{{ forloop.index0 }}-{{ forloop.parentloop.index0 }}">💻 {% if event.code_button_text %}{{ event.code_button_text }}{% else %}Code{% endif %} ▼</button>{%- endif -%}
               <!-- {%- if event.type == "hw" or event.type == "disc" -%}
                 {%- if event.slides -%}
                 <small><a href="{{ event.slides }}" class="btn btn-info btn-sm">🧑‍🏫 mini-lecture slides</a></small>
@@ -138,7 +138,7 @@
                   <b>Preferred:</b> Clone our <a href="{{ event.github_link }}">{% include icon-github.html %} GitHub Repository</a><br>
                   {%- endif -%}
                   {%- if event.datahub_link -%}
-                  <b>Backup:</b> 🚀 Launch <a href="{{ event.datahub_link }}">{{ event.name }}</a> on DataHub
+                  <b>Backup:</b> 🚀 Launch <a href="{{ event.datahub_link }}">{% if event.type == "lab" %}{{ event.name | replace: "LAB ", "Lab " }}{% else %}{{ event.name }}{% endif %}</a> on DataHub
                   {%- endif -%}
                 </small>
               </div>
