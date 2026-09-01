@@ -7,7 +7,7 @@ days:
       - name: LEC 1
         type: lecture
         title: Introduction
-        recording: https://leccap.engin.umich.edu/leccap/player/r/AdNP9N
+        recording: https://leccap.engin.umich.edu/leccap/player/r/2iFFo0
         reading: https://notes.eecs245.org/advice/
         reading_text: Advice
         reading2: https://notes.eecs245.org/introduction-to-supervised-learning/what-is-machine-learning/
