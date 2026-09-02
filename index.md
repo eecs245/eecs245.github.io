@@ -23,7 +23,8 @@ window.MathJax = {
 {: .mb-2 }
 EECS 245, Fall 2026 at the <b><span style="background-color: #FFCB05; color: #00274C">University of Michigan</span></b>
 {: .no_toc }
-{: .fs-6 .fw-300 .mb-0 }
+{: .fs-6 .fw-300 .mb-2 }
+**Lectures**: Tuesdays and Thursdays, 10:30AM-12PM, 1010 DOW • **Labs**: Various [times](calendar) on Wednesday
 
 <a class="btn" style="background-color: #00274C; color: white;" data-current-week-link href="#{{ site.modules.first.title | slugify }}">Jump to the current week</a>
 
