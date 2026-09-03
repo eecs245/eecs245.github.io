@@ -20,6 +20,7 @@ window.MathJax = {
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>"""
 
 SECTION_SEPARATOR = "---"
+COURSE_REPOSITORY = "https://github.com/eecs245/fa26-code/tree/main"
 
 HOMEWORK_STYLE_SNIPPET = """<style>
 .main-content p {
@@ -111,6 +112,31 @@ mjx-container[jax="CHTML"][display="true"] {
   padding: 0.35rem 0.5rem;
   white-space: nowrap;
 }
+.crossnumber-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2.4rem);
+  grid-template-rows: repeat(3, 2.4rem);
+  margin: 1rem auto;
+  width: max-content;
+}
+.crossnumber-cell {
+  align-items: center;
+  border: 1.5px solid currentColor;
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: center;
+  position: relative;
+}
+.crossnumber-label {
+  font-size: 0.55rem;
+  left: 0.15rem;
+  line-height: 1;
+  position: absolute;
+  top: 0.15rem;
+}
+.crossnumber-missing {
+  border: 0;
+}
 </style>"""
 
 
@@ -178,6 +204,9 @@ def main() -> int:
     transformed_tex = transform_assignment_tex(
         expanded_tex, include_solutions=args.include_solutions
     )
+    transformed_tex, tabular_html = replace_tabulars_with_html_placeholders(
+        transformed_tex
+    )
     pdf_link = compute_pdf_link(repo_root, output_md)
     solutions_pdf_link = (
         compute_solutions_pdf_link(repo_root, output_md)
@@ -207,6 +236,7 @@ def main() -> int:
             solutions_pdf_link=solutions_pdf_link,
             output_md=output_md,
         )
+        final_markdown = restore_tabular_html(final_markdown, tabular_html)
         validate_visible_items_match_source(
             assignment=metadata.assignment,
             source_tex=expanded_tex,
@@ -380,6 +410,7 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_document_wrapper(text)
     text = strip_false_blocks(text)
     text = strip_latex_comments(text)
+    text = replace_crossnumber_tikz_grids(text)
     text = strip_layout_commands(text)
     text = replace_youtube_embed_markers(text)
     text = expand_labcodelinks(text)
@@ -396,6 +427,75 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = text.replace("\\newpage", "")
     text = text.replace("\\makemytitle", "% stripped makemytitle")
     return text
+
+
+def replace_crossnumber_tikz_grids(text: str) -> str:
+    """Render the Lab 1 cross-number TikZ grid as accessible web-native HTML."""
+    pattern = re.compile(r"(?s)\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}")
+
+    def replace(match: re.Match[str]) -> str:
+        block = match.group(0)
+        if "{0/2,1/2,2/2,0/1,1/1,2/1,0/0,1/0}" not in block:
+            return block
+        filled = r"\node at (0.5,2.5) {6};" in block
+        values = ["6", "4", "2", "7", "2", "3", "8", "8"] if filled else [""] * 8
+        labels = ["A", "B", "C", "D", "", "", "E", ""]
+        cells = []
+        for label, value in zip(labels, values):
+            label_html = f'<span class="crossnumber-label">{label}</span>' if label else ""
+            cells.append(f'<div class="crossnumber-cell">{label_html}{value}</div>')
+        cells.append('<div class="crossnumber-cell crossnumber-missing"></div>')
+        description = "Completed cross-number grid" if filled else "Blank cross-number grid"
+        return (
+            f'\n<div class="crossnumber-grid" role="img" aria-label="{description}">\n'
+            + "\n".join(cells)
+            + "\n</div>\n"
+        )
+
+    return pattern.sub(replace, text)
+
+
+def replace_tabulars_with_html_placeholders(text: str) -> tuple[str, list[str]]:
+    """Render LaTeX tables as HTML so headerless tables keep ordinary cells."""
+    tables: list[str] = []
+    pattern = re.compile(r"(?s)\\begin\{tabular\}.*?\\end\{tabular\}")
+
+    def replace(match: re.Match[str]) -> str:
+        placeholder = f"TABULARHTMLPLACEHOLDER{len(tables)}"
+        tables.append(latex_tabular_to_html(match.group(0)))
+        return f"\n\n{placeholder}\n\n"
+
+    return pattern.sub(replace, text), tables
+
+
+def latex_tabular_to_html(tabular: str) -> str:
+    """Let Pandoc preserve LaTeX's explicit header semantics in HTML."""
+    command = [
+        "pandoc",
+        "--from=latex",
+        "--to=html",
+        "--mathjax",
+        "--wrap=none",
+    ]
+    result = subprocess.run(
+        command,
+        input=tabular,
+        text=True,
+        capture_output=True,
+        check=True,
+    )
+    return result.stdout.strip().replace(
+        '<span class="math inline">', '<span class="math-inline">'
+    )
+
+
+def restore_tabular_html(markdown: str, tables: list[str]) -> str:
+    for index, table in enumerate(tables):
+        placeholder = f"TABULARHTMLPLACEHOLDER{index}"
+        if placeholder not in markdown:
+            raise ValueError(f"Pandoc dropped table placeholder {placeholder}.")
+        markdown = markdown.replace(placeholder, table, 1)
+    return markdown
 
 
 def strip_false_blocks(text: str) -> str:
@@ -630,7 +730,7 @@ def replace_activity_markers(text: str) -> str:
 
         header = f"\\section*{{Activity {activity_number}"
         if optional_title:
-            title = optional_title.strip()
+            title = strip_source_parenthetical(optional_title.strip())
             if title:
                 header += f": {title}"
         header += "}\n"
@@ -704,15 +804,14 @@ def expand_labcodelinks(text: str) -> str:
         stem = match.group(2)
         datahub_url = (
             "https://datahub.eecs245.org/hub/user-redirect/git-pull?"
-            "repo=https\\%3A\\%2F\\%2Fgithub.com\\%2Feecs245\\%2Fsp26-code"
-            f"\\&urlpath=tree\\%2Fsp26-code\\%2Flabs\\%2F{lab}\\%2F{stem}.ipynb"
+            "repo=https\\%3A\\%2F\\%2Fgithub.com\\%2Feecs245\\%2Ffa26-code"
+            f"\\&urlpath=tree\\%2Ffa26-code\\%2Flabs\\%2F{lab}\\%2F{stem}.ipynb"
             "\\&branch=main"
         )
-        github_url = f"https://github.com/eecs245/sp26-code/tree/main/labs/{lab}/{stem}.ipynb"
         return rf"""
 There are two ways to access the supplemental Jupyter Notebook:
 \begin{{itemize}}
-  \item \textbf{{Option 1 (preferred)}}: Set up a Jupyter Notebook environment locally, use \texttt{{git}} to clone our \href{{{github_url}}}{{course repository}}, and open \texttt{{labs/{lab}/{stem}.ipynb}}. For instructions on how to do this, see the \href{{https://eecs245.org/env-setup}}{{Environment Setup}} page of the course website.
+  \item \textbf{{Option 1 (preferred)}}: Set up a Jupyter Notebook environment locally, use \texttt{{git}} to clone our \href{{{COURSE_REPOSITORY}}}{{course repository}}, and open \texttt{{labs/{lab}/{stem}.ipynb}}. For instructions on how to do this, see the \href{{https://eecs245.org/env-setup}}{{Environment Setup}} page of the course website.
   \item \textbf{{Option 2}}: Click \href{{{datahub_url}}}{{here}} to open \texttt{{{stem}.ipynb}} on DataHub. Before doing so, read the instructions on the \href{{https://eecs245.org/env-setup/\#option-2-using-the-eecs-245-datahub}}{{Environment Setup}} page on how to use the DataHub.
 \end{{itemize}}
 """
@@ -1825,11 +1924,23 @@ def extract_generated_items(markdown: str, item_kind: str) -> list[AssignmentIte
 
 
 def normalize_item_title(title: str) -> str:
+    title = re.sub(r"\\href\{[^{}]*\}\{([^{}]*)\}", r"\1", title)
+    title = re.sub(r"\[([^\]\n]+)\]\([^)\n]+\)", r"\1", title)
     title = collapse_whitespace(re.sub(r"<[^>]*>", "", title))
+    title = re.sub(r"\s*\(Source:[^()]*\)\s*$", "", title, flags=re.I)
     title = title.replace(r"\\(", "$").replace(r"\\)", "$")
     title = title.replace("\\\\", "\\")
     title = title.replace("–", "--")
     return re.sub(r"\s*\(\d+\s+pts?\)\s*$", "", title)
+
+
+def strip_source_parenthetical(title: str) -> str:
+    return re.sub(
+        r"\s*\(\\href\{[^{}]*\}\{Source:[^{}]*\}\)\s*$",
+        "",
+        title,
+        flags=re.I,
+    )
 
 
 def format_item_label(item_kind: str, number: int, title: str) -> str:

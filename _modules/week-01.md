@@ -20,9 +20,8 @@ days:
       - name: LAB 1
         type: lab
         title: Math Foundations and Environment Setup
-        datahub_link: https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa26-code&urlpath=tree%2Ffa26-code%2Flabs%2Flab01%2Flab01.ipynb&branch=main
-        github_link: https://github.com/eecs245/fa26-code/tree/main
-        note: The worksheet will be posted at the end of the day.
+        problems: ../resources/labs/lab01/
+        solutions: true
   - date: "2026-09-03"
     events:
       - name: LEC 2
