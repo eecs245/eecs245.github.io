@@ -484,8 +484,16 @@ def latex_tabular_to_html(tabular: str) -> str:
         capture_output=True,
         check=True,
     )
-    return result.stdout.strip().replace(
+    table_html = result.stdout.strip().replace(
         '<span class="math inline">', '<span class="math-inline">'
+    )
+    # Tables are restored after the page's math cleanup. Protect their inline
+    # math here as well, while retaining raw HTML's single-backslash delimiters.
+    return re.sub(
+        r'(<span class="math-inline">\\\()(.*?)(\\\)</span>)',
+        lambda match: match.group(1) + escape_inline_math_content(match.group(2)) + match.group(3),
+        table_html,
+        flags=re.S,
     )
 
 
@@ -1503,7 +1511,14 @@ def format_multiple_choice_rows(text: str) -> str:
 
 def normalize_mc_option_html(option_html: str) -> str:
     if '<span class="math-inline">' in option_html:
-        return option_html
+        # Choice rows are raw HTML: Kramdown does not unescape their math.
+        # Undo the Markdown backslash protection inside each math span.
+        return re.sub(
+            r'<span class="math-inline">.*?</span>',
+            lambda match: match.group(0).replace("\\\\", "\\"),
+            option_html,
+            flags=re.S,
+        )
 
     def inline_math_to_span(match: re.Match[str]) -> str:
         return f'<span class="math-inline">\\\\({escape_inline_math_content(match.group(1))}\\\\)</span>'
