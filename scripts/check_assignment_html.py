@@ -5,6 +5,7 @@ import argparse
 import html
 import re
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 
@@ -96,6 +97,7 @@ def resolve_assignment_paths(path: Path, website_root: Path) -> tuple[Path, Path
 def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
     text = source_md.read_text()
     failures: list[str] = []
+    failures.extend(f"{source_md}: {error}" for error in check_list_and_choice_structure(text))
 
     if re.search(r"(?m)^ {4}<div class=\"math-display\">", text):
         failures.append(f"{source_md}: indented math-display block will render as code")
@@ -220,6 +222,7 @@ def iter_fenced_code_blocks(text: str) -> list[str]:
 def check_built_html(built_html: Path, website_root: Path) -> list[str]:
     text = built_html.read_text()
     failures: list[str] = []
+    failures.extend(f"{built_html}: {error}" for error in check_list_and_choice_structure(text))
 
     for code_block in re.findall(r"(?s)<pre\b.*?</pre>", text):
         decoded = html.unescape(strip_tags(code_block))
@@ -238,6 +241,47 @@ def check_built_html(built_html: Path, website_root: Path) -> list[str]:
         failures.append(f"{built_html}: repeated horizontal rules")
 
     failures.extend(check_html_images(built_html, website_root, text))
+    return failures
+
+
+def check_list_and_choice_structure(text: str) -> list[str]:
+    """Check both generated source and rendered HTML, not just source numbering."""
+    failures = []
+
+    class ListParser(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.lists = []
+
+        def handle_starttag(self, tag, attrs):
+            attrs = dict(attrs)
+            if tag in {"ol", "ul"}:
+                self.lists.append({"tag": tag, "attrs": attrs, "values": []})
+            elif tag == "li" and self.lists:
+                self.lists[-1]["values"].append(attrs.get("value"))
+
+        def handle_endtag(self, tag):
+            if tag not in {"ol", "ul"} or not self.lists:
+                return
+            current = self.lists.pop()
+            attrs, values = current["attrs"], current["values"]
+            if "assignment-list" not in attrs.get("class", "").split():
+                return
+            if tag != current["tag"] or str(len(values)) != attrs.get("data-item-count"):
+                failures.append("assignment list lost its item boundaries")
+            if tag == "ol":
+                start = int(attrs.get("start", 1))
+                if values != [str(i) for i in range(start, start + len(values))]:
+                    failures.append("assignment ordered-list numbering is missing or reset")
+
+    parser = ListParser()
+    parser.feed(text)
+    if any("assignment-list" in x["attrs"].get("class", "").split() for x in parser.lists):
+        failures.append("assignment list is not closed")
+    for solution in re.findall(r"(?s)<details\b[^>]*>.*?</details>", text):
+        for row in re.findall(r'(?s)<div class="mc-options">.*?</div>', solution):
+            if "mc-correct" not in row:
+                failures.append("solution choice row has no filled correct answer")
     return failures
 
 

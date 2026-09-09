@@ -16,7 +16,6 @@ days:
       - name: LAB 3
         type: lab
         title: Vectors and the Dot Product
-        problems: ../resources/labs/lab03/
   - date: "2026-09-17"
     events:
       - name: LEC 6
@@ -29,4 +28,5 @@ days:
       - name: HW 2
         type: hw
         title: Empirical Risk and Simple Linear Regression
+        problems: ../resources/homeworks/hw02/
 ---

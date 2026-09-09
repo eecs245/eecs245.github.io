@@ -4,3 +4,5 @@ _site/
 CURSOR.md
 .leccap_cookie
 .leccap_storage_state.json
+__pycache__/
+*.pyc

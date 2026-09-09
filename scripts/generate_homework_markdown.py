@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 import re
 import shutil
 import subprocess
@@ -25,6 +26,15 @@ COURSE_REPOSITORY = "https://github.com/eecs245/fa26-code/tree/main"
 HOMEWORK_STYLE_SNIPPET = """<style>
 .main-content p {
   margin-bottom: 1.15em;
+}
+.main-content .assignment-list > li {
+  display: list-item;
+}
+.main-content .assignment-list > li::before {
+  content: none;
+}
+.main-content ul.assignment-list {
+  list-style-type: disc;
 }
 .assignment-pdf-button {
   font-size: 0.95rem;
@@ -604,7 +614,8 @@ def add_solution_choice_summaries(text: str) -> str:
         parts.append(before_solution)
         options = extract_last_choice_group(before_solution)
         solution_body = match.group(1)
-        if options:
+        options = resolve_solution_choices(options, solution_body)
+        if options and all(option.content for option in options) and any(option.is_correct for option in options):
             summary = render_solution_choice_summary(options)
             solution_body = f"\n{summary}\n\n{solution_body.lstrip()}"
         parts.append(f"\\begin{{solution}}\n{solution_body.rstrip()}\n\\end{{solution}}\n")
@@ -612,6 +623,32 @@ def add_solution_choice_summaries(text: str) -> str:
 
     parts.append(text[cursor:])
     return "".join(parts)
+
+
+def resolve_solution_choices(options: list[ChoiceOption], solution_body: str) -> list[ChoiceOption]:
+    """Use explicit answer metadata, or an exact leading bold answer in legacy TeX.
+
+    Never guess from explanatory prose or repeat an entirely unmarked answer row.
+    Authors can use correctbubble/correctsquarebubble for more complex answers.
+    """
+    if not options or any(option.is_correct for option in options):
+        return options
+    leading_answer = re.match(r"\s*\\textbf\{", solution_body)
+    if not leading_answer:
+        return options
+    answer, _ = extract_braced(solution_body, leading_answer.end() - 1)
+
+    def normalize(value: str) -> str:
+        value = re.sub(r"\\(?:\(|\))|\$", "", value)
+        return re.sub(r"\s+", " ", value).strip().rstrip(".,:;")
+
+    matches = [i for i, option in enumerate(options) if normalize(option.content) == normalize(answer)]
+    if len(matches) == 1:
+        selected = options[matches[0]]
+        options[matches[0]] = ChoiceOption(
+            "correctsquarebubble" if selected.is_square else "correctbubble", selected.content
+        )
+    return options
 
 
 def extract_last_choice_group(text: str) -> list[ChoiceOption]:
@@ -779,12 +816,12 @@ def replace_subitem_markers(text: str) -> str:
 
 
 def replace_labeled_items(text: str) -> str:
-    r"""Convert LaTeX \item[X:] to labeled HTML spans for answer choice lists."""
-    pattern = re.compile(r"\\item\[([A-Z]):\]")
+    r"""Keep explicit LaTeX item labels that Pandoc otherwise discards."""
+    pattern = re.compile(r"\\item\[([^\]\n]+)\]")
 
     def replace(match: re.Match[str]) -> str:
         label = match.group(1)
-        return f"\\item \\textbf{{{label}:}}"
+        return f"\\item \\textbf{{{label}}}"
 
     return pattern.sub(replace, text)
 
@@ -828,17 +865,65 @@ There are two ways to access the supplemental Jupyter Notebook:
 
 
 def run_pandoc(input_path: Path, output_path: Path) -> None:
+    # Preserve semantic list boundaries before Markdown/math cleanup can split
+    # them. In particular, display equations must remain inside their list item.
+    parsed = subprocess.run(
+        ["pandoc", str(input_path), "--from=latex", "--to=json"],
+        check=True, capture_output=True, text=True,
+    )
+    document = preserve_pandoc_lists(json.loads(parsed.stdout))
     command = [
         "pandoc",
-        str(input_path),
-        "--from=latex",
+        "--from=json",
         "--to=markdown+raw_html-simple_tables-multiline_tables-grid_tables",
         "--shift-heading-level-by=1",
         "--wrap=none",
         "-o",
         str(output_path),
     ]
-    subprocess.run(command, check=True)
+    subprocess.run(command, input=json.dumps(document), text=True, check=True)
+
+
+def preserve_pandoc_lists(node):
+    """Emit semantic HTML lists with Markdown-enabled items, including nesting.
+
+    Pandoc knows the actual item boundaries, start, and numbering style. Keeping
+    those here avoids reconstructing list membership from indentation after
+    display math, tables, code, and solution dropdowns have been converted.
+    """
+    def raw(value):
+        return {"t": "RawBlock", "c": ["html", value]}
+
+    if isinstance(node, dict):
+        return {key: preserve_pandoc_lists(value) for key, value in node.items()}
+    if not isinstance(node, list):
+        return node
+    result = []
+    styles = {
+        "DefaultStyle": "decimal", "Decimal": "decimal",
+        "LowerAlpha": "lower-alpha", "UpperAlpha": "upper-alpha",
+        "LowerRoman": "lower-roman", "UpperRoman": "upper-roman",
+        "Example": "decimal",
+    }
+    for child in node:
+        if not isinstance(child, dict) or child.get("t") not in {"OrderedList", "BulletList"}:
+            result.append(preserve_pandoc_lists(child))
+            continue
+        ordered = child["t"] == "OrderedList"
+        if ordered:
+            (start, style, _delimiter), items = child["c"]
+            tag = "ol"
+            attrs = f' start="{start}" style="list-style-type: {styles[style["t"]]};"'
+        else:
+            tag, attrs, start, items = "ul", "", 1, child["c"]
+        result.append(raw(f'<{tag} class="assignment-list" markdown="1" data-item-count="{len(items)}"{attrs}>'))
+        for index, item in enumerate(items, start):
+            value = f' value="{index}"' if ordered else ""
+            result.append(raw(f'<li markdown="1"{value}>'))
+            result.extend(preserve_pandoc_lists(item))
+            result.append(raw('</li>'))
+        result.append(raw(f'</{tag}>'))
+    return result
 
 
 def latex_fragment_to_markdown(fragment: str) -> str:
@@ -1862,6 +1947,11 @@ def validate_visible_items_match_source(
 
 
 def validate_generated_markdown_structure(markdown: str, output_md: Path) -> None:
+    from check_assignment_html import check_list_and_choice_structure
+
+    failures = check_list_and_choice_structure(markdown)
+    if failures:
+        raise SystemExit(f"{output_md}: " + "; ".join(failures))
     if re.search(r"(?m)^[ \t]*:::[ \t]*(?:[A-Za-z].*)?$", markdown):
         raise SystemExit(
             f"{output_md}: Pandoc fenced div marker leaked into generated Markdown."
