@@ -6,10 +6,6 @@ description: >-
 nav_order: 1
 ---
 
-{: .green }
-> **Welcome to EECS 245!** Make sure to read the [syllabus](syllabus) and complete the action items in the [Getting Started](syllabus#getting-started) section.
-
-
 <!-- Embed MathJax for LaTeX rendering -->
 <script>
 window.MathJax = {
