@@ -9,5 +9,6 @@ description: 3rd year undergrad, Data Science
 hometown: Saline, MI
 askabout: drawing, running, stop-motion & Studio Ghibli films
 food: Jerusalem Garden, Blue Nile, The Seoul
+foodemoji: 🥟
 published: true
 ---
