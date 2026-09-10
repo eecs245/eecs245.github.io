@@ -454,7 +454,7 @@ This is a piecewise linear function that changes slope at each data point. The s
 
 <div class="math-display">
 $$
-\frac{\text{d}}{\text{d}w} R_{\text{abs}}(w) = \frac{\text{number left of } w - \text{number right of } w}{n}
+\frac{\text{d}}{\text{d}w}R_{\text{abs}}(w) = \frac{\text{# of points left of }w-\text{# of points right of }w}{n}, \qquad w\notin\{y_1,\ldots,y_n\}
 $$
 </div>
 
@@ -482,7 +482,7 @@ Once we move beyond <span class="math-inline">\\(14\\)</span>, the balance break
 
 <div class="math-display">
 $$
-\frac{d}{dw}R_{\text{abs}}(w) = \frac{\text{number left of } w - \text{number right of } w}{n}
+\frac{\text{d}}{\text{d}w}R_{\text{abs}}(w) = \frac{\text{# of points left of }w-\text{# of points right of }w}{n}, \qquad w\notin\{y_1,\ldots,y_n\}
 $$
 </div>
 

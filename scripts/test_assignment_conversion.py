@@ -14,6 +14,21 @@ from check_assignment_html import check_list_and_choice_structure
 
 
 class AssignmentConversionTests(unittest.TestCase):
+    def test_hashes_render_without_backslashes_in_math_text(self):
+        source = r'''
+Inline: $\text{\# of points left of }w$.
+\[\frac{\text{\# of points left of }w-\text{\# of points right of }w}{n}\]
+\begin{solution}
+\[\frac{\text{\# of points left of }w-\text{\# of points right of }w}{n}\]
+\end{solution}
+'''
+        _, rendered = self.convert(source, solutions=True)
+        self.assertEqual(rendered.count(r'\text{# of points left of }'), 3)
+        self.assertEqual(rendered.count(r'\text{# of points right of }'), 2)
+        self.assertNotIn(r'\text{\#', rendered)
+        self.assertIn('<details', rendered)
+        self.assertEqual(converter.normalize_text_hashes_for_mathjax(r'\# + 1'), r'\# + 1')
+
     def convert(self, source, solutions=False):
         transformed = converter.transform_assignment_tex(source, solutions)
         transformed, tables = converter.replace_tabulars_with_html_placeholders(transformed)

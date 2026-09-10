@@ -1458,6 +1458,7 @@ def mc_square_html(correct: bool = False) -> str:
 def escape_inline_math_content(content: str) -> str:
     content = html.unescape(content)
     content = normalize_xcolor_for_mathjax(content)
+    content = normalize_text_hashes_for_mathjax(content)
     content = strip_inline_math_spacing_commands(content)
     content = protect_markdown_sensitive_math(content)
     content = content.replace(r"\{", r"\lbrace")
@@ -1468,6 +1469,16 @@ def escape_inline_math_content(content: str) -> str:
 
 def protect_markdown_sensitive_math(content: str) -> str:
     return content.replace("^{*}", r"^{\ast}").replace("^*", r"^{\ast}")
+
+
+def normalize_text_hashes_for_mathjax(content: str) -> str:
+    # MathJax's default text parser displays the backslash in \text{\#}.
+    # A bare # is literal inside \text; retain LaTeX escaping elsewhere.
+    return re.sub(
+        r"\\text\{([^{}]*)\}",
+        lambda match: r"\text{" + match.group(1).replace(r"\#", "#") + "}",
+        content,
+    )
 
 
 def normalize_xcolor_for_mathjax(content: str) -> str:
@@ -1789,6 +1800,7 @@ def fix_latex_for_mathjax(text: str) -> str:
 
     def cleanup_display_content(content: str) -> str:
         content = normalize_xcolor_for_mathjax(content)
+        content = normalize_text_hashes_for_mathjax(content)
         content = re.sub(r"\\ensuremath\{\\boxed\{([^{}]*)\}\}", r"\\boxed{\1}", content)
 
         def clean_text_command(match: re.Match[str]) -> str:
