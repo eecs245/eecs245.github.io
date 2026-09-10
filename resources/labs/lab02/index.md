@@ -892,7 +892,7 @@ In each of the parts below, determine the value of the quantity provided. By "th
 </tr>
 <tr>
 <td style="text-align: right;">(i)</td>
-<td style="text-align: left;"><span class="math-inline">\(h&#95;0^{\ast}\)</span></td>
+<td style="text-align: left;"><span class="math-inline">\(w&#95;0^{\ast}\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
@@ -903,7 +903,7 @@ In each of the parts below, determine the value of the quantity provided. By "th
 </tr>
 <tr>
 <td style="text-align: right;">(ii)</td>
-<td style="text-align: left;"><span class="math-inline">\(h&#95;1^{\ast}\)</span></td>
+<td style="text-align: left;"><span class="math-inline">\(w&#95;1^{\ast}\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
@@ -914,7 +914,7 @@ In each of the parts below, determine the value of the quantity provided. By "th
 </tr>
 <tr>
 <td style="text-align: right;">(iii)</td>
-<td style="text-align: left;"><span class="math-inline">\(R&#95;1(h&#95;1^{\ast})\)</span></td>
+<td style="text-align: left;"><span class="math-inline">\(R&#95;1(w&#95;1^{\ast})\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
@@ -925,7 +925,7 @@ In each of the parts below, determine the value of the quantity provided. By "th
 </tr>
 <tr>
 <td style="text-align: right;">(iv)</td>
-<td style="text-align: left;"><span class="math-inline">\(h&#95;2^{\ast}\)</span></td>
+<td style="text-align: left;"><span class="math-inline">\(w&#95;2^{\ast}\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
@@ -936,7 +936,7 @@ In each of the parts below, determine the value of the quantity provided. By "th
 </tr>
 <tr>
 <td style="text-align: right;">(v)</td>
-<td style="text-align: left;"><span class="math-inline">\(R&#95;2(h&#95;2^{\ast})\)</span></td>
+<td style="text-align: left;"><span class="math-inline">\(R&#95;2(w&#95;2^{\ast})\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
 <td style="text-align: left;"><span class="math-inline">\(\bigcirc\)</span></td>
@@ -953,32 +953,32 @@ In each of the parts below, determine the value of the quantity provided. By "th
 <ul class="assignment-list" markdown="1" data-item-count="5">
 <li markdown="1">
 
-**(i)** <span class="math-inline">\\(h&#95;0^{\ast}\\)</span> is none of the these. The original intention was to have <span class="math-inline">\\(R&#95;0\\)</span> be 0-1 loss, in which case <span class="math-inline">\\(h&#95;0^{\ast}\\)</span> would be the mode.
+**(i)** <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> is none of the these. The original intention was to have <span class="math-inline">\\(R&#95;0\\)</span> be 0-1 loss, in which case <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> would be the mode.
 
 </li>
 <li markdown="1">
 
-**(ii)** <span class="math-inline">\\(h&#95;1^{\ast}\\)</span> is the median of the data, since <span class="math-inline">\\(R&#95;1(w)= \displaystyle \frac{1}{n} \sum&#95;{i=1}^{n}|y&#95;i-w|\\)</span>
+**(ii)** <span class="math-inline">\\(w&#95;1^{\ast}\\)</span> is the median of the data, since <span class="math-inline">\\(R&#95;1(w)= \displaystyle \frac{1}{n} \sum&#95;{i=1}^{n}|y&#95;i-w|\\)</span>
 
 </li>
 <li markdown="1">
 
-**(iii)** <span class="math-inline">\\(R&#95;1(h&#95;1^{\ast})\\)</span> is the minimum mean absolute error, which is none of these.
+**(iii)** <span class="math-inline">\\(R&#95;1(w&#95;1^{\ast})\\)</span> is the minimum mean absolute error, which is none of these.
 
 </li>
 <li markdown="1">
 
-**(iv)** <span class="math-inline">\\(h&#95;2^{\ast}\\)</span> is the mean of the data, since <span class="math-inline">\\(R&#95;2(w)= \displaystyle \frac{1}{n} \sum&#95;{i=1}^{n}|y&#95;i-w|^2\\)</span> is equivalent to mean squared error.
+**(iv)** <span class="math-inline">\\(w&#95;2^{\ast}\\)</span> is the mean of the data, since <span class="math-inline">\\(R&#95;2(w)= \displaystyle \frac{1}{n} \sum&#95;{i=1}^{n}|y&#95;i-w|^2\\)</span> is equivalent to mean squared error.
 
 </li>
 <li markdown="1">
 
-**(v)** <span class="math-inline">\\(R&#95;2(h&#95;2^{\ast})\\)</span> is the variance of the data, or the minimum mean squared error, shown below:
+**(v)** <span class="math-inline">\\(R&#95;2(w&#95;2^{\ast})\\)</span> is the variance of the data, or the minimum mean squared error, shown below:
 
 <div class="math-display">
 $$
 \begin{align*}
-R_2(h_2^*)&=\displaystyle \frac{1}{n} \sum_{i=1}^{n}|y_i-h_2^*|^2
+R_2(w_2^*)&=\displaystyle \frac{1}{n} \sum_{i=1}^{n}|y_i-w_2^*|^2
 \\\\&=\displaystyle \frac{1}{n} \sum_{i=1}^{n}|y_i-\bar y|^2
 \\\\&=\displaystyle \frac{1}{n} \sum_{i=1}^{n}(y_i-\bar y)^2 = \sigma_y^2
 \end{align*}
@@ -995,7 +995,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Now, suppose we want to find the optimal constant prediction, <span class="math-inline">\\(h&#95;\text{U}^{\ast}\\)</span>, using the "Ulta" loss function, defined below:
+Now, suppose we want to find the optimal constant prediction, <span class="math-inline">\\(w&#95;\text{U}^{\ast}\\)</span>, using the "Ulta" loss function, defined below:
 
 <div class="math-display">
 $$
@@ -1003,13 +1003,13 @@ L_\text{U}(y_i, w) = y_i(y_i-w)^2
 $$
 </div>
 
-To find <span class="math-inline">\\(h&#95;\text{U}^{\ast}\\)</span>, we minimize <span class="math-inline">\\(R&#95;\text{U}(w)\\)</span>, the average Ulta loss. How does <span class="math-inline">\\(h&#95;\text{U}^{\ast}\\)</span> compare to the mean of the data, <span class="math-inline">\\(M\\)</span>?
+To find <span class="math-inline">\\(w&#95;\text{U}^{\ast}\\)</span>, we minimize <span class="math-inline">\\(R&#95;\text{U}(w)\\)</span>, the average Ulta loss. How does <span class="math-inline">\\(w&#95;\text{U}^{\ast}\\)</span> compare to the mean of the data, <span class="math-inline">\\(M\\)</span>?
 
-<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} &gt; M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} \geq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} = M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} \leq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} &lt; M\)</span></span></div>
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} &gt; M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} \geq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} = M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} \leq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} &lt; M\)</span></span></div>
 
 <details markdown="1"><summary>Solution</summary>
 
-<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} &gt; M\)</span></span><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} \geq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} = M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} \leq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(h&#95;\text{U}^{\ast} &lt; M\)</span></span></div>
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} &gt; M\)</span></span><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} \geq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} = M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} \leq M\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(w&#95;\text{U}^{\ast} &lt; M\)</span></span></div>
 
 Minimizing the average Ulta loss means minimizing the empirical risk:
 
@@ -1019,7 +1019,7 @@ R_\text{U}(w)=\displaystyle \frac{1}{n} \sum_{i=1}^{n}y_i(y_i-w)^2
 $$
 </div>
 
- The minimizer is <span class="math-inline">\\(h&#95;\text{U}^{\ast} = \frac{\sum&#95;{i=1}^n y&#95;i^2}{\sum&#95;{i=1}^n y&#95;i}\\)</span>. Since <span class="math-inline">\\(M &gt; 0\\)</span>, we have <span class="math-inline">\\(h&#95;\text{U}^{\ast} - M = \frac{\frac{1}{n}\sum&#95;{i=1}^n (y&#95;i-M)^2}{M} \geq 0\\)</span>. Thus, <span class="math-inline">\\(h&#95;\text{U}^{\ast} \geq M\\)</span>, with equality exactly when all the <span class="math-inline">\\(y&#95;i\\)</span> values are equal.
+ The minimizer is <span class="math-inline">\\(w&#95;\text{U}^{\ast} = \frac{\sum&#95;{i=1}^n y&#95;i^2}{\sum&#95;{i=1}^n y&#95;i}\\)</span>. Since <span class="math-inline">\\(M &gt; 0\\)</span>, we have <span class="math-inline">\\(w&#95;\text{U}^{\ast} - M = \frac{\frac{1}{n}\sum&#95;{i=1}^n (y&#95;i-M)^2}{M} \geq 0\\)</span>. Thus, <span class="math-inline">\\(w&#95;\text{U}^{\ast} \geq M\\)</span>, with equality exactly when all the <span class="math-inline">\\(y&#95;i\\)</span> values are equal.
 </details>
 
 </div>
