@@ -28,5 +28,4 @@ days:
       - name: HW 2
         type: hw
         title: Empirical Risk and Simple Linear Regression
-        problems: ../resources/homeworks/hw02/
 ---
