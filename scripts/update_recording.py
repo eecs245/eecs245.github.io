@@ -16,7 +16,8 @@ LECCAP_MANAGE_URL = os.getenv(
     "LECCAP_MANAGE_URL",
     f"{LECCAP_BASE_URL}/leccap/manage/site/recordings/{LECCAP_SITE_ID}/?q=&f=any",
 )
-MODULES_DIR = "_modules"
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODULES_DIR = os.path.join(REPO_ROOT, "_modules")
 LECCAP_TIMEOUT_MS = int(os.getenv("LECCAP_TIMEOUT_MS", "20000"))
 LECCAP_DEBUG_DIR = os.getenv("LECCAP_DEBUG_DIR")
 LECCAP_COOKIE = os.getenv("LECCAP_COOKIE")
@@ -928,20 +929,24 @@ def save_storage_state(login_url, manage_url, output_path):
         browser.close()
 
 
-def run_git_commands(path, lecture_name, recording_url, push):
-    subprocess.run(["git", "add", path], check=True)
-    lecture_fragment = lecture_name or "lecture recording"
-    message = f"Add recording link for {lecture_fragment}"
-    subprocess.run(["git", "commit", "-m", message], check=True)
-    if push:
-        subprocess.run(["git", "push"], check=True)
-    else:
-        subprocess.run(["bundle", "exec", "jekyll", "serve"], check=True)
+def run_git_commands(path, lecture_name, recording_url):
+    def git(*args):
+        return subprocess.run(["git", *args], cwd=REPO_ROOT, check=True,
+                              stdout=subprocess.PIPE if args[0] == "diff" else None, text=True)
+
+    # Compare against HEAD so retries also pick up already-staged edits.
+    if git("diff", "HEAD", "--", path).stdout:
+        lecture_fragment = lecture_name or "lecture recording"
+        git("add", "--", path)
+        git("commit", "--only", "-m", f"Add recording link for {lecture_fragment}", "--", path)
+    # A previous run may have committed successfully but failed to push.
+    git("push")
+    print(f"Recording link pushed: {recording_url}", flush=True)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Update latest Leccap recording link.")
-    parser.add_argument("--push", action="store_true", help="Commit and push changes.")
+    parser.add_argument("--push", action="store_true", help="Commit and push changes (always enabled; retained for compatibility).")
     parser.add_argument(
         "--update-title",
         action="store_true",
@@ -990,7 +995,7 @@ def main():
 
                 latest = select_latest_recording(recordings)
                 latest_target = build_recording_target(latest)
-                updated, _, _ = update_recording(
+                update_recording(
                     latest_target["module_path"],
                     latest_target["date_str"],
                     latest_target["recording_url"],
@@ -1003,6 +1008,12 @@ def main():
                     print(f"Lecture: {latest_target['recording_url']}")
                 print(f"Lecture title: {latest_target['lecture_title']}")
                 print(f"Leccap title: {latest_target['recording_title']}")
+
+                run_git_commands(
+                    latest_target["module_path"],
+                    latest_target["lecture_name"] or "lecture",
+                    latest_target["recording_url"],
+                )
 
                 for recording in select_recent_recordings(recordings, args.title_count):
                     title_target = build_recording_target(recording)
@@ -1028,18 +1039,9 @@ def main():
                             raise
                         _warn(
                             f"title update failed for {title_target['date_str']} "
-                            f"but website update will continue: {title_exc}"
+                            f"after the website link was pushed: {title_exc}"
                         )
 
-                if updated:
-                    run_git_commands(
-                        latest_target["module_path"],
-                        latest_target["lecture_name"] or "lecture",
-                        latest_target["recording_url"],
-                        args.push,
-                    )
-                else:
-                    print("Recording link already up to date; no changes made.")
                 return
             finally:
                 browser.close()
@@ -1050,7 +1052,7 @@ def main():
 
     latest = select_latest_recording(recordings)
     latest_target = build_recording_target(latest)
-    updated, _, _ = update_recording(
+    update_recording(
         latest_target["module_path"], latest_target["date_str"], latest_target["recording_url"]
     )
     if latest_target["lecture_number"]:
@@ -1062,15 +1064,11 @@ def main():
     print(f"Lecture title: {latest_target['lecture_title']}")
     print(f"Leccap title: {latest_target['recording_title']}")
 
-    if updated:
-        run_git_commands(
-            latest_target["module_path"],
-            latest_target["lecture_name"] or "lecture",
-            latest_target["recording_url"],
-            args.push,
-        )
-    else:
-        print("Recording link already up to date; no changes made.")
+    run_git_commands(
+        latest_target["module_path"],
+        latest_target["lecture_name"] or "lecture",
+        latest_target["recording_url"],
+    )
 
 
 if __name__ == "__main__":
