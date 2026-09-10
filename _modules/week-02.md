@@ -33,6 +33,7 @@ days:
         reading2_text: Ch. 2.3
         reading3: https://notes.eecs245.org/simple-linear-regression/correlation/
         reading3_text: Ch. 2.4
+        live_notes: resources/lecture-pdfs/lec04-filled.pdf
   - date: "2026-09-11"
     events:
       - name: HW 1
