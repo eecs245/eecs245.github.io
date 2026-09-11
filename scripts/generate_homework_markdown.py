@@ -122,6 +122,12 @@ mjx-container[jax="CHTML"][display="true"] {
   padding: 0.35rem 0.5rem;
   white-space: nowrap;
 }
+/* Answer-choice matrices should size to their labels, not theme column minima. */
+.main-content table.answer-choice-table th,
+.main-content table.answer-choice-table td {
+  min-width: 0;
+  padding: 0.35rem 0.4rem;
+}
 .crossnumber-grid {
   display: grid;
   grid-template-columns: repeat(3, 2.4rem);
@@ -497,6 +503,8 @@ def latex_tabular_to_html(tabular: str) -> str:
     table_html = result.stdout.strip().replace(
         '<span class="math inline">', '<span class="math-inline">'
     )
+    if r"\bigcirc" in tabular:
+        table_html = table_html.replace('<table>', '<table class="answer-choice-table">', 1)
     # Tables are restored after the page's math cleanup. Protect their inline
     # math here as well, while retaining raw HTML's single-backslash delimiters.
     return re.sub(

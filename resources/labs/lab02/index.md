@@ -114,6 +114,12 @@ mjx-container[jax="CHTML"][display="true"] {
   padding: 0.35rem 0.5rem;
   white-space: nowrap;
 }
+/* Answer-choice matrices should size to their labels, not theme column minima. */
+.main-content table.answer-choice-table th,
+.main-content table.answer-choice-table td {
+  min-width: 0;
+  padding: 0.35rem 0.4rem;
+}
 .crossnumber-grid {
   display: grid;
   grid-template-columns: repeat(3, 2.4rem);
@@ -877,7 +883,7 @@ In each of the parts below, determine the value of the quantity provided. By "th
 </li>
 </ul>
 
-<table>
+<table class="answer-choice-table">
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
@@ -953,7 +959,15 @@ In each of the parts below, determine the value of the quantity provided. By "th
 <ul class="assignment-list" markdown="1" data-item-count="5">
 <li markdown="1">
 
-**(i)** <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> is none of the these. The original intention was to have <span class="math-inline">\\(R&#95;0\\)</span> be 0-1 loss, in which case <span class="math-inline">\\(w&#95;0^{\ast}\\)</span> would be the mode.
+**(i)** **None of these.** When <span class="math-inline">\\(w=y&#95;i\\)</span>, the term <span class="math-inline">\\(|y&#95;i-w|^0\\)</span> becomes <span class="math-inline">\\(0^0\\)</span>, which is undefined. Thus, <span class="math-inline">\\(R&#95;0(w)\\)</span> is not well-defined for all <span class="math-inline">\\(w\\)</span> as written. The intended loss function was 0-1 loss, which would have made the empirical risk
+
+<div class="math-display">
+$$
+R_{0,1}(w) = \frac{1}{n} \sum_{i=1}^n L_{0,1}(y_i,w) = \frac{\text{number of points not equal to } w}{n}.
+$$
+</div>
+
+ To minimize this empirical risk, we would choose <span class="math-inline">\\(w\\)</span> to be the **mode** of the data, since it is the value that the greatest number of data points are equal to.
 
 </li>
 <li markdown="1">
