@@ -965,6 +965,11 @@ In each of the parts below, determine the value of the quantity provided. By "th
 $$
 \begin{align*}
 R_{0,1}(w) &= \frac{1}{n} \sum_{i=1}^n L_{0,1}(y_i,w) \\\\
+&= \frac{1}{n} \sum_{i = 1}^n
+\begin{cases}
+0 \quad y_i = w \\\\
+1 \quad y_i \neq w
+\end{cases} \\\\
 &= \frac{\text{number of points not equal to } w}{n}.
 \end{align*}
 $$
