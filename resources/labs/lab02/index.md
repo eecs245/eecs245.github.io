@@ -963,11 +963,14 @@ In each of the parts below, determine the value of the quantity provided. By "th
 
 <div class="math-display">
 $$
-R_{0,1}(w) = \frac{1}{n} \sum_{i=1}^n L_{0,1}(y_i,w) = \frac{\text{number of points not equal to } w}{n}.
+\begin{align*}
+R_{0,1}(w) &= \frac{1}{n} \sum_{i=1}^n L_{0,1}(y_i,w) \\\\
+&= \frac{\text{number of points not equal to } w}{n}.
+\end{align*}
 $$
 </div>
 
- To minimize this empirical risk, we would choose <span class="math-inline">\\(w\\)</span> to be the **mode** of the data, since it is the value that the greatest number of data points are equal to.
+To minimize this empirical risk, we would choose <span class="math-inline">\\(w\\)</span> to be the **mode** of the data, since it is the value that the greatest number of data points are equal to.
 
 </li>
 <li markdown="1">
