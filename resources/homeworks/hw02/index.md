@@ -114,6 +114,12 @@ mjx-container[jax="CHTML"][display="true"] {
   padding: 0.35rem 0.5rem;
   white-space: nowrap;
 }
+/* Answer-choice matrices should size to their labels, not theme column minima. */
+.main-content table.answer-choice-table th,
+.main-content table.answer-choice-table td {
+  min-width: 0;
+  padding: 0.35rem 0.4rem;
+}
 .crossnumber-grid {
   display: grid;
   grid-template-columns: repeat(3, 2.4rem);

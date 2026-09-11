@@ -27,5 +27,6 @@ days:
     events:
       - name: HW 2
         type: hw
-        title: Empirical Risk and Simple Linear Regression
+        title: <b>Empirical Risk and Simple Linear Regression</b>
+        problems: ../resources/homeworks/hw02/
 ---
