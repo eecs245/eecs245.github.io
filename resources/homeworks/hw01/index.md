@@ -19,6 +19,15 @@ window.MathJax = {
 .main-content p {
   margin-bottom: 1.15em;
 }
+.main-content .assignment-list > li {
+  display: list-item;
+}
+.main-content .assignment-list > li::before {
+  content: none;
+}
+.main-content ul.assignment-list {
+  list-style-type: disc;
+}
 .assignment-pdf-button {
   font-size: 0.95rem;
   padding: 0.35rem 0.65rem;
@@ -105,6 +114,37 @@ mjx-container[jax="CHTML"][display="true"] {
   padding: 0.35rem 0.5rem;
   white-space: nowrap;
 }
+/* Answer-choice matrices should size to their labels, not theme column minima. */
+.main-content table.answer-choice-table th,
+.main-content table.answer-choice-table td {
+  min-width: 0;
+  padding: 0.35rem 0.4rem;
+}
+.crossnumber-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2.4rem);
+  grid-template-rows: repeat(3, 2.4rem);
+  margin: 1rem auto;
+  width: max-content;
+}
+.crossnumber-cell {
+  align-items: center;
+  border: 1.5px solid currentColor;
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: center;
+  position: relative;
+}
+.crossnumber-label {
+  font-size: 0.55rem;
+  left: 0.15rem;
+  line-height: 1;
+  position: absolute;
+  top: 0.15rem;
+}
+.crossnumber-missing {
+  border: 0;
+}
 </style>
 
 # Homework 1: Means, Sums, and Calculus
@@ -113,6 +153,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw01/hw01.pdf" target="_blank">View as PDF ✏️</a>
+<a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw01/hw01-solutions.pdf" target="_blank">Solutions PDF ✅</a>
 </div>
 
 {: .yellow }
@@ -154,9 +195,18 @@ This problem involves writing code and submitting it to the Pensive autograder.
 
 There are two ways to access the supplemental Jupyter Notebook:
 
--   **Option 1 (preferred)**: Set up a Jupyter Notebook environment locally, use `git` to clone our [course repository](https://github.com/eecs245/fa26-code/tree/main), and open `homeworks/hw01/hw01.ipynb`. For instructions on how to do this, see the [Environment Setup](https://eecs245.org/env-setup) page of the course website.
+<ul class="assignment-list" markdown="1" data-item-count="2">
+<li markdown="1">
 
--   **Option 2**: Click [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa26-code&urlpath=tree%2Ffa26-code%2Fhomeworks%2Fhw01%2Fhw01.ipynb&branch=main) to open `hw01.ipynb` on DataHub. Before doing so, read the instructions on the [Environment Setup](https://eecs245.org/env-setup/#option-2-using-the-eecs-245-datahub) page on how to use the DataHub.
+**Option 1 (preferred)**: Set up a Jupyter Notebook environment locally, use `git` to clone our [course repository](https://github.com/eecs245/fa26-code/tree/main), and open `homeworks/hw01/hw01.ipynb`. For instructions on how to do this, see the [Environment Setup](https://eecs245.org/env-setup) page of the course website.
+
+</li>
+<li markdown="1">
+
+**Option 2**: Click [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa26-code&urlpath=tree%2Ffa26-code%2Fhomeworks%2Fhw01%2Fhw01.ipynb&branch=main) to open `hw01.ipynb` on DataHub. Before doing so, read the instructions on the [Environment Setup](https://eecs245.org/env-setup/#option-2-using-the-eecs-245-datahub) page on how to use the DataHub.
+
+</li>
+</ul>
 
 To receive credit for the programming portion of the homework, you'll need to submit your completed notebook to the autograder on Pensive. Your submission time for Homework 1 is the **latter** of your PDF and code submission times.
 
@@ -166,12 +216,43 @@ To receive credit for the programming portion of the homework, you'll need to su
 
 In this problem, we'll look at an example of how "simple" data analysis is not always so simple. Consider two students, Lisa and Bart, who have completed three semesters at Michigan. **In each semester, Lisa earns a higher GPA than Bart.**
 
-| **Semester** | **Lisa** |         | **Bart** |         |
-|:------------:|:--------:|:-------:|:--------:|:-------:|
-|              |   GPA    | Credits |   GPA    | Credits |
-|     FA24     |   2.3    |   20    |   2.0    |    5    |
-|     WN25     |   3.0    |   18    |   2.7    |    5    |
-|     FA25     |   4.0    |    5    |   3.7    |   22    |
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Semester</strong></td>
+<td colspan="2" style="text-align: center;"><strong>Lisa</strong></td>
+<td colspan="2" style="text-align: center;"><strong>Bart</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GPA</td>
+<td style="text-align: center;">Credits</td>
+<td style="text-align: center;">GPA</td>
+<td style="text-align: center;">Credits</td>
+</tr>
+<tr>
+<td style="text-align: center;">FA24</td>
+<td style="text-align: center;">2.3</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">WN25</td>
+<td style="text-align: center;">3.0</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">2.7</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">FA25</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3.7</td>
+<td style="text-align: center;">22</td>
+</tr>
+</tbody>
+</table>
 
 But, **Bart has a higher overall GPA**! Remember that GPA is a **weighted average**, where each course grade is weighted by the number of credits the course is worth. Lisa's overall GPA is
 
@@ -187,17 +268,58 @@ Why does this happen? Even though Lisa has a higher GPA in every semester, Bart 
 
 In a similar vein, consider the following data on the weights of dogs in Veterinarian Kyle's care, separated by district and breed.
 
-|              | **Golden Retriever** |       | **German Shepherd** |       |
-|:------------:|:--------------------:|:-----:|:-------------------:|:-----:|
-| **District** |     Mean Weight      | Count |     Mean Weight     | Count |
-|  District 1  |          30          |   4   |         20          |   3   |
-|  District 2  |          45          |   1   |         <span class="math-inline">\\(a\\)</span>         |  <span class="math-inline">\\(b\\)</span>  |
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td colspan="2" style="text-align: center;"><strong>Golden Retriever</strong></td>
+<td colspan="2" style="text-align: center;"><strong>German Shepherd</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>District</strong></td>
+<td style="text-align: center;">Mean Weight</td>
+<td style="text-align: center;">Count</td>
+<td style="text-align: center;">Mean Weight</td>
+<td style="text-align: center;">Count</td>
+</tr>
+<tr>
+<td style="text-align: center;">District 1</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">District 2</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math-inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math-inline">\(b\)</span></td>
+</tr>
+</tbody>
+</table>
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
 (2 pts) What is the mean weight of all Golden Retrievers in Kyle's care?
+
+<details markdown="1"><summary>Solution</summary>
+
+Since the data is grouped, we compute a weighted average:
+
+<div class="math-display">
+$$
+\begin{align*}
+\frac{30 \cdot 4 + 45 \cdot 1}{4 + 1}
+&= \frac{165}{5}
+= \boxed{33}
+\end{align*}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -207,13 +329,77 @@ In a similar vein, consider the following data on the weights of dogs in Veterin
 <div class="assignment-part-content" markdown="1">
 (3 pts) Find **integers** <span class="math-inline">\\(a\\)</span> and <span class="math-inline">\\(b\\)</span> such that the following all hold:
 
--   In District 1, the mean weight of Golden Retrievers is greater than the mean weight of German Shepherds.
+<ul class="assignment-list" markdown="1" data-item-count="3">
+<li markdown="1">
 
--   In District 2, the mean weight of Golden Retrievers is greater than the mean weight of German Shepherds.
+In District 1, the mean weight of Golden Retrievers is greater than the mean weight of German Shepherds.
 
--   Overall, the mean weight of Golden Retrievers is less than the mean weight of German Shepherds.
+</li>
+<li markdown="1">
+
+In District 2, the mean weight of Golden Retrievers is greater than the mean weight of German Shepherds.
+
+</li>
+<li markdown="1">
+
+Overall, the mean weight of Golden Retrievers is less than the mean weight of German Shepherds.
+
+</li>
+</ul>
 
 There are infinitely many solutions. Give a solution with the **smallest possible value of <span class="math-inline">\\(a\\)</span>**. If multiple values of <span class="math-inline">\\(b\\)</span> remain, give the smallest such value. Remember to show your work, as with every other problem in this homework.
+
+<details markdown="1"><summary>Solution</summary>
+
+The first condition already holds since <span class="math-inline">\\(30 &gt; 20\\)</span>.
+
+For District 2, we require
+
+<div class="math-display">
+$$
+45 > a
+$$
+</div>
+
+From part (a), the overall mean weight of Golden Retrievers is <span class="math-inline">\\(33\\)</span>. Since the German Shepherd mean in District 1 is below <span class="math-inline">\\(33\\)</span>, the mean in District 2 must exceed <span class="math-inline">\\(33\\)</span> to raise the overall average above <span class="math-inline">\\(33\\)</span>.
+
+The smallest integer satisfying this is
+
+<div class="math-display">
+$$
+a = 34
+$$
+</div>
+
+The overall mean weight of German Shepherds is then
+
+<div class="math-display">
+$$
+\frac{20 \cdot 3 + 34b}{3 + b}
+$$
+</div>
+
+We require this quantity to be greater than <span class="math-inline">\\(33\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+\frac{60 + 34b}{3 + b} &> 33 \\\\
+60 + 34b &> 99 + 33b \\\\
+b &> 39
+\end{align*}
+$$
+</div>
+
+The smallest integer satisfying this inequality is <span class="math-inline">\\(b = 40\\)</span>, so
+
+<div class="math-display">
+$$
+\boxed{a = 34 \quad b = 40}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -268,6 +454,11 @@ Consider a dataset of numbers <span class="math-inline">\\(y&#95;1, y&#95;2, \ld
 <div class="assignment-part-content" markdown="1">
 (2 pts) At least half of the numbers in the dataset must be less than the mean.
 
+<details markdown="1"><summary>Solution</summary>
+
+False. Consider the dataset <span class="math-inline">\\(1\\)</span>, <span class="math-inline">\\(1\\)</span>, and <span class="math-inline">\\(1\\)</span>. The mean is <span class="math-inline">\\(1\\)</span>, and none of the numbers in the dataset are less than it, so it does not have to be the case that at least half of the numbers in the dataset are less than the mean.
+</details>
+
 </div>
 </div>
 
@@ -275,6 +466,13 @@ Consider a dataset of numbers <span class="math-inline">\\(y&#95;1, y&#95;2, \ld
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
 (2 pts) Suppose that all of the numbers in the dataset are unique. Then, removing the largest number from the dataset will increase the mean.
+
+<details markdown="1"><summary>Solution</summary>
+
+False. Consider the dataset <span class="math-inline">\\(1\\)</span>, <span class="math-inline">\\(2\\)</span>, and <span class="math-inline">\\(3\\)</span>. The mean is <span class="math-inline">\\(2\\)</span>. If we remove the largest number, <span class="math-inline">\\(3\\)</span>, the mean becomes <span class="math-inline">\\(1.5\\)</span>, which is less than <span class="math-inline">\\(2\\)</span>, the original mean, so it does not have to be true in general that removing the largest number from the dataset will increase the mean.
+
+This statement was designed to sound tricky, but if you pay close attention to the wording, you'll see that it's almost nonsensical --- removing the largest number should decrease the mean, intuitively, not increase it.
+</details>
 
 </div>
 </div>
@@ -284,6 +482,11 @@ Consider a dataset of numbers <span class="math-inline">\\(y&#95;1, y&#95;2, \ld
 <div class="assignment-part-content" markdown="1">
 (2 pts) Suppose that all of the numbers in the dataset are unique, that <span class="math-inline">\\(n\\)</span> is odd, and that the mean of the dataset is not equal to the median of the dataset. Then, if we remove the median value from the dataset, the median of the new dataset must be different from the median of the original dataset.
 
+<details markdown="1"><summary>Solution</summary>
+
+False. Consider the dataset <span class="math-inline">\\(1\\)</span>, <span class="math-inline">\\(3\\)</span>, <span class="math-inline">\\(5\\)</span>, <span class="math-inline">\\(7\\)</span> <span class="math-inline">\\(10\\)</span>. The median is <span class="math-inline">\\(5\\)</span>, and the mean is <span class="math-inline">\\(\frac{26}{5}\\)</span>. If we remove the median, the median becomes <span class="math-inline">\\(\frac{(3+7)}{2}\\)</span>, which is still 5.
+</details>
+
 </div>
 </div>
 
@@ -291,6 +494,28 @@ Consider a dataset of numbers <span class="math-inline">\\(y&#95;1, y&#95;2, \ld
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
 (2 pts) Suppose we introduce a new number to the dataset that is greater than the mean of the existing dataset. The mean of the new dataset must be greater than the mean of the original dataset.
+
+<details markdown="1"><summary>Solution</summary>
+
+True. Let <span class="math-inline">\\(\bar{y}\\)</span> be the mean of the existing dataset, <span class="math-inline">\\(\bar{y}'\\)</span> be the mean of the new dataset, and <span class="math-inline">\\(y&#95;{n+1}=\bar{y}+c\\)</span> where <span class="math-inline">\\(c&gt;0\\)</span>.
+
+<div class="math-display">
+$$
+\begin{align*}
+\bar{y}' &= \frac{1}{n+1} \sum_{i = 1}^{n + 1} y_i \\\\
+&= \frac{1}{n+1} \left( \sum_{i = 1}^{n} y_i + y_{n+1}\right) \\\\
+&= \frac{1}{n+1} \left( \bar{y} \cdot n + y_{n+1} \right) \\\\
+&= \frac{1}{n+1} \left( \bar{y} \cdot n + \bar{y}+c \right) \\\\
+&= \frac{1}{n+1} \left( \bar{y}(n+1) + c \right) \\\\
+&= \frac{1}{n+1} \left( \bar{y}(n+1) + c \right) \\\\
+&= \frac{\bar{y}(n+1)}{n+1} + \frac{c}{n+1} \\\\
+&= \bar{y} + \frac{c}{n+1}
+\end{align*}
+$$
+</div>
+
+Since <span class="math-inline">\\(c&gt;0\\)</span>, our new mean is greater than the old mean.
+</details>
 
 </div>
 </div>
@@ -323,6 +548,34 @@ Let the new mean and standard deviation of all <span class="math-inline">\\(n + 
 <div class="assignment-part-content" markdown="1">
 (2 pts) Find <span class="math-inline">\\(\bar{y}'\\)</span> in terms of <span class="math-inline">\\(\bar{y}\\)</span>, <span class="math-inline">\\(n\\)</span>, <span class="math-inline">\\(k\\)</span>, and <span class="math-inline">\\(s\\)</span>. You may not need to use all of these variables in your answer. Remember that simply writing a formula for <span class="math-inline">\\(\bar{y}'\\)</span> is not enough; you must show your work.
 
+<details markdown="1"><summary>Solution</summary>
+
+To proceed, we'll start by finding the sum of the existing <span class="math-inline">\\(n\\)</span> values. We can then use this to find the new mean, which will be the sum of the existing <span class="math-inline">\\(n\\)</span> values plus the sum of the <span class="math-inline">\\(k\\)</span> new values, all divided by <span class="math-inline">\\(n + k\\)</span>.
+
+<div class="math-display">
+$$
+\frac{1}{n}\sum_{i=1}^n y_i = \bar{y} \implies \sum_{i=1}^ny_i = \bar{y}\cdot n
+$$
+</div>
+
+So, the new mean, <span class="math-inline">\\(\bar{y}' = \frac{1}{n + k} \sum&#95;{i = 1}^{n + k} y&#95;i\\)</span>, is:
+
+<div class="math-display">
+$$
+\begin{align*}
+\bar{y}' &= \frac{1}{n+k} \sum_{i = 1}^{n + k} y_i \\\\
+&= \frac{1}{n+k} \left( \sum_{i = 1}^n y_i + \sum_{i = n+1}^{n+k} y_i \right) \:\:\:\: \text{(separating the sum)} \\\\
+&= \frac{1}{n+k} \left( \bar{y} \cdot n + \sum_{i = n+1}^{n+k} y_i \right) \:\:\:\: \text{(using the fact that the old sum is $\bar{y} \cdot n$ from above)} \\\\
+&= \frac{1}{n+k} \left( \bar{y} \cdot n + \sum_{i = n+1}^{n+k} \bar{y} \right) \:\:\:\: \text{(using the fact that all $k$ of the new values are equal to $\bar{y}$)} \\\\
+&= \frac{1}{n+k} \left( \bar{y} \cdot n + \bar{y} \cdot k \right) \\\\
+&= \frac{1}{n+k} \bar{y}(n + k) \\\\
+&= \bar{y}
+\end{align*}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -331,6 +584,47 @@ Let the new mean and standard deviation of all <span class="math-inline">\\(n + 
 <div class="assignment-part-content" markdown="1">
 (3 pts) Find <span class="math-inline">\\(s'\\)</span> in terms of <span class="math-inline">\\(\bar{y}\\)</span>, <span class="math-inline">\\(n\\)</span>, <span class="math-inline">\\(k\\)</span>, and <span class="math-inline">\\(s\\)</span>. Again, you may not need to use all of these variables in your answer.
 
+<details markdown="1"><summary>Solution</summary>
+
+In part **a)**, we showed that the new mean, <span class="math-inline">\\(\bar{y}'\\)</span>, is equal to the old mean, <span class="math-inline">\\(\bar{y}\\)</span>. The old standard deviation, <span class="math-inline">\\(s\\)</span>, is:
+
+<div class="math-display">
+$$
+s = \sqrt{\frac{\sum_{i = 1}^n (y_i - \bar{y})^2}{n}}
+$$
+</div>
+
+Similar to in part **a)**, it'll help to express the summation <span class="math-inline">\\(\sum&#95;{i = 1}^n (y&#95;i - \bar{y})^2\\)</span> in terms of <span class="math-inline">\\(s\\)</span> and <span class="math-inline">\\(n\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+s &= \sqrt{\frac{\sum_{i = 1}^n (y_i - \bar{y})^2}{n}} \\\\
+s^2 &= \frac{\sum_{i = 1}^n (y_i - \bar{y})^2}{n} \\\\
+ns^2 &= \sum_{i = 1}^n (y_i - \bar{y})^2
+\end{align*}
+$$
+</div>
+
+With this in mind, let's try and solve for <span class="math-inline">\\(s'\\)</span>. Note that we will use the same mean, <span class="math-inline">\\(\bar{y}\\)</span>, as we did in the first part, since the mean of the first <span class="math-inline">\\(n\\)</span> values is the same as the mean of all <span class="math-inline">\\(n+k\\)</span> values. Here we go!
+
+<div class="math-display">
+$$
+\begin{align*}
+s' &= \sqrt{\frac{\sum_{i = 1}^{n+k} (y_i - \bar{y})^2}{n+k}} \\\\
+&= \sqrt{\frac{\sum_{i = 1}^{n} (y_i - \bar{y})^2 + \sum_{i = n+1}^{n+k} (y_i - \bar{y})^2}{n+k}} \:\:\:\: \text{(separating the sum)} \\\\
+&= \sqrt{\frac{ns^2 + \sum_{i = n+1}^{n+k} (y_i - \bar{y})^2}{n+k}} \:\:\:\: \text{(substituting $ns^2$ for $\sum_{i = 1}^{n} (y_i - \bar{y})^2$ from above)} \\\\
+&= \sqrt{\frac{ns^2 + \sum_{i = n+1}^{n+k} (\bar{y} - \bar{y})^2}{n+k}} \:\:\:\: \text{(using the fact that all $k$ of the new values are equal to $\bar{y}$)} \\\\
+&= \sqrt{\frac{ns^2 + \sum_{i = n+1}^{n+k} 0}{n+k}} \\\\
+&= \sqrt{\frac{ns^2}{n+k}} \\\\
+&= s\sqrt{\frac{n}{n+k}} \\\\
+\end{align*}
+$$
+</div>
+
+So, the new standard deviation <span class="math-inline">\\(s'\\)</span> is equal to <span class="math-inline">\\(\boxed{s \sqrt{\frac{n}{n+k}}}\\)</span>.
+</details>
+
 </div>
 </div>
 
@@ -338,6 +632,11 @@ Let the new mean and standard deviation of all <span class="math-inline">\\(n + 
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
 (1 pt) In part **b)**, you should have found that the value of <span class="math-inline">\\(s'\\)</span> is less than the value of <span class="math-inline">\\(s\\)</span>. Give an intuitive explanation of *why* this is the case, as long as <span class="math-inline">\\(k &gt; 0\\)</span>. What is the standard deviation of a dataset supposed to measure?
+
+<details markdown="1"><summary>Solution</summary>
+
+The standard deviation is a rough measure of how far values are from the mean across the dataset. If <span class="math-inline">\\(k&gt;0\\)</span>, then we're adding extra values equal to the mean to our dataset, which decreases the standard deviation.
+</details>
 
 </div>
 </div>
@@ -370,6 +669,24 @@ Consider a dataset of numbers <span class="math-inline">\\(y&#95;1, \ldots, y&#9
 <div class="assignment-part-content" markdown="1">
 (2 pts) What is the value of <span class="math-inline">\\(\displaystyle \frac{1}{n} \sum&#95;{i=1}^n (y&#95;i - \bar{y})\\)</span>? Show your work, even if the answer is familiar from [Appendix 1](https://notes.eecs245.org/math-foundations/summation/).
 
+<details markdown="1"><summary>Solution</summary>
+
+To proceed, we'll use the fact that <span class="math-inline">\\(\bar{y}\\)</span>, by definition, is <span class="math-inline">\\(\bar{y} = \frac{1}{n} \sum&#95;{i = 1}^n y&#95;i\\)</span>, meaning that <span class="math-inline">\\(\sum&#95;{i = 1}^n y&#95;i = n \bar{y}\\)</span>.
+
+<div class="math-display">
+$$
+\begin{align*}
+\frac{1}{n}\sum_{i = 1}^n (y_i - \bar{y}) &= \frac{1}{n}\big(\sum_{i = 1}^n y_i - \sum_{i = 1}^n \bar{y} \big)\\\\
+&= \frac{1}{n} \big( n \bar{y} - \sum_{i = 1}^n \bar{y}\big) \\\\
+&= \frac{1}{n} \big( n \bar{y} - n \bar{y} \big) \\\\
+&= \boxed{0}
+\end{align*}
+$$
+</div>
+
+So, <span class="math-inline">\\(\frac{1}{n}\sum&#95;{i = 1}^n (y&#95;i - \bar{y}) = 0\\)</span>.
+</details>
+
 </div>
 </div>
 
@@ -386,9 +703,35 @@ $$
 
  Some guidance:
 
--   To proceed, start by rewriting <span class="math-inline">\\(y&#95;i - w\\)</span> in the definition of <span class="math-inline">\\(R&#95;{\text{sq}}(w)\\)</span> as <span class="math-inline">\\((y&#95;i - \bar{y}) + (\bar{y} - w)\\)</span>. Why is this a valid step?
+<ul class="assignment-list" markdown="1" data-item-count="2">
+<li markdown="1">
 
--   Make sure not to expand unnecessarily. Your work should only take 3-4 lines.
+To proceed, start by rewriting <span class="math-inline">\\(y&#95;i - w\\)</span> in the definition of <span class="math-inline">\\(R&#95;{\text{sq}}(w)\\)</span> as <span class="math-inline">\\((y&#95;i - \bar{y}) + (\bar{y} - w)\\)</span>. Why is this a valid step?
+
+</li>
+<li markdown="1">
+
+Make sure not to expand unnecessarily. Your work should only take 3-4 lines.
+
+</li>
+</ul>
+
+<details markdown="1"><summary>Solution</summary>
+
+We know that <span class="math-inline">\\(R&#95;\text{sq}(w) = \frac{1}{n}\sum&#95;{i=1}^n (y&#95;i-w)^2\\)</span>. We can write this out as
+
+<div class="math-display">
+$$
+\begin{align*}
+R_\text{sq}(w) &= \frac{1}{n}\sum_{i=1}^n (y_i-w)^2 \\\\
+&= \frac{1}{n}\sum_{i=1}^n ((y_i-\bar{y})+(\bar{y}-w))^2 \\\\
+&= \frac{1}{n}\sum_{i=1}^n ((y_i-\bar{y})^2+ 2(y_i-\bar{y})(\bar{y}-w)+(\bar{y}-w)^2) \:\:\:\:\:\: \text{\parbox{4cm}{(expanding the square $(a+b)^2=a^2+2ab+b^2$ \\\\
+and rearranging terms)}}
+\end{align*}
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -406,6 +749,26 @@ $$
 
  This is called the **bias-variance decomposition** of <span class="math-inline">\\(R&#95;{\text{sq}}(w)\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+From part **b)**, we know <span class="math-inline">\\(\displaystyle R&#95;{\text{sq}}(w) = \frac{1}{n}\sum&#95;{i=1}^n ((y&#95;i-\bar{y})^2+ 2(y&#95;i-\bar{y})(\bar{y}-w)+(\bar{y}-w)^2)\\)</span>.
+
+<div class="math-display">
+$$
+\begin{align*}
+&\implies R_{\text{sq}}(w) =\frac{1}{n} \left( \sum_{i=1}^n (y_i-\bar{y})^2+ \sum_{i=1}^n2(y_i-\bar{y})(\bar{y}-w)+\sum_{i=1}^n(\bar{y}-w)^2\right) \\\\
+&=\frac{1}{n} \left( \sum_{i=1}^n (y_i-\bar{y})^2+ 2(\bar{y}-w)\sum_{i=1}^n(y_i-\bar{y})+\sum_{i=1}^n(\bar{y}-w)^2\right)\\\\
+&=\frac{1}{n} \left( \sum_{i=1}^n (y_i-\bar{y})^2+ 2(\bar{y}-w)\cdot0+\sum_{i=1}^n(\bar{y}-w)^2\right)\:\:\:\:(\text{from 3.1, we know} \sum_{i=1}^n (y_i-\bar{y}) = 0) \\\\
+&=\frac{1}{n} \left( \sum_{i=1}^n (y_i-\bar{y})^2+ 0+\sum_{i=1}^n(\bar{y}-w)^2\right) \\\\
+&=\frac{1}{n} \left( \sum_{i=1}^n (y_i-\bar{y})^2+\sum_{i=1}^n(\bar{y}-w)^2\right) \\\\
+&=\frac{1}{n} \left( \sum_{i=1}^n (y_i-\bar{y})^2+n\cdot(\bar{y}-w)^2\right)\\\\
+&=\frac{1}{n} \sum_{i=1}^n (y_i-\bar{y})^2+(\bar{y}-w)^2\\\\
+\end{align*}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -413,6 +776,11 @@ $$
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
 (1 pt) Why does the result in part **c)** prove that <span class="math-inline">\\(w^{\ast} = \bar{y}\\)</span> minimizes <span class="math-inline">\\(R&#95;{\text{sq}}(w)\\)</span>?
+
+<details markdown="1"><summary>Solution</summary>
+
+From part **c)**, we know <span class="math-inline">\\(R&#95;\text{sq}(w) = \frac{1}{n} \sum&#95;{i=1}^n (y&#95;i-\bar{y})^2+(\bar{y}-w)^2\\)</span>. The term <span class="math-inline">\\(\frac{1}{n} \sum&#95;{i=1}^n (y&#95;i-\bar{y})^2\\)</span> is the variance, which is a constant that does not depend on <span class="math-inline">\\(w\\)</span>, so we only need to minimize <span class="math-inline">\\((\bar{y}-w)^2\\)</span>. The minimum possible value for this is 0, since it is a squared term and cannot have a negative value. We set <span class="math-inline">\\((\bar{y} - w) = 0\\)</span> which gives us the equation <span class="math-inline">\\(w=\bar{y}\\)</span>. Thus the minimizing value of <span class="math-inline">\\(w\\)</span> is <span class="math-inline">\\(w^{\ast} = \bar{y}\\)</span>.
+</details>
 
 </div>
 </div>
@@ -435,6 +803,11 @@ The value of <span class="math-inline">\\(R&#95;{\text{sq}}(w^{\ast})\\)</span>,
 <span class="answer-blank"></span>
 
 of the data.
+
+<details markdown="1"><summary>Solution</summary>
+
+variance
+</details>
 
 </div>
 </div>
@@ -487,6 +860,41 @@ The letter <span class="math-inline">\\(L\\)</span> stands for "likelihood". For
 
 Find <span class="math-inline">\\(\frac{\text{d}L}{\text{d}p}\\)</span>, and use it to find the value of <span class="math-inline">\\(p\\)</span> that maximizes <span class="math-inline">\\(L(p)\\)</span>. (You do not need to perform a second derivative test.) Feel free to refer to the [Appendix 2](https://notes.eecs245.org/math-foundations/derivatives/) for a review of derivative rules.
 
+<details markdown="1"><summary>Solution</summary>
+
+We'll start by finding the derivative <span class="math-inline">\\(\frac{\text{d}L}{\text{d}p}\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+L(p) &= { n \choose k } p^k (1-p)^{n-k} \\\\
+\frac{d}{dp}L(p) &= \frac{d}{dp} \big[{ n \choose k } p^k (1-p)^{n-k} \big] \\\\
+&= { n \choose k } \frac{d}{dp} \big[ p^k (1-p)^{n-k} \big] \:\:\:\: \text{(factor out constant)} \\\\
+&= { n \choose k } \big(\frac{d}{dp}p^k \cdot (1-p)^{n-k} + p^k \cdot \frac{d}{dp} (1-p)^{n-k}\big) \:\:\:\: \text{(product rule)}\\\\
+&= { n \choose k } \big(kp^{k-1} (1-p)^{n-k} + p^k (n-k)(1-p)^{n-k-1} \frac{d}{dp}(1-p)\big) \:\:\:\: \text{(chain rule)} \\\\
+&= { n \choose k } \big( kp^{k-1} (1-p)^{n-k} + p^k (n-k)(1-p)^{n-k-1}(-1) \big)
+\end{align*}
+$$
+</div>
+
+Next, we set <span class="math-inline">\\(\frac{\text{d}L}{\text{d}p}\\)</span> to 0 and solve for <span class="math-inline">\\(p\\)</span>.
+
+<div class="math-display">
+$$
+\begin{align*}
+{ n \choose k }\cdot \left( kp^{k-1} (1-p)^{n-k} + p^k (n-k)(1-p)^{n-k-1}(-1) \right) &= 0 \\\\
+kp^{k-1} (1-p)^{n-k} - p^k (n-k)(1-p)^{n-k-1} &= 0 \\\\
+kp^{k-1} (1-p)^{n-k} &= p^k (n-k)(1-p)^{n-k-1} \\\\
+k (1-p) &= p (n-k) \\\\
+k - p k &= p n - p k \\\\
+k &= p n \\\\
+p^* &= \boxed{\frac{k}{n}}
+\end{align*}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -520,6 +928,51 @@ $$
 
 Then, show that the value of <span class="math-inline">\\(p\\)</span> that maximizes <span class="math-inline">\\(L(p)\\)</span> is the same as the value of <span class="math-inline">\\(p\\)</span> that maximizes <span class="math-inline">\\(\log(L(p))\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+We'll start by simplifying <span class="math-inline">\\(\log L(p)\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+L(p) &= {n \choose k} p^k (1-p)^{n-k} \\\\
+\log L(p) &= \log \left( {n \choose k} p^k (1-p)^{n-k} \right) \\\\
+&= \log {n \choose k}  + \log \left(p^k \right) + \log \left((1 - p)^{n-k}\right) \\\\
+&= \log {n \choose k} + k \log p + (n - k) \log (1 - p)
+\end{align*}
+$$
+</div>
+
+Next, take the derivative of <span class="math-inline">\\(\log L(p)\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+\frac{d}{dp} \log L(p) &= \frac{d}{dp} \big[\log {n \choose k} + k \log p + (n - k) \log (1 - p)\big] \\\\
+&=\frac{d}{dp}\log {n \choose k} + \frac{d}{dp}k \log p + \frac{d}{dp}(n - k) \log (1 - p) \\\\
+&= 0 + k \cdot \frac{1}{p} + (n - k) \cdot\frac{1}{1 - p}\frac{d}{dp}(1-p) \:\:\:\: \text{(chain rule)} \\\\
+&= 0 + k \cdot \frac{1}{p} + (n - k) \cdot\frac{1}{1 - p}(-1) \\\\
+& = \frac{k}{p} - \frac{n - k}{1 - p} \\\\
+\end{align*}
+$$
+</div>
+
+Finally, set to 0 and solve:
+
+<div class="math-display">
+$$
+\begin{align*}
+0 &= \frac{k}{p} - \frac{n - k}{1 - p} \\\\
+\frac{k}{p} &= \frac{n - k}{1 - p} \\\\
+k - p k &= p n - p k \\\\
+k &= p n \\\\
+p^* &= \boxed{\frac{k}{n}}
+\end{align*}
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -537,6 +990,11 @@ But why was this a valid step? Why does the value of <span class="math-inline">\
 As we see above, the function <span class="math-inline">\\(f(x) = \log(x)\\)</span> is a **strictly monotonically increasing** function. This means that if <span class="math-inline">\\(a &gt; b\\)</span>, then <span class="math-inline">\\(\log(a) &gt; \log(b)\\)</span>, i.e. the graph of <span class="math-inline">\\(\log(x)\\)</span> always increases as we move from left to right.
 
 Provide a **two sentence explanation** of why the value of <span class="math-inline">\\(p\\)</span> that maximizes <span class="math-inline">\\(L(p)\\)</span> is the same as the value of <span class="math-inline">\\(p\\)</span> that maximizes <span class="math-inline">\\(\log(L(p))\\)</span>. You don't need to "prove" or write any math here, as the answer was already provided to you implicitly in this problem --- we want to ensure you understand *why* the fact that <span class="math-inline">\\(\log(x)\\)</span> is strictly monotonically increasing implies that the value of <span class="math-inline">\\(p\\)</span> that maximizes <span class="math-inline">\\(L(p)\\)</span> is the same as the value of <span class="math-inline">\\(p\\)</span> that maximizes <span class="math-inline">\\(\log(L(p))\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+If there's a maximum value at <span class="math-inline">\\(L(p^{\ast})\\)</span>, then there's also a maximum value at <span class="math-inline">\\(\log (L(p^{\ast}))\\)</span>. This holds because <span class="math-inline">\\(L(p^{\ast}) &gt; L(p)\\)</span> for all <span class="math-inline">\\(p \neq p^{\ast}\\)</span>, so by the properties of a monotonically increasing function <span class="math-inline">\\(\log L(p^{\ast}) &gt; \log L(p)\\)</span> for all <span class="math-inline">\\(p \neq p^{\ast}\\)</span>.
+</details>
 </div>
 </div>
 

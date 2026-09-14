@@ -41,6 +41,7 @@ days:
         problems: ../resources/homeworks/hw01/
         type: hw
         title: <b>Means, Sums, and Calculus</b>
+        solutions: true
       - name: SUR
         type: survey
         title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform">Welcome Survey</a></b>
