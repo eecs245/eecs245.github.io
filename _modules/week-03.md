@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 5
         type: lecture
-        title: Vectors
+        title: Correlation; Introduction to Vectors
         reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
         reading_text: Ch. 3.1
         reading2: https://notes.eecs245.org/vectors/norms/
@@ -20,7 +20,7 @@ days:
     events:
       - name: LEC 6
         type: lecture
-        title: Orthogonality and the Dot Product
+        title: The Dot Product
         reading: https://notes.eecs245.org/vectors/dot-product/
         reading_text: Ch. 3.3
   - date: "2026-09-18"
