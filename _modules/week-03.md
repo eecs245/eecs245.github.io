@@ -15,6 +15,7 @@ days:
         reading3_text: Ch. 3.1
         reading4: https://notes.eecs245.org/vectors/norms/
         reading4_text: Ch. 3.2
+        live_notes: resources/lecture-pdfs/lec05-filled.pdf
   - date: "2026-09-16"
     events:
       - name: LAB 3
