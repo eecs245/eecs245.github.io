@@ -7,10 +7,14 @@ days:
       - name: LEC 5
         type: lecture
         title: Correlation; Introduction to Vectors
-        reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
-        reading_text: Ch. 3.1
-        reading2: https://notes.eecs245.org/vectors/norms/
-        reading2_text: Ch. 3.2
+        reading: https://notes.eecs245.org/simple-linear-regression/correlation/
+        reading_text: Ch. 2.4
+        reading2: https://notes.eecs245.org/simple-linear-regression/least-squares/
+        reading2_text: Ch. 2.5
+        reading3: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
+        reading3_text: Ch. 3.1
+        reading4: https://notes.eecs245.org/vectors/norms/
+        reading4_text: Ch. 3.2
   - date: "2026-09-16"
     events:
       - name: LAB 3
