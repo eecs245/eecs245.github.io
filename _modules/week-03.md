@@ -7,6 +7,7 @@ days:
       - name: LEC 5
         type: lecture
         title: Correlation; Introduction to Vectors
+        recording: https://leccap.engin.umich.edu/leccap/player/r/LjgJEj
         reading: https://notes.eecs245.org/simple-linear-regression/correlation/
         reading_text: Ch. 2.4
         reading2: https://notes.eecs245.org/simple-linear-regression/least-squares/
