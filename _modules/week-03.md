@@ -21,7 +21,7 @@ days:
     events:
       - name: LAB 3
         type: lab
-        title: Vectors and the Dot Product
+        title: Introduction to Vectors
   - date: "2026-09-17"
     events:
       - name: LEC 6
