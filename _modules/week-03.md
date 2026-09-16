@@ -22,6 +22,8 @@ days:
       - name: LAB 3
         type: lab
         title: Introduction to Vectors
+        problems: ../resources/labs/lab03/
+        solutions: true
   - date: "2026-09-17"
     events:
       - name: LEC 6
