@@ -29,6 +29,7 @@ days:
       - name: LEC 6
         type: lecture
         title: Linear Combinations and the Dot Product
+        recording: https://leccap.engin.umich.edu/leccap/player/r/pxmGkJ
         reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
         reading_text: Ch. 3.1
         reading2: https://notes.eecs245.org/vectors/dot-product/
