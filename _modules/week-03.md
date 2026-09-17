@@ -29,8 +29,10 @@ days:
       - name: LEC 6
         type: lecture
         title: The Dot Product
-        reading: https://notes.eecs245.org/vectors/dot-product/
-        reading_text: Ch. 3.3
+        reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
+        reading_text: Ch. 3.1
+        reading2: https://notes.eecs245.org/vectors/dot-product/
+        reading2_text: Ch. 3.3
   - date: "2026-09-18"
     events:
       - name: HW 2
