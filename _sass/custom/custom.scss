@@ -216,3 +216,80 @@ $link-color: #0066cc;
 h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 80px; /* Adjust based on the height of your sticky toolbar */
 }
+
+// Preserve the theme sans-serif as the default; Palatino is an explicit opt-in.
+html:not(.font-palatino) body {
+  font-family: $body-font-family;
+}
+
+// Optional reading font; code and mathematical notation keep their own fonts.
+html.font-palatino body {
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+.font-preference {
+  font-family: $body-font-family;
+  position: static;
+  border-top: 1px solid $border-color;
+}
+
+.font-preference-title {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: $body-text-color;
+}
+
+.font-preference-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  min-height: 44px;
+  cursor: pointer;
+  color: $body-text-color;
+}
+
+.font-preference-palatino {
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+.font-preference-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.font-preference-track {
+  width: 36px;
+  height: 22px;
+  border: 1px solid #767676;
+  border-radius: 12px;
+  background: #767676;
+  flex-shrink: 0;
+}
+
+.font-preference-track::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border-radius: 50%;
+  background: white;
+}
+
+.font-preference-input:checked + .font-preference-track {
+  background: $link-color;
+  border-color: $link-color;
+}
+
+.font-preference-input:checked + .font-preference-track::before {
+  transform: translateX(14px);
+}
+
+.font-preference-input:focus-visible + .font-preference-track {
+  outline: 2px solid $link-color;
+  outline-offset: 3px;
+}
