@@ -28,7 +28,7 @@ days:
     events:
       - name: LEC 6
         type: lecture
-        title: The Dot Product
+        title: Linear Combinations and the Dot Product
         reading: https://notes.eecs245.org/vectors/vectors-and-linear-combinations/
         reading_text: Ch. 3.1
         reading2: https://notes.eecs245.org/vectors/dot-product/
