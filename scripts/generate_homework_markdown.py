@@ -1391,8 +1391,8 @@ def fix_leading_italics(text: str) -> str:
     
     text = re.sub(r"^\*([^*\n]+)\*$", convert_to_em, text, flags=re.M)
     text = re.sub(r"\*(Hint:[^\n]+)\*", r"<em>\1</em>", text)
-    text = re.sub(r"(?m)^\*(Hint:[^\n]+)$", r"<em>\1</em>", text)
-    text = re.sub(r"(?m)^(<em>Hint:[^\n]*?)\*</em>$", r"\1</em>", text)
+    text = re.sub(r"(?m)^([ \t]*)\*(Hint:[^\n]+)$", r"\1<em>\2</em>", text)
+    text = re.sub(r"(?m)^([ \t]*<em>Hint:[^\n]*?)\*</em>$", r"\1</em>", text)
     text = re.sub(r"(?m)^\*\s*$\n?", "", text)
     
     def convert_multiline_to_em(match: re.Match[str]) -> str:
