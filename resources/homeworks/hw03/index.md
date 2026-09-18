@@ -238,6 +238,8 @@ Draw <span class="math-inline">\\(\vec v=\begin{bmatrix}-1\\\\-4\end{bmatrix}\\)
 </li>
 </ol>
 
+<img src="imgs/tikz-b2dd9d759f46.png" alt="Figure from the assignment PDF" style="width: 60%; max-width: 100%;">
+
 ---
 
 ## Problem 4: Displacement and Distance (7 pts)

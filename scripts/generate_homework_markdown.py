@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -220,6 +221,9 @@ def main() -> int:
     transformed_tex = transform_assignment_tex(
         expanded_tex, include_solutions=args.include_solutions
     )
+    transformed_tex, tikz_figures = render_tikz_figures(
+        transformed_tex, output_md.parent / "imgs"
+    )
     transformed_tex, tabular_html = replace_tabulars_with_html_placeholders(
         transformed_tex
     )
@@ -253,6 +257,7 @@ def main() -> int:
             output_md=output_md,
         )
         final_markdown = restore_tabular_html(final_markdown, tabular_html)
+        final_markdown = restore_tikz_html(final_markdown, tikz_figures)
         validate_visible_items_match_source(
             assignment=metadata.assignment,
             source_tex=expanded_tex,
@@ -469,6 +474,90 @@ def replace_crossnumber_tikz_grids(text: str) -> str:
         )
 
     return pattern.sub(replace, text)
+
+
+TIKZ_STANDALONE_TEMPLATE = r"""\documentclass[tikz,border=2pt]{standalone}
+\usepackage{amsmath, amsfonts, amssymb}
+\usetikzlibrary{arrows.meta, calc, patterns}
+\begin{document}
+%s
+\end{document}
+"""
+
+
+def compile_tikz_to_png(block: str, destination: Path) -> None:
+    r"""Render one tikzpicture the same way the PDF builds it.
+
+    Pandoc has no TikZ support and silently drops \begin{tikzpicture} blocks, so
+    a figure that exists only as TikZ vanishes from the web view with no warning.
+    """
+    with tempfile.TemporaryDirectory() as tmp_dir_str:
+        tmp_dir = Path(tmp_dir_str)
+        figure_tex = tmp_dir / "figure.tex"
+        figure_tex.write_text(TIKZ_STANDALONE_TEMPLATE % block)
+        latex = subprocess.run(
+            ["xelatex", "-interaction=nonstopmode", "-halt-on-error", figure_tex.name],
+            cwd=tmp_dir,
+            capture_output=True,
+            text=True,
+        )
+        figure_pdf = tmp_dir / "figure.pdf"
+        if latex.returncode != 0 or not figure_pdf.exists():
+            raise SystemExit(
+                f"Could not compile a tikzpicture into {destination.name}:\n"
+                f"{latex.stdout[-2000:]}"
+            )
+        raster = subprocess.run(
+            [
+                "gs", "-q", "-dNOPAUSE", "-dBATCH", "-dSAFER",
+                "-sDEVICE=png16m", "-r300",
+                "-dTextAlphaBits=4", "-dGraphicsAlphaBits=4",
+                f"-sOutputFile={destination}", str(figure_pdf),
+            ],
+            capture_output=True,
+            text=True,
+        )
+        if raster.returncode != 0 or not destination.exists():
+            raise SystemExit(
+                f"Could not rasterize a tikzpicture into {destination.name}:\n"
+                f"{raster.stderr[-2000:]}"
+            )
+
+
+def render_tikz_figures(text: str, imgs_dir: Path) -> tuple[str, list[str]]:
+    """Render tikzpicture blocks to images so they survive into the web view.
+
+    Runs after replace_crossnumber_tikz_grids, so blocks that already have a
+    web-native rendering never reach here. Images are cached by content hash.
+    """
+    figures: list[str] = []
+    pattern = re.compile(r"(?s)\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}")
+
+    def replace(match: re.Match[str]) -> str:
+        block = match.group(0)
+        digest = hashlib.sha1(block.encode()).hexdigest()[:12]
+        filename = f"tikz-{digest}.png"
+        destination = imgs_dir / filename
+        if not destination.exists():
+            imgs_dir.mkdir(parents=True, exist_ok=True)
+            compile_tikz_to_png(block, destination)
+        placeholder = f"TIKZHTMLPLACEHOLDER{len(figures)}"
+        figures.append(
+            f'<img src="imgs/{filename}" alt="Figure from the assignment PDF" '
+            'style="width: 60%; max-width: 100%;">'
+        )
+        return f"\n\n{placeholder}\n\n"
+
+    return pattern.sub(replace, text), figures
+
+
+def restore_tikz_html(markdown: str, figures: list[str]) -> str:
+    for index, figure in enumerate(figures):
+        placeholder = f"TIKZHTMLPLACEHOLDER{index}"
+        if placeholder not in markdown:
+            raise ValueError(f"Pandoc dropped tikz figure placeholder {placeholder}.")
+        markdown = markdown.replace(placeholder, figure, 1)
+    return markdown
 
 
 def replace_tabulars_with_html_placeholders(text: str) -> tuple[str, list[str]]:
