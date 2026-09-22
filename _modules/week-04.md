@@ -9,6 +9,7 @@ days:
         title: Projections
         reading: https://notes.eecs245.org/vectors/projecting-onto-a-single-vector/
         reading_text: Ch. 3.4
+        live_notes: resources/lecture-pdfs/lec07-filled.pdf
   - date: "2026-09-23"
     events:
       - name: LAB 4
