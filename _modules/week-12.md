@@ -4,9 +4,9 @@ weekNumber: 12
 days:
   - date: "2026-11-17"
     events:
-      - name: REV
-        type: review
-        title: Midterm 2 Review and Office Hours
+      - name: OH
+        type: lecture
+        title: Office Hours in Lecture
       - name: EXAM
         type: exam
         title: "<b>Midterm 2 (7-9PM; location TBD)</b>"
