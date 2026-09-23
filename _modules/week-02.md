@@ -40,7 +40,7 @@ days:
       - name: HW 1
         problems: ../resources/homeworks/hw01/
         type: hw
-        title: "<b>Means, Sums, and Calculus</b> (click for solutions!)"
+        title: "<b>Means, Sums, and Calculus</b>"
         solutions: true
       - name: SUR
         type: survey
