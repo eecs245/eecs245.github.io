@@ -14,6 +14,32 @@ from check_assignment_html import check_list_and_choice_structure
 
 
 class AssignmentConversionTests(unittest.TestCase):
+    def test_missing_pdf_buttons_fail_release_checks(self):
+        from check_assignment_html import check_source_markdown
+        with tempfile.TemporaryDirectory() as directory:
+            page = Path(directory) / 'lab04' / 'index.md'
+            page.parent.mkdir()
+            page.write_text('<details><summary>Solution</summary>Answer</details>')
+            errors = check_source_markdown(page, allow_solutions=True)
+            self.assertTrue(any('missing blank PDF link' in error for error in errors))
+            self.assertTrue(any('web solutions require a solutions PDF link' in error for error in errors))
+            page.write_text(page.read_text() +
+                            '<a href="/resources/labs/lab04/lab04.pdf">PDF</a>' +
+                            '<a href="/resources/labs/lab04/lab04-solutions.pdf">Solutions</a>')
+            self.assertEqual(check_source_markdown(page, allow_solutions=True), [])
+
+    def test_pdf_links_exist_before_pdf_files_are_copied(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            website = root / 'website'
+            website.mkdir()
+            (website / '_config.yml').write_text('baseurl: /course\n')
+            output = website / 'resources/labs/lab04/index.md'
+            self.assertEqual(converter.compute_pdf_link(root, output),
+                             '/course/resources/labs/lab04/lab04.pdf')
+            self.assertEqual(converter.compute_solutions_pdf_link(root, output),
+                             '/course/resources/labs/lab04/lab04-solutions.pdf')
+
     def test_hashes_render_without_backslashes_in_math_text(self):
         source = r'''
 Inline: $\text{\# of points left of }w$.

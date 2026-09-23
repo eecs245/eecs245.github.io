@@ -160,6 +160,15 @@ def check_source_markdown(source_md: Path, allow_solutions: bool) -> list[str]:
     for line_number, line in enumerate(text.splitlines(), start=1):
         if "Hint:" in line and ("</em>*" in line or line.rstrip().endswith("*")):
             failures.append(f"{source_md}:{line_number}: malformed hint emphasis")
+    expected_pdf = f"{source_md.parent.name}.pdf"
+    pdf_hrefs = re.findall(r'href=[\"\']([^\"\']+\.pdf)[\"\']', text)
+    if not any(href.rsplit("/", 1)[-1] == expected_pdf for href in pdf_hrefs):
+        failures.append(f"{source_md}: missing blank PDF link `{expected_pdf}`")
+    if '<summary>Solution</summary>' in text:
+        expected_solutions = f"{source_md.parent.name}-solutions.pdf"
+        if not any(href.rsplit("/", 1)[-1] == expected_solutions for href in pdf_hrefs):
+            failures.append(f"{source_md}: web solutions require a solutions PDF link `{expected_solutions}`")
+
     if not allow_solutions:
         if "Solutions PDF" in text or "-solutions.pdf" in text:
             failures.append(f"{source_md}: solutions link present in non-solutions release")

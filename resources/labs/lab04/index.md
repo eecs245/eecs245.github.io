@@ -151,6 +151,11 @@ mjx-container[jax="CHTML"][display="true"] {
 
 **due** by the end of your lab section on Wednesday, September 23rd, 2026
 
+<div class="assignment-actions">
+<a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab04/lab04.pdf" target="_blank">View as PDF ✏️</a>
+<a class="btn btn-info assignment-pdf-button" href="/resources/labs/lab04/lab04-solutions.pdf" target="_blank">Solutions PDF ✅</a>
+</div>
+
 {: .yellow }
 <div markdown="1">
 Each lab worksheet will contain several activities, some of which will involve writing code and others that will involve writing math on paper. To receive credit for a lab, you must complete all activities and show your lab TA by the end of the lab section. To receive credit for Activity 1, you'll need to show your lab TA that all test cases have passed **and** that you have answered the written questions in Task 4. Instructions on how to do this are in the lab notebook.

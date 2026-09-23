@@ -2200,10 +2200,8 @@ def is_programming_problem(item: AssignmentItem) -> bool:
 
 
 def compute_pdf_link(repo_root: Path, output_md: Path) -> str | None:
+    # Links are part of the page contract, even when PDFs are copied after generation.
     pdf_path = output_md.parent / f"{output_md.parent.name}.pdf"
-    if not pdf_path.exists():
-        return None
-
     website_root = repo_root / "website"
     try:
         web_path = pdf_path.relative_to(website_root)
@@ -2214,9 +2212,6 @@ def compute_pdf_link(repo_root: Path, output_md: Path) -> str | None:
 
 def compute_solutions_pdf_link(repo_root: Path, output_md: Path) -> str | None:
     solutions_pdf_path = output_md.parent / f"{output_md.parent.name}-solutions.pdf"
-    if not solutions_pdf_path.exists():
-        return None
-
     website_root = repo_root / "website"
     try:
         web_path = solutions_pdf_path.relative_to(website_root)
