@@ -297,7 +297,7 @@ Let <span class="math-inline">\\(\vec{u},\vec{v}\in\mathbb{R}^n\\)</span> satisf
 
 <div class="math-display">
 $$
-\|\vec{u}\|=3,\qquad \|\vec{v}\|=2,\qquad
+\lVert\vec{u}\rVert=3,\qquad \lVert\vec{v}\rVert=2,\qquad
 (3\vec{u}-4\vec{v})\cdot(\vec{u}+9\vec{v})=-71.
 $$
 </div>
@@ -314,7 +314,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(2 pts) Find <span class="math-inline">\\(\|-2\vec{u}\|\\)</span> and <span class="math-inline">\\(\|3\vec{v}\|\\)</span>. Explain why neither length is negative.
+(2 pts) Find <span class="math-inline">\\(\lVert-2\vec{u}\rVert\\)</span> and <span class="math-inline">\\(\lVert3\vec{v}\rVert\\)</span>. Explain why neither length is negative.
 
 </div>
 </div>
@@ -326,7 +326,7 @@ $$
 
 <div class="math-display">
 $$
-\cos\theta=\frac{\vec u\cdot\vec v}{\|\vec u\|\|\vec v\|},
+\cos\theta=\frac{\vec u\cdot\vec v}{\lVert\vec u\rVert\lVert\vec v\rVert},
 $$
 </div>
 
@@ -348,7 +348,7 @@ Find the cosine similarity of <span class="math-inline">\\(\vec{u}\\)</span> and
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">e)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts) Find <span class="math-inline">\\(\|\vec{u}+\vec{v}\|\\)</span>. Is it equal to <span class="math-inline">\\(\sqrt{\|\vec{u}\|^2+\|\vec{v}\|^2}\\)</span>? Explain what condition would make these quantities equal.
+(4 pts) Find <span class="math-inline">\\(\lVert\vec{u}+\vec{v}\rVert\\)</span>. Is it equal to <span class="math-inline">\\(\sqrt{\lVert\vec{u}\rVert^2+\lVert\vec{v}\rVert^2}\\)</span>? Explain what condition would make these quantities equal.
 
 <em>Hint: Start by writing <span class="math-inline">\\(\lVert\vec{u}+\vec{v}\rVert^2\\)</span> as <span class="math-inline">\\((\vec{u}+\vec{v})\cdot(\vec{u}+\vec{v})\\)</span>.</em>
 
