@@ -485,6 +485,29 @@ TIKZ_STANDALONE_TEMPLATE = r"""\documentclass[tikz,border=2pt]{standalone}
 """
 
 
+def rasterize_pdf_to_png(source_pdf: Path, destination_png: Path) -> None:
+    """Render a PDF figure to PNG.
+
+    Browsers do not display a PDF inside <img>, so a figure that LaTeX includes
+    as a PDF has to be rasterized before it can appear in the web view.
+    """
+    raster = subprocess.run(
+        [
+            "gs", "-q", "-dNOPAUSE", "-dBATCH", "-dSAFER",
+            "-sDEVICE=png16m", "-r300",
+            "-dTextAlphaBits=4", "-dGraphicsAlphaBits=4",
+            f"-sOutputFile={destination_png}", str(source_pdf),
+        ],
+        capture_output=True,
+        text=True,
+    )
+    if raster.returncode != 0 or not destination_png.exists():
+        raise SystemExit(
+            f"Could not rasterize {source_pdf} into {destination_png.name}:\n"
+            f"{raster.stderr[-2000:]}"
+        )
+
+
 def compile_tikz_to_png(block: str, destination: Path) -> None:
     r"""Render one tikzpicture the same way the PDF builds it.
 
@@ -507,21 +530,7 @@ def compile_tikz_to_png(block: str, destination: Path) -> None:
                 f"Could not compile a tikzpicture into {destination.name}:\n"
                 f"{latex.stdout[-2000:]}"
             )
-        raster = subprocess.run(
-            [
-                "gs", "-q", "-dNOPAUSE", "-dBATCH", "-dSAFER",
-                "-sDEVICE=png16m", "-r300",
-                "-dTextAlphaBits=4", "-dGraphicsAlphaBits=4",
-                f"-sOutputFile={destination}", str(figure_pdf),
-            ],
-            capture_output=True,
-            text=True,
-        )
-        if raster.returncode != 0 or not destination.exists():
-            raise SystemExit(
-                f"Could not rasterize a tikzpicture into {destination.name}:\n"
-                f"{raster.stderr[-2000:]}"
-            )
+        rasterize_pdf_to_png(figure_pdf, destination)
 
 
 def render_tikz_figures(text: str, imgs_dir: Path) -> tuple[str, list[str]]:
@@ -2235,7 +2244,14 @@ def fix_image_syntax(text: str) -> str:
         attrs = match.group("attrs")
         width_match = re.search(r'width="([^"]+)"', attrs)
         if not width_match:
-            return f"![{alt}]({src})"
+            # No LaTeX width to honor (e.g. height=5in). Still emit an <img> so a
+            # large figure cannot overflow the content column at its natural size.
+            escaped_src = html.escape(src, quote=True)
+            escaped_alt = html.escape(alt, quote=True)
+            return (
+                f'<img src="{escaped_src}" alt="{escaped_alt}" '
+                'style="max-width: 100%; height: auto;">'
+            )
 
         width = normalize_image_width(width_match.group(1))
         escaped_src = html.escape(src, quote=True)
@@ -2452,7 +2468,14 @@ def copy_referenced_assets(output_md: Path, source_base_dir: Path, website_root:
         if not source_path.exists() or not source_path.is_file():
             continue
 
-        dest_filename = source_path.name
+        # A PDF used as a figure cannot be shown in <img>; rasterize it instead.
+        # Only image references qualify: plain links to PDFs must stay as links.
+        reference = re.escape(relative_path.as_posix())
+        as_figure = source_path.suffix.lower() == ".pdf" and re.search(
+            rf"!\[[^\]]*\]\({reference}\)|<img\b[^>]*\bsrc=[\"']{reference}[\"']",
+            markdown,
+        )
+        dest_filename = f"{source_path.stem}.png" if as_figure else source_path.name
         dest_relative, destination_path = asset_destination(
             output_md=output_md,
             website_root=website_root,
@@ -2460,7 +2483,10 @@ def copy_referenced_assets(output_md: Path, source_base_dir: Path, website_root:
         )
 
         destination_path.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source_path, destination_path)
+        if as_figure:
+            rasterize_pdf_to_png(source_path, destination_path)
+        else:
+            shutil.copy2(source_path, destination_path)
 
         new_path = markdown_asset_path(output_md, website_root, dest_relative)
         if str(relative_path) != new_path:
