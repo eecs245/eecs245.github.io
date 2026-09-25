@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 5
         type: lab
-        title: Projections, Span, and Linear Independence
+        title: Span, Linear Independence, and Subspaces
   - date: "2026-10-01"
     events:
       - name: LEC 10
