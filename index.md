@@ -59,7 +59,7 @@ EECS 245, Fall 2026 at the <b><span style="background-color: #FFCB05; color: #00
       if (!start || !end || !header || !header.id) {
         return null;
       }
-      // Include the full Monday-Sunday week, even when classes start Tuesday.
+      /* Include the full Monday-Sunday week, even when classes start Tuesday. */
       start.setDate(start.getDate() - (start.getDay() + 6) % 7);
       end.setDate(end.getDate() + (7 - end.getDay()) % 7);
       return { start, end, header, moduleEl };
