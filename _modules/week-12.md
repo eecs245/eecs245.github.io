@@ -9,7 +9,7 @@ days:
         title: Office Hours in Lecture
       - name: EXAM
         type: exam
-        title: "<b>Midterm 2 (7-9PM; location TBD)</b>"
+        title: "<b>Midterm 2 (7-9PM; 1013 DOW)</b>"
   - date: "2026-11-19"
     events:
       - name: LEC 21
