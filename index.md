@@ -59,7 +59,10 @@ EECS 245, Fall 2026 at the <b><span style="background-color: #FFCB05; color: #00
       if (!start || !end || !header || !header.id) {
         return null;
       }
-      return { start, end, header };
+      // Include the full Monday-Sunday week, even when classes start Tuesday.
+      start.setDate(start.getDate() - (start.getDay() + 6) % 7);
+      end.setDate(end.getDate() + (7 - end.getDay()) % 7);
+      return { start, end, header, moduleEl };
     })
     .filter(Boolean);
 
@@ -69,11 +72,18 @@ EECS 245, Fall 2026 at the <b><span style="background-color: #FFCB05; color: #00
 
   moduleData.sort((a, b) => a.start - b.start);
 
-  const today = new Date();
-  const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Detroit', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date());
+  const todayMidnight = parseDate(today);
   let target = moduleData.find((module) => (
     todayMidnight >= module.start && todayMidnight <= module.end
   ));
+
+  if (target) {
+    target.moduleEl.classList.add('module-current');
+    target.moduleEl.setAttribute('aria-current', 'true');
+  }
 
   if (!target) {
     if (todayMidnight < moduleData[0].start) {
