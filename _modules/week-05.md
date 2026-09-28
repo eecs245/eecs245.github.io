@@ -1,16 +1,18 @@
 ---
-title: "Week 5: Vector Spaces and Subspaces"
+title: "Week 5: Linear Independence and Subspaces"
 weekNumber: 5
 days:
   - date: "2026-09-29"
     events:
       - name: LEC 9
         type: lecture
-        title: Vector Spaces and Subspaces
+        title: Linear Independence and Subspaces
         reading: https://notes.eecs245.org/linear-independence/linear-independence/
         reading_text: Ch. 4.2
         reading2: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading2_text: Ch. 4.3
+        reading3: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
+        reading3_text: Ch. 4.4
   - date: "2026-09-30"
     events:
       - name: LAB 5
@@ -20,9 +22,11 @@ days:
     events:
       - name: LEC 10
         type: lecture
-        title: Bases and Dimension
+        title: Subspaces, Continued
         reading: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading_text: Ch. 4.3
+        reading2: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
+        reading2_text: Ch. 4.4
   - date: "2026-10-02"
     events:
       - name: REV
