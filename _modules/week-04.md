@@ -34,6 +34,7 @@ days:
     events:
       - name: HW 3
         type: hw
+        solutions: true
         title: <b>Vectors and the Dot Product</b>
         problems: ../resources/homeworks/hw03/
 ---
