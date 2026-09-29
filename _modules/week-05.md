@@ -15,6 +15,7 @@ days:
         reading3_text: Ch. 4.2
         reading4: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading4_text: Ch. 4.3
+        live_notes: resources/lecture-pdfs/lec09-filled.pdf
   - date: "2026-09-30"
     events:
       - name: LAB 5
