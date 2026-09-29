@@ -7,6 +7,7 @@ days:
       - name: LEC 9
         type: lecture
         title: Planes and Linear Independence
+        recording: https://leccap.engin.umich.edu/leccap/player/r/aXwfnZ
         reading: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
         reading_text: Ch. 4.4
         reading2: https://notes.eecs245.org/linear-independence/span/
@@ -40,6 +41,5 @@ days:
     events:
       - name: HW 4
         type: hw
-        title: <b>Projections, Span, and Linear Independence</b>
-        problems: ../resources/homeworks/hw04/
+        title: Projections, Span, and Linear Independence
 ---
