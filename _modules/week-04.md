@@ -26,6 +26,8 @@ days:
         recording: https://leccap.engin.umich.edu/leccap/player/r/GmG377
         reading: https://notes.eecs245.org/linear-independence/span/
         reading_text: Ch. 4.1
+        reading2: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
+        reading2_text: Ch. 4.4
         live_notes: resources/lecture-pdfs/lec08-filled.pdf
   - date: "2026-09-25"
     events:
