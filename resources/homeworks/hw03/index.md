@@ -1267,29 +1267,25 @@ $$
 $$
 </div>
 
-Now rewrite each square root as <span class="math-inline">\\(\sqrt{n}\\)</span> times the square root of the average (this is just <span class="math-inline">\\(\sqrt{\sum}=\sqrt{n}\sqrt{\text{average}}\\)</span>):
+Recall the formula for the variance:
 
 <div class="math-display">
 $$
-\begin{align*}
-&= \frac{\sum_{i=1}^n (x_i-\bar x)(y_i-\bar y)}
-{\,\big(\sqrt{n}\,\sqrt{\tfrac{1}{n}\sum_{i=1}^n (x_i-\bar x)^2}\big)\;
-\big(\sqrt{n}\,\sqrt{\tfrac{1}{n}\sum_{i=1}^n (y_i-\bar y)^2}\big)}
-\end{align*}
+\sigma_x^2 = \frac{1}{n}\sum_{i=1}^n (x_i-\bar x)^2.
 $$
 </div>
 
-Let
+ We need to isolate <span class="math-inline">\\(\sqrt{\sum&#95;{i=1}^n (x&#95;i-\bar x)^2}\\)</span>. Multiplying both sides by <span class="math-inline">\\(n\\)</span> and then taking the square root gives
 
 <div class="math-display">
 $$
-\sigma_x \;=\; \sqrt{\frac{1}{n}\sum_{i=1}^n (x_i-\bar x)^2},
-\qquad
-\sigma_y \;=\; \sqrt{\frac{1}{n}\sum_{i=1}^n (y_i-\bar y)^2}
+n\sigma_x^2 = \sum_{i=1}^n (x_i-\bar x)^2
+\qquad\Longrightarrow\qquad
+\sqrt{\sum_{i=1}^n (x_i-\bar x)^2} = \sqrt{n}\,\sigma_x.
 $$
 </div>
 
- so each denominator factor is <span class="math-inline">\\(\sqrt{n}\sigma&#95;x\\)</span> and <span class="math-inline">\\(\sqrt{n}\sigma&#95;y\\)</span>. This gives
+ Similarly, <span class="math-inline">\\(\sqrt{\sum&#95;{i=1}^n (y&#95;i-\bar y)^2} = \sqrt{n}\sigma&#95;y\\)</span>, so the denominator is <span class="math-inline">\\((\sqrt{n}\sigma&#95;x)(\sqrt{n}\sigma&#95;y) = n\sigma&#95;x\sigma&#95;y\\)</span>. This gives
 
 <div class="math-display">
 $$
