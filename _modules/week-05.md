@@ -7,12 +7,14 @@ days:
       - name: LEC 9
         type: lecture
         title: Linear Independence and Subspaces
-        reading: https://notes.eecs245.org/linear-independence/span/
-        reading_text: Ch. 4.1
-        reading2: https://notes.eecs245.org/linear-independence/linear-independence/
-        reading2_text: Ch. 4.2
-        reading3: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
-        reading3_text: Ch. 4.3
+        reading: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
+        reading_text: Ch. 4.4
+        reading2: https://notes.eecs245.org/linear-independence/span/
+        reading2_text: Ch. 4.1
+        reading3: https://notes.eecs245.org/linear-independence/linear-independence/
+        reading3_text: Ch. 4.2
+        reading4: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
+        reading4_text: Ch. 4.3
   - date: "2026-09-30"
     events:
       - name: LAB 5
