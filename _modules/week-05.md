@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 9
         type: lecture
-        title: Linear Independence and Subspaces
+        title: Planes and Linear Independence
         reading: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
         reading_text: Ch. 4.4
         reading2: https://notes.eecs245.org/linear-independence/span/
@@ -25,7 +25,7 @@ days:
     events:
       - name: LEC 10
         type: lecture
-        title: Subspaces, Continued
+        title: Subspaces
         reading: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading_text: Ch. 4.3
         reading2: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
