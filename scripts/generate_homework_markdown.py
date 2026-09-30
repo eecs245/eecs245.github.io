@@ -433,6 +433,7 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_latex_comments(text)
     text = replace_crossnumber_tikz_grids(text)
     text = strip_layout_commands(text)
+    text = unwrap_extra_practice_tables(text)
     text = replace_youtube_embed_markers(text)
     text = expand_labcodelinks(text)
     text = replace_fbox_markers(text)
@@ -567,6 +568,32 @@ def restore_tikz_html(markdown: str, figures: list[str]) -> str:
             raise ValueError(f"Pandoc dropped tikz figure placeholder {placeholder}.")
         markdown = markdown.replace(placeholder, figure, 1)
     return markdown
+
+
+def unwrap_extra_practice_tables(text: str) -> str:
+    """Treat the PDF's one-cell practice notice as prose for web callouts."""
+    pattern = re.compile(r"(?s)\\begin\{tabular\}.*?\\end\{tabular\}")
+
+    def replace(match: re.Match[str]) -> str:
+        table = match.group(0)
+        message = re.search(
+            r"\\textbf\{(?:(?:The rest of this worksheet is)|(?:The following are)) extra practice\.[^{}]*\}",
+            table,
+        )
+        if message is None:
+            return table
+        # Only unwrap a notice, never a data table containing additional cells.
+        body_start = table.index("}") + 1
+        _, body_start = extract_braced(table, body_start)
+        body = table[body_start : -len(r"\end{tabular}")]
+        body = body.replace(message.group(0), "", 1)
+        body = re.sub(r"\\rule\{[^{}]*\}\{[^{}]*\}", "", body)
+        body = body.replace(r"\hline", "").replace(r"\\", "")
+        if body.strip():
+            return table
+        return "\n\n" + message.group(0) + "\n\n"
+
+    return pattern.sub(replace, text)
 
 
 def replace_tabulars_with_html_placeholders(text: str) -> tuple[str, list[str]]:

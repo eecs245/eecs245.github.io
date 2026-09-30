@@ -191,6 +191,36 @@ The second column is correct.
 ''', solutions=True)
         self.assertNotIn('mc-options', rendered.split('<details', 1)[1])
 
+    def test_boxed_extra_practice_renders_between_activities(self):
+        source = r'''
+\begin{activity}[Required]
+\begin{subactivity}
+Find a basis.
+\begin{solution}
+A basis.
+\end{solution}
+\end{subactivity}
+\end{activity}
+\noindent\begin{tabular}{@{}p{\textwidth}@{}}
+\hline
+\rule{0pt}{1.3em}\textbf{The rest of this worksheet is extra practice. Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.} \\
+\end{tabular}
+\par\medskip
+\begin{activity}[Practice]
+Practice question.
+\end{activity}
+'''
+        for solutions in (False, True):
+            with self.subTest(solutions=solutions):
+                markdown, rendered = self.convert(source, solutions=solutions)
+                self.assertIn('{: .yellow }\n> **The rest', markdown)
+                self.assertNotIn('<table', rendered)
+                self.assertRegex(rendered, r'(?s)</div>\s*<hr />\s*<blockquote class="yellow">.*?extra practice.*?</blockquote>\s*<h2.*?Activity 2: Practice')
+                self.assertNotRegex(rendered, r'(?s)<pre\b.*?extra practice.*?</pre>')
+
+        data_table = r'\begin{tabular}{ll}\textbf{The following are extra practice.} & Other cell \\\end{tabular}'
+        self.assertEqual(converter.unwrap_extra_practice_tables(data_table), data_table)
+
     def test_checks_reject_reset_numbering_and_empty_answer_rows(self):
         self.assertTrue(check_list_and_choice_structure(
             '<ol class="assignment-list" start="1" data-item-count="2">'

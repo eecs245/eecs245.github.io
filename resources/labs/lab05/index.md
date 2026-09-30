@@ -795,20 +795,15 @@ $$
 
 </details>
 
-<table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>The rest of this worksheet is extra practice. Don’t feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.</strong></td>
-</tr>
-</tbody>
-</table>
-
 </div>
 </div>
 
 </div>
 
 ---
+
+{: .yellow }
+> **The rest of this worksheet is extra practice. Don't feel pressured to answer all of these problems in lab, but make sure to attempt them at some point.**
 
 ## Activity 5: Introduction to Subspaces
 
