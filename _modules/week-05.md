@@ -32,6 +32,7 @@ days:
         reading_text: Ch. 4.3
         reading2: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
         reading2_text: Ch. 4.4
+        live_notes: resources/lecture-pdfs/lec10-filled.pdf
   - date: "2026-10-02"
     events:
       - name: REV
