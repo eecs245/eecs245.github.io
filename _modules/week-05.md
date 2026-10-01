@@ -28,6 +28,7 @@ days:
       - name: LEC 10
         type: lecture
         title: Subspaces
+        recording: https://leccap.engin.umich.edu/leccap/player/r/M56qPQ
         reading: https://notes.eecs245.org/linear-independence/vector-spaces-basis-dimension/
         reading_text: Ch. 4.3
         reading2: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
