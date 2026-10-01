@@ -22,6 +22,7 @@ days:
       - name: LAB 5
         type: lab
         title: Span, Linear Independence, and Subspaces
+        problems: ../resources/labs/lab05/
   - date: "2026-10-01"
     events:
       - name: LEC 10
