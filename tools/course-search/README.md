@@ -23,7 +23,7 @@ The first visit downloads approximately 45 MB of model/runtime assets; the model
 
 ## Corpus and release boundary
 
-`source-manifest.json` records source hashes and public repository commits. `search-index.json` records the coverage count. The current snapshot covers all 47 published note pages (including the appendix), 10 lecture PDFs, 4 homework handouts, 5 lab handouts, and 9 past exams: **75 documents**. Duplicate PDF/HTML versions of the same questions use their canonical HTML document. Topic worksheets repeat past-exam questions; their canonical exam locations are used to avoid duplicate cards.
+`source-manifest.json` records source hashes and public repository commits. `search-index.json` records the coverage count. The current snapshot covers all 47 published note pages (including the appendix), 10 lecture PDFs, 4 homework handouts, 5 lab handouts, 9 past exams, and 10 lecture recordings: **85 documents / 4,683 passages**. Duplicate PDF/HTML versions of the same questions use their canonical HTML document. Topic worksheets repeat past-exam questions; their canonical exam locations are used to avoid duplicate cards.
 
 Only committed, published public sources are indexed; the private repository and local uncommitted edits are never read. Release timestamps use the first addition of each source to public repository history (a conservative date for exam questions migrated into their current format). The deployment contains eligible material only: hiding future records in browser code would expose them. Rebuilding is required to add later releases. Earlier release snapshots are not offered by the public UI.
 
@@ -95,20 +95,24 @@ Captions → caption provider**. Michigan documents [caption management and
 WebVTT/SRT formats](https://teamdynamix.umich.edu/TDClient/76/Portal/KB/Article/5181/How-do-I-add-captions-to-my-Lecture-Recordings)
 and [individual transcript downloads](https://teamdynamix.umich.edu/TDClient/47/LSAPortal/KB/ArticleDet?ID=9438).
 The documented TXT download is not sufficient if it lacks timestamps. Obtain a
-timed WebVTT/SRT export from the authorized player track or CAEN support; a
-management timed-download control could not be verified in this environment.
+timed WebVTT/SRT export from the authorized player track or CAEN support.
+In the verified instructor interface, the selected Whisper provider exposes
+original WebVTT in the **Captions** textarea. Export that field read-only;
+no Save action or caption edits are needed.
 The importer rejects untimed text instead of estimating timings.
 
 Exports are cached with source URL, acquisition method, SHA-256 and import time.
 The build verifies provenance and hashes, parses timestamped cues, strips caption
 markup, removes exact duplicate cues, and creates coherent overlapping passages.
+Zero-duration provider artifacts are omitted without inventing timings; the raw
+export remains intact. Reversed timestamps are rejected.
 It prefers sentence endings after 30 seconds, aims for 60 seconds, caps at 90
 seconds, and overlaps roughly 15 seconds of whole cues. Gaps and dense speech
 can produce shorter passages. The pinned local MiniLM tokenizer enforces the
 254-token content budget (plus two special tokens); no caption passage is silently
 truncated. Exceptionally long individual cues require a better timed export.
 
-### Coverage and remaining acceptance check
+### Coverage and real-data validation
 
 `metadata.recordings` reports each published lecture as available, missing,
 pending, or invalid, with a reason and cue/passages counts where available. The
@@ -117,11 +121,19 @@ lectures. “Available” means a valid cached export, not a guarantee that the
 provider captioned every second. First/last cue times are retained for auditing.
 Missing captions do not block unrelated search categories or the website build.
 
-On 2026-10-02: **0 of 10 published recordings have cached captions**. Cloudflare
-blocked the cloud browser on Lecture 2 after one reload. To finish real-data
-acceptance: import authorized exports, rebuild, search `absolute loss`, verify
-Lecture 2 around 27:10, and open its timestamp link. Do not use the supplied cue
-summary as transcript text. Synthetic tests remain exclusively in `test/`.
+On 2026-10-02: **10 of 10 published recordings have cached captions**. Their
+original Whisper WebVTT was exported read-only from the instructor Captions
+textarea in an authorized Chrome session. Provenance points to each actual
+management page. No verification was bypassed, and no synthetic captions are
+published. Four zero-duration provider artifacts were omitted from indexing;
+the unmodified exports retain them.
+
+The snapshot adds **15,970 timed cues / 2,445 recording passages** to the existing
+75 documents / 2,238 passages. Lecture 2 contains “Yeah, there's an absolute loss
+as well.” at 27:10. The real-data semantic/keyword regression checks that this
+cue survives in a matching moment and that its playback link includes the
+five-second context offset. Chrome playback was verified at 26:40 via the
+26:45–28:15 matching moment. Synthetic tests remain exclusively in `test/`.
 
 `npm test` includes caption parsing, release/cache gates, token limits, moment
 merging/deduplication, keyword and semantic integration, coverage, category

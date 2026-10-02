@@ -65,3 +65,15 @@ test('semantic and fused results agree for case, loss aliases, and misspellings'
  assert(keywordLocations.every(url=>fusedLocations.has(url)));
  for(const [query,canonical] of [['MSE','squared loss'],['inner product','dot product'],['orthoganol','orthogonal'],['porjection','projection']]) assert.deepEqual(await search(query),await search(canonical),query);
 });
+
+test('published Lecture 2 captions find absolute loss near 27:10',async t=>{
+ const rows=records.filter(r=>r.category==='Lecture recordings'&&r.recordingId==='ucCtbs');
+ if(!rows.length){t.skip('Lecture 2 captions are not cached in this snapshot');return;}
+ const found=mergeResults(keyword('absolute loss'),await search('absolute loss'));
+ const lecture=found.find(d=>d.category==='Lecture recordings'&&d.url.endsWith('/ucCtbs'));
+ assert(lecture,'Lecture 2 must be retrieved');
+ const moment=lecture.locations.find(l=>l.start<=1630.2&&l.end>=1630.2&&/absolute loss/i.test(l.text));
+ assert(moment,'The original caption at 27:10 must remain searchable');
+ assert.equal(Number(new URL(moment.url).searchParams.get('start')),Math.max(0,Math.floor(moment.start)-5));
+ assert.equal(found.filter(d=>d.url===lecture.url).length,1);
+});
