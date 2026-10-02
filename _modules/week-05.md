@@ -38,8 +38,10 @@ days:
     events:
       - name: REV
         type: review
-        title: "<b>Practice Exam (2:30-5:30PM, 1013 DOW)</b>"
-        note: 'From 2:30-4:30PM, you will take <a href="https://exams.eecs245.org/exams/sp26-mt1/">Spring 2026 Midterm 1</a>. From 4:30-5:30PM, we will take it up. The review will be recorded.'
+        title: "<b>Practice Exam (Spring 2026 Midterm 1)</b>"
+        url: https://exams.eecs245.org/exams/sp26-mt1/
+        recording: https://leccap.engin.umich.edu/leccap/player/r/6SoDoD
+        live_notes: resources/lecture-pdfs/mt1-review-ipad-notes.pdf
   - date: "2026-10-04"
     events:
       - name: HW 4
