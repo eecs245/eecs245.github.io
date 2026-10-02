@@ -4,7 +4,7 @@ await mkdir('public/vendor/onnx',{recursive:true});
 for(const file of ['ort-wasm-simd-threaded.wasm','ort-wasm-simd-threaded.mjs','ort-wasm-simd-threaded.jsep.wasm','ort-wasm-simd-threaded.jsep.mjs'])await copyFile('node_modules/onnxruntime-web/dist/'+file,'public/vendor/onnx/'+file);
 await build({entryPoints:['public/semantic-worker.mjs'],outfile:'public/worker.js',bundle:true,format:'esm',platform:'browser',minify:true});
 await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});
-for(const file of ['index.html','favicon.ico','style.css','app.js','search.mjs','worker.js'])await copyFile('public/'+file,'dist/'+file);
+for(const file of ['index.html','favicon.ico','style.css','app.js','search.mjs','query.mjs','worker.js'])await copyFile('public/'+file,'dist/'+file);
 for(const dir of ['models','data','vendor','licenses'])await cp('public/'+dir,'dist/'+dir,{recursive:true});
 await copyFile('source-manifest.json','dist/source-manifest.json');
 await copyFile('public/THIRD_PARTY_NOTICES.txt','dist/THIRD_PARTY_NOTICES.txt');

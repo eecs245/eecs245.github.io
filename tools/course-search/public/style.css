@@ -12,3 +12,5 @@ body{font-family:var(--course-font);color:#5c5962;background:#fff;line-height:1.
 .brand{display:flex;align-items:center;justify-content:center;gap:10px}.brand img{width:30px;height:30px;image-rendering:auto}.has-query .brand img{width:24px;height:24px}.embedded header{display:none}.embedded main{padding:0 12px;min-height:0;max-width:1200px}.embedded .hero{margin-top:12vh}.embedded.has-query .hero{margin-top:20px}.embedded .group{grid-template-columns:80px minmax(0,1fr)}@media(max-width:640px){.embedded .group{grid-template-columns:1fr}.embedded .hero{margin-top:7vh}.embedded.has-query .hero{margin-top:10px}}
 
 .brand,.has-query .brand{margin-bottom:8px}.search-description{max-width:540px;margin:0 auto 24px;color:#8a8790;font-size:14px;line-height:1.5}.has-query .search-description{font-size:12px;margin-bottom:18px}@media(max-width:640px){.embedded .hero,.embedded.has-query .hero{margin-top:44px}.search-description{font-size:13px;max-width:320px}.has-query .search-description{font-size:12px}}
+.search-correction{margin:8px 0 0;color:#716d77;font-size:12px;text-align:left;line-height:1.5}
+.brand .search-word{font-weight:200}

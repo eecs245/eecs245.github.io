@@ -1,0 +1,5500 @@
+WEBVTT
+
+00:00:02.580 --> 00:00:03.760
+All right,
+
+00:00:03.760 --> 00:00:05.620
+it's 10.30,
+so we'll get started.
+
+00:00:06.000 --> 00:00:08.520
+Good to see everyone.
+
+00:00:08.520 --> 00:00:11.360
+No new announcements really,
+other than that homework two is
+
+00:00:11.360 --> 00:00:15.920
+due tomorrow and don't forget to
+look at solutions to past labs
+
+00:00:15.920 --> 00:00:17.020
+and homeworks.
+
+00:00:17.020 --> 00:00:19.700
+You're kind of already asked to
+review the solutions to previous
+
+00:00:19.700 --> 00:00:23.600
+homeworks as part of the first
+question on a new homework,
+
+00:00:23.600 --> 00:00:26.020
+right? Like the first question
+on homework two tells you to go
+
+00:00:26.020 --> 00:00:28.560
+and look at the homework one
+solutions which you can find if
+
+00:00:28.560 --> 00:00:31.380
+you just click the homework one
+link on the course website so do
+
+00:00:31.380 --> 00:00:34.380
+that but then also make sure to
+look at the solutions to lab
+
+00:00:34.380 --> 00:00:37.840
+exercises especially for
+activities you didn't get a
+
+00:00:37.840 --> 00:00:40.300
+chance to go through in
+yesterday's lab but also for
+
+00:00:40.300 --> 00:00:42.840
+ones where you want a little
+more clarification I said this
+
+00:00:42.840 --> 00:00:46.640
+earlier but when it comes time
+to studying for midterms which
+
+00:00:46.640 --> 00:00:48.640
+you know our first midterm is
+not that far away it's on
+
+00:00:48.640 --> 00:00:53.940
+October 6th students often
+neglect looking at labs I think
+
+00:00:53.940 --> 00:00:55.580
+homework is the most important
+thing, and homework is
+
+00:00:55.580 --> 00:00:59.330
+important, yes, but the content
+in labs is just as important.
+
+00:00:59.720 --> 00:01:03.220
+So make sure to regularly review
+those solutions as well.
+
+00:01:03.220 --> 00:01:06.700
+The plan for today is to recap
+something I introduced very
+
+00:01:06.700 --> 00:01:10.160
+briefly at the end of Tuesday's
+class, which was this idea of a
+
+00:01:10.160 --> 00:01:12.760
+linear combination of vectors.
+
+00:01:12.760 --> 00:01:15.220
+This is something you played
+around with in yesterday's lab.
+
+00:01:15.220 --> 00:01:17.960
+And then we will further explore
+something else you looked at in
+
+00:01:17.960 --> 00:01:21.120
+yesterday's lab, which is this
+operation called the dot product
+
+00:01:21.120 --> 00:01:23.260
+between two vectors.
+
+00:01:23.260 --> 00:01:27.200
+Okay, so let me start by
+reintroducing the two example
+
+00:01:27.200 --> 00:01:31.100
+vectors we left off with on
+Tuesday I said I have a vector u
+
+00:01:31.100 --> 00:01:35.800
+3 1 and a vector v 4 negative 6
+because I'm gonna remind me
+
+00:01:35.800 --> 00:01:40.480
+notationally like what would I
+Like what set would I say these
+
+00:01:40.480 --> 00:01:42.730
+vectors belong to?
+
+00:01:46.800 --> 00:01:50.520
+Yeah, I I wouldn't call it
+squared I would call it r2,
+
+00:01:50.520 --> 00:01:52.620
+but I think you have the right
+symbol in mind.
+
+00:01:52.620 --> 00:01:55.380
+I would say u and v
+
+00:01:55.380 --> 00:01:58.380
+Are both in r2
+
+00:02:00.360 --> 00:02:05.420
+Why well it's because they both
+have two Numbers in them, right?
+
+00:02:06.020 --> 00:02:08.700
+Does that mean the length of
+each of these is two?
+
+00:02:08.700 --> 00:02:11.460
+No, remember the length has a
+precise definition It's the
+
+00:02:11.460 --> 00:02:15.880
+square root of the sum of the
+squares of the components So the
+
+00:02:15.880 --> 00:02:20.180
+length of u is the square root
+of 9 plus 1, which is the square
+
+00:02:20.180 --> 00:02:21.080
+root of 10.
+
+00:02:21.080 --> 00:02:24.880
+And the length of v is the
+square root of 4 squared plus
+
+00:02:24.880 --> 00:02:28.520
+negative 6 squared, which I
+think is the square root of 52.
+
+00:02:28.520 --> 00:02:31.320
+Those are their lengths.
+
+00:02:31.320 --> 00:02:35.500
+So what were the two operations
+we looked at on Tuesday?
+
+00:02:35.500 --> 00:02:36.980
+I said vectors out of the box.
+
+00:02:36.980 --> 00:02:39.480
+There are two things you can do
+with them,
+
+00:02:39.480 --> 00:02:41.900
+other than find their length.
+There were two operations we
+
+00:02:41.900 --> 00:02:42.820
+looked at.
+
+00:02:42.820 --> 00:02:45.700
+Yeah? Scalar multiplication and
+addition.
+
+00:02:45.700 --> 00:02:46.660
+Good.
+
+00:02:46.660 --> 00:02:50.900
+The first was that we could add
+two vectors.
+
+00:02:50.900 --> 00:02:52.440
+And so for example,
+
+00:02:52.440 --> 00:02:56.640
+that tells us that u plus v
+
+00:02:56.640 --> 00:02:58.580
+is a valid operation,
+
+00:02:58.580 --> 00:03:02.500
+and it returns the same vector
+as v plus u, because this
+
+00:03:02.500 --> 00:03:04.200
+operation is commutative.
+
+00:03:04.200 --> 00:03:07.720
+And we saw on Tuesday how to
+visualize this addition.
+
+00:03:07.720 --> 00:03:13.720
+And we can do that by drawing
+either
+
+00:03:13.720 --> 00:03:18.160
+vector as an arrow starting at
+the origin.
+
+00:03:18.160 --> 00:03:21.100
+Here I've drawn u because I'm
+going three units to the right
+
+00:03:21.100 --> 00:03:22.320
+and one unit up.
+
+00:03:22.320 --> 00:03:24.280
+And then I draw v
+
+00:03:24.280 --> 00:03:30.260
+starting at the tip
+
+00:03:30.260 --> 00:03:30.880
+of u.
+
+00:03:30.880 --> 00:03:33.880
+And the result I get when I
+connect them
+
+00:03:33.880 --> 00:03:38.060
+is that sum u plus v.
+
+00:03:38.060 --> 00:03:38.660
+Okay?
+
+00:03:38.660 --> 00:03:41.540
+And if I started with v at the
+origin and then to that tacked
+
+00:03:41.540 --> 00:03:42.420
+on u,
+
+00:03:42.420 --> 00:03:44.680
+I would get v plus u, but it
+would be the same vector.
+
+00:03:44.680 --> 00:03:45.260
+Okay?
+
+00:03:45.260 --> 00:03:47.580
+So that was the first operation
+we looked at, and then the
+
+00:03:47.580 --> 00:03:51.660
+second operation we looked at
+was that of scalar
+
+00:03:51.660 --> 00:03:52.660
+multiplication,
+
+00:03:53.260 --> 00:03:56.440
+in which I said if this is the
+vector u,
+
+00:03:56.440 --> 00:04:02.260
+well then multiplying u by a
+scalar,
+
+00:04:02.620 --> 00:04:04.800
+which it stretches or compresses
+u,
+
+00:04:04.800 --> 00:04:07.280
+but preserves its general
+direction.
+
+00:04:07.280 --> 00:04:08.900
+So for example,
+
+00:04:08.900 --> 00:04:10.960
+if that's u,
+
+00:04:10.960 --> 00:04:14.900
+then this is a half of u.
+
+00:04:14.900 --> 00:04:16.880
+And this is,
+
+00:04:16.880 --> 00:04:20.200
+it's not perfectly drawn to
+scale, but something like that
+
+00:04:20.200 --> 00:04:22.120
+is negative 2 times u.
+
+00:04:22.120 --> 00:04:25.960
+Double the length points in the
+opposite direction.
+
+00:04:25.960 --> 00:04:29.680
+And what property did we say
+that all of the scalar multiples
+
+00:04:29.680 --> 00:04:35.320
+of a given vector obey? Like,
+what is true of u, a half of u,
+
+00:04:35.960 --> 00:04:40.180
+negative 2 u's, 17 u's? What is
+true of all of those vectors
+
+00:04:40.180 --> 00:04:41.180
+together?
+
+00:04:43.980 --> 00:04:46.800
+What's that one? Collinear?
+
+00:04:46.800 --> 00:04:49.720
+They are collinear, that is
+true,
+
+00:04:49.720 --> 00:04:53.880
+but there's something related to
+that that I mentioned on
+
+00:04:53.880 --> 00:04:54.880
+Tuesday.
+
+00:04:54.880 --> 00:04:55.920
+They're parallel?
+
+00:04:55.920 --> 00:04:57.040
+They are parallel.
+Well,
+
+00:04:57.040 --> 00:05:01.540
+it's related to that as well.
+
+00:05:01.920 --> 00:05:03.340
+Yeah.
+They're all on the same line.
+
+00:05:03.400 --> 00:05:05.220
+Yeah, they all live on the same
+line.
+
+00:05:05.220 --> 00:05:08.940
+These are all just various ways
+of stating the properties that
+
+00:05:08.940 --> 00:05:11.190
+we just heard.
+They all live on the same line.
+
+00:05:11.880 --> 00:05:12.760
+And equivalently,
+
+00:05:12.760 --> 00:05:18.100
+any line through the origin you
+think of can be expressed as the
+
+00:05:18.100 --> 00:05:21.280
+set of scalar multiples of one
+vector.
+
+00:05:21.280 --> 00:05:22.860
+OK, and that's the kind of thing
+we're going to talk about next
+
+00:05:22.860 --> 00:05:23.560
+week.
+
+00:05:23.560 --> 00:05:26.540
+Why must it be through the
+origin? Well,
+
+00:05:26.540 --> 00:05:31.040
+one of the scalar multiples of
+any vector is 0 times a vector.
+
+00:05:31.180 --> 00:05:34.120
+That would give me the vector 0,
+0 if I'm dealing with vectors in
+
+00:05:34.120 --> 00:05:35.120
+R2.
+
+00:05:35.180 --> 00:05:38.440
+So that means if I'm considering
+the set of all scalar multiples
+
+00:05:38.440 --> 00:05:39.480
+of u,
+
+00:05:39.480 --> 00:05:41.720
+the 0 vector, as we call it,
+
+00:05:41.720 --> 00:05:44.000
+would have to be included.
+
+00:05:44.000 --> 00:05:47.180
+This is an idea we will see a
+bit more soon.
+
+00:05:47.180 --> 00:05:48.180
+Soon.
+
+00:05:53.280 --> 00:05:54.820
+Back to these two vectors,
+
+00:05:54.820 --> 00:05:57.070
+u and v.
+
+00:06:01.020 --> 00:06:03.740
+Good notes is acting up again.
+
+00:06:03.740 --> 00:06:05.120
+Whatever.
+We can write them out.
+
+00:06:16.220 --> 00:06:21.100
+The last expression I wrote up
+on the board on Tuesday
+
+00:06:21.940 --> 00:06:23.660
+was one that looked like this,
+
+00:06:23.660 --> 00:06:27.220
+3u minus 1 half v.
+
+00:06:27.220 --> 00:06:32.470
+This is what I called a linear
+combination of u and v.
+
+00:06:38.520 --> 00:06:43.040
+And the way to think of a linear
+combination is as I've taken a
+
+00:06:43.040 --> 00:06:46.440
+little bit of one vector plus a
+little bit of another vector.
+
+00:06:46.440 --> 00:06:49.280
+And here I'm just starting with
+two vectors, u and v,
+
+00:06:49.280 --> 00:06:51.940
+but I could have had a u, v, w,
+x, y, and z,
+
+00:06:51.940 --> 00:06:53.860
+and take a linear combination of
+all of those.
+
+00:06:53.860 --> 00:06:59.700
+And so an expression that looks
+like 2u plus 3v minus 17x
+
+00:06:59.700 --> 00:07:00.700
+plus
+
+00:07:01.660 --> 00:07:04.860
+354y, that is a linear
+combination of those vectors u,
+
+00:07:04.860 --> 00:07:06.180
+v, x, and y.
+
+00:07:06.180 --> 00:07:07.920
+And so you should think of a
+linear combination as a new
+
+00:07:07.920 --> 00:07:11.400
+vector I'm making by taking
+various amounts of my original
+
+00:07:11.400 --> 00:07:12.400
+vectors.
+
+00:07:12.540 --> 00:07:15.720
+I like to think of these
+original vectors, in this case,
+
+00:07:15.720 --> 00:07:18.000
+in 3u minus a half v.
+I like to think of those as
+
+00:07:18.000 --> 00:07:20.800
+being my building blocks.
+And my linear combination is
+
+00:07:20.800 --> 00:07:21.320
+saying,
+
+00:07:21.320 --> 00:07:23.580
+well, how much of each building
+block do I want to take to
+
+00:07:23.580 --> 00:07:26.200
+produce this new vector?
+
+00:07:26.200 --> 00:07:28.980
+So 3u minus a half of v.
+
+00:07:28.980 --> 00:07:31.280
+Sure, we could work this out
+algebraically.
+
+00:07:31.280 --> 00:07:32.920
+That's not the interesting part,
+
+00:07:32.920 --> 00:07:35.380
+but we can do that.
+
+00:07:35.380 --> 00:07:37.020
+What is this going to give me?
+
+00:07:37.020 --> 00:07:39.270
+What is 3u?
+
+00:07:44.780 --> 00:07:45.700
+Yeah,
+
+00:07:45.700 --> 00:07:46.700
+Allison.
+
+00:07:48.620 --> 00:07:49.880
+9, 3.
+
+00:07:49.880 --> 00:07:50.880
+Good.
+
+00:07:51.680 --> 00:07:56.380
+And to that, I'm going to add
+negative 1 half of v.
+
+00:07:56.380 --> 00:08:01.140
+So what vector should I add this
+to?
+
+00:08:01.140 --> 00:08:02.140
+Yeah.
+
+00:08:02.140 --> 00:08:03.440
+Negative 2 and 3.
+
+00:08:03.440 --> 00:08:05.880
+Negative 2 and 3.
+
+00:08:05.880 --> 00:08:11.130
+So I should land at 7, 6.
+
+00:08:11.140 --> 00:08:16.120
+So what this is saying is that
+you can make the vector 7,
+
+00:08:16.120 --> 00:08:21.370
+6 using u and v as you're
+building blocks.
+
+00:08:21.580 --> 00:08:25.040
+So think of this as a vector
+that is possible to reach
+
+00:08:25.040 --> 00:08:26.980
+using u and v.
+
+00:08:26.980 --> 00:08:31.640
+And how do we visualize that?
+This is a picture I showed you
+
+00:08:31.640 --> 00:08:34.660
+briefly on Tuesday.
+
+00:08:35.260 --> 00:08:39.380
+Here I've drawn u and v in
+orange and blue.
+
+00:08:39.380 --> 00:08:44.260
+Then I've shown you 3v and
+negative 1 half,
+
+00:08:44.740 --> 00:08:47.860
+sorry, 3u and negative 1 half v.
+
+00:08:47.860 --> 00:08:50.060
+But because what What I'm trying
+to do here is visualize the
+
+00:08:50.060 --> 00:08:54.560
+addition of 3u and negative 1
+half v.
+
+00:08:54.700 --> 00:08:56.480
+I've drawn negative 1 half v,
+
+00:08:56.480 --> 00:08:59.220
+not at the origin, but at the
+end of 3u.
+
+00:08:59.220 --> 00:09:03.440
+So what this is showing me is
+how to create my new vector,
+
+00:09:03.440 --> 00:09:05.500
+3u minus a half of v,
+
+00:09:05.500 --> 00:09:09.000
+by traveling in the direction of
+u as much as I want,
+
+00:09:09.000 --> 00:09:11.420
+and then in the direction of v.
+
+00:09:11.420 --> 00:09:11.800
+Okay?
+
+00:09:11.800 --> 00:09:15.120
+So if I wanted to build another
+linear combination of u and v,
+
+00:09:15.120 --> 00:09:18.380
+what we're seeing is that it
+would involve traveling some
+
+00:09:18.380 --> 00:09:21.380
+amount along this line,
+
+00:09:22.040 --> 00:09:23.580
+that is some amount of u,
+
+00:09:23.580 --> 00:09:25.320
+like maybe this is for u,
+
+00:09:25.320 --> 00:09:27.060
+this is negative 1 2 u,
+
+00:09:27.060 --> 00:09:29.680
+whatever amount I want there,
+
+00:09:29.680 --> 00:09:32.560
+and then whatever amount I want
+in the v direction.
+
+00:09:32.560 --> 00:09:35.060
+So I can go in the negative v
+direction,
+
+00:09:35.060 --> 00:09:36.940
+I can go in the positive v
+direction,
+
+00:09:36.940 --> 00:09:39.940
+all of those would be OK.
+
+00:09:39.940 --> 00:09:43.280
+All right? So a question for you
+is,
+
+00:09:43.280 --> 00:09:46.700
+what would the vector
+
+00:09:46.700 --> 00:09:51.700
+negative 2u
+
+00:09:54.040 --> 00:09:57.800
+plus 3v look like?
+
+00:10:02.920 --> 00:10:06.040
+What I want you to do is take
+
+00:10:06.040 --> 00:10:11.760
+30 seconds and see if you can
+just draw
+
+00:10:11.760 --> 00:10:14.740
+the u and v that are currently
+on my screen right now,
+
+00:10:14.740 --> 00:10:19.940
+and sort of guesstimate where
+negative 2u plus 3v would end
+
+00:10:19.940 --> 00:10:20.940
+up.
+
+00:10:51.220 --> 00:10:56.470
+Maybe as a hint, I'll put this
+picture up here.
+
+00:11:20.240 --> 00:11:21.240
+Okay,
+
+00:11:21.320 --> 00:11:24.700
+can someone help me out? Where
+is negative 2u plus 3v going to
+
+00:11:24.700 --> 00:11:25.440
+live?
+
+00:11:25.440 --> 00:11:27.540
+How would I figure that out?
+
+00:11:27.540 --> 00:11:32.340
+Again, I intentionally didn't
+write the numbers out for u and
+
+00:11:32.340 --> 00:11:34.120
+v here, because I want us to do
+this visually.
+
+00:11:34.120 --> 00:11:35.920
+And then we can do the
+arithmetic and verify that we
+
+00:11:35.920 --> 00:11:36.780
+did it correctly.
+
+00:11:36.780 --> 00:11:37.680
+Well,
+
+00:11:37.680 --> 00:11:40.160
+you would put u in the opposite
+direction,
+
+00:11:40.160 --> 00:11:41.680
+and you would double the length.
+
+00:11:41.680 --> 00:11:42.220
+Good.
+
+00:11:42.220 --> 00:11:46.140
+So this, if this is u going up
+and to the right,
+
+00:11:46.140 --> 00:11:49.480
+negative 2u is going to travel
+down and to the left,
+
+00:11:49.480 --> 00:11:51.720
+double the length.
+So this is going to be negative
+
+00:11:51.720 --> 00:11:52.720
+2u.
+
+00:11:53.500 --> 00:11:55.040
+You know what, instead of
+putting that orange, because
+
+00:11:55.040 --> 00:11:59.540
+it's going to make it confusing,
+let's make it purple.
+
+00:12:00.880 --> 00:12:02.020
+Negative 2u,
+
+00:12:02.020 --> 00:12:03.020
+great.
+
+00:12:03.620 --> 00:12:06.280
+Then what do we have?
+
+00:12:06.280 --> 00:12:08.660
+Yeah, go for it.
+
+00:12:08.660 --> 00:12:13.160
+You would do v times 3,
+
+00:12:13.460 --> 00:12:16.620
+like multiply it by the length
+of 3.
+
+00:12:16.620 --> 00:12:18.660
+Exactly, what I'm going to do is
+I'm going to take this vector v,
+
+00:12:18.660 --> 00:12:21.220
+triple its length, so it's
+probably going to go past my
+
+00:12:21.220 --> 00:12:22.220
+iPad.
+
+00:12:22.320 --> 00:12:26.820
+But instead of drawing it there,
+I'm going to draw it over here.
+
+00:12:30.200 --> 00:12:32.420
+And so I'm going to have, oops,
+
+00:12:32.420 --> 00:12:36.170
+I'll draw it dotted here.
+
+00:12:38.600 --> 00:12:43.640
+And so my result is going to
+look something like this.
+
+00:12:43.640 --> 00:12:46.640
+Minus 2u plus 3v.
+
+00:12:48.660 --> 00:12:53.160
+Okay, and to verify that that
+works out algebraically,
+
+00:12:53.680 --> 00:12:59.420
+remember u was 3, 1 and v was 4,
+negative 6.
+
+00:12:59.420 --> 00:13:03.920
+So the first component should be
+negative 6 plus 12.
+
+00:13:04.060 --> 00:13:07.810
+And the second component should
+be negative 2 minus 18.
+
+00:13:08.180 --> 00:13:10.280
+That looks like 6,
+
+00:13:10.280 --> 00:13:11.780
+negative 20.
+
+00:13:12.700 --> 00:13:14.950
+Seems about right.
+
+00:13:15.320 --> 00:13:18.900
+Maybe I did the algebra a little
+wrong, but yeah.
+
+00:13:18.900 --> 00:13:20.340
+I just have a question.
+
+00:13:20.340 --> 00:13:21.120
+So earlier,
+
+00:13:21.120 --> 00:13:24.900
+for the 3u minus 1 half v
+example,
+
+00:13:24.900 --> 00:13:28.820
+you said that you could have put
+the v after going that way or
+
+00:13:28.820 --> 00:13:30.580
+going down that way.
+
+00:13:30.580 --> 00:13:35.080
+What I was more describing is
+it's OK.
+
+00:13:35.860 --> 00:13:37.080
+Let me take a step back here.
+
+00:13:37.080 --> 00:13:39.760
+To create 3u minus 1 half v,
+there are no choices.
+
+00:13:39.760 --> 00:13:42.640
+It tells us exactly how many u's
+and exactly how many v's to
+
+00:13:42.640 --> 00:13:43.600
+make.
+
+00:13:43.600 --> 00:13:47.980
+I guess what I was alluding to
+is if I change this number,
+
+00:13:47.980 --> 00:13:48.380
+it would,
+
+00:13:48.380 --> 00:13:51.080
+like if I change 3 to something
+else,
+
+00:13:51.080 --> 00:13:52.500
+it's the same process.
+
+00:13:52.500 --> 00:13:56.740
+So when it is like minus or it's
+a negative scalar? You always
+
+00:13:56.740 --> 00:13:57.600
+flip the direction.
+
+00:13:57.600 --> 00:13:57.920
+Yeah,
+
+00:13:57.920 --> 00:13:59.180
+correct, correct,
+
+00:13:59.180 --> 00:14:00.180
+correct.
+
+00:14:01.040 --> 00:14:03.540
+So do we see here how the vector
+6,
+
+00:14:03.540 --> 00:14:08.960
+negative 20 has been produced as
+a linear combination of u and v?
+
+00:14:09.900 --> 00:14:10.640
+Yeah?
+
+00:14:10.640 --> 00:14:11.360
+Now,
+
+00:14:11.360 --> 00:14:16.120
+these two examples in which I've
+told you what amounts to
+
+00:14:16.120 --> 00:14:17.820
+multiply u and v by,
+
+00:14:17.820 --> 00:14:20.660
+that's the easy way.
+Or that's the easy direction of
+
+00:14:20.660 --> 00:14:22.400
+thinking of a linear
+combination.
+
+00:14:22.400 --> 00:14:23.520
+It's like saying,
+
+00:14:23.520 --> 00:14:26.580
+make a LEGO using three of the
+first kind of block and two of
+
+00:14:26.580 --> 00:14:27.700
+the second block.
+
+00:14:27.700 --> 00:14:29.200
+That's OK.
+You can do that.
+
+00:14:29.700 --> 00:14:31.960
+The harder question is,
+
+00:14:31.960 --> 00:14:34.000
+what if I just tell you what to
+make,
+
+00:14:34.000 --> 00:14:36.200
+but don't tell you how to make
+it?
+
+00:14:36.200 --> 00:14:38.080
+So what if I instead say,
+
+00:14:38.080 --> 00:14:40.720
+go and make the vector 7,
+
+00:14:40.720 --> 00:14:43.440
+negative 27? That was just a
+random example.
+
+00:14:43.440 --> 00:14:45.100
+Or I just tell you some vector
+to make,
+
+00:14:45.100 --> 00:14:46.040
+and I say,
+
+00:14:46.040 --> 00:14:48.840
+can you make it using u and v?
+
+00:14:48.840 --> 00:14:50.980
+That's a more complicated
+problem.
+
+00:14:50.980 --> 00:14:53.300
+And that's the kind of problem
+
+00:14:53.300 --> 00:14:55.860
+I want us to think about here.
+
+00:14:55.860 --> 00:15:01.860
+And so we're going to work on an
+activity.
+
+00:15:03.040 --> 00:15:05.240
+I'm going to say, suppose we
+have two vectors, but instead of
+
+00:15:05.240 --> 00:15:06.940
+them being in R2,
+
+00:15:06.940 --> 00:15:09.940
+I'm going to put them in R3.
+
+00:15:09.940 --> 00:15:12.600
+Let's suppose we have the
+vectors x,
+
+00:15:12.600 --> 00:15:14.840
+which is 3, negative 1, and 2,
+
+00:15:14.840 --> 00:15:16.160
+y, which is 1,
+
+00:15:16.160 --> 00:15:17.560
+4, and 3.
+
+00:15:17.560 --> 00:15:23.140
+And what I want you to do is
+write the vector
+
+00:15:23.140 --> 00:15:24.140
+z,
+
+00:15:24.800 --> 00:15:27.780
+which is 9, negative 16,
+
+00:15:27.780 --> 00:15:33.660
+negative 1, as a linear
+combination
+
+00:15:33.660 --> 00:15:39.100
+of x and y.
+
+00:15:41.340 --> 00:15:45.840
+In other words, what I'm saying
+is fill in the blanks.
+
+00:15:46.220 --> 00:15:50.940
+9, negative 16, negative 1
+equals something
+
+00:15:50.940 --> 00:15:53.660
+times x
+
+00:15:55.300 --> 00:15:58.300
+plus something times y.
+
+00:15:59.220 --> 00:16:05.220
+And what I want you to do is
+find the x's and y's.
+
+00:16:05.640 --> 00:16:07.960
+And there were some activities
+similar to this in yesterday's
+
+00:16:07.960 --> 00:16:08.960
+lab,
+
+00:16:09.060 --> 00:16:13.060
+but it's important that we talk
+about this here.
+
+00:16:13.060 --> 00:16:15.160
+Before you do the algebra,
+
+00:16:15.160 --> 00:16:18.520
+what I want to convince you of
+is that there isn't necessarily
+
+00:16:18.520 --> 00:16:19.920
+an answer.
+
+00:16:19.920 --> 00:16:22.540
+It's possible that you try and
+do this,
+
+00:16:22.540 --> 00:16:26.440
+And we end up finding you just
+can't do it.
+
+00:16:26.440 --> 00:16:29.060
+Let me give you an example
+physically.
+
+00:16:29.060 --> 00:16:31.380
+Since we're thinking with
+vectors in R3,
+
+00:16:31.380 --> 00:16:34.600
+we can imagine them as like
+arrows in this room here.
+
+00:16:34.600 --> 00:16:36.300
+And what if I tell you,
+
+00:16:36.300 --> 00:16:38.550
+make this vector?
+
+00:16:38.700 --> 00:16:41.280
+Pretend it's a vector 1, 2, 3.
+
+00:16:41.280 --> 00:16:42.460
+Pretend that was z.
+
+00:16:42.460 --> 00:16:46.960
+And pretend x just traveled that
+direction on the floor,
+
+00:16:47.100 --> 00:16:50.140
+and y traveled that direction on
+the floor.
+
+00:16:50.140 --> 00:16:52.800
+then no amount of x and y is
+going to reach up here.
+
+00:16:52.800 --> 00:16:54.880
+They're stuck on the floor.
+
+00:16:54.880 --> 00:16:55.840
+Do you agree with that?
+
+00:16:55.840 --> 00:16:58.880
+So it's possible the answer is
+you can't do it.
+
+00:16:58.880 --> 00:17:01.660
+But maybe you can do it.
+Because what if x was just this
+
+00:17:01.660 --> 00:17:02.740
+way on the floor,
+
+00:17:02.740 --> 00:17:04.620
+y was just that way on the
+floor,
+
+00:17:04.620 --> 00:17:06.900
+and z was also just another
+vector on the floor that was
+
+00:17:06.900 --> 00:17:07.560
+diagonal?
+
+00:17:07.560 --> 00:17:08.780
+Then you could make it.
+
+00:17:08.780 --> 00:17:10.320
+So maybe the answer is you can
+do it.
+
+00:17:10.320 --> 00:17:14.820
+Maybe the answer is you can't.
+
+00:17:15.520 --> 00:17:18.320
+But in this case, I want to see
+if you can try and figure out a
+
+00:17:18.320 --> 00:17:22.070
+way to make this happen.
+
+00:17:49.820 --> 00:17:55.620
+A does resolve to an
+
+00:17:55.620 --> 00:17:56.620
+integer.
+
+00:18:03.840 --> 00:18:07.980
+It's because I put b equal to 3,
+
+00:18:07.980 --> 00:18:09.620
+it is 3 and subtracted,
+
+00:18:09.620 --> 00:18:14.120
+and that's what I did before.
+
+00:18:16.820 --> 00:18:18.920
+This is random.
+Did anyone else sign up for that
+
+00:18:18.920 --> 00:18:23.420
+email about skills at the Big
+House today?
+
+00:18:23.760 --> 00:18:26.300
+Maybe they only sent it to
+people who work here, but there
+
+00:18:26.300 --> 00:18:28.800
+was this random email that went
+out a few months ago that was
+
+00:18:28.800 --> 00:18:29.160
+like,
+
+00:18:29.160 --> 00:18:32.340
+today they have a skills
+training boot camp on the field
+
+00:18:32.340 --> 00:18:34.400
+at the Big House.
+
+00:18:34.400 --> 00:18:38.980
+So I'm going to that and you can
+kick field goals and stuff.
+
+00:18:38.980 --> 00:18:40.840
+Every question feels different.
+
+00:18:40.840 --> 00:18:45.340
+We will execute any of the
+practice.
+
+00:18:55.080 --> 00:18:57.900
+And that's part of the college
+for the mayor.
+
+00:18:57.900 --> 00:18:58.480
+So technically,
+
+00:18:58.480 --> 00:19:02.230
+if they operate the college,
+
+00:19:08.040 --> 00:19:11.700
+Give you another minute to start
+writing out some initial
+
+00:19:11.700 --> 00:19:12.700
+thoughts.
+
+00:19:29.300 --> 00:19:33.800
+This would be like maybe one
+question.
+
+00:19:35.880 --> 00:19:36.880
+OK.
+
+00:19:40.920 --> 00:19:45.200
+How did you start to find
+numbers to put in these blanks?
+
+00:19:45.200 --> 00:19:48.360
+Remember, my task for you was
+try and make the vector 9,
+
+00:19:48.360 --> 00:19:52.120
+negative 16, negative 1 using
+the building blocks x and y.
+
+00:19:55.520 --> 00:19:58.720
+Yeah, tell me how you set that
+up.
+
+00:19:58.720 --> 00:20:00.660
+I could, like,
+
+00:20:00.660 --> 00:20:03.180
+use A and B to do scalar
+multiples.
+
+00:20:03.180 --> 00:20:03.680
+Sure.
+
+00:20:03.680 --> 00:20:07.620
+So that's a good first step.
+We should think of variables to
+
+00:20:07.620 --> 00:20:08.620
+represent
+
+00:20:08.740 --> 00:20:10.920
+the amounts of x and y.
+I'm going to use C and D because
+
+00:20:10.920 --> 00:20:13.180
+I'm going to bring in a picture
+that uses those numbers.
+
+00:20:13.180 --> 00:20:14.160
+But yeah, I could have been A
+and B.
+
+00:20:14.160 --> 00:20:14.820
+It's fine.
+
+00:20:14.820 --> 00:20:15.820
+OK?
+
+00:20:16.880 --> 00:20:21.600
+And then each component of x
+would be multiplied by C.
+
+00:20:21.880 --> 00:20:25.300
+Good.
+And y would be multiplied by d,
+
+00:20:26.220 --> 00:20:31.470
+so an example would be like 3c
+plus d equals 1.
+
+00:20:31.500 --> 00:20:36.750
+Good, all I've done here is I've
+substituted in x and y.
+
+00:20:37.160 --> 00:20:39.160
+And now, indeed,
+
+00:20:39.160 --> 00:20:40.540
+right here,
+
+00:20:40.540 --> 00:20:43.860
+it doesn't look like the systems
+of equations you've seen before,
+
+00:20:43.860 --> 00:20:48.980
+but it is just a system of
+equations in terms of the
+
+00:20:48.980 --> 00:20:51.840
+variables c and d.
+The first one is saying, the
+
+00:20:51.840 --> 00:20:55.480
+first line is saying 9 is equal
+to 3C plus D.
+
+00:20:55.480 --> 00:21:00.140
+The second is saying negative 16
+is equal to negative C plus 4D.
+
+00:21:00.480 --> 00:21:04.980
+And the third is saying negative
+1 is equal to 2C plus 3D.
+
+00:21:08.760 --> 00:21:09.760
+Okay?
+
+00:21:12.180 --> 00:21:15.380
+Are we comfortable on how we
+arrived here?
+
+00:21:15.380 --> 00:21:16.380
+Alright.
+
+00:21:16.500 --> 00:21:20.040
+So just to save a little bit of
+time,
+
+00:21:20.040 --> 00:21:22.740
+is the kind of thing you'll
+practice in homework and in lab,
+
+00:21:22.740 --> 00:21:27.240
+there is a solution in this
+case.
+
+00:21:27.540 --> 00:21:28.940
+What is the solution?
+
+00:21:28.940 --> 00:21:31.190
+Anyone find it?
+
+00:21:32.340 --> 00:21:33.080
+Okay.
+
+00:21:33.080 --> 00:21:36.830
+C is equal to four.
+
+00:21:37.000 --> 00:21:38.500
+Good.
+There is a solution,
+
+00:21:39.860 --> 00:21:45.000
+and it's a unique solution.
+This is the only combination of
+
+00:21:45.000 --> 00:21:49.500
+C and D that work here.
+
+00:21:51.120 --> 00:21:56.380
+So what this is saying is 4x
+minus 3y
+
+00:21:56.380 --> 00:21:57.880
+equals z.
+
+00:21:58.640 --> 00:21:59.200
+That is,
+
+00:21:59.200 --> 00:22:03.700
+z is a linear combination of x
+and y.
+
+00:22:03.700 --> 00:22:08.400
+But if these equations were such
+that there were no solution,
+
+00:22:08.820 --> 00:22:13.240
+then there would be no way to
+make z using x and y,
+
+00:22:13.240 --> 00:22:14.240
+OK?
+
+00:22:15.300 --> 00:22:17.480
+Now, there's two perspectives I
+want to show you of this
+
+00:22:17.480 --> 00:22:18.480
+picture.
+
+00:22:19.980 --> 00:22:23.520
+The first is going to require us
+to switch over to the notes
+
+00:22:23.520 --> 00:22:24.520
+here.
+
+00:22:26.660 --> 00:22:28.820
+These are different, what are
+about to appear are different
+
+00:22:28.820 --> 00:22:29.820
+vectors,
+
+00:22:30.220 --> 00:22:32.400
+but you get the idea.
+
+00:22:32.400 --> 00:22:35.500
+Like there's a point I'm trying
+to make here.
+
+00:22:35.500 --> 00:22:37.500
+Here it says W and R,
+
+00:22:37.500 --> 00:22:39.160
+pretend this just says X and Y.
+
+00:22:39.160 --> 00:22:43.720
+And what I've drawn in 3D is
+several of their linear
+
+00:22:43.720 --> 00:22:45.080
+combinations in gray.
+
+00:22:45.080 --> 00:22:49.580
+So for example, this long one
+down here is negative 0.75W
+
+00:22:49.580 --> 00:22:50.920
+minus 3R.
+
+00:22:50.920 --> 00:22:53.240
+And these other ones in the top
+right in gray are just other
+
+00:22:53.240 --> 00:22:55.780
+linear combinations of W and R.
+
+00:22:55.780 --> 00:22:57.340
+And if you look at this picture,
+
+00:22:57.340 --> 00:22:59.860
+especially if you hit this
+toggle plane button,
+
+00:22:59.860 --> 00:23:03.400
+you'll say, OK, well, whatever.
+These are R and W,
+
+00:23:03.400 --> 00:23:06.340
+or in our example case, X and Y,
+are just vectors in R3.
+
+00:23:06.340 --> 00:23:09.340
+They're linear combinations or
+just other vectors in R3,
+
+00:23:09.440 --> 00:23:10.820
+nothing special.
+
+00:23:10.820 --> 00:23:13.880
+But what you should notice is
+that all of the linear
+
+00:23:13.880 --> 00:23:18.100
+combinations of W and R here,
+
+00:23:18.100 --> 00:23:20.600
+what is true about them?
+
+00:23:20.600 --> 00:23:23.260
+What is this picture trying to
+illustrate?
+
+00:23:23.260 --> 00:23:24.760
+Got it.
+They all lie in the same plane.
+
+00:23:24.880 --> 00:23:29.460
+Yeah, they're all trapped in
+this two-dimensional slice of
+
+00:23:29.460 --> 00:23:30.460
+3D.
+
+00:23:30.660 --> 00:23:33.120
+So if I didn't draw this plane,
+
+00:23:33.120 --> 00:23:35.800
+it would look like, okay,
+
+00:23:35.800 --> 00:23:38.160
+R and W just live in 3D and so
+do all of their linear
+
+00:23:38.160 --> 00:23:40.800
+combinations, but there's no
+real pattern to them.
+
+00:23:40.800 --> 00:23:42.660
+But then if you look at it this
+way, it's like, wait,
+
+00:23:42.660 --> 00:23:45.200
+it seems like there's a slice
+they all live on.
+
+00:23:45.200 --> 00:23:47.020
+That slice is called a plane,
+
+00:23:47.020 --> 00:23:52.780
+and anything that you can make
+with R and W is forced to live
+
+00:23:52.780 --> 00:23:54.160
+on this plane.
+
+00:23:54.160 --> 00:23:55.260
+Can't escape it.
+
+00:23:55.260 --> 00:23:58.140
+This is analogous to that
+example I gave you just a few
+
+00:23:58.140 --> 00:23:59.120
+moments ago,
+
+00:23:59.120 --> 00:24:01.880
+where I said pretend x was a
+vector that just lived that way
+
+00:24:01.880 --> 00:24:04.900
+on the classroom floor and y was
+a vector that lived that way on
+
+00:24:04.900 --> 00:24:06.240
+the classroom floor.
+
+00:24:06.240 --> 00:24:09.280
+Anything you can make with x and
+y is just trapped to the
+
+00:24:09.280 --> 00:24:11.240
+classroom floor.
+I can't suddenly levitate
+
+00:24:11.240 --> 00:24:13.120
+because I didn't give it the
+components to be able to do
+
+00:24:13.120 --> 00:24:14.120
+that.
+
+00:24:14.540 --> 00:24:16.380
+Similarly, with this R and W,
+
+00:24:16.380 --> 00:24:20.440
+anything you can make with them
+is trapped to be on this plane.
+
+00:24:20.440 --> 00:24:25.040
+So if I give you a third vector
+who lives on this plane,
+
+00:24:25.040 --> 00:24:29.860
+that is, if I drew it as an
+arrow from the origin,
+
+00:24:29.860 --> 00:24:32.060
+it entirely would live on this
+plane.
+
+00:24:32.060 --> 00:24:35.280
+Then I could make it with R and
+W.
+
+00:24:35.280 --> 00:24:38.660
+But if I gave you some other
+vector that's not on this plane,
+
+00:24:38.660 --> 00:24:40.860
+well, then you couldn't make it.
+
+00:24:40.860 --> 00:24:42.300
+You see what I mean by that?
+
+00:24:42.300 --> 00:24:45.760
+So R and W, in this example,
+
+00:24:45.760 --> 00:24:51.740
+the linear combinations of them
+are restricted to this plane,
+
+00:24:53.060 --> 00:24:54.060
+OK?
+
+00:24:54.460 --> 00:24:58.100
+And what we will see, and I will
+emphasize this more next week,
+
+00:24:58.100 --> 00:25:03.350
+if you take any two vectors in
+R3,
+
+00:25:03.360 --> 00:25:07.000
+as long as they don't point in
+the same direction,
+
+00:25:07.000 --> 00:25:11.500
+then the set of their linear
+combinations is a plane.
+
+00:25:11.560 --> 00:25:14.920
+So any two vectors in R3 that
+don't point in the same
+
+00:25:14.920 --> 00:25:15.920
+direction,
+
+00:25:16.160 --> 00:25:20.660
+we say they uniquely define a
+plane.
+
+00:25:21.180 --> 00:25:24.720
+Okay, and simply so not only are
+all the linear combinations of X
+
+00:25:24.720 --> 00:25:27.520
+and Y on this plane, but also
+the reverse is true.
+
+00:25:27.520 --> 00:25:31.200
+Anything on this plane is a
+linear combination of R and W.
+
+00:25:31.200 --> 00:25:34.080
+So I could pick any vector that
+lives on this plane and there is
+
+00:25:34.080 --> 00:25:35.880
+a way to make it with R and W.
+
+00:25:35.880 --> 00:25:39.020
+But anything not on this plane
+you can't do it.
+
+00:25:39.020 --> 00:25:40.020
+Okay,
+
+00:25:40.260 --> 00:25:43.580
+and so how is this related to
+the example we were just working
+
+00:25:43.580 --> 00:25:44.580
+with,
+
+00:25:44.680 --> 00:25:46.920
+the connection
+
+00:25:54.340 --> 00:26:00.320
+is that this vector z was on the
+plane that
+
+00:26:00.320 --> 00:26:02.600
+x and y define.
+
+00:26:02.600 --> 00:26:07.020
+If I drew a new picture with
+just x and y on it in R3
+
+00:26:07.020 --> 00:26:11.640
+and filled in the plane that
+contains both of them, then this
+
+00:26:11.640 --> 00:26:15.840
+z-vector also was on that plane,
+because I was able to make that
+
+00:26:15.840 --> 00:26:18.320
+z-vector using x and y.
+
+00:26:18.320 --> 00:26:21.500
+But if I wasn't able to make
+that z-vector,
+
+00:26:21.500 --> 00:26:26.000
+well, then it wasn't on the
+plane containing x and y.
+
+00:26:31.280 --> 00:26:34.280
+That's a key idea.
+
+00:26:39.100 --> 00:26:44.540
+any two vectors in
+
+00:26:44.540 --> 00:26:47.880
+R3 that
+
+00:26:47.880 --> 00:26:53.860
+aren't
+
+00:26:53.860 --> 00:26:57.610
+scalar multiples of each other.
+
+00:27:09.400 --> 00:27:14.980
+uniquely define a plane, okay?
+
+00:27:15.940 --> 00:27:19.100
+So again, the analogy to this
+example I had you work on is
+
+00:27:19.100 --> 00:27:21.220
+that x and y uniquely define a
+plane.
+
+00:27:21.220 --> 00:27:24.240
+Any linear combination of x and
+y live on that plane
+
+00:27:24.240 --> 00:27:26.660
+because z is a linear
+combination of x and y,
+
+00:27:26.660 --> 00:27:28.360
+it also lives on that plane.
+
+00:27:28.360 --> 00:27:28.800
+Paul?
+
+00:27:28.800 --> 00:27:31.880
+Does uniquely here mean no other
+two vectors could create the
+
+00:27:31.880 --> 00:27:32.780
+same plane?
+
+00:27:32.780 --> 00:27:35.960
+No, it means there's no other
+amount of x and y
+
+00:27:35.960 --> 00:27:39.560
+that you could take that also
+equals z.
+
+00:27:39.560 --> 00:27:43.310
+So let's come back here.
+
+00:27:46.340 --> 00:27:50.000
+What I'm getting at here,
+
+00:27:50.000 --> 00:27:50.680
+uniquely,
+
+00:27:50.680 --> 00:27:54.060
+is that 4x minus 3y equals z,
+
+00:27:54.060 --> 00:27:56.580
+but there's no other linear
+combination of x and y that also
+
+00:27:56.580 --> 00:27:58.080
+equals z.
+Oh.
+
+00:27:59.100 --> 00:28:02.040
+But we may end up in a situation
+
+00:28:02.040 --> 00:28:07.290
+where it could be the case that
+10x plus 5y also equals z.
+
+00:28:08.880 --> 00:28:12.600
+That wouldn't be true here, but
+you'll see as we introduce more
+
+00:28:12.600 --> 00:28:15.240
+building block vectors, like we
+had another vector z and another
+
+00:28:15.240 --> 00:28:16.280
+vector w,
+
+00:28:16.280 --> 00:28:18.500
+that could end up being the
+case.
+
+00:28:18.500 --> 00:28:20.680
+So in that case, would it not be
+unique anymore, because there's
+
+00:28:20.680 --> 00:28:23.580
+two different? Because there
+could be two or more ways of
+
+00:28:23.580 --> 00:28:26.640
+making the same output given our
+inputs.
+
+00:28:26.640 --> 00:28:30.720
+But here if you think of X and Y
+as the input vectors and Z is
+
+00:28:30.720 --> 00:28:33.620
+the output There's only one way
+to combine the inputs to get to
+
+00:28:33.620 --> 00:28:35.100
+the output.
+That's what I mean by unique.
+
+00:28:35.100 --> 00:28:36.540
+Yeah, good clarification.
+
+00:28:36.540 --> 00:28:37.540
+Yeah
+
+00:28:38.320 --> 00:28:42.980
+You mean the vectors themselves
+or the constants the car yeah
+
+00:28:42.980 --> 00:28:46.840
+the constants are unique Yeah,
+how do you determine that?
+
+00:28:47.680 --> 00:28:51.060
+Just in this case because when
+we solve this system of
+
+00:28:51.060 --> 00:28:53.810
+equations, there was only one
+
+00:28:53.810 --> 00:28:54.750
+Correct.
+
+00:28:54.750 --> 00:28:55.210
+Yeah,
+
+00:28:55.210 --> 00:28:58.450
+that's what I'm about to show
+you.
+
+00:28:58.450 --> 00:29:02.790
+So I'll say no other C and D
+
+00:29:02.790 --> 00:29:07.150
+satisfy these equations.
+
+00:29:09.870 --> 00:29:14.070
+So that's one perspective I
+wanted to show you, that two
+
+00:29:14.070 --> 00:29:18.090
+vectors in R3 define a plane,
+
+00:29:18.090 --> 00:29:21.430
+and any other vector that's on
+that plane can be made as a
+
+00:29:21.430 --> 00:29:23.950
+linear combination of your
+original two.
+
+00:29:23.950 --> 00:29:26.530
+The other perspective is leaning
+more into the system of
+
+00:29:26.530 --> 00:29:29.170
+equations that we've looked at.
+
+00:29:29.170 --> 00:29:33.670
+And if we copy these three,
+
+00:29:39.770 --> 00:29:44.670
+what we've really defined and
+
+00:29:44.670 --> 00:29:48.420
+is a system of equations,
+
+00:29:49.590 --> 00:29:52.050
+each of which is a line.
+
+00:29:52.050 --> 00:29:56.550
+But it's a line if you draw the
+axes as C and D.
+
+00:29:56.550 --> 00:29:58.910
+Because the first one is, well,
+it's a little cut off,
+
+00:29:58.910 --> 00:30:02.710
+but it's 3C plus D equals 9.
+
+00:30:02.710 --> 00:30:05.850
+It doesn't really look like it's
+in y equals mx plus b form, but
+
+00:30:05.850 --> 00:30:08.130
+you could rearrange it to be in
+that form.
+
+00:30:08.130 --> 00:30:12.250
+You could say D equals 9 minus
+3C.
+
+00:30:12.250 --> 00:30:14.610
+It's a little confusing here,
+but the D is what you would
+
+00:30:14.610 --> 00:30:17.050
+normally think of as y and y
+equals mx plus b,
+
+00:30:17.050 --> 00:30:19.130
+and the c is what you would
+think of as x.
+
+00:30:19.130 --> 00:30:20.950
+I'm not using x and y here
+because that's what I call the
+
+00:30:20.950 --> 00:30:21.950
+vectors.
+
+00:30:23.610 --> 00:30:28.890
+So each line here,
+
+00:30:32.450 --> 00:30:34.700
+like this one,
+
+00:30:35.150 --> 00:30:38.900
+that corresponds to the blue
+line.
+
+00:30:38.910 --> 00:30:42.660
+This corresponds to the green
+line.
+
+00:30:45.530 --> 00:30:48.450
+And so each component,
+
+00:30:48.450 --> 00:30:51.170
+where we're dealing with vectors
+in R3, so there are three
+
+00:30:51.170 --> 00:30:52.170
+components,
+
+00:30:52.630 --> 00:30:57.880
+defines a new line in the CD
+space,
+
+00:30:58.130 --> 00:30:58.710
+OK?
+
+00:30:58.710 --> 00:31:01.330
+And the fact that all three of
+these lines,
+
+00:31:01.330 --> 00:31:03.690
+the first coming from the first
+component of the vector, the
+
+00:31:03.690 --> 00:31:05.410
+second coming from the second
+component,
+
+00:31:05.410 --> 00:31:07.690
+the third coming from the third
+component,
+
+00:31:07.690 --> 00:31:11.090
+all three of these lines happen
+to intersect at just one point.
+
+00:31:11.090 --> 00:31:15.630
+And that point is where c equals
+4 and d equals negative 3.
+
+00:31:15.630 --> 00:31:20.690
+That's telling us the amount of
+each vector we need to take of x
+
+00:31:20.690 --> 00:31:23.590
+and y to make the output that we
+wanted,
+
+00:31:23.590 --> 00:31:24.250
+z.
+
+00:31:24.250 --> 00:31:26.450
+And because all three of these
+conditions,
+
+00:31:26.450 --> 00:31:28.990
+you can think of all three
+highlighted equations as
+
+00:31:28.990 --> 00:31:31.230
+conditions that c and d must
+satisfy,
+
+00:31:31.230 --> 00:31:35.050
+because all three of these
+conditions can be satisfied by a
+
+00:31:35.050 --> 00:31:38.370
+combination of c and d, Well,
+then it is possible to make z
+
+00:31:38.370 --> 00:31:40.850
+using x and y.
+
+00:31:40.850 --> 00:31:43.090
+Do we see how that's the case?
+
+00:31:43.090 --> 00:31:44.190
+Now, from this picture,
+
+00:31:44.190 --> 00:31:48.370
+hopefully it's not too crazy to
+imagine drawing three lines that
+
+00:31:48.370 --> 00:31:51.490
+don't all intersect at one
+point.
+
+00:31:51.490 --> 00:31:53.850
+It's possible to do that.
+
+00:31:53.850 --> 00:31:56.930
+And if we check out the notes,
+
+00:31:56.930 --> 00:32:01.330
+there's an example of what this
+could look like.
+
+00:32:01.330 --> 00:32:06.410
+So if I instead change the
+vector that I think of as z, So
+
+00:32:06.410 --> 00:32:09.130
+before we had 9, negative 16,
+negative 1.
+
+00:32:09.130 --> 00:32:13.670
+Now I have 9, negative 16, and 2
+instead of negative 1.
+
+00:32:13.670 --> 00:32:16.970
+That changes what the three
+conditions that C and D need to
+
+00:32:16.970 --> 00:32:18.790
+satisfy are.
+The first two are the same
+
+00:32:18.790 --> 00:32:20.830
+because the first two components
+are the same.
+
+00:32:20.830 --> 00:32:22.570
+The third is different.
+
+00:32:22.570 --> 00:32:26.950
+Right, before we had 2C plus 3D
+equals negative 1.
+
+00:32:26.950 --> 00:32:30.390
+Now I'm changing that negative 1
+to a 2,
+
+00:32:30.390 --> 00:32:34.170
+just as an example.
+And the resulting constraint
+
+00:32:34.170 --> 00:32:37.290
+equations don't all intersect at
+a single point.
+
+00:32:37.290 --> 00:32:40.810
+It's possible to satisfy any
+pair of these two,
+
+00:32:40.810 --> 00:32:43.870
+because if you look here,
+
+00:32:43.870 --> 00:32:46.390
+all pairs of lines intersect
+somewhere, but they don't all
+
+00:32:46.390 --> 00:32:47.890
+intersect at the same point.
+
+00:32:47.890 --> 00:32:51.050
+So there's no values of c and d
+that satisfy all three at the
+
+00:32:51.050 --> 00:32:52.030
+same time,
+
+00:32:52.030 --> 00:32:56.070
+which means there's no way to
+make this vector b here using x
+
+00:32:56.070 --> 00:32:57.570
+and y.
+
+00:32:57.850 --> 00:33:00.590
+So in the first activity I gave
+you, we kind of just got lucky.
+
+00:33:00.590 --> 00:33:02.950
+I mean, it's not total luck.
+I planted this because I knew
+
+00:33:02.950 --> 00:33:04.550
+this would be the answer.
+
+00:33:04.550 --> 00:33:07.310
+But we got lucky from the
+perspective of, it was possible
+
+00:33:07.310 --> 00:33:09.670
+to make the z using x and y.
+But it doesn't always have to
+
+00:33:09.670 --> 00:33:10.670
+be.
+
+00:33:11.110 --> 00:33:12.770
+Do you see what I mean by that?
+
+00:33:12.770 --> 00:33:13.770
+OK.
+
+00:33:14.930 --> 00:33:16.430
+All right.
+
+00:33:16.610 --> 00:33:21.930
+And this is a good example to
+keep screenshotted in the iPad
+
+00:33:21.930 --> 00:33:22.930
+notes.
+
+00:33:31.730 --> 00:33:32.730
+Okay, so
+
+00:33:32.730 --> 00:33:40.490
+the
+
+00:33:40.490 --> 00:33:43.330
+final thing I want to do here
+before we get into the truly new
+
+00:33:43.330 --> 00:33:48.430
+idea for today is give you a
+formal definition of what a
+
+00:33:48.430 --> 00:33:52.970
+linear combination is.
+I've given you several sort of
+
+00:33:52.970 --> 00:33:56.720
+examples, but never the actual
+definition
+
+00:33:57.330 --> 00:34:02.170
+And this is what I alluded to on
+Tuesday
+
+00:34:02.170 --> 00:34:06.790
+So far we've used one variable
+letter to be the placeholder for
+
+00:34:06.790 --> 00:34:10.550
+the number of things in a vector
+What was that number that we
+
+00:34:10.550 --> 00:34:12.490
+what was that? What was that
+variable? We talked about on
+
+00:34:12.490 --> 00:34:15.030
+Tuesday that we will use for the
+placeholder for the number of
+
+00:34:15.030 --> 00:34:19.890
+things in a vector Yeah And but
+now what I want to do is give
+
+00:34:19.890 --> 00:34:22.550
+you a definition of linear
+combinations That also has a
+
+00:34:22.550 --> 00:34:26.300
+placeholder for the number of
+vectors themselves
+
+00:34:26.610 --> 00:34:30.290
+and That placeholder is going to
+be the letter D
+
+00:34:30.290 --> 00:34:33.730
+So I'm going to say suppose v1
+
+00:34:33.730 --> 00:34:36.730
+v2 Dot-dot-dot through VD
+
+00:34:38.750 --> 00:34:42.710
+Are all vectors in R n
+
+00:34:42.710 --> 00:34:47.960
+So the English way to read this
+is that we have D vectors
+
+00:34:49.010 --> 00:34:52.010
+All with n components.
+
+00:34:55.150 --> 00:34:58.610
+Anytime you see a
+foreign-looking formula or
+
+00:34:58.610 --> 00:35:00.630
+definition like this, the
+easiest way to make sense of it
+
+00:35:00.630 --> 00:35:02.750
+is to just make up numbers on
+the side
+
+00:35:02.750 --> 00:35:04.270
+and see if you can understand
+what that's saying.
+
+00:35:04.270 --> 00:35:07.030
+So what would it mean for d to
+be equal to 5 and n to be equal
+
+00:35:07.030 --> 00:35:08.530
+to 3?
+
+00:35:08.710 --> 00:35:11.310
+Can someone tell me?
+
+00:35:11.310 --> 00:35:15.550
+d equals 5, n equals 3.
+What does that mean?
+
+00:35:15.550 --> 00:35:16.150
+Yeah.
+
+00:35:16.150 --> 00:35:19.790
+So it's like five vectors in
+total, and each of them has
+
+00:35:19.790 --> 00:35:22.070
+three, I guess, directions?
+
+00:35:22.070 --> 00:35:23.650
+Exactly.
+I have five vectors that all
+
+00:35:23.650 --> 00:35:25.590
+live in R3.
+So I could actually make a 3D
+
+00:35:25.590 --> 00:35:27.650
+visual for you of these vectors.
+
+00:35:27.650 --> 00:35:32.130
+But if I instead make it D
+equals 3 and N equals 5,
+
+00:35:32.130 --> 00:35:34.490
+well, now I have only three
+vectors, but they live in R5, so
+
+00:35:34.490 --> 00:35:37.390
+I can't drop for you.
+
+00:35:37.390 --> 00:35:39.150
+So throughout this semester,
+you're going to see lots of
+
+00:35:39.150 --> 00:35:41.310
+definitions that involve N and
+D.
+
+00:35:41.310 --> 00:35:43.490
+And the way that I make sense of
+them is to just make up values
+
+00:35:43.490 --> 00:35:49.110
+for n and d and make sure I
+understand the role of each of
+
+00:35:49.110 --> 00:35:52.110
+those in the definition.
+
+00:35:56.210 --> 00:35:58.130
+A linear combination
+
+00:35:58.130 --> 00:36:03.270
+of these vectors,
+
+00:36:04.090 --> 00:36:09.340
+of the v's, which I might call
+the building blocks,
+
+00:36:09.810 --> 00:36:14.370
+is any vector
+
+00:36:14.370 --> 00:36:17.930
+that can be written
+
+00:36:17.930 --> 00:36:21.690
+as
+
+00:36:21.690 --> 00:36:27.110
+a1 times
+
+00:36:27.110 --> 00:36:32.350
+v1 plus a2 times
+
+00:36:32.350 --> 00:36:36.290
+v2 plus dot-dot-dot a,
+
+00:36:36.690 --> 00:36:37.690
+d,
+
+00:36:37.950 --> 00:36:38.950
+v,
+
+00:36:38.970 --> 00:36:39.970
+d,
+
+00:36:40.270 --> 00:36:43.570
+where the a's
+
+00:36:43.570 --> 00:36:49.190
+are all scalars.
+
+00:36:52.370 --> 00:36:58.070
+This is really just a general
+way of expressing the specific
+
+00:36:58.070 --> 00:37:03.320
+examples we saw just now of like
+4x minus 3y,
+
+00:37:03.650 --> 00:37:06.710
+or 6u plus 1 half v.
+
+00:37:06.710 --> 00:37:07.730
+Right there,
+
+00:37:07.730 --> 00:37:11.290
+I just use the vectors x and y,
+or u and v.
+
+00:37:11.290 --> 00:37:12.910
+Here, I don't know how many
+there are, so I'll probably run
+
+00:37:12.910 --> 00:37:14.290
+out of letters before I,
+
+00:37:14.290 --> 00:37:15.690
+you know, like I don't know how
+many letters to use.
+
+00:37:15.690 --> 00:37:17.750
+Which is why I just say, let's
+just say there are d of them,
+
+00:37:17.750 --> 00:37:19.590
+and call the vectors v1, v2,
+
+00:37:19.590 --> 00:37:21.630
+dot, dot, dot, vd.
+But notice,
+
+00:37:21.630 --> 00:37:22.690
+the vectors have,
+
+00:37:22.690 --> 00:37:24.850
+you know, the v's have arrow
+hats on them, which means
+
+00:37:24.850 --> 00:37:26.610
+they're vectors.
+They're not the components of a
+
+00:37:26.610 --> 00:37:27.610
+vector.
+
+00:37:28.230 --> 00:37:32.510
+What does it mean that a1 to ad
+are scalars? It just means those
+
+00:37:32.510 --> 00:37:35.530
+are numbers rather than vectors.
+
+00:37:35.530 --> 00:37:38.150
+So this is just the general
+template for what a linear
+
+00:37:38.150 --> 00:37:40.400
+combination looks like.
+
+00:37:41.090 --> 00:37:43.810
+Any one specific linear
+combination would have numbers
+
+00:37:43.810 --> 00:37:47.130
+in it.
+Like 3v1 plus 4v2 minus 7v3.
+
+00:37:47.150 --> 00:37:50.900
+That's a linear combination of
+v1, v2, and v3, for example.
+
+00:37:51.350 --> 00:37:54.610
+Okay, this is just like the
+general definition of a linear
+
+00:37:54.610 --> 00:37:55.610
+combination
+
+00:37:58.470 --> 00:38:01.470
+Okay questions so far
+
+00:38:05.330 --> 00:38:09.990
+And I might and I'll note that
+in a linear combination you will
+
+00:38:09.990 --> 00:38:13.740
+call the A's the coefficients
+
+00:38:14.830 --> 00:38:18.710
+But again the formulas look
+scary all this is is just making
+
+00:38:18.710 --> 00:38:22.870
+a new Lego out of of the amounts
+of your building blocks you were
+
+00:38:22.870 --> 00:38:23.590
+given.
+
+00:38:23.590 --> 00:38:26.170
+The v's are the building blocks.
+
+00:38:26.170 --> 00:38:27.130
+And this is saying,
+
+00:38:27.130 --> 00:38:29.670
+let's just make something new by
+taking some amount of each
+
+00:38:29.670 --> 00:38:31.170
+building block.
+
+00:38:33.530 --> 00:38:35.780
+Questions so far?
+
+00:38:38.030 --> 00:38:42.650
+This is not our full coverage of
+linear combinations.
+
+00:38:42.650 --> 00:38:43.930
+This is just the beginning,
+
+00:38:43.930 --> 00:38:47.530
+but linear combinations are
+going to appear as a concept for
+
+00:38:47.530 --> 00:38:49.290
+the rest of the semester.
+
+00:38:49.290 --> 00:38:51.540
+So after today,
+
+00:38:51.810 --> 00:38:53.790
+after this point in lecture,
+
+00:38:53.790 --> 00:38:56.170
+for the rest of today and for
+all of Tuesday, we're going to
+
+00:38:56.170 --> 00:38:57.470
+talk about something else.
+
+00:38:57.470 --> 00:38:59.930
+But then on Thursday, we're
+going to come back to this idea
+
+00:38:59.930 --> 00:39:02.850
+of linear combinations and
+further explore what it really
+
+00:39:02.850 --> 00:39:07.210
+meant for two vectors in R3 to
+define a plane.
+
+00:39:07.210 --> 00:39:08.550
+What does that mean?
+
+00:39:08.550 --> 00:39:11.910
+And like what do five vectors in
+R7 define?
+
+00:39:11.910 --> 00:39:14.830
+Or what do a million vectors in
+R2 define? Those are all things
+
+00:39:14.830 --> 00:39:16.850
+that can be answered precisely.
+
+00:39:16.850 --> 00:39:19.090
+And that's what we're gonna
+start discussing.
+
+00:39:19.090 --> 00:39:21.630
+But for now I want us to just be
+familiar with the general idea
+
+00:39:21.630 --> 00:39:24.630
+of a linear combination.
+
+00:39:25.530 --> 00:39:29.350
+These are the kinds of pictures
+to have in your mind.
+
+00:39:29.350 --> 00:39:30.350
+Okay?
+
+00:39:30.430 --> 00:39:32.890
+Right here I'm looking at
+examples in R2,
+
+00:39:32.890 --> 00:39:35.530
+but in the notes you can see
+examples in R3 and it's
+
+00:39:35.530 --> 00:39:36.730
+generally the same idea.
+
+00:39:36.730 --> 00:39:38.610
+Taking a little bit of one
+vector plus a little bit of
+
+00:39:38.610 --> 00:39:40.230
+another plus a little bit of
+another.
+
+00:39:40.230 --> 00:39:42.330
+I say a little bit, it doesn't
+have to be a small amount, it
+
+00:39:42.330 --> 00:39:43.490
+can even be negative,
+
+00:39:43.490 --> 00:39:45.290
+but that's the way you think of
+it.
+
+00:39:45.290 --> 00:39:48.770
+Using these building blocks to
+produce a new vector.
+
+00:39:48.770 --> 00:39:53.270
+Okay what questions do we have
+so far?
+
+00:39:56.630 --> 00:39:58.130
+Seem okay?
+
+00:39:58.910 --> 00:40:01.910
+All right attendance time.
+
+00:40:09.090 --> 00:40:10.610
+As a reminder Here,
+
+00:40:10.610 --> 00:40:14.530
+you can find the form by going
+to our course website, clicking
+
+00:40:14.530 --> 00:40:16.690
+the attendance form.
+
+00:40:16.690 --> 00:40:20.970
+It's 11.10.
+We'll get started at 11.14.
+
+00:40:22.990 --> 00:40:24.710
+So feel free to get some water,
+
+00:40:24.710 --> 00:40:29.210
+take a break, stretch your legs.
+
+00:40:41.670 --> 00:40:42.670
+Yeah,
+
+00:40:43.410 --> 00:40:46.170
+come here, because I've got to
+fix something.
+
+00:40:46.170 --> 00:40:49.920
+It's probably too weird to
+change.
+
+00:40:50.250 --> 00:40:52.570
+I feel like I just can't.
+
+00:40:52.570 --> 00:40:55.550
+Changing a profiler should sound
+a bit different.
+
+00:40:55.550 --> 00:40:57.750
+That means that those
+coefficients can resolve.
+
+00:40:57.750 --> 00:40:58.350
+Correct,
+
+00:40:58.350 --> 00:40:59.050
+correct.
+
+00:40:59.050 --> 00:41:04.510
+It means that there are a's that
+would make the output vector
+
+00:41:04.510 --> 00:41:06.630
+equal to a linear combination of
+the inputs.
+
+00:41:06.630 --> 00:41:07.690
+So like,
+
+00:41:07.690 --> 00:41:09.190
+yeah, here,
+
+00:41:09.790 --> 00:41:12.550
+this vector z can be written as
+a linear combination of x and y,
+
+00:41:12.550 --> 00:41:14.290
+but if you change this 1 to
+something else, then it can't
+
+00:41:14.290 --> 00:41:15.290
+be.
+
+00:41:18.090 --> 00:41:20.710
+Well, because we already know
+what values of c and d work in
+
+00:41:20.710 --> 00:41:21.850
+the first two lines,
+
+00:41:21.850 --> 00:41:23.010
+4 and negative 3,
+
+00:41:23.010 --> 00:41:25.570
+which means that times 4, which
+is 8,
+
+00:41:25.570 --> 00:41:27.190
+plus that times negative 3,
+
+00:41:27.190 --> 00:41:30.390
+which is negative 9, 8 minus 9,
+
+00:41:30.390 --> 00:41:31.090
+or whatever.
+
+00:41:31.090 --> 00:41:32.710
+I think that's supposed to be
+negative.
+
+00:41:32.710 --> 00:41:33.990
+That's the only number that
+could be.
+
+00:41:33.990 --> 00:41:35.610
+So if I change that to something
+else, it couldn't be a linear
+
+00:41:35.610 --> 00:41:36.610
+combination.
+
+00:41:37.290 --> 00:41:42.540
+It's gonna take time, I can't do
+it right now.
+
+00:41:44.810 --> 00:41:46.890
+We're gonna talk more about
+that.
+
+00:41:46.890 --> 00:41:48.650
+This was just like an intuitive
+introduction.
+
+00:41:48.650 --> 00:41:49.830
+Thank you.
+
+00:41:49.830 --> 00:41:52.530
+It's 11pm and then he said he's
+hopping on a call right now and
+
+00:41:52.530 --> 00:41:54.030
+it's 11.
+
+00:42:01.670 --> 00:42:03.920
+Everyone checked in?
+
+00:42:04.370 --> 00:42:07.370
+No, I'm checked in.
+Yeah, I agree.
+
+00:42:09.390 --> 00:42:10.930
+We need to get 11 p.m.
+today.
+
+00:42:10.930 --> 00:42:13.130
+We need to get 11 p.m.
+today.
+
+00:42:13.130 --> 00:42:15.450
+We just held them at 11 a.m.
+so I think it's an interesting
+
+00:42:15.450 --> 00:42:16.450
+day.
+
+00:42:23.150 --> 00:42:24.050
+Okay,
+
+00:42:24.050 --> 00:42:27.050
+update 24 right now.
+
+00:42:51.210 --> 00:42:54.210
+Okay, another two minutes.
+I'm going to close the form.
+
+00:43:11.230 --> 00:43:12.590
+Yeah, I just closed it.
+
+00:43:12.590 --> 00:43:13.690
+Oh, you didn't check in?
+
+00:43:13.690 --> 00:43:16.690
+Yeah, I got you.
+
+00:43:17.670 --> 00:43:18.670
+OK,
+
+00:43:21.530 --> 00:43:22.170
+try now.
+
+00:43:22.170 --> 00:43:28.170
+Let me know once you do it, and
+then I'll close it.
+
+00:43:40.230 --> 00:43:45.480
+I didn't know this, but you can
+look up the schedule of this.
+
+00:43:47.450 --> 00:43:52.070
+I'm looking up the schedule of
+the classroom that I left it in,
+
+00:43:52.070 --> 00:43:54.470
+so I'm gonna go in between
+there.
+
+00:43:54.470 --> 00:43:57.670
+Just walk through the class.
+
+00:43:57.670 --> 00:43:59.920
+I'm lecturing this.
+
+00:44:09.550 --> 00:44:11.570
+It's 11.14
+so let's keep going.
+
+00:44:12.690 --> 00:44:15.070
+The next half of today's lecture
+is not going to directly be
+
+00:44:15.070 --> 00:44:17.550
+related to linear combinations
+though they will still be
+
+00:44:17.550 --> 00:44:18.410
+relevant.
+
+00:44:18.410 --> 00:44:24.330
+For the next lecture and a half
+we're gonna explore another
+
+00:44:26.430 --> 00:44:30.270
+operation defined between two
+vectors with the same number of
+
+00:44:30.270 --> 00:44:31.270
+components.
+
+00:44:31.350 --> 00:44:34.150
+So to recap, what are the things
+we know how to do with vectors?
+
+00:44:34.150 --> 00:44:35.190
+Well, if we have a vector,
+
+00:44:35.190 --> 00:44:36.750
+first we can find its length.
+
+00:44:36.750 --> 00:44:38.730
+We learned how to do that last
+time.
+
+00:44:38.730 --> 00:44:41.190
+If we have two vectors with the
+same number of components, we
+
+00:44:41.190 --> 00:44:43.270
+can add them.
+
+00:44:43.270 --> 00:44:47.970
+We can also scale a vector by
+any amount we want.
+
+00:44:47.970 --> 00:44:49.810
+A negative scalar flips its
+direction.
+
+00:44:49.810 --> 00:44:52.450
+And if we take one or more
+vectors,
+
+00:44:52.450 --> 00:44:54.830
+scale each one by some amount,
+
+00:44:54.830 --> 00:44:58.580
+and add the results, that's
+called a linear combination.
+
+00:44:59.770 --> 00:45:03.590
+The next operation I'm going to
+introduce pushes,
+
+00:45:03.590 --> 00:45:06.910
+you know, it sort of operates
+outside of the framework of
+
+00:45:06.910 --> 00:45:08.290
+addition and scalar
+multiplication.
+
+00:45:08.290 --> 00:45:09.690
+It does something different,
+
+00:45:09.690 --> 00:45:10.690
+okay?
+
+00:45:10.770 --> 00:45:15.770
+It's going to start with two
+vectors, both in Rn,
+
+00:45:15.990 --> 00:45:19.490
+and remember, this is just a
+fancy way of saying we need to
+
+00:45:19.490 --> 00:45:23.990
+assume they have the same number
+of components.
+
+00:45:27.610 --> 00:45:30.670
+And I know you saw the
+definition in lab yesterday but
+
+00:45:30.670 --> 00:45:34.420
+it's important enough that we
+define it once again together.
+
+00:45:34.850 --> 00:45:40.510
+Let's suppose my vector u has
+the components
+
+00:45:40.510 --> 00:45:45.850
+u1 through un and my vector v
+has the components v1 v2 through
+
+00:45:45.850 --> 00:45:47.350
+v in.
+
+00:45:48.510 --> 00:45:52.890
+What I'm defining is a new
+operation,
+
+00:45:52.890 --> 00:45:55.850
+u dot v.
+
+00:45:57.370 --> 00:45:58.710
+Notice this dot is in the
+middle.
+
+00:45:58.710 --> 00:46:02.030
+It's not like a decimal symbol.
+
+00:46:02.030 --> 00:46:05.610
+And this operation is called the
+dot product.
+
+00:46:05.610 --> 00:46:08.630
+Not the product, the dot
+product.
+
+00:46:08.630 --> 00:46:14.490
+And here's how it's defined.
+And what it's going to return is
+
+00:46:14.490 --> 00:46:18.870
+the result of taking u1 and
+multiplying it by v1.
+
+00:46:18.870 --> 00:46:22.210
+Remember, here, u1 and v1, these
+are just scalars.
+
+00:46:22.210 --> 00:46:24.150
+Just to emphasize,
+
+00:46:24.150 --> 00:46:25.350
+before we took a break,
+
+00:46:25.350 --> 00:46:27.950
+the v1 and v2s we saw were
+vectors.
+
+00:46:27.950 --> 00:46:29.930
+They had vector hats written on
+them, and those were
+
+00:46:29.930 --> 00:46:31.270
+placeholders for vectors.
+
+00:46:31.270 --> 00:46:32.210
+Now,
+
+00:46:32.210 --> 00:46:33.850
+these v's are scalars,
+
+00:46:33.850 --> 00:46:34.810
+different.
+
+00:46:34.810 --> 00:46:37.810
+And so multiplying scalars,
+
+00:46:38.310 --> 00:46:41.110
+we've been doing that since
+kindergarten.
+
+00:46:41.110 --> 00:46:42.610
+U1, V1.
+
+00:46:43.570 --> 00:46:44.570
+Plus,
+
+00:46:46.030 --> 00:46:48.310
+if you had to guess, what do you
+think the next thing
+
+00:46:48.310 --> 00:46:50.330
+after the pluses?
+
+00:46:50.330 --> 00:46:50.870
+Yeah?
+
+00:46:50.870 --> 00:46:54.070
+V2, V2? Yeah, I'm going to take
+the second component of U and
+
+00:46:54.070 --> 00:46:57.820
+multiply it by the second
+component of V.
+
+00:46:59.310 --> 00:47:01.330
+Do people learn how to multiply
+in kindergarten?
+
+00:47:01.330 --> 00:47:02.490
+I don't remember.
+
+00:47:02.490 --> 00:47:04.740
+I don't know.
+
+00:47:05.190 --> 00:47:08.940
+It's like a dance kindergarten.
+Yeah, AP kindergarten.
+
+00:47:09.790 --> 00:47:13.030
+All the way through UNVN.
+
+00:47:13.030 --> 00:47:18.190
+So I'm going to do U1 V1 plus U2
+V2 plus dot dot dot plus
+
+00:47:18.190 --> 00:47:19.850
+UNVN.
+So I'm going to take the first
+
+00:47:19.850 --> 00:47:20.670
+of each,
+
+00:47:20.670 --> 00:47:22.070
+multiply them.
+
+00:47:22.070 --> 00:47:23.850
+Plus the second of each,
+
+00:47:23.850 --> 00:47:24.990
+multiply them.
+
+00:47:24.990 --> 00:47:29.130
+Plus the third of each, multiply
+them, and so on.
+
+00:47:29.130 --> 00:47:32.880
+Now, here's the most important
+point I will make today.
+
+00:47:33.190 --> 00:47:36.830
+The result that comes out of
+this operation, and what type of
+
+00:47:36.830 --> 00:47:38.790
+object is it?
+
+00:47:38.790 --> 00:47:40.850
+Is it another vector?
+
+00:47:40.850 --> 00:47:42.110
+It's a scalar.
+
+00:47:42.110 --> 00:47:44.360
+OK, that's huge.
+
+00:47:53.730 --> 00:47:56.430
+The way that my, I think I
+mentioned before that I'm also
+
+00:47:56.430 --> 00:47:59.230
+teaching a new math department
+linear algebra class.
+
+00:47:59.230 --> 00:48:01.830
+I talked about dot products
+there last week.
+
+00:48:01.830 --> 00:48:04.730
+And the way my co-instructor set
+it to the class is he says,
+
+00:48:04.730 --> 00:48:07.590
+think of the dot product as an
+operation that eats two vectors
+
+00:48:07.590 --> 00:48:11.150
+and spits out a scalar, OK?
+
+00:48:11.150 --> 00:48:13.050
+I don't know if that will help
+you remember it any better.
+
+00:48:13.050 --> 00:48:16.770
+But the point here is that
+unlike the sum of two vectors
+
+00:48:16.770 --> 00:48:18.090
+which gave you a new vector,
+
+00:48:18.090 --> 00:48:21.750
+here the dot product of two
+vectors is giving you a number,
+
+00:48:21.750 --> 00:48:22.750
+OK?
+
+00:48:24.990 --> 00:48:27.850
+And what we're going to try and
+understand today is what does
+
+00:48:27.850 --> 00:48:31.510
+that number actually tell us
+about the meaning of the vector?
+
+00:48:31.510 --> 00:48:33.270
+Like sure, I can give you two
+vectors, tell you to find the
+
+00:48:33.270 --> 00:48:34.650
+dot product, it'll,
+
+00:48:34.650 --> 00:48:36.810
+okay, two vectors have a dot
+product of negative 30.
+
+00:48:36.810 --> 00:48:38.630
+Who cares? Like what am I going
+to do with that? That's what
+
+00:48:38.630 --> 00:48:41.350
+we're going to try and
+understand.
+
+00:48:41.350 --> 00:48:42.210
+Okay,
+
+00:48:42.210 --> 00:48:44.690
+before we get there,
+
+00:48:44.690 --> 00:48:48.410
+what property does this dot
+product, just from this
+
+00:48:48.410 --> 00:48:49.270
+definition,
+
+00:48:49.270 --> 00:48:49.850
+satisfy?
+
+00:48:49.850 --> 00:48:55.100
+It's one that we talked about on
+Tuesday as well for addition.
+
+00:48:56.010 --> 00:48:57.510
+It's commutative.
+
+00:48:58.710 --> 00:48:59.710
+Commutative.
+
+00:49:00.210 --> 00:49:01.210
+Commutative.
+
+00:49:01.630 --> 00:49:02.630
+Good.
+Yeah,
+
+00:49:03.030 --> 00:49:09.780
+it means u dot v is the same as
+v dot u.
+
+00:49:13.730 --> 00:49:14.730
+Okay.
+
+00:49:15.410 --> 00:49:18.410
+So let's start by working out an
+example.
+
+00:49:18.410 --> 00:49:21.610
+I know you saw a few in lab
+yesterday, but just to have one.
+
+00:49:21.610 --> 00:49:23.390
+Let's suppose x is 4, 3,
+
+00:49:23.390 --> 00:49:27.150
+y is negative 2, negative 5.
+
+00:49:27.150 --> 00:49:29.590
+What is x dot y?
+
+00:49:29.590 --> 00:49:30.670
+Well, Well,
+
+00:49:30.670 --> 00:49:33.550
+I'm going to take the first
+thing in x, multiply it by the
+
+00:49:33.550 --> 00:49:35.730
+first thing in y.
+
+00:49:35.730 --> 00:49:39.190
+That's going to be 4 times
+negative 2.
+
+00:49:39.190 --> 00:49:43.290
+Plus the second thing in x times
+the second thing in y.
+
+00:49:43.290 --> 00:49:46.070
+That's going to be 3 times
+negative 5.
+
+00:49:46.070 --> 00:49:49.490
+So the result is going to be
+negative 8 minus 15, which is
+
+00:49:49.490 --> 00:49:50.990
+negative 23.
+
+00:49:55.370 --> 00:49:57.170
+So negative 23,
+
+00:49:57.170 --> 00:49:58.710
+which is just a scalar,
+
+00:49:58.710 --> 00:50:01.790
+is the dot product of x and y.
+
+00:50:01.790 --> 00:50:04.190
+The question we have to answer
+is, what does negative 23
+
+00:50:04.190 --> 00:50:06.310
+actually tell us about x and y?
+
+00:50:06.310 --> 00:50:08.370
+And it turns out it actually
+means a lot.
+
+00:50:08.370 --> 00:50:11.630
+It tells us something about the
+geometry of x and y when you
+
+00:50:11.630 --> 00:50:13.070
+draw them,
+
+00:50:13.070 --> 00:50:15.670
+which is interesting because we
+didn't draw them.
+
+00:50:15.670 --> 00:50:18.390
+We're treating them as lists of
+numbers, but the number negative
+
+00:50:18.390 --> 00:50:20.750
+23 means something.
+We're going to understand that
+
+00:50:20.750 --> 00:50:23.390
+by the end of today.
+
+00:50:23.390 --> 00:50:24.390
+OK.
+
+00:50:25.410 --> 00:50:28.970
+Before we embark on our journey
+of trying to understand what the
+
+00:50:28.970 --> 00:50:31.590
+dot product actually tells us,
+
+00:50:31.590 --> 00:50:33.840
+here's a question.
+
+00:50:37.390 --> 00:50:39.370
+Is that a valid operation?
+
+00:50:39.370 --> 00:50:40.570
+u.v.w?
+
+00:50:41.950 --> 00:50:43.810
+No.
+Why am I seeing a bunch of no's?
+
+00:50:49.530 --> 00:50:51.470
+Like, why is that not legal?
+
+00:50:51.470 --> 00:50:52.110
+Yeah.
+
+00:50:52.110 --> 00:50:54.430
+So let's do the dot product.
+You have a number, and so you
+
+00:50:54.430 --> 00:50:55.690
+get a dot number.
+
+00:50:55.690 --> 00:50:56.450
+Exactly.
+
+00:50:56.450 --> 00:50:59.850
+The dot product is defined very
+precisely as being an operation
+
+00:50:59.850 --> 00:51:03.470
+that takes in two vectors and
+returns a number.
+
+00:51:03.470 --> 00:51:06.890
+If you want to multiply a vector
+by a number,
+
+00:51:06.890 --> 00:51:08.910
+that's legal also.
+That's scalar multiplication,
+
+00:51:08.910 --> 00:51:10.710
+but that's different than a dot
+product.
+
+00:51:10.710 --> 00:51:12.830
+And you wouldn't write this dot
+here.
+
+00:51:12.830 --> 00:51:15.050
+So my preference in this class,
+whenever you're working out
+
+00:51:15.050 --> 00:51:15.990
+algebra,
+
+00:51:15.990 --> 00:51:19.990
+is to only use the dot symbol
+when you're dealing with the dot
+
+00:51:19.990 --> 00:51:21.890
+product of two vectors.
+
+00:51:21.890 --> 00:51:25.640
+Even though it is perfectly
+legal to say 3.4,
+
+00:51:26.170 --> 00:51:28.390
+to say 3 times 4,
+
+00:51:28.390 --> 00:51:31.530
+what I'd prefer is for you to
+not do that, just so it's
+
+00:51:31.530 --> 00:51:33.930
+crystal clear when you're
+dealing with the dot product of
+
+00:51:33.930 --> 00:51:36.030
+two vectors and when you're just
+dealing with some other type of
+
+00:51:36.030 --> 00:51:37.030
+multiplication.
+
+00:51:37.150 --> 00:51:39.290
+So how would you write 3 times 4
+instead?
+
+00:51:39.290 --> 00:51:43.210
+You can just do 3 parentheses 4
+or something.
+
+00:51:43.210 --> 00:51:45.150
+Don't use the time symbol
+because that's going to mean
+
+00:51:45.150 --> 00:51:47.400
+something else too.
+u.
+
+00:51:47.450 --> 00:51:48.450
+OK,
+
+00:51:48.530 --> 00:51:50.430
+so this is not defined.
+
+00:51:50.430 --> 00:51:54.930
+If I wanted to somehow multiply
+these three vectors,
+
+00:51:56.930 --> 00:51:59.970
+u dot v times w,
+
+00:51:59.970 --> 00:52:02.970
+that's a perfectly valid
+operation.
+
+00:52:03.230 --> 00:52:09.130
+u dot v gives me a number, and I
+can multiply that
+
+00:52:09.130 --> 00:52:11.950
+number by w.
+And this will stretch or
+
+00:52:11.950 --> 00:52:16.570
+compress w by whatever u dot v
+is.
+
+00:52:16.570 --> 00:52:17.570
+Similarly,
+
+00:52:17.690 --> 00:52:22.110
+I could multiply u by v dot w.
+
+00:52:22.110 --> 00:52:24.690
+This is a little strange because
+I'm putting the scalar after the
+
+00:52:24.690 --> 00:52:26.370
+vector, but that's fine.
+
+00:52:26.370 --> 00:52:27.950
+That's fine, too.
+
+00:52:27.950 --> 00:52:30.810
+Are these the same vector,
+though?
+
+00:52:30.810 --> 00:52:33.690
+No, because the first thing is a
+scalar multiple of w.
+
+00:52:33.690 --> 00:52:36.630
+The second thing is a scalar
+multiple of u.
+
+00:52:36.630 --> 00:52:37.990
+Unless v and u,
+
+00:52:37.990 --> 00:52:38.390
+sorry,
+
+00:52:38.390 --> 00:52:42.530
+unless w and u already pointed
+in the same direction,
+
+00:52:42.530 --> 00:52:44.290
+these are not going to point in
+the same direction even.
+
+00:52:44.290 --> 00:52:49.540
+So how could they be the same
+vector?
+
+00:52:49.730 --> 00:52:55.650
+So this is why I harped on, on
+Tuesday,
+
+00:52:55.650 --> 00:52:59.210
+the importance of being careful
+with your notation here and very
+
+00:52:59.210 --> 00:53:02.490
+clearly specifying what is a
+vector and what is a number.
+
+00:53:02.490 --> 00:53:05.490
+Because these operations are
+defined very precisely.
+
+00:53:07.390 --> 00:53:09.930
+Now let's try and understand
+what the dot product actually
+
+00:53:09.930 --> 00:53:12.930
+means and so to do that I'm
+going to switch back to the
+
+00:53:12.930 --> 00:53:18.730
+example vectors of X being four
+three and Y
+
+00:53:18.730 --> 00:53:24.730
+being you know I'm gonna
+actually write these in colors
+
+00:53:24.730 --> 00:53:32.830
+and
+
+00:53:32.830 --> 00:53:38.150
+Y being negative two negative
+five let's try and understand
+
+00:53:38.150 --> 00:53:41.690
+what this actually tells us
+about the relationship between x
+
+00:53:41.690 --> 00:53:43.190
+and y.
+
+00:53:43.730 --> 00:53:46.770
+x is going to be four units to
+the right, three units up, let's
+
+00:53:46.770 --> 00:53:49.770
+just say it's that.
+
+00:53:51.430 --> 00:53:54.030
+And y is going to go left and
+down,
+
+00:53:54.030 --> 00:53:54.670
+right,
+
+00:53:54.670 --> 00:53:56.920
+but mostly down.
+
+00:54:01.890 --> 00:54:04.610
+And as we saw,
+
+00:54:04.610 --> 00:54:06.770
+the dot product of x and y
+
+00:54:06.770 --> 00:54:12.350
+was negative 23.
+
+00:54:14.770 --> 00:54:17.590
+And so that must mean something,
+
+00:54:17.590 --> 00:54:21.340
+or I'm claiming that means
+something.
+
+00:54:24.510 --> 00:54:28.670
+What I'd like to do is sort of
+try and develop an intuitive
+
+00:54:28.670 --> 00:54:31.530
+understanding of what it could
+mean
+
+00:54:31.530 --> 00:54:35.690
+by introducing another vector
+and taking the dot product of
+
+00:54:35.690 --> 00:54:39.440
+that other vector with x.
+
+00:54:39.550 --> 00:54:42.930
+That other vector I want to
+introduce, I'll say, is negative
+
+00:54:42.930 --> 00:54:45.180
+6 comma 8.
+
+00:54:47.050 --> 00:54:50.430
+Where is that going to look?
+It's going to go left and up,
+
+00:54:50.430 --> 00:54:52.790
+so something like that.
+
+00:54:52.790 --> 00:54:54.090
+It's not drawn to scale,
+
+00:54:54.090 --> 00:54:58.590
+but roughly you get the idea.
+
+00:55:04.390 --> 00:55:09.640
+What is the dot product of x
+with z?
+
+00:55:18.170 --> 00:55:22.390
+Well, it's going to be 4 times
+negative 6
+
+00:55:22.390 --> 00:55:25.290
+plus what?
+
+00:55:27.930 --> 00:55:31.430
+What's the dot product of x with
+z?
+
+00:55:31.430 --> 00:55:34.430
+What's the next factor?
+
+00:55:36.590 --> 00:55:38.090
+Yeah, good.
+
+00:55:38.750 --> 00:55:39.970
+3 times 8,
+
+00:55:39.970 --> 00:55:44.770
+which is negative 24 plus 24.
+Last I checked, that's equal to
+
+00:55:44.770 --> 00:55:45.770
+0.
+
+00:55:46.070 --> 00:55:47.070
+Okay,
+
+00:55:47.550 --> 00:55:49.430
+so let's recap what we know so
+far.
+
+00:55:49.430 --> 00:55:50.810
+X and Y,
+
+00:55:50.810 --> 00:55:53.390
+their drop product is negative.
+
+00:55:53.390 --> 00:55:55.970
+And what do you notice about X
+and Y, the arrows I've drawn for
+
+00:55:55.970 --> 00:55:56.970
+them?
+
+00:56:03.430 --> 00:56:06.310
+Yeah, they're pointing in almost
+opposite directions.
+
+00:56:06.310 --> 00:56:08.710
+It's not perfectly opposite
+because they're not on the same
+
+00:56:08.710 --> 00:56:11.750
+line, but they're almost
+opposite.
+
+00:56:12.550 --> 00:56:15.350
+Okay, and you can imagine what
+if I took the dot product of x
+
+00:56:15.350 --> 00:56:18.750
+with negative four, negative
+three,
+
+00:56:19.090 --> 00:56:21.290
+which is just the same as
+negative x,
+
+00:56:21.290 --> 00:56:25.790
+what would the dot product be?
+it would be negative 25,
+
+00:56:25.930 --> 00:56:28.430
+okay and that's a big negative
+number and that would be the dot
+
+00:56:28.430 --> 00:56:31.250
+product of X with a vector that
+points in the exact opposite
+
+00:56:31.250 --> 00:56:33.170
+direction of X.
+
+00:56:33.170 --> 00:56:38.420
+What do you see about the dot
+product of X with Z?
+
+00:56:41.870 --> 00:56:45.230
+It's not a trick question.
+What's it equal to?
+
+00:56:45.230 --> 00:56:46.230
+Zero.
+
+00:56:47.490 --> 00:56:49.790
+And what do you notice
+geometrically about the
+
+00:56:49.790 --> 00:56:53.390
+relationship with between X and
+Z job indeed yeah it's
+
+00:56:53.390 --> 00:56:56.630
+perpendicular okay
+
+00:57:00.470 --> 00:57:05.790
+that is huge if the dot product
+between two vectors
+
+00:57:05.790 --> 00:57:07.850
+is zero
+
+00:57:07.850 --> 00:57:12.930
+that means the vectors
+
+00:57:15.030 --> 00:57:16.530
+are perpendicular.
+
+00:57:25.930 --> 00:57:30.890
+Another fancy word for
+perpendicular is orthogonal.
+
+00:57:32.450 --> 00:57:35.270
+All it means is perpendicular.
+
+00:57:35.270 --> 00:57:37.910
+It's the one we will use more in
+this class and is more common to
+
+00:57:37.910 --> 00:57:40.910
+use in machine learning.
+
+00:57:41.150 --> 00:57:44.900
+All it means is perpendicular.
+
+00:57:45.550 --> 00:57:47.990
+Now right now I haven't given
+you a proof of why this is true.
+
+00:57:47.990 --> 00:57:50.790
+This is just like proof by
+vibes, trust me.
+
+00:57:50.790 --> 00:57:53.030
+These two vectors have a right
+angle and their dot product is
+
+00:57:53.030 --> 00:57:53.630
+zero,
+
+00:57:53.630 --> 00:57:56.350
+but what we're about to see is
+that that's always true.
+
+00:57:56.350 --> 00:57:58.630
+Anytime there's a right angle
+the dot product is zero, and
+
+00:57:58.630 --> 00:58:00.250
+there's a reason for that.
+
+00:58:00.250 --> 00:58:02.230
+The weird thing is though we're
+not always going to be able to
+
+00:58:02.230 --> 00:58:04.550
+draw the vectors out.
+Right here I pick vectors in R2
+
+00:58:04.550 --> 00:58:06.210
+because they're easy to draw.
+
+00:58:06.210 --> 00:58:08.310
+I could have given you an
+example in R3, We could have
+
+00:58:08.310 --> 00:58:10.050
+drawn those too.
+
+00:58:10.050 --> 00:58:12.430
+What if we had two vectors in
+R17?
+
+00:58:12.430 --> 00:58:14.230
+They both have 17 components in
+them.
+
+00:58:14.230 --> 00:58:15.770
+How am I going to draw those?
+
+00:58:15.770 --> 00:58:16.790
+I'm not.
+
+00:58:16.790 --> 00:58:21.810
+But their dot product being 0 is
+what we will use as the
+
+00:58:21.810 --> 00:58:24.290
+definition of those vectors
+being perpendicular to each
+
+00:58:24.290 --> 00:58:25.290
+other.
+
+00:58:25.570 --> 00:58:27.870
+It's sort of an abstract idea.
+
+00:58:27.870 --> 00:58:30.370
+But this gives us a way of
+defining what makes two vectors
+
+00:58:30.370 --> 00:58:31.370
+perpendicular,
+
+00:58:31.490 --> 00:58:34.010
+even if we can't visualize them.
+
+00:58:34.010 --> 00:58:37.010
+They're perpendicular when their
+dot product is 0.
+
+00:58:37.150 --> 00:58:41.650
+Again, why is that the case?
+We're going to see that shortly.
+
+00:58:44.250 --> 00:58:48.750
+Finally, what happens if I get
+the dot product of x with x?
+
+00:58:54.690 --> 00:58:59.890
+The dot product of x with x.
+
+00:58:59.890 --> 00:59:03.430
+What does that give me?
+
+00:59:03.430 --> 00:59:05.680
+Yeah, it's on.
+
+00:59:06.690 --> 00:59:09.970
+Good, it's just the length of x
+squared.
+
+00:59:09.970 --> 00:59:13.250
+Where is this coming from? Well,
+x dot x should give me 4 times
+
+00:59:13.250 --> 00:59:14.250
+4,
+
+00:59:16.350 --> 00:59:21.430
+which is 4 squared, plus 3 times
+3,
+
+00:59:21.430 --> 00:59:24.430
+which is 3 squared.
+
+00:59:24.810 --> 00:59:27.290
+But note, if I asked you find
+the length of x, it would just
+
+00:59:27.290 --> 00:59:30.490
+be the same thing that I wrote
+with a square root,
+
+00:59:30.490 --> 00:59:31.430
+right?
+
+00:59:31.430 --> 00:59:35.890
+It would be the square root of 4
+squared plus 3 squared.
+
+00:59:35.890 --> 00:59:39.510
+So this is 25.
+It is equal to the length of x
+
+00:59:39.510 --> 00:59:40.750
+squared.
+
+00:59:41.070 --> 00:59:43.110
+So that's an important fact.
+
+00:59:43.110 --> 00:59:45.990
+There's nothing special about
+this x here.
+
+00:59:45.990 --> 00:59:47.490
+In general,
+
+00:59:48.010 --> 00:59:50.610
+the length of a vector squared
+
+00:59:50.610 --> 00:59:53.990
+is equal to the dot product of
+the vector with itself.
+
+00:59:53.990 --> 00:59:55.450
+Why would you need to know that?
+
+00:59:55.450 --> 00:59:58.730
+Well, it's because there are
+often proofs you need to do
+
+00:59:58.730 --> 01:00:01.010
+involving the length of a
+vector.
+
+01:00:01.010 --> 01:00:04.590
+And the way you simplify things
+is by writing the length of a
+
+01:00:04.590 --> 01:00:07.190
+vector squared equals the dot
+product of it with itself,
+
+01:00:07.190 --> 01:00:10.210
+because then this allows you to
+do a lot more algebra with it.
+
+01:00:10.210 --> 01:00:13.230
+We're going to see a little bit
+of that in just a moment.
+
+01:00:13.230 --> 01:00:14.770
+OK, so what was the point of
+this?
+
+01:00:14.770 --> 01:00:19.270
+I wanted to give you some
+understanding,
+
+01:00:19.450 --> 01:00:22.530
+at least just by example for
+now, that the dot product of two
+
+01:00:22.530 --> 01:00:26.570
+vectors has something to do with
+how closely aligned they are.
+
+01:00:26.570 --> 01:00:29.530
+If they both point in similar
+directions,
+
+01:00:29.530 --> 01:00:32.130
+their dot product is big and
+positive.
+
+01:00:32.130 --> 01:00:34.750
+If they point in roughly
+opposite directions, their dot
+
+01:00:34.750 --> 01:00:36.750
+product is big and negative.
+
+01:00:36.750 --> 01:00:39.170
+If they're at right angles with
+each other,
+
+01:00:39.170 --> 01:00:41.970
+their dot product is zero.
+
+01:00:41.970 --> 01:00:44.970
+Do we see where that's coming
+from?
+
+01:00:44.970 --> 01:00:47.630
+Not where it's coming from, but
+do we see at least in this
+
+01:00:47.630 --> 01:00:49.610
+example that that's true?
+
+01:00:49.610 --> 01:00:50.110
+Yeah.
+
+01:00:50.110 --> 01:00:50.890
+Okay.
+Okay,
+
+01:00:50.890 --> 01:00:55.310
+so the key idea is that the dot
+product
+
+01:00:55.310 --> 01:00:59.270
+measures
+
+01:00:59.270 --> 01:01:02.690
+similarity.
+
+01:01:05.390 --> 01:01:10.650
+x dot y is
+
+01:01:10.650 --> 01:01:12.230
+positive,
+
+01:01:13.070 --> 01:01:15.830
+similar
+
+01:01:15.830 --> 01:01:19.130
+directions,
+
+01:01:21.050 --> 01:01:26.570
+zero, they're perpendicular.
+
+01:01:45.350 --> 01:01:49.100
+I'll say large and positive
+versus large and negative.
+
+01:01:49.190 --> 01:01:52.890
+Because a dot product of 0.01
+and a dot product of negative of
+
+01:01:52.890 --> 01:01:53.890
+0.01.
+
+01:01:54.210 --> 01:01:58.030
+Both of them are almost
+indicative of vectors being
+
+01:01:58.030 --> 01:01:59.030
+perpendicular.
+
+01:01:59.390 --> 01:02:03.890
+I wouldn't say one is more
+similar than the other.
+
+01:02:04.950 --> 01:02:05.950
+OK,
+
+01:02:06.110 --> 01:02:10.610
+now the question is, where does
+this come from?
+
+01:02:11.370 --> 01:02:14.770
+To see where it comes from,
+
+01:02:14.770 --> 01:02:18.410
+and I'm going to move through
+this a little quickly,
+
+01:02:18.410 --> 01:02:21.010
+because it's not the main point.
+
+01:02:21.010 --> 01:02:24.490
+What I want to do is just draw
+two arbitrary vectors, both from
+
+01:02:24.490 --> 01:02:25.990
+the origin,
+
+01:02:26.410 --> 01:02:28.130
+u and v,
+
+01:02:28.130 --> 01:02:33.230
+and I want to have a variable
+that denotes the angle between
+
+01:02:33.230 --> 01:02:35.290
+them, because it seems like the
+dot product has some
+
+01:02:35.290 --> 01:02:37.350
+relationship to the angle.
+
+01:02:37.350 --> 01:02:39.510
+That's what was going on here.
+
+01:02:39.510 --> 01:02:40.370
+Do we agree?
+
+01:02:40.370 --> 01:02:42.210
+There's some connection.
+
+01:02:42.210 --> 01:02:44.830
+So let's see if we can try and
+make that connection precise.
+
+01:02:44.830 --> 01:02:45.570
+What I'm going to do,
+
+01:02:45.570 --> 01:02:47.690
+let me erase this axis line
+here, I'm going to say the angle
+
+01:02:47.690 --> 01:02:49.970
+between these vectors,
+
+01:02:55.830 --> 01:03:00.530
+the angle between these vectors
+
+01:03:07.830 --> 01:03:09.330
+is theta.
+
+01:03:13.630 --> 01:03:17.380
+Here's a question for you.
+
+01:03:19.050 --> 01:03:21.830
+So what is the name of that
+vector I just drew?
+
+01:03:21.830 --> 01:03:27.080
+The one that goes from the tip
+of v to the tip of u.
+
+01:03:30.550 --> 01:03:33.170
+How would I make that vector
+using u and v?
+
+01:03:33.170 --> 01:03:36.920
+Is that u plus v?
+
+01:03:38.170 --> 01:03:40.990
+No, it's not.
+u plus v would be like this plus
+
+01:03:40.990 --> 01:03:42.510
+this.
+It would live over here.
+
+01:03:43.830 --> 01:03:44.930
+But what is it then?
+
+01:03:44.930 --> 01:03:45.930
+Yeah?
+
+01:03:46.590 --> 01:03:48.840
+3u minus v.
+
+01:03:48.930 --> 01:03:49.930
+Close.
+
+01:03:53.430 --> 01:03:54.890
+In fact, yeah, sorry.
+I don't know why I said close.
+
+01:03:54.890 --> 01:03:58.890
+Yeah, it is u minus v.
+How'd you get that?
+
+01:03:58.890 --> 01:04:01.970
+Because v plus dot vector would
+make u,
+
+01:04:01.970 --> 01:04:02.890
+so.
+
+01:04:02.890 --> 01:04:03.890
+Good.
+
+01:04:04.310 --> 01:04:06.150
+There's a few ways you can think
+about it.
+
+01:04:06.150 --> 01:04:10.490
+This is a vector we made by
+taking v plus blank.
+
+01:04:10.490 --> 01:04:14.950
+So if you say v plus blank
+equals u, the blank is equal to
+
+01:04:14.950 --> 01:04:16.690
+u minus v.
+
+01:04:16.690 --> 01:04:19.970
+Another way of thinking about it
+is how do you make this vector?
+
+01:04:19.970 --> 01:04:20.490
+Well,
+
+01:04:20.490 --> 01:04:22.810
+what you got to do is travel
+opposite v,
+
+01:04:22.810 --> 01:04:24.930
+that this is like a negative of
+a v,
+
+01:04:24.930 --> 01:04:27.110
+and then to dot add u.
+
+01:04:27.110 --> 01:04:29.360
+So either way
+
+01:04:30.090 --> 01:04:32.270
+you end up with u minus v.
+
+01:04:32.270 --> 01:04:34.630
+So the reason I said close but
+not so confidently that it was
+
+01:04:34.630 --> 01:04:36.730
+true is because this is a tricky
+idea even for me.
+
+01:04:36.730 --> 01:04:39.550
+Is this u minus v or is it v
+minus u?
+
+01:04:39.550 --> 01:04:41.110
+Okay, when you're,
+
+01:04:41.110 --> 01:04:42.470
+either way, it mostly looks the
+same.
+
+01:04:42.470 --> 01:04:45.010
+The question is where's the tip
+of the arrow?
+
+01:04:45.010 --> 01:04:47.270
+Right, if the tip was at the
+bottom, well, then it would be v
+
+01:04:47.270 --> 01:04:48.770
+minus u.
+
+01:04:51.450 --> 01:04:52.410
+Okay,
+
+01:04:52.410 --> 01:04:55.430
+but the way to see that this
+vector is u minus v is that if
+
+01:04:55.430 --> 01:04:59.650
+you took v and to that added
+this thing we produced the v and
+
+01:04:59.650 --> 01:05:02.850
+minus v would cancel out and
+you're left with u.
+
+01:05:02.850 --> 01:05:05.250
+Okay, so that's the vector u
+minus v.
+
+01:05:05.250 --> 01:05:06.250
+Okay.
+Okay,
+
+01:05:06.510 --> 01:05:07.830
+who remembers,
+
+01:05:07.830 --> 01:05:09.550
+from high school,
+
+01:05:09.550 --> 01:05:14.350
+a rule from trig that describes
+the lengths of all three sides
+
+01:05:14.350 --> 01:05:18.850
+of the triangle we're looking at
+right now?
+
+01:05:21.730 --> 01:05:23.910
+Gotta reach deep in the bag
+here.
+
+01:05:23.910 --> 01:05:25.050
+It's not SOHCAHTOA,
+
+01:05:25.050 --> 01:05:25.730
+is it?
+
+01:05:25.730 --> 01:05:28.850
+No, because SOHCAHTOA is more
+about right-angle triangles and
+
+01:05:28.850 --> 01:05:32.600
+none of the angles here
+necessarily are right-angle.
+
+01:05:32.650 --> 01:05:33.650
+Yeah?
+
+01:05:34.250 --> 01:05:35.650
+Watch.
+Law of cosines?
+
+01:05:35.870 --> 01:05:38.870
+Yeah, the cosine law.
+And what does that say?
+
+01:05:41.650 --> 01:05:43.990
+The cosine law says,
+
+01:05:43.990 --> 01:05:45.390
+if you have a triangle,
+
+01:05:45.390 --> 01:05:47.150
+doesn't have to be right angle
+triangle,
+
+01:05:47.150 --> 01:05:49.090
+with sides length a,
+
+01:05:49.090 --> 01:05:50.150
+b, and c,
+
+01:05:50.150 --> 01:05:53.470
+and angles capital A,
+
+01:05:54.390 --> 01:05:55.510
+capital B,
+
+01:05:55.510 --> 01:05:59.670
+and capital C, using the
+convention that angle C is
+
+01:05:59.670 --> 01:06:01.110
+across side c,
+
+01:06:01.110 --> 01:06:04.990
+angle A is across side What does
+the cosine law tell you about
+
+01:06:04.990 --> 01:06:07.240
+this set up?
+
+01:06:11.550 --> 01:06:12.550
+Yeah?
+
+01:06:13.450 --> 01:06:18.130
+c squared is equal to a squared
+plus b squared minus
+
+01:06:18.130 --> 01:06:22.630
+2 ab cosine of angle c.
+
+01:06:25.430 --> 01:06:26.430
+Indeed.
+
+01:06:26.450 --> 01:06:30.250
+The cosine law says c squared is
+equal to a squared plus b
+
+01:06:30.250 --> 01:06:33.290
+squared minus 2 ab cos c.
+The thing is this is different
+
+01:06:33.290 --> 01:06:36.970
+than a right angle triangle and
+that there's no like
+
+01:06:36.970 --> 01:06:39.910
+These labels are all arbitrary I
+could have rewritten the
+
+01:06:39.910 --> 01:06:44.370
+triangle with this being a this
+being B and this being C and the
+
+01:06:44.370 --> 01:06:47.090
+same thing would be true So like
+another way you could think
+
+01:06:47.090 --> 01:06:48.250
+about this
+
+01:06:48.250 --> 01:06:53.530
+Is that a squared is equal to B
+squared plus C squared minus 2 B
+
+01:06:53.530 --> 01:06:54.470
+C
+
+01:06:54.470 --> 01:06:58.470
+Cos a and it's also true that B
+squared is equal to blah blah
+
+01:06:58.470 --> 01:06:59.670
+blah.
+Those are all true
+
+01:07:00.710 --> 01:07:05.210
+You only really need to remember
+one of them.
+
+01:07:10.530 --> 01:07:12.010
+Probably didn't wake up thinking
+you were going to have to
+
+01:07:12.010 --> 01:07:14.260
+remember this today.
+
+01:07:14.730 --> 01:07:17.070
+What does that have to do with
+this situation?
+
+01:07:17.070 --> 01:07:21.570
+How could we apply that here?
+
+01:07:22.510 --> 01:07:23.510
+Yeah.
+
+01:07:24.350 --> 01:07:25.850
+Yeah, yeah.
+
+01:07:26.110 --> 01:07:30.150
+We do the magnitude of u minus v
+squared
+
+01:07:30.150 --> 01:07:34.070
+Good is equal to the magnitude
+of u squared plus the magnitude
+
+01:07:34.070 --> 01:07:36.830
+of v squared plus 2 and the
+magnitude of u and the magnitude
+
+01:07:36.830 --> 01:07:38.290
+of v cosine theta.
+
+01:07:38.290 --> 01:07:40.610
+Good.
+All I'm doing is I'm saying c is
+
+01:07:40.610 --> 01:07:42.730
+the length of u minus v.
+
+01:07:42.730 --> 01:07:44.750
+Like this is the side length c,
+
+01:07:44.750 --> 01:07:46.330
+this is the side length a,
+
+01:07:46.330 --> 01:07:49.130
+this is the side length b, and
+this is the angle c.
+
+01:07:49.130 --> 01:07:50.330
+It's the same setup.
+
+01:07:50.330 --> 01:07:52.850
+It's just that the definitions
+involve vectors.
+
+01:07:52.850 --> 01:07:56.650
+All right, so I got a length of
+u squared plus a length of v
+
+01:07:56.650 --> 01:08:01.850
+squared minus 2 length of u
+length of
+
+01:08:01.850 --> 01:08:04.930
+v cosine theta.
+
+01:08:06.070 --> 01:08:07.170
+All right,
+
+01:08:07.170 --> 01:08:09.750
+so we got a cosine theta.
+
+01:08:09.750 --> 01:08:11.970
+So we have some relationship
+between the lengths of the
+
+01:08:11.970 --> 01:08:15.310
+vectors and the angle theta.
+
+01:08:15.310 --> 01:08:18.990
+But the dot product does not
+appear anywhere here.
+
+01:08:18.990 --> 01:08:19.990
+So,
+
+01:08:20.150 --> 01:08:22.710
+Remember, the whole point of
+this was to try and understand
+
+01:08:22.710 --> 01:08:24.950
+why it seems like the dot
+product has something to do with
+
+01:08:24.950 --> 01:08:25.950
+angle.
+
+01:08:26.470 --> 01:08:28.070
+Based on this initial step,
+
+01:08:28.070 --> 01:08:30.110
+your prediction probably has
+something to do with the cosine
+
+01:08:30.110 --> 01:08:33.830
+of the angle, but it's not clear
+what the connection is.
+
+01:08:33.830 --> 01:08:36.080
+So we've discovered.
+
+01:08:56.030 --> 01:09:00.350
+One formula that relates the
+length of u minus v squared to
+
+01:09:00.350 --> 01:09:02.930
+the lengths of u and v and the
+cosine of the angle between
+
+01:09:02.930 --> 01:09:03.930
+them.
+
+01:09:04.470 --> 01:09:08.070
+Question, how many people here
+play Wordle still?
+
+01:09:08.070 --> 01:09:10.910
+How many people played it today?
+
+01:09:10.910 --> 01:09:11.650
+OK.
+
+01:09:11.650 --> 01:09:13.810
+I probably just ruined it for
+you.
+
+01:09:13.810 --> 01:09:19.060
+Play it and then you'll see what
+I meant.
+
+01:09:19.230 --> 01:09:21.810
+What I need is another formula
+
+01:09:21.810 --> 01:09:27.810
+that somehow relates or somehow
+describes
+
+01:09:27.810 --> 01:09:31.250
+the length of u minus v squared
+that also involves a dot
+
+01:09:31.250 --> 01:09:32.250
+product.
+
+01:09:32.290 --> 01:09:34.050
+Because eventually, I want to
+see the dot product equal
+
+01:09:34.050 --> 01:09:36.170
+something something cosine
+theta.
+
+01:09:36.170 --> 01:09:38.230
+Because the whole point was to
+see how the cosine of theta or
+
+01:09:38.230 --> 01:09:42.730
+how theta is involved with the
+dot product.
+
+01:09:43.070 --> 01:09:45.090
+There's something we talked
+about today that would allow us
+
+01:09:45.090 --> 01:09:46.190
+to get there.
+
+01:09:46.190 --> 01:09:49.610
+What can we do here? I want
+another formula involving the
+
+01:09:49.610 --> 01:09:50.790
+length of u minus v squared.
+
+01:09:50.790 --> 01:09:56.250
+Caitlin? Didn't you say that
+that would be equal to u
+
+01:09:56.250 --> 01:10:00.190
+minus v u minus v? Excellent.
+
+01:10:00.190 --> 01:10:01.190
+Yeah.
+
+01:10:06.470 --> 01:10:09.430
+That's the important fact I
+wanted you to remember.
+
+01:10:09.430 --> 01:10:11.970
+If box is a vector,
+
+01:10:11.970 --> 01:10:14.210
+it doesn't matter what it is.
+It can be made up of operations
+
+01:10:14.210 --> 01:10:16.460
+with other vectors.
+
+01:10:17.430 --> 01:10:20.690
+the squared length of box is
+equal to box dot product with
+
+01:10:20.690 --> 01:10:21.410
+box.
+
+01:10:21.410 --> 01:10:24.190
+That's true, even if the box is
+made up as a linear combination
+
+01:10:24.190 --> 01:10:27.330
+of other vectors and u minus v
+indeed is a linear combination
+
+01:10:27.330 --> 01:10:28.610
+of u and v.
+
+01:10:28.610 --> 01:10:31.870
+So anything I can do to a vector
+I can do to u minus v.
+
+01:10:31.870 --> 01:10:34.730
+Now I'm gonna demonstrate some
+of the properties that the dot
+
+01:10:34.730 --> 01:10:36.230
+product satisfies.
+
+01:10:37.730 --> 01:10:40.030
+One is that it has the
+distributive property, which
+
+01:10:40.030 --> 01:10:41.030
+means
+
+01:10:41.410 --> 01:10:45.070
+you can distribute this dot
+product as
+
+01:10:45.070 --> 01:10:49.090
+As you would if these were all
+scalars and this was regular
+
+01:10:49.090 --> 01:10:52.840
+multiplication you could foil it
+up
+
+01:10:52.870 --> 01:10:55.870
+Foil being first outsides
+insides law.
+
+01:10:55.970 --> 01:10:56.890
+Okay.
+
+01:10:56.890 --> 01:11:01.390
+So what would this expand out
+to?
+
+01:11:02.010 --> 01:11:04.290
+I Don't want to simplify yet.
+I just want to write out all
+
+01:11:04.290 --> 01:11:05.790
+four terms.
+
+01:11:06.130 --> 01:11:10.630
+What are those terms gonna be?
+
+01:11:11.350 --> 01:11:14.330
+How do we know if this is a dot
+product or just a normal
+
+01:11:14.330 --> 01:11:15.330
+multiplication?
+
+01:11:15.870 --> 01:11:17.850
+It's because these are vectors.
+
+01:11:17.850 --> 01:11:20.490
+There's no normal multiplication
+between two vectors, like A
+
+01:11:20.490 --> 01:11:21.870
+times B.
+
+01:11:21.870 --> 01:11:24.790
+That's never a thing we discuss.
+
+01:11:24.790 --> 01:11:27.030
+That's why I'm being very
+precise with what type of
+
+01:11:27.030 --> 01:11:29.280
+multiplication we're dealing
+with.
+
+01:11:29.790 --> 01:11:32.750
+There's scalar multiplication
+which is number times vector and
+
+01:11:32.750 --> 01:11:34.850
+then there's dot product which
+is vector times vector but it
+
+01:11:34.850 --> 01:11:37.210
+has to have this dot operation,
+and the output is going to be a
+
+01:11:37.210 --> 01:11:37.950
+number.
+
+01:11:37.950 --> 01:11:41.530
+Just like the length of a vector
+is a number,
+
+01:11:41.530 --> 01:11:43.830
+you square the length of a
+vector, that's also a number.
+
+01:11:43.830 --> 01:11:47.490
+So the dot product of two
+vectors is also a number.
+
+01:11:47.490 --> 01:11:48.490
+Good.
+
+01:11:48.530 --> 01:11:51.970
+But these are the right kinds of
+questions to be asking.
+
+01:11:51.970 --> 01:11:55.090
+If we expand this out, what are
+we going to get?
+
+01:11:55.090 --> 01:11:59.590
+What's the first of the four
+terms we'd see?
+
+01:12:05.250 --> 01:12:07.790
+u dot u.
+Good, u dot u.
+
+01:12:09.450 --> 01:12:13.950
+What's the next term we'd see?
+
+01:12:17.550 --> 01:12:18.230
+Yeah.
+
+01:12:18.230 --> 01:12:19.570
+u dot negative v.
+
+01:12:19.570 --> 01:12:20.570
+Good.
+
+01:12:20.650 --> 01:12:25.150
+You could say plus u dot
+negative v.
+
+01:12:26.130 --> 01:12:29.880
+What else would we have?
+
+01:12:31.030 --> 01:12:33.190
+Go for it.
+
+01:12:33.190 --> 01:12:35.170
+I thought you had your hand
+raised.
+
+01:12:35.170 --> 01:12:36.670
+Anyone else?
+
+01:12:37.050 --> 01:12:38.050
+Yeah.
+
+01:12:38.130 --> 01:12:41.130
+Negative v dot u.
+
+01:12:41.210 --> 01:12:42.610
+And then lastly,
+
+01:12:42.610 --> 01:12:45.870
+negative v dot negative v.
+
+01:12:45.870 --> 01:12:46.870
+OK.
+
+01:12:47.950 --> 01:12:49.950
+u dot u.
+
+01:12:49.950 --> 01:12:54.450
+Is there anything I can simplify
+that to?
+
+01:12:56.610 --> 01:12:57.610
+Yeah.
+
+01:13:00.090 --> 01:13:05.370
+u dot u is not it's not zero
+remember zero is the dot product
+
+01:13:05.370 --> 01:13:08.330
+of two vectors with a right
+angle between them instead what
+
+01:13:08.330 --> 01:13:13.590
+is it yeah yeah it's the squared
+length of u that's the same
+
+01:13:13.590 --> 01:13:18.390
+property we used to expand the
+squared length of u minus v okay
+
+01:13:18.390 --> 01:13:23.230
+now what do we have going on
+here we have So u dot minus v
+
+01:13:23.230 --> 01:13:26.980
+and minus v dot u.
+
+01:13:29.030 --> 01:13:34.050
+This simplifies to minus 2 times
+u dot v.
+
+01:13:36.630 --> 01:13:40.110
+The minus factor in v can be
+pulled out front.
+
+01:13:40.110 --> 01:13:44.670
+So I could have written this as
+minus u dot v minus v dot u,
+
+01:13:44.670 --> 01:13:46.390
+and the dot product is
+commutative.
+
+01:13:46.390 --> 01:13:49.030
+So u dot v and v dot u are the
+same thing.
+
+01:13:49.030 --> 01:13:52.650
+So I have two of the dot
+products.
+
+01:13:52.650 --> 01:13:55.790
+And then what do I have at the
+end?
+
+01:13:55.790 --> 01:13:58.230
+I have the minus v dot minus v,
+
+01:13:58.230 --> 01:14:00.730
+but I can pull out both factors
+of negative 1.
+
+01:14:00.730 --> 01:14:02.550
+That gives me minus 1 times
+minus 1.
+
+01:14:02.550 --> 01:14:05.390
+So this is a positive number.
+
+01:14:05.390 --> 01:14:07.630
+And then I'm left with v dot v,
+
+01:14:07.630 --> 01:14:10.610
+which is the same as the length
+of v squared.
+
+01:14:10.610 --> 01:14:12.690
+Alternatively, you could have
+thought of this as the length of
+
+01:14:12.690 --> 01:14:14.940
+negative v squared.
+
+01:14:16.030 --> 01:14:18.070
+But negative v and v have the
+same length.
+
+01:14:18.070 --> 01:14:20.370
+So it's the same as the length
+of v squared.
+
+01:14:20.370 --> 01:14:23.450
+OK, what was the point of this
+exercise?
+
+01:14:23.450 --> 01:14:27.270
+And maybe just to make it even
+more clear,
+
+01:14:27.270 --> 01:14:30.270
+let's shuffle these things
+around.
+
+01:14:34.210 --> 01:14:37.210
+What do we see?
+
+01:14:45.810 --> 01:14:48.590
+So going back to the original
+expression,
+
+01:14:48.590 --> 01:14:51.890
+you can take out u squared and v
+squared like the magnitudes.
+
+01:14:51.890 --> 01:14:54.490
+Yeah, also you dropped the
+square there, but yeah.
+
+01:14:54.490 --> 01:14:57.990
+Negative 2 u dot v is equal to
+negative 2 u v cosine theta.
+
+01:14:57.990 --> 01:14:58.910
+Exactly.
+
+01:14:58.910 --> 01:15:01.190
+All we've done now is you've
+come up with two ways of
+
+01:15:01.190 --> 01:15:04.810
+describing the same thing.
+That thing is the squared length
+
+01:15:04.810 --> 01:15:06.210
+of u minus v.
+
+01:15:06.210 --> 01:15:08.090
+The first way we did it
+
+01:15:08.090 --> 01:15:10.930
+Involved the squared length of u
+plus the squared length of v
+
+01:15:10.930 --> 01:15:14.050
+minus 2 times the lengths of u
+and v
+
+01:15:14.050 --> 01:15:18.150
+Cos theta the second way mostly
+looks the same but instead of
+
+01:15:18.150 --> 01:15:21.010
+minus 2 length of u length of v
+cos theta
+
+01:15:21.010 --> 01:15:23.670
+We just have minus 2 u dot v
+
+01:15:23.670 --> 01:15:26.210
+But these are the same thing
+These are two ways of describing
+
+01:15:26.210 --> 01:15:28.890
+the exact same quantity one way
+I did it using the cosine law
+
+01:15:28.890 --> 01:15:32.090
+the other I did it by using
+properties of the dot product
+
+01:15:32.090 --> 01:15:33.010
+So,
+
+01:15:33.010 --> 01:15:36.570
+because these are equal,
+
+01:15:37.150 --> 01:15:39.370
+if I set these both equal,
+
+01:15:39.370 --> 01:15:44.620
+the length of u squared and v
+squared cancel out.
+
+01:15:48.030 --> 01:15:48.390
+Oops,
+
+01:15:48.390 --> 01:15:50.650
+this should be yellow.
+
+01:15:50.650 --> 01:15:52.730
+And so to be precise,
+
+01:15:52.730 --> 01:15:58.730
+all of this is equal to all of
+this.
+
+01:16:32.750 --> 01:16:37.930
+Okay, so if I subtract the
+squared length of u and the
+
+01:16:37.930 --> 01:16:41.250
+squared length of v from both
+sides, v from both sides,
+
+01:16:41.250 --> 01:16:44.130
+and then divide both sides by
+negative 2,
+
+01:16:44.130 --> 01:16:48.770
+what am I left What am
+
+01:16:48.770 --> 01:16:53.810
+I left with?
+
+01:16:55.290 --> 01:16:59.790
+What am I left with? Same.
+
+01:17:03.510 --> 01:17:04.290
+Yeah,
+
+01:17:04.290 --> 01:17:06.950
+this tells me the dot product of
+u and v
+
+01:17:06.950 --> 01:17:12.150
+is equal to the length of u
+times the length of v times the
+
+01:17:12.150 --> 01:17:15.900
+cosine of the angle between
+them.
+
+01:17:17.670 --> 01:17:21.010
+So no wonder the dot product
+seemed like it was related to
+
+01:17:21.010 --> 01:17:23.890
+the angles between the vectors
+is because it is.
+
+01:17:23.890 --> 01:17:26.190
+It's the length of the first
+times the length of the second
+
+01:17:26.190 --> 01:17:29.090
+times the cosine of the angle
+between them.
+
+01:17:29.090 --> 01:17:30.890
+But this is not a different dot
+product.
+
+01:17:30.890 --> 01:17:32.390
+This is
+
+01:17:34.650 --> 01:17:39.900
+equal to the same dot product we
+saw before.
+
+01:17:45.990 --> 01:17:47.910
+This new one that we found,
+
+01:17:47.910 --> 01:17:51.660
+I might call the geometric
+definition,
+
+01:17:54.230 --> 01:17:58.730
+and this original one I might
+call the algebraic definition.
+
+01:18:00.210 --> 01:18:01.330
+Now you might say, well,
+
+01:18:01.330 --> 01:18:04.830
+when would I ever know the angle
+between two vectors?
+
+01:18:04.830 --> 01:18:07.330
+The answer is you wouldn't
+already know the angle.
+
+01:18:07.330 --> 01:18:10.650
+What this allows you to do is
+compute the angle between two
+
+01:18:10.650 --> 01:18:12.910
+vectors, or at least the cosine
+of the angle between two
+
+01:18:12.910 --> 01:18:13.910
+vectors.
+
+01:18:14.090 --> 01:18:17.130
+And what that gives us is a way
+of measuring
+
+01:18:17.130 --> 01:18:22.890
+how similar two vectors are even
+when they're in higher than
+
+01:18:22.890 --> 01:18:23.690
+R3,
+
+01:18:23.690 --> 01:18:25.950
+or they have more than three
+components.
+
+01:18:25.950 --> 01:18:29.110
+All of these formulas work, even
+if the vectors have 74 things in
+
+01:18:29.110 --> 01:18:30.110
+them.
+
+01:18:32.870 --> 01:18:35.650
+If you took your two vectors in
+R74
+
+01:18:35.650 --> 01:18:38.370
+and used the algebraic
+definition to get their dot
+
+01:18:38.370 --> 01:18:42.120
+product, and you found their
+lengths as well,
+
+01:18:42.630 --> 01:18:45.130
+well, then you could solve for
+the cosine of the angle between
+
+01:18:45.130 --> 01:18:46.130
+them.
+
+01:18:46.270 --> 01:18:49.170
+And what is the cosine of an
+angle?
+
+01:18:49.170 --> 01:18:53.670
+What's the max and min that
+could be?
+
+01:18:53.750 --> 01:18:54.650
+Yeah,
+
+01:18:54.650 --> 01:18:55.650
+great.
+
+01:18:56.410 --> 01:18:58.470
+Negative 1 and 1.
+Yeah, it's between negative 1
+
+01:18:58.470 --> 01:18:59.250
+and 1.
+
+01:18:59.250 --> 01:19:01.530
+If the cosine of an angle is 1,
+
+01:19:01.530 --> 01:19:04.310
+that means the vectors point in
+the exact same direction.
+
+01:19:04.310 --> 01:19:08.190
+The theta between them is 0.
+
+01:19:08.190 --> 01:19:11.010
+If they point in exact opposite
+directions,
+
+01:19:11.010 --> 01:19:16.970
+well then the theta is 180 and
+the cosine of theta
+
+01:19:16.970 --> 01:19:17.870
+is negative one.
+
+01:19:17.870 --> 01:19:20.350
+That's why when they point in
+opposite directions,
+
+01:19:20.350 --> 01:19:22.330
+the dot product is negative.
+
+01:19:22.330 --> 01:19:24.150
+And when they're perpendicular,
+
+01:19:24.150 --> 01:19:28.450
+what's the cosine of 90 degrees?
+
+01:19:28.450 --> 01:19:29.450
+Zero.
+
+01:19:30.510 --> 01:19:33.290
+So all of that behavior is
+coming from this equivalence.
+
+01:19:33.290 --> 01:19:37.550
+The last thing I'll write here
+is that if you write out u dot v
+
+01:19:37.550 --> 01:19:42.800
+equals the length of u length of
+v cos theta
+
+01:19:43.030 --> 01:19:47.990
+You can solve for just the cos
+theta, which is u dot v
+
+01:19:47.990 --> 01:19:50.370
+over the length of u
+
+01:19:50.370 --> 01:19:53.750
+Times the length of v and
+sometimes this is called the
+
+01:19:53.750 --> 01:19:54.750
+cosine
+
+01:19:56.590 --> 01:19:57.590
+Similarity
+
+01:20:01.950 --> 01:20:04.790
+And for the reasons we just
+discussed, because the cosine of
+
+01:20:04.790 --> 01:20:07.450
+an angle is between negative one
+and one,
+
+01:20:07.450 --> 01:20:08.770
+so is this.
+And this gives us a way of
+
+01:20:08.770 --> 01:20:11.690
+measuring the similarity of two
+vectors with any number of
+
+01:20:11.690 --> 01:20:12.690
+things in them.
+
+01:20:12.690 --> 01:20:15.810
+So one of the cool applications
+you'll see in next week's lab is
+
+01:20:15.810 --> 01:20:18.990
+we show you how to convert
+presidential State of the Union
+
+01:20:18.990 --> 01:20:19.990
+speeches,
+
+01:20:20.070 --> 01:20:22.010
+which are like the speech that
+whoever's the president that
+
+01:20:22.010 --> 01:20:24.550
+year gives in March, just like
+talking about the world, I
+
+01:20:24.550 --> 01:20:25.550
+guess.
+
+01:20:25.990 --> 01:20:28.750
+You convert those to vectors,
+and what we're going to do, and
+
+01:20:28.750 --> 01:20:31.890
+you're going to write code for
+this, is find the similarities
+
+01:20:31.890 --> 01:20:35.590
+between all pairs of speeches.
+You can look at over time,
+
+01:20:35.590 --> 01:20:35.950
+like,
+
+01:20:35.950 --> 01:20:36.770
+okay,
+
+01:20:36.770 --> 01:20:39.430
+Joe Biden's last speech, whose
+speech was that most similar to,
+
+01:20:39.430 --> 01:20:41.450
+and whose speech was that least
+similar to?
+
+01:20:41.450 --> 01:20:43.570
+Of course, the thing it's most
+similar to is Joe Biden's own
+
+01:20:43.570 --> 01:20:45.850
+speech the year before, because
+they used similar words,
+
+01:20:45.850 --> 01:20:49.650
+but then you can see various
+trends over time, and when
+
+01:20:49.650 --> 01:20:52.110
+there's a speech near wartime,
+like at the start of World War
+
+01:20:52.110 --> 01:20:54.330
+I, it's very dissimilar because
+they use lots of different
+
+01:20:54.330 --> 01:20:57.570
+words, you can do all of that
+using this cosine similarity
+
+01:20:57.570 --> 01:20:58.750
+logic.
+So we're going to show you some
+
+01:20:58.750 --> 01:20:59.850
+of those examples
+
+01:20:59.850 --> 01:21:02.810
+in coming up assignments.
+
+01:21:02.810 --> 01:21:03.490
+OK,
+
+01:21:03.490 --> 01:21:05.890
+I have ops stars after this,
+like usual, and homework two is
+
+01:21:05.890 --> 01:21:07.390
+due tomorrow.
+
+01:21:32.150 --> 01:21:37.070
+It's sort of the last time I've
+heard
+
+01:21:37.070 --> 01:21:38.190
+it.
+
+01:21:41.630 --> 01:21:45.070
+I feel like it makes a lot of
+sense to rate it.
+
+01:21:45.070 --> 01:21:48.570
+I'm like embarrassed to go sit
+down and say, well I don't know,
+
+01:21:48.570 --> 01:21:53.820
+I just want to make a plan.
+
+01:21:56.650 --> 01:22:02.010
+It's like one where,
+
+01:22:02.270 --> 01:22:06.550
+I don't know if he did 4B,
+
+01:22:06.550 --> 01:22:12.090
+but there is like a video of A
+and 4B and like, it's right up
+
+01:22:12.090 --> 01:22:13.090
+there,
+
+01:22:13.330 --> 01:22:15.550
+and then like,
+
+01:22:15.550 --> 01:22:18.110
+that's probably like, a little
+bit.
+
+01:22:18.110 --> 01:22:21.570
+And then like, I don't know, I
+think I better use the mic.
+
+01:22:21.570 --> 01:22:24.310
+I would like to see it.
+Already?
+
+01:22:24.310 --> 01:22:24.830
+Yeah.
+
+01:22:24.830 --> 01:22:28.070
+Here's like, how cool is this.
+
+01:22:28.070 --> 01:22:29.070
+Like,
+
+01:22:29.490 --> 01:22:31.470
+you guys are like, at the same
+point.
+
+01:22:31.470 --> 01:22:32.430
+I make,
+
+01:22:32.430 --> 01:22:33.630
+like, some cannoli.
+
+01:22:33.630 --> 01:22:34.490
+I make,
+
+01:22:34.490 --> 01:22:39.890
+um...
+I think
+
+01:22:39.890 --> 01:22:45.750
+it's like starting like Sunday
+is
+
+01:22:45.750 --> 01:22:49.230
+when I think the last wave of
+stuff that I thought I could do.
+
+01:22:49.230 --> 01:22:52.950
+I think so, because for the
+volume.
+
+01:22:52.950 --> 01:22:56.590
+I have to study for e-cast and
+make all the materials for that.
+
+01:22:56.590 --> 01:22:59.590
+I have to like,
+
+01:23:00.210 --> 01:23:05.210
+I think it should be.
+
+01:23:05.670 --> 01:23:06.710
+I want to like,
+
+01:23:06.710 --> 01:23:08.770
+there's something here I want
+to,
+
+01:23:08.770 --> 01:23:14.690
+we have everything but our
+requirements that we
+
+01:23:14.690 --> 01:23:15.690
+have.
+
+01:23:20.990 --> 01:23:24.740
+We're changing our name from
+Sproat to Sproat,
+
+01:23:31.490 --> 01:23:33.210
+Please sit in your Tuesday
+groups.
+
+01:23:33.210 --> 01:23:34.950
+I mean you're kinda sitting
+where you usually sit, I
+
+01:23:34.950 --> 01:23:35.670
+believe,
+
+01:23:35.670 --> 01:23:38.870
+but Tuesday please sit in those
+groups.
+
+01:23:38.870 --> 01:23:40.210
+We're here on Tuesday,
+
+01:23:40.210 --> 01:23:45.460
+just find a group to attach to.
+
+01:24:09.390 --> 01:24:13.890
+I don't know how to do
+electrical.
+
+01:24:26.890 --> 01:24:32.290
+I feel like I have a very easy
+
+01:24:32.290 --> 01:24:33.790
+2,000-year-old problem.
+
+01:24:34.650 --> 01:24:37.130
+Yeah, it took me like three
+hours to do the 3D one.
+
+01:24:37.130 --> 01:24:38.490
+I'm pretty bad about that.
+
+01:24:38.490 --> 01:24:38.890
+Also,
+
+01:24:38.890 --> 01:24:41.570
+I messed him across from him
+like three times.
+
+01:24:41.570 --> 01:24:43.610
+And then I messed up that one.
+
+01:24:43.610 --> 01:24:44.150
+I think,
+
+01:24:44.150 --> 01:24:45.790
+yeah, I know what you're talking
+about.
+
+01:24:45.790 --> 01:24:48.390
+I'm going to try to keep up with
+you.
+
+01:24:48.390 --> 01:24:50.690
+Wouldn't even finish.
+Yeah, it just feels so wrong.
+
+01:24:51.830 --> 01:24:53.470
+That's what I'm saying.
+
+01:24:53.470 --> 01:24:54.510
+Like, I'll be chill.
+
+01:24:54.510 --> 01:24:55.210
+I know what you're talking
+about.
+
+01:24:55.210 --> 01:24:56.350
+The answer's in the log.
+
+01:24:56.350 --> 01:24:57.330
+It's like,
+
+01:24:57.330 --> 01:24:58.330
+yeah.

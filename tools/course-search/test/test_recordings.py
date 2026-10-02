@@ -18,6 +18,10 @@ class Captions(unittest.TestCase):
     def test_invalid(self):
         for raw in [b'<html>Just a moment</html>',b'WEBVTT',b'00:01.000 --> 00:00.000\nBad',b'00:99.000 --> 01:00.000\nBad',b'not captions']:
             with self.assertRaises(ValueError):parse_captions(raw)
+    def test_zero_duration_provider_artifact(self):
+        raw=b'WEBVTT\n\n00:00:01.000 --> 00:00:01.000\nArtifact\n\n00:00:02.000 --> 00:00:04.000\nValid caption'
+        self.assertEqual(parse_captions(raw),[dict(start=2,end=4,text='Valid caption')])
+        with self.assertRaises(ValueError):parse_captions(b'00:00:01.000 --> 00:00:01.000\nArtifact')
     def test_passages_overlap_and_budget(self):
         cues=[dict(start=i*5,end=i*5+5,text='Synthetic caption sentence.') for i in range(30)]
         chunks=passages(cues,[12]*len(cues))

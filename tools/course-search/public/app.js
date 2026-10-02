@@ -1,4 +1,4 @@
-import {categories,tokens,buildSearch,excerpt,sortDocuments,filterCategories,recordingCoverage} from './search.mjs';
+import {categories,tokens,buildSearch,excerpt,sortDocuments,createQueryProcessor,normalizeQuery,mergeResults,filterCategories,recordingCoverage} from './search.mjs';
 if(new URLSearchParams(location.search).has('embedded'))document.body.classList.add('embedded');
 const input=document.querySelector('#search'),groups=document.querySelector('#groups');
 if(document.body.classList.contains('embedded')){
@@ -7,12 +7,18 @@ if(document.body.classList.contains('embedded')){
 }
 
 let search=null,allResults=[],timer,requestId=0,semanticReady=false,semanticFailed=false;
-let semanticResults=null,sortOrder='relevance',lastQuery='';
+let processQuery=null,activeQuery='',sortOrder='relevance',lastQuery='';
+const semanticCache=new Map();
+const correction=document.createElement('p');correction.className='search-correction';correction.hidden=true;correction.setAttribute('role','status');correction.setAttribute('aria-live','polite');document.querySelector('#search-form').after(correction);
 const expandedCategories=new Set(),expandedNotes=new Set();
 const worker=new Worker(new URL("./worker.js",import.meta.url),{type:"module"});
 worker.onmessage=({data})=>{
  if(data.type==="ready"){semanticReady=true;run();}
- if(data.type==="results"&&data.id===requestId&&data.query===input.value.trim()){semanticResults=data;display(data.results);}
+ if(data.type==="results"){
+  semanticCache.delete(data.query);semanticCache.set(data.query,data.results);
+  if(semanticCache.size>32)semanticCache.delete(semanticCache.keys().next().value);
+  if(data.id===requestId&&data.query===activeQuery)display(mergeResults(search(activeQuery,{correct:false}),data.results));
+ }
  if(data.type==="error"){document.querySelector('#timing').title=data.message;semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";}
 };
 worker.onerror=()=>{semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";};
@@ -60,7 +66,7 @@ function render(){
     if(/\\|\$/.test(location.text)){
      text.textContent=location.text.replace(/\\\\/g,'\\').replace(/\\(?:mathbf|boldsymbol|bm)\s*\{([a-zA-Z](?:_\{?\d+\}?)?)\}/g,'\\vec{$1}').replace(/\*\*([uvw])\*\*/g,'$\\vec{$1}$');
      if(window.renderMathInElement)window.renderMathInElement(text,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false,trust:false,macros:{'\\v':'\\vec{#1}','\\R':'\\mathbb{R}'}});
-    }else highlight(text,excerpt(location.text,input.value),input.value);
+    }else highlight(text,excerpt(location.text,activeQuery),activeQuery);
     if(location.detail.startsWith('OCR')){const quality=document.createElement('small');quality.textContent='OCR transcript · check original PDF';text.append(quality);}
     passage.append(link,text);details.append(passage);
    }
@@ -73,7 +79,7 @@ function render(){
     note.append(toggle,open,locations,details);card.append(note);
    }else {
     card.append(heading);
-    if(category==='Lecture recordings'){const preview=document.createElement('p');preview.className='card-excerpt';highlight(preview,excerpt(r.locations.reduce((best,l)=>l.score>best.score?l:best).text,input.value),input.value);card.append(preview);}
+    if(category==='Lecture recordings'){const preview=document.createElement('p');preview.className='card-excerpt';highlight(preview,excerpt(r.locations.reduce((best,l)=>l.score>best.score?l:best).text,activeQuery),activeQuery);card.append(preview);}
     card.append(locations,details);
    }
    cards.append(card);
@@ -93,17 +99,21 @@ function render(){
 function display(results){
  const query=input.value.trim();allResults=filterCategories(results,selected);
  document.querySelector('#summary').textContent=`${allResults.length} documents · ${allResults.reduce((sum,r)=>sum+r.locations.length,0)} matching locations for “${query}”`;
- document.querySelector('#timing').textContent=semanticFailed?'Keyword search':semanticReady?'':'Preparing semantic search…';
+ document.querySelector('#timing').textContent=semanticFailed?'Keyword search':semanticCache.has(activeQuery)?'':semanticReady?'Finding related results…':'Preparing semantic search…';
  document.querySelector('#empty').hidden=!!allResults.length;
  document.querySelector('#empty h2').textContent=selected.size?'No matches yet.':'Select a category to search.';
  document.querySelector('#empty p').textContent=selected.size?'Try another topic or enable more categories.':'Use the buttons above to include course materials.';render();
 }
 function run(){
- const query=input.value.trim();if(query!==lastQuery){expandedCategories.clear();expandedNotes.clear();lastQuery=query;}requestId++;document.body.classList.toggle('has-query',!!query);document.querySelector('#results').hidden=!query;if(!query)return;
+ const query=input.value.trim();requestId++;document.body.classList.toggle('has-query',!!query);document.querySelector('#results').hidden=!query;correction.hidden=true;if(!query){activeQuery='';return;}
  if(!search){document.querySelector('#summary').textContent='Loading the course index…';return;}
- if(semanticResults?.query===query){display(semanticResults.results);return;}
- display(search(query));
- if(semanticReady)worker.postMessage({query,id:requestId});
+ const processed=processQuery(query);activeQuery=processed.normalized;
+ if(activeQuery!==lastQuery){expandedCategories.clear();expandedNotes.clear();lastQuery=activeQuery;}
+ if(processed.corrections.length){correction.textContent=`Showing results for “${normalizeQuery(processed.corrected)}”.`;correction.hidden=false;}
+ const keyword=search(activeQuery,{correct:false});
+ if(semanticCache.has(activeQuery)){display(mergeResults(keyword,semanticCache.get(activeQuery)));return;}
+ display(keyword);
+ if(semanticReady)worker.postMessage({query:activeQuery,id:requestId});
 }
 for(const button of document.querySelectorAll('[data-category]')) button.addEventListener('click',()=>{
  const category=button.dataset.category;selected.has(category)?selected.delete(category):selected.add(category);
@@ -114,8 +124,7 @@ input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(run,60)
 document.querySelector('#search-form').addEventListener('submit',e=>{e.preventDefault();clearTimeout(timer);run();});
 document.addEventListener('keydown',e=>{if(e.key==='/'&&e.target!==input){e.preventDefault();input.focus();}});
 try{
- const response=await fetch('./data/index.json');if(!response.ok)throw new Error();const data=await response.json();search=buildSearch(data.records);
+ const response=await fetch('./data/index.json');if(!response.ok)throw new Error();const data=await response.json();search=buildSearch(data.records);processQuery=createQueryProcessor(data.records);
  document.querySelector('#recording-coverage').textContent=recordingCoverage(data.metadata);
  run();
 }catch{document.querySelector('#results').hidden=false;document.querySelector('#summary').textContent='Search is unavailable. Refresh to try again.';}
-

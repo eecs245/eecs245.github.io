@@ -82,8 +82,12 @@ def parse_captions(raw):
         start, end = seconds(match[1]), seconds(match[2])
         body = html.unescape(re.sub(r'<[^>]*>', '', ' '.join(lines[timing + 1:])))
         body = re.sub(r'\s+', ' ', body).strip()
-        if end <= start:
+        if end < start:
             raise ValueError('Caption end must follow start')
+        # Whisper exports can contain zero-duration artifacts. Keep the raw
+        # export for provenance, but omit these cues without inventing times.
+        if end == start:
+            continue
         identity = (start, end, body)
         if body and identity not in seen:
             cues.append(dict(start=start, end=end, text=body))
