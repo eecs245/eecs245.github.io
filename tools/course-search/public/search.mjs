@@ -1,19 +1,35 @@
+import {tokens,normalizeQuery,normalizeText,createQueryProcessor} from './query.mjs';
+export {tokens,normalizeQuery,createQueryProcessor};
 export const categories=['Notes','Lecture PDFs','Homeworks','Labs','Past exams'];
-const aliases={proj:'projection',project:'projection',projecting:'projection',projections:'projection',orthogonality:'orthogonal',perpendicular:'orthogonal',perpendicularity:'orthogonal',perpendicularly:'orthogonal',independent:'independence',dependent:'dependence',vectors:'vector',matrices:'matrix',norms:'norm',bases:'basis'};
-const ignored=new Set('what are you looking for the a an is of to in how why about explain me'.split(' '));
-export const tokens=text=>(text.toLowerCase().match(/[a-z0-9]+/g)||[]).map(t=>Object.hasOwn(aliases,t)?aliases[t]:t).filter(t=>!ignored.has(t));
 export function buildSearch(records){
-  const prepared=records.map(r=>({...r,words:tokens(`${r.section} ${r.text}`),heading:tokens(`${r.title} ${r.section}`)}));
+  const processQuery=createQueryProcessor(records);
+  const prepared=records.map(r=>({...r,words:tokens(`${r.section} ${r.text} ${(r.concepts||[]).join(' ')}`),heading:tokens(`${r.title} ${r.section}`)}));
   const postings=new Map();
   prepared.forEach((r,i)=>{for(const word of new Set(r.words)){if(!postings.has(word))postings.set(word,new Set());postings.get(word).add(i);}});
-  return query=>{
-    const terms=[...new Set(tokens(query))];if(!terms.length)return [];
+  return (query,options)=>{
+    const normalized=processQuery(query,options).normalized;
+    const terms=[...new Set(tokens(normalized))];if(!terms.length)return [];
     const matches=terms.map(term=>{
       const hits=new Set();for(const [word,ids] of postings)if(word===term||(term.length>=3&&word.startsWith(term)))for(const id of ids)hits.add(id);
       return hits;
     });
-    const ids=[...matches[0]].filter(id=>matches.every(hit=>hit.has(id)));
-    const ranked=ids.map(id=>{const r=prepared[id];return {...r,score:terms.reduce((s,t)=>s+r.heading.filter(w=>w===t||w.startsWith(t)).length*5+r.words.filter(w=>w===t||w.startsWith(t)).length,0)};}).sort((a,b)=>b.score-a.score);
+    const ids=new Set(matches.flatMap(hit=>[...hit]));
+    const ranked=[...ids].map(id=>{
+      const r=prepared[id];
+      const matched=matches.filter(hit=>hit.has(id)).length;
+      const exact=matched===terms.length;
+      // Allow a substantial partial match for longer questions, while keeping
+      // short topics precise and avoiding one-word hits for unrelated queries.
+      if(!exact&&(terms.length<3||matched<Math.ceil(terms.length*.7)))return null;
+      const score=terms.reduce((sum,term,index)=>{
+        if(!matches[index].has(id))return sum;
+        const rarity=Math.log(1+(prepared.length-matches[index].size+.5)/(matches[index].size+.5));
+        const frequency=r.words.filter(word=>word===term||(term.length>=3&&word.startsWith(term))).length;
+        const heading=r.heading.some(word=>word===term||(term.length>=3&&word.startsWith(term)));
+        return sum+rarity*(frequency/(frequency+1.2)+Number(heading)*2);
+      },0)+Number(exact)*4+Number(normalizeText(`${r.section} ${r.text}`).includes(normalized))*2;
+      return {...r,score,exact,keyword:true};
+    }).filter(Boolean).sort((a,b)=>b.score-a.score||Number(a.id)-Number(b.id));
     return groupDocuments(ranked);
   };
 }
@@ -33,6 +49,7 @@ export function groupDocuments(ranked) {
     const key=`${hit.category}:${url}`;
     if(!documents.has(key)) documents.set(key,{id:key,category:hit.category,title:hit.title,url,semester:hit.semester,detail:hit.detail,score:hit.score,locations:[]});
     const document=documents.get(key);
+    document.score=Math.max(document.score,hit.score);
     // Several index chunks can refer to one section. Retain its best passage.
     if(!document.locations.some(location=>location.url===hit.url)) document.locations.push(hit);
   }
@@ -55,4 +72,18 @@ export function sortDocuments(documents,order='relevance'){
  return [...documents].sort((a,b)=>order==='chronological'?key(a)-key(b)||natural.compare(a.title,b.title):b.score-a.score||natural.compare(a.title,b.title));
 }
 
-export function normalizeQuery(query){return query.toLowerCase().replace(/\b(?:perpendicular|perpendicularity|perpendicularly|orthogonality)\b/g,'orthogonal');}
+// Reciprocal-rank fusion avoids comparing keyword weights to cosine scores.
+// Merge at passage level so semantic updates retain keyword locations too.
+export function mergeResults(keyword,semantic){
+  const hits=new Map();
+  for(const results of [keyword,semantic])results.forEach((document,rank)=>{
+    const ordered=[...document.locations].sort((a,b)=>b.score-a.score);
+    ordered.forEach((hit,locationRank)=>{
+      const key=`${hit.category}:${hit.url}`;
+      const contribution=1/(20+rank)+.1/(20+locationRank);
+      if(hits.has(key))hits.get(key).score+=contribution;
+      else hits.set(key,{...hit,score:contribution});
+    });
+  });
+  return groupDocuments([...hits.values()].sort((a,b)=>b.score-a.score||Number(a.id)-Number(b.id)));
+}

@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {buildSearch,categories,groupDocuments} from '../public/search.mjs';
+import {buildSearch,categories,groupDocuments,createQueryProcessor,normalizeQuery,mergeResults} from '../public/search.mjs';
 const records=JSON.parse(readFileSync(new URL('../search-index.json',import.meta.url))).records;
 const search=buildSearch(records);
 test('projection groups documents once while retaining their matching section links',()=>{
@@ -51,4 +51,46 @@ test('excluded notebooks, lab recaps, and practice exams never enter the index',
  assert(records.every(r=>!r.url.includes('github.com/eecs245/fa26-code')));
  assert(records.every(r=>r.category!=='Labs'||!/^Recap\b/i.test(r.section)));
  assert(records.every(r=>r.category!=='Past exams'||!/practice|mock/i.test(r.title+' '+r.url)));
+});
+
+test('case, whitespace, course aliases, and typos preserve full ranked locations',()=>{
+ const expected=search('absolute loss');
+ for(const query of ['Absolute','ABSOLUTE LOSS','  absolute   loss  ','absolute-loss','mean absolute error','MAE','L1 loss','absolte loss']) assert.deepEqual(search(query),expected,query);
+ assert(expected.some(document=>document.url.includes('/absolute-loss/')));
+ assert.notEqual(normalizeQuery('absolute value'),normalizeQuery('absolute'));
+ for(const [query,canonical] of [['MSE','squared loss'],['mean-squared error','squared loss'],['sqaured loss','squared loss'],['inner product','dot product'],['scalar product','dot product'],['porjection','projection'],['orthoganol','orthogonal']]) assert.deepEqual(search(query),search(canonical),query);
+});
+
+test('spelling preserves valid words, short math symbols, formulas, and ambiguity',()=>{
+ const process=createQueryProcessor(records);
+ for(const query of ['span','median','absolute value','A x b','MAE','constructor','\\lambda \\nabla \\vec{u}','spae']) assert.equal(process(query).corrections.length,0,query);
+ assert.equal(process('absolte loss',{correct:false}).normalized,'absolte loss');
+ assert.deepEqual(process('absolte loss').corrections,[{from:'absolte',to:'absolute'}]);
+});
+
+test('synonyms in source passages are searchable without relying on document titles',()=>{
+ const synthetic=buildSearch([{id:'0',category:'Notes',title:'Metrics',section:'Example',text:'We minimize MAE when fitting this model.',url:'https://example.com/metrics#example'}]);
+ assert.equal(synthetic('absolute loss').length,1);
+ assert.deepEqual(synthetic('mean absolute error'),synthetic('absolute'));
+});
+
+test('longer questions allow substantial partial matches but unrelated words stay excluded',()=>{
+ const synthetic=buildSearch([
+  {id:'0',category:'Notes',title:'Derivation',section:'Example',text:'Minimize prediction loss using the median.',url:'https://example.com/loss'},
+  {id:'1',category:'Notes',title:'Unrelated',section:'Another topic',text:'The model prediction is illustrated.',url:'https://example.com/unrelated'}
+ ]);
+ assert.deepEqual(synthetic('minimize prediction loss efficiently').map(r=>r.url),['https://example.com/loss']);
+ assert.equal(synthetic('purple flying giraffes').length,0);
+});
+
+test('fused results retain keyword-only locations and select one best passage per URL',()=>{
+ const hit=(id,url,score,text)=>({id,category:'Notes',title:'Topic',section:'Example',url,score,text});
+ const keyword=groupDocuments([hit('1','https://example.com/note#a',20,'keyword best'),hit('2','https://example.com/note#b',10,'keyword only')]);
+ const semantic=groupDocuments([hit('3','https://example.com/related#c',.8,'related'),hit('4','https://example.com/note#a',.7,'semantic duplicate')]);
+ const merged=mergeResults(keyword,semantic);
+ assert.equal(merged[0].url,'https://example.com/note');
+ assert.equal(merged[0].locations.length,2);
+ assert.equal(merged[0].locations.find(location=>location.url.endsWith('#a')).text,'keyword best');
+ assert(merged.some(document=>document.url==='https://example.com/related'));
+ assert.equal(keyword[0].locations[0].score,20);
 });

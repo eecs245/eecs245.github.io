@@ -2,13 +2,15 @@ import {test,before} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {pipeline,env} from '@huggingface/transformers';
-import {normalizeQuery} from '../public/search.mjs';
+import {createQueryProcessor,buildSearch,mergeResults} from '../public/search.mjs';
 import {semanticSearch} from '../public/semantic.mjs';
-let records,vectors,embed;
+let records,vectors,embed,processQuery,keyword;
+const cache=new Map();
 before(async()=>{
  env.allowRemoteModels=false;env.localModelPath=new URL('../public/models/',import.meta.url).pathname;
  const data=JSON.parse(await readFile(new URL('../public/data/index.json',import.meta.url)));
  records=data.records;
+ processQuery=createQueryProcessor(records);keyword=buildSearch(records);
  assert.equal(data.metadata.errors.length,0);
  assert(records.every(r=>new Date(r.releaseAt)<=new Date(data.metadata.builtAt)));
  assert(records.every(r=>!r.url.includes('private')&&!r.url.includes('fa26-mt')));
@@ -17,7 +19,7 @@ before(async()=>{
  assert.equal(vectors.length,records.length*384);
  embed=await pipeline('feature-extraction','Xenova/all-MiniLM-L6-v2',{dtype:'q8'});
 });
-async function search(query){query=normalizeQuery(query);const e=await embed(query,{pooling:'mean',normalize:true});return semanticSearch(records,vectors,query,e.data);}
+async function search(query){query=processQuery(query).normalized;if(!cache.has(query)){const e=await embed(query,{pooling:'mean',normalize:true});cache.set(query,semanticSearch(records,vectors,query,e.data));}return cache.get(query);}
 test('dot product finds formula-only exam questions and groups every document once',async()=>{
  const found=await search('dot product');
  assert(found.some(d=>d.category==='Past exams'&&d.locations.some(l=>l.formula&&!/dot product/i.test(l.text))));
@@ -38,4 +40,18 @@ test('an unrelated semantic query has no results',async()=>{assert.equal((await 
 test('perpendicular and orthogonal return identical documents and locations',async()=>{
  const summarize=results=>results.map(r=>({id:r.id,locations:r.locations.map(l=>l.url)}));
  assert.deepEqual(summarize(await search('perpendicular')),summarize(await search('orthogonal')));
+});
+
+test('semantic and fused results agree for case, loss aliases, and misspellings',async()=>{
+ const expected=await search('absolute loss');
+ const fused=mergeResults(keyword('absolute loss'),expected);
+ for(const query of ['Absolute','ABSOLUTE LOSS','mean absolute error','MAE','absolte loss']) {
+  assert.deepEqual(await search(query),expected,query);
+  assert.deepEqual(mergeResults(keyword(query),await search(query)),fused,query);
+ }
+ assert(fused.some(document=>document.url.includes('/absolute-loss/')));
+ const keywordLocations=keyword('absolute loss').flatMap(document=>document.locations.map(location=>location.url));
+ const fusedLocations=new Set(fused.flatMap(document=>document.locations.map(location=>location.url)));
+ assert(keywordLocations.every(url=>fusedLocations.has(url)));
+ for(const [query,canonical] of [['MSE','squared loss'],['inner product','dot product'],['orthoganol','orthogonal'],['porjection','projection']]) assert.deepEqual(await search(query),await search(canonical),query);
 });

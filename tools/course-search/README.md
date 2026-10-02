@@ -44,7 +44,9 @@ npm run build
 
 The model files are pinned in `model-manifest.json` and self-hosted under `public/models/`; no runtime downloads from Hugging Face or a CDN. The static deployment excludes the earlier chat prototype and its backend. Model/runtime licenses are shipped in `dist/licenses/`.
 
-Programming notebooks, lab recap sections, and practice/mock exams are excluded. Course synonyms such as perpendicular/orthogonal are normalized before both keyword matching and semantic embedding so their result sets agree.
+Programming notebooks, lab recap sections, and practice/mock exams are excluded. Queries share case and whitespace normalization, course-topic aliases, and conservative spelling correction before keyword matching and semantic embedding. For example, “absolute”, “absolute loss”, “mean absolute error”, and “MAE” use the same query; “absolute value” remains distinct. Squared-loss and dot-product aliases work similarly. Aliases connect related course search topics, rather than asserting that a single-example loss and an averaged error metric are identical mathematical quantities.
+
+Spelling correction uses unique close matches from curated course vocabulary, preserves known corpus words and short mathematical symbols, and displays corrections in the interface. Ambiguous corrections remain unchanged. Keyword ranking rewards informative terms and headings, saturates repeated words, and allows substantial partial matches for longer queries. Semantic results are merged with keyword results using reciprocal-rank fusion so keyword passages remain available after the model loads. Equivalent queries share bounded in-memory caches; queries and corrections remain on the student's device. Changes to aliases and ranking do not require regenerating document embeddings.
 
 ## Integrated course-site build
 

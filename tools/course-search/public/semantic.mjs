@@ -1,5 +1,6 @@
-import {groupDocuments,tokens} from './search.mjs';
+import {groupDocuments,tokens,normalizeQuery} from './search.mjs';
 export function semanticSearch(records,vectors,query,embedding){
+ query=normalizeQuery(query);
  const terms=[...new Set(tokens(query))];if(!terms.length)return [];
  const q=query.toLowerCase();
  const concepts=[];
