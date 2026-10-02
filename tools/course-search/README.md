@@ -1,6 +1,6 @@
 # Search EECS 245
 
-A static Smart Search overlay for **eecs245.org**. It combines local semantic embeddings, exact terms, and mathematical concept recognition. One card per document, with links to each matching section, problem, activity, or lecture page. All six category buttons start selected. Each category initially shows three documents with a Show more button. Notes reveal matching sections when clicked. The sort toggle switches between relevance and chronological course order (oldest first). Published solution explanations are included in the same cards as the questions.
+A static Smart Search overlay for **eecs245.org**. It combines local semantic embeddings, exact terms, and mathematical concept recognition. One card per document, with links to each matching section, problem, activity, or lecture page. All six category buttons start selected, ordered Lecture recordings, Lecture PDFs, Notes, Homeworks, Labs, Past exams. Each category initially shows three documents with a Show more button. Notes reveal matching sections when clicked. The sort toggle switches between relevance and chronological course order (oldest first). Published solution explanations are included in the same cards as the questions.
 
 ## Run and deploy
 
@@ -58,9 +58,13 @@ For a manual local refresh from the website checkout: `cd tools/course-search &&
 
 ## Lecture recording search
 
-The sixth category, **Lecture recordings**, uses the same local keyword search,
+The first category, **Lecture recordings**, uses the same local keyword search,
 worker, model, embedding build, filtering, previews, and chronological sort as
-other materials. Recording cards show transcript excerpts and timestamp links.
+other materials. Recording cards show a cached original player thumbnail and a short transcript excerpt.
+Click the card to reveal timestamp links and the Watch recording link. Expanded
+cards stay open through semantic updates and sorting, and reset for a new query.
+Preview thumbnails are cached under `public/recording-previews/` with provenance;
+search never contacts Leccap to load them.
 Hits from one recording share one card regardless of `?start=`. Overlapping or
 nearby hits (up to a 10-second gap) merge into moments no longer than 120 seconds;
 the best matching excerpt survives. Links start five seconds before the displayed
@@ -116,8 +120,9 @@ truncated. Exceptionally long individual cues require a better timed export.
 
 `metadata.recordings` reports each published lecture as available, missing,
 pending, or invalid, with a reason and cue/passages counts where available. The
-UI always displays the number with cached captions and identifies omitted
-lectures. “Available” means a valid cached export, not a guarantee that the
+UI shows a small indexed-materials footer below a divider. It derives coverage
+from the actual records and preserves gaps, distinguishing recording/PDF lecture
+ranges when they differ. “Available” means a valid cached export, not a guarantee that the
 provider captioned every second. First/last cue times are retained for auditing.
 Missing captions do not block unrelated search categories or the website build.
 

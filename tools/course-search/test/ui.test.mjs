@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {parseHTML} from 'linkedom';
-import {buildSearch} from '../public/search.mjs';
+import {buildSearch,categories,indexedCoverage} from '../public/search.mjs';
 
 test('recording UI renders excerpts, merged links, filtering, previews and show more',async()=>{
  const {window,document}=parseHTML(await readFile(new URL('../public/index.html',import.meta.url),'utf8'));
@@ -15,12 +15,22 @@ test('recording UI renders excerpts, merged links, filtering, previews and show 
  const input=document.querySelector('#search');input.value='absolute loss';
  document.querySelector('#search-form').dispatchEvent(new window.Event('submit',{cancelable:true}));
  const group=()=>document.querySelector('.group[data-category="Lecture recordings"]');
+ assert.deepEqual([...document.querySelectorAll('.filter')].map(b=>b.dataset.category),categories);
+ assert.equal(document.querySelector('.group').dataset.category,'Lecture recordings');
  assert.equal(group().querySelectorAll('.card').length,3);
  assert.match(group().querySelector('.card-excerpt').textContent,/absolute loss/);
  assert.equal(group().querySelectorAll('.card')[0].querySelectorAll('.locations a').length,1);
  assert.equal(group().querySelector('.locations a').getAttribute('href'),base+'fixture0?start=5');
  assert.equal(group().querySelector('.locations a').textContent,'0:10–1:00');
  assert(group().querySelector('details.passages summary'));
+ const recording=group().querySelector('details.recording-moments');
+ assert.equal(recording.open,false);
+ assert(recording.querySelector('.recording-summary .recording-thumbnail'));
+ assert(!recording.querySelector('.recording-summary .locations'));
+ assert(recording.querySelector('.recording-content .locations'));
+ recording.open=true;recording.dispatchEvent(new window.Event('toggle'));
+ globalThis.testWorker.onmessage({data:{type:'ready'}});
+ assert.equal(group().querySelector('details.recording-moments').open,true);
  group().querySelector('.show-more').click();assert.equal(group().querySelectorAll('.card').length,4);
  const filter=document.querySelector('button[data-category="Lecture recordings"]');
  filter.click();assert.equal(filter.getAttribute('aria-pressed'),'false');assert.equal(group(),null);
@@ -28,7 +38,17 @@ test('recording UI renders excerpts, merged links, filtering, previews and show 
  filter.click();assert.equal(filter.getAttribute('aria-pressed'),'true');assert(group());
  globalThis.testWorker.onmessage({data:{type:'ready'}});assert(group());
  document.querySelector('[data-sort="chronological"]').click();
- assert.match(group().querySelector('h3').textContent,/Lecture 1/);
- assert.match(document.querySelector('#recording-coverage').textContent,/4 of 4/);
+ assert.match(group().querySelector('.recording-label').textContent,/Lecture 1/);
+ assert.equal(document.querySelector('#recording-coverage'),null);
+ assert.match(document.querySelector('#index-coverage').textContent,/Lecture recordings: 1–4/);
  assert([...group().querySelectorAll('a')].every(a=>a.rel==='noreferrer'));
+});
+
+test('indexed coverage preserves gaps and distinguishes PDF and caption coverage',()=>{
+ const record=(category,title)=>({category,title});
+ const rows=[record('Lecture recordings','Lecture 1 · Intro'),record('Lecture recordings','Lecture 3 · Vectors'),record('Lecture PDFs','Lecture 1 · Intro'),record('Lecture PDFs','Lecture 2 · Loss'),record('Lecture PDFs','Lecture 3 · Vectors'),record('Homeworks','Homework 1: Intro'),record('Homeworks','Homework 3: Vectors')];
+ assert.match(indexedCoverage(rows),/Lecture recordings: 1, 3 · Lecture PDFs: 1–3/);
+ assert.match(indexedCoverage(rows),/Homeworks: 1, 3/);
+ rows.push(record('Lecture recordings','Lecture 2 · Loss'));
+ assert.match(indexedCoverage(rows),/^Lectures: 1–3/);
 });

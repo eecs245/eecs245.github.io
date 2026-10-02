@@ -1,6 +1,6 @@
 import {tokens,normalizeQuery,normalizeText,createQueryProcessor} from './query.mjs';
 export {tokens,normalizeQuery,createQueryProcessor};
-export const categories=['Notes','Lecture PDFs','Lecture recordings','Homeworks','Labs','Past exams'];
+export const categories=['Lecture recordings','Lecture PDFs','Notes','Homeworks','Labs','Past exams'];
 export function buildSearch(records){
   const processQuery=createQueryProcessor(records);
   const prepared=records.map(r=>({...r,words:tokens(`${r.section} ${r.text} ${(r.concepts||[]).join(' ')}`),heading:tokens(`${r.title} ${r.section}`)}));
@@ -119,4 +119,22 @@ export function mergeResults(keyword,semantic){
     });
   });
   return groupDocuments([...hits.values()].sort((a,b)=>b.score-a.score||Number(a.id)-Number(b.id)));
+}
+
+export function indexedCoverage(records){
+ const titles=category=>[...new Set(records.filter(r=>r.category===category).map(r=>r.title))];
+ const ranges=values=>{
+  const numbers=[...new Set(values)].sort((a,b)=>a-b),parts=[];
+  for(let i=0;i<numbers.length;i++){
+   const start=numbers[i];let end=start;
+   while(numbers[i+1]===end+1)end=numbers[++i];
+   parts.push(start===end?String(start):`${start}–${end}`);
+  }
+  return parts.join(', ')||'none';
+ };
+ const numbered=category=>ranges(titles(category).map(t=>Number(t.match(/^(?:Lecture|Homework|Lab) (\d+)/)?.[1])).filter(Boolean));
+ const recordings=numbered('Lecture recordings'),pdfs=numbered('Lecture PDFs');
+ const lectures=recordings===pdfs?`Lectures: ${pdfs}`:`Lecture recordings: ${recordings} · Lecture PDFs: ${pdfs}`;
+ const terms=[...new Set(titles('Past exams').map(t=>t.match(/^(Fall|Winter|Spring) \d{4}/)?.[0]).filter(Boolean))];
+ return `${lectures} · Homeworks: ${numbered('Homeworks')} · Labs: ${numbered('Labs')} · Notes: ${titles('Notes').length} pages · Past exams: ${terms.join(', ')||'none'}`;
 }
