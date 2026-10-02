@@ -1,5 +1,9 @@
 (() => {
  const trigger=document.querySelector('.smart-search-trigger');if(!trigger)return;
+ const header=document.querySelector('#main-header');const mobileHeader=document.querySelector('.site-header');const menu=document.querySelector('#menu-button');
+ const mobile=window.matchMedia('(max-width:799px)');
+ function placeTrigger(){if(mobile.matches&&mobileHeader&&menu)mobileHeader.insertBefore(trigger,menu);else header?.prepend(trigger);}
+ placeTrigger();mobile.addEventListener('change',placeTrigger);
  const modal=document.createElement('dialog');modal.className='smart-search-modal';modal.setAttribute('aria-label','Smart Search');
  const close=document.createElement('button');close.type='button';close.className='smart-search-close';close.textContent='×';close.setAttribute('aria-label','Close Smart Search');
  const frame=document.createElement('iframe');frame.title='Search EECS 245 course materials';frame.className='smart-search-frame';
