@@ -52,7 +52,7 @@ test('semantic UI waits, debounces, rejects stale results, and preserves recordi
  assert.match(document.querySelector('#index-coverage').textContent,/Lecture recordings: 1-4/);
  assert([...group().querySelectorAll('a')].every(a=>a.rel==='noreferrer'));
  const footer=document.querySelector('.index-coverage');
- assert.match(footer.textContent,/• All notes chapters and all past exams\./);
+ assert.match(footer.textContent,/• All notes chapters and all past exams$/);
  assert.equal(footer.querySelectorAll('a')[0].getAttribute('href'),'https://notes.eecs245.org');
  assert.equal(footer.querySelectorAll('a')[1].getAttribute('href'),'https://exams.eecs245.org');
 
