@@ -9,7 +9,9 @@
  const frame=document.createElement('iframe');frame.title='Search EECS 245 course materials';frame.className='smart-search-frame';
  modal.append(close,frame);document.body.append(modal);
  let returnFocus;
- const focusSearch=()=>frame.contentWindow?.postMessage({type:'eecs245-search-focus'},location.origin);
+ const syncFont=()=>frame.contentWindow?.postMessage({type:'eecs245-search-font',fontFamily:getComputedStyle(document.body).fontFamily},location.origin);
+ const focusSearch=()=>{syncFont();frame.contentWindow?.postMessage({type:'eecs245-search-focus'},location.origin);};
+ new MutationObserver(syncFont).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
  function open(){returnFocus=document.activeElement;if(!frame.src)frame.src=trigger.dataset.searchUrl;if(!modal.open){modal.showModal();document.body.classList.add('smart-search-open');}focusSearch();}
  function dismiss(){if(modal.open)modal.close();}
  close.addEventListener('click',dismiss);trigger.addEventListener('click',open);
@@ -17,5 +19,5 @@
  modal.addEventListener('click',event=>{if(event.target===modal){const r=modal.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dismiss();}});
  modal.addEventListener('close',()=>{document.body.classList.remove('smart-search-open');returnFocus?.focus();});
  document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='f'){event.preventDefault();open();}});
- window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==frame.contentWindow)return;if(event.data?.type==='eecs245-search-close')dismiss();if(event.data?.type==='eecs245-search-focus-parent')open();});
+ window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==frame.contentWindow)return;if(event.data?.type==='eecs245-search-close')dismiss();if(event.data?.type==='eecs245-search-focus-parent')open();if(event.data?.type==='eecs245-search-font-request')syncFont();});
 })();

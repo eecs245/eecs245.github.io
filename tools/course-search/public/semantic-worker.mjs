@@ -4,7 +4,7 @@ import {normalizeQuery} from './search.mjs';
 env.allowRemoteModels=false;env.allowLocalModels=true;env.localModelPath=new URL('./models/',self.location.href).href;
 env.backends.onnx.wasm.wasmPaths=new URL('./vendor/onnx/',self.location.href).href;
 env.backends.onnx.wasm.numThreads=1;
-let records,vectors,embed,pending,processing=false;
+let records,vectors,embed,pending,latestId,processing=false;
 const embeddings=new Map();
 const ready=(async()=>{
  const [index,binary]=await Promise.all([fetch('./data/index.json').then(r=>{if(!r.ok)throw Error('Index unavailable');return r.json();}),fetch('./data/vectors.f32').then(r=>{if(!r.ok)throw Error('Vectors unavailable');return r.arrayBuffer();})]);
@@ -13,7 +13,7 @@ const ready=(async()=>{
  self.postMessage({type:'ready'});
 })();
 ready.catch(error=>self.postMessage({type:'error',message:String(error)}));
-self.onmessage=({data})=>{pending=data;if(!processing)drain();};
+self.onmessage=({data})=>{latestId=data.id;pending=data.type==='cancel'?null:data;if(pending&&!processing)drain();};
 async function drain(){
  processing=true;
  try{
@@ -23,7 +23,7 @@ async function drain(){
    const query=normalizeQuery(data.query);
    let embedding=embeddings.get(query);
    if(!embedding){const result=await embed(query,{pooling:'mean',normalize:true});embedding=result.data;embeddings.set(query,embedding);if(embeddings.size>32)embeddings.delete(embeddings.keys().next().value);}
-   self.postMessage({type:'results',id:data.id,query,results:semanticSearch(records,vectors,query,embedding)});
+   if(data.id===latestId)self.postMessage({type:'results',id:data.id,query,results:semanticSearch(records,vectors,query,embedding)});
   }
  }catch(error){pending=null;self.postMessage({type:'error',message:String(error)});}
  finally{processing=false;}

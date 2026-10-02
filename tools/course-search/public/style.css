@@ -14,6 +14,7 @@ body{font-family:var(--course-font);color:#5c5962;background:#fff;line-height:1.
 .brand,.has-query .brand{margin-bottom:8px}.search-description{max-width:540px;margin:0 auto 24px;color:#8a8790;font-size:14px;line-height:1.5}.has-query .search-description{font-size:12px;margin-bottom:18px}@media(max-width:640px){.embedded .hero,.embedded.has-query .hero{margin-top:44px}.search-description{font-size:13px;max-width:320px}.has-query .search-description{font-size:12px}}
 .search-correction{margin:8px 0 0;color:#716d77;font-size:12px;text-align:left;line-height:1.5}
 .brand .search-word{font-weight:200}
+#empty h2{font-family:var(--course-font)}
 .group[data-category="Lectures"] .card{display:block;padding:13px 15px}
 .group[data-category="Lectures"] .card h3{font-size:12px;margin-bottom:7px}
 .group[data-category="Lectures"] .card-excerpt{margin-bottom:9px}

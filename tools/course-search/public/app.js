@@ -1,28 +1,39 @@
-import {resultCategories,combineLectureResults,tokens,buildSearch,excerpt,sortDocuments,createQueryProcessor,normalizeQuery,mergeResults,filterCategories,indexedCoverage} from './search.mjs';
+import {resultCategories,combineLectureResults,tokens,excerpt,sortDocuments,createQueryProcessor,normalizeQuery,filterCategories,indexedCoverage} from './search.mjs';
 import {recordingPreviews} from './recording-previews/previews.mjs';
 if(new URLSearchParams(location.search).has('embedded'))document.body.classList.add('embedded');
 const input=document.querySelector('#search'),groups=document.querySelector('#groups');
 if(document.body.classList.contains('embedded')){
- window.addEventListener('message',event=>{if(event.origin===location.origin&&event.source===parent&&event.data?.type==='eecs245-search-focus')input.focus();});
+ window.addEventListener('message',event=>{
+  if(event.origin!==location.origin||event.source!==parent)return;
+  if(event.data?.type==='eecs245-search-focus')input.focus();
+  if(event.data?.type==='eecs245-search-font'&&typeof event.data.fontFamily==='string')document.documentElement.style.setProperty('--course-font',event.data.fontFamily);
+ });
+ parent.postMessage({type:'eecs245-search-font-request'},location.origin);
  document.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();parent.postMessage({type:'eecs245-search-close'},location.origin);}if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='f'){event.preventDefault();input.focus();}});
 }
 
-let search=null,allResults=[],timer,requestId=0,semanticReady=false,semanticFailed=false;
-let processQuery=null,activeQuery='',sortOrder='relevance',lastQuery='';
+let allResults=[],completedResults=null,timer,requestId=0,semanticReady=false,semanticFailed=false;
+let processQuery=null,activeQuery='',activeText='',activeProcessed,displayQuery='',displayText='',displayProcessed,sortOrder='relevance',lastQuery='';
 const semanticCache=new Map();
 const correction=document.createElement('p');correction.className='search-correction';correction.hidden=true;correction.setAttribute('role','status');correction.setAttribute('aria-live','polite');document.querySelector('#search-form').after(correction);
 const expandedCategories=new Set(),expandedNotes=new Set(),expandedRecordings=new Set();
 const worker=new Worker(new URL("./worker.js",import.meta.url),{type:"module"});
 worker.onmessage=({data})=>{
- if(data.type==="ready"){semanticReady=true;run();}
+ if(data.type==="ready"){semanticReady=true;if(!timer)run();}
  if(data.type==="results"){
   semanticCache.delete(data.query);semanticCache.set(data.query,data.results);
   if(semanticCache.size>32)semanticCache.delete(semanticCache.keys().next().value);
-  if(data.id===requestId&&data.query===activeQuery)display(mergeResults(search(activeQuery,{correct:false}),data.results));
+  if(data.id===requestId&&data.query===activeQuery)display(data.results,activeProcessed,activeText);
  }
- if(data.type==="error"){document.querySelector('#timing').title=data.message;semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";}
+ if(data.type==="error")failSearch(data.message);
 };
-worker.onerror=()=>{semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";};
+worker.onerror=()=>failSearch();
+function failSearch(message=''){
+ semanticFailed=true;document.querySelector('#results').setAttribute('aria-busy','false');
+ document.querySelector('#timing').title=message;
+ document.querySelector('#timing').textContent='Search could not load. Refresh to try again.';
+ if(!completedResults)document.querySelector('#summary').textContent='Search is unavailable.';
+}
 const icons=['▶','▤','▦','◫','▥'];
 const selected=new Set(resultCategories);
 function documentLabel(record){
@@ -67,7 +78,7 @@ function render(){
     if(/\\|\$/.test(location.text)){
      text.textContent=location.text.replace(/\\\\/g,'\\').replace(/\\(?:mathbf|boldsymbol|bm)\s*\{([a-zA-Z](?:_\{?\d+\}?)?)\}/g,'\\vec{$1}').replace(/\*\*([uvw])\*\*/g,'$\\vec{$1}$');
      if(window.renderMathInElement)window.renderMathInElement(text,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false,trust:false,macros:{'\\v':'\\vec{#1}','\\R':'\\mathbb{R}'}});
-    }else highlight(text,excerpt(location.text,activeQuery),activeQuery);
+    }else highlight(text,excerpt(location.text,displayQuery),displayQuery);
     if(location.detail.startsWith('OCR')){const quality=document.createElement('small');quality.textContent='OCR transcript · check original PDF';text.append(quality);}
     passage.append(link,text);details.append(passage);
    }
@@ -88,7 +99,7 @@ function render(){
     if(recordingPreviews[id]){const image=document.createElement('img');image.src=recordingPreviews[id];image.alt='';image.loading='lazy';thumbnail.append(image);}
     const play=document.createElement('span');play.className='recording-play';play.textContent=r.recording?'▶':'▧';thumbnail.append(play);
     const label=document.createElement('span');label.className='recording-label';label.textContent=documentLabel(r);
-    const preview=document.createElement('span');preview.className='card-excerpt';const previewLocations=(r.recording||r.pdf).locations;highlight(preview,excerpt(previewLocations.reduce((best,l)=>l.score>best.score?l:best).text,activeQuery),activeQuery);
+    const preview=document.createElement('span');preview.className='card-excerpt';const previewLocations=(r.recording||r.pdf).locations;highlight(preview,excerpt(previewLocations.reduce((best,l)=>l.score>best.score?l:best).text,displayQuery),displayQuery);
     const countLabel=(count,singular)=>`${count} ${singular}${count===1?'':'s'}`;
     const counts=[r.recording&&countLabel(r.recording.locations.length,'moment'),r.pdf&&countLabel(r.pdf.locations.length,'PDF page')].filter(Boolean);
     const prompt=document.createElement('span');prompt.className='recording-prompt';prompt.textContent=counts.join(' · ')+' · Show matches';
@@ -121,35 +132,46 @@ function render(){
   groups.append(section);
  }
 }
-function display(results){
- const query=input.value.trim();allResults=combineLectureResults(filterCategories(results,selected));
+function display(results,processed,query){
+ completedResults=results;displayQuery=processed.normalized;displayText=query;displayProcessed=processed;
+ if(displayQuery!==lastQuery){expandedCategories.clear();expandedNotes.clear();expandedRecordings.clear();lastQuery=displayQuery;}
+ correction.hidden=!processed.corrections.length;
+ if(processed.corrections.length)correction.textContent=`Showing results for “${normalizeQuery(processed.corrected)}”.`;
+ allResults=combineLectureResults(filterCategories(results,selected));
  document.querySelector('#summary').textContent=`${allResults.length} documents · ${allResults.reduce((sum,r)=>sum+r.locations.length,0)} matching locations for “${query}”`;
- document.querySelector('#timing').textContent=semanticFailed?'Keyword search':semanticCache.has(activeQuery)?'':semanticReady?'Finding related results…':'Preparing semantic search…';
+ document.querySelector('#timing').textContent='';document.querySelector('#results').setAttribute('aria-busy','false');
  document.querySelector('#empty').hidden=!!allResults.length;
  document.querySelector('#empty h2').textContent=selected.size?'No matches yet.':'Select a category to search.';
  document.querySelector('#empty p').textContent=selected.size?'Try another topic or enable more categories.':'Use the buttons above to include course materials.';render();
 }
 function run(){
- const query=input.value.trim();requestId++;document.body.classList.toggle('has-query',!!query);document.querySelector('#results').hidden=!query;correction.hidden=true;if(!query){activeQuery='';return;}
- if(!search){document.querySelector('#summary').textContent='Loading the course index…';return;}
- const processed=processQuery(query);activeQuery=processed.normalized;
- if(activeQuery!==lastQuery){expandedCategories.clear();expandedNotes.clear();expandedRecordings.clear();lastQuery=activeQuery;}
- if(processed.corrections.length){correction.textContent=`Showing results for “${normalizeQuery(processed.corrected)}”.`;correction.hidden=false;}
- const keyword=search(activeQuery,{correct:false});
- if(semanticCache.has(activeQuery)){display(mergeResults(keyword,semanticCache.get(activeQuery)));return;}
- display(keyword);
+ clearTimeout(timer);timer=null;
+ const query=input.value.trim();requestId++;document.body.classList.toggle('has-query',!!query);document.querySelector('#results').hidden=!query;
+ if(!query){activeQuery='';completedResults=null;allResults=[];groups.replaceChildren();correction.hidden=true;document.querySelector('#results').setAttribute('aria-busy','false');worker.postMessage({type:'cancel',id:requestId});return;}
+ if(!processQuery){document.querySelector('#summary').textContent='Preparing search…';return;}
+ activeProcessed=processQuery(query);activeQuery=activeProcessed.normalized;activeText=query;
+ if(semanticCache.has(activeQuery)){display(semanticCache.get(activeQuery),activeProcessed,activeText);return;}
+ if(semanticFailed){failSearch();return;}
+ document.querySelector('#results').setAttribute('aria-busy','true');document.querySelector('#empty').hidden=true;
+ document.querySelector('#timing').textContent=semanticReady?'Searching…':'Preparing search…';
+ if(!completedResults)document.querySelector('#summary').textContent='';
  if(semanticReady)worker.postMessage({query:activeQuery,id:requestId});
 }
 for(const button of document.querySelectorAll('[data-category]')) button.addEventListener('click',()=>{
  const category=button.dataset.category;selected.has(category)?selected.delete(category):selected.add(category);
- button.setAttribute('aria-pressed',String(selected.has(category)));run();
+ button.setAttribute('aria-pressed',String(selected.has(category)));
+ if(completedResults){const busy=document.querySelector('#results').getAttribute('aria-busy'),status=document.querySelector('#timing').textContent;display(completedResults,displayProcessed,displayText);document.querySelector('#results').setAttribute('aria-busy',busy);document.querySelector('#timing').textContent=status;}
 });
 for(const button of document.querySelectorAll('[data-sort]'))button.addEventListener('click',()=>{sortOrder=button.dataset.sort;for(const b of document.querySelectorAll('[data-sort]'))b.setAttribute('aria-pressed',String(b===button));render();});
-input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(run,60);});
+input.addEventListener('input',()=>{
+ clearTimeout(timer);requestId++;worker.postMessage({type:'cancel',id:requestId});
+ if(!input.value.trim()){run();return;}
+ timer=setTimeout(run,350);
+});
 document.querySelector('#search-form').addEventListener('submit',e=>{e.preventDefault();clearTimeout(timer);run();});
 document.addEventListener('keydown',e=>{if(e.key==='/'&&e.target!==input){e.preventDefault();input.focus();}});
 try{
- const response=await fetch('./data/index.json');if(!response.ok)throw new Error();const data=await response.json();search=buildSearch(data.records);processQuery=createQueryProcessor(data.records);
+ const response=await fetch('./data/index.json');if(!response.ok)throw new Error();const data=await response.json();processQuery=createQueryProcessor(data.records);
  document.querySelector('#index-coverage').textContent=indexedCoverage(data.records);
- run();
+ if(!timer)run();
 }catch{document.querySelector('#results').hidden=false;document.querySelector('#summary').textContent='Search is unavailable. Refresh to try again.';}

@@ -4,17 +4,23 @@ import {readFile} from 'node:fs/promises';
 import {parseHTML} from 'linkedom';
 import {buildSearch,resultCategories,indexedCoverage,combineLectureResults,filterCategories} from '../public/search.mjs';
 
-test('recording UI renders excerpts, merged links, filtering, previews and show more',async()=>{
+test('semantic UI waits, debounces, rejects stale results, and preserves recording controls and site font',async t=>{
  const {window,document}=parseHTML(await readFile(new URL('../public/index.html',import.meta.url),'utf8'));
  const base='https://leccap.engin.umich.edu/leccap/player/r/';
  const records=Array.from({length:4},(_,i)=>({id:String(i),category:'Lecture recordings',title:`Lecture ${i+1} · Synthetic`,section:'0:10–0:40',text:'Synthetic caption: absolute loss is minimized by a median.',url:base+`fixture${i}?start=5`,start:10,end:40,detail:'Leccap captions',concepts:[],lectureDate:`2026-09-0${i+1}`}));
  records.push({...records[0],id:'overlap',start:30,end:60,url:base+'fixture0?start=25'});
  records.push({id:'pdf',category:'Lecture PDFs',title:records[0].title,section:'Page 2',text:'Absolute loss PDF explanation.',url:'https://example.org/lecture-1.pdf#page=2',detail:'PDF',concepts:[]});
  records.push({id:'note',category:'Notes',title:'Note',section:'Loss',text:'Absolute loss uses the median.',url:'https://example.org/note/#loss',detail:''});
- Object.assign(globalThis,{window,document,location:{search:'',origin:'http://localhost'},Worker:class {constructor(){globalThis.testWorker=this;}postMessage(message){this.onmessage({data:{type:'results',id:message.id,query:message.query,results:buildSearch(records)(message.query)}});}},fetch:async()=>({ok:true,json:async()=>({records,metadata:{recordings:{published:4,available:4,recordings:records.slice(0,4).map(r=>({...r,status:'available'}))}}})})});
+ const messages=[];let autoReply=false;
+ const reply=message=>globalThis.testWorker.onmessage({data:{type:'results',id:message.id,query:message.query,results:buildSearch(records)(message.query)}});
+ Object.assign(globalThis,{window,document,parent:{postMessage(){}},location:{search:'?embedded=1',origin:'http://localhost'},Worker:class {constructor(){globalThis.testWorker=this;}postMessage(message){if(!message.query)return;messages.push(message);if(autoReply)reply(message);}},fetch:async()=>({ok:true,json:async()=>({records,metadata:{recordings:{published:4,available:4,recordings:records.slice(0,4).map(r=>({...r,status:'available'}))}}})})});
  await import('../public/app.js');
  const input=document.querySelector('#search');input.value='absolute loss';
  document.querySelector('#search-form').dispatchEvent(new window.Event('submit',{cancelable:true}));
+ assert.equal(messages.length,0);assert.equal(document.querySelector('.card'),null);
+ globalThis.testWorker.onmessage({data:{type:'ready'}});
+ assert.equal(messages.length,1);assert.equal(document.querySelector('.card'),null);
+ reply(messages[0]);autoReply=true;
  const group=()=>document.querySelector('.group[data-category="Lectures"]');
  assert.deepEqual([...document.querySelectorAll('.filter')].map(b=>b.dataset.category),resultCategories);
  assert.equal(document.querySelector('.group').dataset.category,'Lectures');
@@ -49,6 +55,31 @@ test('recording UI renders excerpts, merged links, filtering, previews and show 
  assert.match(footer.textContent,/• All notes chapters and all past exams\./);
  assert.equal(footer.querySelectorAll('a')[0].getAttribute('href'),'https://notes.eecs245.org');
  assert.equal(footer.querySelectorAll('a')[1].getAttribute('href'),'https://exams.eecs245.org');
+
+ const submit=()=>document.querySelector('#search-form').dispatchEvent(new window.Event('submit',{cancelable:true}));
+ t.mock.timers.enable({apis:['setTimeout']});autoReply=false;
+ const count=messages.length;
+ input.value='linear';input.dispatchEvent(new window.Event('input'));
+ t.mock.timers.tick(200);
+ input.value='linear regression';input.dispatchEvent(new window.Event('input'));
+ t.mock.timers.tick(349);assert.equal(messages.length,count);assert(group());
+ t.mock.timers.tick(1);assert.equal(messages.length,count+1);assert(group());
+ const outdated=messages.at(-1);
+ input.value='projection';input.dispatchEvent(new window.Event('input'));
+ reply(outdated);assert(group());assert.match(document.querySelector('#summary').textContent,/absolute loss/);
+ submit();assert.equal(messages.length,count+2);assert.equal(messages.at(-1).query,'projection');
+ t.mock.timers.tick(400);assert.equal(messages.length,count+2);
+ reply(messages.at(-1));assert.equal(group(),null);assert.match(document.querySelector('#summary').textContent,/projection/);
+ input.value='MEAN ABSOLUTE ERROR';submit();assert.equal(messages.length,count+2);assert(group());
+ input.value='squared loss';input.dispatchEvent(new window.Event('input'));input.value='';input.dispatchEvent(new window.Event('input'));
+ t.mock.timers.tick(400);assert.equal(messages.length,count+2);assert(document.querySelector('#results').hidden);
+ input.value='absoluet loss';submit();assert(group());assert.match(document.querySelector('.search-correction').textContent,/absolute loss/);
+ const fontMessage=(origin,source,fontFamily)=>{const event=new window.Event('message');Object.assign(event,{origin,source,data:{type:'eecs245-search-font',fontFamily}});window.dispatchEvent(event);};
+ fontMessage(location.origin,parent,'Palatino, serif');assert.equal(document.documentElement.style.getPropertyValue('--course-font'),'Palatino, serif');
+ fontMessage('https://untrusted.example',parent,'bad');fontMessage(location.origin,{},'bad');assert.equal(document.documentElement.style.getPropertyValue('--course-font'),'Palatino, serif');
+ fontMessage(location.origin,parent,'system-ui, sans-serif');assert.equal(document.documentElement.style.getPropertyValue('--course-font'),'system-ui, sans-serif');
+ globalThis.testWorker.onmessage({data:{type:'error',message:'Model unavailable'}});
+ input.value='squared loss';submit();assert.equal(messages.length,count+2);assert.match(document.querySelector('#timing').textContent,/Refresh to try again/);assert(group());
 });
 
 test('indexed coverage preserves gaps and distinguishes PDF and caption coverage',()=>{
