@@ -1,6 +1,20 @@
 import {tokens,normalizeQuery,normalizeText,createQueryProcessor} from './query.mjs';
 export {tokens,normalizeQuery,createQueryProcessor};
 export const categories=['Lecture recordings','Lecture PDFs','Notes','Homeworks','Labs','Past exams'];
+export const resultCategories=['Lectures','Notes','Homeworks','Labs','Past exams'];
+// Combine only matching, enabled lecture sources. Search scores stay unchanged.
+export function combineLectureResults(documents){
+ const lectures=new Map(),other=[];
+ for(const document of documents){
+  if(!['Lecture recordings','Lecture PDFs'].includes(document.category)){other.push(document);continue;}
+  const key=`lecture:${document.title.trim().toLowerCase()}`;
+  if(!lectures.has(key))lectures.set(key,{id:key,category:'Lectures',title:document.title,score:document.score,recording:null,pdf:null});
+  const lecture=lectures.get(key);
+  lecture[document.category==='Lecture recordings'?'recording':'pdf']=document;
+  lecture.score=Math.max(lecture.score,document.score);
+ }
+ return [...lectures.values()].map(lecture=>({...lecture,url:(lecture.recording||lecture.pdf).url,locations:[...(lecture.recording?.locations||[]),...(lecture.pdf?.locations||[])]})).concat(other);
+}
 export function buildSearch(records){
   const processQuery=createQueryProcessor(records);
   const prepared=records.map(r=>({...r,words:tokens(`${r.section} ${r.text} ${(r.concepts||[]).join(' ')}`),heading:tokens(`${r.title} ${r.section}`)}));
@@ -128,13 +142,12 @@ export function indexedCoverage(records){
   for(let i=0;i<numbers.length;i++){
    const start=numbers[i];let end=start;
    while(numbers[i+1]===end+1)end=numbers[++i];
-   parts.push(start===end?String(start):`${start}–${end}`);
+   parts.push(start===end?String(start):`${start}-${end}`);
   }
   return parts.join(', ')||'none';
  };
  const numbered=category=>ranges(titles(category).map(t=>Number(t.match(/^(?:Lecture|Homework|Lab) (\d+)/)?.[1])).filter(Boolean));
  const recordings=numbered('Lecture recordings'),pdfs=numbered('Lecture PDFs');
  const lectures=recordings===pdfs?`Lectures: ${pdfs}`:`Lecture recordings: ${recordings} · Lecture PDFs: ${pdfs}`;
- const terms=[...new Set(titles('Past exams').map(t=>t.match(/^(Fall|Winter|Spring) \d{4}/)?.[0]).filter(Boolean))];
- return `${lectures} · Homeworks: ${numbered('Homeworks')} · Labs: ${numbered('Labs')} · Notes: ${titles('Notes').length} pages · Past exams: ${terms.join(', ')||'none'}`;
+ return `${lectures} · Homeworks: ${numbered('Homeworks')} · Labs: ${numbered('Labs')}`;
 }

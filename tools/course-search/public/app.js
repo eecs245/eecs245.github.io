@@ -1,4 +1,4 @@
-import {categories,tokens,buildSearch,excerpt,sortDocuments,createQueryProcessor,normalizeQuery,mergeResults,filterCategories,indexedCoverage} from './search.mjs';
+import {categories,resultCategories,combineLectureResults,tokens,buildSearch,excerpt,sortDocuments,createQueryProcessor,normalizeQuery,mergeResults,filterCategories,indexedCoverage} from './search.mjs';
 import {recordingPreviews} from './recording-previews/previews.mjs';
 if(new URLSearchParams(location.search).has('embedded'))document.body.classList.add('embedded');
 const input=document.querySelector('#search'),groups=document.querySelector('#groups');
@@ -23,7 +23,7 @@ worker.onmessage=({data})=>{
  if(data.type==="error"){document.querySelector('#timing').title=data.message;semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";}
 };
 worker.onerror=()=>{semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";};
-const icons=['▶','▧','▤','▦','◫','▥'];
+const icons=['▶','▤','▦','◫','▥'];
 const selected=new Set(categories);
 function documentLabel(record){
  if(record.category==='Homeworks'||record.category==='Labs') return record.title.split(':')[0];
@@ -40,7 +40,7 @@ function highlight(node,text,query){
 }
 function render(){
  groups.replaceChildren();
- for(const [i,category] of categories.entries()){
+ for(const [i,category] of resultCategories.entries()){
   const matches=sortDocuments(allResults.filter(r=>r.category===category),sortOrder);if(!matches.length)continue;
   const section=document.createElement('section');section.className='group';section.dataset.category=category;
   const head=document.createElement('div');head.className='group-head';
@@ -78,22 +78,31 @@ function render(){
     const toggle=document.createElement('summary');toggle.className='note-title';toggle.textContent=documentLabel(r);
     const open=document.createElement('a');open.className='open-note';open.href=r.url;open.target='_blank';open.rel='noreferrer';open.textContent='Open note ↗';
     note.append(toggle,open,locations,details);card.append(note);
-   }else if(category==='Lecture recordings'){
+   }else if(category==='Lectures'){
     card.classList.add('recording-card');
     const recording=document.createElement('details');recording.className='recording-moments';recording.open=expandedRecordings.has(r.id);
     recording.addEventListener('toggle',()=>{recording.open?expandedRecordings.add(r.id):expandedRecordings.delete(r.id);});
     const toggle=document.createElement('summary');toggle.className='recording-summary';
     const thumbnail=document.createElement('span');thumbnail.className='recording-thumbnail';thumbnail.setAttribute('aria-hidden','true');
-    const id=new URL(r.url).pathname.split('/').pop();
+    const id=r.recording?new URL(r.recording.url).pathname.split('/').pop():null;
     if(recordingPreviews[id]){const image=document.createElement('img');image.src=recordingPreviews[id];image.alt='';image.loading='lazy';thumbnail.append(image);}
-    const play=document.createElement('span');play.className='recording-play';play.textContent='▶';thumbnail.append(play);
+    const play=document.createElement('span');play.className='recording-play';play.textContent=r.recording?'▶':'▧';thumbnail.append(play);
     const label=document.createElement('span');label.className='recording-label';label.textContent=documentLabel(r);
-    const preview=document.createElement('span');preview.className='card-excerpt';highlight(preview,excerpt(r.locations.reduce((best,l)=>l.score>best.score?l:best).text,activeQuery),activeQuery);
-    const prompt=document.createElement('span');prompt.className='recording-prompt';prompt.textContent=`${r.locations.length} matching moment${r.locations.length===1?'':'s'} · Show timestamps`;
+    const preview=document.createElement('span');preview.className='card-excerpt';const previewLocations=(r.recording||r.pdf).locations;highlight(preview,excerpt(previewLocations.reduce((best,l)=>l.score>best.score?l:best).text,activeQuery),activeQuery);
+    const countLabel=(count,singular)=>`${count} ${singular}${count===1?'':'s'}`;
+    const counts=[r.recording&&countLabel(r.recording.locations.length,'moment'),r.pdf&&countLabel(r.pdf.locations.length,'PDF page')].filter(Boolean);
+    const prompt=document.createElement('span');prompt.className='recording-prompt';prompt.textContent=counts.join(' · ')+' · Show matches';
     toggle.append(thumbnail,label,preview,prompt);
     const content=document.createElement('div');content.className='recording-content';
-    const open=document.createElement('a');open.className='open-recording';open.href=r.url;open.target='_blank';open.rel='noreferrer';open.textContent='Watch recording ↗';
-    content.append(open,locations,details);recording.append(toggle,content);card.append(recording);
+    for(const [source,label] of [[r.recording,'Watch recording'],[r.pdf,'Open lecture PDF']]){
+     if(!source)continue;
+     const sourceBlock=document.createElement('section');sourceBlock.className='lecture-source';
+     const open=document.createElement('a');open.className='open-recording';open.href=source.url;open.target='_blank';open.rel='noreferrer';open.textContent=label+' ↗';
+     const sourceLocations=document.createElement('div');sourceLocations.className='locations';sourceLocations.setAttribute('aria-label',source.category==='Lecture recordings'?'Matching recording timestamps':'Matching PDF pages');
+     for(const link of [...locations.children])if(source.locations.some(location=>location.url===link.href||location.url===link.getAttribute('href')))sourceLocations.append(link);
+     sourceBlock.append(open,sourceLocations);content.append(sourceBlock);
+    }
+    content.append(details);recording.append(toggle,content);card.append(recording);
    }else {
     card.append(heading);
     card.append(locations,details);
@@ -113,7 +122,7 @@ function render(){
  }
 }
 function display(results){
- const query=input.value.trim();allResults=filterCategories(results,selected);
+ const query=input.value.trim();allResults=combineLectureResults(filterCategories(results,selected));
  document.querySelector('#summary').textContent=`${allResults.length} documents · ${allResults.reduce((sum,r)=>sum+r.locations.length,0)} matching locations for “${query}”`;
  document.querySelector('#timing').textContent=semanticFailed?'Keyword search':semanticCache.has(activeQuery)?'':semanticReady?'Finding related results…':'Preparing semantic search…';
  document.querySelector('#empty').hidden=!!allResults.length;

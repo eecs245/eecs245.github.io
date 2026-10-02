@@ -14,12 +14,12 @@ body{font-family:var(--course-font);color:#5c5962;background:#fff;line-height:1.
 .brand,.has-query .brand{margin-bottom:8px}.search-description{max-width:540px;margin:0 auto 24px;color:#8a8790;font-size:14px;line-height:1.5}.has-query .search-description{font-size:12px;margin-bottom:18px}@media(max-width:640px){.embedded .hero,.embedded.has-query .hero{margin-top:44px}.search-description{font-size:13px;max-width:320px}.has-query .search-description{font-size:12px}}
 .search-correction{margin:8px 0 0;color:#716d77;font-size:12px;text-align:left;line-height:1.5}
 .brand .search-word{font-weight:200}
-.group[data-category="Lecture recordings"] .card{display:block;padding:13px 15px}
-.group[data-category="Lecture recordings"] .card h3{font-size:12px;margin-bottom:7px}
-.group[data-category="Lecture recordings"] .card-excerpt{margin-bottom:9px}
-.group[data-category="Lecture recordings"] .locations a{white-space:nowrap}
-.group[data-category="Lecture recordings"] .passages{margin-top:9px}
-.group[data-category="Lecture recordings"] .recording-card{padding:0}
+.group[data-category="Lectures"] .card{display:block;padding:13px 15px}
+.group[data-category="Lectures"] .card h3{font-size:12px;margin-bottom:7px}
+.group[data-category="Lectures"] .card-excerpt{margin-bottom:9px}
+.group[data-category="Lectures"] .locations a{white-space:nowrap}
+.group[data-category="Lectures"] .passages{margin-top:9px}
+.group[data-category="Lectures"] .recording-card{padding:0}
 .recording-summary{display:grid;grid-template-columns:92px minmax(0,1fr);gap:4px 12px;padding:13px 15px;cursor:pointer;list-style:none}
 .recording-summary::-webkit-details-marker{display:none}
 .recording-thumbnail{grid-row:1/4;position:relative;align-self:center;aspect-ratio:16/9;overflow:hidden;background:#eef0f2;border-radius:5px}
@@ -37,3 +37,8 @@ body{font-family:var(--course-font);color:#5c5962;background:#fff;line-height:1.
 .index-coverage hr{border:0;border-top:1px solid var(--line);margin:0 0 10px}
 .index-coverage p{font-size:10px;letter-spacing:0;margin:0}
 @media(max-width:640px){.recording-summary{grid-template-columns:76px minmax(0,1fr);padding:12px;gap:4px 9px}.recording-label{font-size:11px}}
+
+.lecture-source+.lecture-source{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+.index-coverage a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+
+.brand,.has-query .brand{display:block}
