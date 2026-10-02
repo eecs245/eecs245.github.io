@@ -1,0 +1,1452 @@
+{
+  "metadata": {
+    "builtAt": "2026-10-02T01:51:16.405404+00:00",
+    "releaseMetadata": "first addition in committed public repository history",
+    "commits": {
+      "notes": "2216691027c06eb8ec79db3f7398d70ba8f58d13",
+      "website": "3b403bff393f2b7b56160bb4173c2b7d237234c5",
+      "exams": "359ec59ad7caecc1713abdcb74007c2e755c54e7"
+    },
+    "documents": 75,
+    "records": 2238,
+    "ocrPages": 186,
+    "categories": {
+      "Notes": 1369,
+      "Lecture PDFs": 195,
+      "Homeworks": 144,
+      "Labs": 138,
+      "Past exams": 392
+    },
+    "errors": []
+  },
+  "sources": [
+    {
+      "repo": "notes",
+      "path": "01_introduction_to_supervised_learning/01-what-is-machine-learning.ipynb",
+      "sha256": "b45ea3944e46eee501107ee3c344f16a448cb00fd3e0f5df308f84c9851a9961",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "01_introduction_to_supervised_learning/02-squared-loss-constant-model.ipynb",
+      "sha256": "aa8965656af600a56a9615671c4ca7505a4d37daf2076f580fa2301897aeaa56",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "01_introduction_to_supervised_learning/03-absolute-loss.ipynb",
+      "sha256": "0004a0f26570472723a94276ed86d08339857cdb5f4a0e1d4313ceae8e0ce251",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "01_introduction_to_supervised_learning/04-comparing-loss-functions.ipynb",
+      "sha256": "7a00545899853bd424e37308e9b1096b04a230545b3c8b4d2d2921f58803f36d",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "02_simple_linear_regression/01-overview.ipynb",
+      "sha256": "ab42e8a6130195fc73c55ead0ed9a008fcdd2729fbc062f0b0758e847c56f9cb",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "02_simple_linear_regression/02-partial-derivatives.ipynb",
+      "sha256": "55e2bd63246bc4a0586a5d1af1f12268eca654a665d215249de11fef6fddea87",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "02_simple_linear_regression/03-finding-optimal-parameters.ipynb",
+      "sha256": "522957f1feff67fd925d4a8edf2520b5da458af94e7e1cbcfd629d2f4fd590fb",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "02_simple_linear_regression/04-correlation.ipynb",
+      "sha256": "b107adafa2e6e49429331297a0a24b43ce96106486e55fca17eb080f8dec7db4",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "02_simple_linear_regression/05-least-squares.ipynb",
+      "sha256": "a9fe84690455bcbae63f27d70b9ae5b8a72710cd96e349e7f7568e56e7eb754d",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "03_vectors/01-vectors-and-linear-combinations.ipynb",
+      "sha256": "1984a3ed65078798d68cdf040567fd755a5b164e58b3a4041f1abb5745e9529b",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "03_vectors/02-norms.ipynb",
+      "sha256": "f5d0319cdcab250ac6fd0be5bb43e1d06b947634a558f45f2638b12347a9bd63",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "03_vectors/03-dot-product.ipynb",
+      "sha256": "6484165153d81fe563d97de4ad0e63d5ca44dafdac1f404f3b72d9443e222dd4",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "03_vectors/04-projecting-onto-a-single-vector.ipynb",
+      "sha256": "3f77a04720c91679558911084053bef4ac61747a0ce8af757f91c8671d843410",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "04_linear_independence/01-span.ipynb",
+      "sha256": "8b28b100d28cf8e12ab9884fe2930312c2c886162699f71539e277412d0ef18e",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "04_linear_independence/02-linear-independence.ipynb",
+      "sha256": "e2bb5e5a65215b9986809afb5031f9217923235703f0c053a20ab4b262acbf21",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "04_linear_independence/03-vector-spaces-basis-dimension.ipynb",
+      "sha256": "ddaa6712cd145d2205d99746523256b135adfab2800a2995266ba17262481c0b",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "04_linear_independence/04-lines-planes-hyperplanes.ipynb",
+      "sha256": "8419521d510e7b24ebadf6d62948ac1b85f784dc17a5b36ad7a33998e19ad340",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "05_matrices/01-matrix-operations.ipynb",
+      "sha256": "0299c2fc6e53fb5a63674867040adfdc88cfc87e7f2df8a260120c03b18385da",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "05_matrices/02-special-matrices.ipynb",
+      "sha256": "a82b5bc400941dadb970eb18ca33ecec6725063341c226a4eacb3d63cab534ff",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "05_matrices/03-rank-and-column-space.ipynb",
+      "sha256": "ad525300ab16a2cc1fd131ba50d549d1d8e9fa0f23cc0c0526b5eceb4027f37e",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "05_matrices/04-null-space-rank-nullity.ipynb",
+      "sha256": "1cdff68eecaacdec8ee3d0102611617304fd9be93b2c45e3308b5b50bc90b42a",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "06_linear_transformations_and_projections/01-linear-transformations.ipynb",
+      "sha256": "d22255e22ff6386fab6453e65bf418b266f0a4aefe16f865e32727b1379d85e9",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "06_linear_transformations_and_projections/02-inverses.ipynb",
+      "sha256": "5b118b4605345b716afd0801bd677cdb07577260f5c03d1b970ed553bbd14d50",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "06_linear_transformations_and_projections/03-projecting-onto-column-space.ipynb",
+      "sha256": "f3a22bae6cb9524122f6da09d99d9fded7681279da7852392b8b0079ed8e6447",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "06_linear_transformations_and_projections/04-complete-solution.ipynb",
+      "sha256": "b00accbbef3e5dd06ec959bd650dbfc326c7c5362386af97e8b0b6e99abd6cc0",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "06_linear_transformations_and_projections/05-gram-schmidt-process.ipynb",
+      "sha256": "ce1b8c66c023984809470f32716fdb19af17cdbb9ea83d8e126c2d0052ad4e03",
+      "releaseAt": "2026-03-14T15:59:45-04:00"
+    },
+    {
+      "repo": "notes",
+      "path": "07_regression_using_linear_algebra/01-regression-using-linear-algebra.ipynb",
+      "sha256": "3c211bf8df43d6c2875ab4adee6743ff7ee98ea6c5999cadb5a4ef9674fbe785",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "07_regression_using_linear_algebra/02-multiple-linear-regression.ipynb",
+      "sha256": "3fee654c4b2cbb557971452832cecf5078a5825c3e39d84e49ad607f9fd42a73",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "08_gradients/01-gradient-vector.ipynb",
+      "sha256": "1ffb44464bb562d6dc592e49654ade97fdb07ed43fdd86c9e38b55c7875aa225",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "08_gradients/02-gradients-matrix-vector-operations.ipynb",
+      "sha256": "9d2c62c3744c57816e6823de445ddb0bbee1838768a9b17e5ea288502889d30b",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "08_gradients/03-gradient-descent.ipynb",
+      "sha256": "99929b3309f7da8fda2a11c5d9d0f2411aaf058f83acf1cd5ca15cf502bd3ffe",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "08_gradients/04-gradient-descent-erm.ipynb",
+      "sha256": "f942013703fdb337c471f662f800970f86d9222747bc105c104d7a508c467acb",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "08_gradients/05-convexity.ipynb",
+      "sha256": "021224bac19382143607ea2bd2441dede039d9a548320c4e404ee793f1195630",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "09_eigenvalues_and_eigenvectors/01-eigenvalues-eigenvectors.ipynb",
+      "sha256": "d38e6c7dbe3e81529b31a5e4419c388099ed19e5f78bdc21235a831661dd9e2b",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "09_eigenvalues_and_eigenvectors/02-characteristic-polynomial.ipynb",
+      "sha256": "7fd8ca69fd4e7f890d2bc69c468621f0f1598647446e905d3427615a854ce852",
+      "releaseAt": "2026-04-01T00:42:33+02:00"
+    },
+    {
+      "repo": "notes",
+      "path": "09_eigenvalues_and_eigenvectors/03-markov-chains-adjacency-matrices.ipynb",
+      "sha256": "84b0c480e0cdd8e371ca9353cff1224b7b0d0b064a03aeb469b2cedef96a1cdd",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "09_eigenvalues_and_eigenvectors/04-multiplicities-diagonalization.ipynb",
+      "sha256": "9cc1dd1788ccbd3e88473ec701a0abd322d1171d013f29abd8117c839549bbba",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "09_eigenvalues_and_eigenvectors/05-symmetric-matrices-spectral-theorem.ipynb",
+      "sha256": "099db0190af04b3d6919a78f1f2d947d9c26b7f30a6fa7fd54b52868baece04c",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "09_eigenvalues_and_eigenvectors/06-rayleigh-quotient.ipynb",
+      "sha256": "dc88a931dbb179c92e98cde40adb2e993d962d434523a1be83a382c371144731",
+      "releaseAt": "2026-04-01T00:42:33+02:00"
+    },
+    {
+      "repo": "notes",
+      "path": "10_singular_value_decomposition/01-computing-svd.ipynb",
+      "sha256": "b8296982e0a7c6acac961ca8ede2c3c84aaf22ee6b64f495c93b0e919021cd66",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "10_singular_value_decomposition/02-low-rank-approximation.ipynb",
+      "sha256": "10051621ffa654621fc232586ffea51db24d992b8664242b6949e23ae533c1dd",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "10_singular_value_decomposition/03-best-direction.ipynb",
+      "sha256": "5fbecaf65f67e1698168b6b0759cfe95e5b8b7f347ad06727557572923acf89a",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "10_singular_value_decomposition/04-principal-components-analysis.ipynb",
+      "sha256": "35d01c716772d4af124741d17d6342d50fe28af2ee9969648ef81ee8021449bb",
+      "releaseAt": "2026-01-05T00:58:10-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "10_singular_value_decomposition/05-conclusion.ipynb",
+      "sha256": "6b4e53c974b5abaae40cdba36ca76bbc3915ce0cde9122d8bc5f189eaf82e06d",
+      "releaseAt": "2026-04-20T11:50:13-04:00"
+    },
+    {
+      "repo": "notes",
+      "path": "00_math_foundations/01-summation.ipynb",
+      "sha256": "2fd3c0b56efbfb1711e5919cea99e463dd73ab0c404eff8402e8cfe8362224b3",
+      "releaseAt": "2026-01-05T21:55:02-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "00_math_foundations/02-derivatives.ipynb",
+      "sha256": "f8a096597f8611c975019aef2c9c2411831deaae2841ce79ccab8a2eb5d18206",
+      "releaseAt": "2026-01-05T21:55:02-05:00"
+    },
+    {
+      "repo": "notes",
+      "path": "00_math_foundations/03-sets-and-set-operations.ipynb",
+      "sha256": "291c6b9b6545709733c7dd1674ac9d4f00a46e52e8331d5064a5f406fd3fac41",
+      "releaseAt": "2026-09-07T21:42:29-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/homeworks/hw01/index.md",
+      "sha256": "2c46503805325c8203708a550388d17717f6b400f9fb4e15caddf55b287e0388",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/homeworks/hw02/index.md",
+      "sha256": "b1d6ba8955134ea104716220ab9e276a72dfcc23c8a705b298405cd292a707bc",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/homeworks/hw03/index.md",
+      "sha256": "f31db2cabb3f257a42a1952a65b7eed72f1bcfa973fb5b5754d822f47af89b28",
+      "releaseAt": "2026-09-18T14:59:00-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/homeworks/hw04/index.md",
+      "sha256": "fe82c81e61e3c3b820605896c73a6c0d574ea807b5337f9e6100a7d12268e99d",
+      "releaseAt": "2026-09-25T12:31:53-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/labs/lab01/index.md",
+      "sha256": "bc6f5747deff16c2f6c80673195985cb544f4ab0d0e95ef5e9d929d7bfb5c9d0",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/labs/lab02/index.md",
+      "sha256": "ab400e2347090f3d518527098e2dc1f001ee0de993948e57da34ababc14b566b",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/labs/lab03/index.md",
+      "sha256": "d3ff984fa897e14986e88f683d0589b5e5a6ceeeb5bf4fb8154c80cb7a1dbd43",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/labs/lab04/index.md",
+      "sha256": "fa594bc5754e88da926b0e396b5b801406955abe0b357e556046347315215ca0",
+      "releaseAt": "2026-09-22T22:38:47-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/labs/lab05/index.md",
+      "sha256": "c45b8bf71a2cdfaa3f9effaa20667488b88f8d0b5d3989172c64f2ce42202e5f",
+      "releaseAt": "2026-09-25T15:27:21-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q01/config.yml",
+      "sha256": "2a1e202423fb2c5b759f2d1e74dc6312ef5153b286a2c5064dad957c88b98a94",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q01/src.md",
+      "sha256": "f95d412e4d2e2ab597531e01dea6c91cf9e64363aba2bb514e6286b21935c330",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q02/config.yml",
+      "sha256": "2a1e202423fb2c5b759f2d1e74dc6312ef5153b286a2c5064dad957c88b98a94",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q02/src.md",
+      "sha256": "a0b51d58f0cb962d26b5a0dabda98e140d651f79092e7e23e244f1c068838720",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q03/config.yml",
+      "sha256": "e7a4bbddae9817d391ffb6d2d42dc78a0b7566bdb9910d39149aff1f9e457f78",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q03/src.md",
+      "sha256": "8513073b536f3c9a77443a0cac9912b792219ec47e3df8812a403fb5f0e5908e",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q04/config.yml",
+      "sha256": "223eed3611fbcbeb0932d0fb5faeea2e4256993a9a2709d4e7355dd97d431b2c",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q04/src.md",
+      "sha256": "4ad1fe213d7c0fa475152673a9222762eaf2db616c6a4bb2758846f6c3b2105d",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q05/config.yml",
+      "sha256": "e46795a9c7bceba568570020e09db72f1ddbf5719771cb15ba297b40dd8fb942",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q05/src.md",
+      "sha256": "4c959de8ad4d0b630fe1329fbbe8c4a42440890c2c5b471b27f8574262b2e208",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q06/config.yml",
+      "sha256": "7b6838c5e4b5a95715ff1f01c9f5a9b533224b2e7085e75a30a034ab4a42d60d",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q06/src.md",
+      "sha256": "d5e9d7f961f03c0e8cc29f2d6dc6ca3c3ba0808431b1d4b27db09e0bbed93dcd",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q07/config.yml",
+      "sha256": "4a58a35c7fe6bf0a192306146a3727b4aecc54d333b3b58db314d078a64d0ddd",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q07/src.md",
+      "sha256": "e0c9a45ed10e5675cec47e5c65d82612292c2a722cc91eb8b8477ffcb08a1af5",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q08/config.yml",
+      "sha256": "4a58a35c7fe6bf0a192306146a3727b4aecc54d333b3b58db314d078a64d0ddd",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q08/src.md",
+      "sha256": "3e26e5c5572132bc1a5c461885789e229191414670a7de76f63fff78c250abbe",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q09/config.yml",
+      "sha256": "3417f3610d9301a89cdac4f6405fe5b921229f9b80e4398c6641aa547cf7824b",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q09/src.md",
+      "sha256": "2290de0a321664a95bfa0a3348c6ad1de65839104cbcb92564b39c77c4070ccf",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q10/config.yml",
+      "sha256": "7d9239f3776de979ad93bc67bd8588c7366ed85f22dee91a09acc4c20ebedc42",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q10/src.md",
+      "sha256": "79065d882beba0a6f192c4749f33d7033db796703dd64a7cb5ed5d1bf52b5091",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q11/config.yml",
+      "sha256": "f763864c4e80582b65686c2f340dea2a70432d0760caebc007837874f27c7232",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q11/src.md",
+      "sha256": "27db3dc98f13e000cf7c4fa6506d51b220c3a2cb178cd569670ff20df0fe8cc1",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q12/config.yml",
+      "sha256": "4270553ed6150678fdd7c58779223d5040e04ca0bf9f34e95d50c649906580c1",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q12/src.md",
+      "sha256": "d6ced2a1216786d0e6a9dd54b9db90061aaa8561a428fdb753bd2630802f0252",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q13/config.yml",
+      "sha256": "6a9cdd95b6c57187cfe72abf1556519eb5e90b3e43c0d0aa702852dde5fe9516",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-final/q13/src.md",
+      "sha256": "e1a62c848d97bd3be01e3b716239802c52bc2394ebd54b282924f6cb5b3faeba",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q01/config.yml",
+      "sha256": "5615fa12ae56ba8bfcff6e518b87049bd59ece5e265e4d851f1212464568e2c6",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q01/src.md",
+      "sha256": "eef0cfcbde853a42bf9816d1754b7bb53b615ff21a75191c1cfa1b51e8e213cc",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q02/config.yml",
+      "sha256": "7447105609da2a3ba09ff9a6d2ea2dadf1162813c6efb870cf83224637b34dae",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q02/src.md",
+      "sha256": "73c17e321294ae02609ed49a7708e889a63c45a14f5ea6a908e17cada8a3fd0c",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q03/config.yml",
+      "sha256": "b4a0638c173bdae6febb66bfefdc80212d00b9badef550637689d5d3a02e4da6",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q03/src.md",
+      "sha256": "f3575a9b6c265910c7b54eda88111870bf2092c184d36cf7fd7d894e0de3bbed",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q04/config.yml",
+      "sha256": "59b4295290f44dc5797bbb8d220de95a06f4ae220ab92a82472773a969e8dc75",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q04/src.md",
+      "sha256": "2c3a01580a5b6f2bfe969fcacfbdfd1f93075cca56a0a588cdc9745292c370f6",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q05/config.yml",
+      "sha256": "3a0c7e15ec8919f50a9a38809142703d5df8790c8a17607a4be472ef39635148",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q05/src.md",
+      "sha256": "9ca35545a68d492bb8e10503aed77608e441b6636e579701ead94abbedd87034",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q06/config.yml",
+      "sha256": "5c16cc152b5489118d541adf446b1bd5365ff5128611be395515e970e065ec44",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q06/src.md",
+      "sha256": "a1088677e85c4e8743f8be558e447305130edea0f0ef8366c0f62280e2bb8e2c",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q07/config.yml",
+      "sha256": "c2c680015f0528a970b0c52b49afbfe91db4764547f533651e527b9741aa59d4",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q07/src.md",
+      "sha256": "b8d6d6ea97f1a4ebf0035d16abaac12611f574d5ef095b451c8aa143961d515a",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q08/config.yml",
+      "sha256": "a424d1b9037b371c2f1badd00c65ce64fd14e14c07366ee52fe973de821c105b",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt1/q08/src.md",
+      "sha256": "0a68c2d7189cdc8d8dd6123028aa0be4f2e9cc64fd7f0f2f3ccfda2dccfcf239",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q01/config.yml",
+      "sha256": "d37b498caf39745ef059fcffd9e9d52e44c29395cbf9c646e5f83ab89305e8b7",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q01/src.md",
+      "sha256": "4e477fae9d8eb016fd71110ddbea920b40abc426ddba2b1d2e659c2dc3037707",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q02/config.yml",
+      "sha256": "6efb27692465e6ea3b72ce489764e8996db4f9e8701577bc09b093729549ac51",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q02/src.md",
+      "sha256": "876c7d31dd36688f92489962a0db82e6c8ec78edc79809fddf8985cc1e8c4d28",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q03/config.yml",
+      "sha256": "a483c44d2cb6a281e1e3ea09ae29dd310e3c1c0b8ef310f0a2308da4a83cb0d9",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q03/src.md",
+      "sha256": "6fa12007639cf6191843ee166de13836fcedea24555194d44e5c0c869ad1e26a",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q04/config.yml",
+      "sha256": "33dab1f1a30565b2f41214da713b3a0f35ddcf2772448f2f5489a2159fc07ef6",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q04/src.md",
+      "sha256": "33a27b9fe37d1a92293d1522d2f642e90b192b44a6140c326cbf1eb20d9c4a7f",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q05/config.yml",
+      "sha256": "3471b4efce45338086deb7f38e5b1066ee110343d980800b06b52dc23359fce8",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q05/src.md",
+      "sha256": "a60abf3a08bc2e32314fe107f0bb97b8a0fbe0149870244b903e6bd7660523e3",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q06/config.yml",
+      "sha256": "271f9b4c5630b92c2ce1ae2cba981c7f7968d4b231dc46fd312c4ca47e400e25",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q06/src.md",
+      "sha256": "5ef804a3b3e647d73e3e00d9738ab02b553c8be42b76a7f42dbe279caa747ac6",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q07/config.yml",
+      "sha256": "615d06dea24782fb7890c2afcf5ebd1215317ab8b4f085df3ecc56e8192932e5",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/fa25-mt2/q07/src.md",
+      "sha256": "4f2e4a3b98952a755374ad7b1d92efc95f319f44518885aaf7631dd83394ab70",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q01/config.yml",
+      "sha256": "89215b2c228f1c8540a20468bd5185afe2b13eca16f38e38eb49863b2a38311c",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q01/src.md",
+      "sha256": "d8283c1cdbd863327a6431bf1d890d39a06559bba65f2cdb1c14d253ea725c13",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q02/config.yml",
+      "sha256": "63d63a34271617ca3ae905a32b28c7b01cde76d35f700f65ab8604a622652b59",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q02/src.md",
+      "sha256": "b3f2333be271391e42c8ee7f5bea35e8747d6c089ca6121b8d4c7fe47cfb5464",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q03/config.yml",
+      "sha256": "2a1e202423fb2c5b759f2d1e74dc6312ef5153b286a2c5064dad957c88b98a94",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q03/src.md",
+      "sha256": "6ca93b21de82903ff49197b589c8f7641898b2b43b0adb8f1c9fe769d756d227",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q04/config.yml",
+      "sha256": "3a56b5cd8ac0e7cd1cf655c2b7063966de61f329e9c536fc6bd98bce12774cce",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q04/src.md",
+      "sha256": "798ab8d31f45e545bf68df0ae798d24faaecf826d2508c22d5bce003d6d85909",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q05/config.yml",
+      "sha256": "7b6838c5e4b5a95715ff1f01c9f5a9b533224b2e7085e75a30a034ab4a42d60d",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q05/src.md",
+      "sha256": "dd8e79caa1bd3b2721a3b50b99e1174e13f6c785f095c2f29ea7b261ea7080c1",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q06/config.yml",
+      "sha256": "4a58a35c7fe6bf0a192306146a3727b4aecc54d333b3b58db314d078a64d0ddd",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q06/src.md",
+      "sha256": "de134b61cfc691f46a7f530b0c224a9855c9a7416754ba06e94eaffbaf0d695b",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q07/config.yml",
+      "sha256": "e46795a9c7bceba568570020e09db72f1ddbf5719771cb15ba297b40dd8fb942",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q07/src.md",
+      "sha256": "6fae388d02c76012d2ec28ef47b3f9ea32b576ac62ef5e3c089773dc8f10b9dd",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q08/config.yml",
+      "sha256": "e46795a9c7bceba568570020e09db72f1ddbf5719771cb15ba297b40dd8fb942",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q08/src.md",
+      "sha256": "c65a0e3b06fd24fa9b4ee56c7b5a2695000539a12304ddf31dd54944a7e7264a",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q09/config.yml",
+      "sha256": "02b4766c5e81decacd31df1ec296730f7925b782866155ac147790e815779d87",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q09/src.md",
+      "sha256": "904254fda6e708d56c4f5a1eeaefbea4fc2022e6c1bad98e9b5a7ecb58dbb056",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q10/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q10/src.md",
+      "sha256": "b1a9586ca7a095445bf7dbb68b9015f046a6d794880619fe38cc7ed48618fccf",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q11/config.yml",
+      "sha256": "3a940aabfd05b34f5cede161aded3493c8d65df36df73ad646f375c2347afea8",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q11/src.md",
+      "sha256": "55d4cf2f102682fbbdb4c1daffe7ea6363d2e432446ce7edef4bf54340d9e8e9",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q12/config.yml",
+      "sha256": "7e55713749ad5f1e9a66d49ffde3467c98b0ba5fb37a85184b6e4e6218e45ad0",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q12/src.md",
+      "sha256": "2c2cdc3b944ff571e68a4b2dbb4153ca0b593b07cfa872179399237029fbb86b",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q13/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q13/src.md",
+      "sha256": "d50f779e90f919d9919cd80d5d8f6fb0a3048889a9d244bfe2cf7da9813e963d",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q14/config.yml",
+      "sha256": "6a9cdd95b6c57187cfe72abf1556519eb5e90b3e43c0d0aa702852dde5fe9516",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-final/q14/src.md",
+      "sha256": "c6f7a3106904e8da2f7067bd47a1f37757e4c1e3a92f5351537993c0598b7fc3",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q01/config.yml",
+      "sha256": "31664b4734f8b54ebe1c3f7dc62426fbd5ebeb8907141c0b60f506a9474574a9",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q01/src.md",
+      "sha256": "86571704bc953896232df1030ec454f9b5147ddee1e825aca49b5b5602c68b0d",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q02/config.yml",
+      "sha256": "3a940aabfd05b34f5cede161aded3493c8d65df36df73ad646f375c2347afea8",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q02/src.md",
+      "sha256": "f5370c7b4f22a44fb209f49481d4e8ce4437200c18e0d4565ee27f2e02682efb",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q03/config.yml",
+      "sha256": "1a97ec4236a5d16610fd6cc81e49ea32367f701086325f16f67cb631c0ce75fb",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q03/src.md",
+      "sha256": "b77f8b3e9703c1fc94925f441b23671b7f58df0bbac2f8723e009ff07f672c0b",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q04/config.yml",
+      "sha256": "4ea0b79587217d13102a123dbccdd553bc6efed01a53070bad3075926c806047",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q04/src.md",
+      "sha256": "dba1e1530fc508f4913cac4026c2c0c8e3d5e96715ed62d41ef32914fdedf4cf",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q05/config.yml",
+      "sha256": "a58ef12409c6be9214b8f3a544d2289212b33992663e56a2f84dfe8a48d3cab4",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q05/src.md",
+      "sha256": "fedac71d160a2196a163492a28cff4c05ba65df5e64b406f0edf41b27e92e39e",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q06/config.yml",
+      "sha256": "7e55713749ad5f1e9a66d49ffde3467c98b0ba5fb37a85184b6e4e6218e45ad0",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q06/src.md",
+      "sha256": "92d9ccee25f2690ffe56aac0a34b84f5d5b92a111aa2085ff4131c488ba2c442",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q07/config.yml",
+      "sha256": "3a940aabfd05b34f5cede161aded3493c8d65df36df73ad646f375c2347afea8",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q07/src.md",
+      "sha256": "95e3aa37893f2152997e51466abfea7d27a2dbb454f3473189ec241c169a43a6",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q08/config.yml",
+      "sha256": "4ea0b79587217d13102a123dbccdd553bc6efed01a53070bad3075926c806047",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q08/src.md",
+      "sha256": "83dfd516e5f7c7de48e325b4ecb573e59570cf4df6a67b69e560f8416bfe66d9",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q09/config.yml",
+      "sha256": "3a940aabfd05b34f5cede161aded3493c8d65df36df73ad646f375c2347afea8",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt1/q09/src.md",
+      "sha256": "95ac35bce8c4058451d84b21099bb884014fac53c3815a2bb5fa60b71186ee43",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q01/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q01/src.md",
+      "sha256": "b3a634052be1ef4c778cfa653769ab302f535b01540f8e8135747c75f5fa19d1",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q02/config.yml",
+      "sha256": "31664b4734f8b54ebe1c3f7dc62426fbd5ebeb8907141c0b60f506a9474574a9",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q02/src.md",
+      "sha256": "6c610adae859b133447fd22a3b08e8ce0cb4d80a37dc346cf210995f147be0cb",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q03/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q03/src.md",
+      "sha256": "e5a875dddffa0238a3e855c0590a5a99c26e1126c0c7a5a0368da85950232be9",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q04/config.yml",
+      "sha256": "1a97ec4236a5d16610fd6cc81e49ea32367f701086325f16f67cb631c0ce75fb",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q04/src.md",
+      "sha256": "7692417b3db1357c9fa6b5234b5b4442845099eefe16ea106789e4b940ddf340",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q05/config.yml",
+      "sha256": "4d86a64f78dae1859b9b82137229dde2978ead37b909695a8a10561c08726533",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q05/src.md",
+      "sha256": "6f7c346a6fbc4c6ef9bff500bcebcae518472543bbf7366b56816e649ba0b5ae",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q06/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q06/src.md",
+      "sha256": "d5f1ae4a7c29bbf8d97122962adad7f9f67fcf60fdddd9b2ff8a7a724db1978c",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q07/config.yml",
+      "sha256": "70069af66d9f1924d056cd2892f6b10fd5b911d2ac21fb01bc9e4c48f8a3e0e7",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/sp26-mt2/q07/src.md",
+      "sha256": "003712aa28509bcac9cf6dcc3f1da9ef00441bf47600cd739881dc07b76f2473",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q01/config.yml",
+      "sha256": "1cd98c2de4806a9ceed51cf609a6db75b963bcb12751dfb28973527b3253bf84",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q01/src.md",
+      "sha256": "e241958eef4e3eb77898a5b9e0c9dab74af0b9fbe86ebd0b5a14711cd2fee957",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q02/config.yml",
+      "sha256": "66bb5d0152242fd6f00f31e953535b94fb3f114d2edc4f1c5a5c34dfe6bc133b",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q02/src.md",
+      "sha256": "5eb51aa3840e5a3c84578c5ec505450f1291d6e1b75922e0e8217ba88b31e7ab",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q03/config.yml",
+      "sha256": "63d63a34271617ca3ae905a32b28c7b01cde76d35f700f65ab8604a622652b59",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q03/src.md",
+      "sha256": "9ba067f2d29df0dab6f828e4feaa74fcf416af5f3faff947a14b1e763fb0ca19",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q04/config.yml",
+      "sha256": "b1596a50bbfe7a92a76cd992821eccbb5c1fbf779d4da16fb23677a624fa9b8d",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q04/src.md",
+      "sha256": "b44dc6cc592553ced0d00174bdb39692851df476f689aebbe365288532f34b96",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q05/config.yml",
+      "sha256": "b0113594435604d741269fc9c8d8f3d8cc42fccea903e8af469a82da424eb38d",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q05/src.md",
+      "sha256": "3577e4b88055b087e55fd45289563f753e6ddb53275e423f50417dd5e438266b",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q06/config.yml",
+      "sha256": "e46795a9c7bceba568570020e09db72f1ddbf5719771cb15ba297b40dd8fb942",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q06/src.md",
+      "sha256": "21bf025793ceb78dcb20da7a96e76d19acf53c2d448e9c67933fcf6beecf86a0",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q07/config.yml",
+      "sha256": "223eed3611fbcbeb0932d0fb5faeea2e4256993a9a2709d4e7355dd97d431b2c",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q07/src.md",
+      "sha256": "227e34dd1a875595dee1f987d9cc3e347bfb76fbe84e4cfcd802ec77d292ed0e",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q08/config.yml",
+      "sha256": "02b4766c5e81decacd31df1ec296730f7925b782866155ac147790e815779d87",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q08/src.md",
+      "sha256": "43cfd64ca1fe40527dbc4ccb0da0fcc9ab2e50b6bcc998d01f54a32512f360f0",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q09/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q09/src.md",
+      "sha256": "5d1067dd3c98776a68ad19e7985d7f7db8ecf2289a3921e4c4e50efd6de216e7",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q10/config.yml",
+      "sha256": "1a97ec4236a5d16610fd6cc81e49ea32367f701086325f16f67cb631c0ce75fb",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q10/src.md",
+      "sha256": "d4291aa1d2e12e9ccd6f3ca77900b799f2d5309e9175e6537827aa7299c1d769",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q11/config.yml",
+      "sha256": "3a940aabfd05b34f5cede161aded3493c8d65df36df73ad646f375c2347afea8",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q11/src.md",
+      "sha256": "fc588081a8d59e52836e44d13c990eb7f46f28278c5b64a2ab600b27a79fbb72",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q12/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q12/src.md",
+      "sha256": "94cd0e5ad333a158941f01b8937a39a8f1554afd48387dda4574b16a3c55724e",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q13/config.yml",
+      "sha256": "6a9cdd95b6c57187cfe72abf1556519eb5e90b3e43c0d0aa702852dde5fe9516",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-final/q13/src.md",
+      "sha256": "5ba7d2d48c708a5d19f3ffb330823e1b23ae5096740d60114c9e3209d70205c0",
+      "releaseAt": "2026-09-18T14:45:46-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q01/config.yml",
+      "sha256": "8c7f626eecb5501f442964de63f375445148ac28997558312184ddd456cbc0a0",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q01/src.md",
+      "sha256": "da1b65e3d3c38d829b6be38314183abf56eb9a4113399ee6e2c34b3ed99c5cc9",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q02/config.yml",
+      "sha256": "01d0f647d8788f05ba09ba2b460ffa1c7ad7475863ce016e0d46054da33dad70",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q02/src.md",
+      "sha256": "f5e6d88e13fa49b2707d7294b10c6ae1ae0d2404858c372c3643f77608e4b748",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q03/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q03/src.md",
+      "sha256": "187b18cb3a4107857eff0fdde33bd1e53c34ebd8857e7256906e303461cf2fa0",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q04/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q04/src.md",
+      "sha256": "f581171ff1cdad463f5a69cb04e96dc15d69828d6cfea1df5d9c1090b457dc37",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q05/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q05/src.md",
+      "sha256": "dad87d55db681b2c755ff985ee2424cf4bef24633ca8c042fd5823f73f9148ec",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q06/config.yml",
+      "sha256": "27d53dd0f100027422926430dfa56346f9062bada4ea30d1da8acf2809bc34cc",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q06/src.md",
+      "sha256": "6b76180fb223dca03103ff2f8fd656ce94adcdfa2c1612409250a9b78c1018a5",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q07/config.yml",
+      "sha256": "e98c63dc998f4ed148af691ed62967df8d680a0dc8d5e92dc8b7478886524212",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt1/q07/src.md",
+      "sha256": "c25589a55eedc80dfd1514b0db72d8fe46f238a08de85c826e43ce8292cb20d7",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q01/config.yml",
+      "sha256": "f46d832d2616115860afb3aba6e64147f1b6d28d4af068dc995717ca5e01a858",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q01/src.md",
+      "sha256": "bf45b6196eae3d9933b6e48e4cf949056da7f867e950d3338c771f9e6426c7f4",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q02/config.yml",
+      "sha256": "3a940aabfd05b34f5cede161aded3493c8d65df36df73ad646f375c2347afea8",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q02/src.md",
+      "sha256": "e4d45d790d464a91d6e77b1a188a6f848fcd1cd396b64369f50c0fbd6c78e482",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q03/config.yml",
+      "sha256": "7e55713749ad5f1e9a66d49ffde3467c98b0ba5fb37a85184b6e4e6218e45ad0",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q03/src.md",
+      "sha256": "9490ddf587a361517701fd271a7359bcf0d9fa0a11b48afc21e08866a957e232",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q04/config.yml",
+      "sha256": "a58ef12409c6be9214b8f3a544d2289212b33992663e56a2f84dfe8a48d3cab4",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q04/src.md",
+      "sha256": "bd014ad88052e3c52aebc8c161ab9bc5cf122270232faca0113aa6a594af6f2b",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q05/config.yml",
+      "sha256": "a58ef12409c6be9214b8f3a544d2289212b33992663e56a2f84dfe8a48d3cab4",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q05/src.md",
+      "sha256": "1bad3c68bad218704d5953dfaf421bf48956cfeb1a9d296adf6ffadd1e68f2a2",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q06/config.yml",
+      "sha256": "3bec4f783c7de5eaf373bdea73b86f17cd3f305fcadb5a99104c4dde503f20b7",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q06/src.md",
+      "sha256": "980e5db0dad2fc479ca5a3c0dcdd5647f13141a5d59f15ce0c8164de1c57c279",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q07/config.yml",
+      "sha256": "3a940aabfd05b34f5cede161aded3493c8d65df36df73ad646f375c2347afea8",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q07/src.md",
+      "sha256": "a8e32b0284b58f5629bbf08cd76320e25457f0c05cec024c74d844fdd8dd844e",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q08/config.yml",
+      "sha256": "7e55713749ad5f1e9a66d49ffde3467c98b0ba5fb37a85184b6e4e6218e45ad0",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "exams",
+      "path": "src/wn26-mt2/q08/src.md",
+      "sha256": "a50b02890d44578ea97e5157114358e3c4f954b224dc67e67b4db26e1918d136",
+      "releaseAt": "2026-09-18T14:45:47-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec01-filled.pdf",
+      "sha256": "0ea95363d1c15155a3ab2a35b406ba9d8ae80041c6d08c0feee52f9cf60e5d77",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec02-filled.pdf",
+      "sha256": "e063cb5af060e4192e3f090b788121926c7d8ec9b0bce219e98955820622e878",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec03-filled.pdf",
+      "sha256": "19ce44a78bdea2ea39c51f690c02e460453b653089b6342f80139ad23ba9d261",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec04-filled.pdf",
+      "sha256": "1f51d170b2d6835d9a72f0425a88b823e024f8b4dd34236b9efe0431d173b331",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec05-filled.pdf",
+      "sha256": "7897f4202ad778a3e4fd7554c736b42af0ff747a1dbfa3408b47d66d58af8992",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec06-filled.pdf",
+      "sha256": "7c84046d2bffd3b4bc92cee6bb98ec7bdca1ee653c3f499a656bf3094034dd5d",
+      "releaseAt": "2026-09-17T21:21:50-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec07-filled.pdf",
+      "sha256": "834c95115019f168f8d653de1f4506488216987b9a6d79068f44181f7f9d179d",
+      "releaseAt": "2026-09-22T11:52:52-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec08-filled.pdf",
+      "sha256": "a6e50ee6781f90fb789a0ea2cf7bb5bdd0739b7b8c640e1df55c386f6ef5da8a",
+      "releaseAt": "2026-09-24T11:52:28-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec09-filled.pdf",
+      "sha256": "4687dd5debe930cc972cfd641961b7bf97f2ab7eca27f97c07dfa85e7ab29a98",
+      "releaseAt": "2026-09-29T11:52:20-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "resources/lecture-pdfs/lec10-filled.pdf",
+      "sha256": "d016449752089d25d9045589ca03c755a9932913c5c7cb1ca25096111fac2b20",
+      "releaseAt": "2026-10-01T11:52:34-04:00"
+    }
+  ]
+}

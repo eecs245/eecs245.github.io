@@ -47,6 +47,23 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Set up course search runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: tools/course-search/package-lock.json
+
+      - name: Install PDF text and OCR tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils tesseract-ocr
+
+      - name: Install course search dependencies
+        working-directory: tools/course-search
+        run: npm ci
+
+      - name: Rebuild public course search index
+        run: bash tools/course-search/scripts/rebuild_for_jekyll.sh
+
       - name: Build site with Jekyll
         run: bundle exec jekyll build --source . --destination ./_site
         env:

@@ -6,3 +6,9 @@ CURSOR.md
 .leccap_storage_state.json
 __pycache__/
 *.pyc
+
+assets/course-search/
+tools/course-search/node_modules/
+tools/course-search/dist/
+tools/course-search/public/worker.js
+tools/course-search/public/vendor/onnx/
