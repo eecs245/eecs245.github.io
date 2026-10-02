@@ -175,7 +175,7 @@ input.addEventListener('input',()=>{
 document.querySelector('#search-form').addEventListener('submit',e=>{e.preventDefault();clearTimeout(timer);run();});
 document.addEventListener('keydown',e=>{if(e.key==='/'&&e.target!==input){e.preventDefault();input.focus();}});
 try{
- const response=await fetch('./data/index.json');if(!response.ok)throw new Error();const data=await response.json();processQuery=createQueryProcessor(data.records);
+ const response=await fetch('./data/index.json',{cache:'no-cache'});if(!response.ok)throw new Error();const data=await response.json();processQuery=createQueryProcessor(data.records);
  document.querySelector('#index-coverage').textContent=indexedCoverage(data.records);
  if(!timer)run();
 }catch{document.querySelector('#results').hidden=false;document.querySelector('#summary').textContent='Search is unavailable. Refresh to try again.';}

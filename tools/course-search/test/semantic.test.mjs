@@ -4,6 +4,8 @@ import {readFile} from 'node:fs/promises';
 import {pipeline,env} from '@huggingface/transformers';
 import {createQueryProcessor,buildSearch,mergeResults} from '../public/search.mjs';
 import {semanticSearch} from '../public/semantic.mjs';
+import {createHybridSearch} from '../public/hybrid.mjs';
+import {parseResourceQuery} from '../public/resource-query.mjs';
 let records,vectors,embed,processQuery,keyword;
 const cache=new Map();
 before(async()=>{
@@ -76,4 +78,34 @@ test('published Lecture 2 captions find absolute loss near 27:10',async t=>{
  assert(moment,'The original caption at 27:10 must remain searchable');
  assert.equal(Number(new URL(moment.url).searchParams.get('start')),Math.max(0,Math.floor(moment.start)-5));
  assert.equal(found.filter(d=>d.url===lecture.url).length,1);
+});
+
+
+test('real hybrid search combines lexical and semantic matches and scopes course resources',async()=>{
+ const hybrid=createHybridSearch(records,vectors);
+ async function find(input){
+  const request=parseResourceQuery(processQuery(input).normalized);
+  const embedding=request.query?(await embed(request.query,{pooling:'mean',normalize:true})).data:undefined;
+  return hybrid(request,embedding);
+ }
+ for(const query of ['HW 4 problem 3','hw04 p3','HW4P3']){
+  const found=await find(query);assert.equal(found.length,1,query);
+  assert(found[0].title.startsWith('Homework 4:'));
+  assert(found[0].locations.every(l=>l.url.includes('#problem-3-')));
+ }
+ const lecture=await find('lecture 8 projection');assert(lecture.length);
+ assert(lecture.every(r=>r.title.startsWith('Lecture 8 ·')));
+ const lab=await find('lab 4 activity 2');assert.equal(lab.length,1);
+ assert(lab[0].locations.every(l=>/^Activity 2\b/.test(l.section)));
+ const note=await find('note 3.4 closest vector on a line');assert.equal(note.length,1);
+ assert(note[0].url.includes('/projecting-onto-a-single-vector/'));
+ const exam=await find('fa25-mt1 problem 4');assert.equal(exam.length,1);
+ assert(exam[0].url.endsWith('/fa25-mt1/'));
+ assert(exam[0].locations.every(l=>l.url.includes('problem-4-mission-impossible')));
+ assert.equal((await find('homework 99 projection')).length,0);
+ assert.equal((await find('purple flying giraffes')).length,0);
+ const lexical=await find('mission impossible');assert(lexical.some(r=>r.locations.some(l=>l.keyword&&l.section.includes('Mission Impossible'))));
+ const meaning=await find('how do you minimize prediction mistakes');assert(meaning.some(r=>r.url.includes('squared-loss-constant-model')));
+ const expected=await find('absolute loss');
+ for(const alias of ['absolute','MAE','absolte loss'])assert.deepEqual(await find(alias),expected,alias);
 });

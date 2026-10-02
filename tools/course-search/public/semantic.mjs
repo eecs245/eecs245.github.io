@@ -1,5 +1,5 @@
 import {groupDocuments,tokens,normalizeQuery} from './search.mjs';
-export function semanticSearch(records,vectors,query,embedding){
+export function semanticSearch(records,vectors,query,embedding,{filter}={}){
  query=normalizeQuery(query);
  const terms=[...new Set(tokens(query))];if(!terms.length)return [];
  const q=query.toLowerCase();
@@ -8,7 +8,7 @@ export function semanticSearch(records,vectors,query,embedding){
  if(/closest.*(?:line|vector)|nearest.*(?:line|vector)|projection/.test(q))concepts.push('projection');
  const hits=[];
  for(let i=0;i<records.length;i++){
-  const r=records[i];let cosine=0;for(let j=0;j<384;j++)cosine+=embedding[j]*vectors[i*384+j];
+  const r=records[i];if(filter&&!filter(r))continue;let cosine=0;for(let j=0;j<384;j++)cosine+=embedding[j]*vectors[i*384+j];
   const words=new Set(tokens(`${r.section} ${r.text} ${(r.concepts||[]).join(' ')}`));
   const exact=terms.every(t=>words.has(t));
   const formula=concepts.some(c=>(r.concepts||[]).some(tag=>tag.includes(c)));
