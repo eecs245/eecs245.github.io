@@ -109,7 +109,7 @@ export function mergeMoments(hits){
   return {...moment,url:url.href,section:`${timestamp(moment.start)}–${timestamp(moment.end)}`};
  });
 }
-export const filterCategories=(results,selected)=>results.filter(r=>selected.has(r.category));
+export const filterCategories=(results,selected)=>results.filter(r=>selected.has(r.category)||(selected.has('Lectures')&&['Lecture recordings','Lecture PDFs'].includes(r.category)));
 export function recordingCoverage(metadata){
  const coverage=metadata?.recordings;
  if(!coverage)return 'Recording caption coverage has not been reported.';

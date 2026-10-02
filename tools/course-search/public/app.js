@@ -1,4 +1,4 @@
-import {categories,resultCategories,combineLectureResults,tokens,buildSearch,excerpt,sortDocuments,createQueryProcessor,normalizeQuery,mergeResults,filterCategories,indexedCoverage} from './search.mjs';
+import {resultCategories,combineLectureResults,tokens,buildSearch,excerpt,sortDocuments,createQueryProcessor,normalizeQuery,mergeResults,filterCategories,indexedCoverage} from './search.mjs';
 import {recordingPreviews} from './recording-previews/previews.mjs';
 if(new URLSearchParams(location.search).has('embedded'))document.body.classList.add('embedded');
 const input=document.querySelector('#search'),groups=document.querySelector('#groups');
@@ -24,7 +24,7 @@ worker.onmessage=({data})=>{
 };
 worker.onerror=()=>{semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";};
 const icons=['▶','▤','▦','◫','▥'];
-const selected=new Set(categories);
+const selected=new Set(resultCategories);
 function documentLabel(record){
  if(record.category==='Homeworks'||record.category==='Labs') return record.title.split(':')[0];
  return record.title;

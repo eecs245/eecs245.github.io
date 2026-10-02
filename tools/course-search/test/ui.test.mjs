@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {parseHTML} from 'linkedom';
-import {buildSearch,categories,indexedCoverage,combineLectureResults,filterCategories} from '../public/search.mjs';
+import {buildSearch,resultCategories,indexedCoverage,combineLectureResults,filterCategories} from '../public/search.mjs';
 
 test('recording UI renders excerpts, merged links, filtering, previews and show more',async()=>{
  const {window,document}=parseHTML(await readFile(new URL('../public/index.html',import.meta.url),'utf8'));
@@ -16,7 +16,7 @@ test('recording UI renders excerpts, merged links, filtering, previews and show 
  const input=document.querySelector('#search');input.value='absolute loss';
  document.querySelector('#search-form').dispatchEvent(new window.Event('submit',{cancelable:true}));
  const group=()=>document.querySelector('.group[data-category="Lectures"]');
- assert.deepEqual([...document.querySelectorAll('.filter')].map(b=>b.dataset.category),categories);
+ assert.deepEqual([...document.querySelectorAll('.filter')].map(b=>b.dataset.category),resultCategories);
  assert.equal(document.querySelector('.group').dataset.category,'Lectures');
  assert.equal(group().querySelectorAll('.card').length,3);
  assert.match(group().querySelector('.card-excerpt').textContent,/absolute loss/);
@@ -33,14 +33,10 @@ test('recording UI renders excerpts, merged links, filtering, previews and show 
  globalThis.testWorker.onmessage({data:{type:'ready'}});
  assert.equal(group().querySelector('details.recording-moments').open,true);
  group().querySelector('.show-more').click();assert.equal(group().querySelectorAll('.card').length,4);
- const filter=document.querySelector('button[data-category="Lecture recordings"]');
+ const filter=document.querySelector('button[data-category="Lectures"]');
+ assert(filter.classList.contains('lectures'));
  filter.click();assert.equal(filter.getAttribute('aria-pressed'),'false');
- assert.equal(group().querySelectorAll('.card').length,1);
- assert.match(group().querySelector('.open-recording').textContent,/Open lecture PDF/);
- assert(!group().textContent.includes('Watch recording'));
- const pdfFilter=document.querySelector('button[data-category="Lecture PDFs"]');
- pdfFilter.click();assert.equal(group(),null);
- pdfFilter.click();
+ assert.equal(group(),null);
  assert(document.querySelector('.note-card'));
  filter.click();assert.equal(filter.getAttribute('aria-pressed'),'true');assert(group());
  globalThis.testWorker.onmessage({data:{type:'ready'}});assert(group());
@@ -78,5 +74,7 @@ test('lecture cards combine matched formats without losing links or overriding f
  assert.deepEqual(lecture.locations.map(l=>l.url),[recording.locations[0].url,pdf.locations[0].url]);
  const filtered=combineLectureResults(filterCategories(input,new Set(['Lecture PDFs'])));
  assert.equal(filtered.length,2);assert(filtered.every(d=>d.recording===null&&d.pdf));
+ assert.equal(combineLectureResults(filterCategories(input,new Set(['Lectures']))).length,2);
+ assert.equal(filterCategories(input,new Set(['Lectures'])).length,3);
  assert.equal(JSON.stringify(input),before);
 });
