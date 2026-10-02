@@ -1,4 +1,4 @@
-export const categories=['Notes','Lecture PDFs','Homeworks','Labs','Past exams'];
+export const categories=['Notes','Lecture PDFs','Lecture recordings','Homeworks','Labs','Past exams'];
 const aliases={proj:'projection',project:'projection',projecting:'projection',projections:'projection',orthogonality:'orthogonal',perpendicular:'orthogonal',perpendicularity:'orthogonal',perpendicularly:'orthogonal',independent:'independence',dependent:'dependence',vectors:'vector',matrices:'matrix',norms:'norm',bases:'basis'};
 const ignored=new Set('what are you looking for the a an is of to in how why about explain me'.split(' '));
 export const tokens=text=>(text.toLowerCase().match(/[a-z0-9]+/g)||[]).map(t=>Object.hasOwn(aliases,t)?aliases[t]:t).filter(t=>!ignored.has(t));
@@ -29,14 +29,14 @@ export function excerpt(text,query){
 export function groupDocuments(ranked) {
   const documents=new Map();
   for(const hit of ranked){
-    const url=hit.url.split('#')[0];
+    const url=hit.category==='Lecture recordings'?recordingUrl(hit):hit.url.split('#')[0];
     const key=`${hit.category}:${url}`;
-    if(!documents.has(key)) documents.set(key,{id:key,category:hit.category,title:hit.title,url,semester:hit.semester,detail:hit.detail,score:hit.score,locations:[]});
+    if(!documents.has(key)) documents.set(key,{id:key,category:hit.category,title:hit.title,url,semester:hit.semester,detail:hit.detail,lectureDate:hit.lectureDate,score:hit.score,locations:[]});
     const document=documents.get(key);
     // Several index chunks can refer to one section. Retain its best passage.
     if(!document.locations.some(location=>location.url===hit.url)) document.locations.push(hit);
   }
-  return [...documents.values()].map(document=>({...document,locations:document.locations.sort((a,b)=>Number(a.id)-Number(b.id))}));
+  return [...documents.values()].map(document=>({...document,locations:document.category==='Lecture recordings'?mergeMoments(document.locations):document.locations.sort((a,b)=>Number(a.id)-Number(b.id))}));
 }
 
 // Within a category, chronological means course order for notes/assignments,
@@ -44,6 +44,7 @@ export function groupDocuments(ranked) {
 export function sortDocuments(documents,order='relevance'){
  const natural=new Intl.Collator('en',{numeric:true,sensitivity:'base'});
  const key=r=>{
+  if(r.category==='Lecture recordings')return Date.parse(r.lectureDate)||0;
   if(r.category==='Past exams'){
    const year=Number(r.title.match(/20\d{2}/)?.[0]||0);
    const term=/Winter/i.test(r.title)?1:/Spring/i.test(r.title)?2:3;
@@ -56,3 +57,35 @@ export function sortDocuments(documents,order='relevance'){
 }
 
 export function normalizeQuery(query){return query.toLowerCase().replace(/\b(?:perpendicular|perpendicularity|perpendicularly|orthogonality)\b/g,'orthogonal');}
+
+// Only the playback offset is discarded; distinct recordings stay distinct.
+export function recordingUrl(hit){
+ const url=new URL(hit.recordingUrl||hit.url);url.searchParams.delete('start');url.hash='';return url.href;
+}
+export function timestamp(seconds){
+ const t=Math.floor(seconds);return t>=3600?`${Math.floor(t/3600)}:${String(Math.floor(t/60)%60).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`:`${Math.floor(t/60)}:${String(t%60).padStart(2,'0')}`;
+}
+export function mergeMoments(hits){
+ const moments=[];
+ for(const hit of [...hits].sort((a,b)=>a.start-b.start||b.score-a.score)){
+  const last=moments.at(-1);
+  // Bound merging so a run of broad matches doesn't become one whole lecture.
+  if(last&&hit.start<=last.end+10&&Math.max(last.end,hit.end)-last.start<=120){
+   last.end=Math.max(last.end,hit.end);
+   if(hit.score>last.score){last.text=hit.text;last.score=hit.score;}
+  }else moments.push({...hit});
+ }
+ return moments.map(moment=>{
+  const url=new URL(recordingUrl(moment));url.searchParams.set('start',String(Math.max(0,Math.floor(moment.start)-5)));
+  return {...moment,url:url.href,section:`${timestamp(moment.start)}–${timestamp(moment.end)}`};
+ });
+}
+export const filterCategories=(results,selected)=>results.filter(r=>selected.has(r.category));
+export function recordingCoverage(metadata){
+ const coverage=metadata?.recordings;
+ if(!coverage)return 'Recording caption coverage has not been reported.';
+ const missing=coverage.recordings.filter(r=>r.status!=='available');
+ return `Lecture recordings: captions indexed for ${coverage.available} of ${coverage.published} published recordings.`+
+  (missing.length?` Missing or pending: ${missing.map(r=>r.title.split(' · ')[0]).join(', ')}.`:'')+
+  ' Captions may contain transcription errors.';
+}

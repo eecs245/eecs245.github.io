@@ -1,4 +1,4 @@
-import {categories,tokens,buildSearch,excerpt,sortDocuments} from './search.mjs';
+import {categories,tokens,buildSearch,excerpt,sortDocuments,filterCategories,recordingCoverage} from './search.mjs';
 if(new URLSearchParams(location.search).has('embedded'))document.body.classList.add('embedded');
 const input=document.querySelector('#search'),groups=document.querySelector('#groups');
 if(document.body.classList.contains('embedded')){
@@ -16,7 +16,7 @@ worker.onmessage=({data})=>{
  if(data.type==="error"){document.querySelector('#timing').title=data.message;semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";}
 };
 worker.onerror=()=>{semanticFailed=true;document.querySelector("#timing").textContent="Keyword search";};
-const icons=['▤','▧','▦','◫','▥'];
+const icons=['▤','▧','▶','▦','◫','▥'];
 const selected=new Set(categories);
 function documentLabel(record){
  if(record.category==='Homeworks'||record.category==='Labs') return record.title.split(':')[0];
@@ -71,7 +71,11 @@ function render(){
     const toggle=document.createElement('summary');toggle.className='note-title';toggle.textContent=documentLabel(r);
     const open=document.createElement('a');open.className='open-note';open.href=r.url;open.target='_blank';open.rel='noreferrer';open.textContent='Open note ↗';
     note.append(toggle,open,locations,details);card.append(note);
-   }else card.append(heading,locations,details);
+   }else {
+    card.append(heading);
+    if(category==='Lecture recordings'){const preview=document.createElement('p');preview.className='card-excerpt';highlight(preview,excerpt(r.locations.reduce((best,l)=>l.score>best.score?l:best).text,input.value),input.value);card.append(preview);}
+    card.append(locations,details);
+   }
    cards.append(card);
   }
   section.append(cards);
@@ -87,7 +91,7 @@ function render(){
  }
 }
 function display(results){
- const query=input.value.trim();allResults=results.filter(record=>selected.has(record.category));
+ const query=input.value.trim();allResults=filterCategories(results,selected);
  document.querySelector('#summary').textContent=`${allResults.length} documents · ${allResults.reduce((sum,r)=>sum+r.locations.length,0)} matching locations for “${query}”`;
  document.querySelector('#timing').textContent=semanticFailed?'Keyword search':semanticReady?'':'Preparing semantic search…';
  document.querySelector('#empty').hidden=!!allResults.length;
@@ -111,6 +115,7 @@ document.querySelector('#search-form').addEventListener('submit',e=>{e.preventDe
 document.addEventListener('keydown',e=>{if(e.key==='/'&&e.target!==input){e.preventDefault();input.focus();}});
 try{
  const response=await fetch('./data/index.json');if(!response.ok)throw new Error();const data=await response.json();search=buildSearch(data.records);
+ document.querySelector('#recording-coverage').textContent=recordingCoverage(data.metadata);
  run();
 }catch{document.querySelector('#results').hidden=false;document.querySelector('#summary').textContent='Search is unavailable. Refresh to try again.';}
 

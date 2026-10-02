@@ -1,0 +1,34 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {parseHTML} from 'linkedom';
+import {buildSearch} from '../public/search.mjs';
+
+test('recording UI renders excerpts, merged links, filtering, previews and show more',async()=>{
+ const {window,document}=parseHTML(await readFile(new URL('../public/index.html',import.meta.url),'utf8'));
+ const base='https://leccap.engin.umich.edu/leccap/player/r/';
+ const records=Array.from({length:4},(_,i)=>({id:String(i),category:'Lecture recordings',title:`Lecture ${i+1} · Synthetic`,section:'0:10–0:40',text:'Synthetic caption: absolute loss is minimized by a median.',url:base+`fixture${i}?start=5`,start:10,end:40,detail:'Leccap captions',concepts:[],lectureDate:`2026-09-0${i+1}`}));
+ records.push({...records[0],id:'overlap',start:30,end:60,url:base+'fixture0?start=25'});
+ records.push({id:'note',category:'Notes',title:'Note',section:'Loss',text:'Absolute loss uses the median.',url:'https://example.org/note/#loss',detail:''});
+ Object.assign(globalThis,{window,document,location:{search:'',origin:'http://localhost'},Worker:class {constructor(){globalThis.testWorker=this;}postMessage(message){this.onmessage({data:{type:'results',id:message.id,query:message.query,results:buildSearch(records)(message.query)}});}},fetch:async()=>({ok:true,json:async()=>({records,metadata:{recordings:{published:4,available:4,recordings:records.slice(0,4).map(r=>({...r,status:'available'}))}}})})});
+ await import('../public/app.js');
+ const input=document.querySelector('#search');input.value='absolute loss';
+ document.querySelector('#search-form').dispatchEvent(new window.Event('submit',{cancelable:true}));
+ const group=()=>document.querySelector('.group[data-category="Lecture recordings"]');
+ assert.equal(group().querySelectorAll('.card').length,3);
+ assert.match(group().querySelector('.card-excerpt').textContent,/absolute loss/);
+ assert.equal(group().querySelectorAll('.card')[0].querySelectorAll('.locations a').length,1);
+ assert.equal(group().querySelector('.locations a').getAttribute('href'),base+'fixture0?start=5');
+ assert.equal(group().querySelector('.locations a').textContent,'0:10–1:00');
+ assert(group().querySelector('details.passages summary'));
+ group().querySelector('.show-more').click();assert.equal(group().querySelectorAll('.card').length,4);
+ const filter=document.querySelector('button[data-category="Lecture recordings"]');
+ filter.click();assert.equal(filter.getAttribute('aria-pressed'),'false');assert.equal(group(),null);
+ assert(document.querySelector('.note-card'));
+ filter.click();assert.equal(filter.getAttribute('aria-pressed'),'true');assert(group());
+ globalThis.testWorker.onmessage({data:{type:'ready'}});assert(group());
+ document.querySelector('[data-sort="chronological"]').click();
+ assert.match(group().querySelector('h3').textContent,/Lecture 1/);
+ assert.match(document.querySelector('#recording-coverage').textContent,/4 of 4/);
+ assert([...group().querySelectorAll('a')].every(a=>a.rel==='noreferrer'));
+});

@@ -39,3 +39,13 @@ test('perpendicular and orthogonal return identical documents and locations',asy
  const summarize=results=>results.map(r=>({id:r.id,locations:r.locations.map(l=>l.url)}));
  assert.deepEqual(summarize(await search('perpendicular')),summarize(await search('orthogonal')));
 });
+
+test('real local model retrieves a synthetic transcript by meaning',async()=>{
+ const fixture=[{id:'caption-fixture',category:'Lecture recordings',title:'Lecture 2 · Synthetic test',section:'0:10–0:40',text:'We choose the median because it minimizes the sum of absolute differences between predictions and observed values.',concepts:[],detail:'Synthetic test only',url:'https://leccap.engin.umich.edu/leccap/player/r/fixture?start=5',start:10,end:40}];
+ const document=await embed(fixture.map(r=>`${r.section}. . ${r.text}`),{pooling:'mean',normalize:true});
+ const query='minimizing absolute prediction error';
+ const embedding=await embed(query,{pooling:'mean',normalize:true});
+ const found=semanticSearch(fixture,document.data,query,embedding.data);
+ assert.equal(found.length,1);assert.equal(found[0].category,'Lecture recordings');
+ assert.equal(found[0].locations[0].url,'https://leccap.engin.umich.edu/leccap/player/r/fixture?start=5');
+});

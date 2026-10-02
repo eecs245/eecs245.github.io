@@ -61,6 +61,9 @@ jobs:
         working-directory: tools/course-search
         run: npm ci
 
+      - name: Install caption importer dependencies
+        run: python3 -m pip install -r tools/course-search/scripts/requirements.txt
+
       - name: Rebuild public course search index
         run: bash tools/course-search/scripts/rebuild_for_jekyll.sh
 
