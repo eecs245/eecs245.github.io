@@ -34,7 +34,7 @@ Suraj is also teaching a new linear algebra course for first-year engineering st
 
 - [Course website](https://math124.org).
 - [Course notes](https://notes.math124.org).
-- [YouTube playlist](https://www.youtube.com/playlist?list=PLasz2011S7Os) by Kartik Prasanna, my co-instructor, with several videos that visualize concepts like lines, planes, spans, etc. and how to draw them on Desmos.
+- [YouTube playlist](https://www.youtube.com/playlist?list=PLasz2011S7Os) by Kartik Prasanna, Suraj's co-instructor, with several videos that visualize concepts like lines, planes, spans, etc. and how to draw them on Desmos.
 
 ---
 
