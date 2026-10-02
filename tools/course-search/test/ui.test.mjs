@@ -35,7 +35,7 @@ test('semantic UI waits, debounces, rejects stale results, and preserves recordi
  assert(recording.querySelector('.recording-summary .recording-thumbnail'));
  assert(!recording.querySelector('.recording-summary .locations'));
  assert(recording.querySelector('.recording-content .locations'));
- assert.equal(recording.querySelector('.match-similarity').textContent,'Cosine: 0.72');
+ assert.equal(document.querySelector('.match-similarity'),null);
  recording.open=true;recording.dispatchEvent(new window.Event('toggle'));
  globalThis.testWorker.onmessage({data:{type:'ready'}});
  assert.equal(group().querySelector('details.recording-moments').open,true);
@@ -55,7 +55,9 @@ test('semantic UI waits, debounces, rejects stale results, and preserves recordi
  const footer=document.querySelector('.index-coverage');
  assert.match(footer.querySelector('p').textContent,/• All notes chapters and all past exams$/);
  assert(!footer.querySelector('p').textContent.includes(' · '));
- assert(document.querySelector('.search-explanation').textContent.includes('384-dimensional unit vectors'));
+ assert(document.querySelector('.search-explanation').textContent.startsWith('How matches workFirst, all course content is broken up into chunks.'));
+ assert.equal(document.querySelector('.search-explanation code').textContent,'all-MiniLM-L6-v2');
+ assert.equal(document.querySelector('.search-explanation a').getAttribute('href'),'https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2');
  assert.equal(footer.querySelectorAll('a')[0].getAttribute('href'),'https://notes.eecs245.org');
  assert.equal(footer.querySelectorAll('a')[1].getAttribute('href'),'https://exams.eecs245.org');
 

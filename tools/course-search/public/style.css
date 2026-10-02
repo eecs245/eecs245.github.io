@@ -41,8 +41,8 @@ body{font-family:var(--course-font);color:#5c5962;background:#fff;line-height:1.
 .search-explanation{margin-top:8px;font-size:10px;color:#716d77}
 .search-explanation summary{cursor:pointer}
 .search-explanation p{max-width:720px;margin:8px auto 0;line-height:1.6}
-.similarity-formula{white-space:nowrap}
-.match-similarity{display:inline-block;margin-left:8px;color:#716d77;font-size:10px;font-variant-numeric:tabular-nums}
+.search-explanation code{font-size:1em}
+.search-explanation .katex{font-size:1em}
 @media(max-width:640px){.recording-summary{grid-template-columns:76px minmax(0,1fr);padding:12px;gap:4px 9px}.recording-label{font-size:11px}}
 
 .lecture-source+.lecture-source{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}

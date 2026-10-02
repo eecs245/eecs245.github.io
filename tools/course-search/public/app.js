@@ -2,6 +2,9 @@ import {resultCategories,combineLectureResults,tokens,excerpt,sortDocuments,crea
 import {recordingPreviews} from './recording-previews/previews.mjs';
 if(new URLSearchParams(location.search).has('embedded'))document.body.classList.add('embedded');
 const input=document.querySelector('#search'),groups=document.querySelector('#groups');
+const explanation=document.querySelector('.search-explanation');
+function renderExplanation(){if(window.renderMathInElement)window.renderMathInElement(explanation,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false,trust:false});}
+renderExplanation();explanation.addEventListener('toggle',()=>{if(explanation.open)renderExplanation();});
 if(document.body.classList.contains('embedded')){
  window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==parent)return;
@@ -81,12 +84,6 @@ function render(){
     }else highlight(text,excerpt(location.text,displayQuery),displayQuery);
     if(location.detail.startsWith('OCR')){const quality=document.createElement('small');quality.textContent='OCR transcript · check original PDF';text.append(quality);}
     passage.append(link);
-    if(Number.isFinite(location.cosine)){
-     const similarity=document.createElement('span');similarity.className='match-similarity';
-     similarity.textContent=`Cosine: ${Math.max(-1,Math.min(1,location.cosine)).toFixed(2)}`;
-     similarity.title='Cosine similarity between your query and this passage, before ranking boosts (−1 to 1).';
-     passage.append(similarity);
-    }
     passage.append(text);details.append(passage);
    }
    if(category==='Notes'){
