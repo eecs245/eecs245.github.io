@@ -16,15 +16,25 @@ Here, we'll provide links to past exams, as well as other materials online that 
 
 ---
 
+## Past Exams
+
+Find all past exams and solutions at [exams.eecs245.org](https://exams.eecs245.org).
+
+---
+
 ## Videos
 
 Several supplemental videos have been recorded for this class, and all of them can be found [here](https://www.youtube.com/@rampureatumich/videos). When relevant, you can find these videos linked in the relevant sections of the course notes, the course homepage, and assignment solutions.
 
 ---
 
-## Past Exams
+## Content from Math 124
 
-Find all past exams and solutions at [exams.eecs245.org](https://exams.eecs245.org).
+Suraj is also teaching a new linear algebra course for first-year engineering students, Math 124. It is a much more introductory course than EECS 245, but its content is likely to be useful to you too.
+
+- [Course website](https://math124.org).
+- [Course notes](https://notes.math124.org).
+- [YouTube playlist](https://www.youtube.com/playlist?list=PLasz2011S7Os) by Kartik Prasanna, my co-instructor, with several videos that visualize concepts like lines, planes, spans, etc. and how to draw them on Desmos.
 
 ---
 
