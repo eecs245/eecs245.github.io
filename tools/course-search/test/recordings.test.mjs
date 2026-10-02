@@ -16,6 +16,15 @@ test('duplicate offsets deduplicate and pre-roll clamps to zero',()=>{
  const result=groupDocuments([hit(1,2,40,9),hit(2,2,40,2)]);
  assert.equal(result[0].locations.length,1);assert(result[0].locations[0].url.endsWith('?start=0'));
 });
+test('merged moment keeps the cosine and text of the same best ranked passage',()=>{
+ const first={...hit(1,10,55,.5),cosine:.5,text:'First excerpt'};
+ const best={...hit(2,45,85,.9),cosine:.6,exact:true,text:'Best ranked excerpt'};
+ const highestCosine={...hit(3,90,110,.7),cosine:.7,text:'Different excerpt'};
+ const [moment]=groupDocuments([best,highestCosine,first])[0].locations;
+ assert.equal(moment.start,10);assert.equal(moment.end,110);
+ assert.equal(moment.text,best.text);assert.equal(moment.cosine,best.cosine);
+ assert.equal(moment.score,best.score);assert.equal(moment.exact,true);
+});
 test('merging cannot chain an entire lecture into one moment',()=>{
  const result=groupDocuments(Array.from({length:20},(_,i)=>hit(i,i*30,i*30+60)));
  assert(result[0].locations.length>1);assert(result[0].locations.every(l=>l.end-l.start<=120));

@@ -12,7 +12,7 @@ test('semantic UI waits, debounces, rejects stale results, and preserves recordi
  records.push({id:'pdf',category:'Lecture PDFs',title:records[0].title,section:'Page 2',text:'Absolute loss PDF explanation.',url:'https://example.org/lecture-1.pdf#page=2',detail:'PDF',concepts:[]});
  records.push({id:'note',category:'Notes',title:'Note',section:'Loss',text:'Absolute loss uses the median.',url:'https://example.org/note/#loss',detail:''});
  const messages=[];let autoReply=false;
- const reply=message=>globalThis.testWorker.onmessage({data:{type:'results',id:message.id,query:message.query,results:buildSearch(records)(message.query)}});
+ const reply=message=>globalThis.testWorker.onmessage({data:{type:'results',id:message.id,query:message.query,results:buildSearch(records)(message.query).map(d=>({...d,locations:d.locations.map(l=>({...l,cosine:.724,score:1.124}))}))}});
  Object.assign(globalThis,{window,document,parent:{postMessage(){}},location:{search:'?embedded=1',origin:'http://localhost'},Worker:class {constructor(){globalThis.testWorker=this;}postMessage(message){if(!message.query)return;messages.push(message);if(autoReply)reply(message);}},fetch:async()=>({ok:true,json:async()=>({records,metadata:{recordings:{published:4,available:4,recordings:records.slice(0,4).map(r=>({...r,status:'available'}))}}})})});
  await import('../public/app.js');
  const input=document.querySelector('#search');input.value='absolute loss';
@@ -35,6 +35,7 @@ test('semantic UI waits, debounces, rejects stale results, and preserves recordi
  assert(recording.querySelector('.recording-summary .recording-thumbnail'));
  assert(!recording.querySelector('.recording-summary .locations'));
  assert(recording.querySelector('.recording-content .locations'));
+ assert.equal(recording.querySelector('.match-similarity').textContent,'Cosine: 0.72');
  recording.open=true;recording.dispatchEvent(new window.Event('toggle'));
  globalThis.testWorker.onmessage({data:{type:'ready'}});
  assert.equal(group().querySelector('details.recording-moments').open,true);
@@ -52,7 +53,9 @@ test('semantic UI waits, debounces, rejects stale results, and preserves recordi
  assert.match(document.querySelector('#index-coverage').textContent,/Lecture recordings: 1-4/);
  assert([...group().querySelectorAll('a')].every(a=>a.rel==='noreferrer'));
  const footer=document.querySelector('.index-coverage');
- assert.match(footer.textContent,/• All notes chapters and all past exams$/);
+ assert.match(footer.querySelector('p').textContent,/• All notes chapters and all past exams$/);
+ assert(!footer.querySelector('p').textContent.includes(' · '));
+ assert(document.querySelector('.search-explanation').textContent.includes('384-dimensional unit vectors'));
  assert.equal(footer.querySelectorAll('a')[0].getAttribute('href'),'https://notes.eecs245.org');
  assert.equal(footer.querySelectorAll('a')[1].getAttribute('href'),'https://exams.eecs245.org');
 
@@ -85,7 +88,7 @@ test('semantic UI waits, debounces, rejects stale results, and preserves recordi
 test('indexed coverage preserves gaps and distinguishes PDF and caption coverage',()=>{
  const record=(category,title)=>({category,title});
  const rows=[record('Lecture recordings','Lecture 1 · Intro'),record('Lecture recordings','Lecture 3 · Vectors'),record('Lecture PDFs','Lecture 1 · Intro'),record('Lecture PDFs','Lecture 2 · Loss'),record('Lecture PDFs','Lecture 3 · Vectors'),record('Homeworks','Homework 1: Intro'),record('Homeworks','Homework 3: Vectors')];
- assert.match(indexedCoverage(rows),/Lecture recordings: 1, 3 · Lecture PDFs: 1-3/);
+ assert.match(indexedCoverage(rows),/Lecture recordings: 1, 3 • Lecture PDFs: 1-3/);
  assert.match(indexedCoverage(rows),/Homeworks: 1, 3/);
  rows.push(record('Lecture recordings','Lecture 2 · Loss'));
  assert.match(indexedCoverage(rows),/^Lectures: 1-3/);

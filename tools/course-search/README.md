@@ -46,7 +46,7 @@ The model files are pinned in `model-manifest.json` and self-hosted under `publi
 
 Programming notebooks, lab recap sections, and practice/mock exams are excluded. Queries share case and whitespace normalization, course-topic aliases, and conservative spelling correction before semantic embedding. For example, “absolute”, “absolute loss”, “mean absolute error”, and “MAE” use the same query; “absolute value” remains distinct. Squared-loss and dot-product aliases work similarly. Aliases connect related course search topics, rather than asserting that a single-example loss and an averaged error metric are identical mathematical quantities.
 
-Spelling correction uses unique close matches from curated course vocabulary, preserves known corpus words and short mathematical symbols, and displays corrections in the interface. Ambiguous corrections remain unchanged. The semantic ranker includes exact-term and mathematical-concept boosts, without displaying a separate keyword result set. The standalone keyword and rank-fusion utilities remain available for regression comparisons. Equivalent queries share bounded in-memory caches; queries and corrections remain on the student's device. Changes to aliases and ranking do not require regenerating document embeddings.
+Spelling correction uses unique close matches from curated course vocabulary, preserves known corpus words and short mathematical symbols, and displays corrections in the interface. Ambiguous corrections remain unchanged. The semantic ranker includes exact-term and mathematical-concept boosts, without displaying a separate keyword result set. Expanded match Details show the original passage's raw cosine similarity to two decimal places, separately from the boosted ranking score. Grouped recording moments preserve the score of the same passage as their displayed excerpt. A small “How matches work” disclosure explains the 384-dimensional unit vectors, cosine formula, −1 to 1 range, and ranking boosts. The standalone keyword and rank-fusion utilities remain available for regression comparisons. Equivalent queries share bounded in-memory caches; queries and corrections remain on the student's device. Changes to aliases and ranking do not require regenerating document embeddings.
 
 ## Integrated course-site build
 
@@ -125,7 +125,7 @@ pending, or invalid, with a reason and cue/passages counts where available. The
 UI shows a small indexed-materials footer below a divider. It derives coverage
 from the actual records and preserves gaps, using plain hyphens and distinguishing
 recording/PDF lecture ranges when they differ. Notes and past exams are linked
-with the text “All notes chapters and all past exams.” “Available” means a valid cached export, not a guarantee that the
+with the text “All notes chapters and all past exams” and uniform bullet separators. “Available” means a valid cached export, not a guarantee that the
 provider captioned every second. First/last cue times are retained for auditing.
 Missing captions do not block unrelated search categories or the website build.
 

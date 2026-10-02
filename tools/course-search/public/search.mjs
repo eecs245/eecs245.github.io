@@ -101,7 +101,7 @@ export function mergeMoments(hits){
   // Bound merging so a run of broad matches doesn't become one whole lecture.
   if(last&&hit.start<=last.end+10&&Math.max(last.end,hit.end)-last.start<=120){
    last.end=Math.max(last.end,hit.end);
-   if(hit.score>last.score){last.text=hit.text;last.score=hit.score;}
+   if(hit.score>last.score)Object.assign(last,hit,{start:last.start,end:last.end});
   }else moments.push({...hit});
  }
  return moments.map(moment=>{
@@ -148,6 +148,6 @@ export function indexedCoverage(records){
  };
  const numbered=category=>ranges(titles(category).map(t=>Number(t.match(/^(?:Lecture|Homework|Lab) (\d+)/)?.[1])).filter(Boolean));
  const recordings=numbered('Lecture recordings'),pdfs=numbered('Lecture PDFs');
- const lectures=recordings===pdfs?`Lectures: ${pdfs}`:`Lecture recordings: ${recordings} · Lecture PDFs: ${pdfs}`;
- return `${lectures} · Homeworks: ${numbered('Homeworks')} · Labs: ${numbered('Labs')}`;
+ const lectures=recordings===pdfs?`Lectures: ${pdfs}`:`Lecture recordings: ${recordings} • Lecture PDFs: ${pdfs}`;
+ return `${lectures} • Homeworks: ${numbered('Homeworks')} • Labs: ${numbered('Labs')}`;
 }

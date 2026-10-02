@@ -80,7 +80,14 @@ function render(){
      if(window.renderMathInElement)window.renderMathInElement(text,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false,trust:false,macros:{'\\v':'\\vec{#1}','\\R':'\\mathbb{R}'}});
     }else highlight(text,excerpt(location.text,displayQuery),displayQuery);
     if(location.detail.startsWith('OCR')){const quality=document.createElement('small');quality.textContent='OCR transcript · check original PDF';text.append(quality);}
-    passage.append(link,text);details.append(passage);
+    passage.append(link);
+    if(Number.isFinite(location.cosine)){
+     const similarity=document.createElement('span');similarity.className='match-similarity';
+     similarity.textContent=`Cosine: ${Math.max(-1,Math.min(1,location.cosine)).toFixed(2)}`;
+     similarity.title='Cosine similarity between your query and this passage, before ranking boosts (−1 to 1).';
+     passage.append(similarity);
+    }
+    passage.append(text);details.append(passage);
    }
    if(category==='Notes'){
     card.classList.add('note-card');
