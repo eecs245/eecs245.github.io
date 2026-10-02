@@ -42,6 +42,16 @@ test('perpendicular and orthogonal return identical documents and locations',asy
  assert.deepEqual(summarize(await search('perpendicular')),summarize(await search('orthogonal')));
 });
 
+test('real local model retrieves a synthetic transcript by meaning',async()=>{
+ const fixture=[{id:'caption-fixture',category:'Lecture recordings',title:'Lecture 2 · Synthetic test',section:'0:10–0:40',text:'We choose the median because it minimizes the sum of absolute differences between predictions and observed values.',concepts:[],detail:'Synthetic test only',url:'https://leccap.engin.umich.edu/leccap/player/r/fixture?start=5',start:10,end:40}];
+ const document=await embed(fixture.map(r=>`${r.section}. . ${r.text}`),{pooling:'mean',normalize:true});
+ const query='minimizing absolute prediction error';
+ const embedding=await embed(query,{pooling:'mean',normalize:true});
+ const found=semanticSearch(fixture,document.data,query,embedding.data);
+ assert.equal(found.length,1);assert.equal(found[0].category,'Lecture recordings');
+ assert.equal(found[0].locations[0].url,'https://leccap.engin.umich.edu/leccap/player/r/fixture?start=5');
+});
+
 test('semantic and fused results agree for case, loss aliases, and misspellings',async()=>{
  const expected=await search('absolute loss');
  const fused=mergeResults(keyword('absolute loss'),expected);
@@ -54,4 +64,16 @@ test('semantic and fused results agree for case, loss aliases, and misspellings'
  const fusedLocations=new Set(fused.flatMap(document=>document.locations.map(location=>location.url)));
  assert(keywordLocations.every(url=>fusedLocations.has(url)));
  for(const [query,canonical] of [['MSE','squared loss'],['inner product','dot product'],['orthoganol','orthogonal'],['porjection','projection']]) assert.deepEqual(await search(query),await search(canonical),query);
+});
+
+test('published Lecture 2 captions find absolute loss near 27:10',async t=>{
+ const rows=records.filter(r=>r.category==='Lecture recordings'&&r.recordingId==='ucCtbs');
+ if(!rows.length){t.skip('Lecture 2 captions are not cached in this snapshot');return;}
+ const found=mergeResults(keyword('absolute loss'),await search('absolute loss'));
+ const lecture=found.find(d=>d.category==='Lecture recordings'&&d.url.endsWith('/ucCtbs'));
+ assert(lecture,'Lecture 2 must be retrieved');
+ const moment=lecture.locations.find(l=>l.start<=1630.2&&l.end>=1630.2&&/absolute loss/i.test(l.text));
+ assert(moment,'The original caption at 27:10 must remain searchable');
+ assert.equal(Number(new URL(moment.url).searchParams.get('start')),Math.max(0,Math.floor(moment.start)-5));
+ assert.equal(found.filter(d=>d.url===lecture.url).length,1);
 });

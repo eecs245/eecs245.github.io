@@ -1,0 +1,5844 @@
+WEBVTT
+
+00:00:05.260 --> 00:00:06.860
+It's 10.30,
+so we'll get started.
+
+00:00:08.120 --> 00:00:10.440
+Good to see everyone again.
+
+00:00:10.440 --> 00:00:11.900
+I'd like to thank you for
+choosing to come to class
+
+00:00:11.900 --> 00:00:13.760
+instead of the career fair.
+I see the Google line is
+
+00:00:13.760 --> 00:00:15.240
+blocking our room.
+
+00:00:15.240 --> 00:00:17.740
+I came up five minutes before
+and I saw the United Airlines
+
+00:00:17.740 --> 00:00:19.880
+booth and I was trying to get a
+keychain from them, but then I
+
+00:00:19.880 --> 00:00:21.500
+think they thought I was a
+student trying to come to mine,
+
+00:00:21.500 --> 00:00:22.040
+so I was like,
+
+00:00:22.040 --> 00:00:23.660
+let's go to class,
+
+00:00:23.660 --> 00:00:27.720
+but we'll go try and get a
+keychain after.
+
+00:00:27.720 --> 00:00:30.140
+Announcements.
+Homework 2 is due on Friday.
+
+00:00:31.640 --> 00:00:33.440
+I have office hours after
+lecture, as usual, so we can
+
+00:00:33.440 --> 00:00:34.460
+chat about it.
+
+00:00:34.460 --> 00:00:37.700
+And you should see your Homework
+1 scores available on Pensyf.
+
+00:00:37.700 --> 00:00:40.700
+So make sure to take a look at
+those and also review the
+
+00:00:40.700 --> 00:00:41.440
+solutions.
+
+00:00:41.440 --> 00:00:44.760
+As I mentioned in the post in
+which I released the grades on
+
+00:00:44.760 --> 00:00:45.760
+Ed,
+
+00:00:46.120 --> 00:00:47.880
+as it talks about in the
+syllabus and I think we've
+
+00:00:47.880 --> 00:00:48.780
+mentioned before,
+
+00:00:48.780 --> 00:00:50.860
+Pensyf uses AI to do some
+grading.
+
+00:00:50.860 --> 00:00:54.000
+But I don't want people to get
+the impression that we just give
+
+00:00:54.000 --> 00:00:55.660
+ChatGPT your homework and say
+grade it.
+
+00:00:55.660 --> 00:00:57.340
+That's not how it works.
+Instead,
+
+00:00:57.340 --> 00:01:00.300
+we humans create rubrics for
+every question.
+
+00:01:00.300 --> 00:01:02.300
+And they're actually the same
+rubrics we used to use when we
+
+00:01:02.300 --> 00:01:03.340
+used Gradescope.
+
+00:01:03.340 --> 00:01:05.660
+So if you're familiar with how
+Gradescope-based grading worked
+
+00:01:05.660 --> 00:01:09.460
+in like 203 or, I don't know,
+math classes, things like that,
+
+00:01:09.460 --> 00:01:11.500
+it's the same setup using the
+same rubrics.
+
+00:01:11.500 --> 00:01:15.940
+And so how it works is we give
+the rubrics to pensive.
+
+00:01:15.940 --> 00:01:18.100
+And then what it does
+independently for every question
+
+00:01:18.100 --> 00:01:22.600
+is it tries to transcribe what
+you wrote into text and LaTeX.
+
+00:01:22.660 --> 00:01:25.980
+So it tries to convert your
+formulas into typed formulas.
+
+00:01:25.980 --> 00:01:28.680
+And then it takes that
+conversion and a screenshot of
+
+00:01:28.680 --> 00:01:32.240
+what you wrote and our rubrics,
+and it tries to assign rubric
+
+00:01:32.240 --> 00:01:35.740
+items as best as it can.
+If it's confident in its ability
+
+00:01:35.740 --> 00:01:39.120
+to do that, and that's measured
+by asking several different
+
+00:01:39.120 --> 00:01:40.080
+LLMs,
+
+00:01:40.080 --> 00:01:40.740
+hey,
+
+00:01:40.740 --> 00:01:43.160
+what rubric items should we
+pick? If they all agree,
+
+00:01:43.160 --> 00:01:45.640
+then that's probably the right
+combination of rubric items, and
+
+00:01:45.640 --> 00:01:46.800
+so that's what it assigns.
+
+00:01:46.800 --> 00:01:48.280
+But if they don't all agree,
+
+00:01:48.280 --> 00:01:51.160
+then it flags it for our graders
+to have to go in and manually
+
+00:01:51.160 --> 00:01:52.460
+grade it ourselves.
+
+00:01:52.460 --> 00:01:55.600
+And so I'd say about 20% of
+submissions
+
+00:01:55.600 --> 00:01:58.780
+had to be manually graded that
+way and then on top of that we
+
+00:01:58.780 --> 00:02:01.600
+like spot checked various
+questions to make sure that that
+
+00:02:01.600 --> 00:02:04.060
+grading was done correctly and
+then on top of that if you think
+
+00:02:04.060 --> 00:02:07.240
+something didn't get graded
+correctly there's always the
+
+00:02:07.240 --> 00:02:09.940
+ability to submit a regrade
+request as there was on grade
+
+00:02:09.940 --> 00:02:12.960
+scope so I just want you to have
+faith in the system and it's not
+
+00:02:12.960 --> 00:02:15.640
+just that we're telling chat to
+give you a random number that's
+
+00:02:15.640 --> 00:02:17.620
+not how it works it works the
+same way as it did on grade
+
+00:02:17.620 --> 00:02:20.680
+scope but as you see we can turn
+around grades way quicker than
+
+00:02:20.680 --> 00:02:22.940
+you we could in other classes
+right Homework one was just due
+
+00:02:22.940 --> 00:02:26.040
+this past Friday, and normally
+would take at least a week to
+
+00:02:26.040 --> 00:02:27.040
+grade.
+
+00:02:28.340 --> 00:02:29.380
+And then lastly,
+
+00:02:29.380 --> 00:02:32.360
+as you may have seen on ed
+several times this past week,
+
+00:02:32.360 --> 00:02:34.440
+there have been various events
+in the atrium.
+
+00:02:34.440 --> 00:02:37.320
+So the TA's office hours
+locations may change.
+
+00:02:37.320 --> 00:02:39.260
+I think if they have office
+hours later today, that may also
+
+00:02:39.260 --> 00:02:41.380
+be the case because of the
+career fair.
+
+00:02:41.380 --> 00:02:44.000
+But my office hours are in my
+office either way.
+
+00:02:44.000 --> 00:02:46.900
+The plan for today is to start
+by recapping some key elements
+
+00:02:46.900 --> 00:02:50.520
+of the simple linear regression
+model, which was our main
+
+00:02:50.520 --> 00:02:52.600
+objective of study last week.
+
+00:02:52.600 --> 00:02:55.740
+There was one tie-in to it that
+I wanted to talk about on
+
+00:02:55.740 --> 00:02:58.080
+Thursday that I didn't get to,
+which was the correlation
+
+00:02:58.080 --> 00:02:59.480
+coefficient.
+So we will look at that.
+
+00:02:59.760 --> 00:03:03.100
+And then we will motivate the
+need
+
+00:03:03.100 --> 00:03:06.360
+for introducing linear algebra,
+which we have not yet used in
+
+00:03:06.360 --> 00:03:08.040
+this class.
+But that will change today.
+
+00:03:08.320 --> 00:03:10.980
+But before I introduce what a
+vector is and what various
+
+00:03:10.980 --> 00:03:12.380
+properties of it are,
+
+00:03:12.380 --> 00:03:14.640
+we're going to make sure we have
+a clear understanding of why
+
+00:03:14.640 --> 00:03:17.480
+that is absolutely necessary to
+progress
+
+00:03:17.480 --> 00:03:20.600
+our point in the story of this
+course.
+
+00:03:20.600 --> 00:03:21.600
+OK,
+
+00:03:21.620 --> 00:03:25.640
+so here's what I want to start
+with.
+
+00:03:25.640 --> 00:03:28.000
+Over the past few weeks,
+
+00:03:28.000 --> 00:03:31.580
+we've been using this running
+example data set in which we
+
+00:03:31.580 --> 00:03:34.200
+wanted to predict how long it
+would take for us to get to
+
+00:03:34.200 --> 00:03:34.820
+work.
+
+00:03:34.820 --> 00:03:38.220
+That's the commute time on the
+y-axis of this graph, given the
+
+00:03:38.220 --> 00:03:39.720
+time we left in the morning.
+
+00:03:39.720 --> 00:03:43.580
+That's the departure time on the
+x-axis of this graph.
+
+00:03:43.580 --> 00:03:48.620
+And we've studied two models or
+types of functions that we could
+
+00:03:48.620 --> 00:03:50.240
+use for this task.
+
+00:03:50.240 --> 00:03:51.980
+The first was the constant
+model.
+
+00:03:51.980 --> 00:03:54.120
+And so the type of question we
+asked was, well,
+
+00:03:54.120 --> 00:03:56.340
+if the constant model is a flat
+line,
+
+00:03:56.340 --> 00:03:59.260
+what is the best place to draw
+that flat line? And the answer
+
+00:03:59.260 --> 00:04:02.840
+depends on which loss function
+we use to measure the quality of
+
+00:04:02.840 --> 00:04:05.360
+our predictions.
+If we use the squared loss loss
+
+00:04:05.360 --> 00:04:08.960
+function, then we choose the
+constant parameter W that
+
+00:04:08.960 --> 00:04:12.260
+minimizes average squared loss
+or mean squared error.
+
+00:04:12.440 --> 00:04:16.600
+And as you now know, that is the
+mean or average of the y's.
+
+00:04:16.600 --> 00:04:19.340
+If you use absolute loss, Well,
+then you end up with a different
+
+00:04:19.340 --> 00:04:21.780
+best parameter the median of the
+lies,
+
+00:04:21.780 --> 00:04:25.000
+okay So that's the kind of
+thinking we use in the first few
+
+00:04:25.000 --> 00:04:28.000
+lectures and then last lecture
+We said well, what if we don't
+
+00:04:28.000 --> 00:04:30.480
+just use a flat constant model?
+But instead we have a simple
+
+00:04:30.480 --> 00:04:33.220
+linear regression line one that
+is allowed to have two
+
+00:04:33.220 --> 00:04:36.960
+parameters a slope and an
+intercept Then the question is
+
+00:04:36.960 --> 00:04:38.860
+well, what is the best
+combination of slope and
+
+00:04:38.860 --> 00:04:41.800
+intercept to use again? It
+depends on the last function you
+
+00:04:41.800 --> 00:04:44.860
+use if you use squared loss
+Well, then you end up with the
+
+00:04:44.860 --> 00:04:48.400
+formulas as we saw last class.
+If you use absolute loss,
+
+00:04:48.400 --> 00:04:51.360
+well, there's no closed form
+formula for the best intercept
+
+00:04:51.360 --> 00:04:53.120
+and slope.
+But if you've taken a look at
+
+00:04:53.120 --> 00:04:55.180
+the programming question in
+homework two,
+
+00:04:55.180 --> 00:04:58.420
+there we have you implement some
+code that allows you to find the
+
+00:04:58.420 --> 00:05:01.620
+best slope and intercept for
+absolute loss in the simple
+
+00:05:01.620 --> 00:05:03.870
+linear regression model.
+
+00:05:05.340 --> 00:05:08.260
+A sort of side question I wanted
+to address here
+
+00:05:08.260 --> 00:05:12.740
+is these two lines intersect at
+a point.
+
+00:05:12.740 --> 00:05:17.140
+What are the coordinates of that
+point these intersect at?
+
+00:05:17.140 --> 00:05:19.680
+Assuming we used squared loss
+for both,
+
+00:05:19.680 --> 00:05:20.700
+to find both,
+
+00:05:20.700 --> 00:05:24.450
+what point do these two
+intersect at?
+
+00:05:26.560 --> 00:05:27.340
+Gavin?
+
+00:05:27.340 --> 00:05:28.880
+Is it x-bar or y-bar?
+
+00:05:28.880 --> 00:05:31.130
+Yeah, it is.
+
+00:05:34.000 --> 00:05:36.250
+Why is that?
+
+00:05:41.420 --> 00:05:45.170
+Assuming we use squared loss,
+
+00:05:46.420 --> 00:05:49.840
+y is the point at which these
+two lines intersect,
+
+00:05:49.840 --> 00:05:52.780
+the average departure time,
+that's x bar,
+
+00:05:52.780 --> 00:05:53.360
+comma,
+
+00:05:53.360 --> 00:05:55.440
+the average commute time in our
+data set,
+
+00:05:55.440 --> 00:05:56.940
+y bar.
+Why is that?
+
+00:06:00.520 --> 00:06:02.020
+Anyone know?
+
+00:06:09.680 --> 00:06:11.180
+Any guesses?
+
+00:06:12.360 --> 00:06:16.860
+Why is this intersection mean of
+x comma mean of y?
+
+00:06:18.340 --> 00:06:21.700
+One of the two coordinates of
+this intersection is easier to
+
+00:06:21.700 --> 00:06:24.420
+reason about than the other.
+Why do we know for sure that
+
+00:06:24.420 --> 00:06:29.700
+they intersect at a point where
+the y-coordinate is y-bar?
+
+00:06:30.160 --> 00:06:31.900
+This one doesn't require that
+much.
+
+00:06:31.900 --> 00:06:32.900
+Stop.
+
+00:06:33.020 --> 00:06:34.600
+In a constant model,
+
+00:06:34.600 --> 00:06:37.460
+we know w star is going to be
+the mean.
+
+00:06:37.460 --> 00:06:38.460
+Exactly.
+
+00:06:38.500 --> 00:06:41.020
+We know that this line is being
+drawn,
+
+00:06:41.020 --> 00:06:44.840
+essentially, at y equals y-bar,
+or the output equals y-bar.
+
+00:06:45.440 --> 00:06:48.160
+So if this line hits this one,
+
+00:06:48.160 --> 00:06:51.680
+well, the only possible y-axis
+value of this line is y-bar.
+
+00:06:51.680 --> 00:06:53.080
+So at this intersection,
+
+00:06:53.080 --> 00:06:57.060
+that point must also have a
+y-axis value of y bar.
+
+00:06:57.060 --> 00:06:59.600
+The question is, why is it the
+input x bar?
+
+00:06:59.600 --> 00:07:01.340
+Could have been something else.
+
+00:07:01.340 --> 00:07:03.800
+Why is the input, or the
+x-coordinate of this
+
+00:07:03.800 --> 00:07:06.050
+intersection x bar?
+
+00:07:08.800 --> 00:07:11.050
+Why is that?
+
+00:07:20.800 --> 00:07:25.100
+Anyone have an idea why is the
+input or why is the x-coordinate
+
+00:07:25.100 --> 00:07:29.600
+of this intersection the mean of
+the x?
+
+00:07:31.420 --> 00:07:36.300
+Well, let's suppose we didn't
+know what the x-axis coordinate
+
+00:07:36.300 --> 00:07:38.740
+of this intersection was.
+So how could we figure out what
+
+00:07:38.740 --> 00:07:39.920
+it would have to be?
+
+00:07:39.920 --> 00:07:40.920
+Well,
+
+00:07:40.920 --> 00:07:45.420
+let's take a look at the
+formulas.
+
+00:07:46.840 --> 00:07:48.740
+Remember, our simple linear
+regression model looked
+
+00:07:48.740 --> 00:07:50.660
+something like this,
+
+00:07:50.660 --> 00:07:55.900
+where the best slope had several
+formulas.
+
+00:07:55.900 --> 00:08:00.480
+And one of the things we
+discussed on Thursday was how
+
+00:08:00.480 --> 00:08:04.220
+you can show these several
+formulas are equivalent.
+
+00:08:04.220 --> 00:08:07.970
+So that's something important to
+review.
+
+00:08:09.560 --> 00:08:13.680
+This was the formula for the
+best slope on the numerator.
+
+00:08:13.680 --> 00:08:16.940
+The sum where i goes from 1 to n
+of xi minus x bar times yi minus
+
+00:08:16.940 --> 00:08:18.440
+y bar.
+And on the denominator,
+
+00:08:18.740 --> 00:08:21.580
+the sum where i goes from 1 to n
+of xi minus x bar squared.
+
+00:08:21.580 --> 00:08:26.960
+And then the intercept was what?
+Can someone remind me what the
+
+00:08:26.960 --> 00:08:29.210
+best intercept is?
+
+00:08:31.700 --> 00:08:36.880
+Yeah, Kate? y bar minus w1 star
+
+00:08:36.880 --> 00:08:38.780
+x bar.
+
+00:08:39.100 --> 00:08:40.100
+Good.
+
+00:08:40.380 --> 00:08:46.340
+So it turns out that the formula
+for the best intercept
+
+00:08:46.340 --> 00:08:49.500
+actually helps us answer this
+mystery from the previous slide,
+
+00:08:49.500 --> 00:08:53.060
+why these two lines intersect at
+x bar comma y bar.
+
+00:08:53.060 --> 00:08:54.160
+Why is that?
+
+00:08:54.160 --> 00:08:55.160
+Well,
+
+00:08:56.920 --> 00:09:02.900
+let's suppose I want
+
+00:09:02.900 --> 00:09:08.280
+to figure out the height of the
+orange line here when I plug in
+
+00:09:08.280 --> 00:09:09.900
+x bar as an input.
+
+00:09:09.900 --> 00:09:11.160
+The answer is going to be
+something.
+
+00:09:11.160 --> 00:09:12.640
+It could be y bar.
+
+00:09:12.640 --> 00:09:14.840
+It could be something else.
+Who knows what it is?
+
+00:09:14.840 --> 00:09:18.080
+But x bar is a legal prediction
+to plug in.
+
+00:09:18.080 --> 00:09:21.860
+And if I use the formulas, it'll
+tell me what the the
+
+00:09:21.860 --> 00:09:23.660
+corresponding prediction should
+be.
+
+00:09:23.660 --> 00:09:24.580
+Do we agree?
+
+00:09:24.580 --> 00:09:28.960
+So if we can plug in x bar as an
+input to this hypothesis
+
+00:09:28.960 --> 00:09:30.760
+function on the top of the
+slide,
+
+00:09:30.760 --> 00:09:33.760
+w0 plus w1 xi,
+
+00:09:34.200 --> 00:09:37.520
+based on the assertion we made
+on the previous slide, the
+
+00:09:37.520 --> 00:09:38.980
+output should be y bar.
+
+00:09:38.980 --> 00:09:41.000
+But if we can show that using a
+formula, well, then that will
+
+00:09:41.000 --> 00:09:44.160
+have proved why this is the
+case.
+
+00:09:44.160 --> 00:09:45.520
+So here's what I'm saying.
+
+00:09:45.520 --> 00:09:50.620
+h of xi equals w0 plus w1 xi.
+
+00:09:50.620 --> 00:09:56.600
+But let's call h star xi being
+the specific hypothesis function
+
+00:09:56.600 --> 00:09:59.020
+that uses our best slope and
+best intercept.
+
+00:09:59.020 --> 00:10:01.280
+What I'm saying is,
+
+00:10:01.280 --> 00:10:06.820
+what if we plug in
+
+00:10:06.820 --> 00:10:09.360
+x bar?
+
+00:10:09.900 --> 00:10:14.680
+That is, if I leave at an
+average departure time, what is
+
+00:10:14.680 --> 00:10:17.200
+my predicted commute time?
+
+00:10:17.200 --> 00:10:18.300
+Are we following?
+
+00:10:18.300 --> 00:10:19.360
+I could plug in any number I
+want.
+
+00:10:19.360 --> 00:10:21.580
+I could plug in 7, 12, 13,
+whatever.
+
+00:10:21.580 --> 00:10:23.540
+But I'm saying, what if we plug
+in the average of the data set
+
+00:10:23.540 --> 00:10:24.920
+we've already collected?
+
+00:10:24.920 --> 00:10:26.120
+Well then,
+
+00:10:26.120 --> 00:10:30.660
+this tells me h star of x bar
+
+00:10:30.660 --> 00:10:36.660
+is equal to w0 star plus w1 star
+x bar.
+
+00:10:38.500 --> 00:10:42.760
+How can I start to simplify this
+to see if there's a more
+
+00:10:42.760 --> 00:10:44.920
+convenient way of expressing
+this output?
+
+00:10:44.920 --> 00:10:48.320
+Can you plug in a highlighter
+for w0?
+
+00:10:48.320 --> 00:10:49.360
+Exactly.
+What I'm going to do is I'm
+
+00:10:49.360 --> 00:10:54.480
+going to take the formula in the
+top right for the best intercept
+
+00:10:54.480 --> 00:10:56.140
+here and put that here.
+
+00:10:56.140 --> 00:11:02.140
+So now I'm going to have y bar
+minus w1 star x bar
+
+00:11:02.480 --> 00:11:04.520
+plus w1 star x bar.
+
+00:11:04.520 --> 00:11:08.240
+And then what do you notice?
+
+00:11:08.240 --> 00:11:10.880
+What do you notice?
+
+00:11:10.880 --> 00:11:11.340
+Allison.
+
+00:11:11.340 --> 00:11:12.980
+Just turns into a y bar.
+
+00:11:12.980 --> 00:11:13.460
+Yeah,
+
+00:11:13.460 --> 00:11:15.880
+those cancel out, and you're
+left with y bar.
+
+00:11:15.880 --> 00:11:18.480
+So what this is saying is if you
+plug in x bar as an input to
+
+00:11:18.480 --> 00:11:21.460
+this function, the output comes
+out as y bar.
+
+00:11:21.460 --> 00:11:23.500
+And so this is an important fact
+to remember.
+
+00:11:23.500 --> 00:11:27.480
+The average x comma the average
+y always lies on the best simple
+
+00:11:27.480 --> 00:11:28.700
+linear regression line,
+
+00:11:28.700 --> 00:11:32.450
+again, when you're using squared
+loss to find that line.
+
+00:11:32.920 --> 00:11:35.200
+If you were using some other
+loss function, that property
+
+00:11:35.200 --> 00:11:37.180
+isn't necessarily true.
+
+00:11:37.180 --> 00:11:40.320
+So are we clear on why the point
+of intersection between these
+
+00:11:40.320 --> 00:11:41.240
+two lines,
+
+00:11:41.240 --> 00:11:43.480
+assuming both of them were
+chosen to minimize average
+
+00:11:43.480 --> 00:11:44.420
+squared loss,
+
+00:11:44.420 --> 00:11:48.160
+is average x comma average y?
+OK, yeah, same.
+
+00:11:48.160 --> 00:11:52.660
+How did we derive y1 prime?
+
+00:11:54.380 --> 00:11:55.880
+W1 star?
+
+00:11:56.480 --> 00:11:58.040
+You're talking about this?
+
+00:11:58.040 --> 00:12:01.040
+That's from Thursday's lecture.
+
+00:12:01.340 --> 00:12:07.180
+The big idea is that we said we
+wanted to
+
+00:12:07.180 --> 00:12:12.580
+minimize the average squared
+loss,
+
+00:12:13.780 --> 00:12:18.240
+which is the average of actual
+minus predicted
+
+00:12:18.240 --> 00:12:21.220
+squared.
+
+00:12:21.900 --> 00:12:24.620
+And remember, we said this was a
+function of two input variables
+
+00:12:24.620 --> 00:12:26.900
+or two parameters.
+
+00:12:28.160 --> 00:12:30.360
+And we call this R.
+
+00:12:30.360 --> 00:12:33.080
+And so remember on, and there's
+a 1 over n because there's an
+
+00:12:33.080 --> 00:12:34.080
+average.
+
+00:12:34.520 --> 00:12:35.660
+On Thursday,
+
+00:12:35.660 --> 00:12:39.060
+we took partial derivatives of
+this function with respect to w0
+
+00:12:39.060 --> 00:12:42.720
+and w1.
+And we solved for the w0 and w1,
+
+00:12:42.720 --> 00:12:45.660
+where the partial derivatives
+were both 0.
+
+00:12:45.660 --> 00:12:48.140
+And when doing that, this is the
+formula,
+
+00:12:48.140 --> 00:12:51.160
+or a formula, for w1 star that
+we found.
+
+00:12:51.160 --> 00:12:52.560
+So that's a good thing to
+review.
+
+00:12:52.560 --> 00:12:55.200
+I think that's in chapter 2.3.
+
+00:12:55.200 --> 00:12:56.180
+OK,
+
+00:12:56.180 --> 00:12:57.180
+good.
+
+00:13:07.680 --> 00:13:12.180
+OK, other questions so far with
+simple linear regression?
+
+00:13:15.880 --> 00:13:17.380
+Team OK?
+
+00:13:17.420 --> 00:13:18.660
+All right.
+
+00:13:18.660 --> 00:13:19.660
+Now,
+
+00:13:20.040 --> 00:13:24.780
+the idea I wanted to wrap up our
+discussion of simple linear
+
+00:13:24.780 --> 00:13:29.580
+regression with is that of the
+correlation coefficient.
+
+00:13:29.760 --> 00:13:33.660
+How many people have heard of a
+correlation coefficient before?
+
+00:13:33.660 --> 00:13:35.800
+Many of you have heard of this.
+It's like an idea that if you
+
+00:13:35.800 --> 00:13:38.220
+took a high school stats class,
+it would have come up.
+
+00:13:38.220 --> 00:13:42.000
+But it turns out that it's
+closely related to the simple
+
+00:13:42.000 --> 00:13:43.600
+linear regression line
+
+00:13:43.600 --> 00:13:45.060
+that we've seen.
+
+00:13:45.060 --> 00:13:48.060
+So the correlation coefficient,
+
+00:13:48.200 --> 00:13:51.950
+this is in chapter 2.4.
+
+00:13:55.400 --> 00:13:59.540
+is denoted with the letter R,
+
+00:13:59.540 --> 00:14:04.540
+measures the strength
+
+00:14:04.540 --> 00:14:08.320
+of the linear,
+
+00:14:10.080 --> 00:14:12.330
+that's important here,
+
+00:14:14.260 --> 00:14:19.920
+association between x and
+
+00:14:19.920 --> 00:14:20.880
+y.
+
+00:14:20.880 --> 00:14:24.700
+Did someone remind me, if you've
+seen this before?
+
+00:14:24.700 --> 00:14:26.460
+Again, it's totally fine if you
+have not.
+
+00:14:26.460 --> 00:14:29.100
+What are the largest and
+smallest possible values of this
+
+00:14:29.100 --> 00:14:30.100
+thing?
+
+00:14:32.600 --> 00:14:34.340
+1 and negative 1.
+
+00:14:34.340 --> 00:14:35.340
+Good.
+
+00:14:38.720 --> 00:14:40.360
+So no matter the data set,
+
+00:14:40.360 --> 00:14:42.260
+the correlation coefficient
+
+00:14:42.260 --> 00:14:44.860
+is between negative 1 and 1.
+This is different than mean
+
+00:14:44.860 --> 00:14:46.760
+squared error, right? Mean
+squared error could be
+
+00:14:46.760 --> 00:14:48.260
+arbitrarily big.
+
+00:14:48.340 --> 00:14:51.240
+And the units of mean squared
+error are the units of y
+
+00:14:51.240 --> 00:14:52.240
+squared.
+
+00:14:52.600 --> 00:14:53.880
+So for example,
+
+00:14:53.880 --> 00:14:56.020
+for these models here,
+
+00:14:56.020 --> 00:14:59.060
+their mean squared errors will
+be in minutes squared, because
+
+00:14:59.060 --> 00:15:01.540
+the y values are in minutes.
+They're commute times in
+
+00:15:01.540 --> 00:15:02.360
+minutes.
+
+00:15:02.360 --> 00:15:05.420
+And then their actual minus
+predicted y squared.
+
+00:15:05.420 --> 00:15:07.900
+So the mean squared errors would
+be in minutes squared.
+
+00:15:07.900 --> 00:15:11.720
+The correlation coefficient is
+not in any units.
+
+00:15:11.780 --> 00:15:15.280
+It's just a number that ranges
+between negative 1 and 1.
+
+00:15:15.280 --> 00:15:17.680
+What does positive 1 mean? A 1,
+
+00:15:17.680 --> 00:15:21.820
+positive 1 means if you drew a
+scatter plot of x and y,
+
+00:15:21.820 --> 00:15:25.040
+the points would lie exactly on
+a straight line.
+
+00:15:25.040 --> 00:15:27.540
+Everything lies exactly on a
+straight line.
+
+00:15:27.540 --> 00:15:28.980
+But in addition to that,
+
+00:15:28.980 --> 00:15:32.730
+that straight line has a
+positive slope.
+
+00:15:32.740 --> 00:15:34.260
+So I'm doing this, but to me,
+
+00:15:34.260 --> 00:15:35.720
+that should be drawing this for
+you,
+
+00:15:35.720 --> 00:15:37.020
+positive slope.
+
+00:15:37.020 --> 00:15:41.940
+A negative 1 correlation means
+the points lie exactly on a
+
+00:15:41.940 --> 00:15:45.360
+straight line with a negative
+slope.
+
+00:15:45.360 --> 00:15:48.900
+Close to 0 means the points
+don't look like they lie on a
+
+00:15:48.900 --> 00:15:50.020
+line at all,
+
+00:15:50.020 --> 00:15:52.340
+and values in between are, well,
+something in between.
+
+00:15:52.340 --> 00:15:55.140
+So here are some examples.
+
+00:15:55.140 --> 00:15:58.120
+In this top left one,
+
+00:15:58.120 --> 00:16:00.560
+it doesn't really seem like
+there's a pattern between the
+
+00:16:00.560 --> 00:16:02.840
+x's and y's.
+You could argue that maybe they
+
+00:16:02.840 --> 00:16:05.860
+fit a circle, but that's not a
+line, and so the correlation is
+
+00:16:05.860 --> 00:16:07.240
+pretty close to 0.
+
+00:16:07.240 --> 00:16:10.990
+It's very, very, very slightly
+positive,
+
+00:16:11.560 --> 00:16:13.440
+but essentially it's 0.
+
+00:16:13.440 --> 00:16:17.840
+In the second one, it seems like
+the points lie almost exactly on
+
+00:16:17.840 --> 00:16:20.320
+a straight line, not perfectly,
+because there is no line that
+
+00:16:20.320 --> 00:16:22.360
+passes through all of these.
+
+00:16:22.360 --> 00:16:27.760
+But it's pretty close to being
+the case that all of these
+
+00:16:27.760 --> 00:16:30.580
+points lie on a negatively
+sloped line, which is why the
+
+00:16:30.580 --> 00:16:32.760
+correlation coefficient is
+almost negative 1.
+
+00:16:32.760 --> 00:16:35.010
+It's negative 0.993.
+
+00:16:35.360 --> 00:16:37.960
+The bottom left one is the most
+confusing,
+
+00:16:37.960 --> 00:16:42.460
+because there is a very clear
+pattern between the x and y.
+
+00:16:42.900 --> 00:16:43.580
+Like,
+
+00:16:43.580 --> 00:16:46.680
+obviously, it seems like there's
+this absolute value v shape
+
+00:16:46.680 --> 00:16:49.100
+along which the x's and y's
+fall.
+
+00:16:49.100 --> 00:16:52.340
+But remember, the point is the
+correlation coefficient measures
+
+00:16:52.340 --> 00:16:54.980
+how much it looks like the
+scatter plot is one straight
+
+00:16:54.980 --> 00:16:55.980
+line.
+
+00:16:56.860 --> 00:17:00.080
+And it doesn't look like that at
+all in the bottom left.
+
+00:17:00.080 --> 00:17:03.340
+There's no one straight line
+that would fit this data well.
+
+00:17:03.340 --> 00:17:05.180
+If you extend to two straight
+lines, then maybe.
+
+00:17:05.180 --> 00:17:08.760
+But that's not what we're asking
+here,
+
+00:17:08.760 --> 00:17:12.180
+which is why the correlation in
+the bottom left is very weak as
+
+00:17:12.180 --> 00:17:13.180
+well.
+
+00:17:13.940 --> 00:17:16.940
+And because it's slightly
+negative,
+
+00:17:17.640 --> 00:17:19.720
+the formula thinks, and we're
+going to look at the formula in
+
+00:17:19.720 --> 00:17:22.900
+a second, thinks the best
+fitting line would be sloped
+
+00:17:22.900 --> 00:17:23.740
+negatively.
+
+00:17:23.740 --> 00:17:26.000
+And then the bottom right, it
+seems like the points are going
+
+00:17:26.000 --> 00:17:28.620
+up and to the right, which is
+why the correlation coefficient
+
+00:17:28.620 --> 00:17:31.260
+is positive rather than
+negative.
+
+00:17:31.260 --> 00:17:32.280
+But it's not,
+
+00:17:32.280 --> 00:17:36.520
+it's positive, but not close to
+1, right? It's 0.6,
+
+00:17:36.520 --> 00:17:38.220
+which means it's up and to the
+right, but there's still a lot
+
+00:17:38.220 --> 00:17:41.640
+of vertical spread.
+The trend isn't as clear as it
+
+00:17:41.640 --> 00:17:43.140
+could be.
+
+00:17:43.860 --> 00:17:46.160
+Are we OK with this intuitive
+understanding of how the
+
+00:17:46.160 --> 00:17:48.410
+correlation coefficient works?
+
+00:17:48.680 --> 00:17:49.680
+OK.
+
+00:17:49.740 --> 00:17:50.240
+Now,
+
+00:17:50.240 --> 00:17:52.420
+I sort of implicitly said this
+here,
+
+00:17:52.420 --> 00:17:55.880
+but do you agree that it feels
+like it should be the case that
+
+00:17:55.880 --> 00:17:58.820
+if the correlation is positive
+between x and y,
+
+00:17:58.820 --> 00:18:01.240
+then the slope of the best
+fitting line should also be
+
+00:18:01.240 --> 00:18:02.240
+positive?
+
+00:18:02.480 --> 00:18:04.200
+And if the correlation is
+negative,
+
+00:18:04.200 --> 00:18:05.920
+well, then the slope of the best
+fitting line should also be
+
+00:18:05.920 --> 00:18:06.800
+negative.
+
+00:18:06.800 --> 00:18:08.020
+Do we agree?
+
+00:18:08.020 --> 00:18:08.680
+OK.
+OK,
+
+00:18:08.680 --> 00:18:13.620
+so it turns out that there's a
+way to express,
+
+00:18:13.620 --> 00:18:17.960
+and I'll put this two slides in
+the future,
+
+00:18:17.960 --> 00:18:20.960
+the slope of the best fitting
+line,
+
+00:18:20.960 --> 00:18:22.840
+again, assuming we're using
+squared loss here.
+
+00:18:22.840 --> 00:18:25.980
+This is all under the guise that
+we're using squared loss.
+
+00:18:25.980 --> 00:18:27.480
+This slope,
+
+00:18:28.860 --> 00:18:33.060
+which has many equal forms,
+
+00:18:33.440 --> 00:18:37.940
+this is just the default one
+that I think of.
+
+00:18:41.680 --> 00:18:45.160
+Lots of other forms.
+
+00:18:46.720 --> 00:18:49.460
+There's also a way to write it
+in terms of the correlation
+
+00:18:49.460 --> 00:18:50.440
+coefficient,
+
+00:18:50.440 --> 00:18:51.440
+R.
+
+00:18:51.940 --> 00:18:55.360
+And I really like this formula
+because it's much more concise
+
+00:18:55.360 --> 00:18:59.110
+than these ones that have
+summations in them.
+
+00:18:59.260 --> 00:19:02.060
+It is the correlation
+coefficient
+
+00:19:02.060 --> 00:19:06.180
+times the standard deviation of
+the y values over the standard
+
+00:19:06.180 --> 00:19:09.180
+deviation of the x-values.
+
+00:19:09.460 --> 00:19:13.800
+So this right away tells you
+that if the correlation is
+
+00:19:13.800 --> 00:19:14.620
+positive,
+
+00:19:14.620 --> 00:19:15.900
+the slope is positive.
+
+00:19:15.900 --> 00:19:18.420
+If the correlation is negative,
+the slope is negative.
+
+00:19:18.420 --> 00:19:19.740
+Why is that?
+
+00:19:19.740 --> 00:19:22.740
+Well, these standard deviations.
+
+00:19:34.920 --> 00:19:37.900
+They can't be negative.
+
+00:19:37.900 --> 00:19:40.440
+So standard deviation of y is
+positive, standard deviation of
+
+00:19:40.440 --> 00:19:41.660
+x is positive.
+
+00:19:41.660 --> 00:19:43.980
+Can someone remind me, how do
+you define the standard
+
+00:19:43.980 --> 00:19:47.660
+deviation of y? This has come up
+in homework one,
+
+00:19:47.660 --> 00:19:49.740
+but I don't think we directly
+discussed it here.
+
+00:19:49.740 --> 00:19:52.720
+What is the standard deviation
+of the y values?
+
+00:19:52.720 --> 00:19:56.470
+How would I calculate that?
+
+00:19:58.500 --> 00:20:02.100
+It's the average distance of any
+y point from y bar.
+
+00:20:03.580 --> 00:20:08.080
+It's close to that, but it's
+subtly different.
+
+00:20:08.200 --> 00:20:14.100
+I'm going to start by taking 1
+over n times the
+
+00:20:14.100 --> 00:20:16.620
+sum, where i goes from 1 to n,
+of yi minus y bar.
+
+00:20:16.620 --> 00:20:19.240
+Indeed, it's related to that,
+but those distances are supposed
+
+00:20:19.240 --> 00:20:20.840
+to be squared.
+
+00:20:20.840 --> 00:20:23.060
+And then the standard deviation
+
+00:20:23.060 --> 00:20:27.340
+takes the square root of all of
+that.
+
+00:20:27.340 --> 00:20:30.120
+So this is a little different
+than the formula you said,
+
+00:20:30.120 --> 00:20:34.880
+because the average distance
+from yi to y bar would not
+
+00:20:34.880 --> 00:20:38.000
+involve a squared here, but that
+would have an absolute value.
+
+00:20:38.000 --> 00:20:43.000
+And a key algebraic fact we need
+to remember here is that this
+
+00:20:43.000 --> 00:20:47.640
+square root doesn't cancel out
+these squares.
+
+00:20:47.920 --> 00:20:51.220
+The entire average, or this
+entire summation, needs to be
+
+00:20:51.220 --> 00:20:53.300
+evaluated first, and then you
+square root the result.
+
+00:20:53.300 --> 00:20:55.440
+So this is how we define the
+standard deviation.
+
+00:20:55.440 --> 00:20:58.380
+And the thing inside of this
+square root here, What is that
+
+00:20:58.380 --> 00:20:59.880
+called again?
+
+00:21:01.200 --> 00:21:02.700
+The variance,
+
+00:21:02.960 --> 00:21:03.560
+which is,
+
+00:21:03.560 --> 00:21:06.560
+again, something you played
+around with in homework one.
+
+00:21:08.520 --> 00:21:12.270
+So depending on the question
+you're working on,
+
+00:21:12.940 --> 00:21:17.160
+this correlation coefficient
+version of the formula may be
+
+00:21:17.160 --> 00:21:20.910
+more convenient to reason about
+the situation,
+
+00:21:21.000 --> 00:21:23.160
+which is why I think it's useful
+to know.
+
+00:21:23.160 --> 00:21:24.840
+But this, of course,
+
+00:21:24.840 --> 00:21:27.560
+I sort of skipped a step.
+and I told you that there's a
+
+00:21:27.560 --> 00:21:30.200
+way of expressing the line with
+the correlation coefficient,
+
+00:21:30.200 --> 00:21:32.580
+but I never really told you how
+the correlation coefficient was
+
+00:21:32.580 --> 00:21:33.580
+defined.
+
+00:21:34.660 --> 00:21:35.960
+Now, if you look at this,
+
+00:21:35.960 --> 00:21:38.480
+it seems like the correlation
+coefficient has to involve some
+
+00:21:38.480 --> 00:21:40.060
+sort of summation,
+
+00:21:40.060 --> 00:21:42.500
+because it seems like we're
+wrapping a lot of the behavior
+
+00:21:42.500 --> 00:21:46.250
+of these summations into the
+correlation coefficient.
+
+00:21:47.000 --> 00:21:50.280
+So how do we define the
+correlation coefficient?
+
+00:21:50.280 --> 00:21:53.280
+There is a formula for it, but
+then I'll tell you the English
+
+00:21:53.280 --> 00:21:55.480
+way of interpreting it.
+
+00:21:55.480 --> 00:21:59.860
+It also involves a 1 over n
+times the sum,
+
+00:21:59.860 --> 00:22:02.740
+where i goes from 1 to n,
+
+00:22:02.740 --> 00:22:08.260
+of xi minus x bar times
+
+00:22:08.260 --> 00:22:10.960
+yi minus y bar.
+
+00:22:10.960 --> 00:22:16.660
+But each of these are divided by
+the standard deviations of the
+
+00:22:16.660 --> 00:22:18.160
+respective variables.
+
+00:22:21.020 --> 00:22:23.660
+So this is a formula.
+And,
+
+00:22:23.660 --> 00:22:25.200
+well, sure, you could memorize
+it.
+
+00:22:25.200 --> 00:22:27.480
+There's an English way of
+interpreting this that you could
+
+00:22:27.480 --> 00:22:31.980
+say to someone who hasn't taken
+this class.
+
+00:22:32.040 --> 00:22:34.400
+I want you to try and think
+creatively of the English way of
+
+00:22:34.400 --> 00:22:35.900
+saying this.
+
+00:22:38.580 --> 00:22:39.620
+OK, I'm here.
+So how many people here took
+
+00:22:39.620 --> 00:22:41.120
+EECS 280?
+
+00:22:41.740 --> 00:22:43.840
+And if you took EECS 280, you
+probably went on their website
+
+00:22:43.840 --> 00:22:45.960
+and went to that grade
+calculator thing where you type
+
+00:22:45.960 --> 00:22:48.600
+in your midterm grade and it
+shows you some bell curve.
+
+00:22:48.600 --> 00:22:52.260
+What was going on there? Like,
+how do they implement that?
+
+00:22:52.260 --> 00:22:53.420
+Jovanita? Z-score?
+
+00:22:53.420 --> 00:22:53.960
+Yeah.
+
+00:22:53.960 --> 00:22:58.540
+And how is that related to this?
+
+00:22:58.540 --> 00:23:01.540
+So he said z-score.
+What is a z-score?
+
+00:23:01.600 --> 00:23:02.600
+Well,
+
+00:23:03.720 --> 00:23:04.560
+I was going to say,
+
+00:23:04.560 --> 00:23:05.180
+like,
+
+00:23:05.180 --> 00:23:07.500
+our needs can multiply into
+z-scores together.
+
+00:23:07.500 --> 00:23:08.140
+Yeah.
+
+00:23:08.140 --> 00:23:10.300
+The key is that what I'm doing
+here
+
+00:23:10.300 --> 00:23:13.400
+with x and y individually is I'm
+converting them to their
+
+00:23:13.400 --> 00:23:16.700
+z-scores.
+So what this is measuring is the
+
+00:23:16.700 --> 00:23:20.960
+number of standard deviations
+
+00:23:25.380 --> 00:23:31.380
+xi is above the mean of the x's.
+
+00:23:35.420 --> 00:23:39.560
+And the second factor here is
+the equivalent for the y.
+
+00:23:39.560 --> 00:23:43.780
+The number of standard
+deviations yi is above
+
+00:23:44.340 --> 00:23:45.840
+y bar.
+
+00:23:45.940 --> 00:23:48.880
+So with that understanding,
+
+00:23:48.880 --> 00:23:54.000
+what I'm seeing here is that for
+each value in my data set, so I
+
+00:23:54.000 --> 00:23:57.240
+have my x's all written out and
+my y's all written out, and you
+
+00:23:57.240 --> 00:23:59.020
+should think of each of these as
+being points,
+
+00:23:59.020 --> 00:24:02.260
+what I'm doing is I'm
+multiplying what's called the z
+
+00:24:02.260 --> 00:24:05.000
+score for each coordinate.
+
+00:24:05.000 --> 00:24:09.740
+So I convert x to its number of
+standard deviations above x bar,
+
+00:24:09.740 --> 00:24:14.400
+and I convert y to its number of
+standard deviations above y bar.
+
+00:24:14.400 --> 00:24:17.400
+So now a positive value means
+you're above average, and a
+
+00:24:17.400 --> 00:24:19.420
+negative value means you're
+below average.
+
+00:24:19.420 --> 00:24:24.280
+Now what I do is I multiply
+these z scores for x's,
+
+00:24:24.280 --> 00:24:27.720
+my x's and my y's, and then I
+take their average product.
+
+00:24:27.720 --> 00:24:32.220
+So it's the average product of
+the z scores of x and y.
+
+00:24:52.440 --> 00:24:55.440
+And another way that z-scores
+are sometimes put
+
+00:24:55.440 --> 00:24:58.240
+are standard units.
+
+00:24:59.840 --> 00:25:05.090
+So what does a z-score of 2
+mean?
+
+00:25:06.280 --> 00:25:09.100
+What does a z-score of 2 mean?
+
+00:25:09.100 --> 00:25:12.100
+You're two standard deviations
+above the mean?
+
+00:25:12.320 --> 00:25:12.880
+Yeah,
+
+00:25:12.880 --> 00:25:17.180
+a z-score of two, no matter what
+distribution or variable you're
+
+00:25:17.180 --> 00:25:17.900
+looking at,
+
+00:25:17.900 --> 00:25:21.640
+just means the data point you're
+looking at is two standard
+
+00:25:21.640 --> 00:25:24.580
+deviations above its average,
+
+00:25:24.580 --> 00:25:28.080
+or above the average of the data
+set it came from.
+
+00:25:28.080 --> 00:25:31.220
+And so why these are sometimes
+called standard units is that
+
+00:25:31.220 --> 00:25:34.880
+z-scores don't have any units.
+Whereas in our example data set,
+
+00:25:34.880 --> 00:25:38.940
+The x values are measured in
+time.
+
+00:25:38.940 --> 00:25:42.380
+8.45
+was some number of hours.
+
+00:25:42.940 --> 00:25:46.520
+And the y's were measured in
+minutes.
+
+00:25:46.520 --> 00:25:49.800
+But notice the numerator and
+denominator, if we look at just
+
+00:25:49.800 --> 00:25:53.080
+yi minus y bar over standard
+deviation of y,
+
+00:25:53.080 --> 00:25:56.240
+if we're using our commute times
+example, this is in minutes,
+
+00:25:56.240 --> 00:25:57.760
+and this is also in minutes.
+
+00:25:57.760 --> 00:26:00.340
+So the units of minutes get
+divided out.
+
+00:26:00.340 --> 00:26:04.840
+And so this doesn't have any
+units.
+
+00:26:05.580 --> 00:26:08.020
+And so the correlation
+coefficient is the average
+
+00:26:08.020 --> 00:26:13.400
+product of x and y once both
+columns of this data set have
+
+00:26:13.400 --> 00:26:16.060
+been converted to z-scores.
+
+00:26:16.060 --> 00:26:19.980
+Why does this make sense as a
+formula for the correlation?
+
+00:26:19.980 --> 00:26:23.040
+Well, here's roughly one way to
+think about it.
+
+00:26:23.040 --> 00:26:26.000
+What I've done is I've taken an
+example data set,
+
+00:26:26.000 --> 00:26:29.340
+and I've drawn these black bars,
+
+00:26:29.340 --> 00:26:33.480
+a vertical one at the average x
+value and a horizontal one at
+
+00:26:33.480 --> 00:26:36.280
+the average y value.
+
+00:26:36.280 --> 00:26:38.360
+So this is average x,
+
+00:26:38.360 --> 00:26:39.860
+average y.
+
+00:26:40.180 --> 00:26:44.440
+For a data set in which the
+linear association looks
+
+00:26:44.440 --> 00:26:47.160
+positive, meaning it looks like
+it slopes upwards,
+
+00:26:47.160 --> 00:26:50.640
+you'd expect most of the points
+to be in the top right and
+
+00:26:50.640 --> 00:26:51.640
+bottom left.
+
+00:26:51.640 --> 00:26:54.500
+Most of the data should be here.
+
+00:26:54.500 --> 00:26:58.540
+And so the two factors in that
+sum we just computed,
+
+00:26:58.540 --> 00:27:03.180
+this is positive if xi is above
+its mean, And this is positive
+
+00:27:03.180 --> 00:27:05.060
+if yi is above its mean.
+
+00:27:05.060 --> 00:27:09.520
+So if they're both usually above
+their mean together,
+
+00:27:09.520 --> 00:27:13.280
+or both usually below their mean
+together, we're multiplying two
+
+00:27:13.280 --> 00:27:15.900
+positive numbers, which is
+positive,
+
+00:27:15.900 --> 00:27:18.680
+or two negative numbers, which
+is also positive.
+
+00:27:18.680 --> 00:27:21.780
+So up here is positive times
+positive, and down here is
+
+00:27:21.780 --> 00:27:23.140
+negative times negative.
+
+00:27:23.140 --> 00:27:26.840
+So if most of the data isn't in
+the top right or bottom left,
+
+00:27:26.840 --> 00:27:30.480
+those products will usually be
+positive, which is why the
+
+00:27:30.480 --> 00:27:32.520
+average of them will be
+positive.
+
+00:27:32.520 --> 00:27:36.040
+If, on the other hand, we had a
+negative linear association,
+
+00:27:36.040 --> 00:27:38.520
+well, then we'd expect most of
+the data points to be in the top
+
+00:27:38.520 --> 00:27:40.620
+left and bottom right.
+
+00:27:40.620 --> 00:27:42.080
+And if you're in the top left,
+
+00:27:42.080 --> 00:27:44.760
+well, then if you multiply your
+x-coordinate and y-coordinate,
+
+00:27:44.760 --> 00:27:48.510
+once they've been centered here
+by subtracting the mean,
+
+00:27:49.160 --> 00:27:50.880
+one will be positive, one will
+be negative.
+
+00:27:50.880 --> 00:27:53.620
+Here, the y is above average,
+the x is below average.
+
+00:27:53.620 --> 00:27:56.380
+You multiply those coordinates,
+you get a negative number.
+
+00:27:56.380 --> 00:27:58.780
+And here, it's the opposite.
+x is above average, y is below
+
+00:27:58.780 --> 00:28:00.160
+average.
+You multiply those coordinates,
+
+00:28:00.260 --> 00:28:02.540
+you get a negative number.
+So the average of those products
+
+00:28:02.540 --> 00:28:04.320
+would be negative.
+
+00:28:04.320 --> 00:28:08.060
+So this is one way to see why
+the correlation coefficient has
+
+00:28:08.060 --> 00:28:10.740
+the definition that it does.
+
+00:28:10.740 --> 00:28:12.620
+And as I said before,
+
+00:28:12.620 --> 00:28:14.520
+the correlation coefficient
+
+00:28:14.520 --> 00:28:18.580
+gives us another way of defining
+
+00:28:18.580 --> 00:28:23.080
+the slope of the line that
+minimizes mean squared error.
+
+00:28:24.180 --> 00:28:24.740
+OK,
+
+00:28:24.740 --> 00:28:26.540
+what questions with the
+correlation coefficient do we
+
+00:28:26.540 --> 00:28:27.540
+have?
+
+00:28:31.400 --> 00:28:33.650
+You seem OK?
+
+00:28:34.460 --> 00:28:36.000
+One last thing.
+
+00:28:36.000 --> 00:28:37.800
+Chapter 2.4
+has some cool examples at the
+
+00:28:37.800 --> 00:28:40.300
+bottom that you can play with.
+
+00:28:40.300 --> 00:28:45.760
+One of them is this data set
+called the Anscombs Quartet.
+
+00:28:46.160 --> 00:28:50.280
+And what it illustrates are four
+data sets, that is pairs of x, y
+
+00:28:50.280 --> 00:28:51.280
+points,
+
+00:28:51.320 --> 00:28:53.700
+in which the average x value,
+
+00:28:53.700 --> 00:28:55.950
+average y value,
+
+00:28:56.320 --> 00:29:01.120
+standard deviation of x and y
+and correlation coefficient are
+
+00:29:01.120 --> 00:29:02.600
+all the same.
+
+00:29:02.600 --> 00:29:06.140
+If you have just those five
+numbers, that tells you what the
+
+00:29:06.140 --> 00:29:09.260
+slope and intercept of the line
+that minimizes mean squared
+
+00:29:09.260 --> 00:29:12.040
+error is.
+Because here, the slope only
+
+00:29:12.040 --> 00:29:13.640
+depends on the correlation,
+
+00:29:13.640 --> 00:29:15.220
+the standard deviation of y,
+
+00:29:15.220 --> 00:29:17.320
+and the standard deviation of x.
+
+00:29:17.320 --> 00:29:21.680
+And the intercept depends on the
+mean of y,
+
+00:29:21.680 --> 00:29:23.740
+the slope, and the mean of x.
+
+00:29:23.740 --> 00:29:26.960
+So if I give you the five
+numbers I've highlighted here,
+
+00:29:26.960 --> 00:29:27.960
+r,
+
+00:29:28.640 --> 00:29:30.160
+standard deviation of x,
+
+00:29:30.160 --> 00:29:31.560
+standard deviation of y,
+
+00:29:31.560 --> 00:29:32.920
+mean of x, mean of y,
+
+00:29:32.920 --> 00:29:34.420
+then you can draw the line of
+best fit.
+
+00:29:34.420 --> 00:29:35.880
+That's all you need.
+
+00:29:35.880 --> 00:29:38.820
+But what I'm showing you here is
+that the data set could look
+
+00:29:38.820 --> 00:29:39.940
+very different.
+
+00:29:39.940 --> 00:29:42.480
+Like you could have two very
+different looking data sets
+
+00:29:42.480 --> 00:29:44.620
+that share those five
+quantities.
+
+00:29:44.620 --> 00:29:47.200
+So just like knowing a bunch of
+numbers and crunching a bunch of
+
+00:29:47.200 --> 00:29:48.420
+numbers is not enough,
+
+00:29:48.420 --> 00:29:50.720
+it's important when you are
+working with real data to try
+
+00:29:50.720 --> 00:29:52.560
+and visualize it as best as you
+can.
+
+00:29:52.560 --> 00:29:55.300
+Because these data sets look
+very different, Yet all have the
+
+00:29:55.300 --> 00:29:57.280
+same best-fitting line.
+
+00:29:57.280 --> 00:29:59.060
+Okay, and if you go to chapter
+2.4
+
+00:29:59.060 --> 00:30:02.520
+and scroll down, there's an even
+cooler example You know, it's
+
+00:30:02.520 --> 00:30:07.770
+cool enough that we can go look
+at it together
+
+00:30:11.440 --> 00:30:14.560
+Think I included this here.
+Yeah, okay Watch these all of
+
+00:30:14.560 --> 00:30:17.060
+these data sets have those same
+five quantities in common
+
+00:30:17.060 --> 00:30:20.380
+Average X average Y X standard
+deviation Y standard deviation
+
+00:30:20.380 --> 00:30:23.240
+and correlation including one
+that looks like a dinosaur
+
+00:30:23.240 --> 00:30:24.240
+OK?
+
+00:30:24.320 --> 00:30:28.020
+All of these share those same
+five properties, so they all
+
+00:30:28.020 --> 00:30:29.440
+have the same line of best fit.
+
+00:30:29.440 --> 00:30:33.100
+And so my bigger picture here is
+I don't rely just on numbers to
+
+00:30:33.100 --> 00:30:36.280
+make all of your decisions.
+Just because it is the best
+
+00:30:36.280 --> 00:30:40.780
+fitting line doesn't mean a line
+makes sense to fit the data.
+
+00:30:41.140 --> 00:30:44.890
+Questions with any of that?
+
+00:30:46.460 --> 00:30:47.960
+Sound OK?
+
+00:30:48.680 --> 00:30:50.180
+All right.
+
+00:30:52.000 --> 00:30:54.340
+So now that we have a good
+understanding of the simple
+
+00:30:54.340 --> 00:30:55.660
+linear regression model,
+
+00:30:55.660 --> 00:31:00.400
+what I want to comment on is
+where we go from here.
+
+00:31:00.400 --> 00:31:02.300
+So if you remember on the first
+day of class,
+
+00:31:02.300 --> 00:31:06.520
+when I introduced our example
+data set in which we were using
+
+00:31:06.520 --> 00:31:10.320
+a real person's log of their
+commutes to work,
+
+00:31:10.320 --> 00:31:15.570
+we said our goal would be to
+predict commute time in minutes.
+
+00:31:16.640 --> 00:31:22.500
+Those were our y's given the
+departure times,
+
+00:31:24.420 --> 00:31:26.440
+which were the x's.
+
+00:31:26.440 --> 00:31:28.780
+We used one x to predict our y.
+
+00:31:28.780 --> 00:31:31.720
+And because we were only using
+one input variable,
+
+00:31:31.720 --> 00:31:35.470
+we were performing what's called
+simple linear regression.
+
+00:31:36.060 --> 00:31:37.140
+But we said, hey,
+
+00:31:37.140 --> 00:31:39.200
+at some point, it would be nice
+if we could learn how to use
+
+00:31:39.200 --> 00:31:42.200
+multiple input variables or
+multiple features.
+
+00:31:42.220 --> 00:31:43.300
+For example,
+
+00:31:43.300 --> 00:31:45.380
+it would be cool if we could use
+the day of the week,
+
+00:31:45.380 --> 00:31:47.380
+because it seems like different
+days would have different
+
+00:31:47.380 --> 00:31:48.640
+commute time patterns.
+
+00:31:48.640 --> 00:31:51.320
+Using day of the week is still a
+little tricky because we have to
+
+00:31:51.320 --> 00:31:54.220
+somehow address the fact that
+the days of the week are stored
+
+00:31:54.220 --> 00:31:55.720
+as words,
+
+00:31:56.240 --> 00:31:59.480
+and we'd have to convert them to
+numbers somehow.
+
+00:31:59.480 --> 00:32:02.460
+That's a more nuanced issue than
+it initially seems, so we will
+
+00:32:02.460 --> 00:32:03.860
+deal with that later.
+
+00:32:03.860 --> 00:32:06.220
+But for now, to illustrate how
+this could work,
+
+00:32:06.220 --> 00:32:08.780
+why don't we just pick another
+number that is associated with
+
+00:32:08.780 --> 00:32:13.280
+each data point, which is the
+day of the month.
+
+00:32:15.080 --> 00:32:17.420
+Doesn't necessarily seem like it
+would be that useful, but I
+
+00:32:17.420 --> 00:32:19.480
+don't know.
+Maybe commutes at the end of the
+
+00:32:19.480 --> 00:32:21.640
+month take longer because
+they're giving more people
+
+00:32:21.640 --> 00:32:23.720
+speeding tickets so there's more
+traffic on the highway.
+
+00:32:23.720 --> 00:32:24.980
+I don't know.
+Maybe there's a pattern.
+
+00:32:24.980 --> 00:32:26.460
+Who knows?
+
+00:32:26.460 --> 00:32:30.420
+So why don't we see what the
+resulting hypothesis function
+
+00:32:30.420 --> 00:32:35.220
+would look like if we also use
+day of month,
+
+00:32:35.220 --> 00:32:39.720
+which I'm going to abbreviate as
+DOM.
+
+00:32:41.020 --> 00:32:41.820
+Now,
+
+00:32:41.820 --> 00:32:45.280
+what does the formula for our
+hyper in a departure hour, I'm
+
+00:32:45.280 --> 00:32:47.320
+going to abbreviate as DH,
+
+00:32:47.320 --> 00:32:49.160
+and you'll see why I'm
+abbreviating these in just a
+
+00:32:49.160 --> 00:32:50.160
+second.
+
+00:32:50.720 --> 00:32:54.100
+What does the resulting
+hypothesis function look like
+
+00:32:54.100 --> 00:32:55.600
+algebraically now?
+
+00:32:56.100 --> 00:32:57.100
+Well,
+
+00:32:58.860 --> 00:33:03.360
+I might write something like H
+of departure hour i,
+
+00:33:03.600 --> 00:33:04.580
+comma,
+
+00:33:04.580 --> 00:33:06.940
+day of month i.
+
+00:33:06.940 --> 00:33:09.160
+Are we clear on what this
+notation means?
+
+00:33:09.160 --> 00:33:12.240
+I'm writing my hypothesis
+function as if it takes in two
+
+00:33:12.240 --> 00:33:13.740
+input variables.
+
+00:33:13.840 --> 00:33:17.180
+Every other hypothesis function
+we saw so far just took in one
+
+00:33:17.180 --> 00:33:19.180
+input variable, h of xi.
+
+00:33:19.180 --> 00:33:21.700
+Now I have two x's, so I
+invented new notation to
+
+00:33:21.700 --> 00:33:24.900
+distinguish between the two x's.
+
+00:33:24.900 --> 00:33:25.680
+Sound OK?
+
+00:33:25.680 --> 00:33:28.500
+So this is just a hypothesis
+function And that takes in
+
+00:33:28.500 --> 00:33:34.380
+departure hour and day of
+
+00:33:34.380 --> 00:33:35.380
+month.
+
+00:33:37.020 --> 00:33:39.980
+And what do you think the form
+for this hypothesis function
+
+00:33:39.980 --> 00:33:41.480
+will be?
+
+00:33:42.100 --> 00:33:44.300
+Like what's the most natural
+extension of things we've seen
+
+00:33:44.300 --> 00:33:45.800
+so far?
+
+00:33:50.280 --> 00:33:53.280
+Yeah, got it.
+Can we do w sub 0?
+
+00:33:55.460 --> 00:34:00.100
+And then w sub 1 d h of 1 of d h
+of i.
+
+00:34:00.100 --> 00:34:05.920
+Yeah, we could do the first
+slope times departure hour
+
+00:34:05.920 --> 00:34:07.420
+i plus?
+
+00:34:07.980 --> 00:34:13.360
+w sub 2 day of months of i.
+
+00:34:13.360 --> 00:34:14.360
+Good.
+
+00:34:14.740 --> 00:34:17.440
+The most natural extension of
+the simple linear regression
+
+00:34:17.440 --> 00:34:22.690
+model is to just tack on another
+slope times feature.
+
+00:34:23.100 --> 00:34:25.300
+So previously, we just had one
+slope.
+
+00:34:25.300 --> 00:34:26.800
+Our model was just this.
+
+00:34:26.800 --> 00:34:28.660
+One slope, and we called it the
+slope,
+
+00:34:28.660 --> 00:34:30.160
+times xi.
+
+00:34:30.380 --> 00:34:32.740
+But now we have multiple x's, so
+they should each get their own
+
+00:34:32.740 --> 00:34:33.660
+slope.
+
+00:34:33.660 --> 00:34:36.120
+And you can imagine here we're
+just using two input variables.
+
+00:34:36.120 --> 00:34:40.240
+So I had two slopes, w1 and w2.
+
+00:34:40.240 --> 00:34:42.320
+But if I had a third input
+variable,
+
+00:34:42.320 --> 00:34:44.900
+like somehow I figure out how to
+use the day of the week, I could
+
+00:34:44.900 --> 00:34:47.150
+add that in.
+I could add another,
+
+00:34:47.180 --> 00:34:48.980
+you know, like plus W three
+times day of the week.
+
+00:34:48.980 --> 00:34:52.800
+I could add in a plus W four
+times how much gas is left in my
+
+00:34:52.800 --> 00:34:53.480
+car.
+
+00:34:53.480 --> 00:34:55.980
+Yeah, I could add in all kinds
+of things here.
+
+00:34:55.980 --> 00:34:58.400
+Right, you can start to see how
+the number of parameters in a
+
+00:34:58.400 --> 00:34:59.900
+model grows.
+
+00:35:00.240 --> 00:35:01.000
+Again,
+
+00:35:01.000 --> 00:35:03.980
+these parameters, I said this on
+the first day of class,
+
+00:35:03.980 --> 00:35:06.500
+you know, this model now has
+three parameters.
+
+00:35:06.500 --> 00:35:09.260
+The most, you know,
+state-of-the-art
+
+00:35:09.260 --> 00:35:11.720
+large language models have on
+the order of a trillion
+
+00:35:11.720 --> 00:35:12.620
+parameters,
+
+00:35:12.620 --> 00:35:15.480
+okay, which is why they can
+predict and calculate much more
+
+00:35:15.480 --> 00:35:18.100
+complicated things than this
+model that really just predicts
+
+00:35:18.100 --> 00:35:19.600
+commute time.
+
+00:35:19.820 --> 00:35:25.040
+But underlying the end product
+that you work with is some sort
+
+00:35:25.040 --> 00:35:27.760
+of formula that looks like a
+more complicated version of
+
+00:35:27.760 --> 00:35:28.760
+this.
+
+00:35:29.180 --> 00:35:29.980
+Now,
+
+00:35:29.980 --> 00:35:32.780
+the simple linear regression
+model looked like a line.
+
+00:35:32.780 --> 00:35:37.280
+What does this model look like?
+
+00:35:47.260 --> 00:35:49.500
+What does this model look like?
+
+00:35:49.500 --> 00:35:51.420
+If I had to graph it out,
+
+00:35:51.420 --> 00:35:53.380
+what's it going to look like?
+
+00:35:53.380 --> 00:35:54.800
+Gustavo? It'd be like a plane.
+
+00:35:54.800 --> 00:35:55.280
+Yeah,
+
+00:35:55.280 --> 00:35:58.660
+what made you come to that
+conclusion?
+
+00:35:58.660 --> 00:36:02.320
+I was just thinking that you'd
+have to have an extra dimension.
+
+00:36:02.320 --> 00:36:02.980
+Exactly.
+
+00:36:02.980 --> 00:36:04.640
+What we wouldn't.
+Like a slope based on which
+
+00:36:04.640 --> 00:36:06.300
+dimension you're changing.
+
+00:36:06.300 --> 00:36:07.240
+Exactly.
+
+00:36:07.240 --> 00:36:08.920
+So I'm going to switch over to
+chapter 2.5
+
+00:36:08.920 --> 00:36:12.670
+where we have an interactive
+version of this.
+
+00:36:12.980 --> 00:36:14.000
+But exactly.
+
+00:36:14.000 --> 00:36:18.060
+What I want you to imagine is
+pretend this classroom
+
+00:36:18.060 --> 00:36:20.180
+is the xy plane.
+
+00:36:20.180 --> 00:36:21.740
+Or let's not use x and y.
+
+00:36:21.740 --> 00:36:23.880
+Let's use departure time and day
+of month.
+
+00:36:23.880 --> 00:36:26.160
+Those are our two input
+variables.
+
+00:36:26.160 --> 00:36:29.000
+And my model should give me a
+prediction no matter where I
+
+00:36:29.000 --> 00:36:30.220
+stand in the classroom,
+
+00:36:30.220 --> 00:36:33.260
+which is no matter what
+combination of departure time
+
+00:36:33.260 --> 00:36:34.760
+and day of month I pick.
+
+00:36:34.760 --> 00:36:38.220
+So every point in the classroom
+is another combination of
+
+00:36:38.220 --> 00:36:41.440
+departure time and day of the
+month.
+
+00:36:41.440 --> 00:36:43.940
+And then, based on that,
+
+00:36:43.940 --> 00:36:45.040
+the height
+
+00:36:45.040 --> 00:36:47.380
+tells me what the prediction is.
+
+00:36:47.380 --> 00:36:52.880
+So the original data set itself
+is in three dimensions.
+
+00:36:53.120 --> 00:36:54.960
+Each point here, in blue,
+
+00:36:54.960 --> 00:36:56.840
+corresponds to one row of the
+data set.
+
+00:36:56.840 --> 00:36:59.180
+So this one that I'm hovering
+over here
+
+00:36:59.180 --> 00:37:00.320
+tells me,
+
+00:37:00.320 --> 00:37:03.400
+for this one, we left at like 6,
+
+00:37:03.400 --> 00:37:06.820
+somewhere just after 6 AM on the
+20th of the month.
+
+00:37:06.820 --> 00:37:10.160
+And that day, it took 134
+minutes to do our commute.
+
+00:37:10.160 --> 00:37:11.680
+That's what this is telling me.
+
+00:37:11.680 --> 00:37:13.140
+Or here, it's saying,
+
+00:37:13.140 --> 00:37:14.000
+on this day,
+
+00:37:14.000 --> 00:37:15.360
+let's go blue,
+
+00:37:15.360 --> 00:37:17.780
+I left around 1030.
+It was the 17th of the month,
+
+00:37:17.780 --> 00:37:20.080
+and it took 59 minutes to get to
+work.
+
+00:37:20.080 --> 00:37:23.580
+That's how you interpret the
+original data points.
+
+00:37:23.580 --> 00:37:29.260
+And then our model looks like a
+plane with a different slope in
+
+00:37:29.260 --> 00:37:30.680
+each direction.
+
+00:37:30.680 --> 00:37:33.680
+And the steepness in each
+direction
+
+00:37:33.680 --> 00:37:37.540
+is determined by those new W's
+that we found.
+
+00:37:37.540 --> 00:37:40.620
+There's a W that tells us how
+steep it is in this direction
+
+00:37:40.620 --> 00:37:44.220
+and another one that tells us
+how steep it is in this
+
+00:37:44.220 --> 00:37:45.220
+direction.
+
+00:37:45.780 --> 00:37:46.620
+Okay?
+
+00:37:46.620 --> 00:37:50.140
+So the model looks like a plane
+in three dimensions.
+
+00:37:50.140 --> 00:37:52.120
+What if we added another
+feature?
+
+00:37:52.120 --> 00:37:54.420
+How would we visualize the
+model?
+
+00:37:54.420 --> 00:37:57.100
+Well we would stop being able to
+because we would have like some
+
+00:37:57.100 --> 00:38:01.580
+three-dimensional thing in four
+dimensions, right? Whereas this
+
+00:38:01.580 --> 00:38:04.000
+model it looks like a
+two-dimensional slice of three
+
+00:38:04.000 --> 00:38:05.000
+dimensions.
+
+00:38:05.240 --> 00:38:07.560
+So we wouldn't be able to
+visualize it any further, but
+
+00:38:07.560 --> 00:38:12.060
+it's good to know the geometry
+of the situation.
+
+00:38:12.300 --> 00:38:14.800
+Are we clear on why this model
+would look like a plane? And
+
+00:38:14.800 --> 00:38:16.760
+again, this is the kind of thing
+we're going to study quite a bit
+
+00:38:16.760 --> 00:38:20.240
+more for the rest of the
+semester.
+
+00:38:20.240 --> 00:38:21.540
+Seem reasonable?
+
+00:38:21.540 --> 00:38:22.540
+OK.
+All right.
+
+00:38:28.340 --> 00:38:32.840
+Now, how do we find these
+optimal w's?
+
+00:38:32.860 --> 00:38:38.110
+How do we go about finding these
+optimal w's?
+
+00:38:43.120 --> 00:38:44.900
+I have three parameters now.
+
+00:38:44.900 --> 00:38:49.140
+How do I find w0 star, w1 star,
+and w2 star? How do I try and do
+
+00:38:49.140 --> 00:38:50.140
+that?
+
+00:38:50.960 --> 00:38:52.840
+Yeah.
+Maybe you do the same thing,
+
+00:38:52.840 --> 00:38:54.680
+like with derivatives?
+
+00:38:54.680 --> 00:38:56.000
+Yeah, same thing.
+
+00:38:56.000 --> 00:38:58.700
+So let's copy this.
+
+00:38:58.700 --> 00:39:01.600
+I'm going to follow that same
+three-step modeling recipe of
+
+00:39:01.600 --> 00:39:03.340
+choosing a model.
+Here's the model.
+
+00:39:03.340 --> 00:39:05.280
+Choosing a loss function.
+Let's just stick with squared
+
+00:39:05.280 --> 00:39:06.800
+loss because it's easy.
+
+00:39:06.800 --> 00:39:09.140
+And then, or not easy, but
+familiar.
+
+00:39:09.140 --> 00:39:10.720
+And then minimize
+
+00:39:10.720 --> 00:39:16.440
+average loss once again.
+
+00:39:26.640 --> 00:39:30.900
+where we choose a model,
+
+00:39:38.840 --> 00:39:44.420
+choose a loss function.
+
+00:39:55.360 --> 00:39:56.880
+And minimize,
+
+00:39:58.680 --> 00:40:02.430
+let's kind of mess here.
+
+00:40:13.020 --> 00:40:17.520
+Now the question is, what does
+average loss look like here?
+
+00:40:18.220 --> 00:40:19.220
+Well,
+
+00:40:19.240 --> 00:40:22.520
+I don't know why that happened.
+
+00:40:22.520 --> 00:40:25.300
+Like every other average we've
+seen,
+
+00:40:25.300 --> 00:40:28.360
+somewhere in here there's going
+to be a 1 over n times the sum.
+
+00:40:28.360 --> 00:40:30.240
+If we're using squared loss,
+
+00:40:30.240 --> 00:40:33.900
+it's going to be yi minus our
+prediction squared.
+
+00:40:33.900 --> 00:40:35.620
+It's just that our prediction
+now,
+
+00:40:35.620 --> 00:40:39.370
+let's make this a little
+smaller,
+
+00:40:39.560 --> 00:40:41.810
+looks like this.
+
+00:40:46.320 --> 00:40:50.070
+How many input variables does
+this function have?
+
+00:40:51.620 --> 00:40:53.340
+This is, once again, just mean
+squared error.
+
+00:40:53.340 --> 00:40:57.090
+But how many input variables
+would I say this has?
+
+00:40:57.960 --> 00:40:59.700
+I don't know.
+Yeah, three.
+
+00:40:59.700 --> 00:41:00.700
+Good.
+
+00:41:01.800 --> 00:41:04.800
+W0, W1, and W2.
+
+00:41:09.920 --> 00:41:12.920
+Now, how do I find the optimal
+w's here?
+
+00:41:12.920 --> 00:41:13.360
+Well,
+
+00:41:13.360 --> 00:41:16.420
+one thing I could do is I could
+take the partial derivatives of
+
+00:41:16.420 --> 00:41:18.980
+this mean squared error function
+with respect to w0,
+
+00:41:18.980 --> 00:41:20.830
+w1, and w2
+
+00:41:20.830 --> 00:41:24.260
+and solve where they're all
+equal to 0.
+
+00:41:24.260 --> 00:41:29.510
+But I guess the short answer is
+that taking partial derivatives
+
+00:41:32.440 --> 00:41:34.690
+will get messy.
+
+00:41:36.740 --> 00:41:40.460
+And then what if I introduced
+another input variable and thus
+
+00:41:40.460 --> 00:41:41.780
+another parameter?
+
+00:41:41.780 --> 00:41:44.280
+Then I need to take four partial
+derivatives, and each one would
+
+00:41:44.280 --> 00:41:46.120
+involve all four variables.
+
+00:41:46.120 --> 00:41:50.260
+And solving for where all four
+partial derivatives is equal to
+
+00:41:50.260 --> 00:41:52.380
+zero will get complicated.
+
+00:41:52.380 --> 00:41:55.640
+So what would be nice is if we
+could come up with one recipe
+
+00:41:55.640 --> 00:42:00.620
+that tells us what the optimal
+w's are supposed to be, no
+
+00:42:00.620 --> 00:42:03.200
+matter how many parameters we
+have.
+
+00:42:03.200 --> 00:42:08.080
+So we don't need to re-follow
+these steps differently
+
+00:42:08.080 --> 00:42:10.720
+depending on if we have three
+parameters, which would be if we
+
+00:42:10.720 --> 00:42:11.980
+had two input variables,
+
+00:42:11.980 --> 00:42:15.700
+or 17 parameters, which would be
+if we had 16 input variables.
+
+00:42:15.700 --> 00:42:17.460
+It would be nice if we could
+just come up with one way of
+
+00:42:17.460 --> 00:42:17.880
+saying,
+
+00:42:17.880 --> 00:42:19.840
+here are the optimal parameters,
+
+00:42:19.840 --> 00:42:21.720
+plug in your data set, and it
+will tell you what they're
+
+00:42:21.720 --> 00:42:23.700
+supposed to be.
+I don't care how many features
+
+00:42:23.700 --> 00:42:25.200
+you have.
+
+00:42:25.480 --> 00:42:28.480
+And linear algebra will be the
+tool that gets us there.
+
+00:42:28.480 --> 00:42:30.140
+The short answer is,
+
+00:42:30.140 --> 00:42:34.040
+over the next month or month and
+a half we are going to define
+
+00:42:34.040 --> 00:42:37.460
+what's called a parameter
+vector, in which these w's,
+
+00:42:37.500 --> 00:42:41.600
+where there are three right now,
+w0, w1, w2, but eventually a w3,
+
+00:42:41.600 --> 00:42:44.680
+w4, all the way through wd,
+
+00:42:44.680 --> 00:42:46.840
+which will be our placeholder
+for the number of features we
+
+00:42:46.840 --> 00:42:47.740
+use,
+
+00:42:47.740 --> 00:42:50.420
+all of those are wrapped in one
+parameter vector.
+
+00:42:50.420 --> 00:42:54.380
+And what we will be able to do
+is express mean squared error in
+
+00:42:54.380 --> 00:42:57.980
+terms of these objects that are
+nice placeholders that
+
+00:42:57.980 --> 00:43:01.240
+don't require you to explicitly
+enumerate how many features you
+
+00:43:01.240 --> 00:43:03.060
+have and redo the math every
+time.
+
+00:43:03.060 --> 00:43:06.300
+We can come up with one general
+solution that allows us to use
+
+00:43:06.300 --> 00:43:08.200
+as many features as we want.
+
+00:43:08.200 --> 00:43:09.520
+But to work there,
+
+00:43:09.520 --> 00:43:11.920
+we're going to have to introduce
+a lot of ideas from linear
+
+00:43:11.920 --> 00:43:12.900
+algebra.
+
+00:43:12.900 --> 00:43:15.520
+But everything we're about to do
+over the next month,
+
+00:43:15.520 --> 00:43:18.580
+while it may seem disconnected
+from this goal, it is all in
+
+00:43:18.580 --> 00:43:21.080
+service of coming back to this
+question.
+
+00:43:21.080 --> 00:43:22.360
+So at some point,
+
+00:43:22.360 --> 00:43:24.740
+it'll be after midterm one,
+before midterm two,
+
+00:43:24.740 --> 00:43:27.480
+we're going to revisit this
+problem exactly and use linear
+
+00:43:27.480 --> 00:43:29.800
+algebra to find these optimal
+w's.
+
+00:43:29.800 --> 00:43:32.680
+And by the way, one of the cool
+things of how this is set up is
+
+00:43:32.680 --> 00:43:36.020
+that when we use the linear
+algebra solution to find the
+
+00:43:36.020 --> 00:43:37.520
+optimal parameters,
+
+00:43:38.260 --> 00:43:41.620
+it will also equal the other
+formulas we found before.
+
+00:43:41.620 --> 00:43:44.960
+So even in the case where we
+just had one input variable And
+
+00:43:44.960 --> 00:43:47.980
+we did the partial derivative
+math ourselves.
+
+00:43:47.980 --> 00:43:51.700
+So the linear algebra solution
+we find in about a month will
+
+00:43:51.700 --> 00:43:55.260
+match, in the case where you
+just have one input variable,
+
+00:43:55.260 --> 00:43:56.840
+the solutions that we just saw,
+
+00:43:56.840 --> 00:44:00.420
+including the ones that involve
+the correlation coefficient.
+
+00:44:00.420 --> 00:44:03.260
+So that's a roadmap of where we
+are heading
+
+00:44:03.260 --> 00:44:07.400
+and why we kind of need tools
+from linear algebra to move any
+
+00:44:07.400 --> 00:44:08.400
+further.
+
+00:44:09.240 --> 00:44:12.800
+Does that sound OK? All right,
+so we're convinced why linear
+
+00:44:12.800 --> 00:44:15.080
+algebra is necessary at this
+point.
+
+00:44:15.080 --> 00:44:16.080
+Okay,
+
+00:44:16.140 --> 00:44:20.520
+so this is a good time to take
+attendance before we start
+
+00:44:20.520 --> 00:44:25.540
+getting into linear algebra.
+It's 11.14,
+
+00:44:26.100 --> 00:44:30.180
+we'll start again at 11.18,
+but in the meantime,
+
+00:44:31.520 --> 00:44:33.770
+log into attendance.
+
+00:44:34.480 --> 00:44:37.200
+And once again, where you find
+that is you go to the course
+
+00:44:37.200 --> 00:44:42.940
+website and click this
+attendance form at the top
+
+00:44:42.940 --> 00:44:43.940
+right.
+
+00:44:44.120 --> 00:44:47.870
+We'll start again at 11-18.
+
+00:45:38.840 --> 00:45:44.090
+I think we're used to one that
+can do it.
+
+00:45:46.160 --> 00:45:47.160
+See,
+
+00:45:48.380 --> 00:45:52.500
+my thing is that I've been doing
+it for four years, and I'm not
+
+00:45:52.500 --> 00:45:57.000
+going to do it right now.
+
+00:46:00.620 --> 00:46:02.560
+Oh, there's a black book we got
+now.
+
+00:46:02.560 --> 00:46:03.560
+Really?
+
+00:46:06.500 --> 00:46:07.760
+Yeah.
+I'm really thinking the same
+
+00:46:07.760 --> 00:46:08.760
+thing.
+
+00:46:26.360 --> 00:46:32.240
+Everyone check
+
+00:46:32.240 --> 00:46:32.660
+in.
+
+00:46:32.660 --> 00:47:02.640
+Dedicated
+
+00:47:02.640 --> 00:47:03.400
+the one
+
+00:47:03.400 --> 00:47:07.150
+I don't think it is
+
+00:47:33.940 --> 00:47:38.620
+I don't
+
+00:47:38.620 --> 00:47:44.600
+know because I won't mess it
+
+00:47:44.600 --> 00:47:45.860
+up.
+
+00:47:58.630 --> 00:48:00.100
+Okay.
+OK,
+
+00:48:01.740 --> 00:48:07.260
+let's get started now that we
+know where we are going to end
+
+00:48:07.260 --> 00:48:09.920
+up with our study of linear
+algebra.
+
+00:48:09.920 --> 00:48:13.860
+Let's start with the basics of
+vector.
+
+00:48:13.860 --> 00:48:19.110
+I'm going to define a vector as
+being
+
+00:48:20.500 --> 00:48:24.250
+an ordered list of numbers.
+
+00:48:29.800 --> 00:48:33.550
+I'll comment on what ordered
+means in just a second.
+
+00:48:33.780 --> 00:48:39.180
+But here is the notation we will
+use for vectors in this class.
+
+00:48:39.260 --> 00:48:44.860
+We will write them as columns in
+which the numbers are written on
+
+00:48:44.860 --> 00:48:45.960
+top of each other.
+
+00:48:45.960 --> 00:48:47.480
+So for example,
+
+00:48:47.480 --> 00:48:49.240
+3, negative 1,
+
+00:48:49.240 --> 00:48:49.880
+2,
+
+00:48:49.880 --> 00:48:52.130
+that's a vector.
+
+00:48:52.780 --> 00:48:53.620
+2,
+
+00:48:53.620 --> 00:48:55.100
+negative 1, 3,
+
+00:48:55.100 --> 00:48:57.000
+that's a different vector.
+
+00:48:57.000 --> 00:49:00.300
+That's what I mean by ordered.
+The order matters.
+
+00:49:00.300 --> 00:49:03.740
+There are objects in math, like
+a set, for example,
+
+00:49:03.740 --> 00:49:07.490
+in which order doesn't matter,
+but in a vector it does.
+
+00:49:08.400 --> 00:49:12.560
+The variables I will use to
+denote vectors will always be
+
+00:49:12.560 --> 00:49:17.000
+letters with this arrow on top.
+
+00:49:17.000 --> 00:49:19.700
+And as you will see over the
+next few lectures,
+
+00:49:19.700 --> 00:49:21.740
+we are going to get into,
+
+00:49:21.740 --> 00:49:24.440
+or we are going to see
+expressions and formulas that
+
+00:49:24.440 --> 00:49:25.940
+involve numbers,
+
+00:49:26.260 --> 00:49:26.820
+vectors,
+
+00:49:26.820 --> 00:49:27.560
+matrices,
+
+00:49:27.560 --> 00:49:29.220
+functions, There's lots of
+things.
+
+00:49:29.220 --> 00:49:33.060
+And it'll be important to keep
+track of what type of object the
+
+00:49:33.060 --> 00:49:35.380
+thing we are looking at is.
+That'll be a common question you
+
+00:49:35.380 --> 00:49:36.880
+are asked.
+Is this a vector?
+
+00:49:36.940 --> 00:49:37.920
+Is this a number?
+
+00:49:37.920 --> 00:49:39.200
+Is this a matrix?
+
+00:49:39.200 --> 00:49:44.080
+And one of the ways that we will
+keep track of our bookkeeping is
+
+00:49:44.080 --> 00:49:47.080
+by drawing these arrows
+
+00:49:47.880 --> 00:49:49.960
+on top of a vector.
+
+00:49:49.960 --> 00:49:52.640
+So if I say this first one is v,
+the second one is w,
+
+00:49:52.640 --> 00:49:55.540
+the fact that these vectors are
+ordered
+
+00:49:55.540 --> 00:50:00.600
+means that v and w are not the
+same vector, okay?
+
+00:50:00.600 --> 00:50:05.400
+Now both of these vectors have
+three things in them, so I'm
+
+00:50:05.400 --> 00:50:09.150
+gonna say they have three
+components or elements.
+
+00:50:10.160 --> 00:50:12.180
+I am NOT,
+
+00:50:12.180 --> 00:50:14.340
+and this is where we have to
+disassociate from how we think
+
+00:50:14.340 --> 00:50:16.060
+of things in programming,
+
+00:50:16.060 --> 00:50:19.540
+I am NOT going to say their
+length is three,
+
+00:50:19.540 --> 00:50:20.680
+do not say that,
+
+00:50:20.680 --> 00:50:21.280
+okay?
+
+00:50:21.280 --> 00:50:26.040
+Their length is measured using
+geometry and we're gonna look at
+
+00:50:26.040 --> 00:50:27.080
+that in just a second,
+
+00:50:27.080 --> 00:50:28.400
+okay? This is where,
+
+00:50:28.400 --> 00:50:31.480
+you know, if these were stored
+as an array in Python,
+
+00:50:31.480 --> 00:50:33.340
+Python would tell you that its
+length is three, but
+
+00:50:33.340 --> 00:50:36.120
+mathematically that's not what
+its length is.
+
+00:50:36.120 --> 00:50:42.080
+But the fact that V and W both
+have three elements is often
+
+00:50:42.080 --> 00:50:46.260
+denoted notationally in the
+following way.
+
+00:50:53.820 --> 00:50:57.780
+How do I make sense of this?
+
+00:50:57.780 --> 00:50:58.660
+I have v.
+
+00:50:58.660 --> 00:51:01.500
+What does this symbol mean?
+
+00:51:01.500 --> 00:51:02.500
+In,
+
+00:51:02.500 --> 00:51:03.500
+right?
+
+00:51:04.460 --> 00:51:08.720
+And what does the second symbol
+mean?
+
+00:51:08.720 --> 00:51:09.920
+Anyone know?
+
+00:51:09.920 --> 00:51:11.420
+Yeah.
+The real number is cubed?
+
+00:51:11.900 --> 00:51:15.040
+Yeah, it's not quite cubed.
+But the way you should think of
+
+00:51:15.040 --> 00:51:18.780
+this is that v is in the set of
+vectors
+
+00:51:18.780 --> 00:51:20.560
+who have three components,
+
+00:51:20.560 --> 00:51:22.820
+all of which are real numbers.
+
+00:51:22.820 --> 00:51:24.580
+So you should think of this set,
+
+00:51:24.580 --> 00:51:27.060
+which I would call r3,
+
+00:51:27.060 --> 00:51:30.800
+as being the set of vectors with
+three numbers in them,
+
+00:51:30.800 --> 00:51:32.480
+all of which are real numbers.
+
+00:51:32.480 --> 00:51:35.540
+You could imagine there exists a
+z3,
+
+00:51:35.540 --> 00:51:39.140
+which is the set of vectors with
+three integer components.
+
+00:51:39.140 --> 00:51:42.300
+And sort of like in some
+discrete math and cryptography
+
+00:51:42.300 --> 00:51:43.500
+settings, you may work with
+that.
+
+00:51:43.500 --> 00:51:47.580
+But for us, all of our vectors
+will involve real numbers.
+
+00:51:47.580 --> 00:51:52.080
+And so the way you will
+pronounce this,
+
+00:51:52.580 --> 00:51:55.140
+and maybe I can just write this
+down here,
+
+00:51:55.140 --> 00:52:01.000
+is that v is in R3,
+
+00:52:02.760 --> 00:52:07.740
+and R3 is the set of
+
+00:52:07.740 --> 00:52:08.980
+vectors
+
+00:52:10.920 --> 00:52:14.680
+with three real number
+components.
+
+00:52:19.500 --> 00:52:24.000
+W is also in R3 here.
+
+00:52:25.320 --> 00:52:26.820
+Sound reasonable?
+
+00:52:27.040 --> 00:52:28.100
+Okay good.
+
+00:52:28.100 --> 00:52:31.500
+Because starting today and in
+your like tomorrow's lab and the
+
+00:52:31.500 --> 00:52:33.540
+following homework there's gonna
+be a lot of notation thrown at
+
+00:52:33.540 --> 00:52:37.280
+you and part of what we're
+training you to do here is to be
+
+00:52:37.280 --> 00:52:39.940
+able to look at new foreign math
+that you haven't seen before
+
+00:52:39.940 --> 00:52:42.280
+with new notation and make sense
+of it.
+
+00:52:42.280 --> 00:52:45.580
+So some of this is like a
+grammar exercise.
+
+00:52:45.580 --> 00:52:47.640
+Now, this is great.
+We have two examples of vectors
+
+00:52:47.640 --> 00:52:48.920
+that are in R3.
+
+00:52:48.920 --> 00:52:50.860
+But in general,
+
+00:52:50.860 --> 00:52:53.680
+the placeholder that I'm going
+to use for the number of things
+
+00:52:53.680 --> 00:52:54.860
+in a vector
+
+00:52:54.860 --> 00:52:57.340
+is what? If you had to guess
+based on the choices I've made
+
+00:52:57.340 --> 00:52:59.400
+this semester of the variables
+to use,
+
+00:52:59.400 --> 00:53:01.540
+what do you think the
+placeholder will be for the
+
+00:53:01.540 --> 00:53:05.280
+number of things in a vector?
+
+00:53:05.280 --> 00:53:06.880
+What is a natural choice? Emma,
+
+00:53:06.880 --> 00:53:08.380
+N, yeah.
+
+00:53:08.720 --> 00:53:14.380
+I'm trying to tie all of this
+back to the setting in which we
+
+00:53:14.380 --> 00:53:16.080
+have N data points.
+
+00:53:16.080 --> 00:53:18.600
+And so eventually, we will make
+that connection clear.
+
+00:53:18.600 --> 00:53:23.800
+But N will be our placeholder
+for the number of things in a
+
+00:53:23.800 --> 00:53:24.800
+vector.
+
+00:53:25.600 --> 00:53:28.860
+So Rn is like the general
+template for the universe
+
+00:53:28.860 --> 00:53:30.360
+vectors living.
+
+00:53:32.340 --> 00:53:36.020
+And often, when defining
+formulas or operations that
+
+00:53:36.020 --> 00:53:39.020
+vectors in Rn support,
+
+00:53:39.960 --> 00:53:45.720
+we will say that the elements in
+this vector are v1 through
+
+00:53:45.720 --> 00:53:46.720
+vn.
+
+00:53:48.020 --> 00:53:49.020
+Here,
+
+00:53:50.100 --> 00:53:53.940
+each vi is a scalar.
+
+00:53:56.000 --> 00:53:58.880
+Can someone remind me what a
+scalar is?
+
+00:53:58.880 --> 00:53:59.880
+Yeah.
+
+00:54:05.280 --> 00:54:09.560
+I think you're getting a little
+into the definition of a vector.
+
+00:54:09.560 --> 00:54:13.310
+What is just a scalar?
+
+00:54:14.140 --> 00:54:17.890
+Just exactly, just one number.
+
+00:54:21.400 --> 00:54:24.660
+So scalar and number really mean
+the same thing.
+
+00:54:24.660 --> 00:54:26.920
+It's just that in the context of
+when you're dealing with vectors
+
+00:54:26.920 --> 00:54:30.640
+we use the word scalar to
+emphasize is that a scalar is
+
+00:54:30.640 --> 00:54:35.520
+one number, a vector is a
+collection of numbers, OK?
+
+00:54:36.020 --> 00:54:40.520
+So here, the vi's are scalars.
+But in another context,
+
+00:54:44.380 --> 00:54:48.130
+vi could be a vector.
+
+00:54:48.220 --> 00:54:50.140
+But if it were a vector,
+
+00:54:50.140 --> 00:54:53.890
+how would I write it
+differently?
+
+00:54:55.660 --> 00:54:58.140
+If Vi was a vector,
+
+00:54:58.140 --> 00:54:59.880
+it would have an arrow on it.
+
+00:54:59.880 --> 00:55:03.630
+That's why it's important to
+keep our notation straight.
+
+00:55:04.340 --> 00:55:09.180
+So you can imagine either the
+end of today or on Thursday,
+
+00:55:09.790 --> 00:55:15.140
+I will define an operation that
+takes in an arbitrary number of
+
+00:55:15.140 --> 00:55:16.680
+vectors.
+And I'm going to need to think
+
+00:55:16.680 --> 00:55:18.660
+of a new placeholder number for
+that.
+
+00:55:18.660 --> 00:55:20.980
+Here I have just one vector v,
+and I'm saying it has n things
+
+00:55:20.980 --> 00:55:21.700
+in it.
+
+00:55:21.700 --> 00:55:22.900
+But what if I have,
+
+00:55:22.900 --> 00:55:25.320
+I don't know how many vectors I
+have, but I have just some
+
+00:55:25.320 --> 00:55:27.460
+general number of vectors.
+I need another placeholder for
+
+00:55:27.460 --> 00:55:28.460
+that.
+
+00:55:28.460 --> 00:55:32.300
+And that formula will involve
+vectors v1, v2, v3.
+
+00:55:32.400 --> 00:55:34.220
+And then those will be vectors.
+
+00:55:34.220 --> 00:55:35.140
+But for now,
+
+00:55:35.140 --> 00:55:36.840
+if there's no arrow on top,
+
+00:55:36.840 --> 00:55:38.000
+they're scalars.
+
+00:55:38.000 --> 00:55:40.760
+Questions with our notation so
+far?
+
+00:55:40.760 --> 00:55:42.260
+I'm OK?
+
+00:55:42.500 --> 00:55:43.220
+All right.
+
+00:55:43.220 --> 00:55:45.900
+So the first natural thing to
+get into before we look at
+
+00:55:45.900 --> 00:55:49.400
+operations with vectors is to
+readdress that point I made
+
+00:55:49.400 --> 00:55:54.620
+about the length of a vector,
+okay?
+
+00:55:55.140 --> 00:55:58.120
+To illustrate, why don't we use
+the vector u, and I'm gonna draw
+
+00:55:58.120 --> 00:55:59.840
+this in orange,
+
+00:55:59.840 --> 00:56:01.080
+3, 1.
+
+00:56:01.080 --> 00:56:03.200
+A tiny detail that I don't think
+anyone really cares about, but
+
+00:56:03.200 --> 00:56:05.460
+it's important to me, is that if
+you look at the course notes in
+
+00:56:05.460 --> 00:56:06.580
+chapter 3,
+
+00:56:06.580 --> 00:56:09.820
+every vector u is always orange
+and every vector v is always
+
+00:56:09.820 --> 00:56:13.960
+blue, but I use the same orange
+and blue that my iPad notability
+
+00:56:13.960 --> 00:56:15.880
+or GoodNotes uses as well.
+So if you, like, took a
+
+00:56:15.880 --> 00:56:17.780
+screenshot and looked at this
+orange versus the notes orange,
+
+00:56:17.780 --> 00:56:18.600
+it's the same.
+
+00:56:18.600 --> 00:56:22.440
+This blue and the notes blue is
+also the same.
+
+00:56:22.440 --> 00:56:24.940
+No one really cares, but it's
+good to have attention to
+
+00:56:24.940 --> 00:56:25.940
+detail.
+
+00:56:26.860 --> 00:56:31.060
+How might we visualize this
+vector u?
+
+00:56:33.260 --> 00:56:35.340
+If you've seen this before,
+what's the most natural way to
+
+00:56:35.340 --> 00:56:37.180
+visualize this vector u?
+
+00:56:37.180 --> 00:56:37.640
+Yeah?
+
+00:56:37.640 --> 00:56:41.520
+You can make 3 the x-axis and
+then 1 on the y-axis.
+
+00:56:41.520 --> 00:56:43.960
+Exactly.
+The way to think about this is
+
+00:56:43.960 --> 00:56:49.760
+that this is a vector that moves
+three units to the right, or
+
+00:56:49.760 --> 00:56:51.060
+three on the x-axis,
+
+00:56:51.060 --> 00:56:54.060
+and one unit up.
+
+00:56:54.600 --> 00:56:58.000
+Another way of thinking about
+this is that it's the vector who
+
+00:56:58.000 --> 00:57:02.560
+points from the origin, which is
+the point zero zero,
+
+00:57:03.740 --> 00:57:09.580
+to the point
+
+00:57:09.580 --> 00:57:11.830
+three comma one.
+
+00:57:14.520 --> 00:57:18.060
+Now vectors do not have a fixed
+position,
+
+00:57:18.060 --> 00:57:18.420
+okay?
+
+00:57:18.420 --> 00:57:22.920
+So that is the vector u,
+
+00:57:24.720 --> 00:57:29.220
+but that's not the only place
+you could draw u.
+
+00:57:35.260 --> 00:57:39.010
+And this is also u.
+
+00:57:44.360 --> 00:57:46.460
+And this is also u.
+
+00:57:46.460 --> 00:57:50.280
+So the default way you should
+think of a vector is as being an
+
+00:57:50.280 --> 00:57:52.180
+arrow from the origin
+
+00:57:52.180 --> 00:57:56.240
+to the point that corresponds to
+the vector's components.
+
+00:57:56.240 --> 00:57:57.960
+That's the default way to think
+about it.
+
+00:57:57.960 --> 00:58:01.620
+But a vector is not forced to
+live anywhere, so depending on
+
+00:58:01.620 --> 00:58:04.440
+the operation we're looking at,
+we may draw the vector as
+
+00:58:04.440 --> 00:58:06.690
+starting somewhere else.
+
+00:58:08.220 --> 00:58:10.470
+Do we agree?
+
+00:58:10.720 --> 00:58:11.720
+Okay.
+
+00:58:16.680 --> 00:58:18.060
+And actually,
+
+00:58:18.060 --> 00:58:19.860
+I'll make a new slide for
+length.
+
+00:58:19.860 --> 00:58:22.720
+The point that I was trying to
+make here is a little different,
+
+00:58:22.720 --> 00:58:27.740
+which is that vectors You have
+no fixed
+
+00:58:27.740 --> 00:58:28.840
+position.
+
+00:58:33.180 --> 00:58:35.380
+Now back to the other point,
+
+00:58:35.380 --> 00:58:39.880
+which is measuring the length of
+a vector,
+
+00:58:41.160 --> 00:58:44.880
+what is the most natural way to
+measure the length of this
+
+00:58:44.880 --> 00:58:46.380
+vector u?
+
+00:58:47.260 --> 00:58:47.880
+Yeah, Bella.
+
+00:58:47.880 --> 00:58:49.840
+You can use the distance
+formula.
+
+00:58:49.840 --> 00:58:51.640
+Yeah, or the Pythagorean
+theorem,
+
+00:58:51.640 --> 00:58:56.140
+our good old friend, Which says
+that this vector
+
+00:58:57.200 --> 00:59:02.260
+Looks like the hypotenuse of a
+right-angled triangle whose legs
+
+00:59:02.260 --> 00:59:05.080
+have lengths three and one
+
+00:59:05.080 --> 00:59:08.000
+What does the Pythagorean
+theorem tell us?
+
+00:59:08.000 --> 00:59:12.840
+It tells us the length of u is
+the square root of 3 squared
+
+00:59:12.840 --> 00:59:15.090
+plus 1 squared
+
+00:59:15.260 --> 00:59:19.480
+Which is the square root of 10?
+Sound familiar?
+
+00:59:19.480 --> 00:59:20.480
+Okay
+
+00:59:20.520 --> 00:59:26.100
+The notation we will use for the
+length of a vector is this.
+
+00:59:27.980 --> 00:59:30.980
+These double vertical bars.
+
+00:59:31.980 --> 00:59:34.800
+In some other classes, they may
+just use a single vertical bar,
+
+00:59:34.800 --> 00:59:38.400
+but I like using the double
+vertical bars to emphasize that
+
+00:59:38.400 --> 00:59:41.120
+this is not the same as the
+absolute value of a number.
+
+00:59:41.120 --> 00:59:42.880
+It's like a different operation,
+
+00:59:42.880 --> 00:59:45.320
+and it's measuring the length of
+a vector.
+
+00:59:45.320 --> 00:59:49.820
+Now, there are lots of other
+names that this length goes by,
+
+00:59:50.080 --> 00:59:51.700
+there's length,
+
+00:59:53.840 --> 00:59:55.100
+magnitude,
+
+00:59:58.540 --> 00:59:59.980
+and norm.
+
+00:59:59.980 --> 01:00:02.760
+These all refer to the same
+idea.
+
+01:00:02.760 --> 01:00:05.000
+And magnitude may be one that
+you're familiar with from
+
+01:00:05.000 --> 01:00:07.760
+physics class, because there
+they will have defined a vector
+
+01:00:07.760 --> 01:00:11.260
+as being an object with a
+magnitude and a direction.
+
+01:00:11.260 --> 01:00:12.480
+This may be familiar.
+
+01:00:12.480 --> 01:00:14.960
+And the direction of a vector is
+something we're going to talk
+
+01:00:14.960 --> 01:00:16.980
+about more on Thursday.
+
+01:00:16.980 --> 01:00:17.620
+OK,
+
+01:00:17.620 --> 01:00:19.660
+these all refer to the same
+thing.
+
+01:00:19.660 --> 01:00:20.360
+Now,
+
+01:00:20.360 --> 01:00:24.420
+let me comment on the idea of a
+norm here.
+
+01:00:24.420 --> 01:00:27.680
+What we're using here is one way
+of measuring how long a vector
+
+01:00:27.680 --> 01:00:28.680
+is,
+
+01:00:29.060 --> 01:00:30.660
+which is using the Pythagorean
+theorem,
+
+01:00:30.660 --> 01:00:31.660
+which
+
+01:00:31.920 --> 01:00:34.940
+we've established follows rules
+of geometry that we're familiar
+
+01:00:34.940 --> 01:00:35.900
+with.
+
+01:00:35.900 --> 01:00:38.400
+It is not the only way we could
+have measured the length of this
+
+01:00:38.400 --> 01:00:39.400
+vector.
+
+01:00:39.940 --> 01:00:42.520
+What is another way you could
+have measured the length of this
+
+01:00:42.520 --> 01:00:43.260
+vector?
+
+01:00:43.260 --> 01:00:45.300
+It would be a different formula,
+not equal to, And it wouldn't
+
+01:00:45.300 --> 01:00:46.860
+give you the square root of 10.
+
+01:00:46.860 --> 01:00:50.260
+But it would be like there's an
+alternative way of measuring how
+
+01:00:50.260 --> 01:00:52.500
+long this vector is.
+
+01:00:52.500 --> 01:00:57.750
+Anyone think of one, or have you
+seen one before?
+
+01:01:01.180 --> 01:01:05.020
+Another way you could measure
+the length of a vector is using
+
+01:01:05.020 --> 01:01:07.920
+what's called its Manhattan
+distance,
+
+01:01:07.920 --> 01:01:12.680
+which is counting the number of
+units you have to move left and
+
+01:01:12.680 --> 01:01:15.700
+right plus the number of units
+you have to move up and down to
+
+01:01:15.700 --> 01:01:18.320
+get from the end of the vector,
+
+01:01:18.320 --> 01:01:20.220
+the beginning of the vector to
+the end.
+
+01:01:20.220 --> 01:01:23.140
+So here, that would be 3 plus 1,
+which is 4.
+
+01:01:23.140 --> 01:01:24.700
+Why is it called Manhattan
+distance? Well, if you've been
+
+01:01:24.700 --> 01:01:26.240
+to New York, you know.
+
+01:01:26.240 --> 01:01:28.920
+And most of it, the streets are
+organized like a nice grid.
+
+01:01:28.920 --> 01:01:31.200
+And to get between one point and
+another point, you have to walk
+
+01:01:31.200 --> 01:01:33.140
+left and right and then walk up
+and down.
+
+01:01:33.140 --> 01:01:34.800
+That's what this is named after.
+
+01:01:34.800 --> 01:01:36.880
+That's one way.
+There are several other ways you
+
+01:01:36.880 --> 01:01:37.500
+could
+
+01:01:37.500 --> 01:01:42.000
+measure the length of a vector.
+And if you look at chapter 3.2,
+
+01:01:43.360 --> 01:01:47.500
+it describes other
+
+01:01:47.500 --> 01:01:51.520
+ways of measuring length.
+
+01:01:55.480 --> 01:02:00.740
+The fact that this is using the
+regular Pythagorean theorem way,
+
+01:02:02.340 --> 01:02:06.440
+sometimes to make that super
+clear, we will write a subscript
+
+01:02:06.440 --> 01:02:11.200
+2 here.
+And all that means is that these
+
+01:02:11.200 --> 01:02:13.700
+individual components are being
+squared.
+
+01:02:13.700 --> 01:02:16.580
+But this is the default way.
+If we don't give any more
+
+01:02:16.580 --> 01:02:19.440
+details on how we are measuring
+the length, it is by using the
+
+01:02:19.440 --> 01:02:20.800
+Pythagorean theorem.
+
+01:02:20.800 --> 01:02:22.240
+But wait, you may say.
+
+01:02:22.240 --> 01:02:24.600
+This is the Pythagorean theorem
+that you've heard of only works
+
+01:02:24.600 --> 01:02:25.780
+in two dimensions.
+
+01:02:25.780 --> 01:02:28.260
+What about vectors with three
+numbers or four numbers or five
+
+01:02:28.260 --> 01:02:29.260
+numbers?
+
+01:02:30.520 --> 01:02:34.100
+I want you to guess how the
+formula extends, But at least in
+
+01:02:34.100 --> 01:02:35.600
+three dimensions,
+
+01:02:36.880 --> 01:02:40.080
+we can draw another visual.
+
+01:02:40.080 --> 01:02:44.700
+What I've drawn here in pink is
+the vector 6,
+
+01:02:44.700 --> 01:02:45.920
+negative 2,
+
+01:02:45.920 --> 01:02:46.920
+3.
+
+01:02:47.680 --> 01:02:50.900
+And what I've done here is I've
+given,
+
+01:02:50.900 --> 01:02:54.720
+as an expression, the most
+natural extension of the length
+
+01:02:54.720 --> 01:02:57.780
+formula to a vector with three
+things in it.
+
+01:02:57.780 --> 01:03:01.580
+It's the square root of the sum
+of the numbers in it
+
+01:03:01.580 --> 01:03:02.580
+squared.
+
+01:03:03.040 --> 01:03:04.720
+Do you agree that that's like a
+natural extension of the
+
+01:03:04.720 --> 01:03:06.220
+Pythagorean theorem?
+
+01:03:06.580 --> 01:03:07.240
+OK.
+
+01:03:07.240 --> 01:03:09.220
+The fact that I have a negative
+2 there,
+
+01:03:09.220 --> 01:03:11.320
+it could have been positive 2,
+it doesn't matter.
+
+01:03:11.320 --> 01:03:14.480
+It's just easier to define the
+formula in terms of the
+
+01:03:14.480 --> 01:03:15.600
+components themselves.
+
+01:03:15.600 --> 01:03:17.800
+But why does this measure the
+length of this vector, 6,
+
+01:03:17.800 --> 01:03:20.040
+negative 2, 3?
+
+01:03:20.040 --> 01:03:20.820
+OK.
+
+01:03:20.820 --> 01:03:23.540
+The cop-out answer would be,
+because I said it is, because
+
+01:03:23.540 --> 01:03:24.800
+that's the definition.
+
+01:03:24.800 --> 01:03:27.360
+But we can think about this
+geometrically as well.
+
+01:03:27.360 --> 01:03:31.780
+So if you play around with this
+picture, What you'll notice is
+
+01:03:31.780 --> 01:03:36.480
+that there are two right angle
+triangles at play here.
+
+01:03:36.700 --> 01:03:39.540
+If I take this bird's eye view
+where I don't have any depth
+
+01:03:39.540 --> 01:03:42.400
+perception, I can't look at
+height here, I have this first
+
+01:03:42.400 --> 01:03:44.650
+right angle triangle.
+
+01:03:45.240 --> 01:03:49.060
+One of its legs has a length of
+six and the other has a length
+
+01:03:49.060 --> 01:03:50.040
+of two.
+
+01:03:50.040 --> 01:03:52.960
+And notice six and two, these
+lengths are coming from the x
+
+01:03:52.960 --> 01:03:56.500
+and y axis coordinates of the
+vector six, negative two, and
+
+01:03:56.500 --> 01:03:57.500
+three,
+
+01:03:57.500 --> 01:03:58.840
+right? This 2,
+
+01:03:58.840 --> 01:04:01.480
+the 2 that's running
+horizontally on the page here,
+
+01:04:01.480 --> 01:04:03.000
+is going from the point 0,
+
+01:04:03.000 --> 01:04:07.220
+0, 0 in 3D to 0, negative 2, 0.
+
+01:04:07.220 --> 01:04:09.560
+But it still has a length of 2.
+
+01:04:09.560 --> 01:04:12.660
+And the taller leg has a length
+of 6.
+
+01:04:12.660 --> 01:04:15.240
+Do we see where the numbers 2
+and 6 are coming from in the
+
+01:04:15.240 --> 01:04:18.960
+context of 6, negative 2, and 3?
+
+01:04:18.960 --> 01:04:21.760
+So this right angle triangle,
+the one that's in this shaded
+
+01:04:21.760 --> 01:04:25.020
+blue here, it has a hypotenuse.
+And what is the length of its
+
+01:04:25.020 --> 01:04:26.020
+hypotenuse?
+
+01:04:29.780 --> 01:04:32.060
+What is the length of the
+hypotenuse of the right angle
+
+01:04:32.060 --> 01:04:33.280
+triangle we're looking at?
+
+01:04:33.280 --> 01:04:34.520
+The blue one.
+
+01:04:34.520 --> 01:04:35.320
+Yeah, that's that one.
+
+01:04:35.320 --> 01:04:35.960
+Square root of 40.
+
+01:04:35.960 --> 01:04:38.120
+Square root of 40, right? We
+just apply the Pythagorean
+
+01:04:38.120 --> 01:04:38.960
+theorem
+
+01:04:38.960 --> 01:04:42.640
+to a right angle triangle whose
+side lengths are 2 and 6.
+
+01:04:42.640 --> 01:04:46.200
+So now we've got the hypotenuse
+of this blue triangle is square
+
+01:04:46.200 --> 01:04:47.620
+root of 40.
+
+01:04:47.620 --> 01:04:49.620
+Now we're going to rotate here
+and say,
+
+01:04:49.620 --> 01:04:49.840
+OK,
+
+01:04:49.840 --> 01:04:51.120
+forget about that one.
+
+01:04:51.120 --> 01:04:53.660
+Now we've got another right
+angle triangle.
+
+01:04:53.660 --> 01:04:56.960
+And what are the side length
+legs here, are the legs of the
+
+01:04:56.960 --> 01:04:58.240
+side lengths here,
+
+01:04:58.240 --> 01:05:00.620
+the lengths of the side lengths.
+
+01:05:00.620 --> 01:05:01.960
+What are those?
+
+01:05:01.960 --> 01:05:05.180
+The two perpendicular legs here,
+what are their lengths?
+
+01:05:05.180 --> 01:05:07.060
+Yeah? Square root of 40 and 3.
+
+01:05:07.060 --> 01:05:07.800
+Yeah.
+
+01:05:07.800 --> 01:05:10.940
+The longer leg here is the
+square root of 4, which is the
+
+01:05:10.940 --> 01:05:14.600
+hypotenuse of the first triangle
+we saw.
+
+01:05:14.600 --> 01:05:17.080
+Do we see that?
+
+01:05:17.080 --> 01:05:20.780
+This leg that's labeled H behind
+the pink wall here.
+
+01:05:20.780 --> 01:05:23.480
+That's square root of 40, and
+the height is 3.
+
+01:05:23.480 --> 01:05:26.220
+And so what is the overall
+length? Well, it's the square
+
+01:05:26.220 --> 01:05:30.240
+root of 40 plus 3 squared,
+
+01:05:30.240 --> 01:05:32.140
+which is the square root of 49,
+
+01:05:32.140 --> 01:05:33.080
+which is 7.
+
+01:05:33.080 --> 01:05:35.400
+If we just unwrap that formula,
+
+01:05:35.400 --> 01:05:38.040
+how did we get the 40 under the
+square root?
+
+01:05:38.040 --> 01:05:41.320
+Well, it was just 2 squared plus
+6 squared.
+
+01:05:41.320 --> 01:05:44.680
+So the overall length is just
+the square root of 2 squared
+
+01:05:44.680 --> 01:05:46.960
+plus 6 squared plus 3 squared,
+
+01:05:46.960 --> 01:05:50.060
+which is the square root of the
+sum of the squares of the
+
+01:05:50.060 --> 01:05:51.060
+components,
+
+01:05:51.540 --> 01:05:54.580
+which is what we started with.
+
+01:05:54.580 --> 01:05:57.060
+So do we see how the length of
+this vector w
+
+01:05:57.060 --> 01:06:00.760
+is really just the square root
+of the sum of the squares of the
+
+01:06:00.760 --> 01:06:01.760
+components?
+
+01:06:02.160 --> 01:06:04.160
+Square root of 6 squared plus
+negative 2 squared plus 3
+
+01:06:04.160 --> 01:06:05.160
+squared.
+
+01:06:06.060 --> 01:06:08.760
+After class, I want you to come
+to this picture and play around
+
+01:06:08.760 --> 01:06:11.100
+with it and make sense of it.
+When we start thinking in three
+
+01:06:11.100 --> 01:06:14.440
+dimensions, it can be hard to
+wrap your head around what's
+
+01:06:14.440 --> 01:06:15.820
+going on.
+
+01:06:15.820 --> 01:06:17.460
+And it would be easy to just
+say, like, all right, well,
+
+01:06:17.460 --> 01:06:18.760
+here's the definition of the
+length.
+
+01:06:18.760 --> 01:06:19.900
+Here's what it said in the
+textbook.
+
+01:06:19.900 --> 01:06:22.020
+So I'm giving it to you.
+But I want you to understand
+
+01:06:22.020 --> 01:06:24.860
+where these things come from.
+
+01:06:24.860 --> 01:06:30.110
+So this gives us a way of
+defining
+
+01:06:31.160 --> 01:06:36.410
+the length of a vector in Rn.
+
+01:06:38.060 --> 01:06:42.300
+Can someone tell me what that
+formula would look like?
+
+01:06:42.300 --> 01:06:45.400
+The length of a vector in Rn.
+
+01:06:45.400 --> 01:06:46.240
+Yeah, Allison.
+
+01:06:46.240 --> 01:06:52.240
+Square root of the sum of i
+equals 1 to n
+
+01:06:52.240 --> 01:06:56.960
+of Vi squared.
+
+01:06:57.260 --> 01:06:57.760
+Good.
+
+01:06:57.760 --> 01:07:01.060
+Remember, the default
+placeholder for the ith element
+
+01:07:01.060 --> 01:07:03.260
+in a vector is Vi.
+
+01:07:03.260 --> 01:07:08.780
+So this would be the square root
+of the sum of Vi squared.
+
+01:07:09.480 --> 01:07:11.500
+And if I write that without
+summation notation, it's going
+
+01:07:11.500 --> 01:07:17.160
+to look like V1 squared plus V2
+squared plus through
+
+01:07:17.160 --> 01:07:18.660
+vn squared,
+
+01:07:20.020 --> 01:07:20.960
+OK?
+
+01:07:20.960 --> 01:07:24.680
+And like I said, sometimes this
+is called the L2 norm,
+
+01:07:24.680 --> 01:07:27.680
+which is the default.
+
+01:07:28.000 --> 01:07:30.160
+But chapter 3.2
+tells you about some of the
+
+01:07:30.160 --> 01:07:34.660
+other norms, like the L1 norm,
+for example.
+
+01:07:34.660 --> 01:07:35.660
+OK,
+
+01:07:35.940 --> 01:07:40.440
+questions with the length of a
+vector so far?
+
+01:07:44.680 --> 01:07:46.180
+Seem OK?
+
+01:07:48.550 --> 01:07:49.520
+Seem reasonable?
+
+01:07:49.520 --> 01:07:50.520
+OK.
+
+01:07:50.900 --> 01:07:55.860
+So there are two key operations
+that vectors support.
+
+01:08:05.750 --> 01:08:08.700
+You can add them,
+
+01:08:08.700 --> 01:08:14.460
+and you can multiply them by a
+scalar.
+
+01:08:16.140 --> 01:08:19.100
+Notice I'm prefacing my
+definition of multiplication
+
+01:08:19.100 --> 01:08:22.100
+here with scalar, scalar
+multiplication.
+
+01:08:22.300 --> 01:08:24.400
+So what this will tell us how to
+do
+
+01:08:24.400 --> 01:08:28.580
+is multiply a vector by a single
+number.
+
+01:08:28.580 --> 01:08:32.340
+It turns out the idea of
+multiplying a vector,
+
+01:08:32.340 --> 01:08:33.780
+there's lots of ways you can do
+it.
+
+01:08:33.780 --> 01:08:37.140
+And next class, we will see ways
+that you could multiply a vector
+
+01:08:37.140 --> 01:08:38.020
+with another.
+
+01:08:38.020 --> 01:08:41.560
+But it doesn't necessarily work
+the way that you think it would.
+
+01:08:41.560 --> 01:08:42.560
+OK,
+
+01:08:42.660 --> 01:08:45.160
+so I want to start today by
+introducing addition
+
+01:08:45.160 --> 01:08:47.410
+and scalar multiplication.
+
+01:08:48.860 --> 01:08:49.500
+OK,
+
+01:08:49.500 --> 01:08:52.500
+let's start with addition.
+
+01:08:55.040 --> 01:08:57.980
+Suppose I have two vectors,
+
+01:08:57.980 --> 01:09:01.380
+u and v,
+
+01:09:02.420 --> 01:09:06.170
+and both are in Rn.
+
+01:09:06.460 --> 01:09:10.960
+What is the practical meaning of
+this?
+
+01:09:12.640 --> 01:09:14.840
+Why am I starting off by saying
+this?
+
+01:09:14.840 --> 01:09:16.820
+They have the same number of
+dimensions.
+
+01:09:16.820 --> 01:09:17.200
+Yeah,
+
+01:09:17.200 --> 01:09:21.700
+they have the same number of
+components.
+
+01:09:30.180 --> 01:09:35.980
+This is an important disclaimer
+to start with, because as you
+
+01:09:35.980 --> 01:09:38.700
+will see, it only makes sense to
+add vectors when they both have
+
+01:09:38.700 --> 01:09:40.240
+the same number of things in
+them.
+
+01:09:40.240 --> 01:09:42.700
+They both have five things, they
+both have two things, they both
+
+01:09:42.700 --> 01:09:44.950
+have three things.
+
+01:09:45.400 --> 01:09:50.650
+Now, let's suppose I add u and
+v.
+
+01:09:54.160 --> 01:09:55.480
+The result
+
+01:09:55.480 --> 01:09:57.500
+is a new vector.
+
+01:09:57.500 --> 01:10:00.200
+But what is in that new vector?
+
+01:10:00.200 --> 01:10:01.700
+Anyone know?
+
+01:10:02.440 --> 01:10:04.480
+So you have to guess how this
+works.
+
+01:10:04.480 --> 01:10:06.100
+If you add vectors u and v,
+
+01:10:06.100 --> 01:10:10.600
+what What are the components of
+the new vector u plus v?
+
+01:10:13.360 --> 01:10:15.610
+u1 plus v1.
+Good.
+
+01:10:15.920 --> 01:10:18.780
+The components get added up
+element-wise.
+
+01:10:18.780 --> 01:10:21.800
+So the first component of the
+new vector
+
+01:10:21.800 --> 01:10:27.050
+will be the first thing in u
+plus the first thing in v.
+
+01:10:27.460 --> 01:10:29.360
+The second thing in the new
+vector
+
+01:10:29.360 --> 01:10:34.610
+will be the second thing in u
+plus the second thing in v.
+
+01:10:36.780 --> 01:10:40.160
+And the last thing in the new
+vector will be the last thing in
+
+01:10:40.160 --> 01:10:45.410
+u plus the last thing in v.
+
+01:10:46.160 --> 01:10:49.920
+This definition tells you that u
+plus v is also equal to some
+
+01:10:49.920 --> 01:10:51.420
+other operation.
+
+01:10:51.820 --> 01:10:55.570
+What's it also equal to?
+
+01:10:57.440 --> 01:11:00.580
+It may seem like a little
+pedantic or
+
+01:11:00.580 --> 01:11:04.380
+obvious,
+
+01:11:04.920 --> 01:11:09.240
+but it's important for us to
+state this.
+
+01:11:09.240 --> 01:11:11.940
+Yes, it's also equal to v plus
+u.
+
+01:11:11.940 --> 01:11:15.040
+Now you may be saying like yeah,
+obviously u plus v equals v plus
+
+01:11:15.040 --> 01:11:16.580
+u That's like grade 2 math
+
+01:11:16.580 --> 01:11:19.940
+But the reason it's important to
+spell this out here is because
+
+01:11:19.940 --> 01:11:22.980
+soon we will see operations
+where this is no longer the case
+
+01:11:22.980 --> 01:11:27.300
+Up until now in your sort of
+math
+
+01:11:27.300 --> 01:11:30.040
+You're like journey of learning
+math almost every operation
+
+01:11:30.040 --> 01:11:34.720
+worked both ways I guess there's
+one that doesn't, which is
+
+01:11:34.720 --> 01:11:36.280
+division.
+2 divided by 3 is not the same
+
+01:11:36.280 --> 01:11:37.400
+as 3 divided by 2.
+
+01:11:37.400 --> 01:11:40.280
+But that feels a little more
+intuitive to us.
+
+01:11:40.280 --> 01:11:43.440
+Addition does work both ways.
+And what is actually the term
+
+01:11:43.440 --> 01:11:44.940
+for this?
+
+01:11:47.560 --> 01:11:50.780
+Vector addition is what?
+
+01:11:52.980 --> 01:11:53.980
+Commutative.
+
+01:12:04.400 --> 01:12:05.400
+Commutative,
+
+01:12:05.540 --> 01:12:07.860
+the property is called
+commutativity,
+
+01:12:07.860 --> 01:12:09.760
+is one of those weird words that
+you've heard of in math.
+
+01:12:09.760 --> 01:12:12.010
+There's also associativity,
+distributivity.
+
+01:12:12.140 --> 01:12:12.800
+To me,
+
+01:12:12.800 --> 01:12:15.420
+whether something is commutative
+is the most important of those
+
+01:12:15.420 --> 01:12:17.200
+because, as I said,
+
+01:12:17.200 --> 01:12:19.660
+we will soon see operations
+where they are no longer
+
+01:12:19.660 --> 01:12:22.380
+commutative when you would
+assume that they are.
+
+01:12:22.380 --> 01:12:24.800
+The way that I remember that
+this is what commutative refers
+
+01:12:24.800 --> 01:12:27.620
+to is that it sort of relates to
+our running example in the
+
+01:12:27.620 --> 01:12:28.280
+class.
+
+01:12:28.280 --> 01:12:30.620
+When you commute to work, you
+also go back.
+
+01:12:30.620 --> 01:12:33.340
+So like going there and coming
+back should be the same so like
+
+01:12:33.340 --> 01:12:36.800
+u plus v and v plus u should be
+the same
+
+01:12:36.800 --> 01:12:39.060
+They didn't put me in charge of
+naming things I'm just trying to
+
+01:12:39.060 --> 01:12:41.800
+help you understand so that's
+how I think of it Okay,
+
+01:12:41.800 --> 01:12:46.300
+so how do we visualize vector
+addition?
+
+01:12:48.200 --> 01:12:49.700
+To illustrate
+
+01:12:50.700 --> 01:12:56.180
+I'll draw the vector u 3 1 and
+we'll use v being 4 negative 6
+
+01:12:56.180 --> 01:13:01.430
+Here's how I want you to think
+of vector addition
+
+01:13:04.200 --> 01:13:05.700
+Sure, mathematically,
+
+01:13:06.900 --> 01:13:11.340
+what we've just discussed is
+that the resulting vector of u
+
+01:13:11.340 --> 01:13:14.400
+plus v, since the first
+component of u is 3 and the
+
+01:13:14.400 --> 01:13:15.980
+first of v is 4,
+
+01:13:15.980 --> 01:13:20.140
+the first of u plus v will be 7,
+and the second component will be
+
+01:13:20.140 --> 01:13:23.240
+negative 5, which comes from 1
+plus negative 6.
+
+01:13:23.240 --> 01:13:24.420
+That's all good.
+
+01:13:24.420 --> 01:13:26.560
+But I want us to think about
+what this actually looks like.
+
+01:13:26.560 --> 01:13:27.560
+Now,
+
+01:13:27.640 --> 01:13:33.540
+the way we're going to visualize
+this is we're going to start
+
+01:13:33.540 --> 01:13:37.480
+by drawing the vector u from the
+origin.
+
+01:13:37.480 --> 01:13:42.780
+Then I'm going to draw v not
+from the origin, but starting at
+
+01:13:42.780 --> 01:13:45.780
+the tip of u.
+
+01:13:47.180 --> 01:13:51.320
+The end of the arrow is called
+the tip,
+
+01:13:51.320 --> 01:13:52.280
+the pointy part,
+
+01:13:52.280 --> 01:13:53.320
+and the other part is called the
+tail.
+
+01:13:53.320 --> 01:13:57.660
+I'm gonna draw V which is gonna
+go four units to the right and
+
+01:13:57.660 --> 01:13:59.910
+six units down
+
+01:14:00.400 --> 01:14:02.650
+Starting at you
+
+01:14:04.640 --> 01:14:09.060
+It's not a not to scale
+
+01:14:09.060 --> 01:14:11.340
+Actually, let me try and draw it
+a little more to scale so you're
+
+01:14:11.340 --> 01:14:15.090
+convinced of the result sure
+
+01:14:16.520 --> 01:14:19.340
+Where does u plus v enter the
+picture?
+
+01:14:19.340 --> 01:14:23.040
+It is the result you get when
+you connect the origin to the
+
+01:14:23.040 --> 01:14:24.160
+tip of v,
+
+01:14:24.160 --> 01:14:27.180
+when v is drawn starting at the
+tip of u.
+
+01:14:27.180 --> 01:14:28.000
+That is,
+
+01:14:28.000 --> 01:14:32.500
+u plus v is this vector.
+
+01:14:35.740 --> 01:14:38.440
+And this technique of
+visualizing the addition is
+
+01:14:38.440 --> 01:14:41.440
+called tip to tail.
+
+01:14:43.200 --> 01:14:47.340
+So this shows me how I arrive at
+u plus v,
+
+01:14:47.340 --> 01:14:49.420
+starting with u and v.
+
+01:14:49.420 --> 01:14:52.940
+The way that I like thinking of
+this is that I'm using u and v
+
+01:14:52.940 --> 01:14:55.380
+as building blocks to produce a
+new vector.
+
+01:14:55.380 --> 01:14:57.420
+It's like you're playing with
+Legos.
+
+01:14:57.420 --> 01:14:58.740
+Here's one Lego, here's another,
+
+01:14:58.740 --> 01:15:01.220
+I put them together, I got a new
+one.
+
+01:15:01.220 --> 01:15:02.220
+Okay?
+
+01:15:02.380 --> 01:15:04.800
+But since this is commutative,
+
+01:15:04.800 --> 01:15:08.400
+it should also be the case that
+if I started with v and then
+
+01:15:08.400 --> 01:15:12.420
+tacked on u to it, I should end
+up at the same place.
+
+01:15:12.420 --> 01:15:17.670
+The names, u and v, are just
+placeholders for these objects.
+
+01:15:19.340 --> 01:15:24.800
+So if I instead start with v at
+the origin,
+
+01:15:24.800 --> 01:15:26.680
+I'll try and copy my exact v.
+
+01:15:26.680 --> 01:15:28.930
+There we go.
+
+01:15:28.960 --> 01:15:33.200
+And then draw u,
+
+01:15:37.320 --> 01:15:38.320
+well,
+
+01:15:38.660 --> 01:15:43.040
+I should end up with the same
+vector.
+
+01:15:43.040 --> 01:15:45.290
+And do I?
+
+01:15:48.300 --> 01:15:49.820
+Indeed, I do.
+
+01:15:49.820 --> 01:15:52.400
+Well, OK, let's not copy it,
+because the annotation is in the
+
+01:15:52.400 --> 01:15:53.120
+wrong place.
+But
+
+01:15:53.120 --> 01:15:59.980
+I
+
+01:15:59.980 --> 01:16:01.960
+do end up with the same vector,
+which is another way of
+
+01:16:01.960 --> 01:16:04.620
+visualizing why this operation
+is commutative.
+
+01:16:04.620 --> 01:16:07.080
+We agree that these are the same
+vector?
+
+01:16:07.080 --> 01:16:08.320
+The purple ones?
+
+01:16:08.320 --> 01:16:10.700
+My ability to draw a sign?
+
+01:16:10.700 --> 01:16:11.880
+Is this 2D?
+
+01:16:11.880 --> 01:16:13.420
+This is in 2D right now.
+
+01:16:13.420 --> 01:16:17.040
+But the operation works the same
+whether each vector,
+
+01:16:17.040 --> 01:16:20.360
+whether we're dealing with
+vectors in R2 or R3 or R
+
+01:16:20.360 --> 01:16:21.140
+whatever.
+
+01:16:21.140 --> 01:16:22.740
+It all works the same way.
+And if you want to see some
+
+01:16:22.740 --> 01:16:25.020
+examples of the addition working
+in R3,
+
+01:16:25.020 --> 01:16:27.340
+take a look at chapter 3.1.
+We have a few of those plotted
+
+01:16:27.340 --> 01:16:28.340
+out.
+
+01:16:32.120 --> 01:16:35.120
+So that's vector addition.
+
+01:16:35.620 --> 01:16:37.870
+Questions so far?
+
+01:16:40.420 --> 01:16:44.920
+Let me really quickly tell you
+about the other operation
+
+01:16:45.000 --> 01:16:49.500
+because you'll need a little bit
+of this
+
+01:16:50.000 --> 01:16:54.900
+for tomorrow's lab.
+Scalar multiplication involves
+
+01:16:54.900 --> 01:16:57.900
+taking a vector v,
+
+01:16:58.860 --> 01:17:02.960
+which is equal to, say,
+
+01:17:04.600 --> 01:17:10.120
+v1, v2 through vn, and
+multiplying it by a
+
+01:17:10.120 --> 01:17:11.120
+scalar,
+
+01:17:12.040 --> 01:17:13.040
+c,
+
+01:17:13.980 --> 01:17:18.780
+where c is just a real number
+while v
+
+01:17:18.780 --> 01:17:21.920
+is a vector.
+with n things in it.
+
+01:17:21.980 --> 01:17:22.860
+So notice here,
+
+01:17:22.860 --> 01:17:25.820
+I didn't write my orange u with
+a vector hat on it.
+
+01:17:25.820 --> 01:17:28.340
+There's just one vector involved
+here.
+
+01:17:28.340 --> 01:17:31.280
+And what I'm saying is that if
+you multiply that vector by a
+
+01:17:31.280 --> 01:17:32.040
+real number,
+
+01:17:32.040 --> 01:17:32.980
+c,
+
+01:17:32.980 --> 01:17:36.620
+the result is that it multiplies
+every one of these components
+
+01:17:36.620 --> 01:17:39.620
+by that same c.
+
+01:17:39.880 --> 01:17:43.040
+So you can think of this as
+keeping the direction of the
+
+01:17:43.040 --> 01:17:45.290
+vector the same,
+
+01:17:45.400 --> 01:17:48.060
+but changing what about it?
+
+01:17:48.060 --> 01:17:49.860
+What does this do?
+
+01:17:49.860 --> 01:17:50.380
+Yeah?
+
+01:17:50.380 --> 01:17:52.420
+Yeah, what this does is it
+changes the length.
+
+01:17:52.420 --> 01:17:54.360
+If I multiply v by 2,
+
+01:17:54.360 --> 01:17:55.620
+it doubles its length.
+
+01:17:55.620 --> 01:17:57.540
+If I multiply it by negative 2,
+
+01:17:57.540 --> 01:17:59.040
+what happens?
+
+01:18:01.560 --> 01:18:03.200
+If you had to guess.
+
+01:18:03.200 --> 01:18:04.040
+Yeah.
+
+01:18:04.040 --> 01:18:07.440
+Yeah, flips the direction and
+also multiplies its length by 2.
+
+01:18:07.440 --> 01:18:11.940
+So to visualize what that looks
+like,
+
+01:18:12.200 --> 01:18:15.400
+if this is that vector u from
+before,
+
+01:18:15.400 --> 01:18:16.620
+3, 1,
+
+01:18:16.620 --> 01:18:18.400
+what is 2u?
+
+01:18:18.400 --> 01:18:21.760
+Well, it's gonna be this vector.
+
+01:18:21.760 --> 01:18:25.380
+And what is negative 1 third u?
+
+01:18:25.380 --> 01:18:29.580
+Well it's gonna be this vector.
+
+01:18:29.580 --> 01:18:35.480
+So the negative sign flips a
+direction and
+
+01:18:35.480 --> 01:18:39.980
+the absolute value of the scalar
+changes the length.
+
+01:18:40.360 --> 01:18:43.980
+Now 2u looks like this.
+
+01:18:43.980 --> 01:18:46.480
+What does 3u look like?
+
+01:18:46.480 --> 01:18:48.580
+Well kind of roughly the same
+thing it would just be off my
+
+01:18:48.580 --> 01:18:49.260
+page.
+
+01:18:49.260 --> 01:18:53.240
+What does negative 3u look like?
+It'd be something like this.
+
+01:18:53.240 --> 01:18:55.500
+What does pi times u look like?
+I don't know, something like
+
+01:18:55.500 --> 01:18:57.360
+that.
+What does 0.4
+
+01:18:57.360 --> 01:18:59.780
+times u look like? Something
+like that.
+
+01:18:59.780 --> 01:19:03.540
+So all of these scalar multiples
+of u
+
+01:19:03.540 --> 01:19:05.200
+is an important observation
+here.
+
+01:19:05.200 --> 01:19:07.800
+What do you notice about them?
+
+01:19:07.800 --> 01:19:11.360
+All scalar multiples of u,
+
+01:19:11.360 --> 01:19:15.700
+what is true about them?
+
+01:19:18.820 --> 01:19:20.520
+That is true.
+They all have the same slope, or
+
+01:19:20.520 --> 01:19:23.620
+they all point in sort of
+roughly the same direction.
+
+01:19:23.620 --> 01:19:27.020
+But geometrically, how would I
+sort of say that?
+
+01:19:27.020 --> 01:19:28.020
+Yeah?
+
+01:19:30.740 --> 01:19:32.740
+Yeah, that's sort of another way
+of saying they all have the same
+
+01:19:32.740 --> 01:19:33.280
+slope.
+
+01:19:33.280 --> 01:19:35.380
+And I think you both have the
+right observation, which is that
+
+01:19:35.380 --> 01:19:40.630
+they all live on the same line.
+
+01:19:42.540 --> 01:19:43.540
+OK,
+
+01:19:47.100 --> 01:19:52.760
+so if I think of the set of all
+scalar multiples of u,
+
+01:19:52.760 --> 01:19:56.580
+they all live on this one line,
+which has one slope,
+
+01:19:56.580 --> 01:19:57.580
+right?
+
+01:20:02.820 --> 01:20:05.640
+So they're all parallel to each
+other.
+
+01:20:05.640 --> 01:20:07.820
+It's not quite accurate to say
+they all point in the same
+
+01:20:07.820 --> 01:20:10.460
+direction, because the positive
+scalar multiples go that way,
+
+01:20:10.460 --> 01:20:13.220
+and the negative scalar
+multiples go that way, but they
+
+01:20:13.220 --> 01:20:16.480
+all still live on the same line.
+
+01:20:16.480 --> 01:20:18.580
+So that's addition and scalar
+multiplication.
+
+01:20:18.580 --> 01:20:19.820
+When we come back,
+
+01:20:19.820 --> 01:20:22.120
+we're going to look at what
+happens when you do both of
+
+01:20:22.120 --> 01:20:23.620
+these at the same time.
+
+01:20:23.620 --> 01:20:25.420
+And so I'm just saying this
+really quickly, because you're
+
+01:20:25.420 --> 01:20:28.420
+going to start playing around
+with this in lab tomorrow.
+
+01:20:28.420 --> 01:20:32.080
+What I've done here is for two
+vectors u and v, I've visualized
+
+01:20:32.080 --> 01:20:36.260
+the new vector 3u minus 1 half
+v.
+
+01:20:36.260 --> 01:20:39.640
+And the idea here, when you do
+both addition and scalar
+
+01:20:39.640 --> 01:20:40.640
+multiplication,
+
+01:20:41.320 --> 01:20:47.200
+you produce what's called a
+linear combination of u and
+
+01:20:47.200 --> 01:20:48.200
+v.
+
+01:20:48.760 --> 01:20:52.420
+And a linear combination is the
+most important operation we will
+
+01:20:52.420 --> 01:20:55.420
+see this semester involving
+vectors.
+
+01:20:55.520 --> 01:20:58.520
+It's where we produce a new
+vector by taking a little bit of
+
+01:20:58.520 --> 01:21:01.800
+one plus a little bit of another
+plus a little bit of another.
+
+01:21:01.800 --> 01:21:05.300
+Here I visualize that for two
+vectors in 2D, But I could take
+
+01:21:05.300 --> 01:21:08.780
+a linear combination of 100
+vectors in R17.
+
+01:21:08.780 --> 01:21:10.840
+That's a reasonable thing to
+need to do.
+
+01:21:10.840 --> 01:21:13.340
+And that's the kind of thing
+we're going to start to study.
+
+01:21:13.340 --> 01:21:13.700
+OK?
+
+01:21:13.700 --> 01:21:15.380
+But in tomorrow's lab, you'll
+play around with what this looks
+
+01:21:15.380 --> 01:21:16.380
+like.
+
+01:21:16.960 --> 01:21:18.620
+Again, I have office hours after
+this.
+
+01:21:18.620 --> 01:21:20.960
+I just picked this up all the
+time.
+
+01:21:20.960 --> 01:21:23.540
+I didn't declare a major yet.
+
+01:21:23.540 --> 01:21:25.760
+And since the first day of
+class,
+
+01:21:25.760 --> 01:21:29.510
+I'm going to do it.
+
+01:21:40.140 --> 01:21:43.280
+Yes, I got an internship last
+year as a sophomore at a company
+
+01:21:43.280 --> 01:21:44.780
+called TechSmith.
+
+01:21:44.940 --> 01:21:47.140
+Software testing internship,
+
+01:21:47.140 --> 01:21:49.660
+that's like for the sophomores,
+I think they'll take software
+
+01:21:49.660 --> 01:21:51.780
+for years to do.
+
+01:21:51.780 --> 01:21:55.260
+What kind of skills do you need
+for that? on the skills like for
+
+01:21:55.260 --> 01:21:57.400
+software testing they just want
+to like attention to detail
+
+01:21:57.400 --> 01:21:58.400
+basically
+
+01:22:30.240 --> 01:22:33.480
+I'll excuse two of the four
+missed lectures, so you can
+
+01:22:33.480 --> 01:22:35.730
+still miss two.
+
+01:22:36.700 --> 01:22:40.560
+Let me just sync the roster
+right now.
+
+01:22:40.560 --> 01:22:41.560
+Dude,
+
+01:22:42.020 --> 01:22:42.620
+I was like,
+
+01:22:42.620 --> 01:22:47.870
+I don't know, I start that shit.
+
+01:22:51.500 --> 01:22:54.120
+I should get it done,
+
+01:22:54.120 --> 01:22:56.680
+but I'll just keep pushing it
+every year to reset,
+
+01:22:56.680 --> 01:22:58.300
+so I think it's amazing.
+
+01:22:58.300 --> 01:23:00.460
+Can you just ask it? I have
+M-card access.
+
+01:23:00.460 --> 01:23:01.860
+I'm missing two.
+
+01:23:01.860 --> 01:23:03.720
+I'm about to get a little
+milling.
+
+01:23:03.720 --> 01:23:05.440
+There is a lot.
+
+01:23:05.440 --> 01:23:07.360
+It's doable, but there's a lot.
+
+01:23:07.360 --> 01:23:10.620
+The tricky thing is that- I
+don't know,
+
+01:23:10.620 --> 01:23:11.420
+I don't know,
+
+01:23:11.420 --> 01:23:13.660
+because I- The stuff you just
+heard talking about with
+
+01:23:13.660 --> 01:23:15.720
+vectors, you technically don't
+need to know anything we saw
+
+01:23:15.720 --> 01:23:17.080
+from the first two weeks,
+
+01:23:17.080 --> 01:23:19.020
+but the stuff from the first two
+weeks is state trade, because
+
+01:23:19.020 --> 01:23:20.800
+I'm gonna get that done anyway.
+
+01:23:20.800 --> 01:23:22.920
+It'll be easy to,
+
+01:23:22.920 --> 01:23:24.280
+if you just came today,
+
+01:23:24.280 --> 01:23:25.920
+and you're gonna be in the
+second half of today, you would
+
+01:23:25.920 --> 01:23:28.180
+actually be able to follow all
+of them.
+
+01:23:28.180 --> 01:23:29.680
+I was supposed to get those last
+two.
+
+01:23:29.680 --> 01:23:30.480
+I did the trading,
+
+01:23:30.480 --> 01:23:33.100
+it's like very important.
+So like, it's possible to catch
+
+01:23:33.100 --> 01:23:34.200
+up, yeah.
+
+01:23:34.200 --> 01:23:36.340
+I'm curious, like, what made you
+switch into the class last
+
+01:23:36.340 --> 01:23:41.590
+minute? It would be out of your
+way, let's hear it for now.
+
+01:24:00.100 --> 01:24:02.760
+It's like the worst class time,
+it's like noon,
+
+01:24:02.760 --> 01:24:04.420
+it's like lunchtime,
+
+01:24:04.420 --> 01:24:08.170
+we're getting Getting some food.
+
+01:24:11.480 --> 01:24:13.900
+Do you all have glasses back to
+back, or do you have some time
+
+01:24:13.900 --> 01:24:16.900
+for before or after?
+
+01:24:19.560 --> 01:24:22.560
+Not really much time.
+
+01:24:39.560 --> 01:24:41.810
+I don't know.
+
+01:24:46.860 --> 01:24:49.680
+What do you have to think?
+
+01:24:49.680 --> 01:24:51.240
+Do you have to like sell? Do you
+have to buy? notification
+
+01:24:51.240 --> 01:24:52.940
+because I have to do this.
+
+01:24:52.940 --> 01:24:54.220
+No, I think that's good.
+
+01:24:54.220 --> 01:24:55.360
+I think I did a whole lot of job
+with that.
+
+01:24:55.360 --> 01:24:56.360
+Sure.
+
+01:24:56.440 --> 01:25:01.690
+Just make sure you bring up the
+video.

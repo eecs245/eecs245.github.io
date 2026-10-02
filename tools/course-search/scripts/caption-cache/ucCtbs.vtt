@@ -1,0 +1,5571 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.840
+have heard about on social media
+on Tuesday that relates to
+
+00:00:03.840 --> 00:00:05.760
+something we talked about in
+class on Tuesday.
+
+00:00:05.760 --> 00:00:07.740
+Does anyone know what I'm
+talking about?
+
+00:00:07.740 --> 00:00:10.540
+I went home after class, and I
+saw this on Twitter.
+
+00:00:10.540 --> 00:00:12.600
+And I was like, this is exactly
+the kind of thing we were
+
+00:00:12.600 --> 00:00:14.260
+talking about, and it was
+everywhere.
+
+00:00:14.260 --> 00:00:16.280
+Does anyone know?
+
+00:00:16.280 --> 00:00:18.480
+It's the Dyson AI toothbrush.
+How many people heard about
+
+00:00:18.480 --> 00:00:19.480
+this?
+
+00:00:19.740 --> 00:00:21.440
+If you read the,
+
+00:00:21.440 --> 00:00:24.860
+like, so Dyson just released
+this new $500 toothbrush that
+
+00:00:24.860 --> 00:00:27.140
+has a camera built in that'll,
+
+00:00:27.140 --> 00:00:27.380
+like,
+
+00:00:27.380 --> 00:00:30.440
+when you're using it, it'll, I
+don't know, use the camera to
+
+00:00:30.440 --> 00:00:34.780
+figure out where there's like
+plaque and gaps in your teeth,
+
+00:00:34.800 --> 00:00:37.280
+and it'll like automatically
+spray water at those gaps.
+
+00:00:37.280 --> 00:00:41.380
+But if you read the press
+release that they had about it,
+
+00:00:41.380 --> 00:00:43.880
+it says they use a machine
+learning system trained on
+
+00:00:43.880 --> 00:00:46.200
+470,000 dental images,
+
+00:00:46.520 --> 00:00:50.800
+which means all they did was
+supervised learning of what
+
+00:00:50.800 --> 00:00:54.550
+places to target when brushing
+people's teeth.
+
+00:00:55.360 --> 00:00:57.680
+So this is just more evidence
+that this is the kind of thing
+
+00:00:57.680 --> 00:01:01.180
+That is actually used in
+practice
+
+00:01:01.180 --> 00:01:03.820
+Is this a useful use of it, I
+don't know who knows maybe in
+
+00:01:03.820 --> 00:01:06.400
+ten years we're all using AI
+toothbrushes
+
+00:01:06.400 --> 00:01:07.400
+anyways
+
+00:01:08.600 --> 00:01:11.520
+Announcements so first thanks
+for coming to lab yesterday the
+
+00:01:11.520 --> 00:01:15.020
+solutions for lab one are posted
+The same place everything else
+
+00:01:15.020 --> 00:01:17.340
+for our course is posted which
+is on the course home page while
+
+00:01:17.340 --> 00:01:20.800
+we're here You'll see for
+lecture one the stuff.
+
+00:01:20.800 --> 00:01:24.360
+I wrote on my iPad is posted
+here if you click in class notes
+
+00:01:24.360 --> 00:01:27.600
+and the recording button is
+right here so you can you don't
+
+00:01:27.600 --> 00:01:29.400
+have to look anywhere else for
+that stuff.
+
+00:01:29.400 --> 00:01:31.340
+For lab one everything you need
+is here,
+
+00:01:31.340 --> 00:01:33.300
+the problems are here,
+
+00:01:33.300 --> 00:01:35.940
+and the way I have this site set
+up is that you can like look at
+
+00:01:35.940 --> 00:01:38.720
+the solution for just one
+question at a time and this is
+
+00:01:38.720 --> 00:01:43.700
+useful for if you are coming
+back to lab assignments and like
+
+00:01:43.700 --> 00:01:46.880
+sort of want to practice them
+when getting ready for exams and
+
+00:01:46.880 --> 00:01:48.880
+you want to like look at the
+solution for one thing but not
+
+00:01:48.880 --> 00:01:50.800
+have to look at the solutions
+for everything else to get
+
+00:01:50.800 --> 00:01:51.320
+there.
+
+00:01:51.320 --> 00:01:54.480
+This allows you to toggle
+individual solutions.
+
+00:01:54.480 --> 00:01:57.660
+But if you'd rather look at them
+in their PDF views, everything
+
+00:01:57.660 --> 00:01:59.780
+will be offered that way as
+well.
+
+00:01:59.780 --> 00:02:01.160
+And then, as I mentioned,
+
+00:02:01.160 --> 00:02:04.640
+homework one is also out.
+And it's not due until next
+
+00:02:04.640 --> 00:02:05.260
+Friday.
+
+00:02:05.260 --> 00:02:09.140
+But you should review the
+solutions to lab one before
+
+00:02:09.140 --> 00:02:12.460
+working or while working on
+homework one.
+
+00:02:12.460 --> 00:02:15.540
+One thing that often surprises
+students in this class is that
+
+00:02:15.540 --> 00:02:19.040
+reviewing and having a solid
+grasp of the lab assignments is
+
+00:02:19.040 --> 00:02:22.320
+just as important as for the
+homework assignments because lab
+
+00:02:22.320 --> 00:02:25.540
+assignments are where we put the
+like first foundational
+
+00:02:25.540 --> 00:02:28.760
+questions that give you like a
+high level understanding of the
+
+00:02:28.760 --> 00:02:30.600
+material and then homework
+questions will go a little
+
+00:02:30.600 --> 00:02:34.740
+deeper so it'll often be hard to
+make everything on homework make
+
+00:02:34.740 --> 00:02:37.980
+sense without having a good
+understanding of the lab.
+
+00:02:37.980 --> 00:02:38.980
+Okay
+
+00:02:40.220 --> 00:02:41.720
+what else?
+
+00:02:42.040 --> 00:02:44.800
+Along with the first homework
+there's the welcome survey due
+
+00:02:44.800 --> 00:02:46.180
+next Friday.
+Ideally try and fill out the
+
+00:02:46.180 --> 00:02:48.600
+welcome survey sooner so that I
+I can reach out to students with
+
+00:02:48.600 --> 00:02:51.720
+accommodations and then start to
+plan alternate exams.
+
+00:02:51.720 --> 00:02:54.280
+And then lastly, office hours,
+if you go to the calendar tab of
+
+00:02:54.280 --> 00:02:56.200
+the course website, you can see
+them there.
+
+00:02:56.200 --> 00:02:59.700
+I have office hours usually
+after lecture every Tuesday and
+
+00:02:59.700 --> 00:03:01.600
+Thursday, including today.
+
+00:03:01.600 --> 00:03:02.980
+And then we have several other
+office hours.
+
+00:03:02.980 --> 00:03:07.500
+And we will try and open a few
+select Zoom office hours as well
+
+00:03:07.500 --> 00:03:09.600
+on other days.
+
+00:03:09.600 --> 00:03:12.680
+The plan for today is to start
+by recapping a few of the high
+
+00:03:12.680 --> 00:03:15.220
+level ideas we finished
+Tuesday's class with.
+
+00:03:15.220 --> 00:03:18.540
+We introduced a few new words,
+hypothesis functions,
+
+00:03:18.540 --> 00:03:19.480
+parameters,
+
+00:03:19.480 --> 00:03:21.600
+we're going to talk about what
+those are again,
+
+00:03:21.600 --> 00:03:23.240
+and then we are going to push
+further,
+
+00:03:23.240 --> 00:03:26.440
+ultimately with the goal of
+trying to figure out how to make
+
+00:03:26.440 --> 00:03:29.820
+the most accurate and best
+predictions.
+
+00:03:29.820 --> 00:03:31.320
+Sound okay?
+
+00:03:31.760 --> 00:03:32.940
+All right,
+
+00:03:32.940 --> 00:03:35.100
+scroll past this AI toothbrush.
+
+00:03:35.100 --> 00:03:36.920
+Towards the end of Tuesday's
+class,
+
+00:03:36.920 --> 00:03:40.900
+this was one of the graphs that
+we looked at quite a bit.
+
+00:03:40.900 --> 00:03:46.220
+It was a scatterplot on which
+the x-axis represented the time
+
+00:03:46.220 --> 00:03:50.080
+we left to go to work in the
+morning, and the y-axis
+
+00:03:50.080 --> 00:03:53.160
+represented how long it took to
+get to work.
+
+00:03:53.160 --> 00:03:55.440
+So each one of these data
+points,
+
+00:03:55.440 --> 00:03:58.160
+or each one of the points on
+this scatterplot reflects one
+
+00:03:58.160 --> 00:04:02.560
+row of some real person's log
+that they took every day,
+
+00:04:02.560 --> 00:04:05.460
+that they wrote down every day
+they went to work.
+
+00:04:05.460 --> 00:04:10.060
+And our goal was to try and
+build the model that would allow
+
+00:04:10.060 --> 00:04:13.860
+us to predict commute times in
+the future.
+
+00:04:13.860 --> 00:04:16.980
+And what that model would do is
+that it would allow me to plug
+
+00:04:16.980 --> 00:04:19.600
+in the time I want to leave in
+the morning.
+
+00:04:19.600 --> 00:04:23.740
+And it would give me its
+prediction for how long it
+
+00:04:23.740 --> 00:04:27.060
+thinks it'll take for me to get
+to school if I leave at that
+
+00:04:27.060 --> 00:04:27.960
+time.
+
+00:04:27.960 --> 00:04:30.660
+And that model will be trained
+
+00:04:30.660 --> 00:04:34.140
+and will learn a pattern from
+this historical data that we've
+
+00:04:34.140 --> 00:04:37.220
+already collected.
+But ultimately, our eventual
+
+00:04:37.220 --> 00:04:40.800
+goal is for the model to work
+well on future data when we
+
+00:04:40.800 --> 00:04:43.660
+don't exactly know what the
+commute times are going to look
+
+00:04:43.660 --> 00:04:44.660
+like.
+
+00:04:45.180 --> 00:04:47.740
+Here's one thing I should have
+emphasized on Tuesday that I
+
+00:04:47.740 --> 00:04:50.440
+didn't.
+There's an assumption about the
+
+00:04:50.440 --> 00:04:54.060
+world we need to make in order
+for this process to yield
+
+00:04:54.060 --> 00:04:55.120
+something useful.
+
+00:04:55.120 --> 00:04:56.400
+That is,
+
+00:04:56.400 --> 00:04:58.260
+we're using this historical
+data.
+
+00:04:58.260 --> 00:05:01.760
+What must be true about the
+future in order for the model
+
+00:05:01.760 --> 00:05:04.700
+that we make using this
+historical data to still be
+
+00:05:04.700 --> 00:05:05.700
+useful?
+
+00:05:07.760 --> 00:05:09.520
+Gavin.
+The future has to be similar to
+
+00:05:09.520 --> 00:05:10.480
+the past? Yeah,
+
+00:05:10.480 --> 00:05:13.420
+future commute patterns need to
+look similar to past commute
+
+00:05:13.420 --> 00:05:14.420
+patterns.
+
+00:05:14.460 --> 00:05:18.880
+But if they open a brand new
+Autobahn-type highway with no
+
+00:05:18.880 --> 00:05:21.080
+traffic on it, maybe all of
+these commute times will go
+
+00:05:21.080 --> 00:05:21.920
+down.
+
+00:05:21.920 --> 00:05:23.880
+Or if they close all of the
+highways,
+
+00:05:23.880 --> 00:05:25.380
+or who knows?
+
+00:05:25.380 --> 00:05:29.420
+If any aspect of the system in
+which this data was collected
+
+00:05:29.420 --> 00:05:30.420
+changes,
+
+00:05:30.720 --> 00:05:34.500
+the data that we used from the
+past may not represent data in
+
+00:05:34.500 --> 00:05:36.340
+the future.
+And so the models we learn on it
+
+00:05:36.340 --> 00:05:38.520
+may not be representative.
+
+00:05:38.520 --> 00:05:39.860
+Does that sound reasonable?
+
+00:05:39.860 --> 00:05:40.560
+OK.
+
+00:05:40.560 --> 00:05:45.500
+And this is why, putting this in
+context of things like ChatGPT,
+
+00:05:45.500 --> 00:05:48.440
+I actually got a survey from
+some linguistics researcher at
+
+00:05:48.440 --> 00:05:51.440
+another university who asked
+questions about this,
+
+00:05:51.500 --> 00:05:53.000
+about how
+
+00:05:53.500 --> 00:05:55.760
+there are lots of different
+dialects of English.
+
+00:05:55.760 --> 00:05:58.740
+And many of us in this room, or
+at least at the university, we
+
+00:05:58.740 --> 00:06:00.800
+speak American English.
+But there's British English,
+
+00:06:00.800 --> 00:06:01.700
+Canadian English.
+
+00:06:01.700 --> 00:06:03.380
+And different parts of the world
+have their own dialects of
+
+00:06:03.380 --> 00:06:06.080
+English.
+But because the creators of the
+
+00:06:06.080 --> 00:06:09.020
+large language models primarily
+think in American English,
+
+00:06:09.020 --> 00:06:12.120
+and so the models are trained
+and fine-tuned to speak that
+
+00:06:12.120 --> 00:06:14.370
+sort of dialect,
+
+00:06:14.600 --> 00:06:16.600
+then people in other parts of
+the world who have their own
+
+00:06:16.600 --> 00:06:19.420
+versions of English that don't
+sound like the way that our
+
+00:06:19.420 --> 00:06:20.740
+English sounds,
+
+00:06:20.740 --> 00:06:24.040
+or the way that English sounds
+here in Michigan,
+
+00:06:24.040 --> 00:06:28.000
+are sort of biased towards our
+way of speaking English, even if
+
+00:06:28.000 --> 00:06:29.880
+it's not necessarily right, it's
+just our way.
+
+00:06:29.880 --> 00:06:31.060
+So, like,
+
+00:06:31.060 --> 00:06:34.220
+for example, you could imagine
+someone being in a country where
+
+00:06:34.220 --> 00:06:36.440
+English isn't the first
+language, but it's a popular
+
+00:06:36.440 --> 00:06:40.000
+second language, and you may put
+in, like, an essay that you
+
+00:06:40.000 --> 00:06:41.520
+wrote and say,
+
+00:06:41.520 --> 00:06:43.880
+I don't know, fix the grammar
+here.
+
+00:06:43.880 --> 00:06:46.080
+You could imagine it fixing a
+lot of things that aren't
+
+00:06:46.080 --> 00:06:48.940
+actually issues, they're just
+not as American as they could
+
+00:06:48.940 --> 00:06:49.540
+be.
+
+00:06:49.540 --> 00:06:51.200
+And why is that happening?
+
+00:06:51.200 --> 00:06:53.600
+It's because the training data
+doesn't reflect the reality in
+
+00:06:53.600 --> 00:06:54.900
+which the model is trying to be
+used.
+
+00:06:54.900 --> 00:06:59.240
+So this is a problem even for
+large systems that you work with
+
+00:06:59.240 --> 00:07:00.740
+every day.
+
+00:07:00.860 --> 00:07:05.560
+So our goal here is to try and
+predict commute times as best as
+
+00:07:05.560 --> 00:07:07.060
+we could.
+
+00:07:07.820 --> 00:07:09.920
+And to do that,
+
+00:07:09.920 --> 00:07:14.360
+I introduced the term hypothesis
+function.
+
+00:07:18.900 --> 00:07:22.180
+Can someone remind me what a
+hypothesis function is and what
+
+00:07:22.180 --> 00:07:27.430
+symbol I referred to them by on
+Tuesday.
+
+00:07:28.120 --> 00:07:29.580
+What is a hypothesis function?
+
+00:07:29.580 --> 00:07:31.120
+Yes, and remind me of your name.
+Actually, tell me the first
+
+00:07:31.120 --> 00:07:32.420
+letter of it, and I'll try and
+guess it.
+
+00:07:32.420 --> 00:07:33.420
+A.
+
+00:07:34.960 --> 00:07:36.040
+I'm sorry, I don't remember.
+
+00:07:36.040 --> 00:07:36.620
+Allison.
+
+00:07:36.620 --> 00:07:37.300
+Yes.
+
+00:07:37.300 --> 00:07:38.000
+OK.
+
+00:07:38.000 --> 00:07:41.580
+You said that a hypothesis
+function is represented with H,
+
+00:07:41.580 --> 00:07:44.580
+and it takes in features, and it
+returns the predicted y's.
+
+00:07:44.580 --> 00:07:45.240
+Good.
+
+00:07:45.240 --> 00:07:48.460
+A hypothesis function is the
+function we use to make our
+
+00:07:48.460 --> 00:07:51.560
+predictions.
+So it takes in features, which
+
+00:07:51.560 --> 00:07:55.400
+are our input variables as an
+input, and what it returns is a
+
+00:07:55.400 --> 00:07:57.650
+predicted y value.
+
+00:08:02.850 --> 00:08:04.160
+So here,
+
+00:08:04.160 --> 00:08:09.600
+xi is an input called a feature
+
+00:08:09.600 --> 00:08:13.820
+outputs is
+
+00:08:13.820 --> 00:08:18.060
+a predicted
+
+00:08:18.060 --> 00:08:21.340
+yi value,
+
+00:08:22.440 --> 00:08:23.440
+OK?
+
+00:08:23.620 --> 00:08:28.140
+And there were two formats of
+hypothesis functions, or two
+
+00:08:28.140 --> 00:08:33.160
+types of hypothesis functions,
+that we proposed on Tuesday.
+
+00:08:33.380 --> 00:08:35.640
+What were the two?
+
+00:08:35.640 --> 00:08:36.900
+Yes, and remind me of your name?
+
+00:08:36.900 --> 00:08:37.900
+Maj.
+Maj.
+
+00:08:38.300 --> 00:08:39.940
+Near and constant.
+
+00:08:39.940 --> 00:08:41.600
+Good, the first one,
+
+00:08:41.600 --> 00:08:46.770
+and the one that we will spend
+all of our time on today
+
+00:08:46.770 --> 00:08:48.740
+was the constant model.
+
+00:08:48.740 --> 00:08:54.740
+So let me bring this to the next
+page.
+
+00:09:01.360 --> 00:09:03.420
+The constant model,
+
+00:09:03.420 --> 00:09:05.900
+the formula looks a little funny
+
+00:09:05.900 --> 00:09:09.760
+because it says h of xi on the
+left,
+
+00:09:09.760 --> 00:09:11.580
+but then on the right, there are
+no xi's.
+
+00:09:11.580 --> 00:09:14.560
+And that's because it is
+returning the same prediction no
+
+00:09:14.560 --> 00:09:18.380
+matter what input you give it.
+Whether you leave at 6 AM, 8 AM,
+
+00:09:18.380 --> 00:09:19.840
+9.30
+AM, 11.45
+
+00:09:19.840 --> 00:09:20.840
+PM,
+
+00:09:22.100 --> 00:09:25.020
+the constant model returns the
+same prediction.
+
+00:09:25.020 --> 00:09:26.880
+And so then the question is,
+what prediction should it
+
+00:09:26.880 --> 00:09:27.880
+return?
+
+00:09:28.080 --> 00:09:32.360
+What I've drawn for us here are
+three different constants that
+
+00:09:32.360 --> 00:09:34.460
+the constant model could
+predict,
+
+00:09:34.460 --> 00:09:35.040
+60,
+
+00:09:35.040 --> 00:09:37.140
+70, and 100.
+
+00:09:37.140 --> 00:09:41.220
+And the question we left off
+Tuesday's lecture with was, is,
+
+00:09:41.220 --> 00:09:43.200
+well, which constant should it
+predict?
+
+00:09:43.200 --> 00:09:45.800
+Where should we draw this
+horizontal line?
+
+00:09:45.800 --> 00:09:48.300
+And ultimately, everything we
+are going to do today
+
+00:09:48.300 --> 00:09:49.980
+is about answering that one
+question.
+
+00:09:49.980 --> 00:09:52.540
+Where should we draw that
+horizontal line?
+
+00:09:52.540 --> 00:09:54.620
+So if you ever get lost in the
+weeds with the math, of which
+
+00:09:54.620 --> 00:09:56.280
+there will be a lot today,
+
+00:09:56.280 --> 00:09:58.400
+just come back to this picture.
+Where do we draw the horizontal
+
+00:09:58.400 --> 00:09:59.400
+line?
+
+00:10:03.160 --> 00:10:06.700
+Now, what I've drawn on the page
+or the screenshot that on this
+
+00:10:06.700 --> 00:10:12.080
+page has three possible constant
+models,
+
+00:10:12.780 --> 00:10:17.620
+but there was like a templated
+version of the constant model
+
+00:10:19.300 --> 00:10:21.420
+that I stated on Tuesday.
+
+00:10:21.420 --> 00:10:25.920
+What was the placeholder I used
+on the right-hand side?
+
+00:10:26.080 --> 00:10:27.520
+Yes, and remind me of your name?
+I'm Alex.
+
+00:10:27.520 --> 00:10:29.020
+Alex, right.
+I think you used W.
+
+00:10:29.160 --> 00:10:29.800
+W,
+
+00:10:29.800 --> 00:10:30.800
+good.
+
+00:10:31.040 --> 00:10:32.540
+And w,
+
+00:10:33.860 --> 00:10:39.260
+what did I call a w on Tuesday?
+
+00:10:39.260 --> 00:10:40.760
+Yes, remind me of your name?
+
+00:10:40.760 --> 00:10:41.460
+Andrew.
+
+00:10:41.460 --> 00:10:42.340
+I called it a parameter.
+
+00:10:42.340 --> 00:10:44.590
+A parameter, good.
+
+00:10:51.000 --> 00:10:55.100
+Parameters are aspects of our
+model that we need to learn by
+
+00:10:55.100 --> 00:10:56.560
+looking at the patterns in the
+data.
+
+00:10:56.560 --> 00:10:58.060
+So here,
+
+00:10:58.080 --> 00:11:01.580
+we need to find a value of W
+that makes sense for this
+
+00:11:01.580 --> 00:11:02.120
+dataset.
+
+00:11:02.120 --> 00:11:03.520
+If we had a different dataset,
+
+00:11:03.520 --> 00:11:06.920
+well then our thinking behind
+which W to use would be a little
+
+00:11:06.920 --> 00:11:07.920
+different.
+
+00:11:08.000 --> 00:11:11.720
+60, 70, 100 may not make sense.
+What if I wanted a constant
+
+00:11:11.720 --> 00:11:15.600
+model that predicted the year in
+which people were born?
+
+00:11:15.600 --> 00:11:18.360
+None of these values of W would
+be good.
+
+00:11:18.360 --> 00:11:20.500
+So it depends on the data.
+
+00:11:20.500 --> 00:11:23.720
+Really quickly, just to
+internalize the idea of a
+
+00:11:23.720 --> 00:11:24.720
+parameter.
+
+00:11:25.860 --> 00:11:31.380
+the other format of a model that
+we considered on Tuesday was the
+
+00:11:31.380 --> 00:11:35.240
+simple linear regression model.
+
+00:11:36.780 --> 00:11:40.960
+And what did it look like?
+
+00:11:40.960 --> 00:11:44.000
+What did it look like?
+
+00:11:44.000 --> 00:11:45.840
+Yes, and remind me of your name.
+
+00:11:45.840 --> 00:11:49.680
+You had W of 0 and then W of 1.
+
+00:11:49.680 --> 00:11:50.700
+Good.
+It says,
+
+00:11:51.620 --> 00:11:56.160
+take in your xi and actually do
+something with it.
+
+00:11:56.160 --> 00:11:59.760
+What I mean by that is these
+three don't look the same.
+
+00:11:59.760 --> 00:12:01.680
+It seems like they change as x
+changes.
+
+00:12:01.680 --> 00:12:02.320
+And here,
+
+00:12:02.320 --> 00:12:05.660
+remember, x is departure time.
+
+00:12:05.660 --> 00:12:06.800
+And indeed,
+
+00:12:06.800 --> 00:12:09.520
+what it returns is W0.
+
+00:12:09.520 --> 00:12:12.620
+Typically, this is pronounced
+W0, but sometimes I'll say W0 as
+
+00:12:12.620 --> 00:12:13.620
+well.
+
+00:12:16.400 --> 00:12:18.650
+plus w1 xi.
+
+00:12:19.140 --> 00:12:22.280
+And this is just really a
+rebranded y equals mx plus b.
+
+00:12:22.280 --> 00:12:24.200
+It's not any more complicated
+than that.
+
+00:12:24.200 --> 00:12:25.520
+It's just that in machine
+learning,
+
+00:12:25.520 --> 00:12:30.100
+w is the term we use for,
+
+00:12:30.100 --> 00:12:31.680
+or the variable we use for.
+
+00:12:31.680 --> 00:12:36.180
+What are w0 and w1 here?
+
+00:12:36.800 --> 00:12:39.940
+What would we call them?
+
+00:12:39.940 --> 00:12:40.660
+Parameters.
+
+00:12:40.660 --> 00:12:41.540
+Good, parameters.
+
+00:12:41.540 --> 00:12:46.520
+So this simple linear regression
+model has two parameters and
+
+00:12:46.520 --> 00:12:49.800
+given a data set if we choose to
+use the simple linear regression
+
+00:12:49.800 --> 00:12:52.620
+model the question is well what
+should we set these parameters
+
+00:12:52.620 --> 00:12:56.280
+to so that the resulting model
+fits the data well and what you
+
+00:12:56.280 --> 00:13:01.080
+can see here is that some
+choices of parameters do an okay
+
+00:13:01.080 --> 00:13:06.880
+job like 160 for the intercept W
+naught
+
+00:13:06.880 --> 00:13:11.480
+and negative 10 for the slope W1
+and some do an atrocious job,
+
+00:13:11.480 --> 00:13:13.200
+like 20 and 5.
+
+00:13:13.200 --> 00:13:15.540
+And so what we're trying to get
+at is, well, how do we know
+
+00:13:15.540 --> 00:13:18.540
+which combination of parameters
+would do the best job?
+
+00:13:18.580 --> 00:13:21.000
+Ideally, there's a way to do
+this in a more principled
+
+00:13:21.000 --> 00:13:25.420
+manner than just looking at the
+page and eyeballing it.
+
+00:13:25.420 --> 00:13:29.460
+Especially because we will soon
+enter a territory where we have
+
+00:13:29.460 --> 00:13:33.740
+more than one input variable or
+more than one feature.
+
+00:13:33.740 --> 00:13:36.600
+What if we have 10 features? So
+I'm using 10 input variables to
+
+00:13:36.600 --> 00:13:38.300
+predict how long my commute is
+going to take.
+
+00:13:38.300 --> 00:13:39.760
+Well, then,
+
+00:13:39.760 --> 00:13:43.580
+I can't even draw the graph, at
+least not natively, right?
+
+00:13:43.580 --> 00:13:48.540
+Because I would need 10 axes to
+represent my 10 input variables,
+
+00:13:48.540 --> 00:13:50.840
+and then an 11th axis
+
+00:13:50.840 --> 00:13:53.500
+to represent the actual commute
+time.
+
+00:13:53.500 --> 00:13:57.000
+So I would need to be able to
+visualize in 11 dimensional
+
+00:13:57.000 --> 00:13:58.000
+space.
+
+00:13:58.000 --> 00:14:00.340
+But we're just humans, we can
+only visualize in three
+
+00:14:00.340 --> 00:14:03.600
+dimensional space, which is why
+very quickly we will no longer
+
+00:14:03.600 --> 00:14:06.300
+be able to directly visualize
+the quantities we're working
+
+00:14:06.300 --> 00:14:07.660
+with.
+So we need to come up with
+
+00:14:07.660 --> 00:14:10.480
+mathematical solutions that
+don't rely on being able to see.
+
+00:14:11.360 --> 00:14:14.360
+So we'll build intuition in two
+dimensions and three dimensions,
+
+00:14:14.360 --> 00:14:18.860
+and then come up with general
+solutions that work beyond that.
+
+00:14:18.940 --> 00:14:20.900
+So this is an overview of the
+simple linear regression model,
+
+00:14:20.900 --> 00:14:24.020
+but we're going to focus on the
+constant model.
+
+00:14:24.020 --> 00:14:25.700
+The goal for the rest of today
+
+00:14:25.700 --> 00:14:29.200
+is how do we figure out what the
+best constant is?
+
+00:14:29.200 --> 00:14:31.240
+What is the best value of w?
+
+00:14:31.240 --> 00:14:32.880
+All we're going to do for the
+rest of the day,
+
+00:14:32.880 --> 00:14:36.060
+what is the best value of w for
+the constant model?
+
+00:14:36.060 --> 00:14:37.560
+Sound good?
+
+00:14:37.820 --> 00:14:43.580
+So what I want to do is turn
+this into kind of like a game,
+
+00:14:43.580 --> 00:14:47.420
+where for every value of w,
+
+00:14:47.420 --> 00:14:50.360
+I give it a score.
+
+00:14:50.360 --> 00:14:55.280
+For values of w that are very
+far from my data,
+
+00:14:55.280 --> 00:14:59.780
+like w equals 100 in the
+furthest right option here,
+
+00:15:00.000 --> 00:15:01.560
+it should have a really bad
+score.
+
+00:15:01.560 --> 00:15:04.960
+that indicates this is not a
+good W.
+
+00:15:04.960 --> 00:15:08.840
+And for values of W that are
+closer to most of the data,
+
+00:15:08.840 --> 00:15:12.590
+I should have good scores.
+
+00:15:14.300 --> 00:15:18.920
+What's one way I could try and
+come up with such a scoring
+
+00:15:18.920 --> 00:15:19.920
+system?
+
+00:15:21.780 --> 00:15:23.280
+And to illustrate,
+
+00:15:23.280 --> 00:15:27.640
+let me actually simplify a
+little and think of a smaller
+
+00:15:27.640 --> 00:15:29.140
+data set.
+
+00:15:35.680 --> 00:15:38.780
+of not the hundreds of commute
+times in the scatter plot we
+
+00:15:38.780 --> 00:15:40.120
+were just looking at,
+
+00:15:40.120 --> 00:15:43.870
+but these five commute times.
+
+00:15:44.060 --> 00:15:49.310
+And I should say y1 equals 72.
+
+00:16:03.480 --> 00:16:06.620
+85 and y5 equals 92.
+
+00:16:06.620 --> 00:16:08.420
+By the way, if you see me
+looking over at my computer,
+
+00:16:08.420 --> 00:16:10.480
+it's because I want to make sure
+the numbers I write here are the
+
+00:16:10.480 --> 00:16:13.140
+same as the ones that are in the
+notes so that the examples all
+
+00:16:13.140 --> 00:16:15.940
+are the same when you go back to
+review.
+
+00:16:15.940 --> 00:16:18.160
+OK, let's pretend we have this
+example data set of just five
+
+00:16:18.160 --> 00:16:19.660
+commute times.
+
+00:16:20.840 --> 00:16:26.090
+Why did I just write y1 through
+y5? Where are the x's here?
+
+00:16:31.880 --> 00:16:33.960
+Where are the x's?
+
+00:16:33.960 --> 00:16:34.400
+Paul.
+
+00:16:34.400 --> 00:16:37.860
+It doesn't matter what they are
+because it's not going to factor
+
+00:16:37.860 --> 00:16:41.160
+into our thinking of what the
+best constant to predict is
+
+00:16:41.160 --> 00:16:45.300
+because the constant model
+doesn't use x.
+
+00:16:46.560 --> 00:16:49.400
+Okay and so goal
+
+00:16:49.400 --> 00:16:54.380
+find the best
+
+00:16:54.380 --> 00:17:00.380
+w in h of x i equals w.
+
+00:17:03.500 --> 00:17:04.500
+Okay,
+
+00:17:05.200 --> 00:17:08.180
+given this small example,
+
+00:17:08.180 --> 00:17:08.660
+what is,
+
+00:17:08.660 --> 00:17:13.910
+pretend I pick a value of w.
+Let's say I pick w equals 80.
+
+00:17:15.340 --> 00:17:19.960
+What's one way I could try and
+measure how good or bad 80 is as
+
+00:17:19.960 --> 00:17:21.560
+a value of W.
+
+00:17:21.560 --> 00:17:22.640
+Yes, and remind me of your name?
+
+00:17:22.640 --> 00:17:23.640
+Sam.
+
+00:17:24.000 --> 00:17:27.980
+You could subtract each number
+from 80.
+
+00:17:28.240 --> 00:17:29.240
+Exactly.
+
+00:17:29.320 --> 00:17:32.880
+The sort of initial thing we
+might think of is just figure
+
+00:17:32.880 --> 00:17:38.130
+out how far each of the data
+points is from our prediction.
+
+00:17:38.340 --> 00:17:39.340
+OK?
+
+00:17:39.980 --> 00:17:41.480
+And indeed,
+
+00:17:42.980 --> 00:17:46.730
+that's what we'll start with.
+
+00:18:02.540 --> 00:18:04.180
+So let's pick
+
+00:18:04.180 --> 00:18:10.060
+h of
+
+00:18:10.060 --> 00:18:12.310
+xi equals 80.
+
+00:18:12.960 --> 00:18:15.680
+Actually, before we get into the
+specific example, So,
+
+00:18:15.680 --> 00:18:20.180
+let me define what error would
+be.
+
+00:18:34.220 --> 00:18:37.080
+I should use orange for all of
+my h of x i's because that's
+
+00:18:37.080 --> 00:18:41.580
+what I use in the notes.
+
+00:18:50.360 --> 00:18:51.360
+OK,
+
+00:18:52.140 --> 00:18:55.160
+so this is the definition of
+error,
+
+00:18:55.160 --> 00:18:58.640
+yi minus h of xi.
+
+00:18:58.640 --> 00:19:04.060
+All this is is just the fancy
+way of saying actual minus
+
+00:19:04.060 --> 00:19:05.520
+predicted.
+
+00:19:07.460 --> 00:19:11.740
+The yi's are just these five
+things for each value of i from
+
+00:19:11.740 --> 00:19:13.360
+1 to 5 here.
+I can compute this.
+
+00:19:13.360 --> 00:19:16.440
+And the h of xi is what I'm
+predicting.
+
+00:19:16.440 --> 00:19:19.480
+And here, h of xi is just going
+to be the same constant for all
+
+00:19:19.480 --> 00:19:22.380
+values in my data set.
+
+00:19:22.380 --> 00:19:23.380
+OK?
+
+00:19:25.160 --> 00:19:28.160
+Let's test this out.
+
+00:19:56.680 --> 00:20:00.400
+So then if I use h of xi equals
+80,
+
+00:20:00.400 --> 00:20:02.940
+what is the error for the first
+data point?
+
+00:20:02.940 --> 00:20:03.940
+y1.
+
+00:20:04.140 --> 00:20:05.160
+Yeah, remind me of your name.
+
+00:20:05.160 --> 00:20:06.160
+Ammar.
+
+00:20:06.800 --> 00:20:07.800
+Good.
+
+00:20:08.080 --> 00:20:09.580
+Minus a.
+
+00:20:16.020 --> 00:20:20.520
+What about for the second data
+point?
+
+00:20:22.320 --> 00:20:22.760
+There,
+
+00:20:22.760 --> 00:20:27.880
+I'd have y2 minus h of x2 equals
+what,
+
+00:20:27.880 --> 00:20:28.880
+Mar?
+
+00:20:28.920 --> 00:20:31.920
+I'd have positive 10.
+
+00:20:35.300 --> 00:20:39.050
+Let me do some highlighting
+here.
+
+00:20:39.600 --> 00:20:43.000
+But it seems like there's a
+problem here.
+
+00:20:43.000 --> 00:20:45.250
+What's the problem?
+
+00:20:48.480 --> 00:20:54.100
+Remember, my ultimate goal here
+is to think of a way to measure
+
+00:20:54.100 --> 00:20:59.780
+the quality of a prediction in
+which certain scores tell me a
+
+00:20:59.780 --> 00:21:02.540
+prediction was bad and other
+scores tell me a prediction was
+
+00:21:02.540 --> 00:21:03.480
+good.
+
+00:21:03.480 --> 00:21:05.440
+But what's kind of going on
+here?
+
+00:21:05.440 --> 00:21:06.440
+Sam?
+
+00:21:06.480 --> 00:21:07.840
+It's going to be 2,
+
+00:21:07.840 --> 00:21:10.820
+but it's really 18.
+So it should be like,
+
+00:21:10.820 --> 00:21:14.600
+you don't want it to be
+negative.
+
+00:21:14.600 --> 00:21:17.620
+Yeah, what we're getting at is
+that it
+
+00:21:17.620 --> 00:21:21.680
+doesn't seem like these scores
+should be able to be negative,
+
+00:21:22.320 --> 00:21:23.120
+OK?
+
+00:21:23.120 --> 00:21:26.420
+What would the best possible
+prediction be for, let's say,
+
+00:21:26.420 --> 00:21:27.300
+y1?
+
+00:21:27.300 --> 00:21:31.140
+If I wanted my prediction to be
+as good as possible for y1,
+
+00:21:31.140 --> 00:21:33.660
+what would the corresponding h
+of x1 be?
+
+00:21:33.660 --> 00:21:34.060
+Bella?
+
+00:21:34.060 --> 00:21:35.060
+0.
+
+00:21:35.460 --> 00:21:40.960
+The error would be 0, exactly.
+And so h of x1 would be
+
+00:21:40.960 --> 00:21:43.900
+72 for y1, because that's how we
+would get the prediction
+
+00:21:43.900 --> 00:21:44.900
+perfect.
+
+00:21:45.200 --> 00:21:47.400
+And that would mean we would
+have an error of 0.
+
+00:21:47.400 --> 00:21:49.140
+That's as good as we could do.
+
+00:21:49.140 --> 00:21:53.340
+What that tells us is values
+closer to 0 should be better, or
+
+00:21:53.340 --> 00:21:56.140
+smaller values should be better.
+
+00:21:56.140 --> 00:21:59.890
+But negative 8 is technically
+less than 10.
+
+00:22:02.280 --> 00:22:03.280
+Yeah.
+
+00:22:07.020 --> 00:22:08.020
+Actually,
+
+00:22:08.400 --> 00:22:09.740
+that example didn't work the way
+I wanted to.
+
+00:22:09.740 --> 00:22:11.140
+But I think you see the point,
+
+00:22:11.140 --> 00:22:15.640
+which is that these scores
+shouldn't be negative.
+
+00:22:16.440 --> 00:22:19.140
+Because if they could be
+negative, and eventually what we
+
+00:22:19.140 --> 00:22:22.460
+are going to try and do is come
+up with one aggregated or total
+
+00:22:22.460 --> 00:22:24.460
+score for the quality of the
+prediction,
+
+00:22:24.460 --> 00:22:26.800
+the positive scores and the
+negative scores could cancel
+
+00:22:26.800 --> 00:22:29.400
+out.
+And what if I pick a prediction
+
+00:22:29.400 --> 00:22:31.620
+that's really terrible,
+
+00:22:31.620 --> 00:22:35.200
+like 61, for example?
+
+00:22:35.400 --> 00:22:37.760
+What's the error for 61?
+
+00:22:37.760 --> 00:22:40.010
+It's negative 19,
+
+00:22:40.380 --> 00:22:42.980
+which is really bad, but it's
+the smallest number that would
+
+00:22:42.980 --> 00:22:45.420
+be on the screen, because
+negative 19 is smaller than
+
+00:22:45.420 --> 00:22:48.020
+negative 8 and positive 10.
+
+00:22:48.020 --> 00:22:51.160
+So do we see the issue with
+negative errors?
+
+00:22:51.160 --> 00:22:52.400
+Good.
+So what we want to do is come up
+
+00:22:52.400 --> 00:22:55.740
+with a scoring system where
+small values are consistently
+
+00:22:55.740 --> 00:22:58.120
+good and big values are
+consistently bad.
+
+00:22:58.120 --> 00:23:00.720
+So we want to get rid of the
+fact that some of these errors
+
+00:23:00.720 --> 00:23:03.580
+are positive and some are
+negative.
+
+00:23:03.580 --> 00:23:08.080
+We want them to all be
+non-negative.
+
+00:23:14.280 --> 00:23:18.780
+So what are some remedies to
+that situation?
+
+00:23:21.100 --> 00:23:22.100
+Yeah,
+
+00:23:22.620 --> 00:23:24.700
+the most natural thing to do
+would be to just take the
+
+00:23:24.700 --> 00:23:26.700
+absolute values of the errors.
+
+00:23:26.700 --> 00:23:29.360
+So they just can't be negative.
+
+00:23:29.360 --> 00:23:31.420
+The closer the actual was to
+predicted,
+
+00:23:31.420 --> 00:23:33.760
+the smaller the absolute error
+would be.
+
+00:23:33.760 --> 00:23:35.980
+The further away it is, the
+larger the absolute error would
+
+00:23:35.980 --> 00:23:36.760
+be.
+
+00:23:36.760 --> 00:23:40.760
+That's a natural idea, but it's
+actually not the idea we are
+
+00:23:40.760 --> 00:23:41.580
+going to use,
+
+00:23:41.580 --> 00:23:44.500
+at least not today.
+We'll talk about that more on
+
+00:23:44.500 --> 00:23:45.280
+Tuesday.
+OK,
+
+00:23:45.280 --> 00:23:49.780
+what are some other things we
+could do?
+
+00:23:51.780 --> 00:23:53.000
+Remind me of your name?
+
+00:23:53.000 --> 00:23:53.660
+Emma.
+
+00:23:53.660 --> 00:23:56.660
+You could square it.
+You could square it.
+
+00:23:56.940 --> 00:23:57.820
+Good.
+
+00:23:57.820 --> 00:23:59.220
+There are plenty of other things
+you could do too.
+
+00:23:59.220 --> 00:24:01.160
+You could raise them to the
+power of 4.
+
+00:24:01.160 --> 00:24:03.800
+You could do e to the power of
+these things, because e to the
+
+00:24:03.800 --> 00:24:06.320
+power of something can't return
+a negative number.
+
+00:24:06.320 --> 00:24:09.060
+There's lots of possible things
+you could do.
+
+00:24:09.060 --> 00:24:12.640
+But squaring it turns out to be
+the most convenient
+
+00:24:12.640 --> 00:24:13.640
+mathematically.
+
+00:24:14.400 --> 00:24:17.680
+And now you can maybe start to
+see why we planted very specific
+
+00:24:17.680 --> 00:24:19.660
+questions in yesterday's lab.
+
+00:24:19.660 --> 00:24:22.960
+Okay if you remember yesterday's
+lab worksheet there were
+
+00:24:22.960 --> 00:24:26.120
+functions that involved
+something minus something
+
+00:24:26.120 --> 00:24:28.600
+squared and you had to take a
+derivative.
+
+00:24:28.600 --> 00:24:30.220
+Why is that?
+
+00:24:30.220 --> 00:24:32.420
+Like why did we put that there?
+Well it's because I knew we were
+
+00:24:32.420 --> 00:24:35.760
+going to talk about squaring the
+errors here and at some point
+
+00:24:35.760 --> 00:24:37.360
+we're gonna have to take a
+derivative.
+
+00:24:37.360 --> 00:24:40.040
+And the kind of thing you should
+be thinking about is, well,
+
+00:24:40.040 --> 00:24:44.120
+our overall goal here is to find
+the best w.
+
+00:24:44.120 --> 00:24:47.400
+So somehow we are going to pose
+this as a calculus question, and
+
+00:24:47.400 --> 00:24:49.360
+derivatives are going to enter
+the picture.
+
+00:24:49.360 --> 00:24:53.860
+And what do you know about
+absolute values?
+
+00:24:56.600 --> 00:24:58.880
+What do you know about absolute
+values?
+
+00:24:58.880 --> 00:24:59.420
+Yes,
+
+00:24:59.420 --> 00:25:00.080
+Andrew?
+
+00:25:00.080 --> 00:25:01.960
+The derivatives are not
+continuous.
+
+00:25:01.960 --> 00:25:04.420
+Yeah, or the derivative isn't
+defined everywhere.
+
+00:25:04.420 --> 00:25:06.980
+Exactly, because the absolute
+value curve looks like this.
+
+00:25:06.980 --> 00:25:10.880
+And then at the point where
+actual equals predicted, or
+
+00:25:10.880 --> 00:25:13.220
+where the input to the absolute
+value is zero, there's no
+
+00:25:13.220 --> 00:25:16.200
+clearly defined derivative, so
+it's a little harder to try and
+
+00:25:16.200 --> 00:25:18.620
+use calculus to figure out the
+best w there.
+
+00:25:18.620 --> 00:25:23.580
+Which is why we are going to
+start with squaring.
+
+00:25:23.580 --> 00:25:28.080
+And when we square our error,
+
+00:25:28.480 --> 00:25:30.020
+or take the absolute value,
+
+00:25:30.020 --> 00:25:32.870
+what we've produced is called a
+loss function.
+
+00:25:32.870 --> 00:25:35.870
+A loss function measures
+
+00:25:38.700 --> 00:25:42.870
+how wrong or how good or bad
+
+00:25:42.870 --> 00:25:45.120
+a prediction is
+
+00:25:47.040 --> 00:25:50.790
+for a single data point.
+
+00:25:55.190 --> 00:25:58.800
+So the first loss function we
+are going to see is called
+
+00:25:58.800 --> 00:26:00.300
+squared loss.
+
+00:26:02.280 --> 00:26:05.020
+Here's the formula for squared
+loss.
+
+00:26:05.020 --> 00:26:09.140
+The letter I will use to refer
+to a loss function
+
+00:26:09.140 --> 00:26:13.640
+is L with a subscript SQ,
+standing for squared.
+
+00:26:13.820 --> 00:26:16.500
+And it's going to take in two
+inputs,
+
+00:26:16.500 --> 00:26:19.500
+an actual y value,
+
+00:26:19.800 --> 00:26:20.800
+yi,
+
+00:26:20.900 --> 00:26:22.660
+and a predicted y value,
+
+00:26:22.660 --> 00:26:24.300
+h of xi.
+
+00:26:24.300 --> 00:26:27.940
+What's it going to return?
+
+00:26:27.940 --> 00:26:32.440
+What do I write on the
+right-hand side here?
+
+00:26:33.700 --> 00:26:36.940
+Got it.
+Would it be like yi minus h of x
+
+00:26:36.940 --> 00:26:38.040
+of i squared?
+
+00:26:38.040 --> 00:26:38.460
+Good.
+
+00:26:38.460 --> 00:26:44.040
+It's just actual y value minus
+predicted y value
+
+00:26:45.360 --> 00:26:46.360
+squared.
+
+00:26:47.000 --> 00:26:50.340
+So when you see this, all you
+should think is actual minus
+
+00:26:50.340 --> 00:26:53.960
+predicted squared.
+
+00:26:59.340 --> 00:27:03.180
+What do you think the other or
+next loss function we will learn
+
+00:27:03.180 --> 00:27:05.430
+about is called?
+
+00:27:08.760 --> 00:27:09.760
+Yeah.
+
+00:27:10.180 --> 00:27:13.930
+Yeah, there's an absolute loss
+as well.
+
+00:27:16.210 --> 00:27:19.040
+Its formula, as you might
+predict,
+
+00:27:19.040 --> 00:27:24.940
+is still called L something, but
+L abs takes in an actual y,
+
+00:27:25.660 --> 00:27:28.680
+predicted y,
+
+00:27:29.200 --> 00:27:35.020
+and returns the absolute value
+of
+
+00:27:35.020 --> 00:27:37.200
+the difference.
+
+00:27:43.780 --> 00:27:44.400
+OK?
+
+00:27:44.400 --> 00:27:46.480
+Like I said, we're going to
+start with squared loss because
+
+00:27:46.480 --> 00:27:50.880
+the squaring operation plays
+nicely with calculus.
+
+00:27:51.080 --> 00:27:53.940
+But we will come back to
+absolute loss Maybe briefly at
+
+00:27:53.940 --> 00:27:57.900
+the end of today's lecture, but
+mostly on Tuesday.
+
+00:27:57.900 --> 00:27:58.540
+Okay,
+
+00:27:58.540 --> 00:28:01.360
+so now we have our like scoring
+technique.
+
+00:28:01.360 --> 00:28:03.940
+We know how we are going to
+evaluate the quality of a
+
+00:28:03.940 --> 00:28:04.940
+prediction
+
+00:28:06.260 --> 00:28:11.510
+for all points in our data set.
+
+00:28:12.000 --> 00:28:15.750
+So let's use squared loss.
+
+00:28:18.100 --> 00:28:23.350
+There's a visual I want to bring
+in here.
+
+00:28:25.940 --> 00:28:31.720
+There we go.
+What
+
+00:28:31.720 --> 00:28:33.220
+I've done,
+
+00:28:37.220 --> 00:28:41.720
+let me copy this as well.
+
+00:28:51.660 --> 00:28:53.160
+This happens.
+
+00:28:55.820 --> 00:28:56.820
+Okay.
+
+00:28:58.920 --> 00:29:00.420
+There we go.
+
+00:29:00.420 --> 00:29:04.920
+What I've done is drawn two
+scatter plots.
+
+00:29:04.960 --> 00:29:08.940
+The X positions of the five
+points in each are irrelevant.
+
+00:29:08.940 --> 00:29:14.190
+The Y positions are these five Y
+values here.
+
+00:29:14.280 --> 00:29:16.580
+Do we see that? Like this is at
+72,
+
+00:29:16.580 --> 00:29:18.180
+this is at 90,
+
+00:29:18.180 --> 00:29:20.120
+this is at 61.
+
+00:29:20.120 --> 00:29:23.600
+So it's the same data set that's
+being visualized here.
+
+00:29:23.600 --> 00:29:28.120
+And what I'm doing is I'm
+visualizing
+
+00:29:28.620 --> 00:29:33.870
+the squared loss for all five of
+my data points
+
+00:29:34.640 --> 00:29:39.140
+for two different choices of w.
+
+00:29:41.240 --> 00:29:42.240
+Actually,
+
+00:29:42.420 --> 00:29:46.220
+there's a step I skipped here
+that could make this slightly
+
+00:29:46.220 --> 00:29:47.220
+clearer.
+
+00:29:47.660 --> 00:29:51.380
+What I've done here on this page
+is I defined squared loss and
+
+00:29:51.380 --> 00:29:53.960
+absolute loss for any hypothesis
+function.
+
+00:29:53.960 --> 00:29:57.760
+Age of xi could be super
+complicated, involve squaring,
+
+00:29:57.760 --> 00:29:59.260
+signs, whatever.
+
+00:29:59.920 --> 00:30:02.920
+For the constant model,
+
+00:30:05.060 --> 00:30:10.840
+the
+
+00:30:10.840 --> 00:30:12.100
+formula simplifies.
+
+00:30:12.100 --> 00:30:17.680
+So squared loss in general looks
+like
+
+00:30:17.680 --> 00:30:23.660
+actual minus predicted squared
+but for the constant
+
+00:30:23.660 --> 00:30:25.020
+model how does it simplify
+
+00:30:25.020 --> 00:30:32.920
+yes
+
+00:30:32.920 --> 00:30:38.800
+and remind me of your name Alex
+it's just the actual minus W
+
+00:30:38.800 --> 00:30:44.480
+good why I minus W squared
+that's the simplification, and
+
+00:30:44.480 --> 00:30:50.280
+that's because the constant
+model just says h of xi is
+
+00:30:50.280 --> 00:30:52.530
+equal to W.
+
+00:30:52.760 --> 00:30:57.260
+I should have said that before.
+
+00:30:57.340 --> 00:30:59.660
+And so now, are we clear on what
+I mean by that?
+
+00:30:59.660 --> 00:31:04.080
+The squared loss for each data
+point is just this difference
+
+00:31:04.080 --> 00:31:09.300
+between that y value and the W
+that we're considering squared.
+
+00:31:09.300 --> 00:31:12.040
+So now this plot makes a little
+more sense because we are
+
+00:31:12.040 --> 00:31:14.420
+considering two different
+choices,
+
+00:31:14.640 --> 00:31:15.640
+w,
+
+00:31:16.120 --> 00:31:21.680
+right? And the squared loss that
+we are looking at is yi minus w
+
+00:31:21.680 --> 00:31:22.680
+squared.
+
+00:31:22.980 --> 00:31:24.720
+On the left,
+
+00:31:24.720 --> 00:31:30.020
+I've plotted out these squared
+losses for w equals 85.
+
+00:31:30.020 --> 00:31:32.960
+And on the right, I have w
+equals 80.
+
+00:31:32.960 --> 00:31:38.180
+And you can see that w equals 85
+is better for some data points,
+
+00:31:38.180 --> 00:31:41.280
+and w equals 80 is better for
+others.
+
+00:31:41.280 --> 00:31:42.080
+For example,
+
+00:31:42.080 --> 00:31:45.340
+w equals 85 is really good
+
+00:31:45.340 --> 00:31:49.880
+when y is equal to 85, because
+there's no error,
+
+00:31:49.880 --> 00:31:54.460
+and that's the squared loss is 0
+as well.
+
+00:31:54.460 --> 00:31:55.660
+Do we see that?
+
+00:31:55.660 --> 00:31:58.440
+So the left one is good in some
+cases, but it's also bad in some
+
+00:31:58.440 --> 00:31:59.440
+cases.
+
+00:31:59.520 --> 00:32:03.270
+Like this looks really bad.
+
+00:32:04.100 --> 00:32:06.440
+Negative 24 squared, that's a
+huge number,
+
+00:32:06.440 --> 00:32:09.120
+576.
+So the squared loss for that
+
+00:32:09.120 --> 00:32:12.680
+data point is really bad.
+And so maybe there's some way to
+
+00:32:12.680 --> 00:32:17.380
+set this system up where it
+encourages us not to pick 85,
+
+00:32:17.380 --> 00:32:19.960
+because it seems like there's a
+lot of loss here.
+
+00:32:19.960 --> 00:32:21.840
+So keep that thought in mind.
+
+00:32:21.840 --> 00:32:23.060
+The one on the right,
+
+00:32:23.060 --> 00:32:27.560
+some of the numbers are bigger.
+Some of the numbers are smaller.
+
+00:32:27.560 --> 00:32:28.680
+And so the question is,
+
+00:32:28.680 --> 00:32:29.200
+well,
+
+00:32:29.200 --> 00:32:33.720
+given these five squared losses
+for w equals 85 and separately
+
+00:32:33.720 --> 00:32:36.220
+five squared losses for w equals
+80,
+
+00:32:36.220 --> 00:32:41.020
+how do we know which one is
+better?
+
+00:32:41.020 --> 00:32:43.460
+Because we're comparing five
+different numbers here across
+
+00:32:43.460 --> 00:32:45.480
+two different sets.
+
+00:32:45.480 --> 00:32:47.640
+And what if we had a data set
+with hundreds of points?
+
+00:32:47.640 --> 00:32:50.040
+We're not just going to look at
+100 squared losses
+
+00:32:50.040 --> 00:32:52.480
+for every value of w we're
+considering.
+
+00:32:52.480 --> 00:32:55.200
+What could we do to make this
+process a little simpler?
+
+00:32:55.200 --> 00:32:56.480
+Yes, and remind me of your name?
+
+00:32:56.480 --> 00:32:58.420
+My name's Chloe.
+
+00:32:58.420 --> 00:33:03.680
+I'm going to sum up the error
+with the ages greater.
+
+00:33:03.680 --> 00:33:08.060
+Yeah, all we really need to do
+is figure out which w had the
+
+00:33:08.060 --> 00:33:10.980
+smaller total squared loss,
+
+00:33:10.980 --> 00:33:11.980
+right?
+
+00:33:13.400 --> 00:33:18.650
+And that's more or less what we
+are going to do with one
+
+00:33:18.800 --> 00:33:19.800
+Modification
+
+00:33:23.260 --> 00:33:26.880
+Instead of total I'm gonna
+compute the average but an
+
+00:33:26.880 --> 00:33:30.000
+important point to make here is
+that Now,
+
+00:33:30.000 --> 00:33:34.500
+suppose w equals 80 has a
+smaller total squared loss.
+
+00:33:34.980 --> 00:33:37.800
+It also has a smaller average
+squared loss,
+
+00:33:37.800 --> 00:33:38.800
+right?
+
+00:33:39.600 --> 00:33:41.850
+Why is that?
+
+00:33:43.600 --> 00:33:45.900
+Yes? Same number of data points.
+Exactly.
+
+00:33:45.900 --> 00:33:48.560
+It's the same number of data
+points in both cases,
+
+00:33:48.560 --> 00:33:49.020
+right?
+
+00:33:49.020 --> 00:33:52.180
+Pretend we have two classes at
+the university.
+
+00:33:52.180 --> 00:33:54.260
+Both have 50 students.
+
+00:33:54.260 --> 00:33:57.880
+And class A's average height is,
+I don't know, 5 foot 5.
+
+00:33:57.880 --> 00:34:02.640
+Class B's average height is
+5'8".
+
+00:34:03.060 --> 00:34:05.680
+If you added up the heights of
+everybody in Class A and Class
+
+00:34:05.680 --> 00:34:06.260
+B,
+
+00:34:06.260 --> 00:34:09.900
+Class B's is of course going to
+be greater because they both
+
+00:34:09.900 --> 00:34:10.980
+have 50 students.
+
+00:34:10.980 --> 00:34:12.660
+But if the numbers of students
+were different, then you
+
+00:34:12.660 --> 00:34:14.840
+couldn't directly make that
+comparison.
+
+00:34:14.840 --> 00:34:18.280
+My point with that example is
+that any time you are dealing
+
+00:34:18.280 --> 00:34:20.620
+with situations with the same
+number of data points,
+
+00:34:20.620 --> 00:34:23.180
+comparing totals is the same as
+comparing averages.
+
+00:34:23.180 --> 00:34:27.520
+And I'm going to choose to
+compare averages because
+
+00:34:27.520 --> 00:34:31.980
+then the numbers don't get
+super, super large when I have
+
+00:34:31.980 --> 00:34:34.140
+lots of data points.
+
+00:34:34.140 --> 00:34:36.680
+Pretend I have a million data
+points and the total squared
+
+00:34:36.680 --> 00:34:39.100
+loss may be some massive number.
+
+00:34:39.100 --> 00:34:41.600
+But the average squared loss
+doesn't need to be.
+
+00:34:41.600 --> 00:34:43.480
+Okay, and it's more
+interpretable in the scale of
+
+00:34:43.480 --> 00:34:45.920
+the data, which is the kind of
+thing we're going to explore in
+
+00:34:45.920 --> 00:34:49.260
+just a little bit.
+So the idea here is compute
+
+00:34:49.260 --> 00:34:53.480
+the average
+
+00:34:53.480 --> 00:34:57.720
+squared loss
+
+00:34:57.720 --> 00:35:03.420
+for all w's we
+
+00:35:03.420 --> 00:35:04.920
+are considering.
+
+00:35:09.140 --> 00:35:11.980
+So here are our five data
+points.
+
+00:35:11.980 --> 00:35:17.080
+We'll say for w equals 85,
+
+00:35:17.620 --> 00:35:19.580
+what does that look like?
+
+00:35:19.580 --> 00:35:22.820
+What does my average squared
+loss look like?
+
+00:35:22.820 --> 00:35:25.900
+If I had to start writing this
+out as an expression,
+
+00:35:25.900 --> 00:35:28.900
+what would I write?
+
+00:35:35.620 --> 00:35:36.620
+Paul.
+
+00:35:36.700 --> 00:35:42.000
+Is it the summation of u minus
+yi over
+
+00:35:42.000 --> 00:35:43.000
+i?
+
+00:35:43.600 --> 00:35:45.440
+Eventually, we will write this
+in summation notation.
+
+00:35:45.440 --> 00:35:47.720
+But for now, I want to keep the
+variables out of it, and I just
+
+00:35:47.720 --> 00:35:51.620
+want to write down some numbers
+or figure out what numbers I
+
+00:35:51.620 --> 00:35:52.140
+would like.
+
+00:35:52.140 --> 00:35:54.700
+We don't need to do the actual
+squaring, but I want to write
+
+00:35:54.700 --> 00:35:57.740
+down a thing I could put in my
+calculator.
+
+00:35:57.740 --> 00:35:59.280
+72 minus 85 squared.
+Good, exactly.
+
+00:35:59.280 --> 00:36:00.700
+That's what I was getting at.
+
+00:36:00.700 --> 00:36:06.380
+72 minus 85 squared plus 90
+minus 85
+
+00:36:06.380 --> 00:36:12.360
+squared plus dot dot dot plus 92
+minus 85
+
+00:36:12.360 --> 00:36:15.360
+squared all over 5.
+
+00:36:15.820 --> 00:36:18.080
+That's something I could put
+into my calculator or tell me
+
+00:36:18.080 --> 00:36:19.560
+one number.
+
+00:36:19.560 --> 00:36:25.560
+If I do this for w equals 80,
+
+00:36:26.600 --> 00:36:30.350
+I'd have a similar looking
+expression.
+
+00:36:31.520 --> 00:36:36.180
+The only difference is that
+instead of 85s everywhere,
+
+00:36:38.060 --> 00:36:40.480
+you'd see 80s.
+
+00:36:47.340 --> 00:36:49.700
+Do we see how these are
+essentially the same formula,
+
+00:36:49.700 --> 00:36:54.950
+just 80s on the bottom and 85s
+up top?
+
+00:36:59.000 --> 00:37:01.820
+There's a mistake on the page.
+Where's the mistake?
+
+00:37:01.820 --> 00:37:03.320
+Very subtle.
+
+00:37:05.560 --> 00:37:06.300
+Andrew.
+
+00:37:06.300 --> 00:37:08.300
+That squared is in square
+brackets.
+
+00:37:08.300 --> 00:37:09.800
+Yeah, good.
+
+00:37:12.520 --> 00:37:13.520
+OK,
+
+00:37:13.720 --> 00:37:18.100
+so just to make sure we're on
+the same page here, pretend I
+
+00:37:18.100 --> 00:37:21.680
+plug this into the first
+expression into a calculator.
+
+00:37:21.680 --> 00:37:24.560
+I plug the second into the
+calculator.
+
+00:37:24.560 --> 00:37:29.820
+How does that tell me which w is
+better?
+
+00:37:29.820 --> 00:37:31.700
+Which w is better?
+
+00:37:31.700 --> 00:37:33.880
+Whichever produces the lower
+score.
+
+00:37:33.880 --> 00:37:34.300
+Yeah,
+
+00:37:34.300 --> 00:37:39.550
+we want the w with the lower
+average squared loss.
+
+00:37:52.200 --> 00:37:53.200
+OK.
+
+00:37:53.460 --> 00:37:56.040
+So it seems like we have a
+system where
+
+00:37:56.040 --> 00:37:58.500
+if we think of values of w to
+use,
+
+00:37:58.500 --> 00:38:00.620
+we know how to give them a
+score.
+
+00:38:00.620 --> 00:38:04.120
+So if all 70 of us pick a w,
+
+00:38:04.120 --> 00:38:07.320
+we could all compute the average
+squared loss for this data set.
+
+00:38:07.320 --> 00:38:12.220
+And then whichever one of us
+picked the w with the lowest
+
+00:38:12.220 --> 00:38:14.460
+average squared loss, that would
+be the best among the things we
+
+00:38:14.460 --> 00:38:15.460
+tried.
+
+00:38:15.580 --> 00:38:18.760
+But again, ideally, we want to
+think of a way of figuring out
+
+00:38:18.760 --> 00:38:21.640
+the best w that doesn't involve
+just randomly guessing possibly
+
+00:38:21.640 --> 00:38:23.140
+good values.
+
+00:38:23.160 --> 00:38:26.300
+So what I want to do is take
+this calculation that's right
+
+00:38:26.300 --> 00:38:30.360
+here and turn it into a function
+where I can plug in any value of
+
+00:38:30.360 --> 00:38:31.360
+w.
+And that's how we're going to
+
+00:38:31.360 --> 00:38:33.280
+start building to this
+calculus-based approach that I
+
+00:38:33.280 --> 00:38:37.100
+alluded to.
+So let
+
+00:38:37.100 --> 00:38:41.600
+me copy this data set again.
+
+00:38:48.910 --> 00:38:53.190
+For any
+
+00:38:53.190 --> 00:38:57.350
+w,
+
+00:38:58.630 --> 00:39:04.010
+the average squared loss is
+
+00:39:04.010 --> 00:39:09.510
+72 minus w squared
+
+00:39:09.510 --> 00:39:14.990
+plus 90 minus w squared plus dot
+dot dot
+
+00:39:14.990 --> 00:39:20.530
+all the way through 92 minus w
+squared all over 5.
+
+00:39:23.650 --> 00:39:29.390
+Actually I'm going to write this
+a little lower because I want to
+
+00:39:29.390 --> 00:39:32.390
+give this a name.
+
+00:39:34.490 --> 00:39:39.740
+Do you agree that this is a
+function of just one variable,
+
+00:39:39.950 --> 00:39:43.700
+The data points, the y's,
+
+00:39:44.050 --> 00:39:47.550
+the setting in which we're
+working assumes that those are
+
+00:39:47.550 --> 00:39:49.850
+constant or they're not really
+up for debate.
+
+00:39:49.850 --> 00:39:51.190
+The data is what it is.
+
+00:39:51.190 --> 00:39:53.950
+Our goal is to figure out what
+the parameter should be.
+
+00:39:53.950 --> 00:39:56.810
+So the data is not a variable
+here, even though it is unknown
+
+00:39:56.810 --> 00:39:58.850
+to us.
+The only unknown here,
+
+00:39:59.170 --> 00:40:03.670
+or the only variable here, is
+what the value of w should be.
+
+00:40:03.670 --> 00:40:05.770
+And so I'm intentionally writing
+
+00:40:05.770 --> 00:40:11.690
+this as a function of
+
+00:40:11.690 --> 00:40:13.190
+just w.
+
+00:40:14.170 --> 00:40:17.390
+Now I've introduced a new symbol
+here,
+
+00:40:17.390 --> 00:40:22.230
+r.
+R stands for empirical
+
+00:40:22.230 --> 00:40:23.450
+risk,
+
+00:40:31.470 --> 00:40:36.610
+which is just a fancy word
+
+00:40:36.610 --> 00:40:39.630
+for average loss
+
+00:40:45.070 --> 00:40:48.820
+for a whole data set.
+
+00:40:54.110 --> 00:40:55.390
+Crucially though,
+
+00:40:55.390 --> 00:40:58.410
+the letter L does not appear
+here.
+
+00:40:58.410 --> 00:41:01.590
+It would be wrong to put an L
+where I've highlighted the R to
+
+00:41:01.590 --> 00:41:02.230
+be.
+
+00:41:02.230 --> 00:41:04.950
+Now if you take other machine
+learning courses or read things
+
+00:41:04.950 --> 00:41:05.830
+online,
+
+00:41:05.830 --> 00:41:09.650
+sometimes they will call this
+entire thing a loss function.
+
+00:41:10.390 --> 00:41:12.550
+They'll say the average of these
+squared errors is a loss
+
+00:41:12.550 --> 00:41:13.330
+function.
+
+00:41:13.330 --> 00:41:15.770
+But for this class, I want to
+sort of maintain the distinction
+
+00:41:15.770 --> 00:41:18.770
+that these individual pieces,
+
+00:41:21.470 --> 00:41:24.470
+that's a loss function.
+
+00:41:24.470 --> 00:41:26.330
+But the entire thing,
+
+00:41:26.330 --> 00:41:28.970
+average of my losses, is a
+different thing,
+
+00:41:28.970 --> 00:41:31.450
+here called empirical risk,
+which I will denote with the
+
+00:41:31.450 --> 00:41:32.950
+letter R.
+
+00:41:33.710 --> 00:41:38.890
+So now I have a function where I
+can plug in values of w and see
+
+00:41:38.890 --> 00:41:40.510
+which one leads me to the lowest
+output.
+
+00:41:40.510 --> 00:41:45.990
+And I want the value of w that
+minimizes this function.
+
+00:41:45.990 --> 00:41:48.330
+Now, this sounds a lot like
+other problems that you've
+
+00:41:48.330 --> 00:41:52.830
+solved before, or tried to solve
+before, using calculus.
+
+00:41:53.090 --> 00:41:54.550
+Do you agree?
+
+00:41:54.550 --> 00:41:55.530
+OK.
+And so what we're going to do
+
+00:41:55.530 --> 00:41:56.530
+shortly
+
+00:41:56.530 --> 00:42:00.280
+is figure out the general
+solution.
+
+00:42:04.270 --> 00:42:05.770
+But first,
+
+00:42:06.150 --> 00:42:08.670
+I want us to guess.
+
+00:42:08.670 --> 00:42:09.850
+Or actually,
+
+00:42:09.850 --> 00:42:12.030
+before we even guess,
+
+00:42:12.030 --> 00:42:16.470
+I want us to think about what
+this looks like.
+
+00:42:16.470 --> 00:42:20.730
+What does this graph look like?
+
+00:42:20.730 --> 00:42:23.530
+The graph here, what does it
+look like? Can you remind me of
+
+00:42:23.530 --> 00:42:24.210
+your name again?
+
+00:42:24.210 --> 00:42:24.770
+Brian.
+Brian.
+
+00:42:24.770 --> 00:42:26.190
+It's a parabola.
+It's a parabola.
+
+00:42:26.190 --> 00:42:27.090
+Why?
+
+00:42:27.090 --> 00:42:29.930
+It's the polynomial values,
+
+00:42:29.930 --> 00:42:30.930
+um,
+
+00:42:30.990 --> 00:42:31.210
+max,
+
+00:42:31.210 --> 00:42:32.150
+it means new,
+
+00:42:32.150 --> 00:42:33.150
+so.
+
+00:42:33.610 --> 00:42:35.350
+Exactly.
+If you look at all five of these
+
+00:42:35.350 --> 00:42:36.790
+individual pieces,
+
+00:42:36.790 --> 00:42:38.250
+72 minus w squared,
+
+00:42:38.250 --> 00:42:40.890
+90 minus w squared, and so on,
+
+00:42:40.890 --> 00:42:44.590
+each one of those is a
+quadratic, or it's a parabola,
+
+00:42:44.590 --> 00:42:48.830
+if the axes were w and the
+output.
+
+00:42:48.830 --> 00:42:49.830
+Now,
+
+00:42:50.170 --> 00:42:52.450
+when you look at this more
+complicated expression, it seems
+
+00:42:52.450 --> 00:42:55.230
+like it may be more complicated
+than a parabola, but it's not.
+
+00:42:55.230 --> 00:42:57.370
+And if you expanded out the
+numerator, which there's no need
+
+00:42:57.370 --> 00:42:57.990
+to,
+
+00:42:57.990 --> 00:43:01.150
+but if you did, you would still
+see that it's something times w
+
+00:43:01.150 --> 00:43:03.910
+squared plus something times w
+plus something, which is just a
+
+00:43:03.910 --> 00:43:04.730
+parabola.
+
+00:43:04.730 --> 00:43:09.980
+What this means is that what we
+are looking at here
+
+00:43:12.090 --> 00:43:16.590
+is a graph of this form.
+
+00:43:16.830 --> 00:43:21.310
+w is on this axis, and the
+output average squared loss for
+
+00:43:21.310 --> 00:43:24.750
+our chosen w is on the y-axis.
+
+00:43:24.750 --> 00:43:30.750
+Why do I know it looks like this
+and doesn't point downwards?
+
+00:43:33.510 --> 00:43:34.770
+Caleb, right?
+
+00:43:34.770 --> 00:43:36.010
+Yeah, everything's squared.
+
+00:43:36.010 --> 00:43:39.850
+Yeah, because all of these terms
+are being squared, which means
+
+00:43:39.850 --> 00:43:41.470
+they couldn't be negative,
+
+00:43:41.470 --> 00:43:45.220
+which means this parabola can't
+extend infinitely negative.
+
+00:43:46.110 --> 00:43:49.890
+And if we think about
+conceptually how we set this up,
+
+00:43:50.270 --> 00:43:53.890
+it seems like there would be a
+possible best prediction, but no
+
+00:43:53.890 --> 00:43:55.790
+possible worst prediction.
+
+00:43:55.790 --> 00:43:57.930
+If you think of a bad
+prediction,
+
+00:43:57.930 --> 00:44:00.470
+you can make it even worse by
+moving a little further away
+
+00:44:00.470 --> 00:44:01.470
+from the data.
+
+00:44:01.470 --> 00:44:03.150
+If a million is bad,
+
+00:44:03.150 --> 00:44:05.170
+a million and one is even worse.
+It would have an even higher
+
+00:44:05.170 --> 00:44:06.310
+average square root.
+
+00:44:06.310 --> 00:44:07.810
+So there's no maximum,
+
+00:44:07.810 --> 00:44:09.670
+but there is a minimum.
+
+00:44:09.670 --> 00:44:11.810
+Because we know these things
+can't be negative, so this
+
+00:44:11.810 --> 00:44:14.060
+couldn't point infinitely
+downwards.
+
+00:44:14.610 --> 00:44:16.970
+So this is what it's going to
+look like.
+
+00:44:16.970 --> 00:44:18.710
+And the question is,
+
+00:44:18.710 --> 00:44:24.650
+what is the input
+
+00:44:24.650 --> 00:44:29.150
+that gets us to this vertex?
+
+00:44:29.650 --> 00:44:32.150
+And we know what the answer is
+going to be from yesterday's
+
+00:44:32.150 --> 00:44:35.130
+lab, because this is essentially
+the same formula,
+
+00:44:35.130 --> 00:44:38.450
+just you didn't have all of this
+context going into the lab.
+
+00:44:38.450 --> 00:44:43.490
+What is the answer going to end
+up being?
+
+00:44:43.490 --> 00:44:44.210
+Maaj?
+
+00:44:44.210 --> 00:44:45.010
+The mean?
+
+00:44:45.010 --> 00:44:48.870
+Yeah, the mean or the average of
+the data points.
+
+00:44:48.870 --> 00:44:51.250
+And we're going to prove that
+once and for all,
+
+00:44:51.250 --> 00:44:55.150
+not just with this example of
+five data points, but for any
+
+00:44:55.150 --> 00:44:57.400
+arbitrary data set.
+
+00:44:57.850 --> 00:44:58.850
+Okay?
+
+00:45:00.330 --> 00:45:03.090
+That's what we're about to do.
+
+00:45:03.090 --> 00:45:04.550
+Before we do that,
+
+00:45:04.550 --> 00:45:07.890
+what questions do we have so far
+with anything that we've done
+
+00:45:07.890 --> 00:45:08.890
+today?
+
+00:45:10.330 --> 00:45:13.710
+What questions do we have?
+
+00:45:13.710 --> 00:45:16.810
+So we talked about, before we
+talked about risk,
+
+00:45:16.810 --> 00:45:17.750
+we talked about error.
+
+00:45:17.750 --> 00:45:21.430
+Is error just the expected minus
+the predicted?
+
+00:45:21.430 --> 00:45:24.350
+Actual minus the predicted,
+yeah.
+
+00:45:24.350 --> 00:45:27.350
+So these individual pieces
+without the square,
+
+00:45:27.750 --> 00:45:30.870
+like 72 minus 80 and 90 minus
+80,
+
+00:45:30.870 --> 00:45:32.510
+we would call those things
+errors.
+
+00:45:32.510 --> 00:45:36.110
+But when you square them, then
+that's squared loss,
+
+00:45:36.110 --> 00:45:37.430
+or just the loss.
+
+00:45:37.430 --> 00:45:37.970
+Yes,
+
+00:45:37.970 --> 00:45:39.050
+and remind me of your name?
+
+00:45:39.050 --> 00:45:39.990
+Alex.
+Alex, right.
+
+00:45:39.990 --> 00:45:41.510
+Why couldn't you just take,
+
+00:45:41.510 --> 00:45:44.490
+I don't like you're sort of like
+dividing it by like the total
+
+00:45:44.490 --> 00:45:46.070
+number of them, because you're
+trying to find the average.
+
+00:45:46.070 --> 00:45:48.750
+But like why couldn't you just
+like minimize as sort of just
+
+00:45:48.750 --> 00:45:51.750
+the summation of the loss
+functions.
+
+00:45:51.750 --> 00:45:54.070
+Like, why do we need to divide
+by 5? We don't.
+
+00:45:54.070 --> 00:45:57.410
+We would get the same result if
+we didn't divide by 5.
+
+00:45:57.410 --> 00:45:58.410
+OK?
+
+00:45:58.530 --> 00:46:02.410
+What I'm saying, though, is that
+as a principle for the rest of
+
+00:46:02.410 --> 00:46:03.290
+the semester,
+
+00:46:03.290 --> 00:46:05.890
+whenever we're dealing with loss
+functions,
+
+00:46:05.890 --> 00:46:08.670
+the convention we will use is to
+average them rather than sum
+
+00:46:08.670 --> 00:46:11.810
+them just because it keeps the
+numbers smaller and more
+
+00:46:11.810 --> 00:46:12.810
+interpretable.
+
+00:46:12.890 --> 00:46:15.410
+Imagine we had a million data
+points.
+
+00:46:15.410 --> 00:46:17.870
+The average of a million squared
+losses doesn't have to be that
+
+00:46:17.870 --> 00:46:20.430
+big, but the total of a million
+squared losses would be pretty
+
+00:46:20.430 --> 00:46:21.230
+big.
+
+00:46:21.230 --> 00:46:24.090
+So it makes it a little easier
+to compare
+
+00:46:24.090 --> 00:46:27.090
+average squared losses across
+different situations.
+
+00:46:30.470 --> 00:46:33.810
+So we know this is the graph
+that we are minimizing.
+
+00:46:33.810 --> 00:46:35.550
+And by the way, actually, I
+should say,
+
+00:46:35.550 --> 00:46:40.010
+what we are about to do is set
+this up and find a formula for
+
+00:46:40.010 --> 00:46:42.590
+the minimizing w that is the
+best w,
+
+00:46:42.590 --> 00:46:44.630
+the one that makes the best
+predictions.
+
+00:46:44.630 --> 00:46:47.070
+We're going to do that using
+calculus, But there are other
+
+00:46:47.070 --> 00:46:48.550
+ways you could do it.
+
+00:46:48.550 --> 00:46:50.490
+Like when you were in high
+school, you learned how to find
+
+00:46:50.490 --> 00:46:53.250
+the vertex of a parabola and you
+didn't know about calculus,
+
+00:46:53.250 --> 00:46:53.870
+right?
+
+00:46:53.870 --> 00:46:56.550
+There are things like completing
+the square and various other
+
+00:46:56.550 --> 00:46:59.590
+things and so in homework one
+There's a question where we have
+
+00:46:59.590 --> 00:47:01.710
+you do that.
+We give you the formula for
+
+00:47:01.710 --> 00:47:04.690
+average squared loss and we say
+hey
+
+00:47:04.690 --> 00:47:07.990
+Using these algebraic techniques
+figure out what the best W
+
+00:47:07.990 --> 00:47:09.030
+should be
+
+00:47:09.030 --> 00:47:11.450
+Assuming you don't know how to
+do calculus and we walk you
+
+00:47:11.450 --> 00:47:12.770
+through a different way You
+could do it.
+
+00:47:12.770 --> 00:47:17.430
+So calculus is one way, but it's
+not the only way to arrive here
+
+00:47:17.430 --> 00:47:21.590
+What I want to do though is come
+up with a general formula
+
+00:47:21.590 --> 00:47:27.270
+for average squared
+
+00:47:27.270 --> 00:47:28.270
+loss
+
+00:47:32.530 --> 00:47:34.530
+for the constant model.
+
+00:47:34.530 --> 00:47:40.490
+Everything we're discussing here
+is specific to the constant
+
+00:47:40.490 --> 00:47:42.830
+model.
+We made our calculation of
+
+00:47:42.830 --> 00:47:46.990
+squared loss simpler by saying h
+of xi equals w.
+
+00:47:46.990 --> 00:47:49.690
+If h of xi equals some more
+complicated thing,
+
+00:47:49.690 --> 00:47:52.790
+but all of this would become
+more complicated as well.
+
+00:47:52.790 --> 00:47:56.540
+But we're sticking with the
+constant model for now.
+
+00:47:58.910 --> 00:48:04.830
+So suppose we have n
+
+00:48:04.830 --> 00:48:07.650
+data points
+
+00:48:07.650 --> 00:48:12.210
+y1, y2,
+
+00:48:12.690 --> 00:48:14.890
+dot dot dot through yn.
+
+00:48:14.890 --> 00:48:19.190
+n is the usual place holder we
+will use in this class for an
+
+00:48:19.190 --> 00:48:22.930
+unknown number of data points
+and you will see this every day
+
+00:48:22.930 --> 00:48:26.850
+for the rest of the semester.
+
+00:48:26.850 --> 00:48:32.770
+The average squared loss
+
+00:48:32.770 --> 00:48:38.710
+of the constant model,
+
+00:48:42.330 --> 00:48:44.580
+That's an orange.
+
+00:48:45.250 --> 00:48:47.470
+h of xi equals w
+
+00:48:47.470 --> 00:48:54.210
+is
+
+00:48:54.210 --> 00:48:58.290
+going to use that same symbol
+from before,
+
+00:48:58.290 --> 00:48:59.290
+R.
+
+00:49:02.750 --> 00:49:07.250
+First, I want to write this
+without summation notation.
+
+00:49:08.170 --> 00:49:10.050
+Can someone help me out here?
+
+00:49:10.050 --> 00:49:12.090
+If I had to write this out,
+
+00:49:12.090 --> 00:49:16.590
+what is a general formula for
+average squared loss?
+
+00:49:22.250 --> 00:49:23.090
+Andrew?
+
+00:49:23.090 --> 00:49:25.770
+y1 minus w squared,
+
+00:49:25.770 --> 00:49:30.350
+and then ellipses plus n minus w
+squared.
+
+00:49:30.350 --> 00:49:31.250
+Good.
+
+00:49:31.250 --> 00:49:33.430
+I want the squared loss for my
+first data point.
+
+00:49:33.430 --> 00:49:35.630
+And you said overhead, right?
+Perfect.
+
+00:49:35.630 --> 00:49:38.970
+I want the squared loss for my
+first data point which again is
+
+00:49:38.970 --> 00:49:43.310
+actual y-value minus predicted
+y-value which is just W here
+
+00:49:43.310 --> 00:49:48.250
+squared plus the second actual
+y-value minus
+
+00:49:48.250 --> 00:49:54.190
+predicted y-value squared plus
+all the way
+
+00:49:54.190 --> 00:50:00.070
+through the last y-value minus
+the
+
+00:50:00.070 --> 00:50:02.320
+predicted y-value squared.
+
+00:50:02.730 --> 00:50:08.070
+And what I divide all of the spy
+is the number of data points.
+
+00:50:08.070 --> 00:50:09.070
+Good.
+
+00:50:09.510 --> 00:50:12.570
+Now, this formula looks a little
+more confusing than the one we
+
+00:50:12.570 --> 00:50:15.550
+saw a few slides ago, because
+there are way more symbols in
+
+00:50:15.550 --> 00:50:16.150
+it.
+
+00:50:16.150 --> 00:50:19.170
+The previous formula only had a
+w and then had numbers like 72,
+
+00:50:19.170 --> 00:50:19.670
+90,
+
+00:50:19.670 --> 00:50:20.670
+61.
+
+00:50:20.890 --> 00:50:22.270
+This is the same formula,
+though.
+
+00:50:22.270 --> 00:50:24.870
+It just has placeholders for
+what the data would be.
+
+00:50:24.870 --> 00:50:27.070
+n is just the number of data
+points,
+
+00:50:27.070 --> 00:50:30.590
+and the yi's are placeholders
+for what the data are.
+
+00:50:30.590 --> 00:50:34.650
+But the setting is the same in
+that And we don't have control
+
+00:50:34.650 --> 00:50:37.070
+over what the y's are.
+They're just given to us by our
+
+00:50:37.070 --> 00:50:38.270
+data set.
+We collect data, and they're
+
+00:50:38.270 --> 00:50:39.430
+given to us.
+
+00:50:39.430 --> 00:50:42.490
+The thing we have control over
+is what w we pick to make the
+
+00:50:42.490 --> 00:50:43.990
+predictions with.
+
+00:50:44.150 --> 00:50:49.030
+So that's why this is still
+written as a function of just
+
+00:50:49.030 --> 00:50:53.130
+the w's, and the y's are given.
+
+00:50:53.130 --> 00:50:58.730
+If I wanted to write this using
+summation notation,
+
+00:50:58.730 --> 00:51:02.110
+how could I do that?
+
+00:51:02.110 --> 00:51:04.330
+This is why we had some practice
+with summation notation
+
+00:51:04.330 --> 00:51:05.490
+yesterday.
+
+00:51:06.250 --> 00:51:06.650
+Yeah.
+
+00:51:06.650 --> 00:51:08.790
+You do 1 over n,
+
+00:51:08.790 --> 00:51:13.460
+and then the summation will go
+from i equals 1 to n.
+
+00:51:14.050 --> 00:51:15.050
+Good.
+
+00:51:15.190 --> 00:51:20.570
+And inside the summation you
+have y sub i minus w squared.
+
+00:51:21.150 --> 00:51:22.150
+Awesome.
+
+00:51:23.630 --> 00:51:29.290
+You can see that the factor of 1
+over n is the same in both.
+
+00:51:29.290 --> 00:51:31.690
+It's just written a little
+differently, but it doesn't have
+
+00:51:31.690 --> 00:51:34.330
+to be like I could have not had
+a 1 over n there and I could
+
+00:51:34.330 --> 00:51:38.310
+have just put all of this over
+n, it would be the same formula.
+
+00:51:38.310 --> 00:51:41.810
+And what this is saying is first
+plug in i equals 1,
+
+00:51:41.810 --> 00:51:44.010
+whatever that is, add it to my
+total.
+
+00:51:44.010 --> 00:51:45.790
+Then plug in i equals 2,
+
+00:51:45.790 --> 00:51:46.850
+whatever that is,
+
+00:51:46.850 --> 00:51:48.210
+add it to my total.
+
+00:51:48.210 --> 00:51:51.550
+And keeps adding this up sort of
+like a four loop.
+
+00:51:51.550 --> 00:51:55.790
+If it helps you anytime you see
+a summation,
+
+00:51:55.790 --> 00:51:59.540
+just think of someone saying
+total equals 0 before it.
+
+00:51:59.550 --> 00:52:02.850
+And then for i in range,
+whatever these indices are,
+
+00:52:02.850 --> 00:52:04.590
+add this quantity.
+
+00:52:04.590 --> 00:52:05.290
+The difference,
+
+00:52:05.290 --> 00:52:09.130
+like what is the one difference
+between how the indices work in
+
+00:52:09.130 --> 00:52:12.730
+summation notation and how they
+work in programming four loops?
+
+00:52:12.730 --> 00:52:15.210
+There's a subtle difference.
+
+00:52:15.210 --> 00:52:16.170
+For summation,
+
+00:52:16.170 --> 00:52:17.350
+it's inclusive? Yeah,
+
+00:52:17.350 --> 00:52:22.050
+it includes both i equals 1 and
+i equals n.
+
+00:52:22.050 --> 00:52:22.570
+OK?
+
+00:52:22.570 --> 00:52:26.030
+Whereas in a for loop, this
+would not include n,
+
+00:52:26.030 --> 00:52:27.030
+right?
+
+00:52:28.110 --> 00:52:32.610
+All right, so are we comfortable
+with this formula
+
+00:52:35.690 --> 00:52:38.350
+for average squared loss
+
+00:52:38.350 --> 00:52:44.230
+for the constant model?
+
+00:52:45.070 --> 00:52:46.070
+OK,
+
+00:52:47.070 --> 00:52:51.670
+so now our goal is to just find
+the w that makes this function
+
+00:52:51.670 --> 00:52:54.670
+output the smallest possible
+number.
+
+00:52:54.710 --> 00:52:57.010
+And how we are going to do that,
+
+00:52:57.010 --> 00:53:01.930
+as I implied earlier, is by
+taking its derivative and
+
+00:53:01.930 --> 00:53:03.890
+setting it equal to 0.
+
+00:53:03.890 --> 00:53:07.510
+That's the approach we will use
+at least today.
+
+00:53:07.510 --> 00:53:09.010
+All right,
+
+00:53:10.890 --> 00:53:13.890
+so I'll say goal.
+
+00:53:15.450 --> 00:53:20.510
+Find the w that minimizes
+
+00:53:20.510 --> 00:53:25.090
+average squared loss.
+
+00:53:26.390 --> 00:53:27.390
+How?
+
+00:53:28.910 --> 00:53:30.510
+Take derivative
+
+00:53:30.510 --> 00:53:35.110
+equal
+
+00:53:35.110 --> 00:53:36.970
+to 0.
+
+00:53:38.930 --> 00:53:42.250
+Why are we doing that again? Why
+do I want the w that minimizes
+
+00:53:42.250 --> 00:53:46.000
+this function? What was the
+point of all of this, again?
+
+00:53:48.370 --> 00:53:49.090
+Brian?
+
+00:53:49.090 --> 00:53:52.290
+The middle is finding the w
+value.
+
+00:53:52.290 --> 00:53:54.290
+That fits like the data.
+
+00:53:54.290 --> 00:53:55.010
+Exactly.
+
+00:53:55.010 --> 00:53:56.010
+Exactly.
+
+00:53:56.630 --> 00:53:58.870
+I want to just keep reiterating
+that so that we don't get lost
+
+00:53:58.870 --> 00:54:00.130
+in the weeds here.
+
+00:54:00.130 --> 00:54:04.430
+The point of all of this is to
+just figure out what w best
+
+00:54:04.430 --> 00:54:06.070
+makes predictions.
+
+00:54:07.070 --> 00:54:09.390
+Again, all we are trying to do
+is find the optimal place to
+
+00:54:09.390 --> 00:54:11.470
+draw this horizontal line.
+
+00:54:11.470 --> 00:54:15.170
+And if we take the derivative of
+average squared loss and set it
+
+00:54:15.170 --> 00:54:16.410
+equal to zero,
+
+00:54:16.410 --> 00:54:19.850
+what it should tell us is where
+to place that horizontal line in
+
+00:54:19.850 --> 00:54:22.610
+order for the predictions to be
+as good as they can be on the
+
+00:54:22.610 --> 00:54:25.130
+data that we've collected.
+
+00:54:25.130 --> 00:54:26.510
+Do we agree?
+
+00:54:26.510 --> 00:54:31.760
+Okay, so that's the point of all
+of this.
+
+00:54:34.570 --> 00:54:38.320
+Now, we've been calling this
+function
+
+00:54:44.670 --> 00:54:46.920
+average squared loss.
+
+00:54:49.930 --> 00:54:53.550
+There's another more common term
+for this that you'll see a lot
+
+00:54:53.550 --> 00:54:56.150
+in machine learning, which is
+why this more common term is
+
+00:54:56.150 --> 00:55:01.400
+what we will call this from now
+on, but it's the same thing.
+
+00:55:08.070 --> 00:55:12.850
+it's mean squared error
+
+00:55:12.850 --> 00:55:18.090
+and sometimes this is
+abbreviated MSE
+
+00:55:18.090 --> 00:55:23.150
+so this is the more common term
+for the formula that's at the
+
+00:55:23.150 --> 00:55:27.070
+top of the page here but it's
+referring to the same idea and
+
+00:55:27.070 --> 00:55:30.230
+it's really the same three words
+just slightly different right we
+
+00:55:30.230 --> 00:55:33.980
+have mean and average the
+squared is the It's the same.
+
+00:55:34.490 --> 00:55:37.430
+Loss, that was nice because it
+symbolizes that this is not just
+
+00:55:37.430 --> 00:55:40.170
+actual minus predicted, but it's
+some function of that.
+
+00:55:40.170 --> 00:55:43.050
+It's squared, and we will still
+call the loss function a loss
+
+00:55:43.050 --> 00:55:44.050
+function.
+
+00:55:44.950 --> 00:55:47.970
+Here, you sort of have to look
+at the squared error
+
+00:55:47.970 --> 00:55:52.470
+as one term, saying the errors
+have been squared.
+
+00:55:52.570 --> 00:55:54.830
+So mean squared error, or MSE,
+
+00:55:54.830 --> 00:55:57.470
+is the more common way of
+referring to average squared
+
+00:55:57.470 --> 00:56:00.110
+loss, but it's the same concept.
+I just want to have this written
+
+00:56:00.110 --> 00:56:02.230
+down here, And this is written
+in the notes as well,
+
+00:56:02.230 --> 00:56:04.590
+just so that when you see this
+here and in other contexts, you
+
+00:56:04.590 --> 00:56:07.010
+know that these are all
+referring to the same thing.
+
+00:56:07.010 --> 00:56:10.090
+Which is why if you look at the
+section in chapter 1.2
+
+00:56:10.090 --> 00:56:12.870
+of the notes that we're at, it's
+called minimizing mean squared
+
+00:56:12.870 --> 00:56:14.930
+error, not minimizing average
+squared loss.
+
+00:56:14.930 --> 00:56:15.550
+Same thing,
+
+00:56:15.550 --> 00:56:16.490
+though.
+
+00:56:16.490 --> 00:56:17.490
+OK?
+
+00:56:18.190 --> 00:56:19.890
+OK with terminology,
+
+00:56:19.890 --> 00:56:23.910
+anyone curious or sort of have
+questions about what any of the
+
+00:56:23.910 --> 00:56:26.270
+various words we've introduced
+today mean?
+
+00:56:26.270 --> 00:56:27.250
+Because I know there have been a
+lot.
+
+00:56:27.250 --> 00:56:28.750
+Yes, Allison.
+
+00:56:29.050 --> 00:56:32.800
+What was your definition for
+empirical risk?
+
+00:56:33.670 --> 00:56:34.670
+Good.
+
+00:56:34.950 --> 00:56:37.350
+That's just another word for
+these things.
+
+00:56:37.350 --> 00:56:40.990
+But empirical risk is a little
+more general because it is not
+
+00:56:40.990 --> 00:56:42.630
+specific to any one loss
+function.
+
+00:56:42.630 --> 00:56:44.390
+Like, if we were using absolute
+loss,
+
+00:56:44.390 --> 00:56:46.570
+we could also call that
+empirical risk.
+
+00:56:46.570 --> 00:56:50.690
+But I was planning on writing
+down sort of a formal definition
+
+00:56:50.690 --> 00:56:53.990
+of empirical risk when we come
+back on Tuesday when we compare
+
+00:56:53.990 --> 00:56:56.770
+the choice of squared loss to
+other possible loss functions.
+
+00:56:56.770 --> 00:56:58.870
+For now, we'll focus on just
+squared loss.
+
+00:56:58.870 --> 00:57:03.230
+So does R sub SQ mean the
+empirical risk using the
+
+00:57:03.230 --> 00:57:04.450
+squared? Exactly.
+
+00:57:04.450 --> 00:57:07.170
+Exactly, using the squared loss.
+
+00:57:07.170 --> 00:57:07.470
+Yeah,
+
+00:57:07.470 --> 00:57:08.130
+good.
+
+00:57:08.130 --> 00:57:10.790
+So if we were using absolute
+loss, that would be a subscript
+
+00:57:10.790 --> 00:57:11.790
+abs.
+
+00:57:11.890 --> 00:57:14.330
+And the kind of question you
+will start to see in homework,
+
+00:57:14.330 --> 00:57:16.450
+not homework one, but homework
+two,
+
+00:57:16.450 --> 00:57:18.910
+is we will cook up some other
+loss function that you haven't
+
+00:57:18.910 --> 00:57:20.770
+seen before and say,
+
+00:57:20.770 --> 00:57:23.770
+find the parameters that make
+the best predictions if we're
+
+00:57:23.770 --> 00:57:26.350
+using this loss function.
+And you'll see lots of questions
+
+00:57:26.350 --> 00:57:28.050
+like that next week's lab,
+
+00:57:28.050 --> 00:57:30.370
+next week's homework.
+That's the kind of thing we will
+
+00:57:30.370 --> 00:57:31.230
+study.
+
+00:57:31.230 --> 00:57:33.330
+But I'm starting with squared
+loss because it's the most
+
+00:57:33.330 --> 00:57:37.080
+common choice and a natural
+first choice.
+
+00:57:37.130 --> 00:57:38.770
+So everyone's on the same page.
+
+00:57:38.770 --> 00:57:42.170
+We have established what the
+point of minimizing this
+
+00:57:42.170 --> 00:57:43.850
+function is.
+Again, it all comes back to
+
+00:57:43.850 --> 00:57:47.350
+making the best predictions that
+we can.
+
+00:57:47.350 --> 00:57:49.600
+Comfortable with that?
+
+00:57:49.990 --> 00:57:55.110
+We have about 20 minutes
+remaining, but I will commit to
+
+00:57:55.110 --> 00:57:59.010
+my promise of still taking a
+little bit of a break,
+
+00:57:59.010 --> 00:58:02.760
+even though that should have
+come earlier.
+
+00:58:05.130 --> 00:58:09.630
+Why don't we write that there.
+
+00:58:09.850 --> 00:58:11.810
+Make sure to check in for
+attendance.
+
+00:58:11.810 --> 00:58:14.810
+We'll do that now.
+
+00:58:17.790 --> 00:58:20.370
+Feel free to go to the bathroom
+really quick if you need to.
+
+00:58:20.370 --> 00:58:22.430
+We'll take a maybe three or four
+minute break.
+
+00:58:22.430 --> 00:58:26.930
+and let me open the attendance
+poll so you can check in.
+
+00:59:26.590 --> 00:59:29.990
+Give me another minute or two.
+
+00:59:29.990 --> 00:59:31.590
+Stretch your legs and then final
+stretch.
+
+00:59:31.590 --> 00:59:34.590
+Time for the calculus.
+
+01:00:23.790 --> 01:00:27.540
+We'll get started in another
+minute.
+
+01:00:36.830 --> 01:00:39.750
+try it in a different browser.
+
+01:00:39.750 --> 01:00:42.490
+It'll ask for a location just
+once but it won't Do
+
+01:00:42.490 --> 01:00:48.210
+you
+
+01:00:48.210 --> 01:01:01.590
+have
+
+01:01:01.590 --> 01:01:07.290
+a different browser if you have
+Chrome on your phone?
+
+01:01:07.610 --> 01:01:12.860
+If that doesn't work then I can
+check you in manually after.
+
+01:01:26.950 --> 01:01:27.950
+Okay,
+
+01:01:31.390 --> 01:01:34.870
+has everyone checked in or is
+anyone still working on it?
+
+01:01:34.870 --> 01:01:37.190
+Okay, come up to me afterwards
+and I'll write down your name
+
+01:01:37.190 --> 01:01:39.430
+and make sure you get the
+credit.
+
+01:01:39.430 --> 01:01:41.110
+Everyone else OK? Checked in,
+
+01:01:41.110 --> 01:01:42.210
+got your questions in,
+
+01:01:42.210 --> 01:01:43.210
+good.
+
+01:01:44.590 --> 01:01:46.090
+All right.
+
+01:01:47.530 --> 01:01:49.030
+So remember,
+
+01:01:49.530 --> 01:01:51.270
+make sure this thing's on.
+
+01:01:51.270 --> 01:01:56.750
+Our goal is to find the w that
+minimizes this function.
+
+01:01:56.750 --> 01:01:59.610
+This function overall, we call
+it average squared loss.
+
+01:01:59.610 --> 01:02:02.410
+The new name for it is mean
+squared error.
+
+01:02:02.410 --> 01:02:05.030
+And the goal is to find the w
+that makes it output the
+
+01:02:05.030 --> 01:02:08.270
+smallest possible number.
+And that w will be the magical w
+
+01:02:08.270 --> 01:02:09.990
+that makes the best predictions
+
+01:02:09.990 --> 01:02:12.790
+What we said we would do is take
+the derivative of it with
+
+01:02:12.790 --> 01:02:15.040
+respect to w
+
+01:02:19.370 --> 01:02:22.090
+So let's try and do that
+
+01:02:22.090 --> 01:02:27.910
+now as an aside as a side quest
+what I want to do is maybe go to
+
+01:02:27.910 --> 01:02:29.490
+a different slide and
+
+01:02:29.490 --> 01:02:33.240
+Take the derivative of this
+thing with respect to w
+
+01:02:45.850 --> 01:02:48.770
+The reason I want to do this
+individual derivative separately
+
+01:02:48.770 --> 01:02:53.350
+is that once we have this, we
+can use it to more easily find
+
+01:02:53.350 --> 01:02:55.600
+the overall derivative.
+
+01:02:56.250 --> 01:03:00.730
+So what's the derivative of yi
+minus w squared
+
+01:03:00.730 --> 01:03:03.730
+with respect to w?
+
+01:03:03.750 --> 01:03:08.470
+What is it? Alex.
+It would be negative 2 yi minus
+
+01:03:08.470 --> 01:03:09.470
+1.
+Good.
+
+01:03:09.530 --> 01:03:10.670
+And how did you get there?
+
+01:03:10.670 --> 01:03:11.850
+I'm going to use a chain rule.
+
+01:03:11.850 --> 01:03:13.330
+Good.
+So remember, the chain rule, the
+
+01:03:13.330 --> 01:03:14.990
+way that I like thinking about
+it,
+
+01:03:14.990 --> 01:03:18.690
+is that the derivative of some
+complicated expression
+
+01:03:18.690 --> 01:03:21.690
+with respect to w,
+
+01:03:23.130 --> 01:03:27.230
+maybe we'll say the derivative
+of box to the power of n
+
+01:03:27.790 --> 01:03:33.190
+with respect to w, is equal to n
+times box to the n minus 1
+
+01:03:33.190 --> 01:03:36.940
+times the derivative of what's
+in the box directly.
+
+01:03:37.130 --> 01:03:39.690
+So here, that's how you'd use
+the chain rule along with the
+
+01:03:39.690 --> 01:03:41.190
+power rule.
+
+01:03:41.470 --> 01:03:43.170
+Do we agree?
+
+01:03:43.170 --> 01:03:44.850
+That applied here,
+
+01:03:44.850 --> 01:03:46.350
+the n,
+
+01:03:47.530 --> 01:03:49.370
+no, this is not n, the number of
+data points.
+
+01:03:49.370 --> 01:03:51.370
+Maybe I should have used a
+different variable, but this is
+
+01:03:51.370 --> 01:03:54.930
+the rule you would have seen and
+calculus would have used then.
+
+01:03:54.930 --> 01:04:00.070
+That applied here gives us 2
+times yi minus w to the power of
+
+01:04:00.070 --> 01:04:05.170
+1, times the derivative of just
+yi minus w.
+
+01:04:07.550 --> 01:04:13.550
+So I have 2 times yi minus w,
+and what is this piece?
+
+01:04:15.570 --> 01:04:17.050
+Just 1.
+
+01:04:17.050 --> 01:04:18.550
+Not 1.
+
+01:04:19.030 --> 01:04:20.150
+Negative 1.
+
+01:04:20.150 --> 01:04:20.710
+Good.
+
+01:04:20.710 --> 01:04:23.730
+Because the coefficient on w is
+negative 1,
+
+01:04:23.730 --> 01:04:24.990
+and this is sort of the tricky
+thing.
+
+01:04:24.990 --> 01:04:28.590
+The yi is a constant from the
+perspective of w,
+
+01:04:28.590 --> 01:04:32.170
+right? changing w does not
+change the yi.
+
+01:04:32.170 --> 01:04:34.510
+So we multiply that by negative
+1.
+
+01:04:34.510 --> 01:04:36.850
+And so we can collect out the
+constants up front.
+
+01:04:36.850 --> 01:04:42.100
+So we have negative 2yi minus w.
+
+01:04:42.170 --> 01:04:45.190
+Note that since we are squaring
+our loss,
+
+01:04:45.190 --> 01:04:47.230
+I like doing actual minus
+predicted.
+
+01:04:47.230 --> 01:04:49.910
+But you could do predicted minus
+actual squared.
+
+01:04:49.910 --> 01:04:51.330
+And you'd have the same thing.
+
+01:04:51.330 --> 01:04:54.070
+And this would be w minus yi
+squared.
+
+01:04:54.070 --> 01:04:58.570
+And the derivative would be 2
+times w minus yi.
+
+01:04:59.230 --> 01:05:01.650
+There wouldn't be the negative
+in front, but I just like actual
+
+01:05:01.650 --> 01:05:02.490
+minus predicted,
+
+01:05:02.490 --> 01:05:05.230
+so that's what we'll use.
+
+01:05:05.230 --> 01:05:06.230
+OK.
+
+01:05:06.830 --> 01:05:10.070
+Why did I find this derivative
+separately?
+
+01:05:10.070 --> 01:05:15.320
+How is that going to help me
+here?
+
+01:05:17.670 --> 01:05:18.950
+What does that help with?
+
+01:05:18.950 --> 01:05:21.070
+Yeah, Kevin? Because when you're
+doing a summation,
+
+01:05:21.070 --> 01:05:24.390
+you can treat the derivative to
+the inside and it's the whole
+
+01:05:24.390 --> 01:05:25.270
+thing.
+Exactly.
+
+01:05:25.270 --> 01:05:28.690
+Remember, one of the key rules
+you learned in calc 1 is that if
+
+01:05:28.690 --> 01:05:31.750
+you have two functions being
+added together,
+
+01:05:31.750 --> 01:05:35.230
+the derivative of the overall
+sum is equal to the sum of their
+
+01:05:35.230 --> 01:05:36.790
+derivatives added up.
+
+01:05:36.790 --> 01:05:39.730
+So if you have f of x plus g of
+x,
+
+01:05:39.730 --> 01:05:43.810
+that entire thing's derivative
+is the derivative of f of x plus
+
+01:05:43.810 --> 01:05:47.370
+the derivative of g of x, which
+is why all I really need to do
+
+01:05:47.370 --> 01:05:48.350
+here
+
+01:05:48.350 --> 01:05:52.010
+to apply the derivative
+operation to the sum is just
+
+01:05:52.010 --> 01:05:56.570
+have a new sum made up of the
+sum of the derivatives.
+
+01:05:56.570 --> 01:05:57.130
+OK.
+
+01:05:57.130 --> 01:06:03.130
+And then what do I do about our
+1 over n friend up here?
+
+01:06:06.450 --> 01:06:07.470
+What do we do with that?
+
+01:06:07.470 --> 01:06:08.990
+It just stays there.
+It stays there.
+
+01:06:08.990 --> 01:06:10.950
+It's a constant with respect to
+w.
+
+01:06:10.950 --> 01:06:12.690
+So they can stay there.
+
+01:06:12.690 --> 01:06:13.850
+We're going to move into the
+sum.
+
+01:06:13.850 --> 01:06:17.230
+and now what I'm going to
+replace
+
+01:06:17.230 --> 01:06:22.650
+yi minus w with
+
+01:06:22.650 --> 01:06:27.150
+is the derivative with respect
+to w of yi minus w squared
+
+01:06:27.150 --> 01:06:32.810
+that is the thing we found on
+the previous page it's negative
+
+01:06:32.810 --> 01:06:38.670
+2 yi minus w and collecting
+
+01:06:38.670 --> 01:06:41.510
+like how can I Let's try this
+further, actually.
+
+01:06:41.510 --> 01:06:43.760
+Let's ask that.
+
+01:06:46.470 --> 01:06:49.470
+You can pull the negative 2 out
+outside of the summation.
+
+01:06:49.470 --> 01:06:54.510
+Good, the negative 2 is just a
+constant being multiplied by
+
+01:06:54.510 --> 01:06:57.770
+every term in the sum.
+
+01:06:57.770 --> 01:07:01.090
+That's the same as just doing
+the sum without the negative 2
+
+01:07:01.090 --> 01:07:05.050
+and multiplying the result
+afterwards by negative 2, which
+
+01:07:05.050 --> 01:07:07.650
+is why I can pull the constant
+up front.
+
+01:07:07.650 --> 01:07:12.290
+And that gives me negative 2
+over n times the sum
+
+01:07:12.290 --> 01:07:15.630
+of yi minus w.
+
+01:07:16.010 --> 01:07:19.590
+So this is the derivative,
+
+01:07:19.590 --> 01:07:20.550
+OK?
+
+01:07:20.550 --> 01:07:22.710
+Perhaps looks different than the
+derivatives you're used to
+
+01:07:22.710 --> 01:07:25.650
+calculating in calc 1, because
+those probably didn't have
+
+01:07:25.650 --> 01:07:27.090
+summations in them.
+
+01:07:27.090 --> 01:07:29.670
+But this is the type of
+derivative we will see a lot in
+
+01:07:29.670 --> 01:07:30.930
+this class,
+
+01:07:30.930 --> 01:07:31.930
+OK?
+
+01:07:32.190 --> 01:07:33.450
+OK, we got that.
+
+01:07:33.450 --> 01:07:34.950
+What's next?
+
+01:07:35.290 --> 01:07:35.650
+Yeah?
+
+01:07:35.650 --> 01:07:38.390
+Is that a 0? Yeah, all we need
+to do now is set this derivative
+
+01:07:38.390 --> 01:07:40.640
+equal to zero.
+
+01:07:42.070 --> 01:07:46.570
+So let's write that one more
+time.
+
+01:07:59.410 --> 01:08:03.290
+And now we're just going to set
+this equal to zero and solve.
+
+01:08:03.290 --> 01:08:06.290
+So, let's copy this.
+
+01:08:08.690 --> 01:08:13.190
+What's the first thing we can
+do?
+
+01:08:15.650 --> 01:08:17.490
+It's all for W, to be clear.
+
+01:08:17.490 --> 01:08:19.430
+What's the first thing we can do
+to make that process a little
+
+01:08:19.430 --> 01:08:20.430
+simpler?
+
+01:08:20.430 --> 01:08:20.730
+Yeah.
+
+01:08:20.730 --> 01:08:21.710
+And remind us of your name?
+
+01:08:21.710 --> 01:08:22.710
+Chinmay.
+Chinmay, right.
+
+01:08:24.810 --> 01:08:27.270
+Yeah, the negative 2 over N, we
+can get rid of it.
+
+01:08:27.270 --> 01:08:28.270
+Why?
+
+01:08:30.150 --> 01:08:31.150
+Why?
+
+01:08:32.770 --> 01:08:33.410
+Awesome.
+
+01:08:33.410 --> 01:08:35.970
+Because if you multiply n by 0,
+that's 0.
+
+01:08:35.970 --> 01:08:37.390
+And then divide by 2,
+
+01:08:37.390 --> 01:08:38.390
+that's 0.
+Exactly.
+
+01:08:38.390 --> 01:08:42.550
+We could multiply by negative n
+over 2,
+
+01:08:42.550 --> 01:08:45.410
+which is sort of what you'd have
+to multiply negative 2 over n by
+
+01:08:45.410 --> 01:08:47.830
+to get 1 to get rid of the
+constant.
+
+01:08:47.830 --> 01:08:51.110
+And on the right side, 0 times
+negative n over 2 would still be
+
+01:08:51.110 --> 01:08:53.410
+0.
+So it's just a way to free up
+
+01:08:53.410 --> 01:08:55.650
+some space and make the
+expression a little clearer on
+
+01:08:55.650 --> 01:08:57.900
+the left-hand side.
+
+01:08:59.010 --> 01:09:03.650
+So I'll say multiply both sides
+
+01:09:03.650 --> 01:09:07.470
+by negative n over 2.
+
+01:09:08.690 --> 01:09:11.770
+Now, where did this over n come
+from in the first place?
+
+01:09:11.770 --> 01:09:14.990
+Like, why is it there?
+
+01:09:14.990 --> 01:09:15.410
+Alex?
+
+01:09:15.410 --> 01:09:16.970
+Because we're taking the
+average.
+
+01:09:16.970 --> 01:09:18.630
+We divide it all by the number
+of days.
+
+01:09:18.630 --> 01:09:21.490
+Yeah, it's because we are
+computing average squared loss
+
+01:09:21.490 --> 01:09:25.370
+or mean squared error.
+If we instead did the sum of
+
+01:09:25.370 --> 01:09:26.730
+squared losses,
+
+01:09:26.730 --> 01:09:29.190
+we just wouldn't have the over
+n.
+
+01:09:29.190 --> 01:09:31.970
+But this calculation for finding
+the best w would be the same,
+
+01:09:31.970 --> 01:09:37.650
+because the over n dropped out
+of our
+
+01:09:37.650 --> 01:09:39.130
+formula either way.
+
+01:09:39.130 --> 01:09:42.630
+So average squared loss or total
+squared loss,
+
+01:09:42.630 --> 01:09:46.130
+the math ends up being the same
+at this stage.
+
+01:09:46.130 --> 01:09:48.250
+By the way, how many people
+here's name is Alex? I think
+
+01:09:48.250 --> 01:09:50.090
+there are at least three people
+here.
+
+01:09:50.090 --> 01:09:51.370
+Yeah, OK, there are three
+people.
+
+01:09:51.370 --> 01:09:51.770
+OK,
+
+01:09:51.770 --> 01:09:56.210
+that was confusing me a little,
+But OK.
+
+01:09:56.210 --> 01:09:59.210
+Anyways, back to this.
+
+01:10:02.090 --> 01:10:04.590
+What we're trying to do now is
+isolate for w.
+
+01:10:04.590 --> 01:10:08.340
+How can we do that?
+
+01:10:09.590 --> 01:10:11.830
+How can we isolate for w?
+
+01:10:11.830 --> 01:10:12.490
+Ammar?
+
+01:10:12.490 --> 01:10:14.330
+Just distribute the summation.
+
+01:10:14.330 --> 01:10:15.330
+Awesome.
+I'll get to you next.
+
+01:10:15.390 --> 01:10:18.070
+I keep looking this way when I'm
+asking for questions.
+
+01:10:18.070 --> 01:10:18.390
+Yeah.
+
+01:10:18.390 --> 01:10:20.750
+So how do I distribute the
+summation? You can just split
+
+01:10:20.750 --> 01:10:21.330
+up,
+
+01:10:21.330 --> 01:10:24.490
+so the sum of y1 minus the sum
+of w.
+
+01:10:24.490 --> 01:10:25.250
+Good.
+
+01:10:25.250 --> 01:10:29.000
+Whenever you have a summation,
+and the thing being summed
+
+01:10:29.150 --> 01:10:32.070
+itself has an addition or
+subtraction, you can distribute
+
+01:10:32.070 --> 01:10:35.790
+the sum operator across that.
+
+01:10:35.790 --> 01:10:40.290
+What that looks like here is
+something like,
+
+01:10:41.270 --> 01:10:46.520
+let me free up some space here.
+
+01:10:48.030 --> 01:10:52.530
+Maybe I think this part was
+clear.
+
+01:10:55.490 --> 01:11:01.450
+This is the sum of yi's minus
+the
+
+01:11:01.450 --> 01:11:04.610
+sum of w's.
+
+01:11:05.290 --> 01:11:09.190
+How do I make this simpler?
+
+01:11:09.190 --> 01:11:10.750
+How do I make this simpler? Yes,
+it reminds me of your name
+
+01:11:10.750 --> 01:11:11.330
+again?
+
+01:11:11.330 --> 01:11:12.050
+Gustavo.
+
+01:11:12.050 --> 01:11:15.070
+Gustavo.
+So the w sum term, wouldn't it
+
+01:11:15.070 --> 01:11:17.310
+just be n times w? Good, why?
+
+01:11:17.310 --> 01:11:19.290
+Because you're just summing w n
+times.
+
+01:11:19.290 --> 01:11:21.510
+That's just like w plus w plus w
+would be just n times w.
+
+01:11:21.510 --> 01:11:23.650
+Exactly.
+All this is doing is n times,
+
+01:11:23.810 --> 01:11:25.810
+it's adding the value of w.
+
+01:11:25.810 --> 01:11:30.150
+There's no subscript i here, so
+the sum isn't any more
+
+01:11:30.150 --> 01:11:32.110
+complicated than that.
+It's the sum of a constant n
+
+01:11:32.110 --> 01:11:35.790
+times, so this is just n times
+w.
+
+01:11:35.790 --> 01:11:41.710
+And so simplifying that gives us
+
+01:11:41.710 --> 01:11:46.960
+the sum of yi's minus nw equals
+zero.
+
+01:11:47.050 --> 01:11:50.490
+And now we're more or less done
+because our goal was to isolate
+
+01:11:50.490 --> 01:11:51.990
+for w.
+
+01:11:52.130 --> 01:11:55.530
+On the left we have the sum of
+yi's and on the right we have n
+
+01:11:55.530 --> 01:11:57.030
+times w.
+
+01:11:57.850 --> 01:12:03.510
+Now, finally, what do I need to
+do to isolate for w?
+
+01:12:06.070 --> 01:12:07.230
+Divide by n.
+
+01:12:07.230 --> 01:12:10.170
+Yeah, I divide both sides by n,
+and I'll reverse the order here
+
+01:12:10.170 --> 01:12:13.130
+just so it's a little more
+natural.
+
+01:12:13.130 --> 01:12:18.380
+What this gives me is a formula
+for what?
+
+01:12:19.250 --> 01:12:20.490
+It's not the mean.
+
+01:12:20.490 --> 01:12:23.050
+Yeah, it's the mean, or the
+average, of the y's.
+
+01:12:23.050 --> 01:12:27.970
+And now I'm going to put a star
+on this w because we've found
+
+01:12:27.970 --> 01:12:29.850
+that it is the best one,
+
+01:12:29.850 --> 01:12:32.710
+or it is the optimal w.
+
+01:12:32.710 --> 01:12:34.250
+And this is just,
+
+01:12:34.250 --> 01:12:35.250
+indeed,
+
+01:12:39.050 --> 01:12:44.030
+the average slash mean of
+
+01:12:44.030 --> 01:12:46.370
+the y's.
+
+01:12:47.090 --> 01:12:49.270
+And I think that's a pretty cool
+result, because you already knew
+
+01:12:49.270 --> 01:12:53.770
+about the concept of an average
+and a mean before this class.
+
+01:12:54.210 --> 01:12:57.810
+But now you know a little more
+about it, which is that if your
+
+01:12:57.810 --> 01:13:00.810
+goal is to make a constant
+prediction for all future data
+
+01:13:00.810 --> 01:13:02.150
+points based
+
+01:13:02.150 --> 01:13:04.670
+on some collection of numbers,
+
+01:13:04.670 --> 01:13:08.330
+the mean of the data is actually
+the best constant prediction you
+
+01:13:08.330 --> 01:13:09.630
+can make.
+
+01:13:09.630 --> 01:13:11.930
+It's not just convenient, but
+it's also the best.
+
+01:13:11.930 --> 01:13:17.530
+But it's the best under a very
+specific lens, which is the lens
+
+01:13:17.530 --> 01:13:22.130
+in which you measure the quality
+of predictions using squared
+
+01:13:22.130 --> 01:13:23.130
+loss.
+
+01:13:24.230 --> 01:13:27.710
+If we instead picked another way
+to measure how good or bad a
+
+01:13:27.710 --> 01:13:29.210
+prediction is,
+
+01:13:29.810 --> 01:13:32.810
+the mean doesn't necessarily end
+up still being the best.
+
+01:13:32.810 --> 01:13:35.190
+If we think of a different loss
+function and a different way of
+
+01:13:35.190 --> 01:13:38.230
+quantifying how good or bad
+predictions are,
+
+01:13:38.230 --> 01:13:43.370
+we may end up with a different
+best W.
+
+01:13:43.370 --> 01:13:46.370
+Okay, so to recap,
+
+01:13:48.890 --> 01:13:52.650
+this function,
+
+01:13:53.630 --> 01:13:59.630
+1 over n times the sum of
+
+01:13:59.630 --> 01:14:01.970
+yi minus w squared,
+
+01:14:01.970 --> 01:14:04.670
+which went by many names, mean
+squared error, average squared
+
+01:14:04.670 --> 01:14:09.170
+loss, both of those are also
+called empirical risk,
+
+01:14:09.690 --> 01:14:15.170
+that function is minimized at
+
+01:14:15.170 --> 01:14:18.030
+w star equals
+
+01:14:18.030 --> 01:14:23.420
+the mean of of the
+
+01:14:23.420 --> 01:14:24.420
+y's.
+
+01:14:24.940 --> 01:14:30.680
+The star means w star is an
+
+01:14:30.680 --> 01:14:35.080
+optimal parameter.
+
+01:14:38.760 --> 01:14:41.800
+It's the star because it's
+special.
+
+01:14:41.800 --> 01:14:45.800
+And so all of this was set up
+
+01:14:45.800 --> 01:14:51.660
+really to be able to come back
+to this plot and say,
+
+01:14:51.820 --> 01:14:55.260
+well, now I actually know what
+the best W to choose is.
+
+01:14:55.260 --> 01:14:57.460
+I know what the best horizontal
+position
+
+01:14:57.460 --> 01:14:59.640
+to use for my constant
+predictions is.
+
+01:14:59.640 --> 01:15:04.880
+It's the average of all of the y
+values in my data set.
+
+01:15:04.880 --> 01:15:06.160
+Do we agree with that?
+
+01:15:06.160 --> 01:15:10.840
+You can't do any better if your
+goal
+
+01:15:10.840 --> 01:15:13.960
+or if your sort of measuring
+stick for what makes a good
+
+01:15:13.960 --> 01:15:17.600
+prediction is one that has low
+average squared loss.
+
+01:15:17.600 --> 01:15:20.700
+If you think of a different
+scoring system, well then maybe
+
+01:15:20.700 --> 01:15:23.800
+a different constant prediction
+would end up being the best.
+
+01:15:24.780 --> 01:15:29.680
+To give you a preview of what's
+to come on Tuesday,
+
+01:15:29.680 --> 01:15:32.000
+let's see if you can predict,
+
+01:15:32.000 --> 01:15:33.740
+I guess no pun intended,
+
+01:15:33.740 --> 01:15:35.900
+what would happen if we used a
+different loss function.
+
+01:15:35.900 --> 01:15:39.340
+If we used absolute loss
+instead,
+
+01:15:39.340 --> 01:15:41.740
+the best prediction isn't the
+mean.
+
+01:15:41.740 --> 01:15:45.860
+But what is it, if you have to
+guess?
+
+01:15:45.860 --> 01:15:48.860
+It's not the mean.
+
+01:15:49.180 --> 01:15:50.600
+It's the median,
+
+01:15:50.600 --> 01:15:51.600
+yeah.
+
+01:15:51.840 --> 01:15:55.000
+We will work through why that's
+the case on Tuesday and you
+
+01:15:55.000 --> 01:15:56.900
+should read a little bit of
+chapter 1.3
+
+01:15:56.900 --> 01:15:58.520
+to start to see why that's the
+case.
+
+01:15:58.520 --> 01:16:01.060
+But my point is that the mean is
+the best constant prediction.
+
+01:16:01.060 --> 01:16:04.460
+That's a nice one-sentence
+summary, but it's assuming we
+
+01:16:04.460 --> 01:16:07.120
+use squared loss as our loss
+function.
+
+01:16:07.120 --> 01:16:07.640
+Okay,
+
+01:16:07.640 --> 01:16:10.000
+now to get us thinking about
+what it would look like if we
+
+01:16:10.000 --> 01:16:15.640
+used other loss functions, But
+what I want to write
+
+01:16:15.640 --> 01:16:19.740
+down, and this is what we will
+start with on Tuesday,
+
+01:16:19.740 --> 01:16:24.860
+is what I call the three-step
+modeling recipe,
+
+01:16:25.280 --> 01:16:27.720
+which summarizes everything
+we've done
+
+01:16:28.220 --> 01:16:31.560
+and shows us how we could repeat
+these steps,
+
+01:16:31.560 --> 01:16:35.040
+but with maybe different models
+and different loss functions.
+
+01:16:35.040 --> 01:16:39.560
+The three steps we followed
+today We're to choose a model,
+
+01:16:43.040 --> 01:16:46.040
+choose a loss function.
+
+01:16:49.360 --> 01:16:53.140
+Let me move this up a little.
+
+01:16:53.140 --> 01:16:57.500
+And the third thing we did was
+we minimized
+
+01:16:57.500 --> 01:17:00.420
+average loss
+
+01:17:00.420 --> 01:17:06.160
+to find optimal
+
+01:17:06.160 --> 01:17:08.520
+parameters.
+
+01:17:09.760 --> 01:17:10.400
+Why?
+
+01:17:10.400 --> 01:17:13.340
+Because that'll make the best
+predictions.
+
+01:17:13.340 --> 01:17:15.700
+What is the model we chose
+today?
+
+01:17:15.700 --> 01:17:20.200
+We called it the constant model.
+
+01:17:22.220 --> 01:17:26.680
+h of xi equals w.
+Make that H a little cleaner.
+
+01:17:28.460 --> 01:17:32.640
+What is the loss function we
+chose today?
+
+01:17:32.640 --> 01:17:34.140
+Squared loss.
+
+01:17:50.460 --> 01:17:54.780
+What did the average of this
+loss function look like across
+
+01:17:54.780 --> 01:17:57.260
+an entire data set?
+
+01:17:57.260 --> 01:17:57.900
+Well,
+
+01:17:57.900 --> 01:17:58.840
+to get that,
+
+01:17:58.840 --> 01:18:02.640
+all I did is I plugged in h of
+xi equals w, which is my
+
+01:18:02.640 --> 01:18:07.140
+specific model that I want to
+use here for h of xi here.
+
+01:18:07.280 --> 01:18:11.400
+That's how I made the
+calculations a little simpler.
+
+01:18:11.920 --> 01:18:16.420
+That's why only a w appears
+here.
+
+01:18:16.760 --> 01:18:22.660
+And what this looked like was 1
+over n times the sum
+
+01:18:22.660 --> 01:18:25.560
+where i goes from 1 to n for my
+n data points,
+
+01:18:25.560 --> 01:18:28.600
+of yi minus w squared.
+
+01:18:28.600 --> 01:18:33.240
+And through calculus, we found
+that the best w is the mean
+
+01:18:33.240 --> 01:18:36.840
+of the yi's.
+
+01:18:38.260 --> 01:18:43.220
+This is the process, really,
+that we followed in today's
+
+01:18:43.220 --> 01:18:43.780
+lecture.
+
+01:18:43.780 --> 01:18:47.300
+But it's also the process, more
+or less, that is used for
+
+01:18:47.300 --> 01:18:50.100
+training all supervised learning
+models.
+
+01:18:50.100 --> 01:18:53.160
+So including super complicated
+neural networks that predicts
+
+01:18:53.160 --> 01:18:56.420
+where there are cavities in your
+teeth, so the Dyson camera
+
+01:18:56.420 --> 01:18:57.640
+sprays it or whatever,
+
+01:18:57.640 --> 01:19:00.620
+they use the same process.
+They just have a larger data set
+
+01:19:00.620 --> 01:19:03.720
+and a more complicated model,
+but ultimately it's the same
+
+01:19:03.720 --> 01:19:04.860
+thing.
+They choose a model,
+
+01:19:05.060 --> 01:19:08.300
+they choose a loss function, and
+then somehow minimize average
+
+01:19:08.300 --> 01:19:11.080
+loss to find optimal parameters.
+
+01:19:11.080 --> 01:19:12.860
+Now one thing I'll say, to make
+that connection a little
+
+01:19:12.860 --> 01:19:13.600
+clearer,
+
+01:19:13.600 --> 01:19:16.160
+is here average loss
+
+01:19:16.160 --> 01:19:19.680
+was a function of just one input
+variable, because we only had
+
+01:19:19.680 --> 01:19:22.680
+one parameter.
+The only thing we had to decide
+
+01:19:22.680 --> 01:19:25.700
+once we picked that we were
+using the constant model is
+
+01:19:25.700 --> 01:19:27.560
+where should we draw the
+constant.
+
+01:19:27.560 --> 01:19:31.100
+But next week we will upgrade to
+a model that has two parameters,
+
+01:19:31.100 --> 01:19:33.000
+the simple linear regression
+model.
+
+01:19:33.000 --> 01:19:35.640
+And then this average loss for
+that will get even more
+
+01:19:35.640 --> 01:19:38.660
+complicated and we will have to
+look at multivariate calculus
+
+01:19:38.660 --> 01:19:39.660
+techniques.
+
+01:19:39.760 --> 01:19:43.220
+If you think about the Dyson AI
+toothbrush thing,
+
+01:19:43.220 --> 01:19:46.970
+that model has millions or
+billions of parameters.
+
+01:19:47.260 --> 01:19:50.940
+Okay, so there isn't a closed
+form formula that they can use
+
+01:19:50.940 --> 01:19:52.320
+that just says,
+
+01:19:52.320 --> 01:19:55.620
+okay, here are the best
+parameters to use, which is why
+
+01:19:55.620 --> 01:19:58.100
+you have to estimate the best
+parameters
+
+01:19:58.100 --> 01:20:00.600
+using programming techniques,
+which we will cover later in the
+
+01:20:00.600 --> 01:20:02.560
+class.
+That's what gradient descent is.
+
+01:20:02.860 --> 01:20:05.080
+But the final thing I wanted to
+say is that like one of the
+
+01:20:05.080 --> 01:20:07.720
+companies you hear about a lot,
+NVIDIA right now, you know, it's
+
+01:20:07.720 --> 01:20:09.120
+worth trillions of dollars.
+
+01:20:09.120 --> 01:20:11.480
+The reason they're worth
+trillions of dollars is really
+
+01:20:11.480 --> 01:20:13.600
+just because of this third step.
+is because all of these
+
+01:20:13.600 --> 01:20:17.640
+companies are using their GPUs
+to efficiently find optimal
+
+01:20:17.640 --> 01:20:20.580
+model parameters to make
+whatever predictions their model
+
+01:20:20.580 --> 01:20:21.820
+is designed for.
+
+01:20:21.820 --> 01:20:24.600
+So really, this three-step
+process is what underpins all of
+
+01:20:24.600 --> 01:20:26.680
+these modern advancements that
+you're hearing about.
+
+01:20:26.680 --> 01:20:29.120
+And we will come back to this on
+Tuesday.
+
+01:20:29.120 --> 01:20:31.160
+I have office hours right after
+this as well if you want to chat
+
+01:20:31.160 --> 01:20:32.880
+or ask about homework or
+anything else.
+
+01:20:32.880 --> 01:20:37.320
+They're in my office, which is
+on the fourth floor.
+
+01:20:37.320 --> 01:20:39.740
+The water picked too fresh to
+bite.
+
+01:20:39.740 --> 01:20:41.560
+It gets you sick.
+
+01:20:41.560 --> 01:20:43.320
+You need to make sure you get
+the insulin.
+
+01:20:43.320 --> 01:20:46.680
+I like how much she matches the
+protein.
+
+01:20:46.680 --> 01:20:49.400
+Can you read the report to me?
+So when you say like 20 seconds,
+
+01:20:49.400 --> 01:20:50.600
+it's more 20 seconds.
+
+01:20:50.600 --> 01:20:51.600
+Alright.
+
+01:20:51.880 --> 01:20:53.320
+Thank you so much.
+
+01:20:53.320 --> 01:20:55.940
+That's what, the math is almost
+to the best teacher.
+
+01:20:55.940 --> 01:20:56.940
+Yeah.
+
+01:20:57.780 --> 01:21:00.460
+Your professor was doing the
+math.
+
+01:21:00.460 --> 01:21:05.710
+W will end up being the B.
+
+01:21:09.200 --> 01:21:11.100
+And if you didn't get your
+attendance credit, just let me
+
+01:21:11.100 --> 01:21:15.600
+know and I'll, uh, he almost
+crashed.
+
+01:21:15.780 --> 01:21:16.780
+What?
+
+01:21:19.820 --> 01:21:21.720
+Yeah, that's okay.
+
+01:21:21.720 --> 01:21:23.860
+I don't have another class.
+
+01:21:23.860 --> 01:21:27.610
+Remind me of your name.
+
+01:21:29.000 --> 01:21:30.000
+Okay,
+
+01:21:30.620 --> 01:21:31.280
+trick.
+
+01:21:31.280 --> 01:21:32.260
+Cool.
+
+01:21:32.260 --> 01:21:33.220
+Stop them.
+
+01:21:33.220 --> 01:21:34.220
+Perfect.
+
+01:21:35.820 --> 01:21:38.820
+And that was fun.
+
+01:21:40.300 --> 01:21:42.620
+I think it was fun.
+
+01:21:42.620 --> 01:21:43.520
+Check.
+
+01:21:43.520 --> 01:21:45.300
+Okay.
+Let me ask you a question.
+
+01:21:46.020 --> 01:21:49.880
+Why don't you come upstairs and
+take a look at the table?
+
+01:21:49.880 --> 01:21:50.820
+Max.
+
+01:21:50.820 --> 01:21:51.340
+I mean,
+
+01:21:51.340 --> 01:21:52.240
+take a look at the table.
+
+01:21:52.240 --> 01:21:53.880
+I don't think I actually did too
+much.
+
+01:21:53.880 --> 01:21:56.440
+No, I wish I could.
+I think I should.
+
+01:21:56.440 --> 01:21:57.620
+Hold on a second.
+
+01:21:57.620 --> 01:21:58.220
+Yeah.
+Yeah, I know you should take a
+
+01:21:58.220 --> 01:22:00.340
+look at the table.
+We have a smaller baby.
+
+01:22:00.340 --> 01:22:02.500
+They had those at best of all.
+No, I just happened to have a
+
+01:22:02.500 --> 01:22:05.260
+Coke at my house.
+
+01:22:05.260 --> 01:22:06.240
+What's that all about?
+
+01:22:06.240 --> 01:22:07.100
+I don't know.
+
+01:22:07.100 --> 01:22:10.540
+I went to do the appendix and
+said I wasn't at the
+
+01:22:10.540 --> 01:22:12.300
+destination.
+location, if that happens a lot,
+
+01:22:12.480 --> 01:22:14.660
+I just grab her to the class
+away,
+
+01:22:14.660 --> 01:22:16.910
+and that's it.
+
+01:22:20.000 --> 01:22:21.000
+Hi.
+
+01:22:21.960 --> 01:22:24.860
+Wait, were you done asking
+things? I'm gonna ask after.
+
+01:22:24.860 --> 01:22:25.540
+Oh, okay.
+
+01:22:25.540 --> 01:22:27.800
+If I were to follow you.
+
+01:22:27.800 --> 01:22:28.800
+Okay.
+
+01:22:31.360 --> 01:22:33.620
+I'll double check for you.
+Okay.
+
+01:22:33.620 --> 01:22:34.260
+Yeah,
+
+01:22:34.260 --> 01:22:36.940
+thanks for letting me know.
+
+01:22:36.940 --> 01:22:39.640
+Oh, yeah, I heard it once.
+
+01:22:39.640 --> 01:22:40.540
+Yeah,
+
+01:22:40.540 --> 01:22:42.500
+I gotta think of another
+solution, because the way that
+
+01:22:42.500 --> 01:22:45.080
+it gives me the attendance also
+doesn't have people's emails, it
+
+01:22:45.080 --> 01:22:48.580
+just has their name, which is
+harder to cross-reference with
+
+01:22:48.580 --> 01:22:49.220
+the roster,
+
+01:22:49.220 --> 01:22:52.970
+so I do something different.
+
+01:22:53.180 --> 01:22:55.540
+The idea would be I just
+memorize everyone's name and I
+
+01:22:55.540 --> 01:22:57.860
+just put it down in here.
+
+01:22:57.860 --> 01:23:01.320
+I mean, that'd be a lot for you.
+
+01:23:01.320 --> 01:23:04.940
+They have one right now, I'm
+sure other classes have
+
+01:23:04.940 --> 01:23:05.580
+attendance,
+
+01:23:05.580 --> 01:23:07.960
+like online attendance networks.
+I mean,
+
+01:23:07.960 --> 01:23:10.660
+the easier way to do it would be
+with a Google forum.
+
+01:23:10.660 --> 01:23:14.960
+I wanted to try this because it
+tries to make sure that you're
+
+01:23:14.960 --> 01:23:15.520
+here,
+
+01:23:15.520 --> 01:23:19.270
+and I want white people
+protecting you.
+
+01:24:06.660 --> 01:24:34.160
+Yeah
+
+01:24:49.480 --> 01:24:54.730
+We'll see you in the next video.

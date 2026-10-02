@@ -1,0 +1,6367 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.740
+I know we had to solve the
+problem here,
+
+00:00:01.740 --> 00:00:02.740
+too.
+
+00:00:04.680 --> 00:00:08.860
+I know we had to solve the
+problem here,
+
+00:00:08.860 --> 00:00:09.720
+too.
+I know we had to solve the
+
+00:00:09.720 --> 00:00:11.220
+problem here, too.
+I know we had to solve the
+
+00:00:11.220 --> 00:00:11.900
+problem here,
+
+00:00:11.900 --> 00:00:12.680
+too.
+I know we had to solve the
+
+00:00:12.680 --> 00:00:12.920
+problem here, too.
+
+00:00:12.920 --> 00:00:13.820
+I know we had to solve the
+problem here,
+
+00:00:13.820 --> 00:00:13.820
+too.
+I know we had to solve the
+
+00:00:13.820 --> 00:00:14.060
+problem here, too.
+I know we had to solve the
+
+00:00:14.060 --> 00:00:14.640
+problem here, too.
+
+00:00:14.640 --> 00:00:15.200
+I know we had to solve the
+problem here, too.
+
+00:00:15.200 --> 00:00:15.960
+I know we had to solve the
+problem here,
+
+00:00:15.960 --> 00:00:17.820
+too.
+I know we had to solve the
+
+00:00:17.820 --> 00:00:21.060
+problem here, too.
+I know we had to solve the
+
+00:00:21.060 --> 00:00:24.520
+problem here, too.
+I know we had to solve the
+
+00:00:24.520 --> 00:00:27.600
+problem here, too.
+I know we had to solve the
+
+00:00:27.600 --> 00:00:29.980
+problem here, too.
+I know we had to solve the
+
+00:00:29.980 --> 00:00:32.230
+problem here, too.
+He's not gonna do it
+
+00:00:46.000 --> 00:00:47.000
+Okay
+
+00:00:59.980 --> 00:01:02.620
+It's just after 10.30,
+so we'll get started.
+
+00:01:02.620 --> 00:01:06.120
+Welcome, everyone, to the first
+lecture of EECS 245 this fall.
+
+00:01:06.120 --> 00:01:09.080
+I will usually start lectures
+with just an agenda of what we
+
+00:01:09.080 --> 00:01:11.420
+plan on covering today.
+Normally, they will have much
+
+00:01:11.420 --> 00:01:13.980
+more regular content than this
+has.
+
+00:01:13.980 --> 00:01:16.560
+But I think it makes sense to
+start with some introductions
+
+00:01:16.560 --> 00:01:19.420
+before we talk about what
+machine learning is and what
+
+00:01:19.420 --> 00:01:22.200
+about machine learning we are
+going to study in this class.
+
+00:01:22.200 --> 00:01:24.880
+Then we will talk about some
+logistics,
+
+00:01:24.880 --> 00:01:26.860
+some of which are slightly
+different this semester than
+
+00:01:26.860 --> 00:01:29.400
+previous offerings.
+and then we will get into our
+
+00:01:29.400 --> 00:01:30.900
+actual content.
+
+00:01:31.080 --> 00:01:33.140
+So first a little bit about me.
+
+00:01:33.140 --> 00:01:34.660
+My name is Suraj Rampure.
+
+00:01:34.660 --> 00:01:37.100
+You can just call me by my first
+name Suraj.
+
+00:01:37.100 --> 00:01:41.060
+This is my third year teaching
+at Michigan and it's my fourth
+
+00:01:41.060 --> 00:01:43.740
+time teaching this class, EECS
+245.
+
+00:01:43.740 --> 00:01:46.780
+So I created this class last
+fall, taught it last fall,
+
+00:01:46.780 --> 00:01:50.420
+winter in the spring and this is
+now the fourth offering.
+
+00:01:50.420 --> 00:01:53.660
+This fall I'm actually also
+teaching another class in the
+
+00:01:53.660 --> 00:01:55.940
+math department on central
+campus which is I'll have to
+
+00:01:55.940 --> 00:01:59.340
+rush after office hours that I
+have after lectures, but we're
+
+00:01:59.340 --> 00:02:02.140
+developing with the College of
+Engineering And the math
+
+00:02:02.140 --> 00:02:05.400
+department is a like new
+first-year sequence kind of like
+
+00:02:05.400 --> 00:02:08.860
+engineering 10101 specifically
+for
+
+00:02:09.420 --> 00:02:12.420
+Math for engineering students.
+So in that class, which is
+
+00:02:12.420 --> 00:02:15.520
+called math 124 I'm actually
+co-teaching it with a math
+
+00:02:15.520 --> 00:02:18.160
+professor and it's like sort of
+like this class because it's
+
+00:02:18.160 --> 00:02:21.340
+also linear algebra But unlike
+this class it's designed for
+
+00:02:21.340 --> 00:02:24.620
+people who have no prior
+calculus or discrete math or any
+
+00:02:24.620 --> 00:02:26.900
+experience So it's designed for
+first year, first semester
+
+00:02:26.900 --> 00:02:29.060
+freshmen.
+So I'm pretty excited about that
+
+00:02:29.060 --> 00:02:30.560
+as well,
+
+00:02:30.780 --> 00:02:33.120
+though this class is my baby, so
+I'm very excited about it as
+
+00:02:33.120 --> 00:02:33.520
+well.
+
+00:02:33.520 --> 00:02:36.300
+Before coming to Michigan, I
+used to teach at UCSD,
+
+00:02:36.300 --> 00:02:39.620
+and before that, I was a student
+at Berkeley.
+
+00:02:39.620 --> 00:02:41.920
+It's not just me who you are
+going to work with in this
+
+00:02:41.920 --> 00:02:43.040
+class.
+You have two TAs,
+
+00:02:43.920 --> 00:02:46.440
+one of whom will be your lab TA,
+and you will meet them in lab
+
+00:02:46.440 --> 00:02:47.400
+tomorrow,
+
+00:02:47.400 --> 00:02:49.620
+and you will also meet both of
+them throughout office hours.
+
+00:02:49.620 --> 00:02:53.880
+So I wanted to give them both a
+chance to introduce themselves.
+
+00:02:53.880 --> 00:02:58.300
+Yeah, I'm a third year CS
+undergrad and I'm excited to be
+
+00:02:58.300 --> 00:03:00.900
+in Iowa this semester if you're
+coming to the 1230 lab, you'll
+
+00:03:00.900 --> 00:03:02.240
+see me there.
+
+00:03:02.240 --> 00:03:04.800
+Also, please come by in office
+hours,
+
+00:03:04.800 --> 00:03:06.740
+I promise we're all very nice
+people,
+
+00:03:06.740 --> 00:03:09.200
+so please come even though if
+you don't have any questions and
+
+00:03:09.200 --> 00:03:13.140
+we're excited to get to know
+you.
+
+00:03:13.140 --> 00:03:14.100
+Hi everyone,
+
+00:03:14.100 --> 00:03:15.100
+my name is Todul,
+
+00:03:15.100 --> 00:03:18.840
+I'm a second year PhD student in
+CSE,
+
+00:03:18.840 --> 00:03:19.960
+so yeah,
+
+00:03:19.960 --> 00:03:23.400
+excited to be able to commit to
+you and hope to see you guys in
+
+00:03:23.400 --> 00:03:24.900
+the lab.
+
+00:03:25.440 --> 00:03:26.440
+Awesome.
+
+00:03:26.580 --> 00:03:26.880
+Okay,
+
+00:03:26.880 --> 00:03:29.200
+first day of class we'll do a
+little bit of an icebreaker and
+
+00:03:29.200 --> 00:03:32.660
+the icebreaker is sort of meant
+to get you to talking with the
+
+00:03:32.660 --> 00:03:35.060
+other people near you and for
+you to learn a little bit more
+
+00:03:35.060 --> 00:03:36.040
+about me.
+
+00:03:36.040 --> 00:03:38.300
+So we're going to play four
+truths and a lie.
+
+00:03:38.300 --> 00:03:40.880
+Four of these statements are
+true about me, one of them is
+
+00:03:40.880 --> 00:03:41.840
+not true.
+
+00:03:41.840 --> 00:03:43.820
+What I want you to do is discuss
+with the people near you,
+
+00:03:43.820 --> 00:03:45.320
+introduce yourselves to them,
+
+00:03:45.320 --> 00:03:48.280
+get contact information if you
+don't already have it, and try
+
+00:03:48.280 --> 00:03:51.240
+and figure out which one of
+these is a lie.
+
+00:03:51.240 --> 00:03:51.800
+Discuss.
+
+00:03:51.800 --> 00:03:55.500
+I should hear lots of talking.
+We'll be back.
+
+00:03:55.500 --> 00:03:59.740
+We'll be back.
+We'll be back.
+
+00:04:07.680 --> 00:04:09.930
+We'll be back.
+
+00:04:25.240 --> 00:04:29.740
+I was thinking, no idea man,
+your sign's major now.
+
+00:04:30.760 --> 00:04:33.920
+I'd say it's pretty fair,
+
+00:04:33.920 --> 00:04:37.500
+but it doesn't get that bad.
+Because you can't really do the
+
+00:04:37.500 --> 00:04:38.040
+mushroom,
+
+00:04:38.040 --> 00:04:40.760
+but he's like a friend,
+
+00:04:40.760 --> 00:04:43.420
+and having all of his fun.
+
+00:04:43.420 --> 00:04:45.420
+Definitely like that stuff.
+
+00:04:45.420 --> 00:04:47.680
+I think it's alright having a
+roundhouse.
+
+00:04:47.680 --> 00:04:49.600
+I think he's just really into
+it.
+
+00:04:49.600 --> 00:04:50.900
+Yeah, he's pretty into it.
+
+00:04:50.900 --> 00:04:51.820
+Yeah, that's true.
+
+00:04:51.820 --> 00:04:53.080
+Yeah, yeah, yeah, yeah, yeah.
+It's hard for me to do it.
+
+00:04:53.080 --> 00:04:54.520
+It's hard for me to do it.
+
+00:04:54.520 --> 00:04:56.780
+It's hard for me to do it.
+It's hard for me to do it.
+
+00:04:56.780 --> 00:04:58.540
+It's hard for me to do it.
+
+00:04:58.540 --> 00:05:00.240
+It's hard for me to do it.
+It's hard for me to do it.
+
+00:05:00.240 --> 00:05:03.000
+It's hard for me to do it.
+It's hard for me to do it.
+
+00:05:03.000 --> 00:05:05.800
+It's hard for me to do it.
+It's hard for me to do it.
+
+00:05:05.800 --> 00:05:07.940
+I don't know.
+I'm also not a U.S.
+
+00:05:07.940 --> 00:05:08.160
+assistant,
+
+00:05:08.160 --> 00:05:09.600
+so it's really good for us.
+
+00:05:09.600 --> 00:05:10.600
+...yourself.
+
+00:05:14.020 --> 00:05:16.120
+That's what I remember.
+
+00:05:16.120 --> 00:05:17.160
+Like if you step,
+
+00:05:17.160 --> 00:05:19.160
+you don't have to step.
+
+00:05:19.160 --> 00:05:21.820
+That's the thing though, that
+was the crazy truth.
+
+00:05:21.820 --> 00:05:24.380
+Some like...
+So good.
+
+00:05:25.000 --> 00:05:27.900
+That's a good idea.
+
+00:05:27.900 --> 00:05:29.540
+...especially
+for a guy who grew up in this
+
+00:05:29.540 --> 00:05:30.100
+summer,
+
+00:05:30.100 --> 00:05:32.140
+I don't know if he's an
+integrated or not,
+
+00:05:32.140 --> 00:05:36.640
+but he's a really good guy.
+
+00:05:45.840 --> 00:05:49.590
+OK, let's come back together.
+
+00:05:52.100 --> 00:05:53.240
+Let's see,
+
+00:05:53.240 --> 00:05:55.700
+let's get a show of hands.
+How many people think the first
+
+00:05:55.700 --> 00:05:58.360
+one is a lie? I skipped a grade.
+
+00:05:58.360 --> 00:05:59.380
+Couple of people.
+
+00:05:59.380 --> 00:06:02.420
+How many people think the second
+is a lie? I have two kids.
+
+00:06:02.420 --> 00:06:03.940
+In about half the class.
+
+00:06:03.940 --> 00:06:04.440
+Third,
+
+00:06:04.440 --> 00:06:07.240
+Soulja Boy used to follow me on
+Twitter.
+
+00:06:07.240 --> 00:06:08.480
+A couple of people think that's
+a lie.
+
+00:06:08.480 --> 00:06:09.260
+Fourth,
+
+00:06:09.260 --> 00:06:12.280
+I got into Michigan when I
+applied for undergrad.
+
+00:06:12.280 --> 00:06:16.020
+And fifth, I'm not a US citizen.
+
+00:06:16.020 --> 00:06:19.020
+The lie is this.
+I have no kids.
+
+00:06:19.700 --> 00:06:23.080
+But in my mind, I'm way too
+young to have kids.
+
+00:06:23.080 --> 00:06:24.180
+I'm only 27.
+
+00:06:24.180 --> 00:06:27.840
+But I'm going to keep using this
+until people start to think I do
+
+00:06:27.840 --> 00:06:28.480
+have kids.
+
+00:06:28.480 --> 00:06:30.600
+But these are all true.
+I skipped a grade, skipped first
+
+00:06:30.600 --> 00:06:32.850
+grade, nothing special.
+
+00:06:33.740 --> 00:06:38.990
+To explain that, I'm not a US
+citizen, I'm Canadian actually.
+
+00:06:41.240 --> 00:06:44.240
+I'm actually from Windsor.
+Has anyone here been to Windsor?
+
+00:06:44.440 --> 00:06:46.200
+Yeah, a couple people.
+There's not much to do there
+
+00:06:46.200 --> 00:06:48.720
+unless you're going to Toronto
+or it's your 19th birthday,
+
+00:06:48.720 --> 00:06:53.600
+but yeah, that's a big reason
+why I moved from UCSC to
+
+00:06:53.600 --> 00:06:56.180
+Michigan to be closer to family
+in Windsor, though Michigan is
+
+00:06:56.180 --> 00:06:57.860
+obviously a great school as
+well.
+
+00:06:57.860 --> 00:07:00.540
+Let's see, I got into Michigan
+when I applied for undergrad,
+
+00:07:00.540 --> 00:07:02.180
+that is true.
+
+00:07:02.180 --> 00:07:05.180
+Got denied Ross pre-admit
+though, if they still do that.
+
+00:07:05.200 --> 00:07:08.640
+And Soulja Boy used to follow me
+on Twitter, that is also true.
+
+00:07:08.640 --> 00:07:11.520
+The first dollar I ever made was
+through YouTube AdSense, making
+
+00:07:11.520 --> 00:07:13.400
+YouTube videos when I was in
+seventh grade,
+
+00:07:13.400 --> 00:07:15.140
+and this was related to that.
+
+00:07:15.140 --> 00:07:16.580
+You can come to office hours if
+you want to learn more about
+
+00:07:16.580 --> 00:07:17.460
+that.
+
+00:07:17.460 --> 00:07:18.100
+But this,
+
+00:07:18.100 --> 00:07:20.350
+no, not true.
+
+00:07:20.700 --> 00:07:21.640
+Okay,
+
+00:07:21.640 --> 00:07:23.900
+just a little bit more about me,
+these are some pictures I took
+
+00:07:23.900 --> 00:07:25.580
+over the summer.
+
+00:07:25.580 --> 00:07:29.140
+I spent a lot of time this
+summer developing materials for
+
+00:07:29.140 --> 00:07:31.060
+this new math class that we're
+teaching.
+
+00:07:31.060 --> 00:07:32.660
+Not enough time doing that.
+
+00:07:32.660 --> 00:07:35.100
+Most of my time was spent
+biking,
+
+00:07:35.100 --> 00:07:35.860
+walking,
+
+00:07:35.860 --> 00:07:36.860
+eating,
+
+00:07:37.060 --> 00:07:38.060
+traveling.
+
+00:07:38.200 --> 00:07:40.280
+Here's a picture of my dog.
+He actually may be older than
+
+00:07:40.280 --> 00:07:42.180
+some of you.
+He was born in 2009,
+
+00:07:42.180 --> 00:07:44.940
+but he's still doing okay.
+
+00:07:44.940 --> 00:07:48.460
+This is a picture from Oxford.
+They have a blackboard that
+
+00:07:48.460 --> 00:07:50.380
+Einstein wrote on and they like
+preserved it, which I thought
+
+00:07:50.380 --> 00:07:52.630
+was pretty cool.
+
+00:07:53.980 --> 00:07:57.320
+The Grease this past summer,
+there was a little exhibit where
+
+00:07:57.320 --> 00:07:59.860
+you could make olive oil.
+You press the olives yourself,
+
+00:07:59.860 --> 00:08:02.660
+and the juice comes out, which
+is pretty cool.
+
+00:08:02.660 --> 00:08:03.300
+And yeah,
+
+00:08:03.300 --> 00:08:04.680
+it was just a little bit about
+me.
+
+00:08:04.680 --> 00:08:06.700
+And over the course of the
+semester, I want to learn a
+
+00:08:06.700 --> 00:08:09.160
+little bit more about each and
+every one of you as well.
+
+00:08:09.160 --> 00:08:11.660
+So don't be a stranger.
+Come to office hours, say hi,
+
+00:08:11.660 --> 00:08:15.410
+ask about these random things,
+tell me more about yourself.
+
+00:08:15.840 --> 00:08:18.700
+I'll get on this soapbox
+throughout the lecture, but in
+
+00:08:18.700 --> 00:08:22.200
+my view, part of the point of
+coming to a school like Michigan
+
+00:08:22.200 --> 00:08:25.840
+isn't so much like the quality
+of the specific homework
+
+00:08:25.840 --> 00:08:28.520
+problems you get to work on,
+even though those are good too.
+
+00:08:28.520 --> 00:08:31.080
+Everything about this class is
+publicly available online.
+
+00:08:31.080 --> 00:08:33.300
+Anyone could just go to
+EECS245.org,
+
+00:08:33.300 --> 00:08:34.760
+watch the lectures, do the
+homework.
+
+00:08:34.760 --> 00:08:37.620
+The point of coming to a place
+like Michigan is taking
+
+00:08:37.620 --> 00:08:39.240
+advantage of the human
+resources.
+
+00:08:39.240 --> 00:08:41.600
+That's the other people who are
+here, that's your instructors,
+
+00:08:41.600 --> 00:08:45.140
+your TAs, so I really want you
+to take advantage of the human
+
+00:08:45.140 --> 00:08:48.480
+community in this class and in
+your other classes here at the
+
+00:08:48.480 --> 00:08:49.480
+school.
+
+00:08:51.100 --> 00:08:52.960
+So that's a little bit about me.
+
+00:08:52.960 --> 00:08:57.040
+Like I said, I want to start by
+giving you a broad sense of what
+
+00:08:57.040 --> 00:09:00.040
+machine learning is about,
+
+00:09:00.180 --> 00:09:03.300
+and then talk about some of the
+more boring logistics.
+
+00:09:03.300 --> 00:09:06.560
+And to illustrate what machine
+learning is about,
+
+00:09:06.560 --> 00:09:09.640
+what I'm going to do is go to
+our course notes, which maybe
+
+00:09:09.640 --> 00:09:12.820
+you've read about if you've
+taken a look at the syllabus.
+
+00:09:12.820 --> 00:09:15.140
+This is chapter 1.1
+if you have your computer open,
+
+00:09:15.140 --> 00:09:16.400
+though you don't need to.
+
+00:09:16.400 --> 00:09:20.740
+What I have here is a box in
+which, you can do this with your
+
+00:09:20.740 --> 00:09:23.260
+mouse as well, I'm gonna try and
+draw with my iPad.
+
+00:09:23.260 --> 00:09:25.960
+In this box you can draw a
+digit.
+
+00:09:25.960 --> 00:09:26.960
+Let's try it.
+
+00:09:26.960 --> 00:09:28.460
+I'm gonna draw four.
+
+00:09:28.460 --> 00:09:29.720
+Okay, nothing special there.
+
+00:09:29.720 --> 00:09:33.900
+If you scroll down, what you're
+seeing here is a model is trying
+
+00:09:33.900 --> 00:09:36.580
+to guess what digit I wrote.
+
+00:09:36.580 --> 00:09:40.420
+And what it's showing me with
+these bars is the probability,
+
+00:09:40.420 --> 00:09:43.940
+according to the model that what
+I drew was a zero,
+
+00:09:43.940 --> 00:09:45.920
+a one, a two, a three, a four,
+
+00:09:45.920 --> 00:09:47.940
+five, six, seven, eight, or
+nine.
+
+00:09:47.940 --> 00:09:52.240
+And what did you notice with
+this four?
+
+00:09:52.240 --> 00:09:55.240
+What do you notice?
+
+00:09:57.180 --> 00:09:58.940
+Yes, and remind us of your name?
+
+00:09:58.940 --> 00:09:59.880
+Yeah.
+
+00:09:59.880 --> 00:10:00.820
+Allison.
+Allison.
+
+00:10:00.820 --> 00:10:02.180
+Thinks it's an eight.
+
+00:10:02.180 --> 00:10:03.700
+It thinks it's an eight.
+
+00:10:03.700 --> 00:10:04.600
+Yeah, exactly.
+
+00:10:04.600 --> 00:10:06.880
+The most likely outcome
+according to the model was that
+
+00:10:06.880 --> 00:10:08.100
+this was an eight.
+
+00:10:08.100 --> 00:10:11.220
+It thinks, OK, maybe it could be
+a four or five, but it seemed
+
+00:10:11.220 --> 00:10:14.160
+like greater than a 50% chance
+that it's an 8.
+
+00:10:14.160 --> 00:10:18.680
+What if I draw my 4 this way?
+
+00:10:18.680 --> 00:10:22.080
+It still is sort of split
+between a 4 and an 8, but now it
+
+00:10:22.080 --> 00:10:24.520
+starts to think it's a 9.
+
+00:10:24.520 --> 00:10:27.840
+What if I draw a 9 like that?
+
+00:10:27.840 --> 00:10:30.080
+It looks kind of like the 4 that
+I just drew,
+
+00:10:30.080 --> 00:10:32.620
+but it's pretty confident that
+this is a 9.
+
+00:10:32.620 --> 00:10:34.820
+What if I draw a 1 there?
+
+00:10:34.820 --> 00:10:35.940
+It thinks it's a 1.
+
+00:10:35.940 --> 00:10:38.560
+What if I draw the 1 over here?
+Now it starts to think a little
+
+00:10:38.560 --> 00:10:40.280
+bit that it's a seven.
+
+00:10:40.280 --> 00:10:42.680
+What if I draw a zero here?
+Well, it's pretty confident that
+
+00:10:42.680 --> 00:10:43.740
+it's a two.
+
+00:10:43.740 --> 00:10:46.940
+So what we're seeing is that
+sometimes this model works
+
+00:10:46.940 --> 00:10:50.620
+well, and sometimes it doesn't
+work well.
+
+00:10:50.620 --> 00:10:52.760
+And I encourage you to play
+around with this and see if you
+
+00:10:52.760 --> 00:10:55.040
+can fool it in weird ways.
+
+00:10:55.040 --> 00:10:56.080
+Like there it thinks it's a
+nine.
+
+00:10:56.080 --> 00:11:01.260
+It thinks this zero is a nine?
+
+00:11:01.260 --> 00:11:01.960
+Yeah,
+
+00:11:01.960 --> 00:11:02.860
+everyone else have your name?
+
+00:11:02.860 --> 00:11:03.580
+Gavin?
+
+00:11:03.580 --> 00:11:05.920
+That's where if you were going
+to complete the nine, and that's
+
+00:11:05.920 --> 00:11:07.340
+where the hoop would be.
+
+00:11:07.340 --> 00:11:09.040
+Exactly.
+If we were to draw a nine,
+
+00:11:09.140 --> 00:11:12.700
+that's what it would look like.
+But maybe if I start up here,
+
+00:11:12.700 --> 00:11:16.500
+I can get it to think it's an
+eight as well.
+
+00:11:16.500 --> 00:11:21.060
+So this example of handwritten
+digit classification
+
+00:11:21.580 --> 00:11:25.180
+is actually one of the first
+examples of a machine learning
+
+00:11:25.180 --> 00:11:29.480
+system that was employed by
+society at large.
+
+00:11:29.540 --> 00:11:35.400
+And it was actually developed by
+USPS in the late 1990s to
+
+00:11:35.400 --> 00:11:38.400
+transcribe the addresses people
+wrote on letters.
+
+00:11:38.820 --> 00:11:41.220
+Okay, I haven't personally sent
+a letter before,
+
+00:11:41.220 --> 00:11:43.920
+many of you probably haven't
+either, but,
+
+00:11:43.920 --> 00:11:45.960
+you know, if you need to mail
+something anywhere,
+
+00:11:45.960 --> 00:11:48.120
+before you would go, now you go
+to the post office and if you
+
+00:11:48.120 --> 00:11:50.160
+have to send a package, you tell
+them the address and they type
+
+00:11:50.160 --> 00:11:51.380
+it in.
+But before you would write a
+
+00:11:51.380 --> 00:11:54.420
+letter and USPS developed this,
+or they didn't develop it, but
+
+00:11:54.420 --> 00:11:56.000
+they used this technology
+
+00:11:56.000 --> 00:11:58.440
+to figure out who to send their
+packages to.
+
+00:11:58.440 --> 00:12:01.720
+And this is an example of a
+machine learning system.
+
+00:12:01.720 --> 00:12:02.140
+Now,
+
+00:12:02.140 --> 00:12:05.820
+what I want to illustrate here
+is what makes this a machine
+
+00:12:05.820 --> 00:12:07.300
+learning system.
+
+00:12:07.300 --> 00:12:11.020
+If you had to develop a system
+like this on your own to figure
+
+00:12:11.020 --> 00:12:13.280
+out what digit is written down,
+
+00:12:13.280 --> 00:12:19.200
+one way you could do this is to
+come up with a massive set of if
+
+00:12:19.200 --> 00:12:20.200
+statements.
+
+00:12:20.220 --> 00:12:21.400
+You could say things like,
+
+00:12:21.400 --> 00:12:23.160
+if there's a circle,
+
+00:12:23.160 --> 00:12:24.640
+well, then it could be an 8,
+
+00:12:24.640 --> 00:12:26.260
+but it could be a 0.
+
+00:12:26.260 --> 00:12:28.320
+Or maybe it's a 2 with the loop
+at the bottom.
+
+00:12:28.320 --> 00:12:29.700
+Or maybe it's a 9.
+
+00:12:29.700 --> 00:12:30.760
+If there's a stick,
+
+00:12:30.760 --> 00:12:34.940
+well, then maybe it's a 1.
+maybe it's a seven,
+
+00:12:34.940 --> 00:12:37.260
+you know, maybe it's a nine.
+You could come up with a bunch
+
+00:12:37.260 --> 00:12:39.420
+of if statements like that.
+But what's the problem with that
+
+00:12:39.420 --> 00:12:40.420
+approach?
+
+00:12:43.340 --> 00:12:46.140
+What's the problem with just
+writing hundreds of if
+
+00:12:46.140 --> 00:12:48.000
+statements? Yes, and remind us
+of your name?
+
+00:12:48.000 --> 00:12:48.400
+Ammar.
+
+00:12:48.400 --> 00:12:49.800
+I think it's just like tedious.
+
+00:12:49.800 --> 00:12:51.520
+Yeah, it's tedious.
+And here there are only 10
+
+00:12:51.520 --> 00:12:54.420
+possible categories or classes,
+
+00:12:54.420 --> 00:12:55.700
+zero through nine.
+
+00:12:55.700 --> 00:12:59.000
+But what if we were trying to
+figure out what letter people
+
+00:12:59.000 --> 00:12:59.920
+wrote?
+
+00:12:59.920 --> 00:13:02.600
+Then there are 26 options,
+
+00:13:02.600 --> 00:13:05.000
+why stop at letters and numbers?
+What if we were trying to figure
+
+00:13:05.000 --> 00:13:10.060
+out what animal we took a
+picture of? How would you write
+
+00:13:10.060 --> 00:13:13.840
+if statements that accurately
+capture all of that
+
+00:13:13.840 --> 00:13:14.840
+sophistication?
+
+00:13:15.420 --> 00:13:17.760
+So that approach that I just
+described of writing a bunch of
+
+00:13:17.760 --> 00:13:18.980
+if statements,
+
+00:13:18.980 --> 00:13:20.900
+that is not the machine learning
+approach.
+
+00:13:20.900 --> 00:13:23.860
+OK? Instead, the machine
+learning approach
+
+00:13:23.860 --> 00:13:28.240
+is to start with a data set,
+
+00:13:28.240 --> 00:13:29.240
+OK?
+
+00:13:29.300 --> 00:13:32.540
+And what you do is you start
+with a data set.
+
+00:13:32.540 --> 00:13:33.940
+And in this example,
+
+00:13:33.940 --> 00:13:36.760
+you start with a data set that
+is labeled,
+
+00:13:36.760 --> 00:13:40.260
+or in other words, a data set in
+which you know the right answers
+
+00:13:40.260 --> 00:13:41.200
+already.
+
+00:13:41.200 --> 00:13:43.340
+That's what a label is.
+
+00:13:43.340 --> 00:13:46.680
+So to train this handwritten
+digit classifier,
+
+00:13:46.680 --> 00:13:48.620
+what we did, or what they did,
+
+00:13:48.620 --> 00:13:53.280
+is it took lots of images of
+zeros that people wrote and
+
+00:13:53.280 --> 00:13:55.480
+wrote down, okay, these are all
+zeros,
+
+00:13:55.480 --> 00:13:58.920
+and then took lots of pictures
+of ones that people wrote and
+
+00:13:58.920 --> 00:14:01.160
+said, okay, these are pictures
+of ones, and these are pictures
+
+00:14:01.160 --> 00:14:03.700
+of twos, and these are pictures
+of threes.
+
+00:14:03.700 --> 00:14:07.820
+And so what we do is we show the
+system lots of labeled examples
+
+00:14:07.820 --> 00:14:11.520
+of what each category is
+supposed to look like, and the
+
+00:14:11.520 --> 00:14:15.440
+idea is that the system
+automatically learns how to
+
+00:14:15.440 --> 00:14:19.180
+distinguish ones from twos from
+threes and fours.
+
+00:14:19.180 --> 00:14:20.360
+Okay, And as we see,
+
+00:14:20.360 --> 00:14:23.820
+it doesn't necessarily do this
+perfectly,
+
+00:14:23.820 --> 00:14:26.720
+but that is the machine learning
+approach.
+
+00:14:26.720 --> 00:14:30.260
+And by developing better machine
+learning models, we build
+
+00:14:30.260 --> 00:14:33.840
+systems that are more accurately
+able to do things like classify
+
+00:14:33.840 --> 00:14:35.340
+handwritten digits.
+
+00:14:35.660 --> 00:14:38.380
+But that's the core idea I
+wanted to impart here.
+
+00:14:38.380 --> 00:14:44.260
+The machine learning approach to
+solving
+
+00:14:44.260 --> 00:14:47.860
+problems This is about
+automatically
+
+00:14:47.860 --> 00:14:53.860
+recognizing patterns in
+
+00:14:53.860 --> 00:14:54.860
+data.
+
+00:15:02.360 --> 00:15:05.020
+And this definition of machine
+learning,
+
+00:15:05.020 --> 00:15:07.580
+automatically recognizing
+patterns in data,
+
+00:15:07.820 --> 00:15:12.180
+applies to other sort of systems
+that you've heard about in
+
+00:15:12.180 --> 00:15:14.840
+popular media that involve
+machine learning and artificial
+
+00:15:14.840 --> 00:15:15.840
+intelligence.
+
+00:15:16.060 --> 00:15:16.880
+ChatGPT,
+
+00:15:16.880 --> 00:15:19.820
+I think you're all pretty aware
+that what it does
+
+00:15:19.820 --> 00:15:23.840
+is it tries to regurgitate
+things that sound similar to
+
+00:15:23.840 --> 00:15:28.200
+what it saw in its training
+data, which is why it's pretty
+
+00:15:28.200 --> 00:15:31.900
+obvious when someone has just
+copy-pasted output from Claude.
+
+00:15:31.900 --> 00:15:34.720
+And it's because most of the
+ChatGPT and Claude and Gemini
+
+00:15:34.720 --> 00:15:36.840
+outputs sound very similar
+because they're trying to mimic
+
+00:15:36.840 --> 00:15:38.620
+patterns that they've already
+seen.
+
+00:15:38.620 --> 00:15:40.300
+And to create these systems,
+
+00:15:40.300 --> 00:15:43.940
+they used trillions of gigabytes
+of data,
+
+00:15:43.940 --> 00:15:46.940
+and that's why they seem to know
+about so many different things.
+
+00:15:46.940 --> 00:15:48.000
+Now, it's not just that,
+
+00:15:48.000 --> 00:15:48.640
+right?
+
+00:15:48.640 --> 00:15:51.200
+Tools like Chachi Bhati also
+have the ability to look things
+
+00:15:51.200 --> 00:15:52.320
+up on the internet,
+
+00:15:52.320 --> 00:15:54.480
+so if it didn't already know
+about something, it can learn
+
+00:15:54.480 --> 00:15:55.540
+about it.
+
+00:15:55.540 --> 00:15:58.020
+But that's the crux of it.
+
+00:15:58.020 --> 00:16:00.920
+Out of curiosity, how many
+people here knew that the person
+
+00:16:00.920 --> 00:16:05.420
+that Claude is named after went
+to Michigan?
+
+00:16:05.620 --> 00:16:09.780
+So Claude is named after a
+famous mathematician computer
+
+00:16:09.780 --> 00:16:13.530
+scientist from the 1930s named
+Claude Shannon.
+
+00:16:13.760 --> 00:16:14.900
+And he's like,
+
+00:16:14.900 --> 00:16:16.940
+he's not super like,
+
+00:16:16.940 --> 00:16:19.840
+people say he's like Einstein or
+Newton level genius but just
+
+00:16:19.840 --> 00:16:23.340
+doesn't have the PR that those
+people had.
+
+00:16:23.340 --> 00:16:26.060
+But there's actually a statue of
+him on North Campus in front of
+
+00:16:26.060 --> 00:16:27.460
+the expo.
+You should go look at it and
+
+00:16:27.460 --> 00:16:28.780
+it'll say Claude Shannon.
+
+00:16:28.780 --> 00:16:31.020
+And if you search him up, you'll
+see that he developed a lot of
+
+00:16:31.020 --> 00:16:33.960
+the foundational theories used
+in machine learning and AI.
+
+00:16:33.960 --> 00:16:35.840
+And that's who Anthropic named
+the system after.
+
+00:16:35.840 --> 00:16:38.060
+And he went to Michigan for his
+master's and PhD.
+
+00:16:38.060 --> 00:16:39.060
+Okay,
+
+00:16:40.180 --> 00:16:42.200
+so we're comfortable with my
+definition of machine learning,
+
+00:16:42.200 --> 00:16:44.680
+automatically recognizing
+patterns in data.
+
+00:16:46.000 --> 00:16:46.640
+Okay,
+
+00:16:46.640 --> 00:16:50.600
+so what I want to give us is a
+broad understanding of the types
+
+00:16:50.600 --> 00:16:53.520
+of problems one can solve using
+machine learning.
+
+00:16:53.520 --> 00:16:55.640
+And maybe this is a slightly
+outdated approach because
+
+00:16:55.640 --> 00:16:59.540
+something like ChatGPT doesn't
+directly fit into this taxonomy,
+
+00:16:59.540 --> 00:17:01.360
+but I'll talk about that in just
+a little bit.
+
+00:17:01.360 --> 00:17:04.620
+But for the most part, our focus
+is going to be on a smaller
+
+00:17:04.620 --> 00:17:07.120
+sliver of machine learning, and
+we will start from there and
+
+00:17:07.120 --> 00:17:09.040
+build your foundation from
+there.
+
+00:17:09.040 --> 00:17:09.900
+OK.
+
+00:17:09.900 --> 00:17:10.920
+For us,
+
+00:17:10.920 --> 00:17:15.800
+I want to look here into these
+two broad categories
+
+00:17:15.800 --> 00:17:18.920
+of supervised learning and
+unsupervised learning.
+
+00:17:19.620 --> 00:17:23.160
+The key difference is that with
+supervised learning,
+
+00:17:23.160 --> 00:17:25.300
+we have labeled data.
+
+00:17:25.300 --> 00:17:27.700
+Can you tell me what labeled
+data is? I just mentioned it,
+
+00:17:27.700 --> 00:17:29.340
+but I want to hear it in your
+own words.
+
+00:17:29.340 --> 00:17:30.520
+What is labeled data?
+
+00:17:30.520 --> 00:17:30.980
+Gavin.
+
+00:17:30.980 --> 00:17:32.760
+When we were doing the numbers,
+
+00:17:32.760 --> 00:17:36.040
+we categorized all the zeros
+into one group and all the ones.
+
+00:17:36.040 --> 00:17:38.420
+We didn't just throw them all in
+randomly.
+
+00:17:38.420 --> 00:17:39.420
+Exactly.
+You want to add to that and
+
+00:17:39.420 --> 00:17:40.460
+remind us of your name?
+
+00:17:40.460 --> 00:17:42.140
+I'm Drew.
+There's like a direct answer.
+
+00:17:42.360 --> 00:17:42.900
+Exactly.
+
+00:17:42.900 --> 00:17:45.380
+We know the right answer.
+
+00:17:45.380 --> 00:17:48.280
+So in label data,
+
+00:17:48.280 --> 00:17:52.380
+we know
+
+00:17:52.380 --> 00:17:56.020
+the right answer.
+
+00:17:59.360 --> 00:18:01.880
+So if we have all of the answers
+already, why are we trying to
+
+00:18:01.880 --> 00:18:05.630
+predict anything in the first
+place?
+
+00:18:06.740 --> 00:18:08.760
+What's the point?
+
+00:18:08.760 --> 00:18:11.280
+Predict stuff that's not in your
+data set already.
+
+00:18:11.280 --> 00:18:13.960
+Exactly, the whole point is to
+use this data set that we've
+
+00:18:13.960 --> 00:18:16.840
+collected to learn patterns so
+that we can go and make
+
+00:18:16.840 --> 00:18:19.840
+predictions when we don't
+already know the right answer.
+
+00:18:19.840 --> 00:18:22.720
+When I went to that handwritten
+digit classification box and
+
+00:18:22.720 --> 00:18:25.560
+started drawing my own ones and
+twos and threes,
+
+00:18:25.560 --> 00:18:28.040
+the people who made that system
+30 years ago didn't know what I
+
+00:18:28.040 --> 00:18:29.700
+was going to draw.
+
+00:18:29.700 --> 00:18:31.820
+So they don't already know what
+I was going to draw.
+
+00:18:31.820 --> 00:18:35.160
+What they tried to do is use the
+data they had access to to build
+
+00:18:35.160 --> 00:18:37.500
+as accurate of a system as they
+could.
+
+00:18:37.500 --> 00:18:40.980
+So that's ultimately the point
+of building a machine learning
+
+00:18:40.980 --> 00:18:41.540
+model.
+
+00:18:41.540 --> 00:18:44.840
+You use the data that you've
+collected
+
+00:18:44.840 --> 00:18:48.060
+to build a model that you think
+will work well in the future
+
+00:18:48.060 --> 00:18:51.460
+when you don't already know the
+right answer.
+
+00:18:51.460 --> 00:18:56.600
+So I like thinking of supervised
+learning problems as sort of
+
+00:18:56.600 --> 00:19:01.240
+problems of the form predict y
+given
+
+00:19:01.240 --> 00:19:04.420
+x, okay.
+
+00:19:05.380 --> 00:19:07.840
+That's a supervised learning
+problem.
+
+00:19:07.840 --> 00:19:10.840
+Your data set has some x's and
+y's and what you want to do is
+
+00:19:10.840 --> 00:19:13.640
+come up with a way to predict y
+from x.
+
+00:19:13.640 --> 00:19:18.180
+Within supervised learning there
+are two broad sort of subgroups.
+
+00:19:20.620 --> 00:19:22.580
+Regression and classification.
+
+00:19:22.580 --> 00:19:24.340
+Can someone tell me the
+difference if you happen to have
+
+00:19:24.340 --> 00:19:27.000
+heard of these terms before.
+
+00:19:27.000 --> 00:19:29.680
+What is regression and what is
+classification?
+
+00:19:29.680 --> 00:19:31.220
+Yes, and remind us of your name?
+
+00:19:31.220 --> 00:19:32.220
+Charlie.
+
+00:19:33.460 --> 00:19:37.480
+Regression is to predict a value
+based
+
+00:19:37.480 --> 00:19:40.820
+on the past patterns of the
+data, and classification is to
+
+00:19:40.820 --> 00:19:44.800
+give a class of a data used to
+do prediction.
+
+00:19:44.800 --> 00:19:45.800
+Exactly.
+You're on the right track.
+
+00:19:46.300 --> 00:19:48.550
+Both regression and
+classification
+
+00:19:48.920 --> 00:19:52.640
+are problems in which the form
+is predict y from x.
+
+00:19:52.640 --> 00:19:56.390
+The difference is that with
+regression,
+
+00:19:57.040 --> 00:19:59.290
+y is numerical,
+
+00:20:00.120 --> 00:20:01.620
+or continuous,
+
+00:20:03.440 --> 00:20:05.700
+versus in classification,
+
+00:20:06.260 --> 00:20:09.260
+y is a category.
+
+00:20:11.180 --> 00:20:11.840
+Okay,
+
+00:20:11.840 --> 00:20:13.640
+so that handwritten digit
+example,
+
+00:20:13.640 --> 00:20:16.640
+was that regression or
+classification?
+
+00:20:18.060 --> 00:20:19.380
+It's a little ambiguous.
+
+00:20:19.380 --> 00:20:20.340
+Yes, and remind us of your name?
+
+00:20:20.340 --> 00:20:21.340
+Alex.
+Alex.
+
+00:20:21.620 --> 00:20:22.460
+It's classification.
+
+00:20:22.460 --> 00:20:22.900
+Why?
+
+00:20:22.900 --> 00:20:26.300
+Even though we were predicting
+numbers.
+
+00:20:26.300 --> 00:20:28.300
+Because there are only 10 values
+that can be.
+
+00:20:28.300 --> 00:20:29.400
+Yeah, and remind us of your
+name?
+
+00:20:29.400 --> 00:20:29.960
+Gray.
+
+00:20:29.960 --> 00:20:30.500
+Gray.
+
+00:20:30.500 --> 00:20:31.240
+Yeah.
+
+00:20:31.240 --> 00:20:34.020
+So the handwritten digit example
+is a little ambiguous, but it's
+
+00:20:34.020 --> 00:20:36.340
+clearly classification, even
+though it seems like we're
+
+00:20:36.340 --> 00:20:37.580
+predicting numbers.
+
+00:20:37.580 --> 00:20:40.400
+And it's because those numbers
+in that case were just symbols
+
+00:20:40.400 --> 00:20:41.880
+that we needed to predict.
+
+00:20:41.880 --> 00:20:43.420
+OK, they just happen to look
+like numbers.
+
+00:20:43.420 --> 00:20:46.420
+But if instead I change the
+problem to predictive this is an
+
+00:20:46.420 --> 00:20:49.040
+ABCDEFG or H.
+It's the same thing
+
+00:20:49.040 --> 00:20:50.940
+mathematically The symbols just
+look different.
+
+00:20:50.940 --> 00:20:54.440
+So it should be categorized the
+same way in this taxonomy.
+
+00:20:54.440 --> 00:20:55.440
+Okay?
+
+00:20:55.920 --> 00:20:59.420
+So things like predicting a
+handwritten digit or predicting
+
+00:20:59.420 --> 00:21:01.680
+true or false.
+It's going to snow tomorrow or
+
+00:21:02.460 --> 00:21:05.640
+Predicting this is pictures of a
+cat dog hamster or zebra.
+
+00:21:05.640 --> 00:21:07.500
+Those are all
+
+00:21:07.500 --> 00:21:09.000
+classification tasks
+
+00:21:09.120 --> 00:21:13.260
+Regression tasks are ones where
+the variable we are predicting
+
+00:21:13.260 --> 00:21:16.260
+is some continuous numerical
+variable,
+
+00:21:16.360 --> 00:21:19.220
+like predicting what grade you
+are going to get on the final
+
+00:21:19.220 --> 00:21:21.980
+exam using your midterm one and
+midterm two grades.
+
+00:21:21.980 --> 00:21:24.080
+That's a regression problem.
+
+00:21:24.080 --> 00:21:26.940
+Or say the running example we
+are going to use this semester,
+
+00:21:26.940 --> 00:21:29.800
+and we will start with that at
+the end of today's lecture, is
+
+00:21:29.800 --> 00:21:33.140
+predicting how long it's going
+to take for you to get to work
+
+00:21:33.140 --> 00:21:35.940
+tomorrow given various factors
+about your commute.
+
+00:21:35.940 --> 00:21:39.690
+Right there, we're predicting a
+commute time in minutes, OK?
+
+00:21:39.880 --> 00:21:41.420
+So are we clear on the
+difference between regression
+
+00:21:41.420 --> 00:21:42.920
+and classification?
+
+00:21:44.140 --> 00:21:45.020
+OK,
+
+00:21:45.020 --> 00:21:49.940
+most of our semester is going to
+be spent here
+
+00:21:49.940 --> 00:21:54.040
+on regression problems.
+But that's just because I've
+
+00:21:54.040 --> 00:21:57.480
+created this story that
+introduces all of the linear
+
+00:21:57.480 --> 00:22:00.940
+algebra ideas we need so that it
+helps us solve this regression
+
+00:22:00.940 --> 00:22:02.660
+problem.
+But that foundation we build
+
+00:22:02.660 --> 00:22:05.240
+will equally apply to all of
+these other branches of machine
+
+00:22:05.240 --> 00:22:08.990
+learning in lots of problems
+that I haven't written on here.
+
+00:22:10.480 --> 00:22:12.960
+So we've talked about supervised
+learning,
+
+00:22:12.960 --> 00:22:15.540
+and that's where we're going to
+live for most of the semester.
+
+00:22:15.540 --> 00:22:17.420
+But at the very end of the
+semester, we're going to touch
+
+00:22:17.420 --> 00:22:19.460
+on unsupervised learning.
+
+00:22:19.460 --> 00:22:23.210
+Now if supervised learning is
+about predicting y from x,
+
+00:22:23.280 --> 00:22:25.340
+and we have a right answer,
+
+00:22:25.340 --> 00:22:29.090
+what do you think unsupervised
+learning is?
+
+00:22:29.960 --> 00:22:32.040
+Yes, and write it in your name?
+
+00:22:32.040 --> 00:22:34.100
+Okay.
+It's like you don't have a right
+
+00:22:34.100 --> 00:22:35.520
+answer.
+Yeah, so what are you trying to
+
+00:22:35.520 --> 00:22:36.840
+do instead?
+
+00:22:36.840 --> 00:22:41.340
+Maybe do something and not have
+anything to match it with.
+
+00:22:42.540 --> 00:22:44.040
+You're on the right track.
+
+00:22:44.040 --> 00:22:45.420
+The idea,
+
+00:22:45.420 --> 00:22:48.100
+exactly, is that we don't have a
+right answer.
+
+00:22:48.100 --> 00:22:51.140
+What that means is our goal
+isn't actually to predict
+
+00:22:51.140 --> 00:22:51.780
+anything.
+
+00:22:51.780 --> 00:22:55.530
+Instead, it's to find structure
+within the data we have.
+
+00:22:55.660 --> 00:22:59.120
+Let me give you two examples of
+what this type of problem may
+
+00:22:59.120 --> 00:23:00.620
+look like.
+
+00:23:01.180 --> 00:23:04.980
+So I wrote these course notes
+last summer When the show The
+
+00:23:04.980 --> 00:23:06.380
+Summer I Turned Pretty was
+popular,
+
+00:23:06.380 --> 00:23:09.260
+and that's what we were watching
+at home and Grey's Anatomy
+
+00:23:09.260 --> 00:23:11.040
+Popular, so these are the shows
+we were watching at home.
+
+00:23:11.040 --> 00:23:12.760
+So these are the examples I used
+
+00:23:12.760 --> 00:23:15.000
+Pretend I run Netflix or Hulu
+
+00:23:15.000 --> 00:23:17.340
+There's no streaming service
+that has both of these shows on
+
+00:23:17.340 --> 00:23:20.980
+but pretend one of them did and
+for each of my users
+
+00:23:20.980 --> 00:23:25.080
+I kept track of how much they
+like each of the shows they're
+
+00:23:25.080 --> 00:23:25.780
+watching
+
+00:23:25.780 --> 00:23:26.640
+Okay,
+
+00:23:26.640 --> 00:23:29.720
+so I have some hypothetical
+group of say nine users here and
+
+00:23:29.720 --> 00:23:32.900
+for each one I know how much
+they liked The Samurai Turned
+
+00:23:32.900 --> 00:23:36.060
+Pretty and how much they liked
+Grey's Anatomy.
+
+00:23:36.060 --> 00:23:38.700
+Now that's all I have.
+I just have these ratings.
+
+00:23:38.700 --> 00:23:41.060
+But if I plot this out,
+
+00:23:41.060 --> 00:23:43.760
+what does- what are you seeing
+here?
+
+00:23:43.760 --> 00:23:45.360
+What are you seeing?
+
+00:23:45.360 --> 00:23:47.260
+Yes, and- Greetings?
+
+00:23:47.260 --> 00:23:48.260
+Connor.
+
+00:23:48.580 --> 00:23:51.180
+It kind of goes in a little
+squiggle, so like if you like
+
+00:23:51.180 --> 00:23:53.680
+The Samurai Turned Pretty you
+don't necessarily like Grey's
+
+00:23:53.680 --> 00:23:57.460
+Anatomy as much or you also
+really like it or you like both
+
+00:23:57.460 --> 00:24:00.360
+of them kind of like a fair
+amount.
+
+00:24:00.360 --> 00:24:01.000
+Yeah,
+
+00:24:01.000 --> 00:24:05.500
+it seems like, and I think this
+may be what you were getting at,
+
+00:24:05.500 --> 00:24:09.980
+it seems like roughly the users,
+
+00:24:09.980 --> 00:24:12.740
+even though we didn't already
+have them placed into groups,
+
+00:24:12.740 --> 00:24:15.660
+all they did was just make a
+Netflix account and watch shows,
+
+00:24:15.660 --> 00:24:19.280
+it seems like they naturally
+fall into some of these groups.
+
+00:24:19.280 --> 00:24:22.280
+These groups are called
+clusters.
+
+00:24:23.620 --> 00:24:25.980
+And clustering is an example
+
+00:24:25.980 --> 00:24:31.760
+of an unsupervised learning
+
+00:24:31.760 --> 00:24:35.320
+problem, where you have a bunch
+of data points in high
+
+00:24:35.320 --> 00:24:36.320
+dimensions.
+
+00:24:36.580 --> 00:24:40.260
+And your job is to place them
+into groups where users or data
+
+00:24:40.260 --> 00:24:43.400
+points in each group are similar
+to one another and different
+
+00:24:43.400 --> 00:24:45.040
+from the other groups.
+
+00:24:45.040 --> 00:24:47.400
+Why might you want to do this?
+
+00:24:47.400 --> 00:24:49.620
+Again, pretend you're running
+the streaming service And you
+
+00:24:49.620 --> 00:24:51.300
+have a bunch of users,
+
+00:24:51.300 --> 00:24:53.540
+and you place them into groups.
+
+00:24:53.540 --> 00:24:54.640
+Why might you want to do that?
+
+00:24:54.640 --> 00:24:55.900
+Yeah, and what was your name?
+
+00:24:55.900 --> 00:24:56.520
+Alessandra.
+
+00:24:56.520 --> 00:24:58.460
+Alessandra.
+You could recommend them shows
+
+00:24:58.460 --> 00:25:00.100
+based off the cluster.
+
+00:25:00.100 --> 00:25:02.160
+Exactly.
+What you could do is recommend
+
+00:25:02.160 --> 00:25:05.920
+all of the users in a cluster
+the same types of shows.
+
+00:25:05.920 --> 00:25:07.460
+So if these two users,
+
+00:25:07.460 --> 00:25:10.040
+the ones at 8, 3 and 10, 4,
+
+00:25:10.040 --> 00:25:13.740
+if they both like some new show,
+
+00:25:13.740 --> 00:25:15.960
+what were we watching yesterday,
+One Tree Hill.
+
+00:25:15.960 --> 00:25:17.820
+If they both like One Tree Hill,
+well,
+
+00:25:17.820 --> 00:25:20.960
+then maybe this person will also
+like that, because they all have
+
+00:25:20.960 --> 00:25:22.040
+similar tastes.
+
+00:25:22.040 --> 00:25:23.880
+But maybe people in other
+clusters,
+
+00:25:23.880 --> 00:25:26.540
+I don't have enough information
+to recommend them One Tree Hill
+
+00:25:26.540 --> 00:25:27.580
+as well,
+
+00:25:27.580 --> 00:25:30.740
+because we don't know that they
+like the same things that the
+
+00:25:30.740 --> 00:25:33.860
+people in the bottom right
+cluster like.
+
+00:25:33.860 --> 00:25:36.120
+And so now when you go on a
+streaming service, Netflix,
+
+00:25:36.120 --> 00:25:37.000
+Hulu, whatever,
+
+00:25:37.000 --> 00:25:41.740
+you see how they start to come
+up with recommendations for you.
+
+00:25:41.740 --> 00:25:45.420
+So that's one example of an
+unsupervised learning problem.
+
+00:25:45.420 --> 00:25:47.360
+Now, in practice,
+
+00:25:47.360 --> 00:25:50.940
+figuring out what the groups are
+is much more difficult than just
+
+00:25:50.940 --> 00:25:52.600
+eyeballing it.
+Why is that?
+
+00:25:53.160 --> 00:25:56.140
+Well, it's because these
+streaming services don't just
+
+00:25:56.140 --> 00:25:59.300
+keep track of how much you like
+two different shows.
+
+00:25:59.300 --> 00:26:02.160
+They keep track of how much you
+like every show you've watched,
+
+00:26:02.160 --> 00:26:03.480
+and that may be hundreds.
+
+00:26:03.480 --> 00:26:05.540
+And you factor in all the movies
+as well.
+
+00:26:05.540 --> 00:26:08.360
+So instead of being able to draw
+a graph in two dimensions,
+
+00:26:08.360 --> 00:26:11.680
+we're thinking in tens or
+hundreds of dimensions.
+
+00:26:11.680 --> 00:26:15.780
+Okay, and then the question is,
+how do we still place users into
+
+00:26:15.780 --> 00:26:18.840
+groups when we have so many
+pieces of information for each
+
+00:26:18.840 --> 00:26:21.360
+one and we can't just eyeball
+the groups ourselves?
+
+00:26:21.360 --> 00:26:23.940
+That's the kind of problem
+machine learning will solve,
+
+00:26:23.940 --> 00:26:28.440
+and this sort of thinking of
+data points in high dimensions,
+
+00:26:28.720 --> 00:26:32.640
+dimensions higher than 2D and
+3D, is the type of skill
+
+00:26:33.320 --> 00:26:37.220
+that we're going to develop in
+this class.
+
+00:26:37.220 --> 00:26:41.680
+One other example of a machine
+learning problem, and I want
+
+00:26:41.680 --> 00:26:45.460
+to see if I can get this to work
+here, because if we can, it'll
+
+00:26:45.460 --> 00:26:47.710
+be really cool.
+
+00:26:50.340 --> 00:26:54.090
+Let's test this out here.
+
+00:27:00.040 --> 00:27:00.520
+Okay.
+
+00:27:00.520 --> 00:27:01.400
+I don't think it's going to
+work.
+
+00:27:01.400 --> 00:27:05.820
+Let me show you it in the notes
+and then tell you what I was
+
+00:27:05.820 --> 00:27:07.220
+going to do.
+
+00:27:07.220 --> 00:27:11.240
+Another example of a machine
+learning problem is one of
+
+00:27:11.240 --> 00:27:12.740
+dimensionality reduction.
+
+00:27:14.140 --> 00:27:15.740
+What does this mean?
+
+00:27:15.740 --> 00:27:19.320
+And I'll show you the picture I
+wanted to show you in the notes.
+
+00:27:19.320 --> 00:27:24.700
+Let's go back to that example
+down
+
+00:27:24.700 --> 00:27:29.780
+here or just work with us for a
+second.
+
+00:27:29.780 --> 00:27:33.820
+And we just said in this
+hypothetical streaming service,
+
+00:27:33.820 --> 00:27:38.320
+we have scores for the various
+shows that a user has watched.
+
+00:27:38.740 --> 00:27:42.080
+And if there are lots of shows
+that each user has watched,
+
+00:27:42.080 --> 00:27:44.700
+then it's impossible to
+visualize all of the data at
+
+00:27:44.700 --> 00:27:45.600
+once.
+
+00:27:45.600 --> 00:27:48.660
+Because if you want one axis per
+show,
+
+00:27:48.660 --> 00:27:51.080
+well then if they've watched any
+more than three shows,
+
+00:27:51.080 --> 00:27:53.180
+we can't visualize this data.
+
+00:27:53.180 --> 00:27:58.200
+Dimensionality reduction is a
+tool for taking high-dimensional
+
+00:27:58.200 --> 00:27:59.200
+data
+
+00:27:59.840 --> 00:28:04.760
+and turning it into a
+lower-dimensional representation
+
+00:28:04.760 --> 00:28:07.300
+that we can visualize in two or
+three dimensions.
+
+00:28:07.300 --> 00:28:12.580
+So imagine I have a table in
+which there are n rows,
+
+00:28:13.020 --> 00:28:15.270
+one per user,
+
+00:28:16.660 --> 00:28:21.200
+and d columns,
+
+00:28:22.560 --> 00:28:24.810
+one per show.
+
+00:28:25.740 --> 00:28:27.260
+And just as an example,
+
+00:28:27.260 --> 00:28:30.000
+let's just say we have a
+thousand columns.
+
+00:28:30.000 --> 00:28:33.880
+So for example, this first
+column could be the summer I
+
+00:28:33.880 --> 00:28:35.780
+turn pretty column.
+
+00:28:35.780 --> 00:28:39.240
+The next could be the Grey's
+Anatomy column.
+
+00:28:39.240 --> 00:28:41.680
+The next could be the One Tree
+Hill column, and so on and so
+
+00:28:41.680 --> 00:28:42.680
+forth.
+
+00:28:42.700 --> 00:28:44.680
+You can't visualize this data.
+
+00:28:44.680 --> 00:28:47.680
+But through dimensionality
+reduction techniques,
+
+00:28:49.420 --> 00:28:55.380
+what you can produce
+
+00:28:55.380 --> 00:28:57.740
+is a smaller dataset
+
+00:28:57.740 --> 00:29:00.720
+with still one row per user,
+because you want to keep the
+
+00:29:00.720 --> 00:29:02.720
+information you have for every
+user,
+
+00:29:02.720 --> 00:29:06.740
+but instead of needing 1,000
+pieces of information for each
+
+00:29:06.740 --> 00:29:07.480
+user,
+
+00:29:07.480 --> 00:29:11.300
+you can summarize or reduce that
+information into just two or
+
+00:29:11.300 --> 00:29:13.920
+three pieces of information per
+user.
+
+00:29:13.920 --> 00:29:16.720
+Now, the naive way to do that
+would be to just pick the shows
+
+00:29:16.720 --> 00:29:18.540
+that you thought were most
+important.
+
+00:29:18.540 --> 00:29:19.600
+And you could do that.
+
+00:29:19.600 --> 00:29:22.100
+But there's actually an even
+more informative way of doing
+
+00:29:22.100 --> 00:29:27.420
+that, which involves creating
+new sort of hypothetical TV
+
+00:29:27.420 --> 00:29:30.400
+shows that you create using a
+combination of each of the
+
+00:29:30.400 --> 00:29:31.800
+original TV shows.
+
+00:29:31.800 --> 00:29:34.360
+And when you create these new
+hypothetical TV shows,
+
+00:29:34.360 --> 00:29:40.080
+you do that in a way that sort
+of keeps and retains as
+
+00:29:40.080 --> 00:29:43.830
+much of the variance between
+users as possible.
+
+00:29:46.760 --> 00:29:51.360
+And so these new columns I might
+call new feature
+
+00:29:51.360 --> 00:29:53.060
+one
+
+00:29:53.420 --> 00:29:57.300
+and new feature two.
+
+00:29:58.920 --> 00:30:01.460
+OK, let me see if the other
+example I wanted to get working
+
+00:30:01.460 --> 00:30:02.960
+here is going to work.
+
+00:30:02.960 --> 00:30:06.710
+I fear it is not.
+
+00:30:10.860 --> 00:30:11.860
+OK.
+
+00:30:12.260 --> 00:30:14.100
+Well, that's that.
+
+00:30:14.100 --> 00:30:16.260
+I'll show you what it was going
+to be.
+
+00:30:16.260 --> 00:30:19.700
+This was an application of
+linear algebra that's related to
+
+00:30:19.700 --> 00:30:22.220
+this idea of dimensionality
+reduction.
+
+00:30:22.220 --> 00:30:23.980
+And it's like one of the final
+things we're going to do this
+
+00:30:23.980 --> 00:30:24.980
+semester.
+
+00:30:25.520 --> 00:30:26.720
+Here's a picture of my dog,
+Junior.
+
+00:30:26.720 --> 00:30:28.880
+It's the same picture you saw on
+the slides.
+
+00:30:28.880 --> 00:30:34.130
+What we will learn to do is
+think of an image as a matrix.
+
+00:30:34.620 --> 00:30:38.960
+You can think of it as a table
+with rows and columns.
+
+00:30:38.960 --> 00:30:41.680
+And each pixel in the image,
+
+00:30:41.680 --> 00:30:45.400
+in this example, this image is
+grayscale.
+
+00:30:45.400 --> 00:30:48.540
+We can just represent each pixel
+with just a number from 0 to
+
+00:30:48.540 --> 00:30:49.540
+255.
+
+00:30:49.680 --> 00:30:52.080
+That's a standard way that
+colors are represented.
+
+00:30:52.080 --> 00:30:56.040
+0 means the pixel is dark or
+black here, and 255 would mean
+
+00:30:56.040 --> 00:30:58.080
+that it's white.
+
+00:30:58.080 --> 00:31:00.300
+To store this image,
+
+00:31:00.300 --> 00:31:04.500
+I believe it's a 300 by 400
+image, so 300 pixels wide, 400
+
+00:31:04.500 --> 00:31:05.900
+pixels tall,
+
+00:31:05.900 --> 00:31:10.660
+I would need to store 1.2
+million numbers,
+
+00:31:11.860 --> 00:31:17.110
+like the pixel amount at each of
+these 400 by 300 pixels.
+
+00:31:17.260 --> 00:31:22.400
+Linear algebra is going to give
+us a way to compress the image
+
+00:31:22.400 --> 00:31:23.400
+optimally.
+
+00:31:25.340 --> 00:31:27.640
+And so what you're seeing here,
+and if you go to chapter 10.2
+
+00:31:27.640 --> 00:31:30.180
+in the notes, you'll see a
+slider for this.
+
+00:31:30.180 --> 00:31:34.520
+What we've visualized is what's
+called a rank k approximation of
+
+00:31:34.520 --> 00:31:35.980
+the image.
+
+00:31:35.980 --> 00:31:39.340
+And you can think of, for now,
+the rank of the matrix as being
+
+00:31:39.340 --> 00:31:41.860
+the amount of information in it.
+
+00:31:41.860 --> 00:31:44.780
+And right now, the slider is at
+k is equal to 1.
+
+00:31:44.780 --> 00:31:47.620
+And what do you notice about
+this low rank approximation of
+
+00:31:47.620 --> 00:31:49.120
+the image?
+
+00:31:49.460 --> 00:31:51.180
+It's not a dog,
+
+00:31:51.180 --> 00:31:52.920
+it's not really much of
+anything.
+
+00:31:52.920 --> 00:31:55.080
+And what you should actually
+notice here is that every column
+
+00:31:55.080 --> 00:31:58.680
+of this image is really just the
+same column, some are brighter
+
+00:31:58.680 --> 00:32:00.280
+than others.
+But there's really only one
+
+00:32:00.280 --> 00:32:02.720
+pattern, you see this like big
+cross here.
+
+00:32:02.720 --> 00:32:07.460
+But as I add to the value of K,
+
+00:32:07.460 --> 00:32:12.360
+you can see slowly the picture
+of Junior starts to get
+
+00:32:12.360 --> 00:32:13.360
+reproduced,
+
+00:32:14.100 --> 00:32:16.940
+okay? And in order to reproduce
+the full picture,
+
+00:32:16.940 --> 00:32:21.220
+you would need the full rank of
+the matrix, which here would be
+
+00:32:21.220 --> 00:32:22.720
+likely 300.
+
+00:32:23.360 --> 00:32:26.220
+But what we're seeing is that at
+rank 30, if you squint, it does
+
+00:32:26.220 --> 00:32:28.620
+still look like junior.
+
+00:32:28.620 --> 00:32:32.000
+And it turns out you can store
+these low rank
+
+00:32:32.000 --> 00:32:34.980
+approximations very efficiently
+using linear algebra.
+
+00:32:35.740 --> 00:32:37.860
+So this is the type of thing
+that we are going to learn about
+
+00:32:37.860 --> 00:32:39.360
+this semester.
+
+00:32:39.860 --> 00:32:41.340
+Now, what was I going to do?
+
+00:32:41.340 --> 00:32:43.720
+What I was going to do is take a
+selfie with everyone here in the
+
+00:32:43.720 --> 00:32:47.720
+class and use that picture to do
+the same low-rank approximation,
+
+00:32:47.720 --> 00:32:49.440
+but my notebook was crashing.
+
+00:32:49.440 --> 00:32:51.740
+You can see I tested this out
+yesterday with just a selfie on
+
+00:32:51.740 --> 00:32:52.380
+my laptop,
+
+00:32:52.380 --> 00:32:54.160
+and we were going to put a
+picture of us in here.
+
+00:32:54.160 --> 00:32:56.860
+But that didn't work, but that's
+OK.
+
+00:32:56.860 --> 00:32:57.860
+Anyways,
+
+00:32:58.420 --> 00:33:01.460
+those are all examples of
+problems
+
+00:33:01.460 --> 00:33:03.460
+in the world of machine
+learning.
+
+00:33:03.460 --> 00:33:06.800
+That low-rank approximation one
+is not one in which we were
+
+00:33:06.800 --> 00:33:09.400
+trying to predict a right
+answer, but there we were trying
+
+00:33:09.400 --> 00:33:12.220
+to retain structure as best as
+we could.
+
+00:33:12.220 --> 00:33:15.740
+Do we have a sense of the types
+of problems that fall in the
+
+00:33:15.740 --> 00:33:17.990
+machine learning umbrella?
+
+00:33:19.300 --> 00:33:21.140
+This is not a comprehensive
+list.
+
+00:33:21.140 --> 00:33:23.390
+For some reason,
+
+00:33:24.120 --> 00:33:27.120
+projector is disconnected here.
+
+00:33:29.040 --> 00:33:32.080
+This is not a comprehensive
+list.
+
+00:33:32.080 --> 00:33:35.120
+The third branch that was on the
+slide here that I didn't talk
+
+00:33:35.120 --> 00:33:37.680
+much about is called
+reinforcement learning, and you
+
+00:33:37.680 --> 00:33:39.140
+may hear about this a lot in the
+media.
+
+00:33:39.140 --> 00:33:42.140
+Does anyone know what
+reinforcement learning is about?
+
+00:33:42.960 --> 00:33:44.300
+Yeah, through.
+
+00:33:44.300 --> 00:33:45.140
+Basically,
+
+00:33:45.140 --> 00:33:46.760
+it's like a reward function.
+
+00:33:46.760 --> 00:33:49.840
+And so you allow the model to
+interact with whatever you're
+
+00:33:49.840 --> 00:33:52.420
+having to do.
+And then it learns over time
+
+00:33:52.420 --> 00:33:53.420
+itself
+
+00:33:53.520 --> 00:33:55.960
+by getting the reward when it
+doesn't do that.
+
+00:33:55.960 --> 00:33:57.440
+Exactly.
+The main idea behind
+
+00:33:57.440 --> 00:33:58.860
+reinforcement learning
+
+00:33:58.860 --> 00:34:01.620
+is less about predicting y from
+x.
+
+00:34:01.620 --> 00:34:05.700
+And instead, what it does is it
+simulates a bot or an agent in
+
+00:34:05.700 --> 00:34:08.060
+an environment.
+And it gives it rewards for
+
+00:34:08.060 --> 00:34:10.400
+doing the right thing.
+And it penalizes it for doing
+
+00:34:10.400 --> 00:34:12.060
+the wrong thing.
+And the right and wrong thing is
+
+00:34:12.060 --> 00:34:14.240
+customized by whoever sets up
+the agent.
+
+00:34:14.240 --> 00:34:17.920
+And you get it to learn using
+positive reinforcement, sort of
+
+00:34:17.920 --> 00:34:21.320
+modeled by how children are
+given good things when they
+
+00:34:21.320 --> 00:34:24.380
+behave well and punished,
+hopefully not too poorly,
+
+00:34:25.000 --> 00:34:26.360
+when they don't behave well.
+
+00:34:26.360 --> 00:34:28.600
+And you hear about reinforcement
+learning a lot in the media,
+
+00:34:28.600 --> 00:34:33.140
+especially in the context of
+these coding agents and the
+
+00:34:33.140 --> 00:34:35.640
+latest versions of Chat, GPT,
+and Claude,
+
+00:34:35.640 --> 00:34:39.180
+because they actually use all
+parts of this machine learning
+
+00:34:39.180 --> 00:34:41.640
+taxonomy to build these systems.
+And you can read more about this
+
+00:34:41.640 --> 00:34:43.040
+in chapter 1.1.
+
+00:34:43.040 --> 00:34:46.540
+But the hot new stage of the
+training of these machine
+
+00:34:46.540 --> 00:34:48.960
+learning systems is this
+reinforcement learning step,
+
+00:34:48.960 --> 00:34:53.260
+where the model has learned from
+all of its training data.
+
+00:34:53.260 --> 00:34:56.840
+And as a final step before the
+model is shipped to your chat
+
+00:34:56.840 --> 00:34:58.800
+GPT and cloud apps,
+
+00:34:58.800 --> 00:35:01.050
+what they do
+
+00:35:01.280 --> 00:35:05.200
+is they train it to give
+responses that it thinks the
+
+00:35:05.200 --> 00:35:07.140
+users will like.
+Okay,
+
+00:35:07.140 --> 00:35:10.980
+so for example in the context of
+Claude code or chat GPT codex
+
+00:35:10.980 --> 00:35:14.820
+What they do at that final stage
+is they reinforcement learn the
+
+00:35:14.820 --> 00:35:18.320
+models to incentivize them to
+write code.
+
+00:35:18.320 --> 00:35:19.260
+Well
+
+00:35:19.260 --> 00:35:23.480
+but what that means is if you
+use Claude code and The like
+
+00:35:23.480 --> 00:35:26.160
+other models that are
+specifically meant for code if
+
+00:35:26.160 --> 00:35:29.040
+you ask them to like write an
+essay for you It sounds cryptic
+
+00:35:29.040 --> 00:35:31.360
+It doesn't sound as good as if
+you just went to the regular
+
+00:35:31.360 --> 00:35:34.960
+clotted chat GPT And I thought
+it's because these coding models
+
+00:35:34.960 --> 00:35:38.860
+are incentivized at the final
+step to write code, which can
+
+00:35:38.860 --> 00:35:41.320
+degrade its performance in
+writing regular English, for
+
+00:35:41.320 --> 00:35:42.320
+example.
+
+00:35:43.160 --> 00:35:47.360
+So these systems that you hear
+about all the time, they use all
+
+00:35:47.360 --> 00:35:49.180
+stages of this process.
+
+00:35:49.180 --> 00:35:53.280
+And we are going to start over
+here in regression, which is
+
+00:35:53.280 --> 00:35:55.080
+under supervised learning.
+But I want you to be
+
+00:35:55.080 --> 00:35:58.320
+conversationally fluent with
+these other branches of machine
+
+00:35:58.320 --> 00:35:59.320
+learning.
+
+00:35:59.840 --> 00:36:01.340
+Sound good?
+
+00:36:01.440 --> 00:36:02.320
+Okay,
+
+00:36:02.320 --> 00:36:05.940
+but this is not a class that is
+on machine learning directly,
+
+00:36:05.940 --> 00:36:09.060
+instead it's called math for
+machine learning.
+
+00:36:09.060 --> 00:36:09.940
+Okay,
+
+00:36:09.940 --> 00:36:12.440
+and so what are we actually
+gonna learn?
+
+00:36:12.440 --> 00:36:16.520
+What I've done here is I have
+put a screenshot of the table of
+
+00:36:16.520 --> 00:36:17.520
+contents
+
+00:36:17.800 --> 00:36:20.800
+of our course notes.
+
+00:36:21.120 --> 00:36:24.860
+And what I'm doing right now is
+just annotating what sections of
+
+00:36:24.860 --> 00:36:27.860
+the notes are covered in
+midterms one, two, and then
+
+00:36:27.860 --> 00:36:29.360
+post-midterm, too.
+
+00:36:30.240 --> 00:36:34.060
+What I've tried to do is I've
+set this course up so that
+
+00:36:34.060 --> 00:36:34.920
+you're never,
+
+00:36:34.920 --> 00:36:35.900
+or not never,
+
+00:36:35.900 --> 00:36:40.340
+but there are not many times
+where you're left wondering what
+
+00:36:40.340 --> 00:36:42.640
+is the point of the math.
+
+00:36:42.640 --> 00:36:44.820
+What I want to do is start today
+
+00:36:44.820 --> 00:36:48.300
+with a problem that is motivated
+from supervised learning.
+
+00:36:48.300 --> 00:36:50.760
+There's something that we want
+to learn how to predict.
+
+00:36:50.760 --> 00:36:54.060
+And what we are going to do is
+introduce the relevant
+
+00:36:54.060 --> 00:36:58.700
+mathematical tools that we need
+so that we can learn how to make
+
+00:36:58.700 --> 00:37:00.200
+better predictions.
+
+00:37:00.420 --> 00:37:02.880
+That's going to be the running
+theme this semester.
+
+00:37:02.880 --> 00:37:04.420
+I already said what it is,
+
+00:37:04.420 --> 00:37:06.280
+we're going to learn how to
+predict how long it's going to
+
+00:37:06.280 --> 00:37:07.760
+take for us to get to work,
+
+00:37:07.760 --> 00:37:10.540
+using someone's real dataset
+where they log their commute
+
+00:37:10.540 --> 00:37:11.540
+times.
+
+00:37:11.760 --> 00:37:12.960
+We're going to start with that,
+
+00:37:12.960 --> 00:37:15.420
+introduce some mathematical
+tools, and for the first few
+
+00:37:15.420 --> 00:37:17.300
+weeks we're not going to talk
+about linear algebra at all,
+
+00:37:17.300 --> 00:37:19.340
+because you can actually get
+surprisingly far without needing
+
+00:37:19.340 --> 00:37:22.180
+to know what a vector is.
+But there will come a point in
+
+00:37:22.180 --> 00:37:25.940
+our story where we can't
+actually progress until we know
+
+00:37:25.940 --> 00:37:29.620
+about linear algebra, and that's
+why from chapters three to six
+
+00:37:29.620 --> 00:37:30.880
+of the course notes,
+
+00:37:30.880 --> 00:37:34.360
+we're going to just take a
+little detour from the main
+
+00:37:34.360 --> 00:37:37.960
+story line and introduce all of
+these linear algebra ideas, but
+
+00:37:37.960 --> 00:37:41.740
+there's a purpose for it all, so
+that we can return to the linear
+
+00:37:41.740 --> 00:37:44.280
+regression story, or the
+regression story,
+
+00:37:44.280 --> 00:37:47.840
+and solve it more deeply and
+thoroughly using our linear
+
+00:37:47.840 --> 00:37:49.800
+algebra tools.
+That's what we do in chapter
+
+00:37:49.800 --> 00:37:50.800
+seven.
+
+00:37:51.300 --> 00:37:52.860
+And then once we've covered
+that,
+
+00:37:52.860 --> 00:37:56.580
+we think of other possible ways
+of solving the same types of
+
+00:37:56.580 --> 00:38:00.100
+problems, which will allow us to
+introduce other aspects of
+
+00:38:00.100 --> 00:38:03.400
+linear algebra and also
+multivariate calculus, which you
+
+00:38:03.400 --> 00:38:06.840
+will see as a theme throughout
+the course.
+
+00:38:06.840 --> 00:38:09.420
+So at any point in the semester,
+if it seems like we're just
+
+00:38:09.420 --> 00:38:11.980
+doing a bunch of random math,
+
+00:38:11.980 --> 00:38:15.140
+don't hesitate to ask, OK, how
+does this connect to the broader
+
+00:38:15.140 --> 00:38:18.800
+storyline? Now, admittedly, in
+some places, it'll seem like
+
+00:38:18.800 --> 00:38:21.640
+we're doing something that is
+very disconnected from the
+
+00:38:21.640 --> 00:38:25.820
+broader storyline, and part of
+that is true because this class
+
+00:38:25.820 --> 00:38:28.380
+has to satisfy the linear
+algebra prerequisite,
+
+00:38:28.380 --> 00:38:30.860
+and I think it would be
+dishonest to leave out big parts
+
+00:38:30.860 --> 00:38:35.100
+of linear algebra just because
+someone might now think they're
+
+00:38:35.100 --> 00:38:37.020
+relevant to machine learning.
+I still want you to learn it
+
+00:38:37.020 --> 00:38:37.680
+all,
+
+00:38:37.680 --> 00:38:40.520
+but I'm trying to do my best to
+make sure you know why we are
+
+00:38:40.520 --> 00:38:42.560
+learning it all.
+OK, so you're not losing
+
+00:38:42.560 --> 00:38:43.560
+anything
+
+00:38:43.840 --> 00:38:47.740
+by taking this class versus
+other linear algebra options.
+
+00:38:48.820 --> 00:38:50.320
+Sound OK?
+
+00:38:50.860 --> 00:38:52.100
+All right.
+
+00:38:52.100 --> 00:38:53.100
+OK,
+
+00:38:53.280 --> 00:38:56.460
+so now I want to talk a little
+bit about how the course works
+
+00:38:56.460 --> 00:38:57.460
+logistically.
+
+00:38:57.540 --> 00:39:00.560
+Has everyone seen the course
+website, ex245.org?
+
+00:39:00.560 --> 00:39:00.880
+Yeah?
+
+00:39:00.880 --> 00:39:02.380
+OK, question?
+
+00:39:02.540 --> 00:39:04.040
+OK, cool.
+
+00:39:06.300 --> 00:39:08.000
+So a couple of things to note.
+
+00:39:08.000 --> 00:39:10.320
+We are not going to use Canvas
+for anything.
+
+00:39:10.320 --> 00:39:13.020
+I haven't activated it.
+Everything you need is going to
+
+00:39:13.020 --> 00:39:14.660
+be linked from the course
+website.
+
+00:39:14.660 --> 00:39:16.980
+I just want to make sure to
+touch on a few of the key points
+
+00:39:16.980 --> 00:39:17.980
+here.
+
+00:39:18.360 --> 00:39:21.040
+And everything I'm about to say
+is in the syllabus, but there
+
+00:39:21.040 --> 00:39:22.780
+are lots of things in the
+syllabus that I'm not going to
+
+00:39:22.780 --> 00:39:23.460
+say here.
+
+00:39:23.460 --> 00:39:28.580
+So make sure to revisit it for
+all of the details.
+
+00:39:28.580 --> 00:39:30.820
+First, lectures.
+Here's the main thing that is
+
+00:39:30.820 --> 00:39:32.620
+new this semester.
+
+00:39:32.620 --> 00:39:34.440
+Lecture attendance is part of
+your grade.
+
+00:39:34.440 --> 00:39:35.920
+This is the first time I've ever
+done this.
+
+00:39:35.920 --> 00:39:37.940
+This is my sixth year teaching.
+I've never required lecture
+
+00:39:37.940 --> 00:39:39.880
+attendance.
+But like I said at the start,
+
+00:39:40.220 --> 00:39:43.920
+I think it's becoming a little
+too easy to just not show up,
+
+00:39:43.920 --> 00:39:47.780
+show up just for exams, and sort
+of be a number at this school.
+
+00:39:47.780 --> 00:39:50.980
+What I want you to do is, like I
+said, is take advantage of the
+
+00:39:50.980 --> 00:39:53.520
+fact that there are plenty of
+other brilliant students with
+
+00:39:53.520 --> 00:39:54.020
+you,
+
+00:39:54.020 --> 00:39:56.120
+that you have TAs and
+instructors,
+
+00:39:56.120 --> 00:39:58.200
+and people who really care about
+your experience in the class,
+
+00:39:58.200 --> 00:40:02.780
+and that's sort of why lecture
+attendance is encouraged.
+
+00:40:03.060 --> 00:40:04.960
+Now, it's not strictly
+mandatory,
+
+00:40:04.960 --> 00:40:07.400
+okay? So it's 5% of your grade.
+
+00:40:07.400 --> 00:40:11.200
+But if you'd rather not come to
+lecture,
+
+00:40:11.200 --> 00:40:14.380
+that extra 5% can go towards
+your final exam instead, if you
+
+00:40:14.380 --> 00:40:15.360
+would like.
+
+00:40:15.360 --> 00:40:18.600
+But then that would mean exams
+are worth 75% of your grade,
+
+00:40:18.600 --> 00:40:20.800
+which is pretty substantial.
+
+00:40:20.800 --> 00:40:23.400
+So lecture attendance is
+encouraged.
+
+00:40:23.400 --> 00:40:24.960
+We will take attendance every
+week.
+
+00:40:24.960 --> 00:40:27.040
+I'll do that in just a little
+bit.
+
+00:40:27.040 --> 00:40:31.120
+But that 5% goes to the max of
+your attendance grade and your
+
+00:40:31.120 --> 00:40:32.880
+final exam grade.
+
+00:40:32.880 --> 00:40:33.640
+Sound OK?
+
+00:40:33.640 --> 00:40:36.060
+All right.
+And I'll try my best to keep
+
+00:40:36.060 --> 00:40:37.560
+lectures engaging.
+
+00:40:37.680 --> 00:40:39.060
+Today, there's a lot of me
+talking.
+
+00:40:39.060 --> 00:40:42.020
+But in most cases, you will
+spend a lot of your time
+
+00:40:42.020 --> 00:40:43.940
+actually working things out on
+pencil paper.
+
+00:40:43.940 --> 00:40:46.000
+I'll walk around and see how
+things are going.
+
+00:40:46.000 --> 00:40:47.900
+And we will take up your
+solutions, OK? So come prepared
+
+00:40:47.900 --> 00:40:48.940
+to write,
+
+00:40:48.940 --> 00:40:50.100
+ask questions.
+
+00:40:50.100 --> 00:40:53.080
+I don't want this to just be me
+talking at you for 80 minutes,
+
+00:40:53.080 --> 00:40:53.600
+OK?
+
+00:40:53.600 --> 00:40:56.580
+And also, one thing that I want
+you to hold me accountable for,
+
+00:40:56.580 --> 00:40:59.800
+because I always say I'll do
+this, but I don't, is I want to
+
+00:40:59.800 --> 00:41:02.840
+make sure we take like a three
+or four minute break at least in
+
+00:41:02.840 --> 00:41:05.180
+the middle of every lecture
+sometimes I'll just talk for 80
+
+00:41:05.180 --> 00:41:07.700
+minutes so if it seems like we
+were supposed to have a break
+
+00:41:07.700 --> 00:41:10.660
+but didn't I know it's probably
+hard to say like hey you said we
+
+00:41:10.660 --> 00:41:12.020
+would have a break but like I
+don't know say something
+
+00:41:12.020 --> 00:41:15.440
+passive-aggressive I'll get the
+hint and we'll have a break okay
+
+00:41:15.440 --> 00:41:18.440
+so lectures they're recorded
+
+00:41:19.880 --> 00:41:22.080
+recordings will be linked
+directly on the course homepage
+
+00:41:22.080 --> 00:41:26.180
+so if you go to eeks245.org
+right now under lecture one
+
+00:41:26.180 --> 00:41:30.560
+right now all that is there are
+the readings but in like an hour
+
+00:41:30.560 --> 00:41:33.840
+I'll post the stuff that I'm
+writing on my iPad will be
+
+00:41:33.840 --> 00:41:36.240
+linked there and then in maybe
+two hours the recording link
+
+00:41:36.240 --> 00:41:39.040
+will be there too so that's the
+only place you need to look.
+
+00:41:39.040 --> 00:41:42.400
+Speaking of the readings those
+are the primary source of
+
+00:41:42.400 --> 00:41:45.100
+information in this class
+they're not it's not a textbook
+
+00:41:45.100 --> 00:41:48.240
+that we found somewhere else I
+wrote it personally and it's
+
+00:41:48.240 --> 00:41:51.640
+like designed to follow the
+specific story that I just told
+
+00:41:51.640 --> 00:41:53.200
+you about okay.
+
+00:41:53.200 --> 00:41:55.880
+Now unlike other classes where
+there is a textbook but like no
+
+00:41:55.880 --> 00:41:57.000
+one really cares,
+
+00:41:57.000 --> 00:41:59.800
+that's not how it works here.
+And to show you that that's not
+
+00:41:59.800 --> 00:42:01.140
+how it works,
+
+00:42:01.140 --> 00:42:06.940
+if you go to the
+
+00:42:06.940 --> 00:42:09.580
+advice to the student tab in the
+top left,
+
+00:42:09.580 --> 00:42:13.020
+what you can see are unedited
+comments from students who took
+
+00:42:13.020 --> 00:42:15.160
+the class in fall 25.
+
+00:42:15.160 --> 00:42:17.680
+They all said the same thing in
+winter 26 and spring 26, so I
+
+00:42:17.680 --> 00:42:19.040
+haven't updated this.
+
+00:42:19.040 --> 00:42:22.460
+But the key piece of advice that
+I think they're leaving for you
+
+00:42:22.460 --> 00:42:24.740
+is that the course notes are
+your friend here.
+
+00:42:24.740 --> 00:42:27.760
+What I'm gonna try and do is use
+the same numbers and same
+
+00:42:27.760 --> 00:42:31.820
+examples and same story that is
+in the notes But the notes have
+
+00:42:31.820 --> 00:42:35.220
+far more detail than we will be
+able to discuss in lecture And
+
+00:42:35.220 --> 00:42:37.620
+that's because the notes are
+designed for you to refer to
+
+00:42:37.620 --> 00:42:41.220
+them when you're in lab and when
+you're in homework
+
+00:42:41.220 --> 00:42:44.540
+Okay, I'm not expecting that you
+read them before coming to class
+
+00:42:44.540 --> 00:42:48.440
+Okay But many students find it
+useful to skim them before
+
+00:42:48.440 --> 00:42:50.420
+coming to class and they're
+already linked on the course
+
+00:42:50.420 --> 00:42:52.160
+homepage for the whole semester,
+
+00:42:52.160 --> 00:42:53.920
+so you can read them before
+coming to class.
+
+00:42:53.920 --> 00:42:55.680
+You can have them open if you'd
+like.
+
+00:42:55.680 --> 00:42:57.540
+Do whatever is best for you.
+
+00:42:57.540 --> 00:43:00.340
+But just somewhere in your
+regular study strategy, reading
+
+00:43:00.340 --> 00:43:01.940
+the notes must be part of it.
+
+00:43:01.940 --> 00:43:04.060
+And there are lots of examples
+in there,
+
+00:43:04.060 --> 00:43:06.840
+and I've tried to add some
+videos in there as well, of
+
+00:43:06.840 --> 00:43:10.280
+questions that are solved that I
+think if you solve those
+
+00:43:10.280 --> 00:43:11.300
+questions yourself,
+
+00:43:11.300 --> 00:43:14.520
+it'll help when it comes to
+doing the homeworks and exams.
+
+00:43:14.520 --> 00:43:16.740
+So don't treat them as optional.
+
+00:43:16.740 --> 00:43:19.200
+They should be sort of like a
+regular thing.
+
+00:43:19.200 --> 00:43:21.180
+If you're not regularly looking
+at the course notes, then
+
+00:43:21.180 --> 00:43:24.760
+something is probably wrong with
+your study strategy.
+
+00:43:24.760 --> 00:43:28.160
+If you find any typos or issues
+or things that are confusing, or
+
+00:43:28.160 --> 00:43:30.320
+you read something and it still
+doesn't make sense and then you
+
+00:43:30.320 --> 00:43:32.320
+asked Claude and it made more
+sense,
+
+00:43:32.320 --> 00:43:35.040
+if you ever encounter a
+situation like that, please tell
+
+00:43:35.040 --> 00:43:35.680
+me.
+
+00:43:35.680 --> 00:43:37.900
+I want to make them as clear as
+possible.
+
+00:43:37.900 --> 00:43:41.360
+And it's very likely that there
+are parts in here that are more
+
+00:43:41.360 --> 00:43:42.760
+confusing than they need to be.
+
+00:43:42.760 --> 00:43:45.220
+So if you ever read something
+and it doesn't make sense,
+
+00:43:45.220 --> 00:43:47.340
+and someone else, human or not,
+
+00:43:47.340 --> 00:43:48.280
+explains it better,
+
+00:43:48.280 --> 00:43:49.920
+tell me and we will update the
+notes.
+
+00:43:49.920 --> 00:43:51.940
+Okay, it's all hosted on github.
+
+00:43:51.940 --> 00:43:54.620
+If you just click this github
+button, you can even see the
+
+00:43:54.620 --> 00:43:56.980
+github source for it You can
+make a pull request if you want,
+
+00:43:56.980 --> 00:43:57.980
+okay
+
+00:43:58.860 --> 00:44:00.360
+All right
+
+00:44:00.960 --> 00:44:03.100
+So those are lectures
+
+00:44:03.100 --> 00:44:05.580
+Labs are the next essential
+component of the course.
+
+00:44:05.580 --> 00:44:08.760
+Those are also a part of your
+grade worth 10% Everyone's in an
+
+00:44:08.760 --> 00:44:11.120
+assigned lab section though.
+You can attend a different lab
+
+00:44:11.120 --> 00:44:13.220
+if you need to
+
+00:44:13.220 --> 00:44:16.580
+They're all in Wednesdays and
+the way that labs will work is
+
+00:44:16.580 --> 00:44:19.260
+that you show up and we will
+give you a physical worksheet
+
+00:44:19.260 --> 00:44:22.100
+Okay, and that worksheet isn't
+posted on the website ahead of
+
+00:44:22.100 --> 00:44:25.380
+time, because we really want to
+encourage you to practice this
+
+00:44:25.380 --> 00:44:28.180
+act of writing math on paper,
+because ultimately your exams,
+
+00:44:28.180 --> 00:44:32.220
+which are worth 70-75% of your
+grade, are also just written on
+
+00:44:32.220 --> 00:44:34.300
+paper.
+So we use the same format as the
+
+00:44:34.300 --> 00:44:37.220
+exams for the lab, same
+headings, same boxes, it all,
+
+00:44:37.220 --> 00:44:40.220
+a lab sort of looks like a mini
+exam.
+
+00:44:40.220 --> 00:44:43.380
+Okay, and the point of the lab
+worksheet is to reinforce the
+
+00:44:43.380 --> 00:44:47.640
+ideas from the Tuesday before
+and the Thursday before okay and
+
+00:44:47.640 --> 00:44:51.260
+sometimes preview things for the
+next Thursday okay and so the
+
+00:44:51.260 --> 00:44:54.640
+TAs will be there they will take
+up solutions to the questions
+
+00:44:54.640 --> 00:44:57.100
+that people find tricky and they
+will be there as a resource to
+
+00:44:57.100 --> 00:45:02.760
+help with the questions you may
+have with the lab okay or
+
+00:45:02.760 --> 00:45:06.820
+content in general all right and
+you should think of labs as
+
+00:45:06.820 --> 00:45:09.660
+being like the first place you
+go to get practice so the
+
+00:45:09.660 --> 00:45:12.960
+homeworks will usually be harder
+than the labs.
+
+00:45:12.960 --> 00:45:17.040
+So the main workflow is come to
+lecture, read the notes,
+
+00:45:17.040 --> 00:45:19.180
+work on some of the activities
+in the notes,
+
+00:45:19.180 --> 00:45:22.160
+go to lab, build that
+foundational understanding, and
+
+00:45:22.160 --> 00:45:25.760
+then the homeworks will push it
+a little further.
+
+00:45:25.760 --> 00:45:28.680
+Homeworks are worth 15% of your
+grade, and this is where I think
+
+00:45:28.680 --> 00:45:31.740
+much of the learning will come.
+
+00:45:31.740 --> 00:45:34.700
+One new thing that I'm also
+trying this semester is that
+
+00:45:34.700 --> 00:45:37.160
+you're actually not allowed to
+type up the solutions.
+
+00:45:37.160 --> 00:45:38.560
+In previous semesters,
+
+00:45:38.560 --> 00:45:41.880
+like in some other classes, I
+would provide an overleaf
+
+00:45:41.880 --> 00:45:45.440
+template for LaTeX for students
+to type up their solutions, but
+
+00:45:45.440 --> 00:45:48.600
+it just became way too tempting
+to just give that to chatgpt and
+
+00:45:48.600 --> 00:45:50.360
+say, put my solutions here.
+
+00:45:50.360 --> 00:45:51.100
+And this way,
+
+00:45:51.100 --> 00:45:52.820
+if you're going to cheat
+yourself,
+
+00:45:52.820 --> 00:45:55.000
+well at least you still have to
+write it out yourself on paper,
+
+00:45:55.000 --> 00:45:57.760
+and maybe some learning will
+still happen.
+
+00:45:57.760 --> 00:46:01.900
+But you can tell the grading
+scheme is set up such that
+
+00:46:01.900 --> 00:46:04.660
+there's not really much of an
+advantage to doing that.
+
+00:46:04.660 --> 00:46:06.980
+Suppose you cheat your way
+through every homework,
+
+00:46:06.980 --> 00:46:08.900
+that still only gets you 15% of
+your grade.
+
+00:46:08.900 --> 00:46:13.780
+70% of it is coming from exams,
+which require you to work on
+
+00:46:13.780 --> 00:46:16.780
+everything sort of in-person
+live, no assistance.
+
+00:46:16.880 --> 00:46:19.620
+And so doing the homeworks
+yourself and struggling through
+
+00:46:19.620 --> 00:46:20.460
+them,
+
+00:46:20.460 --> 00:46:23.380
+and coming to us for help, of
+course,
+
+00:46:23.380 --> 00:46:26.240
+when you are struggling, is how
+you will learn.
+
+00:46:26.240 --> 00:46:27.460
+Yes, question.
+And your name was Allison,
+
+00:46:27.460 --> 00:46:28.080
+right?
+
+00:46:28.080 --> 00:46:29.080
+Yeah.
+
+00:46:29.900 --> 00:46:32.300
+So homeworks have to be
+handwritten?
+
+00:46:32.300 --> 00:46:34.740
+Or you can also write them on a
+tablet and upload them.
+
+00:46:34.740 --> 00:46:36.060
+Yeah, that's totally fine.
+
+00:46:36.060 --> 00:46:36.540
+Yeah.
+
+00:46:36.540 --> 00:46:37.880
+You just can't type them in any
+way.
+
+00:46:37.880 --> 00:46:41.340
+But writing them on a tablet is
+fine.
+
+00:46:41.340 --> 00:46:42.040
+OK.
+
+00:46:42.040 --> 00:46:44.200
+I'm not trying to scare you into
+like,
+
+00:46:44.200 --> 00:46:45.840
+that's not the vibe I want to go
+for.
+
+00:46:45.840 --> 00:46:47.720
+I'm just trying to say,
+
+00:46:47.720 --> 00:46:51.480
+I really want you to work on the
+material earnestly and come to
+
+00:46:51.480 --> 00:46:52.780
+us for help.
+
+00:46:52.780 --> 00:46:55.260
+A thing you may have noticed in
+some of your other classes over
+
+00:46:55.260 --> 00:46:58.380
+this past year is that office
+hours attendance is way lower
+
+00:46:58.380 --> 00:46:59.880
+than, well,
+
+00:47:00.740 --> 00:47:02.820
+I guess it depends on how long
+you've been at the university.
+
+00:47:02.820 --> 00:47:03.920
+But overall,
+
+00:47:03.920 --> 00:47:06.740
+office hours attendance is way
+lower than it has been in the
+
+00:47:06.740 --> 00:47:07.740
+past.
+
+00:47:07.980 --> 00:47:12.380
+When you took 280 and 281 last
+year,
+
+00:47:12.380 --> 00:47:14.800
+before I got to Michigan, and
+when I was interviewing here a
+
+00:47:14.800 --> 00:47:15.940
+couple of years ago,
+
+00:47:15.940 --> 00:47:19.020
+people would say office hours
+queues for 280 on the Euchre Day
+
+00:47:19.020 --> 00:47:20.540
+would be like three hours long,
+
+00:47:20.540 --> 00:47:23.140
+and now the 280 TAs and
+instructors tell me nobody's in
+
+00:47:23.140 --> 00:47:25.300
+office hours on the day.
+
+00:47:25.300 --> 00:47:27.080
+We know why that is,
+
+00:47:27.080 --> 00:47:28.040
+but again,
+
+00:47:28.040 --> 00:47:30.840
+I'm not saying you can't use any
+AI tools at all.
+
+00:47:30.840 --> 00:47:34.600
+That's not my vibe at all.
+OK, there's a utility to them.
+
+00:47:34.600 --> 00:47:38.000
+But you don't want to use them
+to circumvent the productive
+
+00:47:38.000 --> 00:47:40.740
+struggle of working on questions
+that you don't know how to do
+
+00:47:40.740 --> 00:47:43.300
+and trying to figure them out.
+
+00:47:43.300 --> 00:47:47.320
+A good analogy that I have at
+the back of my mind is like,
+
+00:47:47.320 --> 00:47:49.500
+if you're training to run a
+marathon,
+
+00:47:49.500 --> 00:47:52.840
+driving 26 miles, I guess it
+technically accomplishes the act
+
+00:47:52.840 --> 00:47:56.600
+of getting you from point A to
+point B in the same distance
+
+00:47:56.600 --> 00:47:58.740
+that a marathon is in.
+But it doesn't help you train
+
+00:47:58.740 --> 00:48:01.960
+for the marathon at all.
+Right or similarly like there's
+
+00:48:01.960 --> 00:48:05.140
+a reason people go to the gym
+and lift weights when forklifts
+
+00:48:05.140 --> 00:48:08.340
+exist It's not just to lift the
+weight, right? it's the act of
+
+00:48:08.340 --> 00:48:10.880
+doing it that builds something
+in you and it's the act of
+
+00:48:10.880 --> 00:48:12.940
+working on the homeworks and
+
+00:48:12.940 --> 00:48:15.380
+Trying to figure out answers to
+questions that you don't already
+
+00:48:15.380 --> 00:48:16.340
+know
+
+00:48:16.340 --> 00:48:19.240
+That forms connections in your
+brain
+
+00:48:19.240 --> 00:48:22.620
+Okay, and we're here to help
+throughout that entire process.
+
+00:48:22.620 --> 00:48:26.100
+Okay, please take advantage of
+our office hours Please post on
+
+00:48:26.100 --> 00:48:26.620
+ed.
+
+00:48:26.620 --> 00:48:29.120
+We really want to help you
+succeed in this class
+
+00:48:29.120 --> 00:48:31.480
+OK, any questions with
+logistically how the class is
+
+00:48:31.480 --> 00:48:32.380
+going to work?
+
+00:48:32.380 --> 00:48:33.380
+Yes.
+
+00:48:33.420 --> 00:48:34.720
+And remind me of your name?
+
+00:48:34.720 --> 00:48:35.300
+Emma.
+
+00:48:35.300 --> 00:48:38.720
+I know you said it's what works
+best for you in terms of reading
+
+00:48:38.720 --> 00:48:40.560
+the notes before or after the
+lecture.
+
+00:48:40.560 --> 00:48:45.060
+I was just wondering if in
+previous semesters,
+
+00:48:45.300 --> 00:48:48.360
+the majority of people found it
+better to do one or the other,
+
+00:48:48.360 --> 00:48:50.800
+but it was truly just a mixed
+bag.
+
+00:48:50.800 --> 00:48:52.600
+From what I can tell, it was a
+mixed bag.
+
+00:48:52.600 --> 00:48:55.480
+I'll say that the first time I
+taught this class last fall,
+
+00:48:55.480 --> 00:48:57.620
+people didn't really have the
+option of reading it because I'd
+
+00:48:57.620 --> 00:48:59.780
+only write them like the day of,
+more or less.
+
+00:48:59.780 --> 00:49:01.840
+Now they're all posted.
+
+00:49:01.840 --> 00:49:04.480
+And so I think I'll try and
+survey.
+
+00:49:04.480 --> 00:49:07.060
+We have the welcome survey that
+you should fill out, but we will
+
+00:49:07.060 --> 00:49:09.380
+have several similar surveys
+throughout the semester.
+
+00:49:09.380 --> 00:49:12.000
+I'll try and get a sense of what
+people here are doing so that I
+
+00:49:12.000 --> 00:49:13.300
+can have better guidance for the
+future.
+
+00:49:13.300 --> 00:49:15.460
+But as far as I know, it's a
+pretty mixed bag.
+
+00:49:15.460 --> 00:49:17.900
+What I do know is that when I
+walk around and lecture or when
+
+00:49:17.900 --> 00:49:18.940
+I have in the past,
+
+00:49:18.940 --> 00:49:21.280
+I would commonly see people
+having the notes open.
+
+00:49:21.280 --> 00:49:23.300
+And any time students would come
+to office hours to work on
+
+00:49:23.300 --> 00:49:25.440
+homeworks, they would also have
+the notes open.
+
+00:49:25.440 --> 00:49:26.440
+Okay,
+
+00:49:27.320 --> 00:49:29.570
+any other questions?
+
+00:49:29.600 --> 00:49:33.100
+I guess the last thing I'll say
+is that we have three exams,
+
+00:49:33.100 --> 00:49:35.180
+so two midterms and a final.
+The dates are all on the course
+
+00:49:35.180 --> 00:49:36.180
+website.
+
+00:49:36.220 --> 00:49:39.320
+One perhaps unique setup with
+our final exam is that it is
+
+00:49:39.320 --> 00:49:45.000
+cumulative, but if you do better
+on the final exam questions that
+
+00:49:45.000 --> 00:49:48.540
+are about midterm one topics,
+will increase your midterm one
+
+00:49:48.540 --> 00:49:49.280
+grade.
+
+00:49:49.280 --> 00:49:52.060
+So the final exam, you can think
+of it as being broken into three
+
+00:49:52.060 --> 00:49:54.580
+sections.
+midterm one questions, midterm
+
+00:49:54.580 --> 00:49:57.140
+two questions, and final exam
+questions, or post midterm two
+
+00:49:57.140 --> 00:49:57.900
+questions.
+
+00:49:57.900 --> 00:49:59.780
+They're not, of course, going to
+be the same questions.
+
+00:49:59.780 --> 00:50:01.800
+It'll just be about the same
+content.
+
+00:50:01.800 --> 00:50:04.760
+Suppose you get a 50 on the
+original midterm one,
+
+00:50:04.760 --> 00:50:08.520
+and you get a 90 on the midterm
+one questions that are on the
+
+00:50:08.520 --> 00:50:10.920
+final exam, again, about those
+topics, but not the same
+
+00:50:10.920 --> 00:50:11.800
+questions,
+
+00:50:11.800 --> 00:50:15.620
+will increase your midterm one
+grade from a 50 to the average
+
+00:50:15.620 --> 00:50:18.300
+of those two, which is a 70.
+Okay?
+
+00:50:18.300 --> 00:50:21.880
+So it's sort of incentive at the
+end of the semester to go back
+
+00:50:21.880 --> 00:50:24.480
+and review things that were
+earlier.
+
+00:50:24.480 --> 00:50:25.480
+Okay?
+
+00:50:25.620 --> 00:50:28.980
+Now, Midterm 2 is not
+technically cumulative in that I
+
+00:50:28.980 --> 00:50:31.500
+wouldn't ask a question that
+could have been on Midterm 1,
+
+00:50:31.500 --> 00:50:34.720
+but the topics in the course do
+build on each other.
+
+00:50:34.720 --> 00:50:37.080
+So it'll be hard to go into
+Midterm 2 without knowing the
+
+00:50:37.080 --> 00:50:38.720
+things in Midterm 1.
+
+00:50:38.720 --> 00:50:41.400
+But that policy that I just
+stated is called the redemption
+
+00:50:41.400 --> 00:50:44.760
+policy and it's outlined in the
+syllabus, and usually about half
+
+00:50:44.760 --> 00:50:46.960
+the class benefits from them.
+
+00:50:46.960 --> 00:50:48.840
+OK, question and yes.
+What was your name again?
+
+00:50:48.840 --> 00:50:49.840
+Boyan.
+Boyan.
+
+00:50:50.680 --> 00:50:53.040
+I have a question about the
+policy.
+
+00:50:53.040 --> 00:50:54.520
+Does it work the opposite way?
+No, no.
+
+00:50:54.520 --> 00:50:55.640
+So if you do worse,
+
+00:50:55.640 --> 00:50:58.360
+if we reverse those numbers and
+you got a 90 on midterm one,
+
+00:50:58.360 --> 00:51:01.480
+50 on the midterm one questions
+on the final exam, we just keep
+
+00:51:01.480 --> 00:51:03.160
+your 90.
+So this can only help you.
+
+00:51:06.080 --> 00:51:07.080
+OK.
+
+00:51:08.280 --> 00:51:10.680
+Other questions with how the
+course works?
+
+00:51:10.680 --> 00:51:12.280
+Again, make sure to read the
+syllabus in depth.
+
+00:51:12.280 --> 00:51:16.400
+that talks about the slip days
+you have for homeworks,
+
+00:51:16.400 --> 00:51:18.940
+the drops you have for labs and
+homeworks, and the attendance
+
+00:51:18.940 --> 00:51:21.400
+policy, all of those things.
+
+00:51:21.400 --> 00:51:22.900
+Sound good?
+
+00:51:23.280 --> 00:51:24.280
+OK,
+
+00:51:24.440 --> 00:51:27.840
+let's test out the attendance
+mechanism before we get into
+
+00:51:27.840 --> 00:51:29.220
+some content.
+
+00:51:29.220 --> 00:51:32.600
+What we are going to use is this
+website,
+
+00:51:32.600 --> 00:51:34.100
+Poll Everywhere.
+
+00:51:35.600 --> 00:51:40.850
+I'm going to write the link up
+here.
+
+00:51:43.760 --> 00:51:45.300
+And starting now,
+
+00:51:45.300 --> 00:51:47.180
+you should be able to submit.
+
+00:51:47.180 --> 00:51:49.500
+And so if you go here, every
+lecture,
+
+00:51:49.500 --> 00:51:51.500
+I'll have a slightly new form
+there.
+
+00:51:51.500 --> 00:51:54.280
+And what it will have is a box
+that just asks,
+
+00:51:54.280 --> 00:51:57.020
+what is the most confusing thing
+we've done so far?
+
+00:51:57.020 --> 00:52:01.480
+So if you have questions about
+the policy or any field
+
+00:52:01.480 --> 00:52:04.140
+of machine learning, here's a
+place you can enter it.
+
+00:52:04.140 --> 00:52:07.300
+Now, one thing I'll note is that
+this requires you to log in with
+
+00:52:07.300 --> 00:52:09.400
+your U of M email.
+So I already pre-registered
+
+00:52:09.400 --> 00:52:12.280
+everyone in this class to the
+site.
+
+00:52:12.280 --> 00:52:15.120
+If you try and log in with your
+U of M email and it doesn't
+
+00:52:15.120 --> 00:52:15.900
+work,
+
+00:52:15.900 --> 00:52:19.280
+let me know and that may be
+because you just enrolled
+
+00:52:19.280 --> 00:52:24.940
+in the last 48 hours or so and I
+can add you in manually.
+
+00:52:24.940 --> 00:52:27.260
+And the link for this is also in
+the
+
+00:52:27.260 --> 00:52:29.560
+toolbar on the course website.
+If you click the attendance
+
+00:52:29.560 --> 00:52:32.300
+button, it should work.
+I'll give us a few minutes and
+
+00:52:32.300 --> 00:52:36.800
+this will also count as our
+break.
+
+00:52:41.120 --> 00:52:43.370
+Let's see here.
+
+00:54:01.880 --> 00:54:02.880
+Oh,
+
+00:54:06.080 --> 00:54:09.960
+did it still say that? How about
+try this? Yeah, okay,
+
+00:54:09.960 --> 00:54:11.520
+sorry,
+
+00:54:12.060 --> 00:54:13.560
+thank you.
+
+00:54:52.620 --> 00:54:56.140
+It's 11.25,
+we'll start again at 11.26,
+
+00:54:56.540 --> 00:55:01.540
+so just make sure to log in.
+Yeah,
+
+00:55:01.540 --> 00:55:03.040
+that's okay.
+
+00:55:30.040 --> 00:55:30.760
+Okay,
+
+00:55:30.760 --> 00:55:36.010
+I'll take it to Jim, yes, you're
+right.
+
+00:55:36.320 --> 00:55:37.820
+Excuse me.
+
+00:55:42.780 --> 00:55:48.440
+You're supposed to take a right,
+
+00:55:48.680 --> 00:55:50.960
+and Trump's gonna go out.
+
+00:55:50.960 --> 00:55:51.960
+Oh.
+
+00:55:52.460 --> 00:55:53.840
+Yeah.
+Does that mean that Alex didn't
+
+00:55:53.840 --> 00:55:56.220
+have anything to do with me this
+time? Yes, sir.
+
+00:55:56.220 --> 00:55:58.740
+Yeah, I just had two lefties
+today, so.
+
+00:55:58.740 --> 00:55:59.220
+Oh,
+
+00:55:59.220 --> 00:56:01.300
+I was going to ask you a
+question.
+
+00:56:01.300 --> 00:56:04.520
+Sorry, I just asked you a
+question.
+
+00:56:04.520 --> 00:56:06.020
+It's clear.
+
+00:56:06.180 --> 00:56:09.180
+There's some on there.
+
+00:56:10.780 --> 00:56:11.880
+There's some.
+
+00:56:11.880 --> 00:56:12.780
+It was three.
+
+00:56:12.780 --> 00:56:13.620
+It's very difficult.
+
+00:56:13.620 --> 00:56:16.620
+We're going to play a couple of
+games.
+
+00:56:16.620 --> 00:56:17.740
+Any of you guys see?
+
+00:56:17.740 --> 00:56:19.320
+Probably you should go around.
+
+00:56:19.320 --> 00:56:20.800
+It's a California game.
+
+00:56:20.800 --> 00:56:22.260
+Two more stops now, if you
+realize.
+
+00:56:22.260 --> 00:56:23.580
+They didn't turn on the ground.
+
+00:56:23.580 --> 00:56:25.320
+Well, you might.
+I think it helps.
+
+00:56:25.320 --> 00:56:27.570
+It's pretty good.
+
+00:56:49.720 --> 00:56:52.000
+Okay,
+
+00:56:53.620 --> 00:56:55.120
+as everyone...
+
+00:56:55.420 --> 00:56:57.670
+Everyone checked in?
+
+00:56:58.580 --> 00:57:00.080
+All right.
+
+00:57:00.400 --> 00:57:05.650
+Let me just double check that I
+have everything here.
+
+00:57:11.860 --> 00:57:12.860
+Okay.
+
+00:57:13.580 --> 00:57:16.120
+Says I have 64 responses.
+I think we have slightly more,
+
+00:57:16.120 --> 00:57:19.100
+we have more more than 64 people
+in the class and more than 64
+
+00:57:19.100 --> 00:57:20.000
+people here.
+
+00:57:20.000 --> 00:57:24.240
+So if you didn't get a chance to
+check in just come check with me
+
+00:57:24.240 --> 00:57:27.920
+afterwards okay I want to start
+our actual content here and this
+
+00:57:27.920 --> 00:57:31.040
+is going to follow chapter 1.2
+in the course notes we will
+
+00:57:31.040 --> 00:57:34.640
+start our like main course
+storyline now and we will pick
+
+00:57:34.640 --> 00:57:39.140
+this up on Thursday here's a
+real data set
+
+00:57:39.840 --> 00:57:45.080
+that someone collected by
+logging information about their
+
+00:57:45.080 --> 00:57:47.940
+daily commute it's a real person
+if you look at the course notes
+
+00:57:47.940 --> 00:57:51.120
+like the github repository I
+found this on actually I found
+
+00:57:51.120 --> 00:57:53.140
+that someone posted this on
+LinkedIn three years ago.
+
+00:57:53.140 --> 00:57:54.080
+And I was like,
+
+00:57:54.080 --> 00:57:55.500
+one day I could use this for a
+class,
+
+00:57:55.500 --> 00:57:58.000
+and wrote it down, and so
+LinkedIn is useful for
+
+00:57:58.000 --> 00:57:59.680
+something, I guess.
+
+00:57:59.680 --> 00:58:03.500
+This person lives in the Seattle
+area and commuted to work every
+
+00:58:03.500 --> 00:58:04.740
+day and wrote down,
+
+00:58:04.740 --> 00:58:06.220
+among other things,
+
+00:58:06.220 --> 00:58:09.220
+what date it was,
+
+00:58:09.220 --> 00:58:11.400
+the day of the week,
+
+00:58:11.400 --> 00:58:13.980
+the time they left in the
+morning,
+
+00:58:13.980 --> 00:58:17.720
+and how long the commute
+actually took.
+
+00:58:17.720 --> 00:58:19.940
+I actually live in Detroit and
+commute here, so I guess I could
+
+00:58:19.940 --> 00:58:21.500
+have made my own data set over
+this past year.
+
+00:58:21.500 --> 00:58:25.480
+But we'll use this guy's data
+set.
+
+00:58:25.480 --> 00:58:30.440
+In the context of the taxonomy
+of machine learning that we
+
+00:58:30.440 --> 00:58:32.620
+looked at before,
+
+00:58:32.620 --> 00:58:34.120
+minutes here,
+
+00:58:34.320 --> 00:58:36.360
+that's our y variable.
+
+00:58:36.360 --> 00:58:41.610
+That is our target that we want
+to predict.
+
+00:58:54.680 --> 00:58:58.980
+And so now the question is,
+among the other columns in the
+
+00:58:58.980 --> 00:59:00.980
+data set we were provided,
+
+00:59:00.980 --> 00:59:05.600
+what should we use to try and
+make those predictions?
+
+00:59:05.600 --> 00:59:08.120
+Well, the most natural thing to
+use,
+
+00:59:08.120 --> 00:59:10.260
+I think at least when we're
+starting,
+
+00:59:10.260 --> 00:59:13.240
+is the time we leave in the
+morning.
+
+00:59:13.240 --> 00:59:16.540
+To validate that assumption, it
+would help if we looked at the
+
+00:59:16.540 --> 00:59:19.960
+relationship between departure
+hour, or time we leave in the
+
+00:59:19.960 --> 00:59:23.120
+morning, commute time and we
+will do that in the next slide
+
+00:59:23.120 --> 00:59:27.240
+and what we see is that indeed
+it seems like there is some
+
+00:59:27.240 --> 00:59:31.220
+pattern between the time we
+leave in the morning and how
+
+00:59:31.220 --> 00:59:33.720
+long the commute actually takes
+so it seems like a reasonable
+
+00:59:33.720 --> 00:59:39.220
+choice to try and use departure
+time as one of the inputs
+
+00:59:39.220 --> 00:59:42.220
+into this particular prediction
+model.
+
+00:59:42.940 --> 00:59:45.720
+One thing I want to comment on
+is how All of these departure
+
+00:59:45.720 --> 00:59:47.970
+times are stored.
+
+00:59:49.660 --> 00:59:50.660
+10.816667.
+
+00:59:51.200 --> 00:59:55.700
+What do you think that means?
+
+00:59:57.860 --> 01:00:01.880
+It's just 10 hours and then 8.6
+of an hour.
+
+01:00:01.880 --> 01:00:03.420
+Remind me of an email server
+with an A.
+
+01:00:03.420 --> 01:00:04.400
+A mark.
+A mark, right.
+
+01:00:04.400 --> 01:00:04.840
+OK.
+
+01:00:04.840 --> 01:00:05.460
+Exactly.
+
+01:00:05.460 --> 01:00:11.320
+What this is saying is that this
+is 10 AM plus 81% of an hour.
+
+01:00:13.360 --> 01:00:18.460
+So this is going to be like 1044
+or something like that.
+
+01:00:18.460 --> 01:00:23.200
+This way you don't have to store
+the times as weird strings and
+
+01:00:23.200 --> 01:00:25.620
+then you have to parse where the
+colon is and figure out if it's
+
+01:00:25.620 --> 01:00:26.780
+am or pm.
+
+01:00:26.780 --> 01:00:29.600
+Instead they are just stored as
+floating point numbers that we
+
+01:00:29.600 --> 01:00:32.420
+can do math with.
+
+01:00:32.420 --> 01:00:35.820
+It also seems like it could be
+useful to use what day of the
+
+01:00:35.820 --> 01:00:37.600
+week it is.
+Right, like maybe it takes
+
+01:00:37.600 --> 01:00:40.320
+longer to get to work on Mondays
+and Fridays when there's more
+
+01:00:40.320 --> 01:00:41.320
+traffic.
+
+01:00:41.320 --> 01:00:44.320
+It seems like a natural thing to
+want to try and do,
+
+01:00:44.320 --> 01:00:49.570
+but what is the issue when it
+comes to using days of the week?
+
+01:00:50.940 --> 01:00:52.300
+Yes, and remind us of your name?
+
+01:00:52.300 --> 01:00:54.500
+Madge, it'll be like 3D.
+
+01:00:54.500 --> 01:00:55.660
+Sorry, could you please repeat
+that?
+
+01:00:55.660 --> 01:00:57.540
+It'll be like 3D with three
+dimensions.
+
+01:00:57.540 --> 01:01:03.300
+Yeah, one issue is that the
+graph itself with all in that
+
+01:01:03.300 --> 01:01:06.040
+visualizes the day, the
+departure hour, and the commute
+
+01:01:06.040 --> 01:01:09.720
+time would be in 3D, but that's
+something we can overcome.
+
+01:01:09.720 --> 01:01:11.520
+There's another possible issue.
+
+01:01:11.520 --> 01:01:12.440
+Yes, and remind us of your name?
+
+01:01:12.440 --> 01:01:13.340
+Brian.
+
+01:01:13.340 --> 01:01:15.200
+It's like a compounding
+variable,
+
+01:01:15.200 --> 01:01:17.800
+like the departure time is not
+the same,
+
+01:01:17.800 --> 01:01:21.500
+you can't like find it to the
+specific day.
+
+01:01:21.500 --> 01:01:25.520
+I see what you're getting at,
+though we can build a model that
+
+01:01:25.520 --> 01:01:30.320
+allows us to use any day and any
+departure hour as inputs.
+
+01:01:30.320 --> 01:01:33.340
+So that alone is not directly an
+issue.
+
+01:01:33.340 --> 01:01:35.760
+And in general, when you have a
+really big complicated dataset,
+
+01:01:35.760 --> 01:01:38.140
+there will be features that are
+related to other features.
+
+01:01:38.140 --> 01:01:39.920
+And that's just something you
+sort of have to deal with.
+
+01:01:39.920 --> 01:01:41.660
+Any other ideas? Yes.
+And what was your name again?
+
+01:01:41.660 --> 01:01:42.660
+Musab.
+Musab.
+
+01:01:42.900 --> 01:01:43.960
+It's categorical.
+
+01:01:43.960 --> 01:01:45.220
+It's categorical,
+
+01:01:45.220 --> 01:01:46.120
+right?
+
+01:01:46.120 --> 01:01:46.740
+Exactly,
+
+01:01:46.740 --> 01:01:49.980
+and what we're going to try and
+do is come up with some formula,
+
+01:01:49.980 --> 01:01:53.420
+some mathematical formula that
+takes in the departure hour,
+
+01:01:54.280 --> 01:01:56.860
+does some calculation to it, and
+spits out a predicted commute
+
+01:01:56.860 --> 01:01:57.600
+time.
+
+01:01:57.600 --> 01:02:00.400
+But what is that formula going
+to do with the day of the week?
+
+01:02:00.400 --> 01:02:02.060
+Because that's not a number.
+
+01:02:02.060 --> 01:02:03.640
+That's something we're gonna
+have to address.
+
+01:02:03.640 --> 01:02:05.900
+And it is something we will
+address later on in the semester
+
+01:02:05.900 --> 01:02:09.900
+using a technique called one-hot
+encoding, which is how we are
+
+01:02:09.900 --> 01:02:13.650
+gonna turn these words into
+numbers.
+
+01:02:14.600 --> 01:02:15.120
+Okay,
+
+01:02:15.120 --> 01:02:18.440
+for now, let's just focus on
+
+01:02:18.440 --> 01:02:21.440
+predicting commute time using
+departure time,
+
+01:02:22.340 --> 01:02:27.060
+okay? So the commute time is
+going to be our y, and the
+
+01:02:27.060 --> 01:02:31.280
+departure time is going to be
+our x.
+
+01:02:31.280 --> 01:02:36.200
+So here's a graph of y versus x.
+Commute time on the y-axis,
+
+01:02:36.200 --> 01:02:40.960
+the time we left in the morning
+on the x-axis.
+
+01:02:40.960 --> 01:02:45.460
+Each one of these data points,
+
+01:02:46.120 --> 01:02:48.280
+let's use a different color
+here,
+
+01:02:48.280 --> 01:02:53.720
+is something like x subscripted
+number comma y subscripted
+
+01:02:53.720 --> 01:02:54.380
+number.
+
+01:02:54.380 --> 01:02:58.400
+And that number five just tells
+us which row of the data set we
+
+01:02:58.400 --> 01:03:00.820
+pulled this point from.
+
+01:03:00.820 --> 01:03:02.400
+So in this hypothetical,
+
+01:03:02.400 --> 01:03:05.020
+this was the fifth point in our
+data set.
+
+01:03:05.020 --> 01:03:05.560
+Sound good?
+
+01:03:05.560 --> 01:03:08.640
+So we're going to see a lot of
+subscripts moving forward.
+
+01:03:08.640 --> 01:03:10.520
+Now, our goal,
+
+01:03:10.520 --> 01:03:12.770
+like I said,
+
+01:03:13.100 --> 01:03:18.940
+is to predict commute
+
+01:03:18.940 --> 01:03:19.940
+times.
+
+01:03:20.500 --> 01:03:24.300
+But it's not really just to
+predict commute times in the
+
+01:03:24.300 --> 01:03:26.160
+data set we already have.
+
+01:03:26.160 --> 01:03:29.860
+For all of the historical data,
+we already know how long it took
+
+01:03:29.860 --> 01:03:31.060
+to get to work.
+
+01:03:31.060 --> 01:03:36.200
+What is our real goal? What is
+the point of doing this?
+
+01:03:36.200 --> 01:03:37.280
+Yeah, Emma?
+
+01:03:37.280 --> 01:03:38.840
+To know that, like,
+
+01:03:38.840 --> 01:03:41.840
+on any given day,
+
+01:03:42.120 --> 01:03:43.700
+whatever time you leave,
+
+01:03:43.700 --> 01:03:49.620
+like a data that's not in there.
+Exactly, the point is to be able
+
+01:03:49.620 --> 01:03:51.740
+to use this technique
+
+01:03:51.740 --> 01:03:55.060
+to predict how long tomorrow's
+commute is going to take,
+
+01:03:55.060 --> 01:03:57.460
+or next Tuesday's commute is
+going to take.
+
+01:03:57.460 --> 01:03:59.260
+But I want to use it when I
+don't already know the right
+
+01:03:59.260 --> 01:04:00.260
+answer.
+
+01:04:00.940 --> 01:04:05.340
+And so if all I was trying to do
+is make good predictions for
+
+01:04:05.340 --> 01:04:07.160
+this data set,
+
+01:04:07.160 --> 01:04:11.660
+here's a function that could do
+that.
+
+01:04:19.140 --> 01:04:22.060
+Why is this bad?
+
+01:04:22.060 --> 01:04:27.310
+It is what we call overfit to
+the training data.
+
+01:04:36.900 --> 01:04:41.200
+And the reason that that's bad
+is that it has clearly gone
+
+01:04:41.200 --> 01:04:45.460
+beyond the general trend in the
+relationship between commute
+
+01:04:45.460 --> 01:04:48.780
+time and departure time, and it
+has all of these little wiggles
+
+01:04:48.780 --> 01:04:53.840
+and bumps which are unlikely to
+represent a broader trend.
+
+01:04:55.440 --> 01:04:59.600
+And so what this means is if I
+go and try and use this orange
+
+01:04:59.600 --> 01:05:02.440
+curve to predict how long
+tomorrow's commute is going to
+
+01:05:02.440 --> 01:05:05.820
+take and how I would use it is
+go to wherever I plan on leaving
+
+01:05:05.820 --> 01:05:09.020
+in the morning on the x-axis and
+look at the height of this graph
+
+01:05:09.020 --> 01:05:10.680
+on the y-axis.
+
+01:05:10.680 --> 01:05:14.280
+This would do a worse job than
+far simpler models would,
+
+01:05:14.280 --> 01:05:18.360
+because this has way too many
+squiggles that don't represent a
+
+01:05:18.360 --> 01:05:20.260
+general trend.
+They just represent the specific
+
+01:05:20.260 --> 01:05:23.280
+traffic on any one day or the
+fact that I stopped at Starbucks
+
+01:05:23.280 --> 01:05:27.030
+coming home or something like
+that.
+
+01:05:34.280 --> 01:05:36.460
+And so keep this at the back of
+your mind.
+
+01:05:36.460 --> 01:05:41.710
+Our goal is to build models that
+generalize well to unseen data.
+
+01:05:48.560 --> 01:05:50.810
+Now with that,
+
+01:05:51.120 --> 01:05:53.640
+I've used the word model,
+
+01:05:53.640 --> 01:05:57.390
+but I haven't actually defined
+what I mean by a model.
+
+01:05:59.380 --> 01:06:00.260
+A model,
+
+01:06:00.260 --> 01:06:02.300
+you know, people use this word a
+lot and you say, okay,
+
+01:06:02.300 --> 01:06:05.280
+chat jibbity the new 5.6
+model or whatever,
+
+01:06:05.280 --> 01:06:09.260
+right? One unifying term that
+defines all types of models,
+
+01:06:09.420 --> 01:06:10.220
+statistical,
+
+01:06:10.220 --> 01:06:12.100
+large language model, machine
+learning,
+
+01:06:12.100 --> 01:06:18.100
+is that a model is a set of
+assumptions
+
+01:06:23.280 --> 01:06:28.980
+about how data was generated,
+
+01:06:30.160 --> 01:06:34.420
+or equivalently,
+
+01:06:38.240 --> 01:06:41.240
+how the world works.
+
+01:06:42.160 --> 01:06:45.720
+If you think philosophically for
+a moment any model you've heard
+
+01:06:45.720 --> 01:06:48.960
+of is just an assumption about
+how one specific part of the
+
+01:06:48.960 --> 01:06:50.460
+world works.
+
+01:06:50.860 --> 01:06:54.280
+Now there's a famous quote that
+you may have heard of in like a
+
+01:06:54.280 --> 01:06:58.240
+high school statistics or
+science class which is that all
+
+01:06:58.240 --> 01:07:01.260
+models are wrong but some are
+useful.
+
+01:07:01.260 --> 01:07:02.940
+Has anyone heard this before?
+
+01:07:02.940 --> 01:07:04.040
+A few people.
+
+01:07:04.040 --> 01:07:05.600
+What is the essence of that
+statement?
+
+01:07:05.600 --> 01:07:07.440
+All models are wrong, but some
+are useful.
+
+01:07:07.440 --> 01:07:11.040
+Like, what does that mean?
+
+01:07:11.040 --> 01:07:12.220
+Yeah.
+And remind us of your name?
+
+01:07:12.740 --> 01:07:13.740
+Zara.
+
+01:07:14.080 --> 01:07:15.300
+Maybe it's like,
+
+01:07:15.300 --> 01:07:20.550
+not every model can be right all
+the time.
+
+01:07:21.720 --> 01:07:22.720
+Exactly.
+
+01:07:22.760 --> 01:07:27.820
+What this is saying is that no
+matter how hard you try,
+
+01:07:27.820 --> 01:07:31.160
+models will make mistakes.
+They won't reflect every single
+
+01:07:31.160 --> 01:07:34.040
+part of how the world works.
+And we see that even now when we
+
+01:07:34.040 --> 01:07:37.220
+have these billion or trillion
+dollar models released by the
+
+01:07:37.220 --> 01:07:39.260
+big AI companies that still
+don't answer everything
+
+01:07:39.260 --> 01:07:40.260
+correctly.
+
+01:07:41.260 --> 01:07:43.140
+And so one interpretation of
+this,
+
+01:07:43.140 --> 01:07:43.700
+and I'm sorry,
+
+01:07:43.700 --> 01:07:46.100
+all models are wrong, but some
+are useful.
+
+01:07:46.100 --> 01:07:47.460
+What does that mean?
+
+01:07:47.460 --> 01:07:49.980
+Well, it means that even simple
+models
+
+01:07:49.980 --> 01:07:52.920
+can explain useful things about
+how the world works.
+
+01:07:52.920 --> 01:07:56.140
+The example I like using for
+this is the fact you learned in
+
+01:07:56.140 --> 01:08:00.000
+high school science or physics,
+which is that acceleration due
+
+01:08:00.000 --> 01:08:03.300
+to gravity is 9.81
+meters per second squared.
+
+01:08:03.740 --> 01:08:05.200
+Do we remember this fact?
+
+01:08:05.200 --> 01:08:06.620
+It's not always true,
+
+01:08:06.620 --> 01:08:08.500
+right? If you drop, I don't
+know, if I drop a piece of
+
+01:08:08.500 --> 01:08:10.540
+paper, that's not the speed at
+which it's going to accelerate,
+
+01:08:10.540 --> 01:08:12.640
+right? There are other variables
+that affect this.
+
+01:08:12.640 --> 01:08:15.000
+It affects, you know, things
+like how far you are from the
+
+01:08:15.000 --> 01:08:17.340
+equator and what the drag
+coefficient of the thing you
+
+01:08:17.340 --> 01:08:18.420
+dropped is.
+
+01:08:18.420 --> 01:08:22.020
+Still, that simple model is
+useful enough for us to be able
+
+01:08:22.020 --> 01:08:24.270
+to do calculations,
+
+01:08:24.480 --> 01:08:27.960
+okay? And so what I'm getting at
+here is that even the most
+
+01:08:27.960 --> 01:08:30.460
+complicated models will be
+wrong.
+
+01:08:30.460 --> 01:08:34.480
+And so there actually is some
+utility in studying simpler
+
+01:08:34.480 --> 01:08:35.480
+models.
+
+01:08:36.280 --> 01:08:39.580
+And so what we are going to do
+in this class
+
+01:08:39.580 --> 01:08:44.060
+is actually start
+
+01:08:44.060 --> 01:08:48.580
+with models that seem overly
+simplistic.
+
+01:08:49.300 --> 01:08:50.760
+When you look at this,
+
+01:08:50.760 --> 01:08:54.480
+what was the first type of model
+that you assumed we would draw
+
+01:08:54.480 --> 01:08:55.880
+on here,
+
+01:08:55.880 --> 01:08:57.780
+knowing nothing else.
+
+01:08:57.780 --> 01:08:58.140
+Yeah,
+
+01:08:58.140 --> 01:08:59.360
+Paul? Like linear regression?
+
+01:08:59.360 --> 01:09:02.560
+Yeah, what you saw here is maybe
+something you saw in a high
+
+01:09:02.560 --> 01:09:04.810
+school statistics class,
+
+01:09:05.060 --> 01:09:08.740
+something like a line of best
+fit
+
+01:09:08.740 --> 01:09:13.960
+that we could use to predict
+commute time given departure
+
+01:09:13.960 --> 01:09:14.960
+time.
+
+01:09:15.620 --> 01:09:18.080
+And indeed, this is a valid
+model, and it's one that we will
+
+01:09:18.080 --> 01:09:20.060
+study.
+Here, we will call that the
+
+01:09:20.060 --> 01:09:23.820
+simple linear
+
+01:09:23.820 --> 01:09:27.960
+regression model.
+
+01:09:29.760 --> 01:09:34.260
+Simple just means that it only
+has one input variable.
+
+01:09:36.340 --> 01:09:40.180
+And again, input variables are
+what we call features.
+
+01:09:41.520 --> 01:09:44.900
+Here, our only feature is
+departure time.
+
+01:09:44.900 --> 01:09:48.520
+So yes, this is a model we will
+study.
+
+01:09:48.520 --> 01:09:53.020
+But I'm actually going to start
+even simpler than that.
+
+01:09:53.500 --> 01:09:56.800
+What model could be simpler than
+this?
+
+01:09:56.800 --> 01:09:58.840
+How could we be even more basic?
+
+01:09:58.840 --> 01:10:00.540
+Yes, and remind us of your name?
+I'm Alex.
+
+01:10:00.540 --> 01:10:02.360
+Alex.
+You have a constant model? A
+
+01:10:02.360 --> 01:10:04.540
+constant model, good.
+
+01:10:04.540 --> 01:10:07.640
+Here, this model returns
+different predictions depending
+
+01:10:07.640 --> 01:10:09.660
+the time we leave in the
+morning.
+
+01:10:09.660 --> 01:10:13.240
+What if I say, no, that's too
+complicated?
+
+01:10:13.240 --> 01:10:17.740
+why don't I instead just always
+predict the same commute time?
+
+01:10:22.960 --> 01:10:24.460
+Sounds basic,
+
+01:10:24.600 --> 01:10:27.460
+and indeed the simple linear
+regression model here is better
+
+01:10:27.460 --> 01:10:30.260
+in almost every way.
+It'll also generalize just as
+
+01:10:30.260 --> 01:10:33.380
+well, but the constant model is
+not totally useless because
+
+01:10:33.380 --> 01:10:36.400
+imagine you had a conversation
+with someone about, you know,
+
+01:10:36.400 --> 01:10:38.380
+you have this historical data
+about your commutes and they
+
+01:10:38.380 --> 01:10:39.020
+ask,
+
+01:10:39.020 --> 01:10:42.380
+okay how long does it usually
+take for you to get to work,
+
+01:10:42.380 --> 01:10:44.500
+you're probably not going to
+give them a complicated formula.
+
+01:10:44.500 --> 01:10:46.260
+You'll give them a one-number
+summary.
+
+01:10:46.260 --> 01:10:49.040
+And that's really just the
+constant model.
+
+01:10:49.040 --> 01:10:52.020
+And so here's the philosophy
+we're going to use here.
+
+01:10:52.020 --> 01:10:54.440
+I want to start with the
+constant model.
+
+01:10:54.440 --> 01:10:55.480
+So today,
+
+01:10:55.480 --> 01:10:56.080
+Thursday,
+
+01:10:56.080 --> 01:10:59.160
+next Tuesday, we're mostly just
+going to talk about the constant
+
+01:10:59.160 --> 01:10:59.800
+model.
+
+01:10:59.800 --> 01:11:03.080
+But I'm going to use it to
+introduce a lot of notation
+
+01:11:03.080 --> 01:11:08.500
+formulas and machinery that we
+will use throughout our machine
+
+01:11:08.500 --> 01:11:10.060
+learning journey.
+So we're going to start with a
+
+01:11:10.060 --> 01:11:11.560
+simple model,
+
+01:11:11.620 --> 01:11:15.360
+develop what I call the
+three-step modeling recipe,
+
+01:11:15.360 --> 01:11:18.760
+and then throughout the
+semester, look at more and more
+
+01:11:18.760 --> 01:11:21.760
+complicated models through that
+same recipe.
+
+01:11:21.860 --> 01:11:24.340
+So we'll start basic and then
+increase our complexity from
+
+01:11:24.340 --> 01:11:25.340
+there.
+
+01:11:29.600 --> 01:11:33.580
+Now, let's introduce a tiny bit
+of notation here.
+
+01:11:33.580 --> 01:11:37.120
+A hypothesis function
+
+01:11:37.120 --> 01:11:42.800
+is a
+
+01:11:42.800 --> 01:11:48.700
+function which I'll denote with
+the letter H takes in features
+
+01:11:53.240 --> 01:11:59.240
+and returns predicted
+
+01:11:59.240 --> 01:12:01.080
+Y values.
+
+01:12:02.580 --> 01:12:06.960
+So, a hypothesis function is
+what you use to make your
+
+01:12:06.960 --> 01:12:10.060
+predictions, and ultimately what
+we are trying to do here is find
+
+01:12:10.060 --> 01:12:12.360
+good hypothesis functions,
+
+01:12:14.480 --> 01:12:19.720
+or build a useful
+
+01:12:19.720 --> 01:12:23.260
+hypothesis function.
+
+01:12:29.120 --> 01:12:33.620
+The idea is that each model,
+
+01:12:34.280 --> 01:12:37.280
+or each model type,
+
+01:12:39.720 --> 01:12:45.340
+so for example constant or
+simple linear regression
+
+01:12:45.340 --> 01:12:49.040
+has its own
+
+01:12:49.040 --> 01:12:55.020
+hypothesis class format.
+
+01:12:57.220 --> 01:13:01.960
+So let me
+
+01:13:01.960 --> 01:13:06.040
+start with the constant model.
+
+01:13:17.160 --> 01:13:23.120
+The constant model is always
+
+01:13:23.120 --> 01:13:28.980
+of the form h of xi equals some
+constant.
+
+01:13:28.980 --> 01:13:31.660
+I'll call it W.
+
+01:13:31.660 --> 01:13:33.720
+And what I'm seeing on the
+right, I'll zoom in a little
+
+01:13:33.720 --> 01:13:35.060
+because I know this is small,
+
+01:13:35.060 --> 01:13:38.880
+is for three different values of
+W,
+
+01:13:38.880 --> 01:13:39.420
+60,
+
+01:13:39.420 --> 01:13:41.080
+70, and 100,
+
+01:13:41.080 --> 01:13:46.780
+what the resulting constant
+model looks like on our data
+
+01:13:46.780 --> 01:13:47.780
+set.
+
+01:13:52.100 --> 01:13:55.420
+Now, what you should see is that
+some choices of w are better
+
+01:13:55.420 --> 01:13:56.660
+than others.
+
+01:13:56.660 --> 01:14:01.260
+Like, choosing w equals 100
+seems a little nonsensical for
+
+01:14:01.260 --> 01:14:04.680
+this data set, because none of
+the data,
+
+01:14:04.680 --> 01:14:09.120
+like very few of our commutes
+were in the range of 100
+
+01:14:09.120 --> 01:14:10.120
+minutes.
+
+01:14:11.300 --> 01:14:15.660
+W equals 60 also seems to be a
+little low,
+
+01:14:15.660 --> 01:14:19.180
+but the question is where do we
+put it in the middle?
+
+01:14:19.180 --> 01:14:20.780
+Like 70 seems good.
+
+01:14:20.780 --> 01:14:24.620
+Do we agree that W equals 70
+seems the best of these choices?
+
+01:14:24.620 --> 01:14:25.500
+Yeah,
+
+01:14:25.500 --> 01:14:28.340
+but maybe 71 is better, and
+maybe 70.37
+
+01:14:28.340 --> 01:14:30.060
+is even better than that.
+
+01:14:30.060 --> 01:14:31.700
+How do we know?
+
+01:14:31.700 --> 01:14:34.480
+Okay, and that is the big
+problem we are going to study on
+
+01:14:34.480 --> 01:14:36.740
+Thursday.
+how do we figure out what to
+
+01:14:36.740 --> 01:14:38.240
+make W?
+
+01:14:39.460 --> 01:14:44.710
+W is what is called a parameter.
+
+01:14:51.840 --> 01:14:57.200
+A parameter is an aspect of a
+model that we have to pick.
+
+01:14:58.660 --> 01:15:01.660
+So different parameters will
+lead into different predictions.
+
+01:15:02.280 --> 01:15:07.420
+And w is always the letter we
+will use for parameters.
+
+01:15:07.420 --> 01:15:11.300
+The constant model has just one
+parameter.
+
+01:15:11.300 --> 01:15:14.780
+Yes? What is a parameter
+different from a feature?
+
+01:15:14.780 --> 01:15:17.440
+A feature is the input variable.
+
+01:15:17.440 --> 01:15:18.940
+So like,
+
+01:15:19.640 --> 01:15:21.940
+here, let me give you an example
+of the simple linear regression
+
+01:15:21.940 --> 01:15:23.520
+model.
+And I think that'll make it a
+
+01:15:23.520 --> 01:15:24.640
+little more clear.
+
+01:15:24.640 --> 01:15:26.400
+We'll come back to the constant
+model in a second.
+
+01:15:26.400 --> 01:15:30.150
+And the simple linear regression
+model,
+
+01:15:39.060 --> 01:15:43.560
+various versions of it look like
+this.
+
+01:15:44.000 --> 01:15:48.500
+How many parameters do you think
+it has?
+
+01:15:52.840 --> 01:15:55.280
+How many parameters do you think
+the simple linear regression
+
+01:15:55.280 --> 01:15:57.920
+model has? Yes, and remind us of
+your name.
+
+01:15:57.920 --> 01:15:58.320
+Oh,
+
+01:15:58.320 --> 01:15:58.720
+sorry.
+
+01:15:58.720 --> 01:15:59.080
+Yeah,
+
+01:15:59.080 --> 01:16:00.180
+I'll admit it, but yeah.
+
+01:16:00.180 --> 01:16:01.180
+Sam.
+Sam, yeah.
+
+01:16:01.480 --> 01:16:02.000
+Two.
+
+01:16:02.000 --> 01:16:02.740
+Two.
+
+01:16:02.740 --> 01:16:06.420
+And what are, OK, what are those
+parameters?
+
+01:16:06.420 --> 01:16:08.260
+Slope and the wider set.
+Good.
+
+01:16:08.260 --> 01:16:09.280
+And what was your name?
+
+01:16:09.280 --> 01:16:10.460
+Chinmay.
+Chinmay, awesome.
+
+01:16:11.460 --> 01:16:12.280
+Good.
+
+01:16:12.280 --> 01:16:15.280
+The simple linear regression
+model has two parameters,
+
+01:16:16.360 --> 01:16:20.860
+two things we can tweak about
+the model.
+
+01:16:33.460 --> 01:16:34.660
+The X's,
+
+01:16:34.660 --> 01:16:37.080
+those are the features.
+
+01:16:37.080 --> 01:16:39.960
+Orange is a bad color for that.
+
+01:16:39.960 --> 01:16:43.710
+I'll just use blue here.
+
+01:16:48.720 --> 01:16:52.280
+So remember, before I said the
+X's represent the commute,
+
+01:16:52.280 --> 01:16:55.260
+sorry, the departure times, and
+the y's represent the commute
+
+01:16:55.260 --> 01:16:56.100
+times.
+
+01:16:56.100 --> 01:16:58.380
+So xi, you should think of that
+as like 8.30
+
+01:16:58.380 --> 01:17:00.630
+AM or 9.45
+AM.
+
+01:17:01.400 --> 01:17:05.900
+The parameters are what we are
+using
+
+01:17:06.280 --> 01:17:08.440
+to help us make the prediction.
+
+01:17:08.440 --> 01:17:11.180
+And in this case, what we do is
+we take the intercept parameter,
+
+01:17:11.180 --> 01:17:12.180
+w0,
+
+01:17:12.280 --> 01:17:16.380
+add that to the slope parameter
+multiplied by the feature.
+
+01:17:16.380 --> 01:17:17.960
+So is that distinction clear?
+
+01:17:17.960 --> 01:17:18.300
+OK,
+
+01:17:18.300 --> 01:17:20.560
+good question, because that's an
+important thing to clarify.
+
+01:17:20.560 --> 01:17:23.620
+So the parameters are these w's
+that we about the model,
+
+01:17:23.620 --> 01:17:27.560
+the X's are the input
+information that we have from
+
+01:17:27.560 --> 01:17:28.980
+raw data.
+
+01:17:28.980 --> 01:17:30.960
+Are we clear on the difference
+between a parameter and a
+
+01:17:30.960 --> 01:17:31.960
+feature?
+
+01:17:32.040 --> 01:17:34.780
+And we will cover this again on
+Thursday because I want to make
+
+01:17:34.780 --> 01:17:37.340
+sure the notation is clear.
+
+01:17:37.340 --> 01:17:40.280
+Now this definition of a
+parameter is the same as the
+
+01:17:40.280 --> 01:17:43.560
+definition of a parameter you
+hear about in large language
+
+01:17:43.560 --> 01:17:44.460
+models.
+
+01:17:44.460 --> 01:17:46.860
+But this model just has two
+parameters.
+
+01:17:46.860 --> 01:17:49.960
+The latest, Chachipiti and
+Clods, have hundreds of billions
+
+01:17:49.960 --> 01:17:51.460
+of parameters.
+
+01:17:52.780 --> 01:17:58.020
+And so they can perform more
+sophisticated calculations and
+
+01:17:58.020 --> 01:18:01.820
+be used to predict more
+complicated things than just the
+
+01:18:01.820 --> 01:18:03.120
+commute time tomorrow.
+
+01:18:03.120 --> 01:18:05.100
+But it's the same essence.
+
+01:18:05.100 --> 01:18:08.800
+And to train those models, all
+they are doing is figuring out
+
+01:18:08.800 --> 01:18:11.820
+what the best w's to use are.
+It's the same principle that we
+
+01:18:11.820 --> 01:18:14.070
+are using here.
+
+01:18:14.160 --> 01:18:15.160
+OK?
+
+01:18:16.300 --> 01:18:19.060
+Here, for the simple linear
+regression model,
+
+01:18:19.060 --> 01:18:22.220
+I've shown three different sets
+of parameters.
+
+01:18:22.220 --> 01:18:25.460
+In the first I used an intercept
+of 160 and a slope of negative
+
+01:18:25.460 --> 01:18:26.260
+10,
+
+01:18:26.260 --> 01:18:29.820
+then I used an intercept of 20
+and a slope of 5, and in the
+
+01:18:29.820 --> 01:18:34.020
+third I used an intercept of 100
+and a slope of negative 3.
+
+01:18:34.020 --> 01:18:37.120
+And we see that some of these
+choices are better than others.
+
+01:18:37.120 --> 01:18:39.820
+The first combination of
+intercept and slope seems to be
+
+01:18:39.820 --> 01:18:40.780
+the best.
+
+01:18:40.780 --> 01:18:43.720
+The middle one seems to make no
+sense at all.
+
+01:18:43.720 --> 01:18:47.480
+And the last one seems to be OK,
+but worse than the first.
+
+01:18:47.480 --> 01:18:48.980
+We agree?
+
+01:18:49.040 --> 01:18:50.500
+OK, so the question is,
+
+01:18:50.500 --> 01:18:55.000
+what is the optimal or best
+combination of parameters?
+
+01:19:08.940 --> 01:19:13.440
+It's the same question that I
+posed with the constant model.
+
+01:19:13.980 --> 01:19:17.540
+We have the model drawn for
+three different choices of the
+
+01:19:17.540 --> 01:19:18.620
+one parameter,
+
+01:19:18.620 --> 01:19:19.620
+W.
+
+01:19:21.620 --> 01:19:24.420
+For the are you drawing this
+flat line,
+
+01:19:24.420 --> 01:19:26.460
+right? The constant model
+doesn't have a slope.
+
+01:19:26.460 --> 01:19:28.420
+So the question is,
+
+01:19:28.420 --> 01:19:32.920
+what is the best w?
+
+01:19:35.220 --> 01:19:37.340
+Now, do you have some guesses?
+In the context of the constant
+
+01:19:37.340 --> 01:19:38.340
+model,
+
+01:19:38.980 --> 01:19:42.680
+do you have guesses for what the
+best w could be?
+
+01:19:42.680 --> 01:19:44.320
+The best constant to predict?
+
+01:19:44.320 --> 01:19:45.600
+Yes, and remind us of your name?
+
+01:19:45.600 --> 01:19:46.140
+Caitlin.
+
+01:19:46.140 --> 01:19:48.980
+Caitlin.
+Is it like where you're the
+
+01:19:48.980 --> 01:19:52.880
+closest to most amount data
+points you know? Yeah, it feels
+
+01:19:52.880 --> 01:19:56.260
+like the best W would be one
+that seems to be like in the
+
+01:19:56.260 --> 01:19:57.940
+middle of the data somehow
+
+01:19:57.940 --> 01:20:00.480
+But there are lots of ways we
+could formulate that like do we
+
+01:20:00.480 --> 01:20:02.260
+mean the median of the data?
+
+01:20:02.260 --> 01:20:04.840
+Do we mean halfway between the
+min and the max?
+
+01:20:04.840 --> 01:20:06.500
+Do we mean the average?
+
+01:20:06.500 --> 01:20:08.400
+Do we mean the 60th percentile?
+
+01:20:08.400 --> 01:20:10.880
+Those are all possible answers.
+And so what we're gonna do when
+
+01:20:10.880 --> 01:20:14.680
+we come back on Thursday is come
+up with a way of measuring
+
+01:20:14.680 --> 01:20:18.580
+Which of those candidate choices
+of W is the one best one?
+
+01:20:19.120 --> 01:20:21.380
+Okay, and so when you go to lab
+tomorrow, you're going to review
+
+01:20:21.380 --> 01:20:23.200
+some of the core ideas
+
+01:20:23.200 --> 01:20:26.300
+in calculus that we need to
+answer that question because it
+
+01:20:26.300 --> 01:20:28.860
+is a calculus question.
+
+01:20:28.860 --> 01:20:30.320
+Okay, that's it.
+
+01:20:30.320 --> 01:20:32.540
+Like I said, these iPad notes
+will be posted on the website
+
+01:20:32.540 --> 01:20:34.400
+after class and so will the
+recording.
+
+01:20:34.400 --> 01:20:35.720
+And I have office hours after
+this.
+
+01:20:35.720 --> 01:20:38.540
+I will always have office hours
+after lecture in my office,
+
+01:20:38.540 --> 01:20:41.140
+which is on the fourth floor of
+the BBB building.
+
+01:20:41.140 --> 01:20:43.460
+And you can just come by and say
+hi, and if there are enough of
+
+01:20:43.460 --> 01:20:49.460
+us, we can just go Go to the
+patio and chill for a bit.
+
+01:21:03.860 --> 01:21:05.360
+I'm senior.
+
+01:21:05.420 --> 01:21:06.300
+I'm junior.
+
+01:21:06.300 --> 01:21:06.700
+Junior.
+
+01:21:06.700 --> 01:21:07.680
+What's your name?
+
+01:21:07.680 --> 01:21:09.700
+I just know for a lot of
+festivals.
+
+01:21:09.700 --> 01:21:11.580
+Although, I'm lucky.
+I'm not gonna be at May's best
+
+01:21:11.580 --> 01:21:14.000
+festival though because human
+festivals aren't at the same
+
+01:21:14.000 --> 01:21:15.000
+time.
+
+01:21:23.960 --> 01:21:29.100
+Good to see you again.
+
+01:21:33.620 --> 01:21:35.500
+We'll review it all.
+
+01:21:35.500 --> 01:21:38.380
+Review it all in the course
+notes tab so we can review it as
+
+01:21:38.380 --> 01:21:39.380
+well.
+
+01:21:42.220 --> 01:21:43.800
+We have one lecture,
+
+01:21:43.800 --> 01:21:46.400
+so I mean, it seems fun.
+
+01:21:46.400 --> 01:21:47.120
+That's all for you.
+
+01:21:47.120 --> 01:21:48.580
+If you submit it, I'll help you
+out.
+
+01:21:48.580 --> 01:21:50.000
+Thank you.
+Yeah, no worries.
+
+01:21:50.000 --> 01:21:53.000
+It's like this stuff.
+
+01:21:53.340 --> 01:21:57.100
+OK, I'm sitting in the middle of
+class.
+
+01:21:57.100 --> 01:21:59.560
+I'm kind of like in the middle,
+
+01:21:59.560 --> 01:22:01.300
+so I toward in.
+
+01:22:01.300 --> 01:22:02.380
+Are you excited?
+
+01:22:02.380 --> 01:22:03.760
+Yeah, I'd say so.
+
+01:22:03.760 --> 01:22:05.360
+It's the most excited member of
+the class.
+
+01:22:05.360 --> 01:22:07.740
+I don't know if they're funny or
+not.
+
+01:22:07.740 --> 01:22:13.740
+But your name and your U of M,
+you know?
+
+01:22:16.000 --> 01:22:17.540
+I think that's useful,
+
+01:22:17.540 --> 01:22:19.680
+but you don't have to write down
+every single thing I say because
+
+01:22:19.680 --> 01:22:21.440
+it's all posted anyway.
+It's just like write down the
+
+01:22:21.440 --> 01:22:25.940
+key things you think you'll need
+to remember in the discussion.
+
+01:22:27.960 --> 01:22:29.460
+Take care of you as well.
+I don't know,
+
+01:22:29.460 --> 01:22:31.260
+it just fell out of the box.
+
+01:22:31.260 --> 01:22:33.060
+Oh, I have a question for you.
+
+01:22:33.060 --> 01:22:33.360
+Um,
+
+01:22:33.360 --> 01:22:38.600
+the homework one is kind of...
+Will the topics covered be about
+
+01:22:38.600 --> 01:22:41.720
+that was meant to be learned or
+will it be the previous one? It
+
+01:22:41.720 --> 01:22:43.300
+will usually be about the
+previous one.
+
+01:22:43.300 --> 01:22:43.660
+So,
+
+01:22:43.660 --> 01:22:45.040
+the homework one
+
+01:22:45.040 --> 01:22:47.840
+is more just about prereq stuff.
+
+01:22:47.840 --> 01:22:48.220
+Uh,
+
+01:22:48.220 --> 01:22:50.560
+homework two will be the first
+homework that's about to step
+
+01:22:50.560 --> 01:22:51.300
+up.
+
+01:22:51.300 --> 01:22:51.980
+Thank you.
+
+01:22:51.980 --> 01:22:55.120
+Thank you.
+Is that the score?
+
+01:22:56.100 --> 01:22:59.140
+No, I also assume that everybody
+I meet in these classes are
+
+01:22:59.140 --> 01:23:00.640
+going to be computer science,
+
+01:23:00.640 --> 01:23:01.560
+too.
+
+01:23:01.560 --> 01:23:02.560
+No,
+
+01:23:05.680 --> 01:23:10.180
+I want to do user experience
+design.
+
+01:23:10.380 --> 01:23:13.880
+But I was already cockside, I'm
+too late to apply for this full
+
+01:23:13.880 --> 01:23:14.880
+configuration,
+
+01:23:14.980 --> 01:23:16.900
+so I'm going to minor in it.
+
+01:23:16.900 --> 01:23:20.650
+I'm also minoring in AI.
+
+01:23:27.820 --> 01:23:31.040
+It counts as one of them.
+
+01:23:31.040 --> 01:23:33.200
+292 can also be one of them.
+
+01:23:33.200 --> 01:23:35.560
+You need to take 281.
+
+01:23:35.560 --> 01:23:39.280
+And then there's one elective.
+You have choice between eight
+
+01:23:39.280 --> 01:23:40.280
+classes,
+
+01:23:40.360 --> 01:23:42.610
+eight each classes.
+
+01:23:43.660 --> 01:23:46.240
+Not bad.
+It's literally two extra classes
+
+01:23:46.240 --> 01:23:47.720
+for me.
+
+01:23:47.720 --> 01:23:51.360
+So I can't double count 492,
+because it's actually a major
+
+01:23:51.360 --> 01:23:52.780
+requirement for me.
+
+01:23:52.780 --> 01:23:57.980
+because well there are a few
+different tracks so yeah okay
+
+01:23:57.980 --> 01:24:02.480
+that's what I thought but I
+wanted to
+
+01:24:22.360 --> 01:24:24.100
+Nice to meet you.
+Nice to meet you too.
+
+01:24:24.100 --> 01:24:24.780
+You guys?
+
+01:24:24.780 --> 01:24:25.240
+No.
+
+01:24:25.240 --> 01:24:25.920
+Perfect.
+
+01:24:25.920 --> 01:24:26.920
+Yes.
+
+01:24:28.160 --> 01:24:29.860
+Nice to meet you.
+Nice to meet you.
+
+01:24:29.860 --> 01:24:30.680
+Okay.
+
+01:24:30.680 --> 01:24:32.930
+Have a seat.
+
+01:24:43.260 --> 01:24:44.260
+Hi,
+
+01:24:49.020 --> 01:24:50.380
+there.
+You got a spotlight for me.
+
+01:24:52.360 --> 01:24:55.800
+Thank you.

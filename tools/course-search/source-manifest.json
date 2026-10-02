@@ -1,18 +1,175 @@
 {
   "metadata": {
-    "builtAt": "2026-10-02T01:51:16.405404+00:00",
+    "builtAt": "2026-10-02T16:52:02.781655+00:00",
     "releaseMetadata": "first addition in committed public repository history",
     "commits": {
       "notes": "2216691027c06eb8ec79db3f7398d70ba8f58d13",
-      "website": "3b403bff393f2b7b56160bb4173c2b7d237234c5",
+      "website": "fce8707f2925e8e182f4eadaf5d43ea1d260bb76",
       "exams": "359ec59ad7caecc1713abdcb74007c2e755c54e7"
     },
-    "documents": 75,
-    "records": 2238,
+    "documents": 85,
+    "records": 4683,
     "ocrPages": 186,
+    "recordings": {
+      "published": 10,
+      "available": 10,
+      "recordings": [
+        {
+          "recordingId": "2iFFo0",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/2iFFo0",
+          "title": "Lecture 1 \u00b7 Introduction",
+          "lectureDate": "2026-09-01",
+          "releaseAt": "2026-09-01T12:39:40-04:00",
+          "schedulePath": "_modules/week-01.md",
+          "scheduleSha256": "6a18175c7e9f1e6b851db686e09b939e26455a45483eb38360256a7d2cc76a7d",
+          "status": "available",
+          "reason": "",
+          "cues": 1748,
+          "passages": 236,
+          "firstCaptionAt": 0.0,
+          "lastCaptionAt": 5095.8
+        },
+        {
+          "recordingId": "ucCtbs",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/ucCtbs",
+          "title": "Lecture 2 \u00b7 Models and Loss Functions",
+          "lectureDate": "2026-09-03",
+          "releaseAt": "2026-09-03T12:55:19-04:00",
+          "schedulePath": "_modules/week-01.md",
+          "scheduleSha256": "6a18175c7e9f1e6b851db686e09b939e26455a45483eb38360256a7d2cc76a7d",
+          "status": "available",
+          "reason": "",
+          "cues": 1550,
+          "passages": 236,
+          "firstCaptionAt": 0.0,
+          "lastCaptionAt": 5094.73
+        },
+        {
+          "recordingId": "LjkRDo",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/LjkRDo",
+          "title": "Lecture 3 \u00b7 Empirical Risk and Simple Linear Regression",
+          "lectureDate": "2026-09-08",
+          "releaseAt": "2026-09-08T12:42:59-04:00",
+          "schedulePath": "_modules/week-02.md",
+          "scheduleSha256": "e7abd5bee8db005713028828b8d2b448a3b25c3e4765e9536fe87d35521d71f5",
+          "status": "available",
+          "reason": "",
+          "cues": 1476,
+          "passages": 248,
+          "firstCaptionAt": 0.0,
+          "lastCaptionAt": 5099.98
+        },
+        {
+          "recordingId": "4HnruF",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/4HnruF",
+          "title": "Lecture 4 \u00b7 Simple Linear Regression",
+          "lectureDate": "2026-09-10",
+          "releaseAt": "2026-09-10T13:55:46-04:00",
+          "schedulePath": "_modules/week-02.md",
+          "scheduleSha256": "e7abd5bee8db005713028828b8d2b448a3b25c3e4765e9536fe87d35521d71f5",
+          "status": "available",
+          "reason": "",
+          "cues": 1602,
+          "passages": 223,
+          "firstCaptionAt": 0.0,
+          "lastCaptionAt": 5101.06
+        },
+        {
+          "recordingId": "LjgJEj",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/LjgJEj",
+          "title": "Lecture 5 \u00b7 Correlation; Introduction to Vectors",
+          "lectureDate": "2026-09-15",
+          "releaseAt": "2026-09-15T12:46:59-04:00",
+          "schedulePath": "_modules/week-03.md",
+          "scheduleSha256": "fde3361faba7c64217a88bf077d4f088292cdcf402883e78281ec53977e85533",
+          "status": "available",
+          "reason": "",
+          "cues": 1626,
+          "passages": 243,
+          "firstCaptionAt": 5.26,
+          "lastCaptionAt": 5101.69
+        },
+        {
+          "recordingId": "pxmGkJ",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/pxmGkJ",
+          "title": "Lecture 6 \u00b7 Linear Combinations and the Dot Product",
+          "lectureDate": "2026-09-17",
+          "releaseAt": "2026-09-17T12:46:56-04:00",
+          "schedulePath": "_modules/week-03.md",
+          "scheduleSha256": "fde3361faba7c64217a88bf077d4f088292cdcf402883e78281ec53977e85533",
+          "status": "available",
+          "reason": "",
+          "cues": 1544,
+          "passages": 254,
+          "firstCaptionAt": 2.58,
+          "lastCaptionAt": 5098.33
+        },
+        {
+          "recordingId": "iTspdc",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/iTspdc",
+          "title": "Lecture 7 \u00b7 Projections",
+          "lectureDate": "2026-09-22",
+          "releaseAt": "2026-09-22T12:56:41-04:00",
+          "schedulePath": "_modules/week-04.md",
+          "scheduleSha256": "7e2ca1a7e6817616f284cc604d2f727a45397b1a9c65b7146da906eb21e1feda",
+          "status": "available",
+          "reason": "",
+          "cues": 1576,
+          "passages": 257,
+          "firstCaptionAt": 3.06,
+          "lastCaptionAt": 5086.39
+        },
+        {
+          "recordingId": "GmG377",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/GmG377",
+          "title": "Lecture 8 \u00b7 Span",
+          "lectureDate": "2026-09-24",
+          "releaseAt": "2026-09-24T12:41:53-04:00",
+          "schedulePath": "_modules/week-04.md",
+          "scheduleSha256": "7e2ca1a7e6817616f284cc604d2f727a45397b1a9c65b7146da906eb21e1feda",
+          "status": "available",
+          "reason": "",
+          "cues": 1551,
+          "passages": 252,
+          "firstCaptionAt": 5.78,
+          "lastCaptionAt": 5078.07
+        },
+        {
+          "recordingId": "aXwfnZ",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/aXwfnZ",
+          "title": "Lecture 9 \u00b7 Planes and Linear Independence",
+          "lectureDate": "2026-09-29",
+          "releaseAt": "2026-09-29T12:56:06-04:00",
+          "schedulePath": "_modules/week-05.md",
+          "scheduleSha256": "9b0a3d20c4fe31b25c16a4fcc4447f8d0a77f5fdb2e85b420bbb7e3708523416",
+          "status": "available",
+          "reason": "",
+          "cues": 1671,
+          "passages": 253,
+          "firstCaptionAt": 0.68,
+          "lastCaptionAt": 5100.5
+        },
+        {
+          "recordingId": "M56qPQ",
+          "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/M56qPQ",
+          "title": "Lecture 10 \u00b7 Subspaces",
+          "lectureDate": "2026-10-01",
+          "releaseAt": "2026-10-01T12:33:19-04:00",
+          "schedulePath": "_modules/week-05.md",
+          "scheduleSha256": "9b0a3d20c4fe31b25c16a4fcc4447f8d0a77f5fdb2e85b420bbb7e3708523416",
+          "status": "available",
+          "reason": "",
+          "cues": 1626,
+          "passages": 243,
+          "firstCaptionAt": 0.0,
+          "lastCaptionAt": 5095.97
+        }
+      ]
+    },
     "categories": {
       "Notes": 1369,
       "Lecture PDFs": 195,
+      "Lecture recordings": 2445,
       "Homeworks": 144,
       "Labs": 138,
       "Past exams": 392
@@ -306,55 +463,55 @@
       "repo": "website",
       "path": "resources/homeworks/hw01/index.md",
       "sha256": "2c46503805325c8203708a550388d17717f6b400f9fb4e15caddf55b287e0388",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-05-06T19:38:59-04:00"
     },
     {
       "repo": "website",
       "path": "resources/homeworks/hw02/index.md",
       "sha256": "b1d6ba8955134ea104716220ab9e276a72dfcc23c8a705b298405cd292a707bc",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-05-06T19:22:36-04:00"
     },
     {
       "repo": "website",
       "path": "resources/homeworks/hw03/index.md",
       "sha256": "f31db2cabb3f257a42a1952a65b7eed72f1bcfa973fb5b5754d822f47af89b28",
-      "releaseAt": "2026-09-18T14:59:00-04:00"
+      "releaseAt": "2026-05-08T00:46:45-04:00"
     },
     {
       "repo": "website",
       "path": "resources/homeworks/hw04/index.md",
       "sha256": "fe82c81e61e3c3b820605896c73a6c0d574ea807b5337f9e6100a7d12268e99d",
-      "releaseAt": "2026-09-25T12:31:53-04:00"
+      "releaseAt": "2026-05-16T11:59:18-04:00"
     },
     {
       "repo": "website",
       "path": "resources/labs/lab01/index.md",
       "sha256": "bc6f5747deff16c2f6c80673195985cb544f4ab0d0e95ef5e9d929d7bfb5c9d0",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-05-06T19:38:59-04:00"
     },
     {
       "repo": "website",
       "path": "resources/labs/lab02/index.md",
       "sha256": "ab400e2347090f3d518527098e2dc1f001ee0de993948e57da34ababc14b566b",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-05-07T00:15:24-04:00"
     },
     {
       "repo": "website",
       "path": "resources/labs/lab03/index.md",
       "sha256": "d3ff984fa897e14986e88f683d0589b5e5a6ceeeb5bf4fb8154c80cb7a1dbd43",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-05-07T00:15:24-04:00"
     },
     {
       "repo": "website",
       "path": "resources/labs/lab04/index.md",
       "sha256": "fa594bc5754e88da926b0e396b5b801406955abe0b357e556046347315215ca0",
-      "releaseAt": "2026-09-22T22:38:47-04:00"
+      "releaseAt": "2026-05-16T11:59:18-04:00"
     },
     {
       "repo": "website",
       "path": "resources/labs/lab05/index.md",
       "sha256": "c45b8bf71a2cdfaa3f9effaa20667488b88f8d0b5d3989172c64f2ce42202e5f",
-      "releaseAt": "2026-09-25T15:27:21-04:00"
+      "releaseAt": "2026-05-16T11:59:18-04:00"
     },
     {
       "repo": "exams",
@@ -1392,61 +1549,181 @@
       "repo": "website",
       "path": "resources/lecture-pdfs/lec01-filled.pdf",
       "sha256": "0ea95363d1c15155a3ab2a35b406ba9d8ae80041c6d08c0feee52f9cf60e5d77",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-01-07T13:20:55-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec02-filled.pdf",
       "sha256": "e063cb5af060e4192e3f090b788121926c7d8ec9b0bce219e98955820622e878",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-01-12T13:21:34-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec03-filled.pdf",
       "sha256": "19ce44a78bdea2ea39c51f690c02e460453b653089b6342f80139ad23ba9d261",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-01-14T13:22:00-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec04-filled.pdf",
       "sha256": "1f51d170b2d6835d9a72f0425a88b823e024f8b4dd34236b9efe0431d173b331",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-01-02T21:53:25-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec05-filled.pdf",
       "sha256": "7897f4202ad778a3e4fd7554c736b42af0ff747a1dbfa3408b47d66d58af8992",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-01-26T13:22:05-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec06-filled.pdf",
       "sha256": "7c84046d2bffd3b4bc92cee6bb98ec7bdca1ee653c3f499a656bf3094034dd5d",
-      "releaseAt": "2026-09-17T21:21:50-04:00"
+      "releaseAt": "2026-01-28T13:22:03-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec07-filled.pdf",
       "sha256": "834c95115019f168f8d653de1f4506488216987b9a6d79068f44181f7f9d179d",
-      "releaseAt": "2026-09-22T11:52:52-04:00"
+      "releaseAt": "2026-01-02T21:44:37-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec08-filled.pdf",
       "sha256": "a6e50ee6781f90fb789a0ea2cf7bb5bdd0739b7b8c640e1df55c386f6ef5da8a",
-      "releaseAt": "2026-09-24T11:52:28-04:00"
+      "releaseAt": "2026-02-04T14:32:06-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec09-filled.pdf",
       "sha256": "4687dd5debe930cc972cfd641961b7bf97f2ab7eca27f97c07dfa85e7ab29a98",
-      "releaseAt": "2026-09-29T11:52:20-04:00"
+      "releaseAt": "2026-01-02T21:36:34-05:00"
     },
     {
       "repo": "website",
       "path": "resources/lecture-pdfs/lec10-filled.pdf",
       "sha256": "d016449752089d25d9045589ca03c755a9932913c5c7cb1ca25096111fac2b20",
-      "releaseAt": "2026-10-01T11:52:34-04:00"
+      "releaseAt": "2026-01-02T20:26:22-05:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/2iFFo0",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/534667",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:15.486501+00:00",
+      "sha256": "24462245a4047dab46cae9ffdd4e69ddf3e62ab5b996de549438e95685301c9b",
+      "path": "tools/course-search/scripts/caption-cache/2iFFo0.vtt",
+      "schedulePath": "_modules/week-01.md",
+      "scheduleSha256": "6a18175c7e9f1e6b851db686e09b939e26455a45483eb38360256a7d2cc76a7d",
+      "releaseAt": "2026-09-01T12:39:40-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/ucCtbs",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/536006",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:14.829804+00:00",
+      "sha256": "fb83f3ef76d356039ba1f8eaea012e14388f880df2ef5641c706b17c75b4f7c6",
+      "path": "tools/course-search/scripts/caption-cache/ucCtbs.vtt",
+      "schedulePath": "_modules/week-01.md",
+      "scheduleSha256": "6a18175c7e9f1e6b851db686e09b939e26455a45483eb38360256a7d2cc76a7d",
+      "releaseAt": "2026-09-03T12:55:19-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/LjkRDo",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/536985",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:16.143198+00:00",
+      "sha256": "41728a4a392db6cce78e622c6e5d47c2d33ba943fe76640b9f738f5716670a7f",
+      "path": "tools/course-search/scripts/caption-cache/LjkRDo.vtt",
+      "schedulePath": "_modules/week-02.md",
+      "scheduleSha256": "e7abd5bee8db005713028828b8d2b448a3b25c3e4765e9536fe87d35521d71f5",
+      "releaseAt": "2026-09-08T12:42:59-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/4HnruF",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/538394",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:16.793451+00:00",
+      "sha256": "3d35ae42eef596b9e7706e73f91f771cafe1e146c42df238d52cc428563ab1a8",
+      "path": "tools/course-search/scripts/caption-cache/4HnruF.vtt",
+      "schedulePath": "_modules/week-02.md",
+      "scheduleSha256": "e7abd5bee8db005713028828b8d2b448a3b25c3e4765e9536fe87d35521d71f5",
+      "releaseAt": "2026-09-10T13:55:46-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/LjgJEj",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/540077",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:17.451018+00:00",
+      "sha256": "4d8dc682b6e805e1f0fba966aa98e189a06cba1cf352c2e60a239eb7f8b934f6",
+      "path": "tools/course-search/scripts/caption-cache/LjgJEj.vtt",
+      "schedulePath": "_modules/week-03.md",
+      "scheduleSha256": "fde3361faba7c64217a88bf077d4f088292cdcf402883e78281ec53977e85533",
+      "releaseAt": "2026-09-15T12:46:59-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/pxmGkJ",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/541527",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:18.108599+00:00",
+      "sha256": "46f401c9e6fc0a25199a04437acea4a995b65eca25c68e7a10911ff7dc934243",
+      "path": "tools/course-search/scripts/caption-cache/pxmGkJ.vtt",
+      "schedulePath": "_modules/week-03.md",
+      "scheduleSha256": "fde3361faba7c64217a88bf077d4f088292cdcf402883e78281ec53977e85533",
+      "releaseAt": "2026-09-17T12:46:56-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/iTspdc",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/543293",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:18.764131+00:00",
+      "sha256": "39547500a8cd3c5e879d7529cccc221dd14e3c25ca78f02a37428a6e1026b96c",
+      "path": "tools/course-search/scripts/caption-cache/iTspdc.vtt",
+      "schedulePath": "_modules/week-04.md",
+      "scheduleSha256": "7e2ca1a7e6817616f284cc604d2f727a45397b1a9c65b7146da906eb21e1feda",
+      "releaseAt": "2026-09-22T12:56:41-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/GmG377",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/544717",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:19.421564+00:00",
+      "sha256": "696bbea83efd320634d6c090ce4cc62a4986c5240e989f898709a3c152e08378",
+      "path": "tools/course-search/scripts/caption-cache/GmG377.vtt",
+      "schedulePath": "_modules/week-04.md",
+      "scheduleSha256": "7e2ca1a7e6817616f284cc604d2f727a45397b1a9c65b7146da906eb21e1feda",
+      "releaseAt": "2026-09-24T12:41:53-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/aXwfnZ",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/546404",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:20.077519+00:00",
+      "sha256": "6ac21fec344a72655824c7b91ade7009fa4ac5efe207b6db70491c550ffdc174",
+      "path": "tools/course-search/scripts/caption-cache/aXwfnZ.vtt",
+      "schedulePath": "_modules/week-05.md",
+      "scheduleSha256": "9b0a3d20c4fe31b25c16a4fcc4447f8d0a77f5fdb2e85b420bbb7e3708523416",
+      "releaseAt": "2026-09-29T12:56:06-04:00"
+    },
+    {
+      "status": "available",
+      "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/M56qPQ",
+      "sourceUrl": "https://leccap.engin.umich.edu/leccap/manage/recording/captions/i5bxzrl4yfn5ax843mh/547795",
+      "method": "Authorized Chrome instructor Captions page: original Whisper WebVTT textarea export",
+      "importedAt": "2026-10-02T16:51:20.735468+00:00",
+      "sha256": "524953d8c6c78a2bd66ca80dd1c370fbaacc1e302ad5dc24086d93e74244546c",
+      "path": "tools/course-search/scripts/caption-cache/M56qPQ.vtt",
+      "schedulePath": "_modules/week-05.md",
+      "scheduleSha256": "9b0a3d20c4fe31b25c16a4fcc4447f8d0a77f5fdb2e85b420bbb7e3708523416",
+      "releaseAt": "2026-10-01T12:33:19-04:00"
     }
   ]
 }

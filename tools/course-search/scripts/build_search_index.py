@@ -1,4 +1,5 @@
 """Index committed public course sources only; never traverse the private repo."""
+from recordings import collect
 from pathlib import Path
 import json,re,html,subprocess,hashlib,datetime,os
 ROOT=Path(os.environ.get('EECS245_SOURCES','/Users/surajrampure/Desktop/245'))
@@ -109,7 +110,11 @@ for path,title in lectures.items():
  pages=json.loads(cache.read_text())['pages']
  for page in pages:
   ocrpages+=page['ocr'];add('Lecture PDFs',title,'Page '+str(page['page']),page['text'],url+'#page='+str(page['page']),date,detail='OCR · check original PDF' if page['ocr'] else 'PDF text')
-metadata={'builtAt':now.isoformat(),'releaseMetadata':'first addition in committed public repository history','commits':{name:git(examrepo if name=='exams' else ROOT/name,'rev-parse','HEAD').decode().strip() for name in ['notes','website','exams']},'documents':len({r['url'].split('#')[0] for r in records}),'records':len(records),'ocrPages':ocrpages,'categories':{cat:sum(r['category']==cat for r in records) for cat in ['Notes','Lecture PDFs','Homeworks','Labs','Past exams']},'errors':errors}
+recordings,recording_coverage,caption_sources=collect(ROOT/'website',now)
+for record in recordings:
+ record['id']=str(len(records));records.append(record)
+sources.extend(caption_sources)
+metadata={'builtAt':now.isoformat(),'releaseMetadata':'first addition in committed public repository history','commits':{name:git(examrepo if name=='exams' else ROOT/name,'rev-parse','HEAD').decode().strip() for name in ['notes','website','exams']},'documents':len({r.get('recordingUrl',r['url'].split('#')[0]) for r in records}),'records':len(records),'ocrPages':ocrpages,'recordings':recording_coverage,'categories':{cat:sum(r['category']==cat for r in records) for cat in ['Notes','Lecture PDFs','Lecture recordings','Homeworks','Labs','Past exams']},'errors':errors}
 (OUT/'search-index.json').write_text(json.dumps({'records':records,'metadata':metadata},ensure_ascii=False))
 (OUT/'source-manifest.json').write_text(json.dumps({'metadata':metadata,'sources':sources},indent=2))
 print(json.dumps(metadata,indent=2))

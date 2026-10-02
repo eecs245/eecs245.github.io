@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node static-server.mjs",
-    "test": "node --test test/*.test.mjs",
+    "test": "node --test test/*.test.mjs && python3 -m unittest discover -s test -p \"test_*.py\"",
     "build": "node scripts/build.mjs",
     "embed": "node scripts/embed.mjs"
   },
@@ -17,5 +17,8 @@
   },
   "overrides": {
     "sharp": "0.35.4"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.12"
   }
 }

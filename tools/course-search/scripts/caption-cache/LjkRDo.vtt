@@ -1,0 +1,5309 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+I guess you're real.
+
+00:00:36.280 --> 00:00:39.800
+All right, it's 1030 so we'll
+get started.
+
+00:00:39.800 --> 00:00:43.260
+Hope everyone enjoyed the long
+weekend.
+
+00:00:43.260 --> 00:00:45.240
+Announcements as far as our
+class goes,
+
+00:00:45.240 --> 00:00:45.780
+one,
+
+00:00:45.780 --> 00:00:49.040
+homework one is due on Friday
+including the welcome survey.
+
+00:00:49.040 --> 00:00:51.460
+Try and fill out the welcome
+survey sooner than that.
+
+00:00:51.460 --> 00:00:54.600
+I've been reaching out to some
+of the other instructors that
+
+00:00:54.600 --> 00:00:57.120
+people have said they have
+midterm conflicts with and like
+
+00:00:57.120 --> 00:01:00.720
+the sooner you let us know about
+that stuff the better.
+
+00:01:00.720 --> 00:01:04.560
+Office hours are usually after
+lecture including today and if
+
+00:01:04.560 --> 00:01:06.800
+you take a look at the schedule
+you'll see that I've added a few
+
+00:01:06.800 --> 00:01:09.720
+remote office hours throughout
+the week I've just so you can
+
+00:01:09.720 --> 00:01:12.940
+check in with me if you need to
+and aren't able to come to any
+
+00:01:12.940 --> 00:01:15.000
+of the others but keep checking
+the schedule because we will
+
+00:01:15.000 --> 00:01:18.020
+tweak the office hours schedule
+week to week and then finally
+
+00:01:18.020 --> 00:01:21.000
+lab 2 is tomorrow and remember
+attendance is part of your
+
+00:01:21.000 --> 00:01:22.000
+grade.
+
+00:01:22.120 --> 00:01:24.460
+Speaking of attendance and you
+know lecture attendance is part
+
+00:01:24.460 --> 00:01:26.280
+of your grade as well.
+
+00:01:26.280 --> 00:01:31.400
+Sometime next week, I will give
+you this portal where you can go
+
+00:01:31.400 --> 00:01:34.400
+and check your attendance for
+all of the lectures and labs.
+
+00:01:34.400 --> 00:01:37.520
+And that's where we will also
+show you your grades on things
+
+00:01:37.520 --> 00:01:39.760
+like homeworks and eventually
+exams as well.
+
+00:01:39.760 --> 00:01:42.280
+So that's coming in just a
+little bit.
+
+00:01:42.280 --> 00:01:45.980
+The plan for today is to start
+by recapping the big idea we
+
+00:01:45.980 --> 00:01:47.800
+finished Thursday's lecture
+with,
+
+00:01:47.800 --> 00:01:50.880
+that of the modeling recipe.
+We will make sure we understand
+
+00:01:50.880 --> 00:01:53.960
+what that was all about.
+We will formally introduce this
+
+00:01:53.960 --> 00:01:57.710
+term empirical risk, which we've
+briefly mentioned already.
+
+00:01:58.080 --> 00:02:01.500
+And then spend a little bit of
+time thinking about how
+
+00:02:01.500 --> 00:02:05.260
+everything we did last week
+would have changed if we instead
+
+00:02:05.260 --> 00:02:09.460
+of using squared loss, which was
+the loss function we chose,
+
+00:02:09.460 --> 00:02:13.020
+used other loss functions like
+absolute loss or something you
+
+00:02:13.020 --> 00:02:14.680
+will see in lab tomorrow,
+
+00:02:14.680 --> 00:02:18.080
+zero one loss or infinity loss.
+Like, these are all possible
+
+00:02:18.080 --> 00:02:20.920
+loss functions one could use,
+and they have different effects
+
+00:02:20.920 --> 00:02:23.420
+on the resulting predictions.
+
+00:02:23.420 --> 00:02:26.800
+And then, with maybe five or 10
+minutes at the very end, we will
+
+00:02:26.800 --> 00:02:30.660
+briefly introduce the idea of
+the simple linear regression
+
+00:02:30.660 --> 00:02:31.660
+model.
+
+00:02:32.040 --> 00:02:34.520
+And you will play around with
+that more in lab tomorrow.
+
+00:02:34.520 --> 00:02:37.640
+And then Thursday's lecture will
+be all about that.
+
+00:02:37.640 --> 00:02:40.000
+OK, any logistical questions
+with where we are in the class
+
+00:02:40.000 --> 00:02:41.500
+right now?
+
+00:02:44.040 --> 00:02:45.540
+All good?
+
+00:02:46.120 --> 00:02:47.120
+OK,
+
+00:02:47.440 --> 00:02:53.440
+so what was the point of both of
+our lectures
+
+00:02:53.440 --> 00:02:56.960
+last week? What were we building
+towards?
+
+00:02:56.960 --> 00:03:00.200
+What were we trying to do?
+
+00:03:00.200 --> 00:03:02.400
+In our lectures last week,
+
+00:03:02.400 --> 00:03:04.940
+what were we trying to do, and
+what does this graph have to do
+
+00:03:04.940 --> 00:03:05.700
+with it?
+
+00:03:05.700 --> 00:03:06.360
+Yes,
+
+00:03:06.360 --> 00:03:07.360
+Allison.
+
+00:03:08.620 --> 00:03:13.820
+Last lecture specifically, we
+were trying to find the best
+
+00:03:13.820 --> 00:03:17.260
+place to put our pasta.
+
+00:03:17.260 --> 00:03:20.000
+Exactly.
+That was our sole focus of last
+
+00:03:20.000 --> 00:03:21.000
+lecture.
+
+00:03:25.220 --> 00:03:30.100
+Where is the best
+
+00:03:30.100 --> 00:03:35.680
+place to
+
+00:03:35.680 --> 00:03:40.860
+place this flat line
+
+00:03:40.860 --> 00:03:45.560
+for predicting commute
+
+00:03:45.560 --> 00:03:47.160
+time.
+
+00:03:52.100 --> 00:03:56.300
+Remember the whole idea here was
+that we've collected this data
+
+00:03:56.300 --> 00:04:01.660
+set of on the x-axis the time we
+left in the morning for work and
+
+00:04:01.660 --> 00:04:05.700
+on the y-axis how long it
+actually took to get to work in
+
+00:04:05.700 --> 00:04:09.640
+minutes as a function of the
+time we left and the goal was to
+
+00:04:09.640 --> 00:04:12.720
+build a function called the
+hypothesis function that allows
+
+00:04:12.720 --> 00:04:15.540
+us to predict how long it's
+going to take for us to get to
+
+00:04:15.540 --> 00:04:17.420
+work tomorrow or some other day,
+
+00:04:17.420 --> 00:04:21.360
+depending on the time we leave
+in the morning.
+
+00:04:21.360 --> 00:04:24.220
+And the first model we chose,
+the constant model,
+
+00:04:24.220 --> 00:04:27.300
+said it wasn't even going to use
+the time we left in the morning.
+
+00:04:27.300 --> 00:04:29.600
+It was just going to predict the
+same constant.
+
+00:04:29.600 --> 00:04:31.660
+I can see here, I kind of didn't
+do the best job of drawing a
+
+00:04:31.660 --> 00:04:33.910
+totally flat line.
+
+00:04:37.120 --> 00:04:38.620
+That's better.
+
+00:04:38.960 --> 00:04:41.880
+the constant model says we're
+not going to use the time we
+
+00:04:41.880 --> 00:04:44.400
+leave in the morning at all,
+we're just going to make the
+
+00:04:44.400 --> 00:04:47.580
+same prediction regardless of
+the time we leave in the
+
+00:04:47.580 --> 00:04:48.060
+morning.
+
+00:04:48.060 --> 00:04:50.880
+So a constant model looks like
+this flat line and then the
+
+00:04:50.880 --> 00:04:55.820
+question was where was the best
+place to draw that flat line?
+
+00:04:56.000 --> 00:05:00.500
+What is the best constant to
+predict?
+
+00:05:00.780 --> 00:05:05.840
+And to do that, we implicitly
+introduced what we call the
+
+00:05:05.840 --> 00:05:09.680
+three-step modeling recipe.
+
+00:05:13.360 --> 00:05:16.420
+And this is something I defined
+at the very end of Thursday's
+
+00:05:16.420 --> 00:05:17.200
+class.
+
+00:05:17.200 --> 00:05:21.700
+Can someone remind me what those
+three steps were?
+
+00:05:22.100 --> 00:05:25.980
+choose model choose loss
+function and then minimize the
+
+00:05:25.980 --> 00:05:29.320
+average loss to find W.
+
+00:05:29.320 --> 00:05:32.600
+Awesome the three steps were
+first choose a model the second
+
+00:05:32.600 --> 00:05:37.920
+choose a loss function and third
+
+00:05:37.920 --> 00:05:42.540
+minimize average loss
+
+00:05:42.540 --> 00:05:47.360
+to find
+
+00:05:47.360 --> 00:05:53.260
+optimal parameters.
+
+00:05:54.640 --> 00:05:57.180
+Okay so what So that was the
+model we chose,
+
+00:05:57.180 --> 00:05:59.160
+as we've already stated,
+
+00:05:59.160 --> 00:06:02.910
+we chose the constant model,
+
+00:06:03.500 --> 00:06:09.460
+whose equation looks like h of
+xi equals
+
+00:06:09.460 --> 00:06:10.460
+w.
+
+00:06:10.860 --> 00:06:14.680
+w is our one parameter here.
+It is the one thing we have
+
+00:06:14.680 --> 00:06:16.700
+control over.
+OK.
+
+00:06:21.260 --> 00:06:26.960
+The second stage involved us
+choosing the squared loss
+
+00:06:26.960 --> 00:06:27.960
+function.
+
+00:06:28.240 --> 00:06:32.740
+Can someone remind me what the
+point of a loss function is?
+
+00:06:33.540 --> 00:06:34.320
+Jovan.
+
+00:06:34.320 --> 00:06:36.280
+Optimal like w?
+
+00:06:36.280 --> 00:06:39.620
+That's the point of this whole
+thing in general.
+
+00:06:39.620 --> 00:06:40.640
+Yeah.
+So you have the right idea.
+
+00:06:40.760 --> 00:06:45.260
+But what does a loss function
+specifically do?
+
+00:06:46.440 --> 00:06:47.280
+Maaj.
+
+00:06:47.280 --> 00:06:49.060
+Find the error?
+
+00:06:49.060 --> 00:06:49.480
+Yeah,
+
+00:06:49.480 --> 00:06:53.060
+what the loss function is doing
+is it's telling us how we want
+
+00:06:53.060 --> 00:06:57.320
+to measure for one data point
+how good or bad the prediction
+
+00:06:57.320 --> 00:06:58.280
+was.
+
+00:06:58.280 --> 00:07:01.880
+So a loss function is about
+measuring error for one data
+
+00:07:01.880 --> 00:07:02.460
+point,
+
+00:07:02.460 --> 00:07:05.820
+and then average loss averages
+that measurement across the
+
+00:07:05.820 --> 00:07:08.500
+whole data set, because we want
+predictions that are good on
+
+00:07:08.500 --> 00:07:11.140
+average for our whole data set.
+
+00:07:11.140 --> 00:07:12.640
+So, recall,
+
+00:07:13.820 --> 00:07:17.500
+the formula for the squared loss
+function looked something like
+
+00:07:17.500 --> 00:07:21.900
+L subscript S Q
+
+00:07:21.900 --> 00:07:25.320
+and it took in two arguments.
+
+00:07:25.320 --> 00:07:28.440
+Those arguments were the actual
+y value,
+
+00:07:28.440 --> 00:07:29.840
+y i,
+
+00:07:29.840 --> 00:07:35.090
+and the predicted y value h of
+xi.
+
+00:07:35.620 --> 00:07:38.850
+And what does it return?
+
+00:07:38.850 --> 00:07:41.720
+It returns their difference
+
+00:07:41.720 --> 00:07:46.900
+squared.
+
+00:07:51.560 --> 00:07:56.540
+All this is saying is find the
+squared difference between my
+
+00:07:56.540 --> 00:07:59.720
+actual y value and my predicted
+y value.
+
+00:07:59.720 --> 00:08:03.160
+Now, in the case of the constant
+model,
+
+00:08:03.160 --> 00:08:06.140
+anywhere you see this h of xi,
+
+00:08:06.140 --> 00:08:08.440
+you plug in a w.
+
+00:08:08.440 --> 00:08:10.760
+Because the constant model, its
+predictions
+
+00:08:10.760 --> 00:08:13.460
+are just the one constant
+parameter,
+
+00:08:13.460 --> 00:08:14.320
+w.
+
+00:08:14.320 --> 00:08:17.420
+But later today and on Thursday,
+when we look at more complicated
+
+00:08:17.420 --> 00:08:18.420
+models,
+
+00:08:19.120 --> 00:08:22.980
+the h of xi you see on the right
+is going to be substituted in
+
+00:08:22.980 --> 00:08:24.940
+with something more complicated,
+
+00:08:24.940 --> 00:08:28.780
+which makes the process of
+finding optimal parameters,
+
+00:08:29.140 --> 00:08:30.520
+in those cases,
+
+00:08:30.520 --> 00:08:33.220
+more complicated as well.
+
+00:08:33.220 --> 00:08:34.120
+Okay,
+
+00:08:34.120 --> 00:08:38.900
+so I want to talk a little bit
+more about that third step,
+
+00:08:38.900 --> 00:08:40.680
+average loss.
+So
+
+00:08:40.680 --> 00:08:46.540
+the function that
+
+00:08:46.540 --> 00:08:48.400
+we minimized
+
+00:08:48.400 --> 00:08:57.080
+looked
+
+00:08:57.080 --> 00:08:58.580
+like this.
+
+00:09:02.100 --> 00:09:06.440
+And it was average loss when
+using the
+
+00:09:06.440 --> 00:09:11.160
+results of the first two steps
+of the three step process, which
+
+00:09:11.160 --> 00:09:15.200
+is once you've chosen the
+constant model
+
+00:09:20.960 --> 00:09:23.210
+and squared loss,
+
+00:09:25.680 --> 00:09:30.180
+then this is what average loss
+looks like.
+
+00:09:30.900 --> 00:09:34.650
+The impact of choosing the
+constant model
+
+00:09:35.660 --> 00:09:38.200
+is that we just have that single
+w here.
+
+00:09:38.200 --> 00:09:42.200
+But if we were looking at
+average loss for the simple
+
+00:09:42.200 --> 00:09:45.440
+linear regression model or some
+other more complicated model,
+
+00:09:45.440 --> 00:09:46.880
+well, then this wouldn't just be
+a w.
+
+00:09:46.880 --> 00:09:50.320
+It would be something more
+complicated.
+
+00:09:50.320 --> 00:09:53.860
+There are a few names for this
+function.
+
+00:09:53.860 --> 00:09:58.740
+What were a few things we could
+call this?
+
+00:09:58.740 --> 00:10:00.020
+What's up?
+
+00:10:00.020 --> 00:10:01.140
+Mean squared error.
+
+00:10:01.140 --> 00:10:04.140
+Yeah, mean squared error.
+
+00:10:07.500 --> 00:10:08.240
+Good.
+
+00:10:08.240 --> 00:10:11.020
+What were some other names?
+
+00:10:11.020 --> 00:10:11.680
+Gavin.
+
+00:10:11.680 --> 00:10:12.440
+Empirical risk.
+
+00:10:12.440 --> 00:10:13.760
+Good.
+Empirical risk.
+
+00:10:18.880 --> 00:10:24.130
+What was it? There was one other
+name.
+
+00:10:24.860 --> 00:10:28.610
+The other thing was average
+squared loss.
+
+00:10:31.600 --> 00:10:34.180
+I'll actually leave empirical
+risk off of here for now because
+
+00:10:34.180 --> 00:10:37.700
+it's a more general term which
+I'm about to define but average
+
+00:10:37.700 --> 00:10:41.450
+squared loss mean squared error
+both refer to this thing okay
+
+00:10:42.720 --> 00:10:47.970
+and what did we find was the
+optimal W?
+
+00:10:50.240 --> 00:10:53.080
+What did we find was the optimal
+W?
+
+00:10:53.080 --> 00:10:55.860
+Yeah it Yeah, it was the
+average,
+
+00:10:55.860 --> 00:10:57.420
+or mean,
+
+00:10:59.260 --> 00:11:01.510
+of the y's.
+
+00:11:06.060 --> 00:11:11.780
+And this star here means that
+it's an optimal parameter.
+
+00:11:17.240 --> 00:11:20.460
+So what that tells us, going
+back to this picture from two
+
+00:11:20.460 --> 00:11:23.080
+slides ago, was that we
+discovered with all of this math
+
+00:11:23.080 --> 00:11:27.180
+last class that the optimal
+place to draw this flat line was
+
+00:11:27.180 --> 00:11:31.880
+at the average of all of the y
+values.
+
+00:11:31.880 --> 00:11:32.880
+OK?
+
+00:11:33.900 --> 00:11:36.150
+Questions so far?
+
+00:11:38.940 --> 00:11:41.340
+And like I said, last class,
+
+00:11:41.340 --> 00:11:43.870
+we minimized this function
+
+00:11:43.870 --> 00:11:44.870
+how?
+
+00:11:46.280 --> 00:11:49.360
+What was the technique we used
+for minimizing it to find the
+
+00:11:49.360 --> 00:11:50.860
+optimal Ws.
+
+00:11:51.220 --> 00:11:51.800
+Alex.
+
+00:11:51.800 --> 00:11:56.100
+You can be derivative and then
+we can solve,
+
+00:11:56.100 --> 00:11:56.740
+I guess.
+
+00:11:56.740 --> 00:11:59.460
+Yeah, what we did is we used
+tools from calc 1, where we took
+
+00:11:59.460 --> 00:12:01.440
+its derivative, set that equal
+to 0,
+
+00:12:01.440 --> 00:12:02.940
+and solved.
+
+00:12:03.120 --> 00:12:05.780
+What you're doing in homework 1
+
+00:12:05.780 --> 00:12:08.780
+is another technique for
+minimizing this function.
+
+00:12:09.900 --> 00:12:14.060
+OK, and what we saw is that it
+looks like a parabola.
+
+00:12:14.060 --> 00:12:16.900
+It is a quadratic in terms of
+the Ws.
+
+00:12:16.900 --> 00:12:19.400
+Remember, there are lots of
+symbols on the right-hand side,
+
+00:12:19.400 --> 00:12:21.620
+but the only unknown is double.
+
+00:12:21.620 --> 00:12:26.120
+The y's are treated as something
+that is given to you.
+
+00:12:29.340 --> 00:12:31.640
+So I've said this before,
+
+00:12:31.640 --> 00:12:34.240
+but here's where I want to
+define it.
+
+00:12:34.240 --> 00:12:39.240
+Empirical risk is just a fancy
+term for average loss.
+
+00:12:39.240 --> 00:12:40.240
+OK,
+
+00:12:43.200 --> 00:12:48.740
+and what does the term empirical
+mean? I should have commented on
+
+00:12:48.740 --> 00:12:50.960
+this last week when I first said
+this.
+
+00:12:50.960 --> 00:12:52.500
+What does empirical mean?
+
+00:12:52.500 --> 00:12:53.840
+You may have heard of this
+before.
+
+00:12:53.840 --> 00:12:54.120
+Yeah,
+
+00:12:54.120 --> 00:12:54.800
+through, right?
+
+00:12:54.800 --> 00:12:55.860
+Yes, observed.
+
+00:12:55.860 --> 00:12:56.320
+Yeah,
+
+00:12:56.320 --> 00:13:00.980
+it's like observed or like comes
+from
+
+00:13:00.980 --> 00:13:03.800
+real data.
+
+00:13:04.680 --> 00:13:07.680
+What's the opposite of
+empirical?
+
+00:13:08.740 --> 00:13:09.440
+Yeah?
+
+00:13:09.440 --> 00:13:10.560
+Theoretical.
+Theoretical,
+
+00:13:10.940 --> 00:13:13.180
+right? And this is maybe
+something like a distinction you
+
+00:13:13.180 --> 00:13:16.160
+learned about in a high school
+science class, right?
+
+00:13:16.160 --> 00:13:20.700
+So empirical risk just means it
+is the risk, which I'm about to
+
+00:13:20.700 --> 00:13:21.700
+define,
+
+00:13:22.280 --> 00:13:26.360
+measured using real data, the
+data set of X's and Y's we
+
+00:13:26.360 --> 00:13:27.360
+collected.
+
+00:13:27.600 --> 00:13:29.440
+What is theoretical risk?
+
+00:13:29.440 --> 00:13:32.560
+It's not something we're going
+to study much in this class, but
+
+00:13:32.560 --> 00:13:36.880
+theoretical risk Risk is an idea
+that you study if you take like
+
+00:13:36.880 --> 00:13:39.260
+a 400 level statistics class.
+
+00:13:39.260 --> 00:13:40.460
+And there,
+
+00:13:40.460 --> 00:13:42.800
+with theoretical risk, or just
+risk,
+
+00:13:42.800 --> 00:13:47.860
+what you try and measure is the
+average squared loss across all
+
+00:13:47.860 --> 00:13:52.240
+theoretical possible data sets
+you could come across from a
+
+00:13:52.240 --> 00:13:53.540
+particular distribution,
+
+00:13:53.540 --> 00:13:55.780
+like all theoretical commute
+times.
+
+00:13:55.780 --> 00:13:57.200
+But in order to measure that,
+
+00:13:57.200 --> 00:14:00.560
+you would need to have a precise
+probability model that describes
+
+00:14:00.560 --> 00:14:04.310
+what the distribution of commute
+times looks like, for example.
+
+00:14:04.980 --> 00:14:07.880
+But that's not something we're
+going to get into in this class.
+
+00:14:07.880 --> 00:14:11.200
+Just know that that's what risk
+is meant to be, like the average
+
+00:14:11.200 --> 00:14:12.700
+expected loss.
+
+00:14:12.960 --> 00:14:15.740
+Empirical risk means we are
+computing this using the data we
+
+00:14:15.740 --> 00:14:17.240
+actually have.
+
+00:14:18.000 --> 00:14:21.320
+The reason I'm introducing this
+term
+
+00:14:21.320 --> 00:14:25.520
+because empirical risk
+
+00:14:25.520 --> 00:14:31.460
+minimization is the
+
+00:14:31.460 --> 00:14:36.940
+like industry standard term for
+the three-step modeling recipe.
+
+00:14:38.060 --> 00:14:40.760
+So I called it this three-step
+thing where you choose a model
+
+00:14:40.760 --> 00:14:43.080
+loss function and minimize
+average loss.
+
+00:14:43.080 --> 00:14:46.880
+In future classes like when when
+you take EECS 445 they will just
+
+00:14:46.880 --> 00:14:51.180
+call all of that empirical risk
+minimization.
+
+00:14:51.180 --> 00:14:53.960
+Which is why when you go back
+here,
+
+00:14:53.960 --> 00:14:54.320
+yes,
+
+00:14:54.320 --> 00:14:58.440
+it's true that you can call this
+function
+
+00:14:58.440 --> 00:15:03.900
+R of w equals the sum of yi
+minus w squared, all divided by
+
+00:15:03.900 --> 00:15:04.700
+n.
+
+00:15:04.700 --> 00:15:07.180
+You can call this empirical
+risk,
+
+00:15:07.180 --> 00:15:11.140
+but using squared loss,
+
+00:15:12.640 --> 00:15:15.980
+because when I change the loss
+function,
+
+00:15:15.980 --> 00:15:20.480
+and it is still empirical risk.
+
+00:15:21.060 --> 00:15:26.920
+Now to give you a sense of
+
+00:15:26.920 --> 00:15:29.920
+what this all means,
+
+00:15:32.040 --> 00:15:34.880
+what I want you to do is I'm
+going to give you a new loss
+
+00:15:34.880 --> 00:15:35.880
+function,
+
+00:15:35.920 --> 00:15:38.040
+one that you haven't seen
+before.
+
+00:15:38.040 --> 00:15:39.620
+And this is the type of question
+you're going to see in
+
+00:15:39.620 --> 00:15:42.580
+tomorrow's lab and in homework
+two.
+
+00:15:42.580 --> 00:15:46.460
+And what I want you to do is
+find And the optimal w,
+
+00:15:46.460 --> 00:15:48.340
+the optimal model parameter,
+
+00:15:48.340 --> 00:15:52.340
+that minimizes empirical risk
+for this new
+
+00:15:53.000 --> 00:15:54.500
+loss function.
+
+00:15:54.620 --> 00:15:56.320
+So let's come up with the new
+loss function,
+
+00:15:56.320 --> 00:15:57.320
+L,
+
+00:15:58.940 --> 00:16:01.190
+I don't know,
+
+00:16:02.180 --> 00:16:03.000
+Western Michigan,
+
+00:16:03.000 --> 00:16:04.060
+OK, sure.
+
+00:16:04.060 --> 00:16:08.560
+First thing that came to mind.
+
+00:16:10.900 --> 00:16:16.500
+And instead of returning yi
+minus h of xi squared,
+
+00:16:17.060 --> 00:16:22.500
+I'm going to have a return for
+yi minus three h of xi
+
+00:16:22.500 --> 00:16:26.160
+squared.
+And my question is,
+
+00:16:28.380 --> 00:16:32.200
+for this new loss function
+
+00:16:32.200 --> 00:16:38.040
+and the constant
+
+00:16:38.040 --> 00:16:39.040
+model,
+
+00:16:43.120 --> 00:16:46.870
+which again has the formula
+we've seen,
+
+00:16:46.880 --> 00:16:50.600
+h of xi equals w.
+
+00:16:50.600 --> 00:16:54.080
+Find the optimal
+
+00:16:54.080 --> 00:16:58.040
+parameter,
+
+00:16:59.560 --> 00:17:02.560
+w star
+
+00:17:09.020 --> 00:17:12.700
+Minimizes average WM,
+
+00:17:13.060 --> 00:17:15.310
+Western Michigan, loss.
+
+00:17:15.960 --> 00:17:21.580
+And average whatever loss is
+referred to by empirical risk.
+
+00:17:22.180 --> 00:17:26.020
+Is the question clear? What I'm
+looking for is a new formula for
+
+00:17:26.020 --> 00:17:27.280
+a w star.
+
+00:17:27.280 --> 00:17:30.620
+It is not going to be the same
+as the mean of the y.
+
+00:17:30.620 --> 00:17:34.440
+But it will be related to the
+mean of the y's, maybe.
+
+00:17:34.440 --> 00:17:36.600
+One would expect that it should
+be related because it still
+
+00:17:36.600 --> 00:17:38.920
+looks like something minus
+something else squared.
+
+00:17:38.920 --> 00:17:41.940
+But it's more complicated than
+that because we have this 4 and
+
+00:17:41.940 --> 00:17:43.440
+this 3.
+
+00:17:43.460 --> 00:17:46.680
+So what I want you to do is take
+out a pen and paper
+
+00:17:46.680 --> 00:17:50.800
+and see if you can find the new
+optimal parameter
+
+00:17:50.800 --> 00:17:54.550
+under this new loss function.
+
+00:17:55.560 --> 00:17:57.360
+And I'll give you a few minutes
+to do this.
+
+00:17:57.360 --> 00:18:00.740
+And I'll walk around to help if
+you have any questions.
+
+00:18:00.740 --> 00:18:02.660
+Feel free to flag me down if
+there's anything I can help
+
+00:18:02.660 --> 00:18:03.660
+with.
+
+00:18:45.560 --> 00:18:46.560
+Sorry,
+
+00:18:46.940 --> 00:18:48.260
+where'd you get it?
+
+00:18:48.260 --> 00:18:48.960
+Where'd you get
+
+00:18:48.960 --> 00:18:56.680
+it?
+
+00:19:00.620 --> 00:19:03.920
+And what I'll say is, in this
+specific case,
+
+00:19:03.920 --> 00:19:06.880
+there's both an easy way to do
+it and a hard way.
+
+00:19:06.880 --> 00:19:10.060
+And when we take it up, we'll
+start with the harder way
+
+00:19:10.060 --> 00:19:14.560
+and then maybe look at the
+easier way.
+
+00:21:10.300 --> 00:21:12.640
+Okay, we can start to take it
+up, but if you're still working
+
+00:21:12.640 --> 00:21:16.300
+on it, please feel free.
+
+00:21:16.300 --> 00:21:19.740
+The first thing we need to do in
+my mind
+
+00:21:19.740 --> 00:21:25.580
+is write out the formula of the
+actual function we want to
+
+00:21:25.580 --> 00:21:26.580
+minimize.
+
+00:21:29.500 --> 00:21:32.640
+So this is our new loss
+function.
+
+00:21:32.640 --> 00:21:34.140
+But here,
+
+00:21:34.700 --> 00:21:39.480
+we're using the constant model.
+So we should use the fact that h
+
+00:21:39.480 --> 00:21:41.440
+of xi equals w.
+
+00:21:41.440 --> 00:21:45.940
+So what is the actual function
+we want to minimize?
+
+00:21:52.040 --> 00:21:54.180
+The function that we're actually
+going to minimize, guys, what
+
+00:21:54.180 --> 00:21:56.520
+does it look like?
+
+00:21:56.520 --> 00:21:57.520
+Gavin.
+
+00:21:57.720 --> 00:22:01.780
+RWM is 1 over n
+
+00:22:01.780 --> 00:22:07.720
+times the sum from i equals 1 to
+
+00:22:07.720 --> 00:22:08.720
+n
+
+00:22:09.210 --> 00:22:11.360
+of our loss function.
+
+00:22:11.360 --> 00:22:15.040
+4yi minus 3w squared.
+
+00:22:16.260 --> 00:22:17.480
+Do we agree?
+
+00:22:17.480 --> 00:22:22.730
+And then the one input to this
+function is w.
+
+00:22:27.500 --> 00:22:30.920
+So, one thing we could do is
+take the derivative of this,
+
+00:22:30.920 --> 00:22:32.380
+set it equal to zero, and solve,
+
+00:22:32.380 --> 00:22:36.880
+and we can do that really
+quickly.
+
+00:22:37.500 --> 00:22:41.960
+I will go through this a little
+more quickly than we did on
+
+00:22:41.960 --> 00:22:42.960
+Thursday,
+
+00:22:44.560 --> 00:22:49.060
+but I'll still do because it's
+useful to review.
+
+00:22:54.420 --> 00:22:57.680
+One of the key ideas we looked
+at on Thursday was that the
+
+00:22:57.680 --> 00:23:02.930
+derivative of a sum is equal to
+the sum of the things,
+
+00:23:02.960 --> 00:23:06.440
+sorry, the sum of the
+derivatives of the individual
+
+00:23:06.440 --> 00:23:07.440
+terms.
+
+00:23:08.040 --> 00:23:12.140
+And the 1 over n constant factor
+just comes along for the ride.
+
+00:23:12.140 --> 00:23:16.500
+So the derivative of this
+function that we are minimizing,
+
+00:23:16.500 --> 00:23:19.520
+which is our empirical risk or
+our average loss,
+
+00:23:19.520 --> 00:23:22.520
+should write that down,
+
+00:23:31.160 --> 00:23:35.760
+is 1 over n times the sum,
+again, from i equals 1 to n, of
+
+00:23:35.760 --> 00:23:36.440
+what?
+
+00:23:36.440 --> 00:23:39.440
+What goes out here?
+
+00:23:41.640 --> 00:23:44.640
+What goes out here?
+
+00:23:48.480 --> 00:23:50.730
+What comes here?
+
+00:23:55.020 --> 00:23:56.020
+Gavin.
+
+00:23:56.020 --> 00:23:58.740
+You can use the power rule.
+Good.
+
+00:23:58.740 --> 00:24:02.360
+Take the squared out and make
+the coefficient.
+
+00:24:02.360 --> 00:24:07.380
+So it would be 2 times 4y of i
+minus 3w
+
+00:24:07.380 --> 00:24:09.120
+times
+
+00:24:09.930 --> 00:24:12.930
+would be negative 3.
+Good
+
+00:24:13.380 --> 00:24:16.900
+Okay So first we use the power
+rule that which says the
+
+00:24:16.900 --> 00:24:20.400
+derivative of box squared is
+equal to 2 times box But then
+
+00:24:20.400 --> 00:24:22.900
+the chain rule says you have to
+follow that up with the
+
+00:24:22.900 --> 00:24:26.720
+derivative of whatever is in the
+box here with respect to W and
+
+00:24:26.720 --> 00:24:31.220
+the derivative of 4 y I minus 3
+W with respect to W is Negative
+
+00:24:31.220 --> 00:24:34.940
+3 because the coefficient on W
+is negative 3 What this means is
+
+00:24:34.940 --> 00:24:39.440
+that we have a constant factor
+of 2 times negative 3 which is
+
+00:24:39.440 --> 00:24:43.940
+negative six that can be pulled
+up front,
+
+00:24:44.140 --> 00:24:47.140
+times the sum of
+
+00:24:47.280 --> 00:24:51.030
+four yi minus three w.
+
+00:24:51.100 --> 00:24:53.460
+Now this is the derivative of
+
+00:24:53.460 --> 00:24:54.540
+average loss.
+
+00:24:54.540 --> 00:24:59.580
+Now what we need to do is set
+this equal to zero and solve for
+
+00:24:59.580 --> 00:25:02.200
+the w that accomplishes that.
+
+00:25:02.200 --> 00:25:04.450
+Do we agree?
+
+00:25:04.640 --> 00:25:05.840
+All on the same page?
+
+00:25:05.840 --> 00:25:10.820
+So this looks a lot like the
+derivative of of mean squared
+
+00:25:10.820 --> 00:25:13.740
+error we saw last class, it's
+just that there,
+
+00:25:13.740 --> 00:25:16.120
+there was no 4 here and no 3
+here.
+
+00:25:16.120 --> 00:25:17.380
+So the question is,
+
+00:25:17.380 --> 00:25:21.380
+how do those change the
+resulting optimal w?
+
+00:25:24.340 --> 00:25:25.340
+Well,
+
+00:25:25.980 --> 00:25:29.120
+like we did last class, we can
+multiply both sides by negative
+
+00:25:29.120 --> 00:25:31.960
+n over 6 to get rid of this
+constant factor.
+
+00:25:31.960 --> 00:25:34.960
+It doesn't really contribute
+anything.
+
+00:25:36.680 --> 00:25:42.000
+But that doesn't mean the 4s and
+3s in here
+
+00:25:42.000 --> 00:25:45.000
+can get multiplied out.
+Those still stick around.
+
+00:25:45.540 --> 00:25:46.920
+We can't really get rid of
+those.
+
+00:25:46.920 --> 00:25:50.620
+It's just a thing outside of the
+summation we can multiply out
+
+00:25:50.620 --> 00:25:51.460
+by.
+
+00:25:51.460 --> 00:25:56.720
+What I'll do now is expand this
+into the sum of 4yi
+
+00:25:56.720 --> 00:26:02.680
+minus the sum of 3w, using and
+the fact that I
+
+00:26:02.680 --> 00:26:04.280
+can separate sums.
+
+00:26:04.280 --> 00:26:07.660
+Where do I go from here?
+
+00:26:07.660 --> 00:26:12.600
+The sum of 4yi minus the sum of
+3w.
+
+00:26:12.600 --> 00:26:14.740
+Both sums are from i equals 1 to
+n.
+
+00:26:14.740 --> 00:26:15.320
+Alex?
+
+00:26:15.320 --> 00:26:19.760
+You can simplify the second sum
+with just negative 3wn.
+
+00:26:19.760 --> 00:26:20.520
+Good.
+
+00:26:20.520 --> 00:26:23.060
+So one of the things we
+discovered last class and that
+
+00:26:23.060 --> 00:26:27.860
+you've seen in last week's lab
+is that when you have a sum of a
+
+00:26:27.860 --> 00:26:30.420
+thing that But as a constant,
+
+00:26:30.420 --> 00:26:34.280
+all that is is really just the
+constant multiplied by the
+
+00:26:34.280 --> 00:26:39.940
+number of times the sum runs, or
+the number of terms in the sum,
+
+00:26:40.160 --> 00:26:41.720
+which is n.
+
+00:26:41.720 --> 00:26:46.970
+So the second piece is just 3wn.
+
+00:26:47.660 --> 00:26:48.920
+Do we agree with that?
+
+00:26:48.920 --> 00:26:50.040
+OK, and the first piece,
+
+00:26:50.040 --> 00:26:51.900
+I can simplify this a little
+bit.
+
+00:26:51.900 --> 00:26:53.980
+How can I do that?
+
+00:26:53.980 --> 00:26:56.480
+Move the 4 out of the summation.
+Yeah, so tell me the first
+
+00:26:56.480 --> 00:26:59.660
+letter of your name again.
+
+00:26:59.660 --> 00:27:01.600
+Is it also Alex?
+
+00:27:01.600 --> 00:27:02.260
+Andrew?
+
+00:27:02.260 --> 00:27:03.260
+Yes.
+
+00:27:03.760 --> 00:27:05.540
+OK, good.
+We can pull the 4 out.
+
+00:27:11.360 --> 00:27:12.840
+And now,
+
+00:27:12.840 --> 00:27:18.840
+all we have to do is isolate for
+w.
+
+00:27:20.120 --> 00:27:25.700
+So let me come over here.
+Maybe I can say 3wn
+
+00:27:25.700 --> 00:27:31.420
+is equal to 4 times the sum of
+my yi's.
+
+00:27:31.420 --> 00:27:37.280
+And lastly, all I need to do is
+divide both sides here by 3n.
+
+00:27:37.280 --> 00:27:40.440
+What that gives me is w on the
+left,
+
+00:27:40.440 --> 00:27:44.280
+which now that I've isolated for
+it, I'll call it w star, Is four
+
+00:27:44.280 --> 00:27:48.780
+times the sum of my y's
+
+00:27:51.440 --> 00:27:52.940
+Over 3n
+
+00:27:53.600 --> 00:27:54.600
+but
+
+00:27:55.280 --> 00:27:59.780
+This really just looks like 4
+over 3 times
+
+00:27:59.780 --> 00:28:03.020
+the sum of the y's over n
+
+00:28:03.020 --> 00:28:06.080
+So is there a simpler way I can
+write this
+
+00:28:06.080 --> 00:28:07.640
+Yes, and remind me of your name
+again.
+
+00:28:07.640 --> 00:28:09.180
+Gustavo.
+Gustavo, right?
+
+00:28:09.640 --> 00:28:11.140
+Yes, exactly.
+
+00:28:11.360 --> 00:28:13.100
+It's just four thirds
+
+00:28:13.100 --> 00:28:15.350
+times y bar,
+
+00:28:18.560 --> 00:28:19.560
+OK?
+
+00:28:20.960 --> 00:28:21.960
+Now,
+
+00:28:22.800 --> 00:28:25.420
+this is a good fallback to
+always have.
+
+00:28:25.420 --> 00:28:27.580
+When in doubt,
+
+00:28:27.580 --> 00:28:29.420
+this technique will work.
+
+00:28:29.420 --> 00:28:32.740
+And for the questions you will
+see in tomorrow's lab and
+
+00:28:32.740 --> 00:28:35.640
+homework two, you're going to
+need to follow these steps,
+
+00:28:35.640 --> 00:28:36.580
+OK?
+
+00:28:36.580 --> 00:28:40.300
+Now, those questions will not
+have loss functions that
+
+00:28:40.300 --> 00:28:43.440
+essentially look like squared
+loss with one tiny change,
+
+00:28:43.760 --> 00:28:45.120
+they'll have more substantial
+changes.
+
+00:28:45.120 --> 00:28:48.260
+So you will walk through these
+calculus steps, and you'll end
+
+00:28:48.260 --> 00:28:50.420
+up with a formula that doesn't
+involve the mean.
+
+00:28:50.420 --> 00:28:53.720
+You'll find some other thing.
+
+00:28:53.720 --> 00:28:55.340
+Like, for example,
+
+00:28:55.340 --> 00:28:56.920
+this is maybe giving away the
+answer, but you still have to
+
+00:28:56.920 --> 00:28:58.100
+work through all the math.
+Remember,
+
+00:28:58.100 --> 00:28:59.500
+in last week's lab,
+
+00:28:59.500 --> 00:29:02.140
+we introduced this thing called
+the harmonic mean, which is like
+
+00:29:02.140 --> 00:29:04.800
+how you found the average of a
+bunch of speeds.
+
+00:29:04.800 --> 00:29:06.460
+You remember this?
+
+00:29:06.460 --> 00:29:09.340
+The first question in tomorrow's
+lab will give you a new loss
+
+00:29:09.340 --> 00:29:13.800
+function, and the optimal w will
+end up being the harmonic mean
+
+00:29:13.800 --> 00:29:18.000
+of the y values, okay? But the
+last function looks more,
+
+00:29:18.000 --> 00:29:20.400
+not more complicated
+necessarily, but it doesn't look
+
+00:29:20.400 --> 00:29:24.200
+like sort of a rebadged version
+of square loss.
+
+00:29:24.200 --> 00:29:26.200
+It looks a little different.
+
+00:29:26.200 --> 00:29:26.700
+Okay,
+
+00:29:26.700 --> 00:29:29.820
+but knowing that this is how the
+answer turned out,
+
+00:29:29.820 --> 00:29:33.840
+can you think of an easier way
+to minimize
+
+00:29:33.840 --> 00:29:36.340
+this function?
+
+00:29:38.040 --> 00:29:41.900
+like maybe leveraging things we
+already knew,
+
+00:29:42.620 --> 00:29:48.300
+knowing that the optimal w ends
+up being 4 over 3
+
+00:29:48.300 --> 00:29:50.960
+times the mean of the y's, could
+we have arrived at this
+
+00:29:50.960 --> 00:29:54.710
+differently, like in a quicker
+way?
+
+00:30:00.160 --> 00:30:01.620
+I'll give you a hint.
+
+00:30:01.620 --> 00:30:03.960
+Think about if you took calc 2,
+
+00:30:03.960 --> 00:30:07.100
+you learned about this technique
+that they used a lot for finding
+
+00:30:07.100 --> 00:30:08.600
+complicated integrals?
+
+00:30:09.380 --> 00:30:13.130
+What was that technique called?
+
+00:30:18.320 --> 00:30:19.820
+Yeah, u-substitution.
+
+00:30:20.860 --> 00:30:26.580
+Can we invent some new variables
+here that allow us to use the
+
+00:30:26.580 --> 00:30:29.740
+main result we already knew
+about on Thursday and already
+
+00:30:29.740 --> 00:30:30.720
+recapped today?
+
+00:30:30.720 --> 00:30:35.080
+Which is that if there wasn't a
+4 here and wasn't a 3 here, and
+
+00:30:35.080 --> 00:30:37.320
+this was just yi minus w
+squared,
+
+00:30:37.320 --> 00:30:38.660
+we wouldn't need to do any
+calculation.
+
+00:30:38.660 --> 00:30:41.840
+We already know that the optimal
+w is just the mean.
+
+00:30:41.840 --> 00:30:45.320
+So maybe what we can do is
+introduce some new variables
+
+00:30:45.320 --> 00:30:48.320
+so that there aren't
+coefficients here
+
+00:30:49.280 --> 00:30:52.480
+and work backwards to figure out
+what the impact of the 3 and 4
+
+00:30:52.480 --> 00:30:53.640
+should be.
+
+00:30:53.640 --> 00:30:57.140
+Let me give you a rundown of
+what I mean.
+
+00:30:57.140 --> 00:31:02.940
+Let's define two new variables.
+So let's define a zi that is
+
+00:31:02.940 --> 00:31:05.190
+equal to 4yi.
+
+00:31:05.840 --> 00:31:11.660
+And why don't we define a t that
+is equal to 3w?
+
+00:31:11.660 --> 00:31:13.660
+Let's just try it.
+
+00:31:13.660 --> 00:31:14.660
+Now,
+
+00:31:17.180 --> 00:31:22.760
+instead of minimizing 1 over n
+times the sum of 4yi
+
+00:31:22.760 --> 00:31:26.060
+minus 3w squared,
+
+00:31:27.900 --> 00:31:33.840
+I'm minimizing 1 over n times
+the sum of zi minus
+
+00:31:33.840 --> 00:31:35.340
+t squared.
+
+00:31:42.620 --> 00:31:44.360
+If I do that,
+
+00:31:44.360 --> 00:31:48.110
+what is the optimal t?
+
+00:31:49.960 --> 00:31:54.440
+This just looks like average
+squared loss or mean squared
+
+00:31:54.440 --> 00:31:55.900
+error.
+Just the variables have
+
+00:31:55.900 --> 00:31:58.000
+different names, but that
+shouldn't change the underlying
+
+00:31:58.000 --> 00:31:59.000
+math.
+
+00:31:59.020 --> 00:32:04.200
+If this formula or this
+expression,
+
+00:32:04.860 --> 00:32:08.120
+1 over n times the sum of zi
+minus t squared,
+
+00:32:08.120 --> 00:32:09.780
+if that's all you had,
+
+00:32:09.780 --> 00:32:12.940
+what would you say the optimal t
+is?
+
+00:32:12.940 --> 00:32:14.180
+The average of zi.
+
+00:32:14.180 --> 00:32:18.640
+Yeah, it would be the average of
+the z's.
+
+00:32:18.640 --> 00:32:21.660
+Do we agree with that?
+
+00:32:21.660 --> 00:32:26.910
+But what is the average of the
+z's relative to y?
+
+00:32:28.640 --> 00:32:32.040
+Remember, I made the z's by
+multiplying each y by 4.
+
+00:32:32.040 --> 00:32:34.140
+So what should the average z be?
+And yes, remind me of your name?
+
+00:32:34.140 --> 00:32:35.360
+Chin my.
+Chin my, right, yeah.
+
+00:32:35.360 --> 00:32:37.280
+It should be 4 times the average
+of the y's.
+
+00:32:37.280 --> 00:32:39.880
+Yeah, it should just be 4 times
+the average of the y's.
+
+00:32:39.880 --> 00:32:43.900
+And this is the kind of property
+you will explore in homeworks
+
+00:32:43.900 --> 00:32:47.300
+and labs, where if you multiply
+every value by a constant, And
+
+00:32:47.300 --> 00:32:51.480
+the mean also gets multiplied by
+that same constant.
+
+00:32:51.480 --> 00:32:52.360
+OK?
+
+00:32:52.360 --> 00:32:56.300
+So the optimal t is 4 times the
+average y.
+
+00:32:56.300 --> 00:32:59.900
+But what is the relationship
+between t and w?
+
+00:32:59.900 --> 00:33:02.440
+Well, t is equal to 3w.
+
+00:33:02.440 --> 00:33:05.940
+So that means 3 times the
+optimal w should be 4 times the
+
+00:33:05.940 --> 00:33:07.440
+average y.
+
+00:33:07.800 --> 00:33:13.200
+So the optimal w should be 4
+over 3 times the average y.
+
+00:33:14.380 --> 00:33:17.200
+And we arrived at this without
+needing to re-derive of the
+
+00:33:17.200 --> 00:33:17.840
+result.
+
+00:33:17.840 --> 00:33:21.120
+And that's because we were able
+to reduce the problem to one
+
+00:33:21.120 --> 00:33:24.700
+that looked like something we've
+seen before.
+
+00:33:24.700 --> 00:33:27.400
+And this didn't require any
+further assumptions on what the
+
+00:33:27.400 --> 00:33:28.620
+y values were.
+
+00:33:28.620 --> 00:33:30.000
+It doesn't matter what the y
+values were.
+
+00:33:30.000 --> 00:33:33.750
+This would have still worked.
+
+00:33:33.840 --> 00:33:35.340
+Sound reasonable?
+
+00:33:36.980 --> 00:33:37.340
+Paul.
+
+00:33:37.340 --> 00:33:42.020
+How did you get the optimal T is
+at the average Z
+
+00:33:42.020 --> 00:33:44.700
+on the fourth line?
+
+00:33:44.700 --> 00:33:47.520
+What I did was I asked, well,
+Well, if this is all I gave you,
+
+00:33:47.520 --> 00:33:50.580
+and you forgot about anything to
+do with substitution, and I just
+
+00:33:50.580 --> 00:33:50.960
+said,
+
+00:33:50.960 --> 00:33:53.620
+what is the t that minimizes
+this expression,
+
+00:33:53.620 --> 00:33:56.300
+I know it is the average of the
+z's, because that's what we
+
+00:33:56.300 --> 00:33:58.180
+found last class in recap today.
+
+00:33:58.180 --> 00:34:01.320
+This is just a rebadged version
+of having y's here and a w here.
+
+00:34:01.320 --> 00:34:02.880
+It's just with differences.
+
+00:34:02.880 --> 00:34:03.920
+Is that clear?
+
+00:34:03.920 --> 00:34:04.920
+Yeah.
+Yeah, good.
+
+00:34:06.840 --> 00:34:07.840
+OK,
+
+00:34:07.920 --> 00:34:10.920
+questions otherwise with this
+activity?
+
+00:34:11.120 --> 00:34:15.680
+Yeah? So I just minimized the
+loss function directly and got
+
+00:34:15.680 --> 00:34:16.780
+the same result.
+
+00:34:16.780 --> 00:34:18.440
+But is that just a coincidence?
+
+00:34:18.440 --> 00:34:21.080
+So I'm glad you brought that up.
+
+00:34:21.080 --> 00:34:22.280
+We never minimize,
+
+00:34:22.280 --> 00:34:24.760
+at least using the terminology
+in this class, we never minimize
+
+00:34:24.760 --> 00:34:27.840
+a loss function.
+Because loss measures error for
+
+00:34:27.840 --> 00:34:29.240
+one data point.
+
+00:34:29.240 --> 00:34:31.440
+For one data point, you can
+always have zero loss if your
+
+00:34:31.440 --> 00:34:32.660
+model goes through it.
+
+00:34:32.660 --> 00:34:36.410
+What we always minimize is
+average loss.
+
+00:34:38.840 --> 00:34:44.260
+So you will know you're on the
+right track if the derivative
+
+00:34:44.260 --> 00:34:46.940
+that you're setting equal to 0
+has a summation in it.
+
+00:34:46.940 --> 00:34:51.440
+If it doesn't, then something is
+wrong.
+
+00:34:53.060 --> 00:34:57.240
+The ending result that you find
+should involve your entire data
+
+00:34:57.240 --> 00:34:58.040
+set.
+
+00:34:58.040 --> 00:35:01.400
+That's true now for the constant
+model and will also be true when
+
+00:35:01.400 --> 00:35:03.420
+we look at the simple linear
+regression model.
+
+00:35:03.420 --> 00:35:06.020
+Your formulas for your optimal
+parameters should involve the
+
+00:35:06.020 --> 00:35:08.000
+whole data set.
+It shouldn't just have a single
+
+00:35:08.000 --> 00:35:10.600
+yi in it.
+Because intuitively,
+
+00:35:10.920 --> 00:35:13.960
+the optimal parameters should
+have, you have to look at the
+
+00:35:13.960 --> 00:35:18.100
+whole data set to figure out
+what those are.
+
+00:35:18.100 --> 00:35:19.100
+OK.
+
+00:35:19.360 --> 00:35:25.080
+What I want to do now is
+consider what would happen
+
+00:35:25.080 --> 00:35:30.280
+if we run through our three-step
+modeling recipe,
+
+00:35:32.360 --> 00:35:35.040
+but start making different
+choices.
+
+00:35:35.040 --> 00:35:37.200
+And I guess we saw a little bit
+of that with this activity, but
+
+00:35:37.200 --> 00:35:41.720
+I want to choose something that
+isn't sort of like squared loss.
+
+00:35:41.840 --> 00:35:44.180
+I want to choose something
+that's totally different.
+
+00:35:44.180 --> 00:35:49.430
+So I want to pick the constant
+model,
+
+00:35:49.760 --> 00:35:53.510
+h of xi equals w.
+
+00:35:54.360 --> 00:35:59.610
+But my loss function, I want to
+use absolute loss.
+
+00:36:03.300 --> 00:36:06.960
+Which is going to look like
+
+00:36:06.960 --> 00:36:12.260
+L of yi comma h of xi
+
+00:36:12.260 --> 00:36:15.260
+is the absolute difference.
+
+00:36:16.440 --> 00:36:18.690
+No squaring here.
+
+00:36:23.480 --> 00:36:28.940
+And so the function I am
+minimizing
+
+00:36:28.940 --> 00:36:30.780
+now
+
+00:36:35.420 --> 00:36:36.960
+looks like this.
+
+00:36:36.960 --> 00:36:37.960
+So,
+
+00:36:46.120 --> 00:36:51.370
+what are some names I would call
+this function?
+
+00:36:51.920 --> 00:36:55.080
+What are some names I would call
+this function?
+
+00:36:55.080 --> 00:36:56.080
+Bella.
+
+00:36:56.260 --> 00:36:57.260
+Sorry.
+
+00:36:57.300 --> 00:36:58.400
+Average absolute loss.
+
+00:36:58.400 --> 00:37:03.200
+Yeah.
+I can call this average absolute
+
+00:37:03.200 --> 00:37:07.320
+loss.
+I can also call it mean absolute
+
+00:37:07.320 --> 00:37:08.320
+error.
+
+00:37:09.280 --> 00:37:13.060
+And because it is the average of
+a loss function,
+
+00:37:13.060 --> 00:37:14.920
+it can be called empirical risk.
+
+00:37:14.920 --> 00:37:16.660
+Empirical risk is like a
+catch-all term.
+
+00:37:16.660 --> 00:37:19.900
+Any average of a loss function
+is empirical risk.
+
+00:37:19.900 --> 00:37:22.520
+So now the question is, suppose
+
+00:37:22.520 --> 00:37:27.740
+we've changed our metric for how
+we are measuring the quality of
+
+00:37:27.740 --> 00:37:28.780
+a prediction.
+
+00:37:28.780 --> 00:37:29.780
+Before,
+
+00:37:30.100 --> 00:37:33.600
+at that step, we chose squared
+loss, actual minus predicted
+
+00:37:33.600 --> 00:37:34.600
+squared.
+
+00:37:34.640 --> 00:37:38.180
+Now we have absolute loss, which
+is just the absolute difference
+
+00:37:38.180 --> 00:37:41.180
+between actual and predicted.
+
+00:37:41.500 --> 00:37:46.280
+What will the optimal constant
+parameter w be now?
+
+00:37:46.780 --> 00:37:50.760
+Now I told you this at the end
+of Thursday's class, but I want
+
+00:37:50.760 --> 00:37:54.000
+us to think about why it's going
+to be something different.
+
+00:37:54.000 --> 00:37:57.720
+What is the shape of this
+function?
+
+00:37:57.720 --> 00:38:01.040
+The shape of this function,
+
+00:38:01.040 --> 00:38:02.620
+that That is, to be clear,
+
+00:38:02.620 --> 00:38:04.980
+average absolute loss or mean
+absolute error,
+
+00:38:04.980 --> 00:38:06.820
+this one that I'm circling here.
+
+00:38:06.820 --> 00:38:09.240
+What does it look like if I had
+to graph it out?
+
+00:38:09.240 --> 00:38:10.840
+It would be like a V.
+
+00:38:10.840 --> 00:38:11.440
+Yeah,
+
+00:38:11.440 --> 00:38:12.440
+well,
+
+00:38:13.440 --> 00:38:16.840
+it will be made up of lots of
+individual Vs.
+
+00:38:16.840 --> 00:38:21.020
+But that means the overall
+result is actually a piecewise
+
+00:38:21.020 --> 00:38:22.520
+linear function.
+
+00:38:23.000 --> 00:38:26.500
+So this graph, even though the
+formula looks more or less the
+
+00:38:26.500 --> 00:38:29.320
+same as the formula for mean
+squared error just without the
+
+00:38:29.320 --> 00:38:30.320
+squared,
+
+00:38:30.440 --> 00:38:33.140
+the graph itself looks much more
+complicated,
+
+00:38:33.140 --> 00:38:34.140
+okay?
+
+00:38:34.440 --> 00:38:37.500
+And to be clear, the graph I'm
+asking about is the equivalent
+
+00:38:37.500 --> 00:38:41.420
+of the one earlier, which was a
+parabola,
+
+00:38:41.420 --> 00:38:42.420
+okay?
+
+00:38:43.500 --> 00:38:47.640
+When we had mean squared error,
+this entire expression I'm
+
+00:38:47.640 --> 00:38:51.390
+circling looked like a parabola.
+
+00:38:51.860 --> 00:38:57.520
+It is true that a single
+absolute value function looks
+
+00:38:57.520 --> 00:38:58.660
+like a V.
+
+00:38:58.660 --> 00:39:01.200
+That is true.
+But this is not a single
+
+00:39:01.200 --> 00:39:02.660
+absolute value function.
+
+00:39:02.660 --> 00:39:07.280
+This is the sum of n absolute
+value functions, each of which
+
+00:39:07.280 --> 00:39:09.900
+have their bend at a different
+location.
+
+00:39:09.900 --> 00:39:13.480
+The bends are where all of the
+data points are, where the yi is
+
+00:39:13.480 --> 00:39:14.840
+equal to the w.
+
+00:39:14.840 --> 00:39:20.720
+So what that means is the graph
+we end up with looks
+
+00:39:20.720 --> 00:39:23.960
+something like this.
+
+00:39:26.500 --> 00:39:29.520
+It's hard to predict what this
+is going to look like,
+
+00:39:29.520 --> 00:39:34.770
+or not hard to predict, but hard
+to anticipate.
+
+00:39:36.420 --> 00:39:41.620
+Here I'm using the same example
+data set of five points
+
+00:39:41.620 --> 00:39:45.240
+that we played around with on
+Thursday,
+
+00:39:45.240 --> 00:39:46.240
+62,
+
+00:39:46.760 --> 00:39:48.160
+sorry, 72,
+
+00:39:48.160 --> 00:39:49.020
+90,
+
+00:39:49.020 --> 00:39:49.860
+61,
+
+00:39:49.860 --> 00:39:50.700
+85,
+
+00:39:50.700 --> 00:39:51.960
+and 92.
+
+00:39:51.960 --> 00:39:56.460
+And what you should notice is
+that exactly those five points,
+
+00:40:00.140 --> 00:40:02.390
+this graph bends.
+
+00:40:03.680 --> 00:40:06.680
+So do we see what I mean by this
+being a piecewise linear
+
+00:40:06.680 --> 00:40:07.680
+function?
+
+00:40:09.200 --> 00:40:14.450
+It is broken up into how many
+line segments?
+
+00:40:23.400 --> 00:40:25.920
+How many line segments are there
+here?
+
+00:40:25.920 --> 00:40:27.860
+Yes, and remind me of your name?
+
+00:40:27.860 --> 00:40:28.100
+Oh,
+
+00:40:28.100 --> 00:40:28.560
+yeah.
+
+00:40:28.560 --> 00:40:29.000
+Olam.
+
+00:40:29.000 --> 00:40:29.940
+Olam.
+
+00:40:29.940 --> 00:40:30.940
+Five.
+
+00:40:31.240 --> 00:40:32.560
+Close.
+It's almost five.
+
+00:40:32.800 --> 00:40:33.800
+Six.
+Six.
+
+00:40:34.000 --> 00:40:36.420
+Because there are five bends.
+
+00:40:36.420 --> 00:40:39.460
+So factoring in whatever is to
+the left of the first bend and
+
+00:40:39.460 --> 00:40:41.580
+whatever is to the right of the
+last bend,
+
+00:40:41.580 --> 00:40:44.980
+there are six segments here.
+
+00:40:44.980 --> 00:40:45.980
+OK.
+OK.
+
+00:40:46.700 --> 00:40:47.700
+Now,
+
+00:40:49.640 --> 00:40:54.140
+where do you notice this graph
+is at its minimizer?
+
+00:40:55.520 --> 00:40:57.020
+Gustavo? On the median.
+
+00:40:57.020 --> 00:41:00.770
+It is at the median.
+
+00:41:09.140 --> 00:41:14.020
+But note that the technique for
+finding that the median is the
+
+00:41:14.020 --> 00:41:17.520
+minimizer can't involve taking
+the derivative and setting it
+
+00:41:17.520 --> 00:41:18.940
+equal to 0.
+
+00:41:18.940 --> 00:41:22.560
+Because at all of these bends,
+
+00:41:22.560 --> 00:41:25.560
+the derivative is undefined.
+
+00:41:28.440 --> 00:41:32.190
+So minimizer isn't always the
+same as derivative equals 0.
+
+00:41:32.200 --> 00:41:34.660
+One of the ideas you may have
+learned in calculus is that a
+
+00:41:34.660 --> 00:41:38.680
+critical point, which is a place
+where a minimizer or maximizer
+
+00:41:38.680 --> 00:41:43.180
+could be, is anywhere where the
+derivative is zero or undefined.
+
+00:41:44.020 --> 00:41:47.300
+And the way that I think about
+it is that at the bottom is
+
+00:41:47.300 --> 00:41:51.050
+where the slope goes from
+negative to positive.
+
+00:41:52.640 --> 00:41:56.360
+So if you look at the segment to
+the left of the median,
+
+00:41:56.360 --> 00:41:59.020
+the line is decreasing, and to
+the right it is increasing.
+
+00:41:59.020 --> 00:42:00.800
+And if you think about that
+conceptually,
+
+00:42:00.800 --> 00:42:05.340
+what that means is you must be
+coming out of a hole
+
+00:42:05.340 --> 00:42:08.340
+or of a valley.
+
+00:42:22.980 --> 00:42:23.820
+Now,
+
+00:42:23.820 --> 00:42:27.200
+I'm intentionally not walking
+through the entire derivation
+
+00:42:27.200 --> 00:42:30.320
+for why the median minimizes
+mean absolute error here,
+
+00:42:30.320 --> 00:42:33.180
+because I want you to go and
+look at the course notes for
+
+00:42:33.180 --> 00:42:35.720
+more details.
+I'm trying to give you an
+
+00:42:35.720 --> 00:42:38.000
+intuitive understanding for why
+that's the case.
+
+00:42:38.000 --> 00:42:43.720
+But in just a little bit, I'm
+going to show you a formula for
+
+00:42:43.720 --> 00:42:49.600
+the slope of this piecewise
+
+00:42:49.600 --> 00:42:54.100
+linear function at any value of
+w.
+
+00:42:54.180 --> 00:42:58.680
+But that function that tells me
+the slope of this function
+
+00:42:59.120 --> 00:43:02.360
+is going to have some inputs
+where you can't use it,
+
+00:43:02.360 --> 00:43:05.240
+some inputs where its behavior
+is not defined.
+
+00:43:05.240 --> 00:43:07.220
+And what are those inputs?
+
+00:43:07.220 --> 00:43:11.280
+Like, when can I not use this
+slope function?
+
+00:43:11.280 --> 00:43:12.640
+Allison.
+Will we be at the data points?
+
+00:43:12.740 --> 00:43:15.240
+Yeah, at the w's themselves,
+there is no slope.
+
+00:43:15.240 --> 00:43:18.360
+So the function that tells you
+the slope of this graph
+
+00:43:18.360 --> 00:43:21.600
+can't work at any of the actual
+data points.
+
+00:43:21.600 --> 00:43:22.420
+OK.
+
+00:43:22.420 --> 00:43:24.640
+Before I do that, though,
+
+00:43:24.640 --> 00:43:26.890
+here's a question.
+
+00:43:28.000 --> 00:43:30.620
+There were an odd number of data
+points here.
+
+00:43:30.620 --> 00:43:33.940
+So visually, we see that there
+is just one minimizer.
+
+00:43:33.940 --> 00:43:36.920
+What do you think would happen
+if there were an even number of
+
+00:43:36.920 --> 00:43:38.420
+data points?
+
+00:43:45.400 --> 00:43:46.200
+Paul Anne?
+
+00:43:46.200 --> 00:43:48.140
+Between the two media?
+
+00:43:48.140 --> 00:43:48.620
+Yeah,
+
+00:43:48.620 --> 00:43:50.120
+good intuition.
+
+00:43:51.580 --> 00:43:53.830
+Check it out.
+
+00:43:54.140 --> 00:43:56.260
+Now I've added a sixth data
+point.
+
+00:43:56.260 --> 00:43:58.060
+So I'm using the same five as
+before,
+
+00:43:58.060 --> 00:43:59.380
+72, 90, 61,
+
+00:43:59.380 --> 00:44:00.820
+85 and 92.
+
+00:44:00.820 --> 00:44:03.100
+But I've added another one, 78.
+OK,
+
+00:44:03.100 --> 00:44:07.100
+and what you see is that now
+there is actually a region where
+
+00:44:07.100 --> 00:44:09.680
+the slope is 0.
+
+00:44:09.680 --> 00:44:12.460
+And what you see is that the
+minimizer,
+
+00:44:12.460 --> 00:44:13.960
+my optimal w,
+
+00:44:13.960 --> 00:44:16.620
+is no longer unique.
+There are actually infinitely
+
+00:44:16.620 --> 00:44:22.020
+many w's that minimize mean
+absolute error here.
+
+00:44:49.660 --> 00:44:54.160
+What this is already telling you
+is that, in general,
+
+00:44:54.260 --> 00:44:57.840
+depending on which model and
+loss function you choose, there
+
+00:44:57.840 --> 00:45:02.160
+isn't necessarily an optimal
+parameter.
+
+00:45:03.100 --> 00:45:07.600
+There could be multiple that all
+perform equally well.
+
+00:45:07.740 --> 00:45:10.360
+And this is something that we
+will see repeatedly throughout
+
+00:45:10.360 --> 00:45:13.680
+the semester, especially when we
+get to more complicated linear
+
+00:45:13.680 --> 00:45:15.180
+algebra operations.
+
+00:45:16.860 --> 00:45:19.110
+Questions so far?
+
+00:45:25.220 --> 00:45:26.220
+OK,
+
+00:45:26.280 --> 00:45:27.280
+now,
+
+00:45:27.280 --> 00:45:28.640
+yeah, hold on.
+
+00:45:28.640 --> 00:45:30.760
+Yeah, yeah, yeah.
+What would happen if one of the
+
+00:45:30.760 --> 00:45:32.860
+mediums change a little?
+
+00:45:32.860 --> 00:45:36.560
+Would it lower the selection?
+
+00:45:36.560 --> 00:45:37.640
+So your question is,
+
+00:45:37.640 --> 00:45:43.440
+what if I change one of the data
+points, like I change 61 to 60
+
+00:45:43.440 --> 00:45:44.460
+or something? Yeah,
+
+00:45:44.460 --> 00:45:46.400
+instead of 85, let's change it
+to 80.
+
+00:45:46.400 --> 00:45:48.800
+It's still um, you know, yeah,
+okay.
+
+00:45:48.800 --> 00:45:52.020
+So instead of 85 what if I have
+80 instead? Let me draw it here.
+
+00:45:52.020 --> 00:45:54.540
+So folks over there can see So
+what are the weird things about
+
+00:45:54.540 --> 00:45:56.500
+this classroom? Like I like
+pointing at the board but if I
+
+00:45:56.500 --> 00:45:59.420
+do that here only half the
+people can see so I have to
+
+00:45:59.420 --> 00:46:02.580
+Stick to the iPad a little more
+So all I'm question is what if
+
+00:46:02.580 --> 00:46:07.830
+instead of 85 this data like we
+move the 85 to here
+
+00:46:08.040 --> 00:46:10.940
+And then we would just have a
+smaller thing here
+
+00:46:10.940 --> 00:46:13.600
+And it turns out that these
+slopes
+
+00:46:13.600 --> 00:46:16.220
+would actually all stay the same
+but they would just run for long
+
+00:46:16.220 --> 00:46:18.420
+because the like you know the
+segment to the right of the
+
+00:46:18.420 --> 00:46:22.960
+bottom instead of going from 85
+to 90 it would go from 80 to 90
+
+00:46:22.960 --> 00:46:28.880
+do you see what I mean yeah the
+height would change in
+
+00:46:28.880 --> 00:46:32.800
+a way that I'm about to explain
+okay so the thing I wanted to
+
+00:46:32.800 --> 00:46:37.760
+get at is C
+
+00:46:37.760 --> 00:46:43.360
+chapter 1.3
+for details of
+
+00:46:43.360 --> 00:46:44.360
+proof.
+
+00:46:45.400 --> 00:46:49.900
+But a key ingredient is this.
+
+00:46:52.500 --> 00:46:53.460
+The slope
+
+00:46:53.460 --> 00:47:04.500
+has
+
+00:47:04.500 --> 00:47:05.920
+this cool formula,
+
+00:47:05.920 --> 00:47:08.220
+which is again derived in the
+notes.
+
+00:47:08.220 --> 00:47:10.600
+The denominator is n, the number
+of data points.
+
+00:47:10.600 --> 00:47:16.540
+The numerator is the number of
+data points to the left of w
+
+00:47:17.800 --> 00:47:22.300
+minus the number of data points
+to the right of w.
+
+00:47:26.700 --> 00:47:29.160
+And this is only defined,
+
+00:47:29.160 --> 00:47:32.160
+as I said earlier,
+
+00:47:32.800 --> 00:47:37.540
+when w is not equal to any of
+
+00:47:37.540 --> 00:47:39.420
+the yi's.
+
+00:47:41.060 --> 00:47:44.900
+Because when w is equal to any
+of the yi's, again, you have to
+
+00:47:44.900 --> 00:47:46.960
+think back at that piecewise
+linear graph,
+
+00:47:46.960 --> 00:47:47.880
+you're at a bend,
+
+00:47:47.880 --> 00:47:51.300
+the slope is not defined there.
+
+00:47:51.300 --> 00:47:55.040
+Number to the left minus number
+to the right over n.
+
+00:47:55.040 --> 00:47:58.240
+So this formula will help you
+reason about what the height of
+
+00:47:58.240 --> 00:48:01.180
+this graph is at any point.
+
+00:48:01.180 --> 00:48:02.720
+Okay, and this is the kind of
+thing you're going to practice
+
+00:48:02.720 --> 00:48:05.700
+with in tomorrow's lab and in
+the upcoming homework.
+
+00:48:05.700 --> 00:48:10.950
+But let me give you an example.
+
+00:48:11.260 --> 00:48:15.960
+Why don't we consider here this
+segment?
+
+00:48:16.920 --> 00:48:20.580
+And I will highlight it in green
+here.
+
+00:48:20.580 --> 00:48:26.180
+What is the slope of this
+segment between 61 and 72 on
+
+00:48:26.180 --> 00:48:27.680
+this graph?
+
+00:48:30.620 --> 00:48:35.870
+What is the slope of the green
+line segment?
+
+00:48:41.740 --> 00:48:42.520
+Gustavo.
+
+00:48:42.520 --> 00:48:44.500
+It would be negative 4 over n.
+
+00:48:44.500 --> 00:48:45.940
+And what is n here?
+
+00:48:45.940 --> 00:48:48.100
+n would be 5,
+
+00:48:48.100 --> 00:48:48.940
+6.
+
+00:48:48.940 --> 00:48:49.940
+6.
+
+00:48:50.480 --> 00:48:51.100
+Good.
+
+00:48:51.100 --> 00:48:52.860
+How did you find that?
+
+00:48:52.860 --> 00:48:55.900
+Because there was one point to
+the left If you go to the center
+
+00:48:55.900 --> 00:48:58.220
+and there's five points to the
+right.
+
+00:48:58.220 --> 00:48:59.100
+Remember,
+
+00:48:59.100 --> 00:49:02.020
+the formula does not work when
+you're exactly on a data point.
+
+00:49:02.020 --> 00:49:05.200
+So you just consider an
+arbitrary point on the segment.
+
+00:49:05.200 --> 00:49:06.740
+So it could be anywhere here.
+
+00:49:06.740 --> 00:49:09.400
+If you live here, how many data
+points are to the left of you?
+
+00:49:09.400 --> 00:49:10.560
+One.
+How many are to the right?
+
+00:49:11.100 --> 00:49:11.680
+Five.
+
+00:49:11.680 --> 00:49:13.240
+And how many are there total?
+
+00:49:13.240 --> 00:49:14.240
+Six.
+
+00:49:14.580 --> 00:49:18.020
+So I have 1 minus 5 over 6,
+
+00:49:18.020 --> 00:49:20.740
+which is negative 2 thirds.
+
+00:49:20.740 --> 00:49:23.480
+What this shows you is anytime
+you're left of the median, then
+
+00:49:23.480 --> 00:49:28.380
+the number of data points to the
+left of you is going to be less
+
+00:49:28.380 --> 00:49:29.640
+than the number to the right.
+
+00:49:29.640 --> 00:49:31.760
+You're less than halfway through
+the distribution,
+
+00:49:31.760 --> 00:49:34.020
+so you're going to have less to
+the left, and so the slope is
+
+00:49:34.020 --> 00:49:35.000
+negative.
+
+00:49:35.000 --> 00:49:37.020
+As soon as you're halfway
+through the data set,
+
+00:49:37.020 --> 00:49:39.120
+you're going to have more to the
+left, because you will have
+
+00:49:39.120 --> 00:49:40.740
+passed more of the data set.
+
+00:49:40.740 --> 00:49:43.380
+So left minus right will be
+positive, and your slope will be
+
+00:49:43.380 --> 00:49:44.280
+positive.
+
+00:49:44.280 --> 00:49:46.880
+And that's how we reason about
+the median being the minimizer,
+
+00:49:46.880 --> 00:49:50.380
+because it's that point at which
+you you go from having a
+
+00:49:50.380 --> 00:49:53.360
+negative slope to a positive
+slope.
+
+00:49:53.360 --> 00:49:54.360
+OK?
+
+00:49:54.580 --> 00:49:56.500
+Now, I'll also say,
+
+00:49:56.500 --> 00:49:59.600
+your takeaway from this picture
+may be, OK, anytime there's an
+
+00:49:59.600 --> 00:50:03.500
+even number of data points, that
+means there's a flat bottom.
+
+00:50:03.500 --> 00:50:05.240
+But that's not necessarily true.
+
+00:50:05.240 --> 00:50:07.320
+Can you think of a situation
+where there's an even number of
+
+00:50:07.320 --> 00:50:10.200
+data points but there isn't a
+flat region where the slope is
+
+00:50:10.200 --> 00:50:11.200
+0?
+
+00:50:14.960 --> 00:50:17.660
+Even number of data points, but
+there isn't a flat region at the
+
+00:50:17.660 --> 00:50:18.660
+bottom.
+
+00:50:19.240 --> 00:50:20.740
+Any guesses?
+
+00:50:23.040 --> 00:50:24.040
+Shunwei?
+
+00:50:24.380 --> 00:50:27.840
+When there's only two middle
+values are the same? Yeah, what
+
+00:50:27.840 --> 00:50:31.660
+if the two middle values are the
+same?
+
+00:50:31.660 --> 00:50:34.840
+Then there's an even number of
+data points, but there aren't
+
+00:50:34.840 --> 00:50:37.320
+any data points in between them,
+so you could still have that
+
+00:50:37.320 --> 00:50:38.600
+hard corner.
+
+00:50:38.600 --> 00:50:40.760
+And the type of thing you will
+see as you practice exam
+
+00:50:40.760 --> 00:50:42.080
+questions is,
+
+00:50:42.080 --> 00:50:45.140
+well, what if there were 50
+values that were all equal to
+
+00:50:45.140 --> 00:50:46.080
+the median?
+
+00:50:46.080 --> 00:50:48.520
+Then what would the slope to the
+segment of the left of the
+
+00:50:48.520 --> 00:50:50.400
+median be and to the right?
+
+00:50:50.400 --> 00:50:52.740
+Those are the sorts of things
+that you'll start to play around
+
+00:50:52.740 --> 00:50:53.740
+with.
+
+00:50:54.480 --> 00:50:55.600
+Sound good?
+
+00:50:55.600 --> 00:50:59.200
+We have a grasp of what's going
+on with this mean absolute error
+
+00:50:59.200 --> 00:51:00.200
+stuff.
+
+00:51:02.380 --> 00:51:06.640
+Give us a short break here to
+test out the new attendance
+
+00:51:06.640 --> 00:51:07.640
+system.
+
+00:51:10.660 --> 00:51:12.040
+So I'm not,
+
+00:51:12.040 --> 00:51:13.360
+at least for today,
+
+00:51:13.360 --> 00:51:14.880
+we're not going to use Poll
+Everywhere.
+
+00:51:14.880 --> 00:51:20.840
+Instead go to the course website
+and in the top right
+
+00:51:20.840 --> 00:51:24.590
+it'll say lecture attendance and
+that should open a Google form.
+
+00:51:24.620 --> 00:51:27.260
+What I want you to do is fill
+out that Google form instead.
+
+00:51:27.260 --> 00:51:32.510
+You have to be logged into your
+U of M email to do this.
+
+00:51:40.620 --> 00:51:43.780
+I'll show you if you go here.
+
+00:51:43.780 --> 00:51:45.980
+Course website, top right,
+
+00:51:45.980 --> 00:51:47.480
+says Attendance.
+
+00:52:25.380 --> 00:52:29.880
+Give you another minute or so.
+
+00:52:35.860 --> 00:52:39.540
+By the way, when you write what
+is the most confusing aspect of
+
+00:52:39.540 --> 00:52:42.600
+lecture, I read those responses.
+So make sure to put something if
+
+00:52:42.600 --> 00:52:43.820
+you're thinking about it.
+
+00:52:43.820 --> 00:52:46.040
+A couple of people are asking
+where did the formula for left
+
+00:52:46.040 --> 00:52:47.960
+minus right over n come from.
+
+00:52:47.960 --> 00:52:48.640
+Again,
+
+00:52:48.640 --> 00:52:50.600
+read the course notes for that.
+There are more details there,
+
+00:52:50.600 --> 00:52:53.660
+and that is how we find that the
+median minimizes mean absolute
+
+00:52:53.660 --> 00:52:54.460
+error.
+
+00:52:54.460 --> 00:52:55.960
+Yes, and remind me of your name.
+
+00:52:55.960 --> 00:52:56.340
+Tiago.
+Tiago, right.
+
+00:52:56.340 --> 00:52:59.240
+I'm going to have to know how to
+derive that equation for the
+
+00:52:59.240 --> 00:53:01.800
+test, or is it just good to
+know?
+
+00:53:01.800 --> 00:53:06.500
+On an exam, I wouldn't ask where
+that comes from for mean
+
+00:53:06.500 --> 00:53:08.700
+absolute error specifically, but
+you do need to know the slope
+
+00:53:08.700 --> 00:53:11.280
+formula and the formula itself
+and how it works,
+
+00:53:11.280 --> 00:53:12.520
+but not where it comes from.
+
+00:53:12.520 --> 00:53:14.960
+But the kind of thing you will
+see on exams, but you're going
+
+00:53:14.960 --> 00:53:17.200
+to practice with this in lab
+homework,
+
+00:53:17.200 --> 00:53:19.460
+is here's some other loss
+function
+
+00:53:19.460 --> 00:53:22.020
+where the calculus is a little
+more easy.
+
+00:53:22.020 --> 00:53:26.300
+Find the minimizer.
+I'll give you another minute.
+
+00:53:39.420 --> 00:53:40.420
+Yes?
+
+00:53:40.560 --> 00:53:44.310
+So that's the two numbers
+between the two mediums,
+
+00:53:44.480 --> 00:53:48.980
+always have the same R absolute?
+
+00:53:49.040 --> 00:53:52.980
+Yes.
+It's like, if there are two
+
+00:53:52.980 --> 00:53:55.560
+middle values, it will always be
+flat in their output.
+
+00:53:55.560 --> 00:53:58.660
+Like their mean absolute error
+value will be the same.
+
+00:53:58.660 --> 00:54:01.600
+If there are two values at the
+middle,
+
+00:54:01.600 --> 00:54:02.600
+yes.
+
+00:54:08.300 --> 00:54:10.550
+Everyone checked in?
+
+00:54:11.140 --> 00:54:13.620
+Anyone still working on it?
+
+00:54:13.620 --> 00:54:15.120
+All good?
+
+00:54:15.120 --> 00:54:16.620
+All right.
+
+00:54:17.140 --> 00:54:19.390
+Close the form.
+
+00:54:19.660 --> 00:54:21.480
+Thank you for five seconds.
+
+00:54:21.480 --> 00:54:24.440
+We're going to let you start
+working on it.
+
+00:54:24.440 --> 00:54:25.580
+All right,
+
+00:54:25.580 --> 00:54:29.330
+let's turn to the mic.
+
+00:54:42.360 --> 00:54:45.760
+We could start in another
+minute.
+
+00:54:45.760 --> 00:54:47.180
+Just stretch your legs, chat,
+
+00:54:47.180 --> 00:54:48.680
+drink water.
+
+00:54:49.540 --> 00:54:50.820
+Let's see,
+
+00:54:50.820 --> 00:54:56.070
+let's see, let's see, I have a
+classroom.
+
+00:55:03.360 --> 00:55:04.360
+Jeez.
+
+00:55:40.440 --> 00:55:46.140
+I forgot to tell you all, so I
+mean on Thursday we had the
+
+00:55:46.140 --> 00:55:49.100
+tornado warning It was way later
+in the day, so it didn't affect
+
+00:55:49.100 --> 00:55:49.720
+us.
+
+00:55:49.720 --> 00:55:52.980
+But when I was teaching my
+central campus math class,
+
+00:55:52.980 --> 00:55:55.340
+that amber alert thing came in
+the middle of lecture.
+
+00:55:55.340 --> 00:55:59.540
+We were in Angel Hall, in one of
+those rooms that's the ground
+
+00:55:59.540 --> 00:56:01.160
+floor, which is kind of a
+basement,
+
+00:56:01.160 --> 00:56:03.180
+kind of not.
+But it had windows.
+
+00:56:03.180 --> 00:56:05.300
+And so I'm in the middle of
+class, and then everyone's phone
+
+00:56:05.300 --> 00:56:06.800
+goes off.
+I'm like, what's going on?
+
+00:56:07.220 --> 00:56:09.200
+And we're deciding what to do.
+
+00:56:09.200 --> 00:56:10.620
+And at first, I'm like, we're
+underground.
+
+00:56:10.620 --> 00:56:12.380
+It's fine.
+We could keep doing class.
+
+00:56:12.380 --> 00:56:13.900
+But there was just too much
+chaos.
+
+00:56:13.900 --> 00:56:15.620
+So I was like, whatever.
+Let's just end class 15 minutes
+
+00:56:15.620 --> 00:56:16.440
+early.
+
+00:56:16.440 --> 00:56:18.920
+But then they wouldn't let
+anyone leave the building.
+
+00:56:18.920 --> 00:56:20.280
+I don't know if you were on
+central campus then.
+
+00:56:20.280 --> 00:56:22.660
+But at least in Angel Hall, they
+weren't letting people leave.
+
+00:56:22.660 --> 00:56:24.700
+And so we all just sat on the
+ground of the building.
+
+00:56:24.700 --> 00:56:26.860
+We basically just did office
+hours like in the hallway for 20
+
+00:56:26.860 --> 00:56:29.400
+minutes just sitting out there.
+It was kind of fun,
+
+00:56:29.400 --> 00:56:32.400
+but it was chaotic.
+
+00:56:32.560 --> 00:56:35.420
+All right, let's get started.
+
+00:56:35.420 --> 00:56:39.040
+So one of the takeaways you
+should have seen here,
+
+00:56:39.040 --> 00:56:41.640
+and I don't know if I did a good
+enough job of making this super
+
+00:56:41.640 --> 00:56:42.240
+clear,
+
+00:56:42.240 --> 00:56:45.960
+is that depending on the loss
+function and you choose,
+
+00:56:45.960 --> 00:56:47.540
+you end up getting
+
+00:56:47.540 --> 00:56:51.180
+different optimal parameters
+that perhaps have different
+
+00:56:51.180 --> 00:56:52.180
+behaviors.
+
+00:56:52.460 --> 00:56:55.320
+So when we're working with the
+constant model and choose
+
+00:56:55.320 --> 00:56:56.820
+squared loss,
+
+00:56:56.820 --> 00:56:58.380
+the optimal parameter,
+
+00:56:58.380 --> 00:57:01.640
+which is the same as the optimal
+prediction here, because our
+
+00:57:01.640 --> 00:57:04.100
+parameter is our prediction with
+the constant model,
+
+00:57:04.100 --> 00:57:07.520
+is the average of all of our y
+values, or the mean.
+
+00:57:07.520 --> 00:57:10.700
+If we use absolute loss, then
+the optimal parameter is the
+
+00:57:10.700 --> 00:57:11.700
+median.
+
+00:57:12.060 --> 00:57:14.480
+And what I want to talk about is
+how the mean Mean and median are
+
+00:57:14.480 --> 00:57:17.520
+different in ways that you've
+already studied.
+
+00:57:17.520 --> 00:57:21.120
+But I want to convey how those
+are a byproduct of their
+
+00:57:21.120 --> 00:57:24.520
+relationship to the squared loss
+and absolute loss.
+
+00:57:24.520 --> 00:57:28.440
+What is something you knew about
+with regards to the mean and
+
+00:57:28.440 --> 00:57:31.440
+median before this class?
+
+00:57:32.920 --> 00:57:37.420
+How are the mean and median
+different?
+
+00:57:39.220 --> 00:57:40.720
+What's that about?
+
+00:57:40.720 --> 00:57:42.760
+With the median,
+
+00:57:42.760 --> 00:57:47.260
+outliers usually have less of an
+effect on the value.
+
+00:57:47.760 --> 00:57:49.100
+Awesome.
+That's exactly what I was
+
+00:57:49.100 --> 00:57:49.900
+getting at.
+
+00:57:49.900 --> 00:57:54.260
+So what I've drawn here is a
+histogram of the commute times
+
+00:57:54.260 --> 00:57:55.540
+data set.
+
+00:57:55.540 --> 00:57:58.240
+Now, this is different than the
+graphs we saw before, because
+
+00:57:58.240 --> 00:58:00.100
+the graphs we saw before,
+
+00:58:00.100 --> 00:58:06.040
+we drew a scatter plot, And each
+point conveyed both an
+
+00:58:06.040 --> 00:58:08.840
+x amount and a y amount.
+The x amount was the time we
+
+00:58:08.840 --> 00:58:13.120
+left in the morning, and the y
+amount was the amount of time it
+
+00:58:13.120 --> 00:58:14.400
+actually took to get to work,
+
+00:58:14.400 --> 00:58:15.320
+the commute time.
+
+00:58:15.320 --> 00:58:17.660
+Here what I'm looking at is just
+the distribution of commute
+
+00:58:17.660 --> 00:58:18.600
+times,
+
+00:58:18.600 --> 00:58:21.600
+where taller bars represent
+larger frequencies.
+
+00:58:22.440 --> 00:58:26.500
+And what I've drawn in purple is
+the median of the data set, and
+
+00:58:26.500 --> 00:58:28.900
+in orange is the mean of the
+data set.
+
+00:58:28.900 --> 00:58:33.720
+The median is the point in the
+data set at which half of the
+
+00:58:33.720 --> 00:58:35.340
+data is to the left
+
+00:58:35.340 --> 00:58:43.080
+and
+
+00:58:43.080 --> 00:58:46.830
+half is to the right.
+
+00:58:48.570 --> 00:58:52.860
+What that means is if there are
+some outliers, whether they're
+
+00:58:52.860 --> 00:58:58.280
+at 130 minutes or 1.3
+million minutes.
+
+00:58:58.880 --> 00:59:01.360
+It doesn't change the median,
+because the median is just where
+
+00:59:01.360 --> 00:59:05.200
+half of the data is to the left
+and half is to the right.
+
+00:59:05.200 --> 00:59:06.880
+But you can imagine,
+
+00:59:06.880 --> 00:59:09.640
+because of how the mean is
+calculated, you have to add up
+
+00:59:09.640 --> 00:59:12.000
+every single y-value and divide
+by n.
+
+00:59:12.000 --> 00:59:17.120
+If even one of them is a massive
+outlier,
+
+00:59:17.120 --> 00:59:19.240
+it drives up the entire mean,
+
+00:59:19.240 --> 00:59:22.060
+okay? So when you look at
+distributions like this,
+
+00:59:22.060 --> 00:59:25.900
+the mean gets pulled in the
+direction of the outliers,
+
+00:59:25.900 --> 00:59:28.460
+whether they are big outliers or
+small outliers, like you could
+
+00:59:28.460 --> 00:59:31.240
+take a mirror image of this
+graph and have most of the
+
+00:59:31.240 --> 00:59:34.180
+values be to the right with some
+outliers to the left and the
+
+00:59:34.180 --> 00:59:37.620
+mean gets dragged by those
+outliers.
+
+00:59:37.620 --> 00:59:41.370
+Now this distribution here is
+what I would call right skewed.
+
+00:59:43.460 --> 00:59:45.840
+But that term, like I didn't
+invent the term, but it's a
+
+00:59:45.840 --> 00:59:48.420
+little confusing because the
+data is to the left, even though
+
+00:59:48.420 --> 00:59:50.660
+it's called right skewed.
+
+00:59:50.660 --> 00:59:54.720
+The way I think about this is
+imagine this was a dog or a cat,
+
+00:59:54.720 --> 00:59:55.780
+whatever you prefer,
+
+00:59:55.780 --> 00:59:58.800
+Its tail would be here, and
+another term they use in
+
+00:59:58.800 --> 01:00:03.140
+statistics for distribution is,
+you could call this
+
+01:00:03.140 --> 01:00:04.140
+right-tailed.
+
+01:00:05.840 --> 01:00:10.260
+And the skew and the tail are
+the same.
+
+01:00:10.260 --> 01:00:13.560
+It's right-skewed or
+right-tailed, but the data is to
+
+01:00:13.560 --> 01:00:14.580
+the left.
+
+01:00:14.580 --> 01:00:17.860
+In right-skewed data, the mean
+is typically larger than the
+
+01:00:17.860 --> 01:00:18.460
+median.
+
+01:00:18.460 --> 01:00:21.200
+In left-skewed data, the mean is
+less than the median.
+
+01:00:21.200 --> 01:00:24.760
+and in data sets that are
+symmetric, then the mean and
+
+01:00:24.760 --> 01:00:26.660
+median are typically close.
+
+01:00:26.660 --> 01:00:30.180
+What is a common example of
+real-world data
+
+01:00:30.180 --> 01:00:31.440
+that looks like this?
+
+01:00:31.440 --> 01:00:33.480
+Mean is much larger than the
+median,
+
+01:00:33.480 --> 01:00:37.230
+the default example you should
+think of.
+
+01:00:39.840 --> 01:00:40.840
+Caleb.
+
+01:00:40.880 --> 01:00:41.540
+Income.
+
+01:00:41.540 --> 01:00:42.280
+Income.
+
+01:00:42.280 --> 01:00:44.880
+Yeah, income or net worth.
+
+01:00:44.880 --> 01:00:48.040
+Most people make a relatively
+low amount of money, but there
+
+01:00:48.040 --> 01:00:51.660
+are the Jeff Bezoses and whoever
+else of the world that drive up
+
+01:00:51.660 --> 01:00:54.460
+those numbers, which is why
+whenever you're looking at
+
+01:00:54.460 --> 01:00:56.460
+information about a population,
+
+01:00:56.460 --> 01:01:00.100
+to have a complete picture, it's
+useful to know both the mean and
+
+01:01:00.100 --> 01:01:01.600
+the median.
+
+01:01:02.640 --> 01:01:04.800
+This is all stuff you already
+knew.
+
+01:01:04.800 --> 01:01:09.180
+But what I want to convey is
+that this is actually related to
+
+01:01:09.180 --> 01:01:10.720
+empirical risk minimization.
+
+01:01:10.720 --> 01:01:14.500
+Or one way you can think about
+this is as a result of empirical
+
+01:01:14.500 --> 01:01:16.000
+risk minimization.
+
+01:01:16.300 --> 01:01:19.020
+Let me draw a picture for you.
+And to be clear here, we're
+
+01:01:19.020 --> 01:01:24.840
+comparing absolute versus
+squared
+
+01:01:24.840 --> 01:01:25.840
+loss.
+
+01:01:28.700 --> 01:01:32.880
+Let's suppose we have a
+hypothetical data set with just
+
+01:01:32.880 --> 01:01:35.130
+four y values.
+
+01:01:38.000 --> 01:01:41.140
+Or just they're y values, but
+I'm drawing them on the x-axis
+
+01:01:41.140 --> 01:01:43.420
+because it's easier to compare
+them this way.
+
+01:01:43.420 --> 01:01:43.980
+Okay,
+
+01:01:43.980 --> 01:01:44.600
+1,
+
+01:01:44.600 --> 01:01:45.360
+2,
+
+01:01:45.360 --> 01:01:47.610
+3, and 14.
+
+01:01:47.940 --> 01:01:53.140
+And let's consider the value
+
+01:01:53.140 --> 01:01:56.340
+w equals 4.
+
+01:02:01.880 --> 01:02:04.300
+The 14, this isn't really drawn
+to scale, the 14 should look
+
+01:02:04.300 --> 01:02:05.800
+further away.
+
+01:02:08.220 --> 01:02:14.000
+So what are the squared losses
+from w
+
+01:02:14.000 --> 01:02:15.100
+equals 4,
+
+01:02:15.100 --> 01:02:18.540
+like my candidate w, this w I'm
+considering, to all four of my
+
+01:02:18.540 --> 01:02:20.040
+data points?
+
+01:02:20.420 --> 01:02:23.820
+What's the squared loss to the
+data point 3?
+
+01:02:23.820 --> 01:02:28.320
+Well, it's 1 squared, which is
+1, to the data point 2.
+
+01:02:29.600 --> 01:02:34.100
+Let me remove this a little.
+
+01:02:35.320 --> 01:02:40.570
+Here I have the distance is 2
+squared, which is 4.
+
+01:02:41.280 --> 01:02:44.280
+Over here I have 3 squared,
+
+01:02:44.280 --> 01:02:45.800
+which is 9.
+
+01:02:45.800 --> 01:02:51.020
+And out here I have 10 squared,
+which is 100.
+
+01:02:51.020 --> 01:02:52.880
+So what is my mean squared
+error?
+
+01:02:52.880 --> 01:02:57.380
+Well, it's the average of 9,
+
+01:02:58.080 --> 01:02:59.080
+4,
+
+01:02:59.180 --> 01:03:05.180
+1, So that's up to 14 plus 100.
+
+01:03:06.940 --> 01:03:09.400
+It's 114 over 4.
+
+01:03:09.400 --> 01:03:12.400
+So it's like 28.5.
+
+01:03:20.160 --> 01:03:21.160
+Now,
+
+01:03:21.180 --> 01:03:25.260
+remember, our goal is to
+minimize mean squared error or
+
+01:03:25.260 --> 01:03:27.880
+mean whatever loss function
+we're using.
+
+01:03:27.880 --> 01:03:33.420
+Does w equals 4 minimize mean
+squared error here?
+
+01:03:36.040 --> 01:03:39.800
+You're saying no, it doesn't why
+does it not?
+
+01:03:39.800 --> 01:03:42.920
+You just know it doesn't but no
+
+01:03:42.920 --> 01:03:47.460
+We just it just feels like it
+shouldn't Sam Because the growth
+
+01:03:47.460 --> 01:03:49.880
+how far it is is kind of
+exponential.
+
+01:03:49.880 --> 01:03:54.380
+So like if since quadratic it's
+quadratic Yeah.
+
+01:03:54.600 --> 01:03:58.320
+Since 14 is so far away, it's 10
+away from 4.
+
+01:03:58.320 --> 01:04:00.680
+That's the number one thing you
+want to minimize.
+
+01:04:00.680 --> 01:04:01.260
+Exactly.
+
+01:04:01.260 --> 01:04:02.400
+So it's a little closer that
+way.
+
+01:04:02.400 --> 01:04:04.840
+So it's counterintuitive.
+But the way to drive down the
+
+01:04:04.840 --> 01:04:08.590
+mean squared error is actually
+to move w closer to the outline.
+
+01:04:08.600 --> 01:04:11.280
+And check out what happens when
+we do that.
+
+01:04:11.280 --> 01:04:15.780
+If I draw this graph again,
+
+01:04:16.380 --> 01:04:18.520
+but with 1,
+
+01:04:18.520 --> 01:04:19.520
+2,
+
+01:04:20.100 --> 01:04:21.240
+3.
+
+01:04:26.060 --> 01:04:27.060
+14,
+
+01:04:27.300 --> 01:04:31.800
+but consider w equals 5 instead,
+
+01:04:31.980 --> 01:04:36.960
+my 3 squared losses on the left
+all go up.
+
+01:04:36.960 --> 01:04:38.760
+Instead of 1,
+
+01:04:38.760 --> 01:04:41.720
+I now have a 4.
+
+01:04:41.720 --> 01:04:43.800
+Instead of a 4,
+
+01:04:43.800 --> 01:04:47.550
+I now have a 9.
+
+01:04:47.680 --> 01:04:52.220
+Instead of what used to be a 9,
+I now have a 16.
+
+01:04:52.220 --> 01:04:54.400
+and those three numbers are all
+bigger than their old
+
+01:04:54.400 --> 01:04:59.180
+counterparts do we agree this
+used to be 9 now it's 16 this
+
+01:04:59.180 --> 01:05:02.760
+used to be 4 now it's 9 this
+used to be 1 now it's 4 seems
+
+01:05:02.760 --> 01:05:06.200
+like things are just getting
+worse but if you compare it to
+
+01:05:06.200 --> 01:05:12.180
+what's going on on the right
+what used to be 100
+
+01:05:12.180 --> 01:05:18.080
+is now 81 and when you average
+these four squared
+
+01:05:18.080 --> 01:05:18.840
+losses,
+
+01:05:18.840 --> 01:05:22.590
+4, 9, 16, and 81,
+
+01:05:24.340 --> 01:05:28.260
+you actually get a smaller
+number.
+
+01:05:35.660 --> 01:05:41.500
+And so what I'm trying to convey
+to
+
+01:05:41.500 --> 01:05:47.500
+you is the behavior of the mean
+is influenced by the fact that
+
+01:05:47.500 --> 01:05:50.640
+it minimizes mean squared error.
+
+01:05:50.640 --> 01:05:55.660
+And squared loss penalizes you
+from being far away from these
+
+01:05:55.660 --> 01:05:57.460
+outliers.
+The way I think about it is that
+
+01:05:57.460 --> 01:06:00.780
+these outliers have this sort of
+like gravitational pull.
+
+01:06:00.780 --> 01:06:03.680
+Like, I'm forcing you to be
+close to me because if you're
+
+01:06:03.680 --> 01:06:04.380
+not,
+
+01:06:04.380 --> 01:06:07.080
+then your squared loss from me
+will be super high,
+
+01:06:07.080 --> 01:06:10.880
+which forces the predictions to
+be skewed in that direction.
+
+01:06:12.180 --> 01:06:15.600
+You see what I mean by that?
+Whereas absolute loss,
+
+01:06:15.600 --> 01:06:21.560
+the penalty of moving from w
+equals 4 to w equals 5
+
+01:06:21.560 --> 01:06:25.360
+hurts you three times as much on
+the left, because you get one
+
+01:06:25.360 --> 01:06:29.140
+unit further away from all three
+things on the left and only one
+
+01:06:29.140 --> 01:06:30.960
+unit closer to the thing on the
+right.
+
+01:06:30.960 --> 01:06:36.780
+So going from w equals 4 to w
+equals 5 increases your
+
+01:06:36.780 --> 01:06:38.920
+mean absolute error.
+
+01:06:38.920 --> 01:06:42.300
+Okay, and we know from our
+discussion of the median that
+
+01:06:42.300 --> 01:06:47.100
+the best W if we were minimizing
+mean absolute error isn't four
+
+01:06:47.100 --> 01:06:50.300
+or five, it's anything between
+two and three.
+
+01:06:50.300 --> 01:06:51.180
+Right?
+
+01:06:51.180 --> 01:06:53.400
+Do we agree with that?
+
+01:06:53.400 --> 01:06:56.340
+But I'm saying with mean
+absolute error going from W
+
+01:06:56.340 --> 01:06:58.340
+equals four to W equals five
+hertz,
+
+01:06:58.340 --> 01:07:01.340
+you're getting further away on
+average from the data.
+
+01:07:01.340 --> 01:07:04.560
+But for mean squared error,
+where the goal is to minimize
+
+01:07:04.560 --> 01:07:08.040
+the average squared distance
+from all the data points,
+
+01:07:08.320 --> 01:07:12.240
+the fact that you have this one
+outlier sort of skews your
+
+01:07:12.240 --> 01:07:15.240
+parameters and or predictions
+accordingly.
+
+01:07:17.320 --> 01:07:19.100
+Do we see why that is?
+
+01:07:19.100 --> 01:07:19.620
+OK,
+
+01:07:19.620 --> 01:07:22.000
+so now we're looking at this in
+the context of the constant
+
+01:07:22.000 --> 01:07:23.000
+model,
+
+01:07:23.340 --> 01:07:28.720
+but the fact that using squared
+loss sort of pushes your
+
+01:07:28.720 --> 01:07:31.260
+predictions in the direction of
+outliers
+
+01:07:31.260 --> 01:07:35.740
+is true with other models as
+well,
+
+01:07:35.740 --> 01:07:37.990
+including squared loss.
+
+01:07:38.140 --> 01:07:41.220
+And this is actually a lab
+question you will see tomorrow.
+
+01:07:41.220 --> 01:07:45.580
+There will be a lab question
+where there's a data set and two
+
+01:07:45.580 --> 01:07:46.580
+lines.
+
+01:07:46.900 --> 01:07:50.300
+One will say this is the line
+that minimizes mean absolute
+
+01:07:50.300 --> 01:07:51.300
+error.
+
+01:07:51.520 --> 01:07:53.620
+One minimizes mean squared
+error.
+
+01:07:53.620 --> 01:07:55.880
+And you have to think about
+which one is which.
+
+01:07:55.880 --> 01:07:58.920
+And the answer is that the one
+that minimizes mean squared
+
+01:07:58.920 --> 01:08:01.920
+error is the one that is pulled
+more in the direction of the
+
+01:08:01.920 --> 01:08:03.280
+outliers.
+And it's because of this
+
+01:08:03.280 --> 01:08:05.320
+behavior.
+OK, in general,
+
+01:08:05.760 --> 01:08:09.510
+squared loss is more influenced
+by outliers.
+
+01:08:37.060 --> 01:08:39.000
+Coming back here,
+
+01:08:39.000 --> 01:08:41.480
+so squared loss is more
+influenced by outliers than
+
+01:08:41.480 --> 01:08:42.980
+absolute loss.
+
+01:08:43.400 --> 01:08:46.780
+What if instead of squaring the
+loss,
+
+01:08:46.780 --> 01:08:51.980
+I raised it to the power of 4?
+
+01:08:51.980 --> 01:08:54.800
+Well, what would you think would
+happen?
+
+01:08:54.800 --> 01:08:55.180
+Alex?
+
+01:08:55.180 --> 01:08:56.300
+It would be the same effect,
+
+01:08:56.300 --> 01:08:57.880
+but even way more extreme.
+
+01:08:57.880 --> 01:08:58.680
+Exactly.
+
+01:08:58.680 --> 01:09:03.220
+So now your distance from the
+outliers is being penalized
+
+01:09:03.220 --> 01:09:05.940
+quartically, which is the term
+for degree four,
+
+01:09:05.940 --> 01:09:08.190
+rather than quadratically.
+
+01:09:08.840 --> 01:09:11.760
+What that means is your penalty
+from being far away from an
+
+01:09:11.760 --> 01:09:14.020
+outlier increases even more.
+And so you can imagine the
+
+01:09:14.020 --> 01:09:16.420
+outlier has even more of a pull.
+
+01:09:16.420 --> 01:09:19.460
+What if you did degree 100 loss?
+
+01:09:19.460 --> 01:09:20.960
+Then what?
+
+01:09:26.280 --> 01:09:28.700
+I'm sort of baiting you into
+predicting what the answer is
+
+01:09:28.700 --> 01:09:30.950
+going to be.
+
+01:09:32.980 --> 01:09:34.820
+Your guess is okay,
+
+01:09:34.820 --> 01:09:37.180
+degree two you get pulled by the
+outlier, degree four you get
+
+01:09:37.180 --> 01:09:38.260
+pulled even more.
+
+01:09:38.260 --> 01:09:40.220
+So maybe the picture you have in
+your mind is degree four brings
+
+01:09:40.220 --> 01:09:41.120
+you here,
+
+01:09:41.120 --> 01:09:43.520
+and degree a million brings you
+here.
+
+01:09:43.520 --> 01:09:45.920
+That was my initial prediction
+when I first started researching
+
+01:09:45.920 --> 01:09:46.540
+this,
+
+01:09:46.540 --> 01:09:48.600
+but that's not what happens.
+
+01:09:48.600 --> 01:09:50.880
+Pretend you have degree a
+million loss.
+
+01:09:50.880 --> 01:09:52.660
+The optimal W isn't this,
+
+01:09:52.660 --> 01:09:57.910
+but what do you think it is?
+
+01:10:06.320 --> 01:10:08.760
+It's not the median, it's the
+midpoint.
+
+01:10:08.760 --> 01:10:11.760
+It's halfway between the
+smallest and biggest data point.
+
+01:10:12.160 --> 01:10:16.500
+Because if you think about what
+degree 100 loss would be,
+
+01:10:16.500 --> 01:10:19.620
+then your penalty for being far
+away from anything is very high.
+
+01:10:19.620 --> 01:10:22.040
+So if you overcorrect it and
+say, OK, I'm just going to live
+
+01:10:22.040 --> 01:10:23.820
+on w equals 14,
+
+01:10:23.820 --> 01:10:26.440
+well, then think about how big
+your loss to the data point one
+
+01:10:26.440 --> 01:10:27.620
+would be.
+
+01:10:27.620 --> 01:10:30.460
+So as that exponent gets bigger
+and bigger,
+
+01:10:30.460 --> 01:10:34.320
+the optimal parameter converges
+to halfway between the min and
+
+01:10:34.320 --> 01:10:37.520
+the max so that its worst case
+distance to any point is
+
+01:10:37.520 --> 01:10:38.380
+minimized.
+
+01:10:38.380 --> 01:10:40.920
+Because if you're halfway
+between the min and the max,
+
+01:10:40.920 --> 01:10:44.460
+then that is the smallest worst
+case distance you could have.
+
+01:10:44.460 --> 01:10:47.940
+Because if you move away from
+that, then the furthest you are
+
+01:10:47.940 --> 01:10:49.820
+away from any data point
+increases.
+
+01:10:49.820 --> 01:10:51.180
+But if you're in the middle,
+
+01:10:51.180 --> 01:10:54.180
+then while it's not necessarily
+indicative of the data set,
+
+01:10:54.180 --> 01:10:57.900
+you're not that far from the
+smallest or the biggest.
+
+01:10:57.900 --> 01:11:01.100
+But this is like a sort of
+confusing idea, not something
+
+01:11:01.100 --> 01:11:05.200
+that I've seen published or
+anything like that anywhere.
+
+01:11:05.220 --> 01:11:07.680
+This is more of like a research
+idea, but it's like the kind of
+
+01:11:07.680 --> 01:11:10.320
+thing you'll learn how to play
+around with in lab tomorrow.
+
+01:11:10.320 --> 01:11:11.500
+There is a question.
+
+01:11:11.500 --> 01:11:12.240
+Sam, yeah.
+
+01:11:12.240 --> 01:11:14.180
+Wait, would that be the,
+
+01:11:14.180 --> 01:11:16.020
+are you saying that's the
+optimal w?
+
+01:11:16.020 --> 01:11:19.360
+The optimal w, if you use a
+really high degree for your loss
+
+01:11:19.360 --> 01:11:20.360
+function.
+
+01:11:20.900 --> 01:11:23.120
+Remember, the loss function is
+something that you pick in
+
+01:11:23.120 --> 01:11:24.020
+advance.
+
+01:11:24.020 --> 01:11:26.600
+If you use squared loss, the
+optimal w is the mean.
+
+01:11:26.600 --> 01:11:29.380
+If you use absolute loss, the
+optimal w is the median.
+
+01:11:29.380 --> 01:11:33.160
+I'm saying if you use degree 100
+loss or degree a million loss,
+
+01:11:33.160 --> 01:11:36.680
+the optimal w is halfway between
+the min and the max.
+
+01:11:36.680 --> 01:11:39.620
+What if there's like an infinite
+amount of points on the left
+
+01:11:39.620 --> 01:11:42.380
+side and there's like One point
+that's all the way on the right
+
+01:11:42.380 --> 01:11:47.280
+side That would still be true
+for like L earlier for degree
+
+01:11:47.280 --> 01:11:51.160
+100 or a million loss It may
+just take higher degrees to get
+
+01:11:51.160 --> 01:11:53.410
+to that convergence
+
+01:11:55.500 --> 01:11:59.780
+Obviously doesn't matter for
+quadratic or to power 400 or
+
+01:11:59.780 --> 01:12:03.120
+whatever but does it ever matter
+whether you're doing
+
+01:12:03.120 --> 01:12:04.120
+No,
+
+01:12:05.340 --> 01:12:07.280
+because if you're doing an odd
+number you're supposed to
+
+01:12:07.280 --> 01:12:10.260
+absolute value at first So if
+you're doing like degree 3 or
+
+01:12:10.260 --> 01:12:11.400
+degree 5 loss,
+
+01:12:11.400 --> 01:12:15.240
+you'd take absolute value first
+and then raise it to the
+
+01:12:15.240 --> 01:12:18.580
+exponent because if you have an
+odd number,
+
+01:12:18.580 --> 01:12:20.040
+or sorry, you have an odd
+degree,
+
+01:12:20.040 --> 01:12:22.080
+a negative number to an odd
+degree is still a negative
+
+01:12:22.080 --> 01:12:24.040
+number, which is why you'd
+absolute it first.
+
+01:12:24.040 --> 01:12:25.800
+Yeah, good observation.
+
+01:12:25.800 --> 01:12:26.420
+OK.
+
+01:12:26.420 --> 01:12:27.960
+While we're here,
+
+01:12:27.960 --> 01:12:30.780
+so we talked about that sort of
+infinity behavior, which is
+
+01:12:30.780 --> 01:12:33.080
+confusing.
+Like I know it's hard to wrap
+
+01:12:33.080 --> 01:12:35.120
+your head around.
+Here's another
+
+01:12:35.120 --> 01:12:41.060
+empirical risk function I want
+you to think about.
+
+01:13:00.240 --> 01:13:03.080
+Just the loss function part on
+the right
+
+01:13:03.080 --> 01:13:05.480
+is called zero-one loss.
+
+01:13:05.480 --> 01:13:08.000
+And as the name suggests, it can
+only be equal to one of two
+
+01:13:08.000 --> 01:13:09.000
+things,
+
+01:13:09.000 --> 01:13:12.460
+one if the prediction is wrong,
+
+01:13:12.460 --> 01:13:15.160
+and zero if the prediction is
+right.
+
+01:13:15.160 --> 01:13:18.420
+So if we're concerned with
+minimizing average zero-one
+
+01:13:18.420 --> 01:13:19.420
+loss,
+
+01:13:20.460 --> 01:13:22.940
+what do you think, and we're
+using the constant model here,
+
+01:13:22.940 --> 01:13:27.760
+what do you think the optimal w
+is?
+
+01:13:27.760 --> 01:13:28.660
+Brian.
+
+01:13:28.660 --> 01:13:30.240
+The mode.
+How'd you get that?
+
+01:13:30.900 --> 01:13:35.640
+Just like when I have the most
+amount directly on the point.
+
+01:13:35.640 --> 01:13:36.640
+Exactly.
+
+01:13:37.820 --> 01:13:39.860
+You can think of this loss
+function as,
+
+01:13:39.860 --> 01:13:42.460
+again, it only has two possible
+values, 1 or 0.
+
+01:13:42.460 --> 01:13:45.600
+And if the goal is to make the
+average of the loss function as
+
+01:13:45.600 --> 01:13:46.840
+small as possible,
+
+01:13:46.840 --> 01:13:49.400
+that is, you want this entire
+expression to be as small as
+
+01:13:49.400 --> 01:13:50.400
+possible,
+
+01:13:50.740 --> 01:13:53.380
+you want to trigger this 0.
+Think of this as like a function
+
+01:13:53.380 --> 01:13:54.740
+that's defined by an if
+statement.
+
+01:13:54.740 --> 01:13:57.740
+If y equals w,
+
+01:13:57.760 --> 01:14:00.300
+return 0, otherwise return 1.
+
+01:14:00.300 --> 01:14:03.720
+So what you want to do is
+trigger the 0 case as often as
+
+01:14:03.720 --> 01:14:05.040
+you can.
+
+01:14:05.040 --> 01:14:06.400
+And how do you do that?
+
+01:14:06.400 --> 01:14:10.460
+Well, you just pick w being
+equal to the data point that was
+
+01:14:10.460 --> 01:14:14.460
+most common without regards to
+the shape of the distribution.
+
+01:14:14.980 --> 01:14:18.660
+You just pick the one that's
+most common.
+
+01:14:18.660 --> 01:14:23.380
+And so you pick the data point
+that's the mode.
+
+01:14:23.380 --> 01:14:25.940
+Now, your question is, what if
+there are multiple modes, or
+
+01:14:25.940 --> 01:14:28.600
+what if every data point appears
+exactly once?
+
+01:14:28.600 --> 01:14:31.400
+Well then, there are multiple
+minimizers for average 0, 1
+
+01:14:31.400 --> 01:14:32.400
+loss.
+
+01:14:35.000 --> 01:14:37.480
+My point in showing you this is
+not that you need to sit and
+
+01:14:37.480 --> 01:14:40.850
+memorize lots of different loss
+functions, but it's to show you
+
+01:14:40.850 --> 01:14:43.900
+that the loss function you
+choose impacts the behavior of
+
+01:14:43.900 --> 01:14:45.980
+the resulting predictions.
+
+01:14:45.980 --> 01:14:48.480
+And things like the mean,
+median, and mode, you've heard
+
+01:14:48.480 --> 01:14:51.380
+about before, but they're
+actually related to these ideas
+
+01:14:51.380 --> 01:14:54.900
+of loss function, which I think
+is interesting.
+
+01:14:54.900 --> 01:14:57.900
+Questions with anything we've
+done so far?
+
+01:14:58.560 --> 01:15:00.620
+And I know we're moving quickly,
+which is why,
+
+01:15:00.620 --> 01:15:03.480
+even on the announcement slide
+today, I said make sure to spend
+
+01:15:03.480 --> 01:15:07.230
+some time reading through the
+notes carefully.
+
+01:15:07.860 --> 01:15:08.420
+Alex?
+
+01:15:08.420 --> 01:15:12.080
+If each data point only appeared
+once, would it even matter what
+
+01:15:12.080 --> 01:15:14.120
+you choose for w for like the
+minimum?
+
+01:15:14.120 --> 01:15:14.440
+No,
+
+01:15:14.440 --> 01:15:15.520
+it wouldn't.
+They'd all have the same
+
+01:15:15.520 --> 01:15:16.520
+minimizing
+
+01:15:16.740 --> 01:15:19.740
+value of empirical risk.
+
+01:15:21.020 --> 01:15:23.620
+To be clear, just because you
+can use a loss function doesn't
+
+01:15:23.620 --> 01:15:24.440
+mean you should.
+
+01:15:24.440 --> 01:15:26.400
+What is important is to
+understand how different loss
+
+01:15:26.400 --> 01:15:27.900
+functions behave.
+
+01:15:28.380 --> 01:15:29.880
+Sound reasonable?
+
+01:15:29.880 --> 01:15:33.620
+What I want to give you now is
+like a five minute preview of
+
+01:15:33.620 --> 01:15:38.120
+the next thing we're going to
+study.
+
+01:15:38.240 --> 01:15:40.740
+You're going to play around with
+this, especially in code,
+
+01:15:40.740 --> 01:15:43.180
+including using scikit-learn,
+which is like the industry
+
+01:15:43.180 --> 01:15:48.560
+standard Python package for
+non-neural network machine
+
+01:15:48.560 --> 01:15:49.680
+learning.
+You're going to see this in lab
+
+01:15:49.680 --> 01:15:50.680
+tomorrow.
+
+01:15:51.280 --> 01:15:53.280
+I want to give you a preview of
+what that's going to look like.
+
+01:15:53.280 --> 01:15:55.280
+And then on Thursday, we will
+spend all our time discussing
+
+01:15:55.280 --> 01:15:57.240
+the theory of it.
+
+01:15:57.240 --> 01:15:59.780
+Remind me, what was the name of
+the second model we said we
+
+01:15:59.780 --> 01:16:02.260
+would study? We've sort of
+talked in depth about the
+
+01:16:02.260 --> 01:16:03.760
+constant model.
+What was the next thing?
+
+01:16:07.180 --> 01:16:07.640
+Paul?
+
+01:16:07.640 --> 01:16:08.460
+Linear?
+
+01:16:08.460 --> 01:16:10.600
+Yeah, the simple linear
+regression model.
+
+01:16:10.600 --> 01:16:13.840
+And simple just means it uses
+one input variable or one
+
+01:16:13.840 --> 01:16:14.840
+feature.
+
+01:16:14.940 --> 01:16:17.560
+Later, we will learn about
+multiple linear regression.
+
+01:16:17.560 --> 01:16:21.620
+and that's when we use multiple
+input variables.
+
+01:16:21.620 --> 01:16:25.370
+So I'll say next model,
+
+01:16:26.180 --> 01:16:31.360
+simple linear regression.
+
+01:16:33.180 --> 01:16:34.420
+And as you can see,
+
+01:16:34.420 --> 01:16:37.780
+and simple linear regression is
+really just a rebranded y equals
+
+01:16:37.780 --> 01:16:40.860
+mx plus b.
+It's just that the slope now is
+
+01:16:40.860 --> 01:16:43.880
+called w1, and the intercept is
+now called w0.
+
+01:16:43.880 --> 01:16:49.200
+And what I've shown you here are
+three different possible
+
+01:16:49.200 --> 01:16:52.950
+choices of intercepts and slopes
+for this data set.
+
+01:16:53.120 --> 01:16:54.340
+And the question is,
+
+01:16:54.340 --> 01:16:57.520
+what is the most optimal
+intercept and slope?
+
+01:16:57.520 --> 01:17:00.620
+One thing you'll notice is that
+the way in which we are making
+
+01:17:00.620 --> 01:17:02.120
+our predictions,
+
+01:17:02.660 --> 01:17:06.580
+now it includes the x's
+themselves.
+
+01:17:06.780 --> 01:17:09.400
+So for different times we leave
+in the morning, we're getting
+
+01:17:09.400 --> 01:17:10.900
+different predictions.
+
+01:17:10.980 --> 01:17:13.060
+So with the constant model,
+
+01:17:13.060 --> 01:17:15.320
+the parameter was the
+prediction.
+
+01:17:15.320 --> 01:17:18.100
+Like w star equals 50 means
+we're just predicting 50 all the
+
+01:17:18.100 --> 01:17:18.980
+time.
+
+01:17:18.980 --> 01:17:22.120
+But here, finding that the slope
+is equal to 100 or something
+
+01:17:22.120 --> 01:17:24.020
+doesn't mean you're predicting
+100.
+
+01:17:24.020 --> 01:17:27.160
+It just means that's one of the
+pieces of the formula you are
+
+01:17:27.160 --> 01:17:29.240
+using to make your predictions.
+
+01:17:29.240 --> 01:17:31.800
+And instead of finding just one
+optimal parameter,
+
+01:17:31.800 --> 01:17:35.500
+now we need to find an optimal
+combination of parameters.
+
+01:17:35.500 --> 01:17:40.200
+So what does the math for that
+look like?
+
+01:17:40.200 --> 01:17:43.060
+We're going to look at our
+three-step recipe for empirical
+
+01:17:43.060 --> 01:17:45.310
+risk minimization again.
+
+01:17:47.740 --> 01:17:53.140
+The model we'll choose is the
+simple linear regression
+
+01:17:53.140 --> 01:17:54.140
+model.
+
+01:18:02.580 --> 01:18:05.180
+We'll stick with squared loss,
+
+01:18:05.180 --> 01:18:10.540
+though in the next homework you
+will look at simple linear
+
+01:18:10.540 --> 01:18:13.540
+regression and absolute loss.
+
+01:18:13.740 --> 01:18:16.700
+And so what does the average
+loss look like?
+
+01:18:16.700 --> 01:18:17.240
+Well,
+
+01:18:17.240 --> 01:18:20.600
+it should have a 1 over n and a
+sum across all of our data
+
+01:18:20.600 --> 01:18:21.600
+points.
+
+01:18:22.060 --> 01:18:25.810
+Every average loss will have
+this.
+
+01:18:25.920 --> 01:18:29.200
+I'm going to have yi minus
+something squared.
+
+01:18:29.200 --> 01:18:32.200
+What is that something?
+
+01:18:36.400 --> 01:18:39.400
+W0 plus w1 xi.
+
+01:18:42.060 --> 01:18:44.740
+W0 plus w1 xi.
+
+01:18:44.740 --> 01:18:48.020
+Great, and that difference is
+being squared.
+
+01:18:48.020 --> 01:18:51.900
+So I might still call this RSQ,
+
+01:18:51.900 --> 01:18:56.400
+but this function now has how
+many input variables?
+
+01:18:57.300 --> 01:19:01.050
+Two, because there are two
+parameters.
+
+01:19:04.320 --> 01:19:07.440
+And so what we will look at next
+class is how you find the
+
+01:19:07.440 --> 01:19:10.380
+optimal combination of
+parameters that minimizes this
+
+01:19:10.380 --> 01:19:11.360
+function.
+
+01:19:11.360 --> 01:19:14.500
+But to do that, we will need to
+introduce basic ideas from
+
+01:19:14.500 --> 01:19:16.000
+multivariable calculus,
+
+01:19:16.340 --> 01:19:17.020
+calc 3,
+
+01:19:17.020 --> 01:19:22.000
+because we now don't just have a
+single variable along which we
+
+01:19:22.000 --> 01:19:24.140
+take a derivative.
+We have two variables and so we
+
+01:19:24.140 --> 01:19:27.360
+have to take what are called
+partial derivatives.
+
+01:19:27.360 --> 01:19:29.640
+And just so you have it written
+down,
+
+01:19:29.640 --> 01:19:35.060
+I'll give you some of the
+optimal
+
+01:19:35.060 --> 01:19:36.060
+formulas.
+
+01:19:38.460 --> 01:19:40.560
+But right away you're seeing
+that this is a little different
+
+01:19:40.560 --> 01:19:43.920
+than before because an x appears
+in the formula,
+
+01:19:43.920 --> 01:19:46.280
+which we should expect it to,
+right? And it would be weird if
+
+01:19:46.280 --> 01:19:49.920
+the formula for the optimal
+slope
+
+01:19:49.920 --> 01:19:53.760
+didn't involve the x-axis
+component.
+
+01:20:02.980 --> 01:20:06.760
+So this is the optimal slope,
+
+01:20:06.760 --> 01:20:12.440
+w1 star and w0 star.
+You see it is defined in terms
+
+01:20:12.440 --> 01:20:14.460
+of the optimal slope.
+You find the optimal slope
+
+01:20:14.460 --> 01:20:17.620
+first, and then use it to find
+the optimal intercept.
+
+01:20:17.620 --> 01:20:19.460
+And the last thing I'll see
+here,
+
+01:20:19.460 --> 01:20:21.480
+and you don't really need to
+rush to write this down because
+
+01:20:21.480 --> 01:20:23.080
+it's all in the notes, of
+course.
+
+01:20:23.080 --> 01:20:26.180
+But you may want to refer to it
+in tomorrow's lab.
+
+01:20:26.180 --> 01:20:30.680
+For the optimal slope, there are
+lots of equivalent
+
+01:20:31.760 --> 01:20:32.760
+formulas.
+
+01:20:34.060 --> 01:20:37.020
+So this is just one formula for
+the optimal slope, but I will
+
+01:20:37.020 --> 01:20:40.200
+show you a few others when we
+come back on Thursday.
+
+01:20:40.200 --> 01:20:42.400
+And when you're working on
+homework problems, is the one
+
+01:20:42.400 --> 01:20:45.620
+that you use depends on what the
+question is asking you.
+
+01:20:45.620 --> 01:20:47.460
+Depending on what the question
+is asking you,
+
+01:20:47.460 --> 01:20:51.210
+certain formulas may make it
+easier or harder to do the math.
+
+01:20:52.180 --> 01:20:52.760
+OK?
+
+01:20:52.760 --> 01:20:54.560
+But like I said, you're going to
+play around with these formulas
+
+01:20:54.560 --> 01:20:56.400
+in tomorrow's lab.
+
+01:20:56.400 --> 01:20:57.540
+That's it for today.
+
+01:20:57.540 --> 01:21:01.290
+Thursday will be all about
+simple linear regression.
+
+01:21:01.360 --> 01:21:03.680
+And like I said, I have office
+hours after this if you'd like
+
+01:21:03.680 --> 01:21:05.930
+to ask anything.
+
+01:21:19.520 --> 01:21:22.900
+I just did not want to get a
+book again, oh my gosh, am I to
+
+01:21:22.900 --> 01:21:24.900
+be able to decipher it?
+
+01:21:24.900 --> 01:21:27.580
+I think they'll be just like
+pulling me out of behind and
+
+01:21:27.580 --> 01:21:29.020
+taking me by.
+
+01:21:29.020 --> 01:21:31.820
+I think they'll be just like the
+parts that we eat.
+
+01:21:31.820 --> 01:21:34.040
+I think they're like doing it
+all day long.
+
+01:21:34.040 --> 01:21:36.640
+Like Sunday and Monday.
+I feel like they're doing it all
+
+01:21:36.640 --> 01:21:38.140
+day long.
+They can get out of here.
+
+01:21:38.700 --> 01:21:39.400
+Sunday.
+
+01:21:39.400 --> 01:21:40.140
+Sunday.
+
+01:21:40.140 --> 01:21:40.800
+Sunday.
+
+01:21:40.800 --> 01:21:41.740
+Sunday.
+
+01:21:41.740 --> 01:21:42.740
+Sunday.
+
+01:21:43.440 --> 01:21:44.380
+Sunday.
+
+01:21:44.380 --> 01:21:45.380
+Sunday.
+Sunday.
+
+01:21:45.380 --> 01:21:45.740
+Sunday.
+Sunday.
+
+01:21:45.740 --> 01:21:46.300
+Sunday.
+Sunday.
+
+01:21:46.300 --> 01:21:47.280
+Sunday.
+
+01:21:47.280 --> 01:21:48.280
+Sunday.
+
+01:21:50.460 --> 01:21:51.460
+Sunday.
+
+01:22:00.320 --> 01:22:03.320
+I'm a slow worker,
+
+01:22:03.460 --> 01:22:08.710
+but I mean like the first two
+problems,
+
+01:22:09.180 --> 01:22:10.580
+the first one's welcome survey,
+
+01:22:10.580 --> 01:22:14.330
+the programming, that's like my
+favorite.
+
+01:22:14.740 --> 01:22:18.580
+Check in, I asked you to reply
+to me as well,
+
+01:22:18.580 --> 01:22:20.700
+and you copied
+ProfessorCeeCee.net
+
+01:22:20.700 --> 01:22:21.520
+as well.
+
+01:22:21.520 --> 01:22:24.060
+Check in for true, and instead I
+got empty.true,
+
+01:22:24.060 --> 01:22:25.180
+or something.
+Sounds good.
+
+01:22:25.180 --> 01:22:26.520
+Which one?
+
+01:22:26.520 --> 01:22:29.480
+I think it was like Chris who
+would be here somewhere.
+
+01:22:29.480 --> 01:22:32.340
+I got all false at the time.
+
+01:22:32.340 --> 01:22:35.440
+I'll be like for...
+
+01:22:36.760 --> 01:22:40.580
+That would be really cool if
+you'd get like this in the chat.
+
+01:22:40.580 --> 01:22:43.820
+Is there a lecture on the same
+topic? because it says mp.true
+
+01:22:43.820 --> 01:22:45.180
+instead of true.
+
+01:22:45.180 --> 01:22:46.680
+Oh, do you want me to help?
+
+01:22:46.680 --> 01:22:48.540
+Like, I can look at it.
+You might have a print
+
+01:22:48.540 --> 01:22:49.540
+statement.
+
+01:22:50.260 --> 01:22:51.840
+I don't think so.
+
+01:22:51.840 --> 01:22:54.340
+I don't think so.
+Your exam is not up to speed.
+
+01:22:54.340 --> 01:22:55.960
+Lectures aren't at the same
+time.
+
+01:22:55.960 --> 01:22:57.800
+They're probably both at the
+same time.
+
+01:22:57.800 --> 01:22:59.260
+You can't touch anything.
+
+01:22:59.260 --> 01:23:00.120
+Yeah,
+
+01:23:00.120 --> 01:23:00.760
+I got you.
+
+01:23:00.760 --> 01:23:02.240
+If it's possible,
+
+01:23:02.240 --> 01:23:04.490
+I doubt it.
+And if there is a conflict,
+
+01:23:04.640 --> 01:23:06.760
+we will report it.
+Just put everything you know
+
+01:23:06.760 --> 01:23:09.010
+about for me.
+
+01:23:31.020 --> 01:23:34.500
+We have a big classroom now, but
+I wouldn't really prefer it if
+
+01:23:34.500 --> 01:23:37.240
+we can kind of stick to one
+side.
+
+01:23:37.240 --> 01:23:40.990
+Maybe everyone is over here,
+move on this side, please.
+
+01:23:41.400 --> 01:23:44.020
+We now have, I think, 98 seats
+for 40 people,
+
+01:23:44.020 --> 01:23:46.520
+so I want to talk to two
+separate sections of the room,
+
+01:23:46.520 --> 01:23:47.520
+really.
+
+01:24:35.380 --> 01:24:35.380
+Thank
+
+01:24:35.380 --> 01:24:48.420
+you
+
+01:24:48.420 --> 01:24:48.420
+very
+
+01:24:48.420 --> 01:24:59.980
+much.

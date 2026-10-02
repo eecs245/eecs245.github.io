@@ -1,0 +1,5713 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.460
+One plus the welcome survey are
+due tomorrow.
+
+00:00:02.460 --> 00:00:04.720
+Again, as always, I have office
+hours after lecture.
+
+00:00:04.720 --> 00:00:06.560
+So if you'd like some help with
+that,
+
+00:00:06.560 --> 00:00:09.120
+come stop by.
+And we also have office hours
+
+00:00:09.120 --> 00:00:14.080
+both by me and by the IEs and
+GSIs during the day tomorrow.
+
+00:00:14.080 --> 00:00:15.680
+So feel free to stop by.
+
+00:00:15.680 --> 00:00:18.220
+And then also, we've posted the
+solutions to Lab 2.
+
+00:00:18.220 --> 00:00:22.520
+So make sure to take a close
+look at those as well.
+
+00:00:22.520 --> 00:00:27.240
+The plan for today is to talk
+all about this new model that we
+
+00:00:27.240 --> 00:00:29.620
+briefly talked about on
+Tuesday's class, that you played
+
+00:00:29.620 --> 00:00:31.420
+around with in lab yesterday,
+
+00:00:31.420 --> 00:00:32.880
+the simple linear regression
+model.
+
+00:00:32.880 --> 00:00:34.980
+That'll be our focus for today.
+
+00:00:34.980 --> 00:00:37.760
+And then when we come back next
+week,
+
+00:00:37.760 --> 00:00:41.760
+then we will start talking about
+ideas from linear algebra, in
+
+00:00:41.760 --> 00:00:44.100
+particular, what a vector is.
+
+00:00:44.100 --> 00:00:45.240
+But before we do that,
+
+00:00:45.240 --> 00:00:47.900
+I want to make sure it's super
+clear why we need to introduce
+
+00:00:47.900 --> 00:00:50.860
+vectors at this point in our
+storyline
+
+00:00:50.860 --> 00:00:51.860
+in the course.
+
+00:00:51.860 --> 00:00:55.080
+But again, today is going to be
+all about the simple linear
+
+00:00:55.080 --> 00:00:57.700
+regression model.
+So at the end of
+
+00:00:58.700 --> 00:01:01.960
+Tuesday's class I showed you a
+picture that looked like this
+
+00:01:01.960 --> 00:01:05.660
+and I said our goal is to now
+build a
+
+00:01:05.660 --> 00:01:09.740
+Model that can actually use the
+time we leave in the mortening
+
+00:01:09.740 --> 00:01:13.800
+the departure hour That is our X
+as an input when making
+
+00:01:13.800 --> 00:01:17.620
+predictions about our commute
+time Which has been our running
+
+00:01:17.620 --> 00:01:20.720
+example so far this semester Our
+goal is to predict how long it's
+
+00:01:20.720 --> 00:01:23.500
+going to take for us to get to
+work That is our commute time
+
+00:01:23.500 --> 00:01:25.720
+given the time we leave in the
+morning
+
+00:01:25.720 --> 00:01:28.060
+The first model that we studied,
+
+00:01:28.060 --> 00:01:29.260
+the constant model,
+
+00:01:29.260 --> 00:01:31.980
+it looked like a flat line.
+
+00:01:31.980 --> 00:01:34.620
+And then what we discussed at
+length over the last two
+
+00:01:34.620 --> 00:01:37.280
+lectures was where is the
+optimal place to put that flat
+
+00:01:37.280 --> 00:01:37.840
+line?
+
+00:01:37.840 --> 00:01:40.020
+And the answer that we've
+discovered
+
+00:01:40.020 --> 00:01:42.880
+is that it depends on which loss
+function we choose.
+
+00:01:42.880 --> 00:01:47.000
+If we choose squared loss as our
+loss function, then the optimal
+
+00:01:47.000 --> 00:01:49.880
+place to place that constant
+model
+
+00:01:49.880 --> 00:01:53.240
+was at the average or mean of
+the Y values.
+
+00:01:53.240 --> 00:01:55.960
+If we use absolute loss, Well,
+then there's a different
+
+00:01:55.960 --> 00:01:57.580
+location.
+Then it's the median of the y
+
+00:01:57.580 --> 00:01:59.760
+values.
+And what you played around with
+
+00:01:59.760 --> 00:02:01.900
+in lab yesterday was if you
+think of these other loss
+
+00:02:01.900 --> 00:02:05.240
+functions, well, then there are
+other best places to put that
+
+00:02:05.240 --> 00:02:06.740
+horizontal line.
+
+00:02:07.240 --> 00:02:11.220
+Now we are dealing with the
+simple linear regression model,
+
+00:02:11.220 --> 00:02:16.640
+which has the form h of xi
+equals w0
+
+00:02:16.640 --> 00:02:19.560
+plus w1 xi.
+
+00:02:20.880 --> 00:02:25.060
+Someone remind me what these two
+things are called, W0 and W1.
+
+00:02:25.060 --> 00:02:27.420
+What's the name for those?
+
+00:02:27.420 --> 00:02:27.740
+Kevin?
+
+00:02:27.740 --> 00:02:28.200
+Parameters.
+
+00:02:28.200 --> 00:02:29.700
+Parameters, good.
+
+00:02:31.460 --> 00:02:34.760
+We have two parameters here.
+
+00:02:34.760 --> 00:02:38.580
+And the question is, well, how
+do we pick those parameters so
+
+00:02:38.580 --> 00:02:41.600
+that the resulting predictions
+are as good as they can be?
+
+00:02:43.300 --> 00:02:45.740
+We should do it in a more
+principled way than just
+
+00:02:45.740 --> 00:02:46.920
+eyeballing it.
+
+00:02:46.920 --> 00:02:52.040
+And that's where the three-step
+modeling recipe comes back into
+
+00:02:52.040 --> 00:02:53.540
+the picture.
+
+00:02:59.160 --> 00:03:02.060
+And what was the more formal
+term for this three-step
+
+00:03:02.060 --> 00:03:05.060
+modeling recipe that we
+introduced on Tuesday?
+
+00:03:05.140 --> 00:03:06.700
+Someone remind me.
+
+00:03:06.700 --> 00:03:07.800
+Started with an E,
+
+00:03:07.800 --> 00:03:10.800
+sounded kind of fancy.
+
+00:03:10.900 --> 00:03:13.150
+I don't remember.
+
+00:03:14.780 --> 00:03:16.060
+What's up?
+
+00:03:16.060 --> 00:03:17.560
+Empirical risk.
+
+00:03:17.620 --> 00:03:19.160
+Yeah, good.
+Empirical risk.
+
+00:03:21.220 --> 00:03:22.220
+Minimization.
+
+00:03:26.880 --> 00:03:29.880
+That first step involves
+choosing a model.
+
+00:03:32.600 --> 00:03:34.180
+We've now seen two.
+
+00:03:34.180 --> 00:03:39.430
+Today we are going to pick the
+simple linear regression model.
+
+00:03:49.420 --> 00:03:52.280
+Can you remind me why it's
+called simple linear regression?
+
+00:03:52.280 --> 00:03:54.560
+I commented on this on Tuesday.
+
+00:03:54.560 --> 00:03:55.840
+Yes, and remind me of your name
+again?
+
+00:03:55.840 --> 00:03:56.580
+Zara.
+
+00:03:56.580 --> 00:03:57.580
+Yeah,
+
+00:03:57.920 --> 00:04:00.180
+there's only one input variable.
+That's why we're calling it
+
+00:04:00.180 --> 00:04:01.120
+simple.
+
+00:04:01.120 --> 00:04:01.700
+Here,
+
+00:04:01.700 --> 00:04:04.220
+that input variable is denoted
+xi.
+
+00:04:04.220 --> 00:04:07.260
+We know that that means the time
+we leave in the morning or the
+
+00:04:07.260 --> 00:04:08.760
+departure time.
+
+00:04:09.040 --> 00:04:12.080
+In the future, we will learn
+about multiple regression.
+
+00:04:12.080 --> 00:04:17.330
+The next stage is to choose a
+loss function.
+
+00:04:18.360 --> 00:04:21.560
+Once again, we've seen two of
+these, but we're going to pick
+
+00:04:21.560 --> 00:04:26.060
+the more common choice for now,
+
+00:04:28.080 --> 00:04:29.720
+which is squared loss,
+
+00:04:29.720 --> 00:04:31.220
+which returns
+
+00:04:31.960 --> 00:04:37.160
+is the square difference between
+an actual y value
+
+00:04:38.300 --> 00:04:42.050
+and a predicted y value.
+
+00:04:44.120 --> 00:04:44.960
+So now,
+
+00:04:44.960 --> 00:04:48.200
+what would be wrong with me
+saying that the third step is
+
+00:04:48.200 --> 00:04:51.180
+minimizing the loss function?
+
+00:04:51.180 --> 00:04:56.980
+What's wrong with that in terms
+of the terminology we've
+
+00:04:56.980 --> 00:05:00.680
+introduced here? Why would it be
+wrong to say, I'm minimizing my
+
+00:05:00.680 --> 00:05:01.820
+loss function?
+
+00:05:01.820 --> 00:05:03.040
+That's my goal.
+
+00:05:03.040 --> 00:05:04.660
+Why is that wrong?
+
+00:05:04.660 --> 00:05:06.160
+What's up?
+
+00:05:06.620 --> 00:05:07.260
+Oh, sorry.
+
+00:05:07.260 --> 00:05:08.260
+You're up, what's up?
+
+00:05:08.260 --> 00:05:08.800
+Maaj.
+
+00:05:08.800 --> 00:05:10.900
+I'm trying to minimize average
+loss.
+
+00:05:10.900 --> 00:05:12.180
+Good, good, good.
+
+00:05:12.180 --> 00:05:13.380
+That's the key.
+
+00:05:13.380 --> 00:05:17.420
+Loss measures how close or far
+one prediction is to its actual
+
+00:05:17.420 --> 00:05:18.420
+y value.
+
+00:05:18.420 --> 00:05:19.960
+We don't care about minimizing
+that.
+
+00:05:19.960 --> 00:05:23.660
+We care about minimizing average
+loss across an entire data set.
+
+00:05:23.660 --> 00:05:24.340
+Remember,
+
+00:05:24.340 --> 00:05:28.140
+one loss function only tells you
+how close or far one prediction
+
+00:05:28.140 --> 00:05:30.200
+is for one row of your data set.
+
+00:05:30.200 --> 00:05:32.780
+We care about predictions being
+good on average across the whole
+
+00:05:32.780 --> 00:05:37.340
+data set, which is why we
+minimize
+
+00:05:37.340 --> 00:05:41.240
+average loss
+
+00:05:41.240 --> 00:05:49.580
+to
+
+00:05:49.580 --> 00:05:50.580
+find
+
+00:05:52.800 --> 00:05:54.300
+optimal parameters.
+
+00:05:57.320 --> 00:06:00.320
+And so one of the last things we
+did on Tuesday is we wrote out
+
+00:06:00.320 --> 00:06:04.080
+what the formula for average
+loss looks like when we've
+
+00:06:04.080 --> 00:06:07.760
+chosen the simple linear
+regression model and the squared
+
+00:06:07.760 --> 00:06:09.260
+loss-loss function.
+
+00:06:10.480 --> 00:06:13.220
+We had a 1 over n.
+
+00:06:13.220 --> 00:06:16.060
+Maybe I'll put this in red like
+everything else.
+
+00:06:16.060 --> 00:06:18.860
+I had a 1 over n.
+
+00:06:18.860 --> 00:06:21.040
+I had a sum symbol,
+
+00:06:21.040 --> 00:06:24.380
+which went from i equals 1 to n.
+Any time we have average loss,
+
+00:06:24.380 --> 00:06:25.900
+you will see this pattern.
+
+00:06:25.900 --> 00:06:27.620
+1 over n times the sum,
+
+00:06:27.620 --> 00:06:30.640
+where i goes from 1 to n.
+
+00:06:30.640 --> 00:06:36.280
+The things I summed were yi
+minus something squared.
+
+00:06:36.700 --> 00:06:38.620
+And that something,
+
+00:06:38.620 --> 00:06:42.260
+I replace it with how I'm making
+my predictions.
+
+00:06:42.260 --> 00:06:44.340
+That is the definition of my
+model.
+
+00:06:44.340 --> 00:06:49.140
+And here, that definition is w0
+plus w1
+
+00:06:49.140 --> 00:06:50.360
+xi.
+
+00:06:54.740 --> 00:06:59.240
+And one of the things we
+discussed
+
+00:06:59.620 --> 00:07:03.080
+is that this is a function on
+the right of how many input
+
+00:07:03.080 --> 00:07:04.080
+variables?
+
+00:07:05.580 --> 00:07:08.600
+How many input variables are
+there for this function on the
+
+00:07:08.600 --> 00:07:09.600
+right?
+
+00:07:12.900 --> 00:07:15.900
+Two, w0 and w1.
+
+00:07:17.320 --> 00:07:18.340
+When before,
+
+00:07:18.340 --> 00:07:22.160
+when we minimized average loss
+and we were finding to find the
+
+00:07:22.160 --> 00:07:25.360
+best W for the constant model,
+
+00:07:25.360 --> 00:07:28.600
+the average loss function,
+whether that was mean squared
+
+00:07:28.600 --> 00:07:31.060
+error, or mean absolute error,
+
+00:07:31.060 --> 00:07:34.280
+or mean 0, 1 loss, which was one
+of the examples we talked about
+
+00:07:34.280 --> 00:07:35.320
+on Tuesday,
+
+00:07:35.320 --> 00:07:37.900
+all of those were functions of
+just one input variable,
+
+00:07:37.900 --> 00:07:39.900
+W, because we only had one
+parameter.
+
+00:07:39.900 --> 00:07:42.420
+Here we have two parameters.
+
+00:07:42.420 --> 00:07:46.170
+So this function we are
+minimizing
+
+00:07:47.400 --> 00:07:50.400
+takes two input variables.
+
+00:07:50.700 --> 00:07:54.140
+So we're here, we're treating
+the x's and the y's, that is our
+
+00:07:54.140 --> 00:07:57.260
+data set, as being some
+constant.
+
+00:07:57.260 --> 00:08:00.060
+As in it is like not a thing
+that can change as a result of
+
+00:08:00.060 --> 00:08:02.560
+anything that we do.
+The data set is just provided to
+
+00:08:02.560 --> 00:08:03.560
+us.
+
+00:08:05.900 --> 00:08:08.480
+So we're clear on what our goal
+is.
+
+00:08:08.480 --> 00:08:12.780
+Our goal is to find a
+combination of w0 and w1 that
+
+00:08:12.780 --> 00:08:15.030
+make this function,
+
+00:08:15.280 --> 00:08:19.780
+which we would also call mean
+squared error, by the way,
+
+00:08:22.500 --> 00:08:27.160
+but maybe we'd call it mean
+squared error for the simple
+
+00:08:27.160 --> 00:08:29.440
+linear regression model.
+
+00:08:31.200 --> 00:08:34.440
+SLR is just simple linear
+regression.
+
+00:08:34.440 --> 00:08:39.120
+Our goal is to find the
+combination of inputs that gives
+
+00:08:39.120 --> 00:08:41.700
+us the lowest possible value
+here.
+
+00:08:41.700 --> 00:08:42.920
+Why is that?
+
+00:08:42.920 --> 00:08:47.440
+Well, it's because that
+combination of w0 and w1
+
+00:08:48.700 --> 00:08:51.150
+should give us the line that
+makes
+
+00:08:51.150 --> 00:08:55.420
+the best predictions on the data
+set that we've collected.
+
+00:08:55.420 --> 00:08:58.460
+Are we clear on what our goal
+is?
+
+00:08:58.460 --> 00:08:59.460
+OK.
+
+00:09:00.340 --> 00:09:04.840
+So at the end of Tuesday's
+class,
+
+00:09:05.700 --> 00:09:10.000
+we wrote out this formula for
+mean squared error for the
+
+00:09:10.000 --> 00:09:11.940
+simple linear regression model.
+
+00:09:11.940 --> 00:09:17.660
+And then I just told you the
+parameters that minimized it.
+
+00:09:17.900 --> 00:09:21.500
+But part of what I want to start
+with today is understanding how
+
+00:09:21.500 --> 00:09:23.740
+one would find those parameters.
+
+00:09:23.740 --> 00:09:26.580
+And to do that, we need to think
+about what does this function
+
+00:09:26.580 --> 00:09:28.830
+actually look like?
+
+00:09:36.620 --> 00:09:42.320
+Q, what does this look
+
+00:09:42.320 --> 00:09:43.320
+like?
+
+00:09:44.960 --> 00:09:48.710
+So to refresh our memory,
+
+00:09:50.280 --> 00:09:53.360
+when we were minimizing mean
+squared error for the constant
+
+00:09:53.360 --> 00:09:57.860
+model when we had one parameter,
+
+00:10:02.360 --> 00:10:07.380
+what did the resulting graph
+that we were minimizing look
+
+00:10:07.380 --> 00:10:08.180
+like?
+
+00:10:08.180 --> 00:10:11.300
+If one axis was w,
+
+00:10:11.300 --> 00:10:15.600
+and the other axis was the
+output of this function,
+
+00:10:15.600 --> 00:10:20.100
+what did the graph look like?
+
+00:10:20.260 --> 00:10:21.760
+Remind me.
+
+00:10:22.400 --> 00:10:24.380
+A parabola.
+A parabola, good.
+
+00:10:26.860 --> 00:10:32.000
+And what we've studied at length
+is the x-axis value
+
+00:10:32.000 --> 00:10:37.860
+of
+
+00:10:37.860 --> 00:10:40.580
+the vertex of the parabola.
+
+00:10:40.580 --> 00:10:43.100
+It tells us what w to plug in to
+get to the bottom of the
+
+00:10:43.100 --> 00:10:44.100
+parabola.
+
+00:10:44.380 --> 00:10:48.340
+One of the things that I didn't
+explicitly say in lecture, but
+
+00:10:48.340 --> 00:10:52.220
+has maybe become clear by
+working on homework one and the
+
+00:10:52.220 --> 00:10:58.140
+recent labs, is that the
+vertical component here, that is
+
+00:10:58.140 --> 00:11:00.320
+what this is,
+
+00:11:00.320 --> 00:11:02.660
+also has a familiar name.
+
+00:11:02.660 --> 00:11:04.910
+What is that?
+
+00:11:05.400 --> 00:11:09.660
+Like when I plug in the mean of
+the y's into this mean squared
+
+00:11:09.660 --> 00:11:11.040
+error function,
+
+00:11:11.040 --> 00:11:13.260
+what is the resulting output
+called?
+
+00:11:13.260 --> 00:11:16.460
+It has a name that you've heard
+of before.
+
+00:11:16.460 --> 00:11:16.900
+Yeah?
+
+00:11:16.900 --> 00:11:18.400
+3 times.
+
+00:11:18.580 --> 00:11:20.080
+Not quite.
+
+00:11:20.400 --> 00:11:24.580
+I'm asking for the vertical
+position of the vertex,
+
+00:11:24.820 --> 00:11:25.800
+yes.
+But I'm saying,
+
+00:11:25.800 --> 00:11:26.800
+like,
+
+00:11:26.980 --> 00:11:30.560
+that position is described in
+terms of the data set, using a
+
+00:11:30.560 --> 00:11:32.060
+familiar term.
+
+00:11:33.940 --> 00:11:36.420
+Do you know, Andrew?
+
+00:11:36.420 --> 00:11:37.420
+Chinmay.
+
+00:11:38.680 --> 00:11:43.040
+I'm looking for something that
+is like a formula you can
+
+00:11:43.040 --> 00:11:45.840
+calculate just given the y's.
+
+00:11:45.840 --> 00:11:46.840
+Average?
+
+00:11:47.260 --> 00:11:50.380
+Not quite.
+That's the input that minimizes
+
+00:11:50.380 --> 00:11:51.920
+the function.
+I'm asking, what is the
+
+00:11:51.920 --> 00:11:53.240
+resulting output?
+
+00:11:53.240 --> 00:11:54.300
+Ankita.
+The variance.
+
+00:11:54.520 --> 00:11:55.820
+Good.
+It's the variance of the y.
+
+00:12:02.080 --> 00:12:03.600
+Why is that?
+
+00:12:03.600 --> 00:12:04.600
+Well,
+
+00:12:05.000 --> 00:12:10.250
+look at what happens when I plug
+in the average y here.
+
+00:12:10.380 --> 00:12:15.860
+Well, all this tells me then is
+that this is the average squared
+
+00:12:15.860 --> 00:12:17.980
+distance from the mean,
+
+00:12:17.980 --> 00:12:20.480
+and that's the definition of the
+variance.
+
+00:12:20.480 --> 00:12:25.730
+And actually, if we take a look
+at homework one,
+
+00:12:26.080 --> 00:12:27.580
+due tomorrow,
+
+00:12:27.820 --> 00:12:33.740
+this is one of the big ideas.
+
+00:12:37.800 --> 00:12:39.300
+And actually,
+
+00:12:39.900 --> 00:12:42.540
+we just answered one of the
+questions, which is the last one
+
+00:12:42.540 --> 00:12:43.540
+here,
+
+00:12:44.400 --> 00:12:45.820
+part E.
+
+00:12:45.820 --> 00:12:50.560
+What you do there is you rewrite
+mean squared error for the
+
+00:12:50.560 --> 00:12:52.060
+constant model.
+
+00:12:54.620 --> 00:12:58.680
+Notice, this is not exactly the
+formula that was on the screen
+
+00:12:58.680 --> 00:13:02.340
+before.
+Before, that was sum of yi minus
+
+00:13:02.340 --> 00:13:03.840
+w squared.
+
+00:13:03.960 --> 00:13:06.180
+So what we're currently looking
+at is a little different.
+
+00:13:06.180 --> 00:13:10.040
+What I'm saying is that the
+formula I wrote before is equal
+
+00:13:10.040 --> 00:13:12.290
+to this one,
+
+00:13:12.540 --> 00:13:15.980
+where instead of summing yi
+minus w squared,
+
+00:13:15.980 --> 00:13:18.580
+it's the sum of yi minus y bar,
+
+00:13:18.580 --> 00:13:21.840
+which is the average or mean of
+the y's squared, plus this other
+
+00:13:21.840 --> 00:13:24.000
+thing that involves the w's.
+
+00:13:24.000 --> 00:13:25.260
+This is, again,
+
+00:13:25.260 --> 00:13:26.780
+something that will make more
+sense once you work through this
+
+00:13:26.780 --> 00:13:27.780
+question.
+
+00:13:28.180 --> 00:13:30.100
+But what we're getting at with
+this question
+
+00:13:30.100 --> 00:13:36.100
+is that this first piece is
+
+00:13:36.100 --> 00:13:40.200
+the variance of the y's.
+So a mean squared error actually
+
+00:13:40.200 --> 00:13:44.480
+equals the variance of the y's
+plus something that depends on
+
+00:13:44.480 --> 00:13:45.780
+the w.
+
+00:13:45.780 --> 00:13:49.060
+But you can see, in order to
+minimize this overall function,
+
+00:13:49.060 --> 00:13:52.440
+well, this thing w has no
+control over.
+
+00:13:52.440 --> 00:13:55.680
+It doesn't matter what w is,
+this first term can't change.
+
+00:13:55.680 --> 00:13:57.360
+What w can,
+
+00:13:57.360 --> 00:14:00.020
+where w does come into play is
+the second term.
+
+00:14:00.020 --> 00:14:02.140
+And if w equals y bar,
+
+00:14:02.140 --> 00:14:04.380
+well, then that's how you make
+this as small as possible, which
+
+00:14:04.380 --> 00:14:06.540
+means that's how you minimize
+that function.
+
+00:14:06.540 --> 00:14:11.040
+But when w equals y bar,
+
+00:14:11.100 --> 00:14:14.260
+well, then that matches what we
+saw with the calculus-based
+
+00:14:14.260 --> 00:14:16.940
+approach with y bar, or the
+average y,
+
+00:14:16.940 --> 00:14:18.260
+minimizing this function.
+
+00:14:18.260 --> 00:14:21.220
+But that means if you plug in w
+equals y bar,
+
+00:14:21.220 --> 00:14:22.580
+this piece goes away,
+
+00:14:22.580 --> 00:14:24.440
+and then mean squared error is
+equal to the variance of the
+
+00:14:24.440 --> 00:14:25.440
+lies.
+
+00:14:26.900 --> 00:14:29.060
+So this is an important idea,
+
+00:14:29.060 --> 00:14:30.780
+one that's talked about in the
+notes, and one that I want you
+
+00:14:30.780 --> 00:14:32.580
+to internalize.
+OK?
+
+00:14:33.440 --> 00:14:35.240
+That was sort of a side quest,
+
+00:14:35.240 --> 00:14:38.640
+but one that was important for
+us to talk about.
+
+00:14:38.640 --> 00:14:43.800
+Going back to where we are in
+today's lecture,
+
+00:14:43.800 --> 00:14:47.380
+when we were dealing with the
+constant model, which had one
+
+00:14:47.380 --> 00:14:48.380
+parameter,
+
+00:14:48.500 --> 00:14:50.840
+the graph of mean squared error
+
+00:14:50.840 --> 00:14:52.120
+looked like a parabola.
+
+00:14:52.120 --> 00:14:56.620
+And we just talked about some
+attributes of that parabola.
+
+00:14:56.640 --> 00:14:57.660
+Remember now,
+
+00:14:57.660 --> 00:15:00.700
+we are dealing with the simple
+linear regression model.
+
+00:15:00.700 --> 00:15:00.940
+Well,
+
+00:15:00.940 --> 00:15:03.000
+it has two parameters,
+
+00:15:03.000 --> 00:15:04.380
+w0 and w1.
+
+00:15:04.380 --> 00:15:06.760
+And my question is, what does
+this graph on the right,
+
+00:15:06.760 --> 00:15:09.920
+like what does the graph of this
+function look like?
+
+00:15:09.920 --> 00:15:11.720
+What ideas do we have?
+
+00:15:11.720 --> 00:15:16.220
+What does the graph of this
+function look like?
+
+00:15:19.880 --> 00:15:20.720
+Alex.
+
+00:15:20.720 --> 00:15:23.800
+Will it be a paraboloid?
+
+00:15:23.800 --> 00:15:24.540
+Like,
+
+00:15:24.540 --> 00:15:26.160
+what makes you say paraboloid?
+
+00:15:26.160 --> 00:15:28.220
+Like, what are you thinking
+about? Paraboloid on both axes
+
+00:15:28.220 --> 00:15:30.520
+and 3D space.
+That's the key that I was
+
+00:15:30.520 --> 00:15:31.520
+getting at.
+
+00:15:31.520 --> 00:15:34.360
+We're now looking at a function
+in 3D.
+
+00:15:34.360 --> 00:15:35.980
+Why is that?
+
+00:15:35.980 --> 00:15:39.260
+Well, it's because there are now
+two input variables that can
+
+00:15:39.260 --> 00:15:40.260
+vary.
+
+00:15:40.740 --> 00:15:43.240
+For every combination of w0,
+
+00:15:43.240 --> 00:15:46.240
+imagine this is your w0 axis,
+
+00:15:46.240 --> 00:15:47.740
+and w1,
+
+00:15:48.900 --> 00:15:53.660
+there is some mean squared error
+for that resulting line that
+
+00:15:53.660 --> 00:15:56.260
+uses that slope and that
+intercept.
+
+00:15:56.260 --> 00:15:58.020
+I should emphasize this more.
+
+00:15:58.020 --> 00:16:03.800
+W0 is the intercept of the
+resulting
+
+00:16:03.800 --> 00:16:04.800
+line,
+
+00:16:05.140 --> 00:16:06.540
+and W1 is the slope.
+
+00:16:06.540 --> 00:16:08.320
+So all we're trying to do is
+find the optimal slope and
+
+00:16:08.320 --> 00:16:09.320
+intercept.
+
+00:16:10.000 --> 00:16:13.340
+And this function, it allows me
+to plug in any possible choice
+
+00:16:13.340 --> 00:16:14.880
+of intercept and slope.
+
+00:16:14.880 --> 00:16:18.220
+We could all think of our own
+intercepts and slopes that we
+
+00:16:18.220 --> 00:16:20.000
+think match the data well.
+
+00:16:20.000 --> 00:16:23.960
+And this function should tell us
+how good or bad our choice was.
+
+00:16:23.960 --> 00:16:26.240
+And how we would do that is by
+telling us the mean squared
+
+00:16:26.240 --> 00:16:31.000
+error of the line with the slope
+and intercept that we chose.
+
+00:16:31.000 --> 00:16:33.040
+So if you pick a combination,
+and you pick a combination, and
+
+00:16:33.040 --> 00:16:35.800
+you pick a combination, we all
+plug our combinations of
+
+00:16:35.800 --> 00:16:37.160
+intercepts and slopes into this
+function.
+
+00:16:37.160 --> 00:16:40.440
+It should tell us what our mean
+squared errors were.
+
+00:16:40.440 --> 00:16:42.560
+And what the graph ends up
+looking like, and I'm going to
+
+00:16:42.560 --> 00:16:45.520
+show you a 3D view of this in a
+second,
+
+00:16:45.520 --> 00:16:51.280
+is sort of like a bowl shape in
+3D.
+
+00:16:51.280 --> 00:16:53.500
+This is more easily visualized
+in the course notes.
+
+00:16:53.500 --> 00:16:55.520
+So I'm going to go there.
+
+00:16:55.520 --> 00:16:57.320
+This is at the bottom of chapter
+2.1,
+
+00:16:57.320 --> 00:17:00.040
+but we're going to look at this
+in a little bit.
+
+00:17:00.040 --> 00:17:02.740
+This is what it looks like.
+
+00:17:02.740 --> 00:17:04.300
+And so like I said before,
+
+00:17:04.300 --> 00:17:07.740
+for every choice of w0
+
+00:17:07.740 --> 00:17:09.240
+and w1,
+
+00:17:11.960 --> 00:17:14.740
+what this shows me is the mean
+scored error of the resulting
+
+00:17:14.740 --> 00:17:16.240
+line's predictions.
+
+00:17:16.300 --> 00:17:20.140
+So every point on this graph,
+
+00:17:20.140 --> 00:17:23.160
+if you click it, it tells you,
+like,
+
+00:17:23.160 --> 00:17:23.420
+okay,
+
+00:17:23.420 --> 00:17:25.680
+you know, where I've currently
+clicked,
+
+00:17:25.680 --> 00:17:30.360
+that corresponds to choosing an
+intercept of 151 and a slope of
+
+00:17:30.360 --> 00:17:32.460
+negative 3.4.
+And it's telling me if I chose
+
+00:17:32.460 --> 00:17:34.020
+that intercept and slope,
+
+00:17:34.020 --> 00:17:38.520
+the resulting line would have a
+mean squared error of 2,602.
+
+00:17:39.680 --> 00:17:41.480
+Which seems high.
+
+00:17:41.480 --> 00:17:46.840
+If I choose an intercept of 144
+and a slope of negative 11.36,
+
+00:17:47.180 --> 00:17:48.440
+it's saying, okay, that's
+better.
+
+00:17:48.440 --> 00:17:50.220
+You get a mean squared error of
+725.
+
+00:17:50.220 --> 00:17:54.360
+But it seems like we can do even
+better, and better, and better.
+
+00:17:54.360 --> 00:18:00.140
+And our goal is to find
+
+00:18:00.140 --> 00:18:04.640
+the intercept and slope at the
+very bottom of this graph.
+
+00:18:05.560 --> 00:18:08.580
+And if you look at this from
+underneath,
+
+00:18:08.580 --> 00:18:10.600
+it's hard to tell that this is
+the unique bottom.
+
+00:18:10.600 --> 00:18:13.480
+It looks like there's a whole
+flat line where they're all
+
+00:18:13.480 --> 00:18:16.000
+equally good.
+That's not exactly true.
+
+00:18:16.260 --> 00:18:18.660
+If you zoom in very closely, you
+can do this with your mouse on
+
+00:18:18.660 --> 00:18:20.800
+the computer.
+You'll see that it is truly a
+
+00:18:20.800 --> 00:18:23.050
+unique minimizer here.
+
+00:18:23.060 --> 00:18:27.100
+What this is saying is, well, if
+you choose a slope of negative
+
+00:18:27.100 --> 00:18:29.600
+8.18
+and an intercept of 142,
+
+00:18:29.960 --> 00:18:32.700
+well, that's how you get the
+mean squared error to be as low
+
+00:18:32.700 --> 00:18:33.760
+as possible.
+
+00:18:33.760 --> 00:18:37.240
+And our goal now is to try and
+figure out if we can find
+
+00:18:37.240 --> 00:18:40.880
+formulas that describe the best
+intercepting slope for any
+
+00:18:40.880 --> 00:18:42.380
+general dataset.
+
+00:18:42.420 --> 00:18:44.340
+But to do that, we're going to
+need some more advanced
+
+00:18:44.340 --> 00:18:46.440
+machinery than we already have,
+
+00:18:46.440 --> 00:18:48.940
+because so far we've only
+discussed how to find minimums
+
+00:18:48.940 --> 00:18:51.120
+of functions with one input
+variable, but now we have
+
+00:18:51.120 --> 00:18:52.920
+multiple input variables.
+
+00:18:52.920 --> 00:18:53.540
+Paul,
+
+00:18:53.540 --> 00:18:56.520
+can you explain again why this
+has the added dimension and why
+
+00:18:56.520 --> 00:18:59.160
+that input variable wasn't
+relevant before the second input
+
+00:18:59.160 --> 00:18:59.540
+variable?
+
+00:18:59.540 --> 00:19:02.740
+It's because before we were
+dealing with the constant model
+
+00:19:02.740 --> 00:19:05.100
+which only had one parameter.
+The only thing you could change
+
+00:19:05.100 --> 00:19:08.500
+about the constant model was
+what height it's drawn at.
+
+00:19:08.500 --> 00:19:12.080
+Now we're dealing with the model
+that has two things,
+
+00:19:12.080 --> 00:19:14.520
+two aspects that we can change,
+the intercept of it and the
+
+00:19:14.520 --> 00:19:15.520
+slope of it,
+
+00:19:15.520 --> 00:19:20.500
+which is why this function
+should tell us for every
+
+00:19:20.500 --> 00:19:22.980
+combination of those things we
+can change,
+
+00:19:22.980 --> 00:19:24.460
+the intercept and slope,
+
+00:19:24.460 --> 00:19:26.340
+what is the model's performance.
+
+00:19:26.340 --> 00:19:29.020
+Is this for linear specific
+linear? Yes.
+
+00:19:29.020 --> 00:19:31.800
+This is just for the simple
+linear regression model.
+
+00:19:31.800 --> 00:19:35.560
+So if you had a model that had
+five parameters,
+
+00:19:35.560 --> 00:19:38.320
+what dimension would you have to
+draw the resulting mean squared
+
+00:19:38.320 --> 00:19:43.200
+error graph in if it had five
+parameters.
+
+00:19:43.200 --> 00:19:44.140
+Six,
+
+00:19:44.140 --> 00:19:48.160
+because you need one axis for
+every parameter and then another
+
+00:19:48.160 --> 00:19:50.840
+axis to display the mean squared
+error of the resulting
+
+00:19:50.840 --> 00:19:51.840
+predictions.
+
+00:19:51.840 --> 00:19:54.400
+And what that means is if we
+added even one more parameter
+
+00:19:54.400 --> 00:19:57.340
+to our simple linear regression
+model of making it a multiple
+
+00:19:57.340 --> 00:20:00.100
+linear regression model, we
+couldn't make this graph,
+
+00:20:00.100 --> 00:20:03.440
+because we would need to be able
+to look in 4D, which we can.
+
+00:20:03.440 --> 00:20:05.340
+By the way, this graph,
+
+00:20:05.340 --> 00:20:08.200
+now I'll just take a screenshot
+and keep it in the iPad notes
+
+00:20:08.200 --> 00:20:09.200
+here.
+
+00:20:10.030 --> 00:20:14.530
+This graph is what's called a
+loss surface,
+
+00:20:15.040 --> 00:20:20.290
+which is just the name for the
+graph of average loss.
+
+00:20:22.320 --> 00:20:24.570
+And I'll say,
+
+00:20:25.340 --> 00:20:29.960
+go play with loss surface
+
+00:20:29.960 --> 00:20:34.020
+in chapter 2.1.
+
+00:20:34.860 --> 00:20:39.820
+So what we need to figure out is
+how to find the optimal
+
+00:20:39.820 --> 00:20:41.320
+combination here.
+
+00:20:42.800 --> 00:20:45.050
+W naught star,
+
+00:20:45.360 --> 00:20:46.860
+W1 star.
+
+00:20:47.400 --> 00:20:51.820
+That's going to be our focus for
+the next 20 minutes or so.
+
+00:20:51.820 --> 00:20:54.000
+What questions do we have with
+this picture so far before we
+
+00:20:54.000 --> 00:20:59.250
+get into the weeds of the math?
+
+00:20:59.980 --> 00:21:03.440
+Are we comfortable with why this
+is now in three dimensions?
+
+00:21:03.440 --> 00:21:06.300
+Whereas the previous thing we
+minimized was in two dimensions.
+
+00:21:06.300 --> 00:21:06.960
+Okay
+
+00:21:06.960 --> 00:21:09.400
+And again, like one thing I want
+to emphasize and maybe I could
+
+00:21:09.400 --> 00:21:12.440
+have done a better job at adding
+another visual to the notes on
+
+00:21:12.440 --> 00:21:17.920
+this any point on this graph
+corresponds to a different
+
+00:21:17.920 --> 00:21:21.920
+looking line so like this point
+might correspond to the line
+
+00:21:21.920 --> 00:21:24.100
+that looks like this and
+
+00:21:24.100 --> 00:21:27.540
+This point might correspond to
+the line that looks like this
+
+00:21:27.540 --> 00:21:31.240
+and so on So every one of these
+points on here corresponds to a
+
+00:21:31.240 --> 00:21:33.420
+different line, because the
+point corresponds to a
+
+00:21:33.420 --> 00:21:35.640
+combination of intercept and
+slope.
+
+00:21:35.640 --> 00:21:38.000
+And so by minimizing this graph,
+it tells us how to draw the
+
+00:21:38.000 --> 00:21:39.000
+line.
+
+00:21:39.200 --> 00:21:41.200
+Is that clear?
+
+00:21:41.200 --> 00:21:41.540
+OK,
+
+00:21:41.540 --> 00:21:42.460
+good.
+
+00:21:42.460 --> 00:21:44.860
+So now the question is, well,
+how do we actually do that?
+
+00:21:44.860 --> 00:21:48.610
+And so as a detour,
+
+00:21:48.940 --> 00:21:52.140
+we need to discuss an idea
+that's going to help us get
+
+00:21:52.140 --> 00:21:56.640
+there, which is that of a
+partial derivative.
+
+00:21:58.640 --> 00:22:01.380
+I'm curious, how many people
+have heard of and used a partial
+
+00:22:01.380 --> 00:22:02.880
+derivative before?
+
+00:22:03.660 --> 00:22:06.300
+It's about 60% of people.
+That's totally fine if you
+
+00:22:06.300 --> 00:22:07.880
+haven't, by the way.
+It's not something I expected
+
+00:22:07.880 --> 00:22:09.100
+you to know,
+
+00:22:09.100 --> 00:22:12.000
+because I don't think it comes
+up in calc 1, which is the only
+
+00:22:12.000 --> 00:22:14.520
+calc class you're required to
+have taken before this.
+
+00:22:14.520 --> 00:22:15.520
+So again,
+
+00:22:15.520 --> 00:22:17.240
+everything you need to know
+about partial derivatives we're
+
+00:22:17.240 --> 00:22:19.020
+about to talk about.
+
+00:22:19.020 --> 00:22:21.960
+And this is in chapter 2.2.
+
+00:22:21.960 --> 00:22:24.680
+By the way, chapter 2, it looks
+like it has lots of parts, like
+
+00:22:24.680 --> 00:22:25.900
+four of them.
+
+00:22:25.900 --> 00:22:28.280
+But they're all designed to be
+four or five of them.
+
+00:22:28.280 --> 00:22:29.820
+But they're all designed to be
+very short.
+
+00:22:29.820 --> 00:22:33.480
+When I first taught this class,
+all five of those subpieces were
+
+00:22:33.480 --> 00:22:35.700
+in one big notebook.
+But it was so big that it
+
+00:22:35.700 --> 00:22:37.680
+crashed the server that I was
+hosting it on, because there was
+
+00:22:37.680 --> 00:22:40.360
+so many graphs in it.
+So I broke it up into lots of
+
+00:22:40.360 --> 00:22:41.860
+smaller things.
+
+00:22:42.200 --> 00:22:45.660
+So what I want to do before we
+get back to the goal of
+
+00:22:45.660 --> 00:22:48.640
+minimizing mean squared error
+for the simple linear regression
+
+00:22:48.640 --> 00:22:52.820
+model is I want to start with a
+simpler function
+
+00:22:52.820 --> 00:22:55.820
+with multiple input variables.
+
+00:22:56.060 --> 00:23:00.560
+Why don't I use more familiar
+syntax, Like f of x, y equals
+
+00:23:00.560 --> 00:23:06.100
+something like x squared plus y
+squared over 9.
+
+00:23:11.900 --> 00:23:14.000
+Just so we see it,
+
+00:23:14.000 --> 00:23:18.500
+what does this thing look like?
+
+00:23:19.380 --> 00:23:20.820
+Indeed, this is called a
+paraboloid.
+
+00:23:20.820 --> 00:23:24.480
+Same basic shape as the mean
+squared error graph we saw.
+
+00:23:24.480 --> 00:23:27.140
+It's just that was stretched
+weirdly, And this one is like
+
+00:23:27.140 --> 00:23:28.100
+more symmetric,
+
+00:23:28.100 --> 00:23:29.100
+okay?
+
+00:23:29.540 --> 00:23:33.160
+this is the graph we're thinking
+about here and
+
+00:23:33.160 --> 00:23:36.560
+You can see I picked a graph
+that again has one unique
+
+00:23:36.560 --> 00:23:37.560
+minimum
+
+00:23:37.900 --> 00:23:40.500
+But that's like not guaranteed
+It's possible that you could
+
+00:23:40.500 --> 00:23:43.000
+have a graph in three dimensions
+where there isn't one minimum
+
+00:23:43.000 --> 00:23:45.560
+and we'll see some examples of
+that
+
+00:23:45.560 --> 00:23:51.180
+What if we want to try and find
+the coordinates of the X&Y that
+
+00:23:51.180 --> 00:23:56.430
+get us to the bottom of this
+graph?
+
+00:23:58.340 --> 00:24:03.300
+Well, the thing is, now there
+isn't just a single direction
+
+00:24:03.300 --> 00:24:05.860
+along which the function varies.
+
+00:24:05.860 --> 00:24:09.620
+Our logic in single variable
+calculus was take the
+
+00:24:09.620 --> 00:24:12.740
+derivative, because that tells
+us how quickly the function is
+
+00:24:12.740 --> 00:24:14.220
+changing at any input,
+
+00:24:14.220 --> 00:24:17.720
+and set that equal to zero.
+Because logic tells us that if
+
+00:24:17.720 --> 00:24:20.660
+we're looking for the minimum of
+the function, it's a point at
+
+00:24:20.660 --> 00:24:23.380
+which the function isn't
+changing there, and that's
+
+00:24:23.380 --> 00:24:25.440
+because on the left of it it was
+decreasing, and on the right of
+
+00:24:25.440 --> 00:24:27.280
+it, it's increasing.
+So we must be at a point where
+
+00:24:27.280 --> 00:24:28.260
+it's at the bottom,
+
+00:24:28.260 --> 00:24:29.260
+OK?
+
+00:24:30.760 --> 00:24:34.120
+I guess that logic also applies
+to a maximum, which is why you'd
+
+00:24:34.120 --> 00:24:35.820
+have to use a second derivative
+test.
+
+00:24:35.820 --> 00:24:36.620
+But here,
+
+00:24:36.620 --> 00:24:39.160
+there isn't just a single
+direction along which the
+
+00:24:39.160 --> 00:24:40.660
+function varies.
+There are two directions.
+
+00:24:41.040 --> 00:24:43.040
+If you look at it in the x
+direction,
+
+00:24:43.040 --> 00:24:44.820
+it looks like a parabola.
+
+00:24:44.820 --> 00:24:47.080
+And if you look at it just from
+the y direction, it also looks
+
+00:24:47.080 --> 00:24:50.760
+like a parabola, which is why it
+has this overall bowl shape,
+
+00:24:50.760 --> 00:24:52.080
+OK? So,
+
+00:24:52.080 --> 00:24:54.860
+instead of there just being one
+derivative,
+
+00:24:54.860 --> 00:24:58.610
+we instead have two partial
+derivatives.
+
+00:24:58.960 --> 00:25:02.780
+Okay, partial derivative is just
+the term for derivatives of
+
+00:25:02.780 --> 00:25:05.640
+functions that have multiple
+input variables.
+
+00:25:05.640 --> 00:25:07.940
+And there is one partial
+derivative,
+
+00:25:07.940 --> 00:25:09.880
+which itself is a function,
+
+00:25:09.880 --> 00:25:11.660
+for every input variable you
+have.
+
+00:25:11.660 --> 00:25:14.840
+So here we are going to find two
+partial derivative functions.
+
+00:25:14.840 --> 00:25:16.600
+One with respect to x,
+
+00:25:16.600 --> 00:25:21.560
+and one with respect to y.
+So what does a partial
+
+00:25:21.560 --> 00:25:23.060
+derivative measure?
+
+00:25:23.380 --> 00:25:24.600
+And I'll show you the
+calculation.
+
+00:25:24.600 --> 00:25:26.800
+We'll work through the math in
+just a bit.
+
+00:25:26.800 --> 00:25:29.800
+What the partial derivative
+measures,
+
+00:25:30.640 --> 00:25:31.420
+actually,
+
+00:25:31.420 --> 00:25:33.380
+let's work through the math
+first, and then make sense of
+
+00:25:33.380 --> 00:25:34.880
+this graph.
+
+00:25:35.240 --> 00:25:38.720
+Let me start by writing that.
+
+00:25:38.720 --> 00:25:41.180
+Suppose f is a function
+
+00:25:41.180 --> 00:25:46.980
+with multiple input variables.
+
+00:26:01.940 --> 00:26:03.900
+And let's just say,
+
+00:26:03.900 --> 00:26:05.400
+for example,
+
+00:26:05.760 --> 00:26:08.960
+f of x, y, z, so on,
+
+00:26:08.960 --> 00:26:10.160
+these are just placeholder
+names.
+
+00:26:10.160 --> 00:26:12.780
+The partial derivative
+
+00:26:12.780 --> 00:26:17.780
+of f
+
+00:26:17.780 --> 00:26:23.380
+with respect to x,
+
+00:26:23.380 --> 00:26:27.080
+which has this symbol,
+
+00:26:31.620 --> 00:26:37.440
+it looks like df over dx, but we
+use
+
+00:26:37.440 --> 00:26:40.040
+this lowercase d symbol in
+Greek.
+
+00:26:40.040 --> 00:26:43.040
+unique, which is what you use
+whenever you're dealing with
+
+00:26:43.040 --> 00:26:44.540
+partial derivatives,
+
+00:26:47.080 --> 00:26:52.680
+is the the
+
+00:26:52.680 --> 00:26:53.480
+derivative
+
+00:26:53.480 --> 00:27:01.400
+where
+
+00:27:01.400 --> 00:27:06.200
+all other variables
+
+00:27:06.200 --> 00:27:11.840
+are held
+
+00:27:11.840 --> 00:27:13.180
+constant.
+
+00:27:17.220 --> 00:27:21.640
+And so this is like a thing that
+you can do mechanically, But
+
+00:27:21.640 --> 00:27:23.700
+it's like hard to understand
+what it actually means and so
+
+00:27:23.700 --> 00:27:26.320
+we're gonna look at some
+examples to make sure you It's
+
+00:27:26.320 --> 00:27:29.580
+clear what it means to hold
+other variables constant okay,
+
+00:27:29.580 --> 00:27:33.100
+but for now the partial
+derivative with respect to X of
+
+00:27:33.100 --> 00:27:35.300
+this function F is
+
+00:27:35.300 --> 00:27:38.460
+the derivative of this function
+with respect to X if we pretend
+
+00:27:38.460 --> 00:27:42.240
+Y and Any other variables that
+may be here are just constants
+
+00:27:42.240 --> 00:27:43.640
+like the number seven or
+something.
+
+00:27:43.640 --> 00:27:45.020
+That doesn't mean you can
+
+00:27:45.020 --> 00:27:46.920
+Erase every Y from the formula.
+
+00:27:46.920 --> 00:27:51.720
+It just means you treat it like
+it doesn't depend on X Okay?
+
+00:27:51.720 --> 00:27:56.080
+So mechanically, let's look at
+what this means in this example.
+
+00:27:58.500 --> 00:28:01.980
+x squared plus y squared over 9.
+
+00:28:01.980 --> 00:28:04.060
+And just to make it a little
+easier to separate things, why
+
+00:28:04.060 --> 00:28:09.180
+don't I write it as x squared
+over 9 plus y squared over 9.
+
+00:28:09.180 --> 00:28:11.960
+Let's start by finding the
+partial derivative with respect
+
+00:28:11.960 --> 00:28:12.780
+to x.
+
+00:28:12.780 --> 00:28:14.300
+And by the way,
+
+00:28:14.300 --> 00:28:18.940
+this is also a function of both
+input variables, or at least it
+
+00:28:18.940 --> 00:28:20.820
+could be a function of both
+input variables.
+
+00:28:20.820 --> 00:28:25.020
+They may not both involve both,
+but they could.
+
+00:28:25.020 --> 00:28:27.740
+And I will make a little more
+sense of what that means in just
+
+00:28:27.740 --> 00:28:29.220
+a second.
+
+00:28:29.220 --> 00:28:32.880
+What I need to do now is take
+the derivative
+
+00:28:32.880 --> 00:28:37.540
+of this expression with respect
+to x, but I need to pretend y is
+
+00:28:37.540 --> 00:28:38.520
+a constant.
+
+00:28:38.520 --> 00:28:42.270
+How would I do that?
+
+00:28:47.860 --> 00:28:48.860
+Yeah,
+
+00:28:49.360 --> 00:28:55.100
+what this is going to give me is
+2x over 9, okay?
+
+00:28:55.100 --> 00:28:57.760
+So the y squared over 9, where
+did it go?
+
+00:28:57.760 --> 00:29:01.460
+Well that's like a constant from
+the i's of x.
+
+00:29:01.460 --> 00:29:03.620
+And so this function,
+
+00:29:03.620 --> 00:29:06.000
+the thing we were taking the
+derivative of from x's
+
+00:29:06.000 --> 00:29:09.860
+perspective just looked like x
+squared over 9 plus C,
+
+00:29:10.100 --> 00:29:11.660
+where C was a constant,
+
+00:29:11.660 --> 00:29:12.660
+okay?
+
+00:29:13.360 --> 00:29:15.220
+Now this function is
+
+00:29:15.220 --> 00:29:18.480
+symmetric in terms of x and y,
+in that if you swapped all the
+
+00:29:18.480 --> 00:29:22.500
+x's and y's it would be the same
+function.
+
+00:29:22.500 --> 00:29:26.250
+So what's the partial with
+respect to y?
+
+00:29:29.960 --> 00:29:30.680
+Yeah,
+
+00:29:30.680 --> 00:29:33.680
+2y over 9, good.
+
+00:29:34.320 --> 00:29:35.320
+Excellent.
+
+00:29:35.560 --> 00:29:37.920
+So what I want to emphasize is
+that the partial derivatives are
+
+00:29:37.920 --> 00:29:39.800
+both functions themselves.
+
+00:29:39.800 --> 00:29:41.840
+You have to plug in a data
+point,
+
+00:29:41.840 --> 00:29:43.480
+or plug in an input.
+
+00:29:43.480 --> 00:29:44.940
+Yeah, not a data point, I
+shouldn't have said that.
+
+00:29:44.940 --> 00:29:47.160
+Plug in an input, that is plug
+in an x and y,
+
+00:29:47.160 --> 00:29:50.000
+and then the partial derivative
+will tell you something about
+
+00:29:50.000 --> 00:29:51.500
+that point.
+
+00:29:51.600 --> 00:29:56.100
+So like, let's pick a point.
+
+00:29:57.360 --> 00:30:00.500
+For example, let's consider the
+point on the graph where x is
+
+00:30:00.500 --> 00:30:01.960
+equal to minus 3,
+
+00:30:01.960 --> 00:30:03.900
+and y is equal to 1 by 2.
+
+00:30:03.900 --> 00:30:06.320
+I picked these because this is
+what is used in the visual in
+
+00:30:06.320 --> 00:30:09.040
+the notes we're about to look
+at.
+
+00:30:09.040 --> 00:30:13.540
+What is the partial with respect
+to x at that point?
+
+00:30:19.560 --> 00:30:22.280
+What does that give me?
+
+00:30:22.280 --> 00:30:23.280
+Yeah,
+
+00:30:23.280 --> 00:30:25.460
+negative 6 over 9,
+
+00:30:25.460 --> 00:30:27.980
+which is negative 2 by 3.
+
+00:30:27.980 --> 00:30:30.860
+And similarly, what's the
+partial with respect to y at
+
+00:30:30.860 --> 00:30:32.360
+that point,
+
+00:30:32.760 --> 00:30:36.510
+looks like 1 over 9,
+
+00:30:38.680 --> 00:30:43.180
+2 times a half over 9.
+
+00:30:45.280 --> 00:30:49.740
+And just because it'll be useful
+in what we're about to look at,
+
+00:30:49.740 --> 00:30:52.240
+this is roughly minus 0.67.
+
+00:30:52.240 --> 00:30:55.000
+This is roughly 0.11.
+
+00:30:55.000 --> 00:30:58.160
+The question is, what does that
+actually tell us about the graph
+
+00:30:58.160 --> 00:31:01.780
+at the point x equals minus 3 y
+equals a half.
+
+00:31:01.780 --> 00:31:06.340
+Well, let's go back to the 3D
+view.
+
+00:31:06.340 --> 00:31:07.000
+First,
+
+00:31:07.000 --> 00:31:08.600
+focus on this number.
+
+00:31:08.600 --> 00:31:10.100
+Minus 0.67.
+
+00:31:10.960 --> 00:31:13.400
+Minus 0.67.
+That is the partial derivative
+
+00:31:13.400 --> 00:31:16.060
+with respect to x at the point
+we're looking at.
+
+00:31:16.060 --> 00:31:19.220
+So now let's go back here.
+This will make more sense now.
+
+00:31:19.220 --> 00:31:23.940
+What I've done is in black here,
+what we are looking at is the
+
+00:31:23.940 --> 00:31:25.440
+point 3,
+
+00:31:25.680 --> 00:31:29.740
+sorry, negative 3 comma a half
+comma Whatever the output is at
+
+00:31:29.740 --> 00:31:32.900
+that point the specific height
+on height value.
+
+00:31:32.900 --> 00:31:36.540
+We don't really care about it,
+right?
+
+00:31:36.540 --> 00:31:39.540
+Are we clear on what point we're
+looking at on the graph here?
+
+00:31:39.540 --> 00:31:41.060
+Yeah, why?
+
+00:31:44.320 --> 00:31:47.900
+Do you see a tangent line that
+is the orange tangent line here
+
+00:31:47.900 --> 00:31:51.650
+that is sloped downwards like
+what's that trying to convey?
+
+00:32:01.060 --> 00:32:04.020
+You see this tangent line? It's
+sloped downwards.
+
+00:32:04.020 --> 00:32:07.960
+And you have to look at how I've
+rotated the graph.
+
+00:32:07.960 --> 00:32:11.520
+I've tried to rotate this so
+that it looks like a
+
+00:32:11.520 --> 00:32:14.520
+two-dimensional graph just in
+terms of x.
+
+00:32:15.700 --> 00:32:20.200
+And what are you seeing with
+this orange tangent line?
+
+00:32:22.280 --> 00:32:24.000
+What do you see?
+
+00:32:24.000 --> 00:32:25.000
+Allison?
+
+00:32:25.620 --> 00:32:29.920
+It seems like we're taking,
+
+00:32:31.140 --> 00:32:35.980
+never mind, but it's basically
+we're acting like it's in two
+
+00:32:35.980 --> 00:32:39.400
+dimensions by taking that
+partial derivative in a four or
+
+00:32:39.400 --> 00:32:40.780
+three dimensional graph.
+
+00:32:40.780 --> 00:32:41.700
+Yeah.
+
+00:32:41.700 --> 00:32:42.540
+Exactly.
+
+00:32:42.540 --> 00:32:44.500
+Well, what I'm trying to get at
+is that the partial derivative
+
+00:32:44.500 --> 00:32:48.840
+describes how the function is
+changing in one direction if
+
+00:32:48.840 --> 00:32:49.660
+you,
+
+00:32:49.660 --> 00:32:51.840
+for a moment, pretend the other
+directions aren't changing.
+
+00:32:51.840 --> 00:32:53.860
+And if you do that,
+
+00:32:53.860 --> 00:32:55.980
+well, it looks like the orange
+tangent line is sloped
+
+00:32:55.980 --> 00:32:56.980
+downwards.
+
+00:32:57.460 --> 00:32:58.980
+Do you agree with that?
+
+00:32:58.980 --> 00:33:01.120
+Now, why is it sloped downwards?
+Well, it's because the partial
+
+00:33:01.120 --> 00:33:04.520
+derivative with respect to x at
+that point is negative.
+
+00:33:04.520 --> 00:33:06.220
+That's why I told you to
+remember the number negative
+
+00:33:06.220 --> 00:33:07.220
+0.67.
+
+00:33:07.360 --> 00:33:09.820
+So we expected this to go down.
+
+00:33:09.820 --> 00:33:12.500
+Now, when you're dealing with 3D
+graphs, it's important that you
+
+00:33:12.500 --> 00:33:14.840
+oriented the graph so that the
+axes,
+
+00:33:14.840 --> 00:33:16.880
+or at least if you're looking at
+it and trying to interpret it in
+
+00:33:16.880 --> 00:33:17.600
+this way,
+
+00:33:17.600 --> 00:33:21.080
+it's important that you orient
+the axes so that left Left is
+
+00:33:21.080 --> 00:33:23.000
+decreasing, right is increasing.
+
+00:33:23.000 --> 00:33:26.840
+You see the x-axis goes negative
+4, negative 2, 0, 2, 4.
+
+00:33:26.840 --> 00:33:29.960
+I could have rotated it this
+way.
+
+00:33:29.960 --> 00:33:33.640
+Now the x-axis is decreasing and
+you'd say, oh, the tangent line
+
+00:33:33.640 --> 00:33:35.860
+is going up and to the right.
+Plus it's because you're looking
+
+00:33:35.860 --> 00:33:38.110
+at it backwards.
+
+00:33:38.460 --> 00:33:42.980
+Now what if I look at y
+increasing and I try and pretend
+
+00:33:42.980 --> 00:33:45.080
+x isn't moving?
+
+00:33:45.080 --> 00:33:50.100
+What do you see about the
+tangent line in blue? Is it
+
+00:33:50.100 --> 00:33:53.850
+sloped up or sloped down?
+
+00:33:54.640 --> 00:33:57.160
+It's sloped up, but barely.
+
+00:33:57.160 --> 00:33:59.760
+Like, it's not as steep as the
+orange one was sloped downwards.
+
+00:33:59.760 --> 00:34:02.760
+And why is that?
+
+00:34:04.860 --> 00:34:05.420
+Kevin?
+
+00:34:05.420 --> 00:34:08.900
+We found the partial derivative
+with respect to y was 0.11.
+
+00:34:08.900 --> 00:34:14.000
+Yeah, which is roughly six times
+lower than, at least in
+
+00:34:14.000 --> 00:34:15.060
+size,
+
+00:34:15.600 --> 00:34:17.860
+the partial with respect to x.
+
+00:34:17.860 --> 00:34:20.460
+So we'd expect it to be less
+steep.
+
+00:34:20.460 --> 00:34:25.320
+And so the idea is that that
+partial derivative,
+
+00:34:25.320 --> 00:34:25.860
+well,
+
+00:34:25.860 --> 00:34:27.700
+the partial derivatives
+together, the one with respect
+
+00:34:27.700 --> 00:34:29.440
+to x and the one with respect to
+y,
+
+00:34:29.440 --> 00:34:32.960
+tell us, if we pick any point on
+here, how quickly the function
+
+00:34:32.960 --> 00:34:36.360
+is changing in the x direction
+and in the y direction, both
+
+00:34:36.360 --> 00:34:37.360
+independently.
+
+00:34:37.720 --> 00:34:39.080
+So if you had to guess,
+
+00:34:39.080 --> 00:34:42.720
+if our goal is to try and find a
+minimizer of the function, How
+
+00:34:42.720 --> 00:34:45.320
+do you think we do that of the
+overall function?
+
+00:34:45.320 --> 00:34:47.160
+How do you think we do that?
+
+00:34:47.160 --> 00:34:48.160
+Yeah,
+
+00:34:48.880 --> 00:34:52.260
+you set both partial derivatives
+to zero and if you had, you
+
+00:34:52.260 --> 00:34:54.260
+know, ten input variables you
+set all of those partial
+
+00:34:54.260 --> 00:34:55.820
+derivatives equal to zero.
+
+00:34:55.820 --> 00:34:58.600
+Okay, so we're gonna get there
+in just a little bit.
+
+00:34:58.600 --> 00:35:02.620
+The sort of confusing thing with
+this example, but it's,
+
+00:35:02.620 --> 00:35:05.080
+I intentionally like to start
+with this, is that as we saw
+
+00:35:05.080 --> 00:35:08.580
+before the partial derivative
+with respect to x only involved
+
+00:35:08.580 --> 00:35:12.420
+x and the partial with respect
+to y only involved y.
+
+00:35:12.420 --> 00:35:13.940
+But it's not always that way.
+
+00:35:13.940 --> 00:35:16.220
+I just started with a simple
+example.
+
+00:35:16.220 --> 00:35:19.220
+So let's look at a more
+complicated example.
+
+00:35:19.220 --> 00:35:20.220
+Okay.
+
+00:35:23.340 --> 00:35:27.360
+Here this function g of x y
+equals x cubed minus 3 x y
+
+00:35:27.360 --> 00:35:30.440
+squared plus 2 sine x cos y.
+Some random thing I cooked up
+
+00:35:30.440 --> 00:35:32.240
+just so it would look cool.
+
+00:35:32.240 --> 00:35:34.580
+If you take its partial
+derivative with respect to x and
+
+00:35:34.580 --> 00:35:36.280
+you take it with respect to y,
+we're not going to work through
+
+00:35:36.280 --> 00:35:38.000
+the algebra of that now,
+
+00:35:38.000 --> 00:35:41.720
+they both involve both
+variables.
+
+00:35:43.020 --> 00:35:46.060
+So I want that to be clear.
+
+00:35:46.060 --> 00:35:48.860
+In general, a partial derivative
+with respect to one variable
+
+00:35:48.860 --> 00:35:51.020
+includes all of the variables.
+
+00:35:51.020 --> 00:35:53.620
+It's just that if you have a
+simpler function,
+
+00:35:53.620 --> 00:35:55.060
+it doesn't have to.
+
+00:35:55.060 --> 00:35:58.900
+But it could, as we're seeing
+here.
+
+00:35:58.900 --> 00:36:04.020
+Let me put this in the iPad
+notes for anyone following along
+
+00:36:04.020 --> 00:36:05.520
+with that.
+
+00:36:07.880 --> 00:36:09.320
+Actually, I'm curious,
+
+00:36:09.320 --> 00:36:11.800
+among everyone here, who has
+ever looked at the things I
+
+00:36:11.800 --> 00:36:14.600
+wrote on my iPad after class?
+
+00:36:14.600 --> 00:36:17.040
+Okay, enough people look at it
+that it's worth making sure
+
+00:36:17.040 --> 00:36:19.290
+these are good.
+Okay.
+
+00:36:23.840 --> 00:36:27.660
+So the idea here is that
+important,
+
+00:36:27.660 --> 00:36:31.180
+both partial derivatives
+
+00:36:36.720 --> 00:36:41.260
+can involve both variables.
+
+00:36:43.440 --> 00:36:46.480
+But then this is a little
+confusing to think about when I
+
+00:36:46.480 --> 00:36:48.700
+said the point of a partial
+derivative is that it measures
+
+00:36:48.700 --> 00:36:52.020
+how the function is changing in
+one direction if the others are
+
+00:36:52.020 --> 00:36:52.940
+constant.
+
+00:36:52.940 --> 00:36:55.860
+What does that mean if both of
+them also involve both
+
+00:36:55.860 --> 00:36:56.860
+variables?
+
+00:36:58.240 --> 00:37:00.480
+Well, that's what this next
+graph is for.
+
+00:37:00.480 --> 00:37:03.500
+So there's a lot going on here,
+so bear with me.
+
+00:37:03.500 --> 00:37:09.000
+What this slider does is it lets
+us pick a value of y.
+
+00:37:11.620 --> 00:37:15.560
+And that plain or flat sheet of
+paper you're seeing in blue
+
+00:37:15.560 --> 00:37:18.520
+corresponds to the value of y
+we've picked.
+
+00:37:18.520 --> 00:37:21.200
+You can see when I drag the
+slider,
+
+00:37:21.200 --> 00:37:23.380
+it's moving along the y-axis.
+
+00:37:23.380 --> 00:37:24.600
+You agree?
+
+00:37:24.600 --> 00:37:27.620
+So here the slider is at y
+equals 1.
+
+00:37:27.620 --> 00:37:32.420
+So this is saying that gold
+curve that you're seeing at the
+
+00:37:32.420 --> 00:37:37.400
+intersection of the original
+graph and the plane y equals 1,
+
+00:37:37.880 --> 00:37:41.760
+that tells you what the function
+looks like if you force y to be
+
+00:37:41.760 --> 00:37:45.520
+1 and say, OK, I'm going to
+remove one variable by forcing y
+
+00:37:45.520 --> 00:37:47.770
+to be 1.
+
+00:37:48.780 --> 00:37:51.460
+So now, instead of looking at a
+graph in three dimensions, we're
+
+00:37:51.460 --> 00:37:53.380
+looking at a more familiar graph
+in two dimensions.
+
+00:37:53.380 --> 00:37:55.760
+It's this gold intersection.
+Do we all see the gold
+
+00:37:55.760 --> 00:37:56.760
+intersection?
+
+00:37:57.360 --> 00:38:00.380
+The partial derivative with
+respect to x
+
+00:38:01.000 --> 00:38:04.750
+just describes the derivative of
+that gold function.
+
+00:38:04.980 --> 00:38:07.600
+But why does the partial
+derivative with respect to x
+
+00:38:07.600 --> 00:38:09.040
+involve y?
+
+00:38:09.040 --> 00:38:11.680
+Well, it's because for different
+y's,
+
+00:38:11.680 --> 00:38:14.680
+the resulting intersection is
+different.
+
+00:38:14.680 --> 00:38:17.880
+Like, it wouldn't make sense for
+this function's derivative, when
+
+00:38:17.880 --> 00:38:19.820
+y equals 2.2,
+
+00:38:19.820 --> 00:38:22.460
+to have to be the same as this
+function's derivative, when y
+
+00:38:22.460 --> 00:38:24.160
+equals negative 2.2.
+
+00:38:24.160 --> 00:38:26.320
+These intersections are all
+different.
+
+00:38:26.320 --> 00:38:30.820
+And so depending on what value
+of y you pick to force y to be,
+
+00:38:31.240 --> 00:38:34.940
+the resulting function's
+derivative with respect to x is
+
+00:38:34.940 --> 00:38:35.940
+different.
+
+00:38:36.840 --> 00:38:39.340
+So that's why, if you go back up
+here, or what we were
+
+00:38:39.340 --> 00:38:40.260
+visualizing,
+
+00:38:40.260 --> 00:38:44.620
+is the partial derivative with
+respect to x.
+
+00:38:45.320 --> 00:38:48.540
+And all I was doing with that
+slider was just holding y
+
+00:38:48.540 --> 00:38:51.240
+constant by forcing it to be
+whatever value that slider
+
+00:38:51.240 --> 00:38:53.440
+landed on, and then in
+calculating the partial
+
+00:38:53.440 --> 00:38:54.900
+derivative of that,
+
+00:38:54.900 --> 00:38:57.340
+or the derivative of that gold
+function,
+
+00:38:57.340 --> 00:39:00.680
+I did it by just plugging in
+that constant value of y into
+
+00:39:00.680 --> 00:39:03.240
+the formula at the bottom of the
+screen.
+
+00:39:03.240 --> 00:39:04.700
+And then,
+
+00:39:04.700 --> 00:39:05.700
+again,
+
+00:39:06.640 --> 00:39:10.380
+this gold function is the one
+whose derivative the partial
+
+00:39:10.380 --> 00:39:13.500
+with respect to x measures.
+
+00:39:13.500 --> 00:39:15.600
+And I only drew this in,
+
+00:39:15.600 --> 00:39:19.160
+I only drew one of these graphs
+with y being a slider just to
+
+00:39:19.160 --> 00:39:20.620
+illustrate the point,
+
+00:39:20.620 --> 00:39:23.640
+but to visualize the partial
+with respect to y,
+
+00:39:23.640 --> 00:39:26.200
+well then x would have to be
+forced to be constant,
+
+00:39:26.200 --> 00:39:28.660
+and then different values of x
+would lead to different
+
+00:39:28.660 --> 00:39:31.360
+intersections with that plane
+and the function,
+
+00:39:31.360 --> 00:39:35.020
+and the partial with respect to
+y would describe the derivative
+
+00:39:35.020 --> 00:39:38.020
+of the intersected function.
+
+00:39:38.320 --> 00:39:40.720
+So this is a complicated idea to
+wrap your head around.
+
+00:39:40.720 --> 00:39:42.760
+I'm not expecting you to just
+look at me, talk about this, and
+
+00:39:42.760 --> 00:39:44.680
+be like, OK, that all makes
+sense.
+
+00:39:44.680 --> 00:39:47.780
+These are all in the notes and
+intentionally interactive
+
+00:39:47.780 --> 00:39:50.580
+because I want you to go into
+them after class or right now,
+
+00:39:50.580 --> 00:39:51.120
+whenever,
+
+00:39:51.120 --> 00:39:54.140
+and play around with this and
+try and make sense of this.
+
+00:39:54.140 --> 00:39:56.880
+But this is the kind of thing
+that is hard to internalize,
+
+00:39:56.880 --> 00:39:59.680
+and it takes people a long time
+to grasp how these things in
+
+00:39:59.680 --> 00:40:01.760
+three dimensions and higher
+dimensions work.
+
+00:40:01.760 --> 00:40:06.160
+But this is just like the start
+of our journey with that.
+
+00:40:06.160 --> 00:40:08.480
+Do we kind of get what a partial
+derivative is and what it means
+
+00:40:08.480 --> 00:40:11.300
+to force one variable to be
+constant? That was the main idea
+
+00:40:11.300 --> 00:40:12.300
+here.
+
+00:40:12.440 --> 00:40:15.060
+Here I'm forcing y to be
+constant.
+
+00:40:15.060 --> 00:40:17.080
+And the result is a function
+that's in two dimensions rather
+
+00:40:17.080 --> 00:40:17.980
+than three.
+
+00:40:17.980 --> 00:40:20.840
+The partial derivative describes
+that two dimensional functions
+
+00:40:20.840 --> 00:40:21.840
+derivative.
+
+00:40:22.660 --> 00:40:25.660
+Sound OK? All right,
+
+00:40:25.760 --> 00:40:29.510
+so back to the notes.
+
+00:40:31.420 --> 00:40:35.170
+I should also add people
+following along.
+
+00:40:57.980 --> 00:41:01.730
+Back to the main idea.
+
+00:41:02.040 --> 00:41:05.880
+The original function we set out
+to try and minimize was this
+
+00:41:05.880 --> 00:41:06.880
+one.
+
+00:41:08.160 --> 00:41:14.140
+These functions of x and y were
+
+00:41:14.140 --> 00:41:17.890
+just sort of simpler examples.
+
+00:41:18.200 --> 00:41:20.600
+Our goal is to minimize this
+function?
+
+00:41:20.600 --> 00:41:22.300
+Okay first like there's some
+context switching involved
+
+00:41:22.300 --> 00:41:25.900
+because in the previous examples
+I showed you of the paraboloid
+
+00:41:25.900 --> 00:41:30.720
+and or like the x squared plus y
+squared over 9 paraboloid and
+
+00:41:30.720 --> 00:41:35.740
+the one that sine x cos y there
+the variables were x and y which
+
+00:41:35.740 --> 00:41:37.660
+I use because those are just
+like the default variables you
+
+00:41:37.660 --> 00:41:41.700
+think of but here the variables
+are not x and y there are w
+
+00:41:41.700 --> 00:41:44.860
+naught and w1 what's tricky
+about this is that there are
+
+00:41:44.860 --> 00:41:47.760
+also x's and y's in the formula
+but now remember you have to
+
+00:41:47.760 --> 00:41:50.320
+think about the x's and y's as
+coming from a data set and being
+
+00:41:50.320 --> 00:41:51.180
+held constant.
+
+00:41:51.180 --> 00:41:53.120
+So the graph we are looking at,
+
+00:41:53.120 --> 00:41:55.940
+it has three axes, but none of
+them involve x or y directly.
+
+00:41:55.940 --> 00:41:58.620
+They're w0, w1, and mean squared
+error.
+
+00:41:58.620 --> 00:41:59.800
+Is that clear?
+
+00:41:59.800 --> 00:42:05.050
+So we're going back to just so
+it is crystal clear.
+
+00:42:05.720 --> 00:42:11.160
+We're going back to
+
+00:42:11.160 --> 00:42:13.540
+here.
+
+00:42:17.760 --> 00:42:21.510
+And so the question is,
+
+00:42:21.520 --> 00:42:25.240
+how do we find
+
+00:42:25.240 --> 00:42:29.320
+w0 star and w1 star?
+
+00:42:32.060 --> 00:42:37.940
+Answer is we take the partial
+derivative of this function
+
+00:42:37.940 --> 00:42:40.420
+with respect to what?
+
+00:42:40.420 --> 00:42:42.440
+What's the first partial
+derivative I'm going to have to
+
+00:42:42.440 --> 00:42:43.440
+find?
+
+00:42:46.160 --> 00:42:49.080
+Braden, with respect to w
+naught,
+
+00:42:49.080 --> 00:42:52.240
+and then I'm going to have to
+find another one with respect to
+
+00:42:52.240 --> 00:42:53.240
+w1,
+
+00:42:54.220 --> 00:42:57.970
+set both equal to zero,
+
+00:42:58.440 --> 00:43:03.500
+and solve for
+
+00:43:03.500 --> 00:43:06.760
+w naught and w1.
+
+00:43:08.500 --> 00:43:10.880
+Both of these partial
+derivatives are going to be more
+
+00:43:10.880 --> 00:43:13.660
+complicated than the ones I
+showed to you involving sine x
+
+00:43:13.660 --> 00:43:15.220
+and goes y,
+
+00:43:15.220 --> 00:43:17.900
+because they're going to involve
+summations.
+
+00:43:17.900 --> 00:43:19.600
+We're going to have to use the
+same logic in that the
+
+00:43:19.600 --> 00:43:21.720
+derivative of a sum is a sum of
+derivatives.
+
+00:43:21.720 --> 00:43:24.480
+So both of these are going to
+involve summations of where i
+
+00:43:24.480 --> 00:43:26.460
+goes from 1 to n.
+
+00:43:26.460 --> 00:43:28.100
+When we set both equal to 0,
+
+00:43:28.100 --> 00:43:31.140
+those both will give us a
+condition that the optimal w0
+
+00:43:31.140 --> 00:43:32.880
+and w1 need to satisfy.
+
+00:43:32.880 --> 00:43:34.160
+And then using some algebra,
+
+00:43:34.160 --> 00:43:37.600
+we can find the combination that
+satisfies both.
+
+00:43:37.600 --> 00:43:40.100
+And what we're going to do is
+I'll give you the high level
+
+00:43:40.100 --> 00:43:42.780
+idea of how you find the W0 and
+W1.
+
+00:43:42.780 --> 00:43:44.960
+We will do a little bit of the
+work together.
+
+00:43:44.960 --> 00:43:46.860
+But just so that we don't sit
+here doing algebra for another
+
+00:43:46.860 --> 00:43:48.000
+35 minutes,
+
+00:43:48.000 --> 00:43:50.320
+I'll give you the high level
+idea.
+
+00:43:50.320 --> 00:43:52.760
+And then you will go look at the
+notes to see how it's finished.
+
+00:43:52.760 --> 00:43:54.720
+And then we'll use the resulting
+formulas.
+
+00:43:54.720 --> 00:43:57.020
+The main thing is I want us to
+know where the formulas come
+
+00:43:57.020 --> 00:43:58.020
+from.
+
+00:43:58.400 --> 00:44:03.650
+But we will take a break before
+we do that.
+
+00:44:03.980 --> 00:44:05.680
+So while we do that,
+
+00:44:05.680 --> 00:44:08.000
+let's take attendance.
+Everyone knows where the new
+
+00:44:08.000 --> 00:44:09.420
+attendance form is,
+
+00:44:09.420 --> 00:44:09.920
+right?
+
+00:44:09.920 --> 00:44:13.260
+You've got to go to, I'll show
+you,
+
+00:44:13.260 --> 00:44:14.760
+course website,
+
+00:44:18.340 --> 00:44:20.240
+and click the Attendance button
+there.
+
+00:44:20.240 --> 00:44:22.760
+Right now it says it's not
+accepting, but now it says it
+
+00:44:22.760 --> 00:44:23.760
+is.
+
+00:44:24.320 --> 00:44:27.740
+Go for it, and I'll give you a
+couple minutes here.
+
+00:44:27.740 --> 00:44:31.500
+And it is 11.14.
+We'll start again at 11.19.
+
+00:44:31.900 --> 00:44:36.700
+So if you want to go to the
+bathroom, get water.
+
+00:44:36.700 --> 00:44:47.120
+Oh
+
+00:45:06.390 --> 00:45:07.390
+Okay,
+
+00:45:22.400 --> 00:45:27.880
+let's see if we can get this out
+of
+
+00:45:27.880 --> 00:45:35.760
+the
+
+00:45:35.760 --> 00:45:36.760
+way.
+
+00:45:58.480 --> 00:46:00.640
+It'll be set up so that you can
+pick a time that doesn't come
+
+00:46:00.640 --> 00:46:03.640
+from that spot on.
+All right.
+
+00:46:34.620 --> 00:46:36.800
+I'm going to go check in,
+
+00:46:36.800 --> 00:46:41.300
+I think it's still working on
+it.
+
+00:46:43.940 --> 00:46:45.440
+Okay, right?
+
+00:46:57.740 --> 00:47:02.240
+Two minutes if you want to
+relax.
+
+00:47:29.340 --> 00:47:54.440
+Thank
+
+00:47:54.440 --> 00:47:59.260
+you.
+
+00:48:25.340 --> 00:48:27.900
+It's funny walking around seeing
+the hops that people choose to
+
+00:48:27.900 --> 00:48:30.900
+doom scroll in our
+
+00:48:42.600 --> 00:48:45.280
+After lecture, it's a prime
+time, and I come back and have
+
+00:48:45.280 --> 00:48:49.780
+like 30 minutes to do that.
+
+00:49:00.640 --> 00:49:02.600
+It's 11.19,
+30 minutes to go.
+
+00:49:04.360 --> 00:49:07.960
+So like I said, by the way, I
+read all the comments you put in
+
+00:49:07.960 --> 00:49:11.120
+about sort of what has been
+going well and what is confusing
+
+00:49:11.120 --> 00:49:12.060
+about today.
+
+00:49:12.060 --> 00:49:16.040
+So the first thing I'll say is
+that all of this, everything
+
+00:49:16.040 --> 00:49:18.620
+we've done today has something
+to do with this picture
+
+00:49:18.620 --> 00:49:21.060
+and finding the best line on it.
+
+00:49:21.060 --> 00:49:26.320
+All the partial derivatives,
+calculus stuff has related to
+
+00:49:26.320 --> 00:49:30.580
+that problem of finding the line
+with the best choice of slope
+
+00:49:30.580 --> 00:49:32.080
+and intercept.
+
+00:49:32.100 --> 00:49:34.520
+And how we do that is when we
+find the line with the best
+
+00:49:34.520 --> 00:49:40.220
+slope and intercept by figuring
+out the intercept and slope
+
+00:49:40.220 --> 00:49:42.100
+that, if you plugged it into
+this function,
+
+00:49:42.100 --> 00:49:44.280
+give you the smallest possible
+value.
+
+00:49:44.280 --> 00:49:46.560
+And all of the partial
+derivative stuff
+
+00:49:46.560 --> 00:49:49.840
+was helping us understand how we
+would find that interceptor
+
+00:49:49.840 --> 00:49:50.840
+slope.
+
+00:49:51.280 --> 00:49:52.380
+So again,
+
+00:49:52.380 --> 00:49:56.740
+make sure to play with the 3D
+graphs to get a better
+
+00:49:56.740 --> 00:49:59.620
+understanding of what a partial
+derivative is and what it means
+
+00:49:59.620 --> 00:50:03.880
+to hold one variable constant.
+
+00:50:04.300 --> 00:50:08.100
+I guess one important comment
+I'll comment on here is that
+
+00:50:08.100 --> 00:50:11.120
+someone asked, why was it the
+case that in this first
+
+00:50:11.120 --> 00:50:12.120
+function,
+
+00:50:12.620 --> 00:50:15.060
+the partial derivative with
+respect to x only had x.
+
+00:50:15.060 --> 00:50:16.460
+And the second,
+
+00:50:16.460 --> 00:50:18.400
+the one with respect to y, only
+had y.
+
+00:50:18.400 --> 00:50:20.520
+But in this more complicated
+one, they both had both.
+
+00:50:20.520 --> 00:50:22.660
+How was I able to separate it?
+
+00:50:22.660 --> 00:50:24.980
+And the answer is that it's not
+because I did anything special.
+
+00:50:24.980 --> 00:50:27.400
+It's just because that's how the
+function was.
+
+00:50:27.400 --> 00:50:29.340
+The first function,
+
+00:50:29.340 --> 00:50:33.240
+you could write it as something
+is involving just x plus
+
+00:50:33.240 --> 00:50:34.860
+something involving just y.
+
+00:50:34.860 --> 00:50:36.700
+It already was separated.
+
+00:50:36.700 --> 00:50:39.700
+Okay, whereas the second
+function is more intertwined.
+
+00:50:39.900 --> 00:50:41.880
+There's lots of terms that
+involve an X and a Y being
+
+00:50:41.880 --> 00:50:44.660
+multiplied together And there's
+no way you can separate that
+
+00:50:44.660 --> 00:50:47.340
+So it's just a cut like a
+consequence of what the function
+
+00:50:47.340 --> 00:50:48.840
+looks like
+
+00:50:49.900 --> 00:50:53.220
+Okay, so Like I said, I don't
+want to work through all of the
+
+00:50:53.220 --> 00:50:55.220
+algebra here because it's gonna
+burn up all of our remaining
+
+00:50:55.220 --> 00:50:58.880
+Time I want us to focus on the
+high-level ideas know where it
+
+00:50:58.880 --> 00:51:01.480
+comes from and then you can
+review the details
+
+00:51:01.480 --> 00:51:03.730
+on your own
+
+00:51:04.140 --> 00:51:07.080
+But like we said the goal
+
+00:51:07.080 --> 00:51:09.740
+or not the goal, but what we are
+going to do is calculate the
+
+00:51:09.740 --> 00:51:11.020
+partial derivatives.
+
+00:51:11.020 --> 00:51:13.280
+There are two of them, one with
+respect to w0,
+
+00:51:13.280 --> 00:51:14.900
+one with respect to w1,
+
+00:51:14.900 --> 00:51:15.920
+set them both equal,
+
+00:51:15.920 --> 00:51:19.960
+and solve for the resulting
+combination of intercept and
+
+00:51:19.960 --> 00:51:20.960
+slope.
+
+00:51:21.820 --> 00:51:22.820
+OK.
+
+00:51:23.220 --> 00:51:28.800
+Let's start with the partial
+derivative with
+
+00:51:28.800 --> 00:51:31.050
+respect to w0.
+
+00:51:33.680 --> 00:51:34.680
+OK.
+
+00:51:36.300 --> 00:51:40.800
+So let's work through this here.
+
+00:51:41.880 --> 00:51:47.130
+What is this going to look like?
+
+00:51:48.820 --> 00:51:51.620
+What's the first piece in this
+partial derivative going to look
+
+00:51:51.620 --> 00:51:55.370
+like with respect to w0?
+
+00:52:00.060 --> 00:52:02.600
+My guess is the 1 over n is just
+going to stay there.
+
+00:52:02.600 --> 00:52:06.100
+Yep.
+So the mechanics of taking the
+
+00:52:06.100 --> 00:52:08.640
+derivative are no different.
+Like all of the same chain rule,
+
+00:52:08.640 --> 00:52:12.390
+some product rule, all those
+things all still apply.
+
+00:52:12.580 --> 00:52:15.760
+So like I said, we should expect
+for there to still be a 1 over n
+
+00:52:15.760 --> 00:52:16.740
+times the sum.
+
+00:52:16.740 --> 00:52:18.990
+Now what's next?
+
+00:52:19.280 --> 00:52:20.980
+Remember, the way I always think
+about this is that the
+
+00:52:20.980 --> 00:52:24.480
+derivative of box squared with
+respect to some other variable
+
+00:52:24.480 --> 00:52:27.700
+is 2 times whatever is in the
+box times the derivative of
+
+00:52:27.700 --> 00:52:29.080
+whatever is in the box.
+
+00:52:29.080 --> 00:52:31.120
+We're going to use that
+repeatedly once we get it.
+
+00:52:31.120 --> 00:52:31.640
+OK,
+
+00:52:31.640 --> 00:52:37.300
+so here, the box is just yi
+minus w0 plus w1 xi.
+
+00:52:38.240 --> 00:52:40.320
+That's what's in the box.
+
+00:52:40.320 --> 00:52:41.680
+Since that thing is squared,
+
+00:52:41.680 --> 00:52:42.960
+because it's a squared loss,
+
+00:52:42.960 --> 00:52:48.580
+I should have the 2 times yi
+minus w0 plus w1
+
+00:52:48.580 --> 00:52:49.580
+xi.
+
+00:52:54.200 --> 00:52:56.000
+Is that clear?
+
+00:52:56.000 --> 00:52:57.000
+OK.
+
+00:52:57.060 --> 00:52:59.310
+What comes afterwards?
+
+00:53:02.100 --> 00:53:04.820
+Yeah? You have to take the
+derivative of the inside part.
+
+00:53:04.820 --> 00:53:05.980
+Yes.
+And what is the derivative of
+
+00:53:05.980 --> 00:53:10.420
+the inside part with respect to
+w0?
+
+00:53:10.420 --> 00:53:12.060
+p negative 1.
+
+00:53:12.060 --> 00:53:13.060
+Good.
+
+00:53:13.860 --> 00:53:17.660
+Because the coefficient on w0,
+if you expanded out or you
+
+00:53:17.660 --> 00:53:20.900
+distributed this minus sign,
+would just be negative 1.
+
+00:53:22.920 --> 00:53:24.980
+Are we clear on where the
+negative 1's coming from?
+
+00:53:24.980 --> 00:53:26.480
+OK, good.
+
+00:53:26.740 --> 00:53:27.740
+Now,
+
+00:53:28.520 --> 00:53:31.080
+what about the partial? And I
+could simplify this a little
+
+00:53:31.080 --> 00:53:31.640
+bit,
+
+00:53:31.640 --> 00:53:33.580
+which I'll do on the next slide.
+But what about the partial with
+
+00:53:33.580 --> 00:53:35.500
+respect to w1?
+
+00:53:35.500 --> 00:53:38.040
+Most of the logic is still the
+same.
+
+00:53:38.040 --> 00:53:38.760
+I'm still, yeah,
+
+00:53:38.760 --> 00:53:39.760
+sorry.
+
+00:53:39.960 --> 00:53:43.420
+Is it like the exact same except
+that negative 1 is a negative
+
+00:53:43.420 --> 00:53:45.220
+xy? Exactly.
+That's the only difference.
+
+00:53:45.960 --> 00:53:47.780
+The 1 over n sum,
+
+00:53:47.780 --> 00:53:49.780
+2 times the box, all the same.
+
+00:53:49.780 --> 00:53:51.520
+The only thing that's different
+is the derivative of what's in
+
+00:53:51.520 --> 00:53:52.380
+the box.
+
+00:53:52.380 --> 00:53:54.880
+And that is not negative 1 now,
+it'll be negative xi.
+
+00:53:54.880 --> 00:53:59.160
+Remember the X's are treated as
+constants
+
+00:53:59.160 --> 00:54:03.160
+Not because yeah, the X's were
+always treated as constants in
+
+00:54:03.160 --> 00:54:05.410
+this situation, okay
+
+00:54:05.820 --> 00:54:11.300
+Same with the Y's so we have the
+1 over n sum
+
+00:54:11.300 --> 00:54:12.300
+2
+
+00:54:12.680 --> 00:54:18.000
+y i minus w naught plus w 1 x i
+
+00:54:18.000 --> 00:54:21.000
+times negative x i
+
+00:54:21.520 --> 00:54:25.270
+This is the only difference
+
+00:54:29.420 --> 00:54:32.420
+Those are both partial
+derivatives.
+
+00:54:32.600 --> 00:54:37.420
+And I'm using shorthand here,
+but if I really wanted to be
+
+00:54:37.420 --> 00:54:38.420
+precise,
+
+00:54:38.460 --> 00:54:40.860
+I would write w0,
+
+00:54:40.860 --> 00:54:43.040
+w1 here for both of them.
+
+00:54:43.040 --> 00:54:44.580
+It's just that usually you don't
+do that.
+
+00:54:44.580 --> 00:54:46.480
+I did it at the start to
+emphasize that the partial
+
+00:54:46.480 --> 00:54:49.020
+derivatives are functions of
+both input variables.
+
+00:54:49.020 --> 00:54:50.960
+Was that your question?
+
+00:54:50.960 --> 00:54:54.340
+Can you just explain again where
+the negative xi came from, why
+
+00:54:54.340 --> 00:54:56.440
+that replaced the 1?
+
+00:54:56.440 --> 00:54:59.240
+So up here, I don't know why I'm
+doing that because then you can
+
+00:54:59.240 --> 00:55:01.100
+see that over here.
+Over here,
+
+00:55:01.100 --> 00:55:03.120
+with the first partial
+derivative,
+
+00:55:03.120 --> 00:55:06.620
+it was with respect to w naught.
+
+00:55:06.620 --> 00:55:10.780
+So I took, again, this
+complicated expression,
+
+00:55:11.120 --> 00:55:13.660
+it's being squared, so the
+derivative of it with respect to
+
+00:55:13.660 --> 00:55:17.220
+w naught is two times the
+expression using the power rule,
+
+00:55:17.220 --> 00:55:19.620
+then And the chain rule says,
+then I have to multiply this by
+
+00:55:19.620 --> 00:55:23.800
+the derivative of that
+expression with respect to w
+
+00:55:23.800 --> 00:55:24.540
+naught,
+
+00:55:24.540 --> 00:55:26.340
+which is just negative one.
+
+00:55:26.340 --> 00:55:30.300
+If I'm taking the partial with
+respect to w one,
+
+00:55:30.300 --> 00:55:34.120
+then the first step stays the
+same because the derivative of
+
+00:55:34.120 --> 00:55:35.660
+box squared becomes two box,
+
+00:55:35.660 --> 00:55:38.800
+but that is times the derivative
+of what's in the box.
+
+00:55:38.800 --> 00:55:41.760
+And now I'm taking that with
+respect to a different variable.
+
+00:55:41.760 --> 00:55:43.140
+Before it was w naught,
+
+00:55:43.140 --> 00:55:45.680
+now it's w one.
+And the derivative of this
+
+00:55:45.680 --> 00:55:49.860
+expression here, with respect to
+w1,
+
+00:55:50.380 --> 00:55:52.520
+is now negative xi.
+
+00:55:52.520 --> 00:55:55.960
+Because negative xi is what's
+being multiplied by w1 here.
+
+00:55:55.960 --> 00:55:56.900
+Is that clear?
+
+00:55:56.900 --> 00:55:57.380
+Good.
+
+00:55:57.380 --> 00:55:58.780
+Yeah, good.
+
+00:55:58.780 --> 00:56:01.780
+There's another question, I
+think.
+
+00:56:03.020 --> 00:56:03.800
+All good?
+
+00:56:03.800 --> 00:56:04.800
+Okay.
+
+00:56:06.260 --> 00:56:07.260
+Good.
+
+00:56:07.480 --> 00:56:11.980
+So now we have our partial
+derivatives.
+
+00:56:25.860 --> 00:56:28.860
+Come on, good notes.
+
+00:56:41.880 --> 00:56:44.120
+Try it like seven times.
+I'm just going to duplicate this
+
+00:56:44.120 --> 00:56:46.370
+a little bit.
+
+00:56:51.820 --> 00:56:52.700
+OK,
+
+00:56:52.700 --> 00:56:54.940
+the copy paste is not behaving
+for some reason.
+
+00:56:54.940 --> 00:56:57.980
+But the thing that I will do to
+simplify this a little bit is
+
+00:56:57.980 --> 00:57:00.040
+that in the first one,
+
+00:57:00.040 --> 00:57:03.700
+what I will do is I'll take this
+minus 1 and this 2,
+
+00:57:03.700 --> 00:57:06.180
+and I'll bring it outside.
+
+00:57:06.180 --> 00:57:09.880
+So then I can have a negative 2
+over n up front.
+
+00:57:09.880 --> 00:57:12.460
+Seem OK? So then that first
+partial derivative
+
+00:57:12.460 --> 00:57:18.160
+will be negative 2 over
+
+00:57:18.160 --> 00:57:23.840
+n times the sum of yi minus w0
+
+00:57:23.840 --> 00:57:26.090
+plus w1 xi.
+
+00:57:26.920 --> 00:57:29.280
+For the second partial
+derivative,
+
+00:57:29.280 --> 00:57:33.460
+in which I had a minus xi here,
+
+00:57:33.460 --> 00:57:37.160
+can I pull the xi out front?
+
+00:57:37.160 --> 00:57:39.920
+No, you cannot do that, because
+it involves i,
+
+00:57:39.920 --> 00:57:43.260
+and i is the variable that is
+being summed over, right? The
+
+00:57:43.260 --> 00:57:45.640
+way that you should think about
+this in a for loop is like,
+
+00:57:45.640 --> 00:57:47.580
+pretend you said for i in range
+1 to n,
+
+00:57:47.580 --> 00:57:48.580
+do something.
+
+00:57:48.580 --> 00:57:50.580
+If you use i before the for
+loop, it'll say, I don't know
+
+00:57:50.580 --> 00:57:53.120
+what that is, because that's
+only a thing that exists in the
+
+00:57:53.120 --> 00:57:54.620
+for loop.
+Same idea here.
+
+00:57:55.400 --> 00:57:59.560
+So the negative 2 over n still
+sticks around, because there's
+
+00:57:59.560 --> 00:58:00.800
+still a 2 here,
+
+00:58:00.800 --> 00:58:02.880
+there's still an over n here,
+and there's still a factor of
+
+00:58:02.880 --> 00:58:04.380
+minus 1,
+
+00:58:14.080 --> 00:58:18.600
+But there's a factor of xi also
+still there,
+
+00:58:18.600 --> 00:58:21.760
+which is part of the summation.
+The thing being summed has an xi
+
+00:58:21.760 --> 00:58:22.940
+in it.
+
+00:58:22.940 --> 00:58:26.300
+If it makes it feel less
+ambiguous,
+
+00:58:26.300 --> 00:58:29.920
+is the xi part of it,
+
+00:58:29.920 --> 00:58:31.960
+nothing's stopping you from just
+putting it here,
+
+00:58:31.960 --> 00:58:32.500
+too.
+
+00:58:32.500 --> 00:58:36.160
+then it feels a little more
+clear that it's part of the
+
+00:58:36.160 --> 00:58:38.410
+thing being subbed.
+
+00:58:40.000 --> 00:58:42.060
+Do we agree?
+
+00:58:42.060 --> 00:58:43.060
+OK.
+
+00:58:44.300 --> 00:58:46.200
+So now we found the partial
+derivative.
+
+00:58:46.200 --> 00:58:47.700
+What's left?
+
+00:58:51.240 --> 00:58:52.160
+What's left?
+
+00:58:52.160 --> 00:58:53.160
+Allison.
+
+00:58:53.260 --> 00:58:54.760
+It's from both people.
+
+00:58:54.760 --> 00:58:56.180
+Excellent.
+All we've got to do is set these
+
+00:58:56.180 --> 00:58:57.600
+equal to 0
+
+00:58:57.600 --> 00:58:59.680
+and solve for the resulting
+combination.
+
+00:58:59.680 --> 00:59:03.380
+But that's where the algebra
+becomes a little tricky.
+
+00:59:03.380 --> 00:59:05.380
+It's doable.
+It's just it would take a lot
+
+00:59:05.380 --> 00:59:07.100
+more time than we have to
+actually do it.
+
+00:59:07.100 --> 00:59:09.180
+So I'll give you like there's a
+couple of things I want to point
+
+00:59:09.180 --> 00:59:11.060
+out.
+And then I'll tell you where it
+
+00:59:11.060 --> 00:59:12.060
+ends.
+
+00:59:13.200 --> 00:59:14.200
+First,
+
+00:59:14.240 --> 00:59:17.760
+let's look at the first
+equation.
+
+00:59:17.760 --> 00:59:19.320
+Why don't I call that one,
+
+00:59:19.320 --> 00:59:20.600
+call this two.
+
+00:59:20.600 --> 00:59:22.420
+Look at equation one.
+What's the first thing I could
+
+00:59:22.420 --> 00:59:25.420
+do to simplify it?
+
+00:59:25.440 --> 00:59:25.920
+Yeah.
+
+00:59:25.920 --> 00:59:28.500
+Remove the negative 2 over n.
+Yeah, remove the negative 2 over
+
+00:59:28.500 --> 00:59:29.820
+n.
+We did that before,
+
+00:59:30.100 --> 00:59:31.100
+too.
+
+00:59:31.420 --> 00:59:35.170
+By removing it, I'm multiplying
+both sides by negative n over 2.
+
+00:59:35.180 --> 00:59:40.430
+And what that gives me is the
+first condition
+
+00:59:42.920 --> 00:59:46.670
+that the optimal slope and
+intercept have to satisfy.
+
+00:59:46.700 --> 00:59:51.950
+I can do that with the second
+one as well.
+
+00:59:57.520 --> 00:59:58.520
+Now,
+
+00:59:58.660 --> 01:00:00.860
+something I want to emphasize is
+that this first equation
+
+01:00:00.860 --> 01:00:05.440
+actually has a convenient
+English
+
+01:00:05.440 --> 01:00:07.320
+interpretation.
+
+01:00:07.880 --> 01:00:09.980
+It's not obvious when you look
+at it because it looks like just
+
+01:00:09.980 --> 01:00:11.560
+a bunch of random symbols,
+
+01:00:11.560 --> 01:00:15.310
+but there is a convenient
+interpretation.
+
+01:00:16.420 --> 01:00:20.170
+What do you think that
+interpretation is?
+
+01:00:26.480 --> 01:00:27.740
+What does this say?
+
+01:00:27.740 --> 01:00:31.620
+It's saying the sum of some
+things equals 0.
+
+01:00:31.620 --> 01:00:35.080
+It's saying there are some
+things that if you add them up,
+
+01:00:35.080 --> 01:00:35.940
+they equal 0.
+
+01:00:35.940 --> 01:00:39.220
+But what are those things being
+summed?
+
+01:00:39.220 --> 01:00:40.480
+Sum of the errors.
+
+01:00:40.480 --> 01:00:41.640
+The errors, yeah.
+
+01:00:41.640 --> 01:00:44.120
+These are just the sum of actual
+minus predicted.
+
+01:00:44.120 --> 01:00:46.500
+Not squared, not absolute valued
+or anything because those are
+
+01:00:46.500 --> 01:00:48.480
+all going to be non-negative, so
+they're probably not going to
+
+01:00:48.480 --> 01:00:49.580
+sum to 0.
+
+01:00:49.580 --> 01:00:52.360
+But these could be positive or
+negative.
+
+01:00:52.360 --> 01:00:55.300
+This is just saying the sum of
+actual minus predicted
+
+01:00:55.300 --> 01:00:59.800
+if you're using the optimal line
+is 0.
+
+01:01:00.280 --> 01:01:03.000
+What that tells us is whatever
+line we end up finding is the
+
+01:01:03.000 --> 01:01:04.000
+best,
+
+01:01:04.880 --> 01:01:07.400
+one of the criteria it will
+satisfy
+
+01:01:07.400 --> 01:01:09.200
+is that when you draw it,
+
+01:01:09.200 --> 01:01:13.180
+the sum of the positive errors
+
+01:01:13.180 --> 01:01:16.020
+will equal exactly the sum of
+the negative errors, Because
+
+01:01:16.020 --> 01:01:19.760
+those together will have to add
+to zero.
+
+01:01:19.760 --> 01:01:24.200
+And this is like a reoccurring
+idea, one that we will see
+
+01:01:24.200 --> 01:01:27.360
+even a month into the semester
+when we revisit all of this
+
+01:01:27.360 --> 01:01:28.940
+through the lens of linear
+algebra.
+
+01:01:28.940 --> 01:01:32.000
+There we will see why the errors
+have to add up to zero from a
+
+01:01:32.000 --> 01:01:33.700
+linear algebra perspective.
+
+01:01:33.700 --> 01:01:37.040
+Here we're seeing it as a result
+of what the calculus is telling
+
+01:01:37.040 --> 01:01:37.980
+us.
+
+01:01:37.980 --> 01:01:41.720
+Just an important thing to know.
+
+01:01:41.720 --> 01:01:43.220
+English interpretation.
+
+01:01:50.620 --> 01:01:55.520
+Errors must sum to zero.
+
+01:01:56.320 --> 01:02:01.570
+This is a sum of actual minus
+predicted.
+
+01:02:02.580 --> 01:02:06.760
+Okay, so now what we need to do
+is find the combination
+
+01:02:06.760 --> 01:02:12.320
+of w0 and
+
+01:02:12.320 --> 01:02:14.540
+w1.
+Now it works.
+
+01:02:16.020 --> 01:02:19.770
+That together satisfy both of
+these conditions.
+
+01:02:20.140 --> 01:02:21.640
+And again,
+
+01:02:21.820 --> 01:02:24.440
+I'll tell you the high level
+idea.
+
+01:02:24.440 --> 01:02:29.180
+What we're going to do is in
+equation one,
+
+01:02:29.180 --> 01:02:32.240
+solve for w 0,
+
+01:02:32.900 --> 01:02:36.200
+but that'll be w 0 star,
+
+01:02:36.200 --> 01:02:42.160
+it will involve w 1 though.
+Right? If I isolate
+
+01:02:42.160 --> 01:02:43.740
+for w0 here,
+
+01:02:43.740 --> 01:02:46.580
+it's still going to have a w1 in
+it.
+
+01:02:46.580 --> 01:02:50.460
+So you can think of this as
+solving these equations using
+
+01:02:50.460 --> 01:02:51.420
+substitution.
+
+01:02:51.420 --> 01:02:53.240
+Like, isolate w0 here,
+
+01:02:53.240 --> 01:02:54.740
+figure out what that's supposed
+to be,
+
+01:02:54.740 --> 01:02:56.460
+then plug it in here,
+
+01:02:56.460 --> 01:02:59.000
+but that'll eliminate the w0
+here, and that'll tell you what
+
+01:02:59.000 --> 01:03:02.360
+w1 is supposed to be without any
+dependence on w0.
+
+01:03:02.360 --> 01:03:03.360
+OK?
+
+01:03:06.580 --> 01:03:08.080
+Then substitute.
+
+01:03:13.660 --> 01:03:18.160
+into 2 to find w1 star.
+
+01:03:19.260 --> 01:03:22.220
+That first step we can do
+relatively quickly together
+
+01:03:22.220 --> 01:03:23.220
+here.
+
+01:03:24.460 --> 01:03:27.620
+Let's look at that first
+equation,
+
+01:03:27.620 --> 01:03:33.620
+the one that said the sum of the
+errors had to be 0.
+
+01:03:36.160 --> 01:03:40.020
+How do I isolate for w0 here?
+
+01:03:40.020 --> 01:03:42.140
+And now, hopefully, you can see
+why in the first lab we had
+
+01:03:42.140 --> 01:03:44.740
+practice on summation notation
+and this kind of thing because
+
+01:03:44.740 --> 01:03:47.160
+we're dealing with this a lot
+here.
+
+01:03:47.160 --> 01:03:52.410
+How do I isolate for w now?
+
+01:03:52.460 --> 01:03:52.700
+OK.
+
+01:03:52.700 --> 01:03:54.600
+Can we start by breaking up the
+summation?
+
+01:03:54.600 --> 01:03:55.500
+Sure.
+
+01:03:55.500 --> 01:03:58.000
+What does that tell me? Someone
+else tell me?
+
+01:03:58.000 --> 01:03:58.720
+You can do it for me.
+
+01:03:58.720 --> 01:03:59.740
+Yeah, go for it.
+
+01:03:59.740 --> 01:04:02.780
+You can do it for someone else.
+No, it's OK.
+
+01:04:02.780 --> 01:04:08.600
+You can do the sum of yi minus
+the sum of w0
+
+01:04:08.600 --> 01:04:12.280
+plus the sum of w1 x1,
+
+01:04:12.280 --> 01:04:13.460
+or x of i.
+
+01:04:13.460 --> 01:04:14.460
+Good.
+
+01:04:15.020 --> 01:04:17.600
+Well, that's also being minused.
+
+01:04:17.600 --> 01:04:19.100
+But yeah.
+
+01:04:20.780 --> 01:04:21.640
+OK,
+
+01:04:21.640 --> 01:04:24.120
+let's talk about how we got
+here.
+
+01:04:24.120 --> 01:04:26.860
+First, note that I implicitly
+distributed this minus sign
+
+01:04:26.860 --> 01:04:29.620
+within the parentheses before
+separating the sum.
+
+01:04:29.620 --> 01:04:30.860
+So inside here,
+
+01:04:30.860 --> 01:04:34.620
+I have yi minus w0 minus w1 xi.
+
+01:04:34.620 --> 01:04:35.260
+Then,
+
+01:04:35.260 --> 01:04:37.720
+using a property that we've used
+about summation notation over
+
+01:04:37.720 --> 01:04:39.120
+the past few lectures,
+
+01:04:39.120 --> 01:04:41.680
+I broke this up into three
+separate sums,
+
+01:04:41.680 --> 01:04:47.180
+the sum of yi's minus the sum of
+w0's minus the sum of w1 xi's.
+
+01:04:47.180 --> 01:04:51.380
+What questions do we have about
+how we arrived here?
+
+01:04:51.380 --> 01:04:52.380
+Feels OK?
+
+01:04:52.380 --> 01:04:52.900
+All right,
+
+01:04:52.900 --> 01:04:55.900
+now let's start simplifying
+things where we can.
+
+01:04:56.880 --> 01:04:58.760
+The sum of the y's,
+
+01:04:58.760 --> 01:05:01.540
+is there really anything we can
+do about that currently?
+
+01:05:01.540 --> 01:05:02.020
+No,
+
+01:05:02.020 --> 01:05:05.770
+we'll leave it as is.
+
+01:05:10.340 --> 01:05:12.680
+The sum of w-noughts,
+
+01:05:12.680 --> 01:05:15.400
+what can I rewrite that as?
+
+01:05:15.400 --> 01:05:16.400
+Simplified.
+
+01:05:17.220 --> 01:05:17.840
+Good.
+And remind me of your name
+
+01:05:17.840 --> 01:05:18.460
+again?
+
+01:05:18.460 --> 01:05:19.460
+Boyan.
+Boyan.
+
+01:05:19.600 --> 01:05:20.640
+Exactly.
+N-w-naught.
+
+01:05:20.880 --> 01:05:21.560
+Why is that?
+
+01:05:21.560 --> 01:05:24.820
+Well, this is just adding
+w-naught n times.
+
+01:05:24.820 --> 01:05:27.280
+It's not changing every time
+it's being added because there's
+
+01:05:27.280 --> 01:05:28.600
+no subscript i here.
+
+01:05:28.600 --> 01:05:31.820
+So this is just going to be
+n-w-naught.
+
+01:05:31.820 --> 01:05:35.760
+And then what can I do about
+this last term? the sum of w1
+
+01:05:35.760 --> 01:05:36.760
+xi's.
+
+01:05:37.200 --> 01:05:38.260
+Can I do anything there,
+
+01:05:38.260 --> 01:05:38.500
+Bella?
+
+01:05:38.500 --> 01:05:40.480
+You can pull out the w1.
+
+01:05:40.480 --> 01:05:41.880
+Excellent.
+Yeah, I can pull out the factor
+
+01:05:41.880 --> 01:05:42.980
+of w1
+
+01:05:42.980 --> 01:05:46.730
+because it is a constant.
+
+01:05:48.720 --> 01:05:53.120
+But the sum of xi is not much I
+can do there.
+
+01:05:53.120 --> 01:05:53.600
+OK,
+
+01:05:53.600 --> 01:05:56.000
+now we're close to having
+isolated for w0.
+
+01:05:56.000 --> 01:05:59.440
+All I have to do is add n w0 to
+both sides.
+
+01:05:59.440 --> 01:06:04.920
+That'll give me the sum of my
+y's minus w1
+
+01:06:04.920 --> 01:06:10.920
+times the sum of my x's is equal
+to n times w0.
+
+01:06:14.540 --> 01:06:18.290
+What's left? Just divide both
+sides by n.
+
+01:06:18.360 --> 01:06:20.320
+And if I do that here,
+
+01:06:20.320 --> 01:06:22.080
+well I can erase the n there,
+
+01:06:22.080 --> 01:06:25.100
+and then divide this by n,
+
+01:06:25.100 --> 01:06:28.850
+and divide this by n.
+
+01:06:35.540 --> 01:06:40.240
+And now if I rewrite this
+formula for w naught,
+
+01:06:41.520 --> 01:06:46.020
+what's a simpler way I could
+express it?
+
+01:06:47.740 --> 01:06:48.740
+Andrew.
+
+01:06:48.820 --> 01:06:52.860
+w naught is equal to the average
+of y minus w1 times the average
+
+01:06:52.860 --> 01:06:55.280
+of x is… Excellent.
+
+01:06:55.280 --> 01:06:58.540
+Because the sum of y's over n,
+that's just the average y, and
+
+01:06:58.540 --> 01:07:01.900
+the sum of x's over n, that's
+just the average x.
+
+01:07:01.900 --> 01:07:02.440
+Okay?
+
+01:07:02.440 --> 01:07:04.040
+And what I'm going to do is I'm
+going to put stars on these
+
+01:07:04.040 --> 01:07:05.040
+things,
+
+01:07:05.280 --> 01:07:08.160
+because these are describing
+conditions for the optimal ones.
+
+01:07:08.160 --> 01:07:12.600
+So now I've found the formula
+for the optimal intercept.
+
+01:07:12.600 --> 01:07:16.460
+But what it's telling me is that
+it depends on what the optimal
+
+01:07:16.460 --> 01:07:17.540
+slope is.
+
+01:07:17.540 --> 01:07:20.360
+And if you remember yesterday's
+lab where you had to program
+
+01:07:20.360 --> 01:07:21.400
+some of these things,
+
+01:07:21.400 --> 01:07:23.860
+this is the formula for the
+optimal intercept we put there.
+
+01:07:23.860 --> 01:07:25.960
+And this is the formula for the
+optimal intercept you will
+
+01:07:25.960 --> 01:07:26.760
+always see.
+
+01:07:26.760 --> 01:07:30.510
+It depends on knowing the
+optimal slope first.
+
+01:07:31.700 --> 01:07:34.480
+So the question is then,
+
+01:07:34.480 --> 01:07:39.640
+I'll write that best, intercept
+depends
+
+01:07:39.640 --> 01:07:42.940
+on best slope.
+
+01:07:45.820 --> 01:07:48.640
+The question then is now how do
+we find the best slope
+
+01:07:48.640 --> 01:07:51.820
+in a way that just involves the
+x's and y's.
+
+01:07:51.820 --> 01:07:54.360
+The formula for the best slope
+it shouldn't have any other
+
+01:07:54.360 --> 01:07:55.800
+dependence on it.
+
+01:07:55.800 --> 01:07:57.940
+Because if that depended on the
+best intercept, well, then it's
+
+01:07:57.940 --> 01:07:59.960
+sort of circular, and I have no
+way of figuring out which comes
+
+01:07:59.960 --> 01:08:00.480
+first.
+
+01:08:00.480 --> 01:08:03.220
+So I need a formula for the best
+slope such that if you told me
+
+01:08:03.220 --> 01:08:04.760
+all of my raw data points,
+
+01:08:04.760 --> 01:08:07.840
+x1, y1, x2, y2, and so on, I
+could just plug that in, and it
+
+01:08:07.840 --> 01:08:09.680
+would tell me the best slope.
+
+01:08:09.680 --> 01:08:12.080
+How am I going to find that?
+
+01:08:12.080 --> 01:08:13.580
+Remind me.
+
+01:08:15.360 --> 01:08:21.360
+How am I going to find a formula
+for the best slope?
+
+01:08:24.980 --> 01:08:25.980
+Yeah?
+
+01:08:30.420 --> 01:08:31.360
+Exactly.
+
+01:08:31.360 --> 01:08:37.360
+All I'm going to do is I'm going
+to take
+
+01:08:42.600 --> 01:08:47.800
+w knot star equals the average y
+minus the best slope times the
+
+01:08:47.800 --> 01:08:51.740
+average x into what we called
+equation two,
+
+01:08:51.740 --> 01:08:57.320
+which was the sum of xi times yi
+
+01:08:57.320 --> 01:09:01.070
+minus w0 plus w1 xi.
+
+01:09:02.430 --> 01:09:03.540
+And when you do that,
+
+01:09:03.540 --> 01:09:06.000
+ignoring the fact that these
+have stars in them,
+
+01:09:06.000 --> 01:09:10.300
+then this formula down here will
+only have three variables or one
+
+01:09:10.300 --> 01:09:12.660
+actual unknown in it,
+
+01:09:12.660 --> 01:09:13.540
+w1.
+
+01:09:13.540 --> 01:09:16.360
+The w0 will disappear because
+we've described what w0 is as a
+
+01:09:16.360 --> 01:09:18.180
+function of w1.
+
+01:09:18.180 --> 01:09:21.930
+And when you do that,
+
+01:09:22.200 --> 01:09:27.940
+the only unknown is w1 star.
+
+01:09:28.840 --> 01:09:32.340
+What you will end up with is a
+formula for w1 star.
+
+01:09:32.340 --> 01:09:36.380
+And again, the algebra really
+just follows the same kinds of
+
+01:09:36.380 --> 01:09:38.440
+steps we just looked at.
+
+01:09:38.440 --> 01:09:41.160
+Here is the formula you will get
+if you follow the steps I've
+
+01:09:41.160 --> 01:09:44.910
+written out in the notes.
+
+01:09:49.600 --> 01:09:53.100
+This is the first of many
+formulas we will see for the
+
+01:09:53.100 --> 01:09:54.600
+optimal slope.
+
+01:09:55.360 --> 01:09:57.580
+It's not the only formula you
+will see because you already
+
+01:09:57.580 --> 01:10:00.340
+know from yesterday's lab that
+the formula we gave you there
+
+01:10:00.340 --> 01:10:03.260
+for the optimal slope looked a
+little different.
+
+01:10:03.260 --> 01:10:06.500
+I'll talk about that in just a
+second.
+
+01:10:06.500 --> 01:10:10.700
+But the main idea is going back
+here.
+
+01:10:10.700 --> 01:10:16.240
+The point of all of this was to
+describe
+
+01:10:16.240 --> 01:10:21.420
+the
+
+01:10:21.420 --> 01:10:27.060
+line with the lowest mean
+squared
+
+01:10:27.060 --> 01:10:28.060
+error,
+
+01:10:28.440 --> 01:10:29.440
+OK?
+
+01:10:30.080 --> 01:10:32.670
+And so that is the line I've
+drawn here in orange.
+
+01:10:32.670 --> 01:10:37.220
+I'll say this line minimizes
+
+01:10:37.220 --> 01:10:39.820
+mean squared error
+
+01:10:43.370 --> 01:10:48.600
+on the commute times data set
+because its
+
+01:10:48.600 --> 01:10:50.480
+slope
+
+01:10:50.480 --> 01:10:56.900
+was
+
+01:10:56.900 --> 01:11:02.780
+calculated with the formula from
+the last
+
+01:11:02.780 --> 01:11:03.980
+slide
+
+01:11:03.980 --> 01:11:11.940
+and
+
+01:11:11.940 --> 01:11:15.600
+again slope is w1 star and its
+intercept
+
+01:11:15.600 --> 01:11:19.440
+w naught star
+
+01:11:19.440 --> 01:11:25.140
+is the average y minus its
+
+01:11:25.140 --> 01:11:27.980
+slope times the average x.
+
+01:11:27.980 --> 01:11:30.280
+And what we've discovered is
+that if you,
+
+01:11:30.280 --> 01:11:33.280
+for any data set,
+
+01:11:34.140 --> 01:11:37.960
+use that slope formula and that
+intercept formula,
+
+01:11:37.960 --> 01:11:40.600
+the resulting simple linear
+regression line
+
+01:11:40.600 --> 01:11:43.920
+has the lowest mean squared
+error of all lines you could
+
+01:11:43.920 --> 01:11:45.420
+think of.
+
+01:11:45.540 --> 01:11:49.260
+Does that mean it is always the
+best line? Well, it's the best
+
+01:11:49.260 --> 01:11:51.960
+if what you care about is
+minimizing mean squared error.
+
+01:11:51.960 --> 01:11:54.780
+Again, if you had a different
+objective, like minimizing
+
+01:11:54.780 --> 01:11:57.620
+mean absolute error well then it
+wouldn't be the necessarily be
+
+01:11:57.620 --> 01:12:00.300
+the best right then maybe the
+line would have different
+
+01:12:00.300 --> 01:12:04.840
+properties okay and so this line
+in here it's a lot of the
+
+01:12:04.840 --> 01:12:08.000
+behavior of squared loss that we
+talked about last time which is
+
+01:12:08.000 --> 01:12:12.200
+that for example it's dragged in
+the direction of outliers more
+
+01:12:12.200 --> 01:12:15.880
+than a line that minimizes mean
+absolute error would be this is
+
+01:12:15.880 --> 01:12:20.460
+a question in yesterday's lab if
+you remember now there's lots of
+
+01:12:20.460 --> 01:12:21.900
+names this line,
+
+01:12:21.900 --> 01:12:22.300
+oops,
+
+01:12:22.300 --> 01:12:25.580
+lots of names this line goes by
+and if you've ever learned about
+
+01:12:25.580 --> 01:12:29.180
+a line of best fit say like in a
+high school stats class or
+
+01:12:29.180 --> 01:12:32.040
+something like that this was the
+one line you looked at,
+
+01:12:32.040 --> 01:12:32.540
+okay,
+
+01:12:32.540 --> 01:12:35.040
+even though the formula may have
+been described slightly
+
+01:12:35.040 --> 01:12:37.960
+differently but it gets called
+lots Lots of things.
+
+01:12:37.960 --> 01:12:40.960
+Line of best fit,
+
+01:12:43.640 --> 01:12:45.890
+the regression line,
+
+01:12:50.080 --> 01:12:51.580
+least squares,
+
+01:12:54.020 --> 01:12:56.400
+regression line.
+
+01:12:58.460 --> 01:13:02.860
+These all are referring to the
+line that we've just discovered
+
+01:13:02.860 --> 01:13:05.160
+through these formulas.
+
+01:13:10.120 --> 01:13:11.620
+Sound okay?
+
+01:13:15.600 --> 01:13:17.850
+Questions so far?
+
+01:13:22.040 --> 01:13:23.040
+Okay.
+
+01:13:25.200 --> 01:13:29.920
+We're gonna review a little bit
+of this when we come back on
+
+01:13:29.920 --> 01:13:30.920
+Tuesday.
+
+01:13:31.240 --> 01:13:34.840
+There's just a couple key facts
+I want you to be aware of going
+
+01:13:34.840 --> 01:13:38.880
+into the weekend because they'll
+appear on homework 2 which is
+
+01:13:38.880 --> 01:13:40.420
+going to come out tomorrow.
+
+01:13:40.420 --> 01:13:46.340
+The first is that there are
+several equal or I should
+
+01:13:46.340 --> 01:13:47.180
+say equivalent and
+
+01:13:47.180 --> 01:13:56.120
+for
+
+01:13:56.120 --> 01:13:57.620
+w1 star.
+
+01:13:58.760 --> 01:14:04.010
+The formula we just saw is one
+of them.
+
+01:14:17.520 --> 01:14:20.060
+Notice the numerator involves x
+and y.
+
+01:14:20.060 --> 01:14:23.060
+Denominator just involves x.
+
+01:14:29.900 --> 01:14:34.500
+There are a few other equal ways
+of writing this.
+
+01:14:34.500 --> 01:14:39.750
+One way of doing that is with
+keeping the same numerator,
+
+01:14:39.760 --> 01:14:44.440
+but the denominator becomes the
+sum of xi minus x bar squared.
+
+01:14:45.520 --> 01:14:48.800
+So notice here on the bottom,
+
+01:14:48.800 --> 01:14:51.060
+I had xi times xi minus x bar,
+
+01:14:51.060 --> 01:14:55.360
+and now I have xi minus x bar
+squared.
+
+01:14:55.360 --> 01:14:59.860
+That's also equal to keeping the
+same denominator,
+
+01:15:04.760 --> 01:15:10.740
+but the numerator becomes xi
+minus x bar, which
+
+01:15:10.740 --> 01:15:13.540
+never appeared on the numerator
+before, There was never an x bar
+
+01:15:13.540 --> 01:15:18.040
+there times yi minus y bar
+
+01:15:18.500 --> 01:15:23.940
+And you can also let me think of
+another color here purple
+
+01:15:23.940 --> 01:15:29.140
+This is also equal to you keep
+the same numerator
+
+01:15:29.140 --> 01:15:32.060
+And on the sorry the same
+denominator and on the numerator
+
+01:15:32.060 --> 01:15:38.060
+you could do yi times xi minus x
+bar
+
+01:15:38.220 --> 01:15:42.720
+All of these are the same
+
+01:15:50.240 --> 01:15:53.380
+But it's not obvious why they
+should be.
+
+01:15:53.380 --> 01:15:54.100
+Alex?
+
+01:15:54.100 --> 01:15:57.420
+Is it useful to memorize these
+or do you open them up to the
+
+01:15:57.420 --> 01:15:58.620
+base form?
+
+01:15:58.620 --> 01:15:59.820
+Good question.
+
+01:15:59.820 --> 01:16:01.880
+Let me hold that thought for a
+second.
+
+01:16:01.880 --> 01:16:03.380
+It's fine.
+
+01:16:03.620 --> 01:16:04.420
+Denominator,
+
+01:16:04.420 --> 01:16:06.240
+don't you get the square?
+
+01:16:06.240 --> 01:16:10.040
+Yeah, I'm going to talk about
+that in just a second.
+
+01:16:10.040 --> 01:16:13.460
+So, both of the recent questions
+illustrate a bigger point, which
+
+01:16:13.460 --> 01:16:15.680
+is that you don't need to
+memorize all of this.
+
+01:16:15.680 --> 01:16:16.760
+And in general,
+
+01:16:16.760 --> 01:16:19.540
+I think when you're studying
+math and these sorts of things,
+
+01:16:19.540 --> 01:16:24.900
+what you should build up is a
+strategy or knowledge of how you
+
+01:16:24.900 --> 01:16:28.980
+would come up with a result
+using basic understanding of the
+
+01:16:28.980 --> 01:16:31.540
+situation, rather than
+memorizing all of the facts at
+
+01:16:31.540 --> 01:16:32.220
+the end.
+
+01:16:32.220 --> 01:16:36.140
+What I mean by that is the most
+versatile of these formulas, for
+
+01:16:36.140 --> 01:16:39.260
+reasons I'm about to show you is
+the one I've just boxed.
+
+01:16:39.260 --> 01:16:40.640
+It's like the most expanded
+version.
+
+01:16:40.640 --> 01:16:41.560
+And from this,
+
+01:16:41.560 --> 01:16:44.840
+you can show it's equal to any
+of these other ones.
+
+01:16:44.840 --> 01:16:47.620
+But now your question is, why
+are these all equal?
+
+01:16:47.620 --> 01:16:48.620
+Well,
+
+01:16:49.760 --> 01:16:54.260
+they actually all use the fact
+
+01:16:55.800 --> 01:17:01.320
+that the sum of xi minus x bar
+
+01:17:01.320 --> 01:17:06.020
+is something actually, I don't
+know.
+
+01:17:06.020 --> 01:17:06.920
+You tell me,
+
+01:17:06.920 --> 01:17:10.080
+what is the sum of xi minus x
+bar for an entire data set? It
+
+01:17:10.080 --> 01:17:11.860
+is always equal to the same
+constant,
+
+01:17:11.860 --> 01:17:17.110
+no matter what the data set is.
+
+01:17:20.320 --> 01:17:23.060
+What does that equal to, no
+matter the data set,
+
+01:17:23.060 --> 01:17:26.540
+the sum of xi minus x bar?
+
+01:17:26.540 --> 01:17:31.040
+Always equal to the same number.
+
+01:17:31.420 --> 01:17:32.420
+Yeah.
+
+01:17:33.160 --> 01:17:33.960
+0.
+
+01:17:33.960 --> 01:17:34.960
+Why?
+
+01:17:37.840 --> 01:17:40.620
+The sum of xi minus x bar is
+always equal to 0, no matter the
+
+01:17:40.620 --> 01:17:42.120
+data set.
+
+01:17:42.740 --> 01:17:46.860
+It means the balancing point of
+the data set and every other
+
+01:17:46.860 --> 01:17:47.860
+point.
+
+01:17:48.320 --> 01:17:50.240
+And there's going to be
+negatives and positives.
+
+01:17:50.240 --> 01:17:51.240
+Yeah,
+
+01:17:51.340 --> 01:17:53.900
+the mean is the point of the
+data set where the positive and
+
+01:17:53.900 --> 01:17:55.960
+negative errors cancel out.
+
+01:17:55.960 --> 01:18:00.760
+Now, something I didn't
+emphasize, but if we switch over
+
+01:18:00.760 --> 01:18:03.010
+to Lecture 2,
+
+01:18:03.180 --> 01:18:05.480
+back when we derived that the
+mean minimized mean squared
+
+01:18:05.480 --> 01:18:06.320
+error,
+
+01:18:06.320 --> 01:18:08.980
+it was hiding in plain sight
+from us.
+
+01:18:08.980 --> 01:18:09.440
+Remember,
+
+01:18:09.440 --> 01:18:12.120
+the mean squared error there
+looked like this.
+
+01:18:12.120 --> 01:18:15.220
+1 over n times the sum of yi
+minus w squared.
+
+01:18:15.220 --> 01:18:17.820
+And how did we find the optimal
+w? Well, we took the derivative
+
+01:18:17.820 --> 01:18:20.880
+of it, which was this thing, and
+set that equal to 0.
+
+01:18:20.880 --> 01:18:23.240
+But when we set that derivative
+equal to 0, we were literally
+
+01:18:23.240 --> 01:18:26.780
+solving for a w you where the
+error is added up to zero.
+
+01:18:26.780 --> 01:18:29.200
+I just never pointed that out.
+
+01:18:29.200 --> 01:18:32.040
+But what that tells you is that
+the mean is the one point where
+
+01:18:32.040 --> 01:18:35.380
+the errors add up to zero.
+And if you forgot that,
+
+01:18:35.380 --> 01:18:37.620
+that's fine, because you can
+derive it from here.
+
+01:18:37.620 --> 01:18:41.560
+Because all this is saying is
+add up the xi's,
+
+01:18:41.560 --> 01:18:46.060
+and from that subtract the sum
+of the means.
+
+01:18:46.820 --> 01:18:52.070
+But if you subtract the mean n
+times,
+
+01:18:52.120 --> 01:18:54.100
+That's just n times the mean,
+
+01:18:54.100 --> 01:18:56.320
+but if you think about what the
+formula for the mean is, it's
+
+01:18:56.320 --> 01:18:58.740
+just the sum of the xi's over n.
+
+01:18:58.740 --> 01:19:03.880
+So this first thing is also n
+times the mean.
+
+01:19:03.880 --> 01:19:06.880
+So this is zero.
+
+01:19:06.900 --> 01:19:09.040
+Okay, what does that have to do
+with this situation?
+
+01:19:09.040 --> 01:19:09.640
+Well,
+
+01:19:09.640 --> 01:19:13.820
+if you look back at this boxed
+formula,
+
+01:19:13.820 --> 01:19:18.220
+you may say like, where did you
+get the minus x bar here from?
+
+01:19:18.220 --> 01:19:21.060
+When the original formula didn't
+have the minus X bar, like why
+
+01:19:21.060 --> 01:19:23.260
+is this numerator equal to this
+numerator?
+
+01:19:23.260 --> 01:19:25.820
+Let me highlight that and this
+is the last point I'll make
+
+01:19:25.820 --> 01:19:29.020
+Why is that the same as this?
+
+01:19:29.020 --> 01:19:31.640
+Well, now maybe you can start to
+see why I illustrated this point
+
+01:19:31.640 --> 01:19:36.140
+about the sum of the errors
+adding up to zero it's because
+
+01:19:37.700 --> 01:19:39.950
+You can distribute
+
+01:19:40.500 --> 01:19:45.750
+This term and write this as the
+sum of X I Y I minus Y bar
+
+01:19:46.320 --> 01:19:48.570
+minus another sum
+
+01:19:48.720 --> 01:19:52.960
+of x bar times yi minus y bar.
+
+01:19:52.960 --> 01:19:57.320
+But in this second sum, x bar is
+a constant.
+
+01:19:57.320 --> 01:20:00.940
+So in this first sum, I have the
+sum of xi yi minus y bar.
+
+01:20:00.940 --> 01:20:06.200
+In the second sum, I have x bar
+times the sum of yi minus y bar.
+
+01:20:06.200 --> 01:20:09.200
+But what is that?
+
+01:20:09.620 --> 01:20:11.120
+Remind me?
+
+01:20:11.340 --> 01:20:17.340
+The sum of yi minus y bar 0.
+
+01:20:18.820 --> 01:20:23.040
+So I'm left with just the sum of
+xi yi minus y bar.
+
+01:20:23.040 --> 01:20:26.780
+So that is the property I use to
+find all of these equivalent
+
+01:20:26.780 --> 01:20:29.030
+numerators and denominators.
+
+01:20:29.240 --> 01:20:33.700
+But they can all be derived from
+this one boxed version.
+
+01:20:33.700 --> 01:20:37.080
+You could use that logic to get
+there or to get down here.
+
+01:20:37.080 --> 01:20:40.060
+I removed the minus x bar, but I
+could have removed the minus y
+
+01:20:40.060 --> 01:20:42.520
+bar, it's the same thing.
+
+01:20:42.520 --> 01:20:44.320
+Now the question is, which one
+do you use?
+
+01:20:44.320 --> 01:20:46.640
+The answer is that it depends on
+the situation.
+
+01:20:46.640 --> 01:20:49.700
+It depends on what the question
+is asking and in homework 2 we
+
+01:20:49.700 --> 01:20:52.820
+have several questions in which
+sometimes this is the more
+
+01:20:52.820 --> 01:20:55.420
+convenient formula Sometimes
+this is the more convenient
+
+01:20:55.420 --> 01:20:58.900
+formula now the last thing I'll
+say because you know you gotta
+
+01:20:58.900 --> 01:21:02.060
+get out of here It's 1151 is
+that there's if you look at
+
+01:21:02.060 --> 01:21:03.560
+chapter 2.4
+
+01:21:04.280 --> 01:21:05.780
+There's another
+
+01:21:06.060 --> 01:21:07.060
+formula
+
+01:21:07.560 --> 01:21:11.100
+For the optimal slope and
+intercept that involves what's
+
+01:21:11.100 --> 01:21:13.350
+called the correlation
+coefficient
+
+01:21:13.380 --> 01:21:14.020
+R,
+
+01:21:14.020 --> 01:21:16.200
+which you maybe have heard of in
+a high school stats class.
+
+01:21:16.200 --> 01:21:17.460
+Totally fine if you haven't.
+
+01:21:17.460 --> 01:21:20.440
+The correlation coefficient
+times the standard deviation of
+
+01:21:20.440 --> 01:21:23.860
+y over the standard deviation of
+x is also equal to all of those
+
+01:21:23.860 --> 01:21:25.020
+formulas we just saw.
+
+01:21:25.020 --> 01:21:27.320
+So when we come back on Tuesday,
+we will look at what this means
+
+01:21:27.320 --> 01:21:29.220
+and what the correlation
+coefficient means.
+
+01:21:29.220 --> 01:21:32.460
+But just know this in case it
+comes up in homework two.
+
+01:21:32.460 --> 01:21:34.140
+And again, I have office hours
+after this if you'd like to
+
+01:21:34.140 --> 01:21:35.140
+chat.
+
+01:21:35.600 --> 01:21:36.660
+I have two quick questions.
+
+01:21:36.660 --> 01:21:37.560
+Yeah, yeah.
+
+01:21:37.560 --> 01:21:40.480
+Can I confuse with the
+terminology when you were saying
+
+01:21:40.480 --> 01:21:44.980
+the summation of the means Sure.
+Is it not just the one mean?
+
+01:21:45.180 --> 01:21:47.980
+Like the mean of the data set,
+or my misunderstanding?
+
+01:21:47.980 --> 01:21:49.920
+So you're talking about y.
+
+01:21:49.920 --> 01:21:52.000
+You're talking about this.
+
+01:21:52.000 --> 01:21:53.800
+Ooh, how's that going?
+
+01:21:53.800 --> 01:21:55.760
+Is it ready?
+
+01:21:55.760 --> 01:21:56.500
+Remember,
+
+01:21:56.500 --> 01:21:56.920
+yeah.
+
+01:21:56.920 --> 01:22:01.440
+But that's just saying x bar
+plus x bar plus x bar, which is
+
+01:22:01.440 --> 01:22:02.900
+n times x bar.
+
+01:22:02.900 --> 01:22:03.520
+OK,
+
+01:22:03.520 --> 01:22:04.940
+but it's still the color part of
+the thing.
+
+01:22:04.940 --> 01:22:05.960
+The same one number.
+
+01:22:05.960 --> 01:22:06.880
+Yeah, yeah, yeah.
+Yeah.
+
+01:22:06.880 --> 01:22:08.300
+So here,
+
+01:22:08.300 --> 01:22:10.220
+when we got the homework slide,
+Yeah.
+
+01:22:10.220 --> 01:22:14.820
+I'm confused on why the W sub 1
+became the W sub 1 star.
+
+01:22:14.820 --> 01:22:17.840
+How does finding the optimal?
+The star is sort of just like a
+
+01:22:17.840 --> 01:22:20.480
+thing we tack on at the end to
+denote that this is the optimal
+
+01:22:20.480 --> 01:22:21.060
+one.
+
+01:22:21.060 --> 01:22:22.660
+Yeah.
+I'm confused on why finding the
+
+01:22:22.660 --> 01:22:25.660
+optimal slope inherently means
+that it's not the optimal.
+
+01:22:26.440 --> 01:22:29.160
+It's more describing that this
+is going to be the relationship
+
+01:22:29.160 --> 01:22:32.040
+between the optimal W0 and W1.
+At this stage,
+
+01:22:32.040 --> 01:22:34.140
+we haven't yet found the optimal
+W1.
+
+01:22:34.140 --> 01:22:36.720
+So if it makes more conceptual
+sense, just remove both of the
+
+01:22:36.720 --> 01:22:38.020
+stars, and then only add them at
+the end.
+
+01:22:38.020 --> 01:22:40.860
+Well, I understand this one,
+because you said equal to 0.
+
+01:22:40.860 --> 01:22:44.440
+But I don't understand how this
+one is also the optimal one.
+
+01:22:44.440 --> 01:22:47.100
+It's less that this,
+
+01:22:47.100 --> 01:22:47.560
+like,
+
+01:22:47.560 --> 01:22:49.140
+I see what you're saying.
+
+01:22:49.140 --> 01:22:51.700
+What this is describing is what
+the relationship between the
+
+01:22:51.700 --> 01:22:53.040
+optimal slope and intercept will
+be.
+
+01:22:53.040 --> 01:22:56.240
+But it's not telling you what
+the optimal slope is, just yet.
+
+01:22:56.240 --> 01:22:57.240
+OK.
+
+01:22:57.660 --> 01:22:58.220
+The later,
+
+01:22:58.220 --> 01:23:00.460
+the formula below, or like when
+you do the algebra below, that
+
+01:23:00.460 --> 01:23:02.120
+tells you what the optimal slope
+is meant to be.
+
+01:23:02.120 --> 01:23:02.460
+OK.
+
+01:23:02.460 --> 01:23:04.040
+Wait, is this what slope is?
+
+01:23:04.040 --> 01:23:05.040
+Sorry.
+
+01:23:05.080 --> 01:23:05.900
+Slope, intercept.
+
+01:23:05.900 --> 01:23:06.440
+Yeah.
+
+01:23:06.440 --> 01:23:07.440
+Thank you.
+Yeah, no worries.
+
+01:23:07.440 --> 01:23:09.960
+Yeah.
+
+01:23:11.250 --> 01:23:13.520
+Okay.
+
+01:23:15.540 --> 01:23:17.040
+Thank you.
+
+01:23:30.760 --> 01:23:34.930
+Sorry.
+Thank you very
+
+01:23:34.930 --> 01:23:41.300
+much.
+
+01:24:03.010 --> 01:24:07.050
+You can actually see the screen.
+
+01:24:07.050 --> 01:24:08.630
+So they finished it like a hour
+and a half ago.
+
+01:24:08.630 --> 01:24:11.910
+So every student gets one.
+
+01:24:11.910 --> 01:24:13.410
+Oh, geez.
+
+01:24:13.730 --> 01:24:15.590
+It's speed right now.
+
+01:24:15.590 --> 01:24:17.610
+I like the way we have a good
+time,
+
+01:24:17.610 --> 01:24:18.410
+which is amazing.
+
+01:24:18.410 --> 01:24:19.750
+Vanessa, are you still reading?
+
+01:24:19.750 --> 01:24:20.310
+Oh, we're not reading.
+
+01:24:20.310 --> 01:24:21.310
+3-0-5.
+
+01:24:22.370 --> 01:24:25.330
+Do the quiz or whatever those do
+at noon.
+
+01:24:25.330 --> 01:24:28.870
+Does that do at noon? I think it
+does at noon.
+
+01:24:28.870 --> 01:24:32.630
+Which I was just like, well, we
+talked about it much earlier.
+
+01:24:32.630 --> 01:24:36.450
+Did you submit it with your
+first name?
+
+01:24:36.450 --> 01:24:38.410
+I guess it was three stars.
+
+01:24:38.410 --> 01:24:39.750
+It was two stars first name.
+
+01:24:39.750 --> 01:24:42.330
+Were you able to submit it
+before next Thursday?
+
+01:24:42.330 --> 01:24:44.170
+Or is it due today? I think it's
+due today.
+
+01:24:44.170 --> 01:24:47.210
+I think that the text films were
+always due.
+
+01:24:47.210 --> 01:24:48.030
+Were there passwords?
+
+01:24:48.030 --> 01:24:49.350
+Yeah, I did.
+
+01:24:49.350 --> 01:24:51.050
+I don't know.
+I think if you don't know for
+
+01:24:51.050 --> 01:24:53.290
+us, it was like if you didn't go
+to lecture, then it was due next
+
+01:24:53.290 --> 01:24:53.990
+Thursday.
+
+01:24:53.990 --> 01:24:55.210
+I couldn't go.
+I was like, where are you going
+
+01:24:55.210 --> 01:24:57.330
+to play? I'm from Michigan.
+
+01:24:57.330 --> 01:24:58.810
+I'm from Michigan.
+
+01:24:58.810 --> 01:25:01.060
+I'm from Michigan.

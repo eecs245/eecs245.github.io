@@ -6,7 +6,7 @@ const records=JSON.parse(readFileSync(new URL('../search-index.json',import.meta
 const search=buildSearch(records);
 test('projection groups documents once while retaining their matching section links',()=>{
  const results=search('projection');
- assert(categories.every(category=>results.some(r=>r.category===category)));
+ assert(categories.filter(c=>c!=='Lecture recordings').every(category=>results.some(r=>r.category===category))); // Recordings depend on explicitly imported captions.
  assert.equal(new Set(results.map(r=>r.url)).size,results.length);
  assert(results.some(r=>r.locations.some(location=>location.url.endsWith('#orthogonal-projections'))));
  const note=results.find(r=>r.url.endsWith('/projecting-onto-a-single-vector/'));
