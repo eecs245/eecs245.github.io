@@ -1,5 +1,6 @@
 """Index committed public course sources only; never traverse the private repo."""
 from recordings import collect
+from other_videos import collect as collect_other_videos
 from pathlib import Path
 import json,re,html,subprocess,hashlib,datetime,os
 ROOT=Path(os.environ.get('EECS245_SOURCES','/Users/surajrampure/Desktop/245'))
@@ -114,7 +115,11 @@ recordings,recording_coverage,caption_sources=collect(ROOT/'website',now)
 for record in recordings:
  record['id']=str(len(records));records.append(record)
 sources.extend(caption_sources)
-metadata={'builtAt':now.isoformat(),'releaseMetadata':'first addition in committed public repository history','commits':{name:git(examrepo if name=='exams' else ROOT/name,'rev-parse','HEAD').decode().strip() for name in ['notes','website','exams']},'documents':len({r.get('recordingUrl',r['url'].split('#')[0]) for r in records}),'records':len(records),'ocrPages':ocrpages,'recordings':recording_coverage,'categories':{cat:sum(r['category']==cat for r in records) for cat in ['Notes','Lecture PDFs','Lecture recordings','Homeworks','Labs','Past exams']},'errors':errors}
+video_path='_data/other-videos.json'
+if video_path in files(ROOT/'website'):
+ data,date=source(ROOT/'website',video_path)
+ records.extend(collect_other_videos(json.loads(data),date,len(records)))
+metadata={'builtAt':now.isoformat(),'releaseMetadata':'first addition in committed public repository history','commits':{name:git(examrepo if name=='exams' else ROOT/name,'rev-parse','HEAD').decode().strip() for name in ['notes','website','exams']},'documents':len({r.get('recordingUrl',r['url'].split('#')[0]) for r in records}),'records':len(records),'ocrPages':ocrpages,'recordings':recording_coverage,'categories':{cat:sum(r['category']==cat for r in records) for cat in ['Notes','Lecture PDFs','Lecture recordings','Homeworks','Labs','Past exams','Other videos']},'errors':errors}
 (OUT/'search-index.json').write_text(json.dumps({'records':records,'metadata':metadata},ensure_ascii=False))
 (OUT/'source-manifest.json').write_text(json.dumps({'metadata':metadata,'sources':sources},indent=2))
 print(json.dumps(metadata,indent=2))

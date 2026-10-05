@@ -50,3 +50,7 @@ body{font-family:var(--course-font);color:#5c5962;background:#fff;line-height:1.
 
 .brand,.has-query .brand{display:block}
 #search-form kbd{display:grid;place-items:center;flex-shrink:0;width:22px;height:24px;padding:0;line-height:1}#search-form kbd svg{display:block;width:12px;height:16px;stroke:currentColor;stroke-width:1.5;fill:none}
+
+.filter.videos{--color:#a04760;--tint:#f9edf1;--edge:#edced8}
+.group[data-category="Other videos"] .video-card{grid-template-columns:minmax(0,1fr) auto}
+.group[data-category="Other videos"] .locations a{color:#a04760;background:#f9edf1;border-color:#edced8;white-space:nowrap}

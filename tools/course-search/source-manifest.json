@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "builtAt": "2026-10-02T16:52:02.781655+00:00",
+    "builtAt": "2026-10-05T17:30:28.937166+00:00",
     "releaseMetadata": "first addition in committed public repository history",
     "commits": {
       "notes": "2216691027c06eb8ec79db3f7398d70ba8f58d13",
       "website": "fce8707f2925e8e182f4eadaf5d43ea1d260bb76",
       "exams": "359ec59ad7caecc1713abdcb74007c2e755c54e7"
     },
-    "documents": 85,
-    "records": 4683,
+    "documents": 127,
+    "records": 4725,
     "ocrPages": 186,
     "recordings": {
       "published": 10,
@@ -172,7 +172,8 @@
       "Lecture recordings": 2445,
       "Homeworks": 144,
       "Labs": 138,
-      "Past exams": 392
+      "Past exams": 392,
+      "Other videos": 42
     },
     "errors": []
   },
@@ -1724,6 +1725,12 @@
       "schedulePath": "_modules/week-05.md",
       "scheduleSha256": "9b0a3d20c4fe31b25c16a4fcc4447f8d0a77f5fdb2e85b420bbb7e3708523416",
       "releaseAt": "2026-10-01T12:33:19-04:00"
+    },
+    {
+      "repo": "website",
+      "path": "_data/other-videos.json",
+      "sha256": "9c55b4f77c03ed0894e02f5e6b7c1f00fd60a86f8b7aab94980414aab9a9da6d",
+      "releaseAt": "2026-10-05T17:30:28.937166+00:00"
     }
   ]
 }

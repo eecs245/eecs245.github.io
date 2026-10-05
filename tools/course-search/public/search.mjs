@@ -1,7 +1,7 @@
 import {tokens,normalizeQuery,normalizeText,createQueryProcessor} from './query.mjs';
 export {tokens,normalizeQuery,createQueryProcessor};
-export const categories=['Lecture recordings','Lecture PDFs','Notes','Homeworks','Labs','Past exams'];
-export const resultCategories=['Lectures','Notes','Homeworks','Labs','Past exams'];
+export const categories=['Lecture recordings','Lecture PDFs','Notes','Homeworks','Labs','Past exams','Other videos'];
+export const resultCategories=['Lectures','Notes','Homeworks','Labs','Past exams','Other videos'];
 // Combine only matching, enabled lecture sources. Search scores stay unchanged.
 export function combineLectureResults(documents){
  const lectures=new Map(),other=[];
@@ -155,5 +155,6 @@ export function indexedCoverage(records){
  const numbered=category=>ranges(titles(category).map(t=>Number(t.match(/^(?:Lecture|Homework|Lab) (\d+)/)?.[1])).filter(Boolean));
  const recordings=numbered('Lecture recordings'),pdfs=numbered('Lecture PDFs');
  const lectures=recordings===pdfs?`Lectures: ${pdfs}`:`Lecture recordings: ${recordings} • Lecture PDFs: ${pdfs}`;
- return `${lectures} • Homeworks: ${numbered('Homeworks')} • Labs: ${numbered('Labs')}`;
+ const videos=new Set(records.filter(r=>r.category==='Other videos').map(r=>r.url)).size;
+ return `${lectures} • Homeworks: ${numbered('Homeworks')} • Labs: ${numbered('Labs')}`+(videos?` • Other videos: ${videos}`:'');
 }

@@ -44,7 +44,8 @@ export function matchesResource(record,request){
   if(!new RegExp('^'+(prefix?prefix+'\\s+':'')+escaped+'(?:\\D|$)','i').test(record.title))return false;
  }
  if(exam){
-  if(record.category!=='Past exams')return false;
+  const walkthrough=record.category==='Other videos'&&/\b(?:Midterm\s+\d+|Final)\s+Problem\s+\d+\b.*\bEECS 245\b/i.test(record.title);
+  if(record.category!=='Past exams'&&!walkthrough)return false;
   if(exam.practice&&!/\bpractice\b/i.test(record.title))return false;
   if(exam.assessment==='midterm'&&!new RegExp('\\bMidterm\\s+'+exam.number+'(?:\\D|$)','i').test(record.title))return false;
   if(exam.assessment==='final'&&!/\bFinal\b/i.test(record.title))return false;
@@ -52,7 +53,8 @@ export function matchesResource(record,request){
   if(exam.year&&!new RegExp('\\b'+exam.year+'\\b').test(record.title))return false;
  }
  if(location){
-  const heading=/^(Problem|Question|Activity|Page)\s+(\d+)\b/i.exec(record.section||'');
+  const heading=/^(Problem|Question|Activity|Page)\s+(\d+)\b/i.exec(record.section||'')||
+   (record.category==='Other videos'&&/\b(Problem)\s+(\d+)\b/i.exec(record.title));
   if(!heading||Number(heading[2])!==location.number)return false;
   const kind=heading[1].toLowerCase();
   if(location.kind==='page'&&kind!=='page')return false;

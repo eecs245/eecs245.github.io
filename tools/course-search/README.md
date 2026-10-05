@@ -56,6 +56,19 @@ The website's existing deployment workflow runs `tools/course-search/scripts/reb
 
 For a manual local refresh from the website checkout: `cd tools/course-search && npm ci`, then run `bash tools/course-search/scripts/rebuild_for_jekyll.sh` from the website root before `bundle exec jekyll build`. Linux OCR fallback requires Poppler and Tesseract; unchanged lecture PDFs reuse the checked-in local Vision transcripts.
 
+## Other videos
+
+`_data/other-videos.json` is the explicit list of instructor videos approved for
+search. Each entry includes its original title, direct YouTube URL, upload date,
+channel ID, and qualifying course sources. The production builder reads the
+committed list and indexes one title-only record per video. The Other videos
+filter controls these results, which open YouTube directly. Exam walkthroughs
+also match searches for their exam and problem number. No captions are fetched.
+
+The initial list contains 42 videos from rampureatumich embedded in the notes,
+linked through past homepage playlists, or walking through EECS 245 exams.
+Uploads from 2024 are excluded.
+
 ## Lecture recording search
 
 The first category, **Lectures**, uses the same local semantic search,

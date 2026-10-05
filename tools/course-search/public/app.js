@@ -37,7 +37,7 @@ function failSearch(message=''){
  document.querySelector('#timing').textContent='Search could not load. Refresh to try again.';
  if(!completedResults)document.querySelector('#summary').textContent='Search is unavailable.';
 }
-const icons=['▶','▤','▦','◫','▥'];
+const icons=['▶','▤','▦','◫','▥','▶'];
 const selected=new Set(resultCategories);
 function documentLabel(record){
  if(record.category==='Homeworks'||record.category==='Labs') return record.title.split(':')[0];
@@ -118,6 +118,9 @@ function render(){
      sourceBlock.append(open,sourceLocations);content.append(sourceBlock);
     }
     content.append(details);recording.append(toggle,content);card.append(recording);
+   }else if(category==='Other videos'){
+    card.classList.add('video-card');
+    card.append(heading,locations);
    }else {
     card.append(heading);
     card.append(locations,details);

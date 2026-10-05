@@ -1,0 +1,457 @@
+[
+  {
+    "title": "Formal definition of convexity",
+    "url": "https://www.youtube.com/watch?v=u76usWZtDJw",
+    "uploadDate": "2026-04-21T13:09:05-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/08_gradients/05-convexity.ipynb"
+    ]
+  },
+  {
+    "title": "[Important!] Derivation that the mean minimizes MSE – Practical Data Science",
+    "url": "https://www.youtube.com/watch?v=NSIEP74ifyg",
+    "uploadDate": "2025-02-17T18:12:13-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/01_introduction_to_supervised_learning/02-squared-loss-constant-model.ipynb"
+    ]
+  },
+  {
+    "title": "Finding a basis and the dimension of a subspace",
+    "url": "https://www.youtube.com/watch?v=HvLxm2Oa4Gk",
+    "uploadDate": "2026-10-01T14:09:28-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/04_linear_independence/03-vector-spaces-basis-dimension.ipynb"
+    ]
+  },
+  {
+    "title": "Finding the equation of the plane spanned by two vectors in R^3",
+    "url": "https://www.youtube.com/watch?v=fuDVAyv-3Ag",
+    "uploadDate": "2026-10-01T14:24:27-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/04_linear_independence/04-lines-planes-hyperplanes.ipynb"
+    ]
+  },
+  {
+    "title": "Using the cross product to find the equation of the plane spanned by two vectors in R^3",
+    "url": "https://www.youtube.com/watch?v=W47PzgPsQ24",
+    "uploadDate": "2026-10-01T14:35:08-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/04_linear_independence/04-lines-planes-hyperplanes.ipynb"
+    ]
+  },
+  {
+    "title": "Overview: Projecting onto the column space",
+    "url": "https://www.youtube.com/watch?v=RH5OVaJOjiY",
+    "uploadDate": "2026-03-12T15:36:55-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/03-projecting-onto-column-space.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Why is rank(X^TX) = rank(X)?",
+    "url": "https://www.youtube.com/watch?v=hOyaHqGmO1I",
+    "uploadDate": "2026-02-25T13:58:26-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/03-projecting-onto-column-space.ipynb",
+      "notes/05_matrices/04-null-space-rank-nullity.ipynb",
+      "wn26/website/_modules/week-08.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "(Activity 3c) When is the sum of the errors guaranteed to be 0?",
+    "url": "https://www.youtube.com/watch?v=reZNuw3cSbU",
+    "uploadDate": "2026-03-12T15:40:04-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/03-projecting-onto-column-space.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Geometric interpretation of the determinant",
+    "url": "https://www.youtube.com/watch?v=VsAhcZxnS0s",
+    "uploadDate": "2026-02-26T20:20:33-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/01-linear-transformations.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Finding the determinant of 2x2 and 3x3 matrices",
+    "url": "https://www.youtube.com/watch?v=fdd6d5Rfbzo",
+    "uploadDate": "2026-02-26T20:20:55-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/01-linear-transformations.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Is det(A+B) equal to det(A) + det(B)?",
+    "url": "https://www.youtube.com/watch?v=EQugtzjD5bg",
+    "uploadDate": "2026-02-26T19:42:00-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/01-linear-transformations.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "How tripling a column of a matrix impacts its determinant",
+    "url": "https://www.youtube.com/watch?v=gk93HaAAsss",
+    "uploadDate": "2026-02-26T20:24:39-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/01-linear-transformations.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Linear independence, determinants, and products",
+    "url": "https://www.youtube.com/watch?v=Q7aNw-fjGiM",
+    "uploadDate": "2026-04-16T15:12:45-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/01-linear-transformations.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Determinant of a rotation matrix",
+    "url": "https://www.youtube.com/watch?v=x9d_WoCchy8",
+    "uploadDate": "2026-02-26T20:34:09-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/01-linear-transformations.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Overview: What is the projection matrix, P?",
+    "url": "https://www.youtube.com/watch?v=OEK2MVLNeos",
+    "uploadDate": "2026-03-12T15:46:53-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/04-complete-solution.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "If A^2 is invertible, then so is A",
+    "url": "https://www.youtube.com/watch?v=dv-ADtlgK8k",
+    "uploadDate": "2026-03-09T14:56:19-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/02-inverses.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Using numpy for quick linear algebra calculations",
+    "url": "https://www.youtube.com/watch?v=HZtoekU9NcE",
+    "uploadDate": "2026-03-12T15:48:54-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/06_linear_transformations_and_projections/02-inverses.ipynb",
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md",
+      "wn26/website/_modules/week-08.md"
+    ]
+  },
+  {
+    "title": "Proof that the null space is a subspace",
+    "url": "https://www.youtube.com/watch?v=x1jZjbCfVYs",
+    "uploadDate": "2026-02-25T16:18:15-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/05_matrices/04-null-space-rank-nullity.ipynb",
+      "wn26/website/_modules/week-08.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Why are the row space and null space orthogonal complements?",
+    "url": "https://www.youtube.com/watch?v=dcqA-6-vYA4",
+    "uploadDate": "2026-02-25T12:48:50-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "notes/05_matrices/04-null-space-rank-nullity.ipynb",
+      "wn26/website/_modules/week-08.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Winter 2026 Midterm 1 Problem 2 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=7E1WH2p-MoU",
+    "uploadDate": "2026-02-26T18:38:47-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/wn26-mt1/q02.md",
+      "exams/exams/wn26-mt1/index.md",
+      "exams/worksheets/chapter-2/index.md",
+      "wn26/website/_modules/week-07.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Winter 2026 Midterm 1 Problem 6 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=RB8aUyHpMQM",
+    "uploadDate": "2026-04-24T16:29:13-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/wn26-mt1/q06.md",
+      "exams/exams/wn26-mt1/index.md",
+      "exams/worksheets/chapter-4/index.md",
+      "wn26/website/_modules/week-07.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Winter 2026 Midterm 1 Problem 7c – EECS 245",
+    "url": "https://www.youtube.com/watch?v=a8qc8mvGaNM",
+    "uploadDate": "2026-02-26T16:02:18-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/wn26-mt1/q07.md",
+      "exams/exams/wn26-mt1/index.md",
+      "exams/worksheets/chapter-1/index.md",
+      "wn26/website/_modules/week-07.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Winter 2026 Midterm 1 Problem 1c – EECS 245",
+    "url": "https://www.youtube.com/watch?v=4qk_4dNKtD4",
+    "uploadDate": "2026-02-26T15:26:21-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/wn26-mt1/index.md",
+      "exams/exams/wn26-mt1/q01.md",
+      "exams/worksheets/chapter-1/index.md",
+      "wn26/website/_modules/week-07.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Fall 2025 Final Problem 12 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=zPiSa1ySV0s",
+    "uploadDate": "2026-04-16T15:21:04-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/fa25-final/q12.md",
+      "exams/exams/fa25-final/index.md",
+      "exams/worksheets/chapter-10/index.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Fall 2025 Final Problem 9 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=bz3ECJ7WlKU",
+    "uploadDate": "2026-04-24T16:55:33-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/fa25-final/q09.md",
+      "exams/exams/fa25-final/index.md",
+      "exams/worksheets/chapter-9/index.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Fall 2025 Final Problem 10 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=k1SPbaVhmSU",
+    "uploadDate": "2026-04-23T20:37:19-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/fa25-final/index.md",
+      "exams/exams/fa25-final/q10.md",
+      "exams/worksheets/chapter-9/index.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Fall 2025 Final Problem 11 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=_C_TuJnqeX8",
+    "uploadDate": "2026-04-23T20:40:47-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/fa25-final/index.md",
+      "exams/exams/fa25-final/q11.md",
+      "exams/worksheets/chapter-9/index.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Fall 2025 Midterm 1 Problem 6 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=0fbQmyQP6oE",
+    "uploadDate": "2026-02-09T18:00:48-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/fa25-mt1/q06.md",
+      "exams/exams/fa25-mt1/index.md",
+      "exams/worksheets/chapter-4/index.md",
+      "wn26/website/_modules/week-06.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Fall 2025 Midterm 1 Problem 8 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=7qSMx-3ac-Y",
+    "uploadDate": "2026-02-09T17:58:03-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/fa25-mt1/q08.md",
+      "exams/exams/fa25-mt1/index.md",
+      "exams/worksheets/chapter-3/index.md",
+      "wn26/website/_modules/week-06.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "Fall 2025 Midterm 1 Problem 5 – EECS 245",
+    "url": "https://www.youtube.com/watch?v=dewIDcz5mXo",
+    "uploadDate": "2026-02-11T17:16:40-08:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "exams/exams/fa25-mt1/index.md",
+      "exams/exams/fa25-mt1/q05.md",
+      "exams/worksheets/chapter-6/index.md",
+      "wn26/website/_modules/week-06.md",
+      "exams/_data/exams.yml"
+    ]
+  },
+  {
+    "title": "(Activity 3ab) Calculating the optimal coefficients and error vector in an orthogonal projection",
+    "url": "https://www.youtube.com/watch?v=qmxm3vdXqEI",
+    "uploadDate": "2026-03-12T15:38:23-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "(Activity 3de) When is X^TX invertible? What if X has only 1 column?",
+    "url": "https://www.youtube.com/watch?v=DIA0nNSO7LY",
+    "uploadDate": "2026-03-12T15:43:07-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "(Activity 3f) The projection matrix is symmetric and idempotent... what does that mean?",
+    "url": "https://www.youtube.com/watch?v=-xjm6U0hHL4",
+    "uploadDate": "2026-03-12T15:43:57-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "(Activity 3g) If X is invertible, what happens when we project onto its column space?",
+    "url": "https://www.youtube.com/watch?v=tH_ldwohmbk",
+    "uploadDate": "2026-03-12T15:47:54-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "wn26/website/_modules/week-10.md",
+      "sp26/website/_modules/week-04.md"
+    ]
+  },
+  {
+    "title": "Overview: Eigenvalues and eigenvectors",
+    "url": "https://www.youtube.com/watch?v=HNY2uccXq4E",
+    "uploadDate": "2026-03-27T20:43:10-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "wn26/website/_modules/week-13.md",
+      "sp26/website/_modules/week-06.md"
+    ]
+  },
+  {
+    "title": "The characteristic polynomial: how we find eigenvalues",
+    "url": "https://www.youtube.com/watch?v=CHwHQQwinXs",
+    "uploadDate": "2026-03-27T20:49:32-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "wn26/website/_modules/week-13.md",
+      "sp26/website/_modules/week-06.md"
+    ]
+  },
+  {
+    "title": "Adjacency matrices and eigenvalues",
+    "url": "https://www.youtube.com/watch?v=6ZBg-JfldWU",
+    "uploadDate": "2026-03-27T20:49:59-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "wn26/website/_modules/week-13.md",
+      "sp26/website/_modules/week-06.md"
+    ]
+  },
+  {
+    "title": "Using gradient rules to minimize mean squared error",
+    "url": "https://www.youtube.com/watch?v=YYgj4y9_a40",
+    "uploadDate": "2026-06-04T14:12:42-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "sp26/website/_modules/week-05.md"
+    ]
+  },
+  {
+    "title": "Introduction to gradient descent",
+    "url": "https://www.youtube.com/watch?v=fniF0OOml4c",
+    "uploadDate": "2026-06-04T14:13:34-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "sp26/website/_modules/week-05.md"
+    ]
+  },
+  {
+    "title": "Gradient descent details: vector-to-scalar functions, empirical risk minimization, convexity",
+    "url": "https://www.youtube.com/watch?v=XNDOUzIzVKs",
+    "uploadDate": "2026-06-04T14:17:08-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "sp26/website/_modules/week-05.md"
+    ]
+  },
+  {
+    "title": "The dominant eigenvalue",
+    "url": "https://www.youtube.com/watch?v=IqK6FD17le8",
+    "uploadDate": "2026-06-10T11:03:25-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "sp26/website/_modules/week-06.md"
+    ]
+  },
+  {
+    "title": "The eigenvalue decomposition: diagonalizing a matrix",
+    "url": "https://www.youtube.com/watch?v=1CYCJa8U1C4",
+    "uploadDate": "2026-06-10T11:04:44-07:00",
+    "channelId": "UCtt0J63CZ9kZOQ81wFI4oKQ",
+    "qualifyingSources": [
+      "sp26/website/_modules/week-06.md"
+    ]
+  }
+]
