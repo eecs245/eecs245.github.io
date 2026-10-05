@@ -46,6 +46,7 @@ days:
     events:
       - name: HW 4
         type: hw
+        solutions: true
         title: <b>Projections, Span, and Linear Independence</b>
         problems: ../resources/homeworks/hw04/
 ---

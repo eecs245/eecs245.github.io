@@ -153,6 +153,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw04/hw04.pdf" target="_blank">View as PDF ✏️</a>
+<a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw04/hw04-solutions.pdf" target="_blank">Solutions PDF ✅</a>
 </div>
 
 {: .yellow }
