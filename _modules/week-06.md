@@ -10,6 +10,7 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Midterm 1 (7-9PM; 1013 DOW)</b>"
+        url: https://exams.eecs245.org/exams/fa26-mt1/
         logistics: https://edstem.org/us/courses/101561/discussion/8322342
   - date: "2026-10-08"
     events:
