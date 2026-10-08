@@ -18,6 +18,7 @@ days:
         type: lecture
         live_notes: resources/lecture-pdfs/lec11-filled.pdf
         title: Matrices
+        recording: https://leccap.engin.umich.edu/leccap/player/r/Ejw7gL
         reading: https://notes.eecs245.org/matrices/matrix-operations/
         reading_text: Ch. 5.1
         reading2: https://notes.eecs245.org/matrices/special-matrices/
