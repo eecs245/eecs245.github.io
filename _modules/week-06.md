@@ -16,6 +16,7 @@ days:
     events:
       - name: LEC 11
         type: lecture
+        live_notes: https://web.goodnotes.com/s/16gMxTGYqNElZ8jCKT7kwo
         title: Matrices
         reading: https://notes.eecs245.org/matrices/matrix-operations/
         reading_text: Ch. 5.1
