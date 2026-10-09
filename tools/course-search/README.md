@@ -161,3 +161,7 @@ merging/deduplication, keyword and semantic integration, coverage, category
 filtering, and chronological sorting. Search queries remain on the student's
 device. Opening a recording explicitly navigates to Leccap; no Leccap requests
 are made by the search app itself.
+
+### Recording poster transcript refresh
+
+`scripts/update_recording.py` now downloads the current WebVTT track using the same authenticated browser context as title editing. It refreshes captions even when the recording link is unchanged, then commits the link and caption cache together and pushes; the push triggers the existing site build and search rebuild. `--title-count N` refreshes captions for each of the N selected recordings. Missing, malformed, or unauthenticated captions stop publication without replacing an existing cache; rerun once captions are ready. Math 124 refreshes preserve any existing reviewed lecture bounds; new recordings use the complete available caption track. Builds remain offline with respect to Leccap.

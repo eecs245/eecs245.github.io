@@ -929,19 +929,17 @@ def save_storage_state(login_url, manage_url, output_path):
         browser.close()
 
 
-def run_git_commands(path, lecture_name, recording_url):
-    def git(*args):
+def run_git_commands(path, lecture_name, recording_url, caption_paths=()):
+    paths = [path, *caption_paths]
+    def run(*args):
         return subprocess.run(["git", *args], cwd=REPO_ROOT, check=True,
-                              stdout=subprocess.PIPE if args[0] == "diff" else None, text=True)
-
-    # Compare against HEAD so retries also pick up already-staged edits.
-    if git("diff", "HEAD", "--", path).stdout:
-        lecture_fragment = lecture_name or "lecture recording"
-        git("add", "--", path)
-        git("commit", "--only", "-m", f"Add recording link for {lecture_fragment}", "--", path)
-    # A previous run may have committed successfully but failed to push.
-    git("push")
-    print(f"Recording link pushed: {recording_url}", flush=True)
+                              stdout=subprocess.PIPE, text=True)
+    # Stage only this publication; preserve unrelated staged work.
+    run("add", "--", *paths)
+    if run("diff", "HEAD", "--", *paths).stdout:
+        run("commit", "--only", "-m", f"Update recording and captions for {lecture_name or 'lecture'}", "--", *paths)
+    run("push")
+    print(f"Recording and captions pushed; site build will refresh search: {recording_url}", flush=True)
 
 
 def main():
@@ -1009,17 +1007,13 @@ def main():
                 print(f"Lecture title: {latest_target['lecture_title']}")
                 print(f"Leccap title: {latest_target['recording_title']}")
 
-                run_git_commands(
-                    latest_target["module_path"],
-                    latest_target["lecture_name"] or "lecture",
-                    latest_target["recording_url"],
-                )
+                from recording_captions import refresh_captions
+                caption_paths = []
 
                 for recording in select_recent_recordings(recordings, args.title_count):
                     title_target = build_recording_target(recording)
                     if not title_target["recording_title"]:
-                        _warn(f"skipping title update for {title_target['date_str']}: missing lecture title")
-                        continue
+                        raise RuntimeError(f"Missing lecture title for {title_target['date_str']}")
                     print(
                         f"Attempting Leccap title update for {title_target['date_str']}: "
                         f"{title_target['recording_title']}"
@@ -1039,36 +1033,22 @@ def main():
                             raise
                         _warn(
                             f"title update failed for {title_target['date_str']} "
-                            f"after the website link was pushed: {title_exc}"
+                            f"before publication: {title_exc}"
                         )
 
+                    # The title editor has authenticated this same browser context.
+                    # Caption failures must propagate even with lenient title updates.
+                    caption_paths.extend(refresh_captions(context, title_target, REPO_ROOT, "245"))
+
+                run_git_commands(
+                    latest_target["module_path"],
+                    latest_target["lecture_name"] or "lecture",
+                    latest_target["recording_url"],
+                    caption_paths,
+                )
                 return
             finally:
                 browser.close()
-
-    recordings = fetch_leccap_recordings(LECCAP_SITE_URL)
-    if not recordings:
-        raise RuntimeError("no recordings found on Leccap page")
-
-    latest = select_latest_recording(recordings)
-    latest_target = build_recording_target(latest)
-    update_recording(
-        latest_target["module_path"], latest_target["date_str"], latest_target["recording_url"]
-    )
-    if latest_target["lecture_number"]:
-        print(f"Lecture {latest_target['lecture_number']}: {latest_target['recording_url']}")
-    elif latest_target["lecture_name"]:
-        print(f"{latest_target['lecture_name']}: {latest_target['recording_url']}")
-    else:
-        print(f"Lecture: {latest_target['recording_url']}")
-    print(f"Lecture title: {latest_target['lecture_title']}")
-    print(f"Leccap title: {latest_target['recording_title']}")
-
-    run_git_commands(
-        latest_target["module_path"],
-        latest_target["lecture_name"] or "lecture",
-        latest_target["recording_url"],
-    )
 
 
 if __name__ == "__main__":
