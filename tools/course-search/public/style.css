@@ -54,3 +54,5 @@ body{font-family:var(--course-font);color:#5c5962;background:#fff;line-height:1.
 .filter.videos{--color:#a04760;--tint:#f9edf1;--edge:#edced8}
 .group[data-category="Other videos"] .video-card{grid-template-columns:minmax(0,1fr) auto}
 .group[data-category="Other videos"] .locations a{color:#a04760;background:#f9edf1;border-color:#edced8;white-space:nowrap}
+
+.page-find-hint{font-size:13px;color:#5c5962;margin:8px 0 16px}
