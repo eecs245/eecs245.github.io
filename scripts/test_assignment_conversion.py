@@ -14,6 +14,22 @@ from check_assignment_html import check_list_and_choice_structure
 
 
 class AssignmentConversionTests(unittest.TestCase):
+    def test_matrix_after_inline_math_newline_and_optional_answer_box(self):
+        source = r"""\begin{activity}[Example]
+\begin{subactivity}$\displaystyle
+\begin{bmatrix}1&2\end{bmatrix}\begin{bmatrix}3\\4\end{bmatrix}$
+\emptybox[\dimexpr\linewidth-2\fboxsep\relax]{2cm}
+\end{subactivity}
+Fill in: \underline{\hspace{1cm}}.
+\end{activity}
+"""
+        markdown, rendered = self.convert(source)
+        self.assertNotIn('emptybox', markdown)
+        self.assertNotIn('dimexpr', markdown)
+        self.assertNotIn('$', markdown)
+        self.assertIn('math-inline', rendered)
+        self.assertIn('____', rendered)
+
     def test_missing_pdf_buttons_fail_release_checks(self):
         from check_assignment_html import check_source_markdown
         with tempfile.TemporaryDirectory() as directory:

@@ -15,7 +15,7 @@ days:
     events:
       - name: LAB 6
         type: lab
-        title: Rank, Column Space, and Null Space
+        title: Rank and Column Space
   - date: "2026-10-15"
     events:
       - name: LEC 13

@@ -438,6 +438,7 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = strip_false_blocks(text)
     text = strip_latex_comments(text)
     text = replace_crossnumber_tikz_grids(text)
+    text = re.sub(r"\\underline\{\\hspace\{[^{}]*\}\}", lambda _: r"\_\_\_\_", text)
     text = strip_layout_commands(text)
     text = unwrap_extra_practice_tables(text)
     text = replace_youtube_embed_markers(text)
@@ -451,7 +452,7 @@ def transform_assignment_tex(text: str, include_solutions: bool = False) -> str:
     text = replace_subitem_markers(text)
     text = replace_labeled_items(text)
     text = replace_solution_markers(text, include_solutions=include_solutions)
-    text = re.sub(r"\\emptybox\{[^}]*\}", "", text)
+    text = re.sub(r"\\emptybox(?:\[[^\]]*\])?\{[^}]*\}", "", text)
     text = text.replace("\\newpage", "")
     text = text.replace("\\makemytitle", "% stripped makemytitle")
     return text
@@ -1993,7 +1994,7 @@ def fix_latex_for_mathjax(text: str) -> str:
             return protect_inline_math(content)
 
         segment = re.sub(
-            r"(?<![\\$])\$([^$]*\\begin\{(?:[bpvV]?matrix|array|aligned|cases)\}[^$]*\n[^$]*?)\$(?!\$)",
+            r"(?<![\\$])\$([^$]*\\begin\{(?:[bpvV]?matrix|array|aligned|cases)\}[^$]*?)\$(?!\$)",
             convert_multiline_inline_math,
             segment,
             flags=re.S,
