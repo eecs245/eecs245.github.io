@@ -758,8 +758,6 @@ Task 4 (2 pts): Your handwritten responses to both questions about cosine simila
 </li>
 </ul>
 
-In total, submit four sets of handwritten explanations. No screenshots of plots, code, or other outputs are required for Problem 8.
-
 Your submission time for Homework 5 is the later of the two submission times: your Problem 1 video link and your regular Homework 5 PDF.
 
 {% endraw %}
