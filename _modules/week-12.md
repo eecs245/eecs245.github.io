@@ -17,4 +17,9 @@ days:
         title: Eigenvalues and Eigenvectors, Continued
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
         reading_text: Ch. 9.3
+  - date: "2026-11-22"
+    events:
+      - name: HW 10
+        type: hw
+        title: Practical Machine Learning, Eigenvalues
 ---

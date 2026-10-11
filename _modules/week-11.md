@@ -31,6 +31,8 @@ days:
         type: review
         title: "<b>Practice Exam (2:30-5:30PM, 1013 DOW)</b>"
         note: 'From 2:30-4:30PM, you will take <a href="https://exams.eecs245.org/exams/sp26-mt2/">Spring 2026 Midterm 2</a>. From 4:30-5:30PM, we will take it up. The review will be recorded.'
+  - date: "2026-11-15"
+    events:
       - name: HW 9
         type: hw
         title: Multiple Linear Regression and Gradients

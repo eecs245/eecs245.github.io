@@ -25,7 +25,7 @@ days:
         reading_text: Ch. 8.3
         reading2: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading2_text: Ch. 8.4
-  - date: "2026-11-06"
+  - date: "2026-11-08"
     events:
       - name: HW 8
         type: hw

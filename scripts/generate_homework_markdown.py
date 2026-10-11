@@ -258,6 +258,11 @@ def main() -> int:
         )
         final_markdown = restore_tabular_html(final_markdown, tabular_html)
         final_markdown = restore_tikz_html(final_markdown, tikz_figures)
+        web_css = source_tex.with_suffix(".web.css")
+        if web_css.exists():
+            final_markdown = final_markdown.replace(
+                "</style>", web_css.read_text().strip() + "\n</style>", 1
+            )
         validate_visible_items_match_source(
             assignment=metadata.assignment,
             source_tex=expanded_tex,
@@ -377,6 +382,7 @@ def format_metadata_inline_latex(text: str) -> str:
         replace_named_textcolor,
         text,
     )
+    text = text.replace(r"\\", "<br>")
     text = text.replace(r"\#", "#")
     return collapse_whitespace(text)
 
@@ -1270,6 +1276,7 @@ def remove_pandoc_layout_fences(text: str) -> str:
 
 
 def convert_pandoc_attribute_spans(text: str) -> str:
+    text = re.sub(r"\[\*\*(.*?)\*\*\]\{\.mark\}", r"<mark><strong>\1</strong></mark>", text)
     def replace(match: re.Match[str]) -> str:
         label = match.group("label")
         color = match.group("color").strip()

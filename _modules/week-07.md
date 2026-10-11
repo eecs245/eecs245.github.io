@@ -25,9 +25,10 @@ days:
         reading_text: Ch. 5.4
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
         reading2_text: Ch. 6.2
-  - date: "2026-10-16"
+  - date: "2026-10-18"
     events:
       - name: HW 5
+        problems: ../resources/homeworks/hw05/
         type: hw
-        title: Matrices
+        title: "<b>Matrices</b>"
 ---

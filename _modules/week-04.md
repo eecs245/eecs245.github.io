@@ -29,7 +29,7 @@ days:
         reading2: https://notes.eecs245.org/linear-independence/lines-planes-hyperplanes/
         reading2_text: Ch. 4.4
         live_notes: resources/lecture-pdfs/lec08-filled.pdf
-  - date: "2026-09-25"
+  - date: "2026-09-27"
     events:
       - name: HW 3
         type: hw

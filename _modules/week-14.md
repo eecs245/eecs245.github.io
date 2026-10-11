@@ -27,7 +27,7 @@ days:
         reading_text: Ch. 10.1
         reading2: https://notes.eecs245.org/singular-value-decomposition/low-rank-approximation/
         reading2_text: Ch. 10.2
-  - date: "2026-12-04"
+  - date: "2026-12-06"
     events:
       - name: HW 11
         type: hw

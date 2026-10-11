@@ -117,7 +117,7 @@ Some labs and homeworks will involve writing Python code in Jupyter Notebooks. *
 
 ### Forms
 
-Please fill out the required [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform?usp=publish-editor) to tell us a bit more about your background and whether you need alternate exams **no later than Friday, September 11th**, along with Homework 1.
+Please fill out the required [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform?usp=publish-editor) to tell us a bit more about your background and whether you need alternate exams **no later than Friday, September 11th**.
 
 ---
 
@@ -186,7 +186,7 @@ Lab worksheets and solutions will be posted on the course website after all lab 
 
 ## Homeworks
 
-This class will have 12 **weekly** homework assignments, which are to be completed **individually**; homeworks are worth 15% of your grade. Homeworks will usually be released on Friday afternoons and be due the following **Friday at 11:59PM**, though this may change in any given week. See the [course homepage](../) for the most up-to-date deadline schedule.
+This class will have 12 **weekly** homework assignments, which are to be completed **individually**; homeworks are worth 15% of your grade. Homeworks will usually be released on Fridays and be due on **~~Fridays~~ Sundays at 11:59PM**. See the [course homepage](../) for the most up-to-date deadline schedule.
 
 Homeworks must be handwritten on paper or tablet by each student individually, scanned into a single PDF, and submitted to Pensive. That is, no typing and no LaTeX, unless you have accommodations specifying otherwise. We believe that handwriting the material helps you learn it better, better prepares you for exams, and frankly is harder to cheat with AI.
 
@@ -247,9 +247,9 @@ Some homework problems will be graded automatically by the autograder. If you be
 
 To summarize the details above, here's what a typical week looks like in EECS 245:
 
-| Monday | Tuesday | Wednesday | Thursday | Friday |
-| --- | --- | --- | --- | --- |
-| | Lecture | Lab | Lecture | Homework $$N-1$$ Due<br>Homework $$N$$ Released |
+| Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+| --- | --- | --- | --- | --- | --- | --- |
+| | Lecture | Lab | Lecture | Homework $$N$$ Released | | Homework $$N-1$$ Due |
 
 ---
 

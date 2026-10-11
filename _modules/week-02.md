@@ -37,12 +37,14 @@ days:
         live_notes: resources/lecture-pdfs/lec04-filled.pdf
   - date: "2026-09-11"
     events:
+      - name: SUR
+        type: survey
+        title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform">Welcome Survey</a></b>
+  - date: "2026-09-13"
+    events:
       - name: HW 1
         problems: ../resources/homeworks/hw01/
         type: hw
         title: "<b>Means, Sums, and Calculus</b>"
         solutions: true
-      - name: SUR
-        type: survey
-        title: <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSeqYNWlMgbaSvRbkASe719Eh7-wwAL_CbKmV9loAGkEXRn9uQ/viewform">Welcome Survey</a></b>
 ---

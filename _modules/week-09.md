@@ -25,7 +25,7 @@ days:
         reading_text: Ch. 7.1
         reading2: https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/
         reading2_text: Ch. 7.2
-  - date: "2026-10-30"
+  - date: "2026-11-01"
     events:
       - name: HW 7
         type: hw

@@ -25,7 +25,7 @@ days:
         reading_text: Ch. 10.4
         reading2: https://notes.eecs245.org/singular-value-decomposition/conclusion/
         reading2_text: Ch. 10.5
-  - date: "2026-12-11"
+  - date: "2026-12-13"
     events:
       - name: HW 12
         type: hw

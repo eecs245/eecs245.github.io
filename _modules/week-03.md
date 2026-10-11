@@ -35,7 +35,7 @@ days:
         reading2: https://notes.eecs245.org/vectors/dot-product/
         reading2_text: Ch. 3.3
         live_notes: resources/lecture-pdfs/lec06-filled.pdf
-  - date: "2026-09-18"
+  - date: "2026-09-20"
     events:
       - name: HW 2
         type: hw
