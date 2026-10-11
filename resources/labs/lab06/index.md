@@ -723,7 +723,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-Using your <span class="math-inline">\\(\vec u\\)</span> and <span class="math-inline">\\(\vec v\\)</span> from part (a), find a nonzero vector <span class="math-inline">\\(\vec w\\)</span> such that <span class="math-inline">\\(A\vec w=\vec0\\)</span>.
+Using your <span class="math-inline">\\(\vec u\\)</span> and <span class="math-inline">\\(\vec v\\)</span> from part (a), find a nonzero vector <span class="math-inline">\\(\vec w\\)</span> such that <span class="math-inline">\\(A\vec w=\vec0\\)</span>. Such a vector <span class="math-inline">\\(\vec w\\)</span> is in the **null space** of <span class="math-inline">\\(A\\)</span>, <span class="math-inline">\\(\text{nullsp}(A)\\)</span>. <span class="math-inline">\\(A\\)</span>'s null space is the set of vectors that get sent to <span class="math-inline">\\(\vec0\\)</span> when multiplied by <span class="math-inline">\\(A\\)</span>.
 
 <details markdown="1"><summary>Solution</summary>
 
