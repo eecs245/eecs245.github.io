@@ -8,10 +8,12 @@ days:
         type: lecture
         live_notes: https://web.goodnotes.com/s/JppYhnHEwudTMjnUiVmbEp
         title: Rank and Column Space
-        reading: https://notes.eecs245.org/matrices/rank-and-column-space/
-        reading_text: Ch. 5.3
-        reading2: https://notes.eecs245.org/matrices/null-space-rank-nullity/
-        reading2_text: Ch. 5.4
+        reading: https://notes.eecs245.org/matrices/special-matrices/
+        reading_text: Ch. 5.2
+        reading2: https://notes.eecs245.org/matrices/rank-and-column-space/
+        reading2_text: Ch. 5.3
+        reading3: https://notes.eecs245.org/matrices/null-space-rank-nullity/
+        reading3_text: Ch. 5.4
   - date: "2026-10-14"
     events:
       - name: LAB 6
