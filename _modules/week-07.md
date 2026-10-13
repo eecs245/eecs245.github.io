@@ -8,6 +8,7 @@ days:
         type: lecture
         live_notes: resources/lecture-pdfs/lec12-filled.pdf
         title: Rank and Column Space
+        recording: https://leccap.engin.umich.edu/leccap/player/r/CBFPLW
         reading: https://notes.eecs245.org/matrices/special-matrices/
         reading_text: Ch. 5.2
         reading2: https://notes.eecs245.org/matrices/rank-and-column-space/
