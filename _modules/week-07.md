@@ -23,6 +23,7 @@ days:
     events:
       - name: LEC 13
         type: lecture
+        videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qTw4_nsPMtpDG34ugpPlFkx
         title: Null Space, Rank-Nullity, and Inverses
         reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading_text: Ch. 5.4
