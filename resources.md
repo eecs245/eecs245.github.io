@@ -26,6 +26,8 @@ Find all past exams and solutions at [exams.eecs245.org](https://exams.eecs245.o
 
 Several supplemental videos have been recorded for this class, and all of them can be found [here](https://www.youtube.com/@rampureatumich/videos). When relevant, you can find these videos linked in the relevant sections of the course notes, the course homepage, and assignment solutions.
 
+For another visual perspective, try 3Blue1Brown's [*Essence of Linear Algebra*](https://www.youtube.com/playlist?list=PLZHQObOWD9XpO3KkyeJezhNY2NbB0LMSV).
+
 ---
 
 ## Content from Math 124
@@ -49,6 +51,7 @@ Note that some of these resources will use different notation and terminology th
 The one textbook that I've referenced the most while developing EECS 245 is [Introduction to Linear Algebra](https://math.mit.edu/~gs/linearalgebra/ila6/indexila6.html) by Gilbert Strang. (The textbook itself isn't free, but this link contains links to several chapters and old exams.) You can find many of his videos [online](https://www.youtube.com/watch?v=0MtwqhIwdrI&list=PLE7DDD91010BC51F8).
 
 The following textbooks are more similar in style to our course notes, in that they're (somewhat) designed from the perspective of machine learning.
+- [Linear Algebra and Learning from Data](https://math.mit.edu/~gs/learningfromdata/) by Gilbert Strang.
 - [Linear Algebra: Essence & Form](https://www2.math.upenn.edu/~ghrist/preprints/LAEF.pdf) by Robert Ghrist.
 - [Vectors, Matrices, and Least Squares](https://web.stanford.edu/~boyd/vmls/vmls.pdf) by Boyd and Vandenberghe.
 - [Mathematical Methods in Data Science](https://mmids-textbook.github.io/index.html) by Sebastien Roch.
