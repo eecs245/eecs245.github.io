@@ -6,7 +6,7 @@ days:
     events:
       - name: LEC 12
         type: lecture
-        live_notes: https://web.goodnotes.com/s/JppYhnHEwudTMjnUiVmbEp
+        live_notes: resources/lecture-pdfs/lec12-filled.pdf
         title: Rank and Column Space
         reading: https://notes.eecs245.org/matrices/special-matrices/
         reading_text: Ch. 5.2
