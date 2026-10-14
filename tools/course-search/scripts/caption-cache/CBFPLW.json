@@ -1,0 +1,8 @@
+{
+  "status": "available",
+  "recordingUrl": "https://leccap.engin.umich.edu/leccap/player/r/CBFPLW",
+  "sourceUrl": "https://leccap.engin.umich.edu/leccap/player/api/webvtt/?rk=CBFPLW",
+  "method": "Authorized direct CAEN WebVTT caption-track export",
+  "importedAt": "2026-10-14T01:30:04.869389+00:00",
+  "sha256": "f70cce8f7971a4a1401022f3100ba071bc25759363b06a7524de5c6c48480b48"
+}

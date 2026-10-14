@@ -929,21 +929,23 @@ def save_storage_state(login_url, manage_url, output_path):
         browser.close()
 
 
-def run_git_commands(path, lecture_name, recording_url, caption_paths=()):
-    paths = [path, *caption_paths]
+def run_git_commands(path, lecture_name, recording_url):
+    paths = [path]
     def run(*args):
         return subprocess.run(["git", *args], cwd=REPO_ROOT, check=True,
                               stdout=subprocess.PIPE, text=True)
     # Stage only this publication; preserve unrelated staged work.
     run("add", "--", *paths)
     if run("diff", "HEAD", "--", *paths).stdout:
-        run("commit", "--only", "-m", f"Update recording and captions for {lecture_name or 'lecture'}", "--", *paths)
+        run("commit", "--only", "-m", f"Update recording for {lecture_name or 'lecture'}", "--", *paths)
     run("push")
-    print(f"Recording and captions pushed; site build will refresh search: {recording_url}", flush=True)
+    print(f"Recording link pushed: {recording_url}", flush=True)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Update latest Leccap recording link.")
+    parser.add_argument('--recording-only', action='store_true',
+                        help='Publish the recording link and titles without requesting captions (default).')
     parser.add_argument("--push", action="store_true", help="Commit and push changes (always enabled; retained for compatibility).")
     parser.add_argument(
         "--update-title",
@@ -1007,9 +1009,6 @@ def main():
                 print(f"Lecture title: {latest_target['lecture_title']}")
                 print(f"Leccap title: {latest_target['recording_title']}")
 
-                from recording_captions import refresh_captions
-                caption_paths = []
-
                 for recording in select_recent_recordings(recordings, args.title_count):
                     title_target = build_recording_target(recording)
                     if not title_target["recording_title"]:
@@ -1036,15 +1035,10 @@ def main():
                             f"before publication: {title_exc}"
                         )
 
-                    # The title editor has authenticated this same browser context.
-                    # Caption failures must propagate even with lenient title updates.
-                    caption_paths.extend(refresh_captions(context, title_target, REPO_ROOT, "245"))
-
                 run_git_commands(
                     latest_target["module_path"],
                     latest_target["lecture_name"] or "lecture",
                     latest_target["recording_url"],
-                    caption_paths,
                 )
                 return
             finally:

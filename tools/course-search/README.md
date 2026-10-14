@@ -162,6 +162,8 @@ filtering, and chronological sorting. Search queries remain on the student's
 device. Opening a recording explicitly navigates to Leccap; no Leccap requests
 are made by the search app itself.
 
-### Recording poster transcript refresh
+### Recording publication and separate caption indexing
 
-`scripts/update_recording.py` now downloads the current WebVTT track using the same authenticated browser context as title editing. It refreshes captions even when the recording link is unchanged, then commits the link and caption cache together and pushes; the push triggers the existing site build and search rebuild. `--title-count N` refreshes captions for each of the N selected recordings. Missing, malformed, or unauthenticated captions stop publication without replacing an existing cache; rerun once captions are ready. Math 124 refreshes preserve any existing reviewed lecture bounds; new recordings use the complete available caption track. Builds remain offline with respect to Leccap.
+The **245 Recording** and **124 Recording** Apple Shortcuts pass `--recording-only`. Recording publication updates the recording link and selected CAEN titles without requesting or importing captions. Caption availability or download errors cannot block this operation. `--title-count N` controls title updates only.
+
+Caption indexing is a separate, explicitly requested operation. Download the authentic caption track, validate it with `scripts/import_captions.py`, and review and commit its `.vtt` and `.json` cache files. Publishing those caches triggers the existing complete search rebuild, including semantic embeddings. Website builds use cached captions offline and never fetch CAEN caption tracks.

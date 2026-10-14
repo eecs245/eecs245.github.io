@@ -1,0 +1,5534 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.860
+I was like, if it's under 15,
+I'm just going to run out.
+
+00:00:03.860 --> 00:00:05.340
+All right.
+
+00:00:05.340 --> 00:00:06.780
+We'll get started.
+
+00:00:06.780 --> 00:00:08.560
+Welcome back, everyone.
+
+00:00:08.560 --> 00:00:10.760
+Good to see you all.
+Final week before fall break.
+
+00:00:10.760 --> 00:00:13.020
+We're almost there.
+It's kind of crazy that we're
+
+00:00:13.020 --> 00:00:15.620
+already almost halfway through
+the semester.
+
+00:00:15.620 --> 00:00:17.340
+I want to start by telling you
+something that has nothing to do
+
+00:00:17.340 --> 00:00:18.700
+with the class, but it's
+important to me.
+
+00:00:18.700 --> 00:00:20.040
+So I'll tell you about it.
+
+00:00:20.040 --> 00:00:22.880
+You may remember that on the
+first day of class, I showed you
+
+00:00:22.880 --> 00:00:26.140
+guys a picture of my dog, who
+was 17, or almost 17.
+
+00:00:26.140 --> 00:00:28.080
+It was actually his 17th
+birthday on Thursday.
+
+00:00:28.080 --> 00:00:30.760
+So this is a picture from there.
+But he was really sick and old.
+
+00:00:30.760 --> 00:00:32.920
+So we had to put him down on
+Saturday.
+
+00:00:32.920 --> 00:00:34.860
+And I'm very sad about that.
+
+00:00:34.860 --> 00:00:37.560
+But here's a picture of me the
+day that we got him when I was
+
+00:00:37.560 --> 00:00:39.320
+in sixth grade.
+And now this is my sixth year
+
+00:00:39.320 --> 00:00:41.340
+being a professor, and we still
+had him.
+
+00:00:41.340 --> 00:00:43.380
+So he's been there for basically
+my entire life.
+
+00:00:43.380 --> 00:00:44.880
+This is not him.
+This is our other dog.
+
+00:00:44.880 --> 00:00:47.000
+It was this dog right here.
+You can't really see him.
+
+00:00:47.000 --> 00:00:48.880
+His name was Junior.
+
+00:00:48.880 --> 00:00:51.220
+Yeah, I just wanted to tell you
+guys about that.
+
+00:00:51.220 --> 00:00:53.960
+And then the other thing you
+know about,
+
+00:00:53.960 --> 00:00:57.560
+which is not nearly as sad,
+hopefully, is your midterm one
+
+00:00:57.560 --> 00:00:58.560
+grade,
+
+00:00:58.580 --> 00:01:02.320
+which I sent an announcement
+about on Thursday, and regrades
+
+00:01:02.320 --> 00:01:03.680
+are due on Thursday.
+
+00:01:03.680 --> 00:01:05.880
+What I wanted to comment on
+there
+
+00:01:05.880 --> 00:01:09.940
+is that your midterm one grade,
+you shouldn't view it as like a
+
+00:01:09.940 --> 00:01:12.780
+definitive statement on how good
+you are ever going to be at
+
+00:01:12.780 --> 00:01:13.800
+linear algebra.
+
+00:01:13.800 --> 00:01:14.880
+Your midterm one grade,
+
+00:01:14.880 --> 00:01:16.180
+that's true for.
+
+00:01:16.180 --> 00:01:18.480
+And also your grade in this
+class, that's also true for.
+
+00:01:18.480 --> 00:01:20.840
+So what you're seeing here is my
+transcript when I was a freshman
+
+00:01:20.840 --> 00:01:24.180
+and took classes like EECS 245
+and MATH 217.
+
+00:01:24.180 --> 00:01:26.600
+And you can see I didn't do very
+well in them.
+
+00:01:26.600 --> 00:01:28.160
+B's and C's in linear algebra
+classes.
+
+00:01:28.160 --> 00:01:30.300
+And if you asked me at the time,
+do I think I would be teaching a
+
+00:01:30.300 --> 00:01:32.920
+linear algebra class 10 years in
+the future, of course, I would
+
+00:01:32.920 --> 00:01:33.860
+have said no.
+
+00:01:33.860 --> 00:01:38.440
+But what you should take away
+from this is that whatever your
+
+00:01:38.440 --> 00:01:40.140
+grade in this class ends up
+being,
+
+00:01:40.140 --> 00:01:43.140
+don't let yourself interpret
+that as being,
+
+00:01:43.580 --> 00:01:47.000
+this is the amount of linear
+algebra I will ever know.
+
+00:01:47.000 --> 00:01:50.240
+It's just one snapshot in time,
+and you can always improve from
+
+00:01:50.240 --> 00:01:51.420
+where you're at.
+
+00:01:51.420 --> 00:01:52.580
+Now with that said,
+
+00:01:52.580 --> 00:01:55.120
+grades still do matter.
+I mean like various things in
+
+00:01:55.120 --> 00:01:58.360
+life would have been easier if
+these were A's to begin with.
+
+00:01:58.360 --> 00:02:01.260
+So I don't want you to take away
+from this that it doesn't matter
+
+00:02:01.260 --> 00:02:02.660
+what grade you get in this class
+at all.
+
+00:02:02.660 --> 00:02:05.140
+I'm just saying you can overcome
+wherever you start.
+
+00:02:05.140 --> 00:02:08.960
+So hopefully the first midterm
+gave you a good sense of how
+
+00:02:08.960 --> 00:02:12.180
+your study strategies and habits
+in this class have been going
+
+00:02:12.180 --> 00:02:16.440
+and I like having a midterm
+pretty early into the semester
+
+00:02:16.440 --> 00:02:19.940
+so that you have a chance to
+calibrate how you're approaching
+
+00:02:19.940 --> 00:02:22.620
+the class and reach out if you
+need help.
+
+00:02:22.620 --> 00:02:26.100
+And many of you have been doing
+that already, so thank you.
+
+00:02:26.100 --> 00:02:32.060
+And as I mentioned on Ed when I
+released grades, I have
+
+00:02:32.060 --> 00:02:34.880
+several Zoom office hours
+available this week where you
+
+00:02:34.880 --> 00:02:37.720
+can come and ask about the exam,
+though you don't need to come to
+
+00:02:37.720 --> 00:02:39.680
+Zoom office hours for that.
+You can also come to my regular
+
+00:02:39.680 --> 00:02:40.660
+office hours,
+
+00:02:40.660 --> 00:02:42.540
+say after lecture today,
+
+00:02:42.540 --> 00:02:44.540
+and we can talk about any
+questions you may have for the
+
+00:02:44.540 --> 00:02:47.480
+exam, though their solutions are
+also posted, and also just with
+
+00:02:47.480 --> 00:02:50.320
+how you're studying for the
+course in general.
+
+00:02:50.320 --> 00:02:52.620
+What other announcements do I
+have?
+
+00:02:52.620 --> 00:02:54.480
+Homework five is due on Sunday.
+
+00:02:54.480 --> 00:02:58.380
+In one of the earlier surveys a
+couple of weeks ago, the one
+
+00:02:58.380 --> 00:02:59.920
+that was included in homework
+three,
+
+00:02:59.920 --> 00:03:02.300
+many of you said that you would
+have liked the homeworks to be
+
+00:03:02.300 --> 00:03:05.060
+due on Sundays instead of
+Fridays, so now moving forward
+
+00:03:05.060 --> 00:03:07.060
+we will make homeworks due on
+Sundays.
+
+00:03:07.060 --> 00:03:10.460
+We will still try and release
+them on Fridays,
+
+00:03:10.460 --> 00:03:13.080
+worst case Saturday, so you'll
+still have more than a week to
+
+00:03:13.080 --> 00:03:14.940
+work on them, so this only
+really helps you.
+
+00:03:14.940 --> 00:03:17.840
+And like what we were thinking
+about when deciding to whether
+
+00:03:17.840 --> 00:03:21.480
+to move the deadline is whether
+people would work on it You
+
+00:03:21.480 --> 00:03:24.740
+know, like if the homework is
+Friday to Friday I'm like, well
+
+00:03:24.740 --> 00:03:26.880
+you still have a weekend to work
+on it The difference is the
+
+00:03:26.880 --> 00:03:29.080
+weekend is right when it comes
+out and when you're probably
+
+00:03:29.080 --> 00:03:33.620
+unlikely to work on it And so
+what I'm hoping to have this
+
+00:03:33.620 --> 00:03:36.940
+Schedule allow you to do is pick
+which weekend you want to work
+
+00:03:36.940 --> 00:03:39.160
+on it Well, I guess you could
+use both but if it's Friday to
+
+00:03:39.160 --> 00:03:41.340
+the following Sunday Then you
+have two weekends to work on
+
+00:03:41.340 --> 00:03:43.440
+each homework Though, of course,
+there will be a little bit of
+
+00:03:43.440 --> 00:03:45.180
+overlap.
+If we release the next homework
+
+00:03:45.180 --> 00:03:47.820
+on a Friday, then there will be
+two homeworks out of their time.
+
+00:03:47.820 --> 00:03:50.540
+But this will give you a little
+more flexibility.
+
+00:03:50.540 --> 00:03:52.040
+So the slip days?
+
+00:03:52.040 --> 00:03:55.180
+Yeah, yeah, slip days still
+exist.
+
+00:03:55.180 --> 00:03:56.100
+OK.
+
+00:03:56.100 --> 00:03:57.120
+And then finally,
+
+00:03:57.120 --> 00:04:01.460
+if you click the In Class Notes
+button on the course website, I
+
+00:04:01.460 --> 00:04:03.360
+mentioned this on Thursday,
+
+00:04:03.360 --> 00:04:06.860
+you can follow along live with
+what I've written on my iPad.
+
+00:04:06.860 --> 00:04:10.000
+And that'll update live.
+and then I'll replace it with
+
+00:04:10.000 --> 00:04:12.300
+the final PDF after class.
+
+00:04:12.300 --> 00:04:15.300
+OK, any logistical questions
+with what's going on?
+
+00:04:16.340 --> 00:04:17.340
+OK,
+
+00:04:18.040 --> 00:04:22.340
+what I want to do is start by
+recapping a few key ideas
+
+00:04:22.340 --> 00:04:25.340
+involving matrices that we
+introduced on Thursday.
+
+00:04:25.720 --> 00:04:29.980
+And then the big idea for today
+will be that of the column space
+
+00:04:29.980 --> 00:04:32.300
+of a matrix, which you can think
+of,
+
+00:04:32.300 --> 00:04:36.100
+really, in one sentence as being
+the span of the columns of a
+
+00:04:36.100 --> 00:04:37.100
+matrix.
+
+00:04:37.160 --> 00:04:42.520
+That is the big idea for today,
+and the rank of a matrix is the
+
+00:04:42.520 --> 00:04:45.680
+dimension of the span of the
+columns of a matrix.
+
+00:04:45.680 --> 00:04:47.360
+Those are the ideas we're going
+to focus on,
+
+00:04:47.360 --> 00:04:49.100
+but as I said on Thursday,
+
+00:04:49.100 --> 00:04:51.620
+there are really cool
+relationships between the column
+
+00:04:51.620 --> 00:04:54.440
+space of a matrix and the row
+space of a matrix, and that's
+
+00:04:54.440 --> 00:04:56.820
+the kind of thing we'll explore.
+
+00:04:56.820 --> 00:05:00.980
+But the final thing I gave you
+on Thursday was a task or
+
+00:05:00.980 --> 00:05:04.520
+something to think about, which
+is to simplify this expression,
+
+00:05:04.520 --> 00:05:08.240
+the squared length of Ax.
+
+00:05:08.240 --> 00:05:09.240
+OK?
+
+00:05:09.400 --> 00:05:11.680
+Just as a refresher,
+
+00:05:11.680 --> 00:05:16.940
+if A is a matrix whose shape is
+n by d,
+
+00:05:16.940 --> 00:05:21.260
+remember that means n rows and d
+columns,
+
+00:05:21.260 --> 00:05:25.960
+what must the shape of x be for
+it to be legal to multiply A by
+
+00:05:25.960 --> 00:05:26.960
+x?
+
+00:05:33.980 --> 00:05:37.740
+Yeah, x has to have d rows in
+it, because the golden rule of
+
+00:05:37.740 --> 00:05:42.020
+matrix multiplication told us
+the number of columns in the
+
+00:05:42.020 --> 00:05:44.940
+first object must equal the
+number of rows in the second
+
+00:05:44.940 --> 00:05:45.940
+object.
+
+00:05:45.940 --> 00:05:50.360
+And here, if x is a vector, that
+means it has one column.
+
+00:05:50.360 --> 00:05:54.860
+But this means I could have
+multiplied A on the right
+
+00:05:54.880 --> 00:06:00.130
+by any matrix that had d rows
+and any number of columns.
+
+00:06:00.360 --> 00:06:04.740
+I just happened to choose a
+vector.
+
+00:06:04.740 --> 00:06:06.740
+And so the result,
+
+00:06:06.740 --> 00:06:07.740
+Ax,
+
+00:06:09.180 --> 00:06:13.680
+what type of object is it?
+
+00:06:15.120 --> 00:06:19.580
+What type of object is it?
+
+00:06:19.580 --> 00:06:22.200
+Ax, is it a number? Is it a
+matrix?
+
+00:06:22.200 --> 00:06:24.980
+Is it a vector? There's
+something else.
+
+00:06:24.980 --> 00:06:27.760
+Yeah? In the n by 1 matrix.
+
+00:06:27.760 --> 00:06:29.500
+Yeah, which I would call a
+vector.
+
+00:06:29.500 --> 00:06:30.500
+Yeah.
+
+00:06:31.140 --> 00:06:33.740
+Technically, it's a matrix as
+well.
+
+00:06:33.740 --> 00:06:39.740
+I'll say this is a vector in Rn.
+
+00:06:40.260 --> 00:06:45.400
+And just so it seems symmetric
+here, I'll call this a vector in
+
+00:06:45.400 --> 00:06:46.580
+Rd.
+
+00:06:48.140 --> 00:06:50.760
+And its shape is n by 1.
+
+00:06:50.760 --> 00:06:53.540
+Where did the shape come from?
+
+00:06:53.540 --> 00:06:58.040
+Well, what we saw is that when
+you are multiplying two objects,
+
+00:06:58.040 --> 00:07:01.790
+the inner dimensions must match.
+
+00:07:02.000 --> 00:07:04.900
+Those are the highlighted d's.
+
+00:07:04.900 --> 00:07:07.400
+And then the outer dimensions
+tell you the shape of the
+
+00:07:07.400 --> 00:07:08.020
+result.
+
+00:07:08.020 --> 00:07:11.420
+So this is saying the fact that
+I've highlighted the two d's
+
+00:07:11.420 --> 00:07:15.040
+tells me, OK, it is legal to
+multiply a by x,
+
+00:07:15.040 --> 00:07:19.140
+and the output is going to be n
+by 1, which is a vector in Rn.
+
+00:07:19.140 --> 00:07:20.640
+OK, good.
+
+00:07:20.780 --> 00:07:26.540
+So that means this is a legal
+operation here, because Ax is a
+
+00:07:26.540 --> 00:07:30.620
+vector in Rn, and we can find
+the length of a vector.
+
+00:07:30.620 --> 00:07:36.400
+Whereas if instead I asked you
+for the squared length of A,
+
+00:07:37.660 --> 00:07:41.700
+that doesn't make sense using
+anything we've defined so far,
+
+00:07:41.700 --> 00:07:44.580
+because the length is a property
+of a vector.
+
+00:07:44.580 --> 00:07:47.300
+Okay, it turns out and we will
+see this towards the end of the
+
+00:07:47.300 --> 00:07:50.500
+semester There are ways of
+measuring the length or the size
+
+00:07:50.500 --> 00:07:54.120
+of a matrix, but we have not yet
+covered this So from your
+
+00:07:54.120 --> 00:07:56.660
+perspective right now the
+squared length of a like this
+
+00:07:56.660 --> 00:07:57.740
+doesn't mean anything.
+
+00:07:57.740 --> 00:07:58.700
+Okay
+
+00:07:58.700 --> 00:08:02.960
+So the fact that a X ends up
+being a vector
+
+00:08:02.960 --> 00:08:05.040
+Tells us that okay.
+Well if it's a vector then I can
+
+00:08:05.040 --> 00:08:07.300
+find its squared length
+
+00:08:07.300 --> 00:08:10.260
+Okay, what I was getting at
+
+00:08:10.260 --> 00:08:13.700
+Is I wanted us to use various
+things we've introduced
+
+00:08:13.700 --> 00:08:14.900
+throughout the semester,
+
+00:08:14.900 --> 00:08:18.220
+some before Thursday and some on
+this last Thursday,
+
+00:08:18.220 --> 00:08:20.440
+to break down this expression,
+
+00:08:20.440 --> 00:08:23.600
+the squared length of Ax.
+
+00:08:23.600 --> 00:08:26.600
+In various algebraic problems
+you've seen before,
+
+00:08:27.540 --> 00:08:30.640
+the squared length of a vector,
+how would you break that down in
+
+00:08:30.640 --> 00:08:34.480
+order to simplify it according
+to things that are told to you
+
+00:08:34.480 --> 00:08:36.480
+in a question?
+
+00:08:36.480 --> 00:08:39.260
+A squared length of a vector,
+what would you typically do?
+
+00:08:39.260 --> 00:08:40.260
+Yeah
+
+00:08:40.980 --> 00:08:44.520
+Yeah, you'd usually write this
+as the dot product
+
+00:08:44.520 --> 00:08:46.770
+of the vector
+
+00:08:47.520 --> 00:08:49.020
+With itself
+
+00:08:49.260 --> 00:08:50.760
+Okay, great
+
+00:08:51.020 --> 00:08:56.270
+now on Thursday at the very end.
+I told you about another way
+
+00:08:56.780 --> 00:09:01.280
+you can think of the dot product
+of two vectors and
+
+00:09:01.280 --> 00:09:05.520
+It involved a new word that
+started with a T
+
+00:09:05.520 --> 00:09:07.280
+That I told you about on
+Thursday.
+
+00:09:07.280 --> 00:09:10.360
+What am I talking about? Yeah.
+
+00:09:10.360 --> 00:09:10.720
+Transpose.
+
+00:09:10.720 --> 00:09:14.140
+And can you remind me what that
+is?
+
+00:09:14.140 --> 00:09:15.140
+OK.
+
+00:09:15.900 --> 00:09:17.400
+Quick refresher.
+
+00:09:22.160 --> 00:09:23.820
+What does the transpose do?
+
+00:09:23.820 --> 00:09:26.320
+Let's suppose x is a matrix,
+
+00:09:26.320 --> 00:09:27.680
+like 1,
+
+00:09:27.680 --> 00:09:29.000
+4, 7,
+
+00:09:29.000 --> 00:09:31.760
+2, 1, negative 9.
+
+00:09:31.760 --> 00:09:34.080
+The transpose of x,
+
+00:09:34.080 --> 00:09:36.330
+what is it?
+
+00:09:37.060 --> 00:09:38.560
+Sound familiar?
+
+00:09:40.860 --> 00:09:43.480
+Yeah, you can think of it as
+rotating it,
+
+00:09:43.480 --> 00:09:48.020
+turning the rows of x into the
+columns of x transpose, and the
+
+00:09:48.020 --> 00:09:51.080
+columns of x into the rows of x
+transpose.
+
+00:09:51.080 --> 00:09:54.420
+So x here is two rows by three
+columns,
+
+00:09:54.420 --> 00:09:57.020
+x transpose is going to be three
+by two.
+
+00:09:57.020 --> 00:09:59.600
+Its first column will be x's
+first row,
+
+00:09:59.600 --> 00:10:00.500
+147,
+
+00:10:00.500 --> 00:10:04.180
+and its second column will be
+x's So this is second row,
+
+00:10:04.180 --> 00:10:06.430
+2, 1, 9.
+
+00:10:08.880 --> 00:10:10.380
+Sound familiar?
+
+00:10:11.540 --> 00:10:13.040
+OK, good.
+
+00:10:13.140 --> 00:10:14.140
+Now,
+
+00:10:15.680 --> 00:10:19.680
+this is not directly like this
+fact here.
+
+00:10:19.680 --> 00:10:23.900
+It's not directly related to the
+dot product.
+
+00:10:23.900 --> 00:10:26.360
+So what was the connection
+there?
+
+00:10:26.360 --> 00:10:28.360
+Let me define two vectors, for
+example,
+
+00:10:28.360 --> 00:10:31.360
+1, 2, 3, 4.
+
+00:10:32.220 --> 00:10:38.220
+and v being negative 9 1 4 7.
+
+00:10:40.480 --> 00:10:42.860
+The dot product of u with v,
+
+00:10:42.860 --> 00:10:45.280
+there's nothing new about that.
+
+00:10:45.280 --> 00:10:49.880
+But there is another equivalent
+way of thinking about it in
+
+00:10:49.880 --> 00:10:54.760
+terms of the transpose that I
+told you about on Thursday.
+
+00:10:55.280 --> 00:10:57.530
+What was that?
+
+00:10:59.780 --> 00:11:02.030
+What was that?
+
+00:11:03.420 --> 00:11:07.170
+Transpose of the second one,
+
+00:11:07.540 --> 00:11:08.160
+I guess,
+
+00:11:08.160 --> 00:11:11.660
+like u times by the transpose of
+v.
+
+00:11:11.660 --> 00:11:12.560
+Was it the opposite?
+
+00:11:12.560 --> 00:11:15.300
+Oh, transpose of u l times by v.
+Good.
+
+00:11:15.300 --> 00:11:17.940
+So remember, you can think of a
+matrix, or sorry, you can think
+
+00:11:17.940 --> 00:11:19.100
+of a vector
+
+00:11:19.100 --> 00:11:21.760
+as being an n by 1 matrix.
+
+00:11:21.760 --> 00:11:25.080
+So u is 4 by 1 and v is 4 by 1.
+
+00:11:25.080 --> 00:11:29.140
+You can't do regular matrix
+multiplication with u and v.
+
+00:11:30.120 --> 00:11:34.140
+This is not a defined operation.
+
+00:11:34.140 --> 00:11:35.760
+Why is this not defined?
+
+00:11:35.760 --> 00:11:37.280
+u times v is just the way I've
+written it.
+
+00:11:37.280 --> 00:11:41.030
+Why is that not defined?
+
+00:11:42.440 --> 00:11:43.280
+Yeah?
+
+00:11:43.280 --> 00:11:45.560
+You can call it if u don't match
+the rows of v.
+
+00:11:45.560 --> 00:11:47.740
+Exactly.
+u is 4 by 1, and so is v.
+
+00:11:48.240 --> 00:11:53.490
+So if I'm trying to apply my
+rules of matrix multiplication,
+
+00:11:55.000 --> 00:11:56.580
+the number of columns of u,
+
+00:11:56.580 --> 00:11:59.240
+which is 1, is not equal to the
+number of rows of v, which is 4.
+
+00:11:59.240 --> 00:12:02.240
+So that's not allowed.
+
+00:12:02.360 --> 00:12:08.360
+But if I turned u from being a
+column vector to a row vector,
+
+00:12:08.860 --> 00:12:11.140
+then this would be allowed.
+
+00:12:11.140 --> 00:12:12.360
+Do you agree?
+
+00:12:12.360 --> 00:12:16.120
+because then instead of 4 by 1
+here, I'd have a 1 by 4,
+
+00:12:16.120 --> 00:12:20.760
+so what operation turns a column
+into a row?
+
+00:12:21.240 --> 00:12:23.380
+It's the transpose.
+You can take the transpose of a
+
+00:12:23.380 --> 00:12:24.180
+vector,
+
+00:12:24.180 --> 00:12:27.260
+and what it gives you is a row
+vector, so instead of this
+
+00:12:27.260 --> 00:12:30.540
+vector being 4 by 1, it would be
+1 by 4.
+
+00:12:30.540 --> 00:12:33.860
+You can think of it as a matrix
+with one row and four columns.
+
+00:12:33.860 --> 00:12:37.040
+So if I transpose u,
+
+00:12:37.040 --> 00:12:42.100
+well then I have a 1 by 4 matrix
+being multiplied by a four by
+
+00:12:42.100 --> 00:12:46.360
+one matrix, and those fours are
+the same, which means it's legal
+
+00:12:46.360 --> 00:12:47.760
+to multiply.
+
+00:12:47.760 --> 00:12:52.260
+And what shape will my output
+be?
+
+00:12:53.640 --> 00:12:55.520
+Will the shape of the output of
+this be?
+
+00:12:55.520 --> 00:12:57.740
+A one by one matrix.
+Yeah, a one by one matrix, which
+
+00:12:57.740 --> 00:12:59.640
+is a scalar,
+
+00:12:59.640 --> 00:13:00.640
+okay?
+
+00:13:01.120 --> 00:13:02.120
+So,
+
+00:13:02.420 --> 00:13:05.420
+I'll write that here.
+
+00:13:17.260 --> 00:13:19.100
+Let's test it out here.
+
+00:13:19.100 --> 00:13:23.300
+The claim is that this is equal
+to use transpose regular
+
+00:13:23.300 --> 00:13:25.550
+multiplied by V.
+
+00:13:26.540 --> 00:13:28.740
+No dot product there.
+Remember the dot product is
+
+00:13:28.740 --> 00:13:30.440
+between two column vector.
+
+00:13:30.440 --> 00:13:32.540
+What would this look like?
+
+00:13:32.540 --> 00:13:35.380
+What's the transpose of u? You
+can think of it as a matrix with
+
+00:13:35.380 --> 00:13:40.980
+a single row, which is 1, 2, 3,
+4, followed by v on its
+
+00:13:40.980 --> 00:13:41.980
+own,
+
+00:13:42.420 --> 00:13:43.960
+negative 9, 1,
+
+00:13:43.960 --> 00:13:45.460
+4, 7.
+
+00:13:46.520 --> 00:13:52.440
+And the result ends up being the
+result of dot producting u and
+
+00:13:52.440 --> 00:13:53.440
+v.
+
+00:13:54.740 --> 00:13:59.500
+You do the same calculation.
+you have 1 times negative 9 plus
+
+00:13:59.500 --> 00:14:04.820
+2 times 1 plus whatever the
+specific number is not important
+
+00:14:04.820 --> 00:14:10.100
+but do we see that u transpose v
+is doing the same thing as u dot
+
+00:14:10.100 --> 00:14:15.900
+v okay but instead u transpose v
+writes the dot
+
+00:14:15.900 --> 00:14:20.020
+product in terms of matrix
+multiplication so there's no dot
+
+00:14:20.020 --> 00:14:23.600
+supposed to be written there
+okay And the result is a one by
+
+00:14:23.600 --> 00:14:24.640
+one matrix,
+
+00:14:24.640 --> 00:14:27.100
+which you can think of as a
+scalar.
+
+00:14:27.100 --> 00:14:28.980
+And it's not just u transpose v.
+
+00:14:28.980 --> 00:14:32.900
+It's also v transpose u.
+
+00:14:34.580 --> 00:14:38.240
+And of course, it's also v dot
+u.
+
+00:14:38.240 --> 00:14:40.300
+These are all the same thing.
+
+00:14:40.300 --> 00:14:44.380
+Though in general, as we saw
+last time,
+
+00:14:44.380 --> 00:14:47.380
+matrix multiplication is not
+commutative.
+
+00:14:48.040 --> 00:14:52.660
+Okay, so here it happens to be
+the case that U transpose V, if
+
+00:14:52.660 --> 00:14:56.220
+you think of U transpose and V
+as being matrices,
+
+00:14:56.220 --> 00:14:57.160
+it happens,
+
+00:14:57.160 --> 00:14:58.160
+well,
+
+00:14:58.360 --> 00:14:59.860
+not even,
+
+00:15:00.000 --> 00:15:03.760
+this is not quite commutativity
+because the opposite of, or like
+
+00:15:03.760 --> 00:15:08.640
+sort of the swap of this would
+be V U transpose, which is also
+
+00:15:08.640 --> 00:15:10.800
+a thing that we're going to talk
+about today.
+
+00:15:10.800 --> 00:15:13.860
+But anyways, the fact that U
+transpose V is equal to V
+
+00:15:13.860 --> 00:15:17.140
+transpose U is only because
+these are vectors and the result
+
+00:15:17.140 --> 00:15:18.700
+happens to be a scalar in both
+cases.
+
+00:15:18.700 --> 00:15:19.700
+In general,
+
+00:15:19.700 --> 00:15:21.320
+as we saw last class,
+
+00:15:21.320 --> 00:15:23.960
+a times b is not the same as b
+times a.
+
+00:15:23.960 --> 00:15:26.960
+Okay, matrix multiplication is
+not commutative.
+
+00:15:28.040 --> 00:15:28.880
+Okay,
+
+00:15:28.880 --> 00:15:34.700
+so we know that you can write
+the dot product in terms of the
+
+00:15:34.700 --> 00:15:36.200
+transpose operation.
+
+00:15:36.680 --> 00:15:39.500
+What might that allow us to do
+here?
+
+00:15:39.500 --> 00:15:42.440
+Remember my goal was to simplify
+the squared length of ax.
+
+00:15:42.440 --> 00:15:46.740
+what can I do with that here?
+
+00:15:46.740 --> 00:15:50.840
+I wrote that as a x dotted with
+a x can I simplify that any
+
+00:15:50.840 --> 00:15:51.840
+further?
+
+00:15:55.440 --> 00:15:56.440
+Yeah?
+
+00:16:00.140 --> 00:16:06.100
+So I'm glad you said that no we
+can't because a is not a
+
+00:16:06.100 --> 00:16:09.180
+scalar right if this were like
+the number five or something
+
+00:16:09.180 --> 00:16:14.460
+sure you get but it's not this
+is a matrix times a vector and
+
+00:16:14.460 --> 00:16:17.820
+remember like another way to
+think about it is that a X has a
+
+00:16:17.820 --> 00:16:22.000
+different shape than X does
+right a X has n things in it but
+
+00:16:22.000 --> 00:16:24.960
+X only has D things in it I
+guess could be more or less than
+
+00:16:24.960 --> 00:16:28.800
+it right so there's no notion of
+taking a out of this because
+
+00:16:28.800 --> 00:16:33.120
+like X dotted with a X is not a
+valid operation because X has D
+
+00:16:33.120 --> 00:16:35.700
+things in it a X has n things in
+it and you can't take the dot
+
+00:16:35.700 --> 00:16:39.300
+product of So this is a unit for
+now.
+
+00:16:39.300 --> 00:16:42.840
+There's nothing we can really do
+to separate it, but that's what
+
+00:16:42.840 --> 00:16:45.420
+the transpose is going to allow
+us to do.
+
+00:16:45.420 --> 00:16:49.320
+The results of what we just said
+on the previous slide is that Ax
+
+00:16:49.320 --> 00:16:55.140
+dotted with Ax is the same as Ax
+transpose Ax.
+
+00:16:55.140 --> 00:16:58.200
+But something I mentioned very
+briefly at the end of Thursday
+
+00:16:58.200 --> 00:17:01.960
+tells me how to rewrite the
+first part.
+
+00:17:01.960 --> 00:17:06.640
+Ax transpose.
+How do you find the transpose of
+
+00:17:06.640 --> 00:17:12.340
+the product of two objects?
+
+00:17:12.780 --> 00:17:13.680
+That is,
+
+00:17:13.680 --> 00:17:18.180
+what is A times B transpose?
+
+00:17:19.640 --> 00:17:23.390
+I mentioned this on Thursday,
+yeah.
+
+00:17:23.580 --> 00:17:26.000
+The order reverses.
+
+00:17:27.900 --> 00:17:28.900
+Okay,
+
+00:17:29.260 --> 00:17:33.540
+so how can I simplify this
+quantity,
+
+00:17:33.540 --> 00:17:35.260
+A x transpose A x,
+
+00:17:35.260 --> 00:17:38.260
+what does that become?
+
+00:17:43.580 --> 00:17:46.580
+What does that become?
+
+00:17:49.840 --> 00:17:53.480
+x transpose times A transpose A
+x.
+
+00:17:53.480 --> 00:17:56.100
+Good, x transpose A transpose A
+x.
+
+00:17:56.100 --> 00:17:57.100
+Good.
+
+00:17:57.240 --> 00:17:59.540
+This is about as far as we can
+get without knowing anything
+
+00:17:59.540 --> 00:18:03.240
+about A or x.
+But I wanted to do this sort of
+
+00:18:03.240 --> 00:18:08.400
+manipulation here because this
+format X transpose times a
+
+00:18:08.400 --> 00:18:12.900
+matrix times X is one that
+you're gonna see very often
+
+00:18:13.000 --> 00:18:17.520
+Okay, and to turn the squared
+length of a X into that quantity
+
+00:18:17.520 --> 00:18:19.860
+We use the fact that the squared
+length of a vector is a dot
+
+00:18:19.860 --> 00:18:22.000
+product and the dot product
+
+00:18:22.000 --> 00:18:24.340
+Can really be thought of as the
+transpose of one vector
+
+00:18:24.340 --> 00:18:27.520
+multiplied by the other and then
+you can distribute the transpose
+
+00:18:27.520 --> 00:18:30.120
+operation if you reverse the
+order of the objects to get
+
+00:18:30.120 --> 00:18:31.600
+something like this.
+
+00:18:31.600 --> 00:18:32.600
+Now,
+
+00:18:32.780 --> 00:18:37.140
+on Thursday, I mentioned that a
+matrix of the form A transpose A
+
+00:18:37.140 --> 00:18:40.140
+has an English interpretable
+definition.
+
+00:18:43.680 --> 00:18:46.800
+A transpose A, well, there, I
+think we said X transpose X,
+
+00:18:46.800 --> 00:18:48.160
+where X was a matrix.
+
+00:18:48.160 --> 00:18:50.700
+Here, the matrix is A.
+
+00:18:50.700 --> 00:18:53.360
+There's an English way to
+interpret the entries of A
+
+00:18:53.360 --> 00:18:54.420
+transpose A.
+
+00:18:54.420 --> 00:18:55.880
+And what is it?
+
+00:18:55.880 --> 00:18:57.080
+Yeah? Um,
+
+00:18:57.080 --> 00:19:00.280
+the dot product of all the pairs
+of A's columns.
+
+00:19:00.280 --> 00:19:01.180
+Good.
+
+00:19:01.180 --> 00:19:07.020
+A transpose A contains the dot
+products
+
+00:19:10.540 --> 00:19:15.800
+of all pairs of A's columns.
+
+00:19:18.120 --> 00:19:20.340
+I'm not going to review exactly
+why that is.
+
+00:19:20.340 --> 00:19:22.520
+We talked about it in depth on
+Thursday.
+
+00:19:22.520 --> 00:19:25.280
+But make sure to refresh your
+memory on why that's true.
+
+00:19:25.280 --> 00:19:26.020
+OK,
+
+00:19:26.020 --> 00:19:28.400
+A transpose A contains the dot
+products of all pairs of A's
+
+00:19:28.400 --> 00:19:29.400
+columns.
+
+00:19:32.960 --> 00:19:34.620
+Now, one quick thing as an
+aside.
+
+00:19:34.620 --> 00:19:35.320
+So again,
+
+00:19:35.320 --> 00:19:39.080
+I'll write down A transpose A as
+the dot products
+
+00:19:39.080 --> 00:19:43.600
+of all pairs
+
+00:19:43.600 --> 00:19:46.860
+of A's columns.
+
+00:19:52.680 --> 00:19:55.400
+I guess one thing we should
+comment on is,
+
+00:19:55.400 --> 00:19:58.540
+if A is n by d,
+
+00:19:58.540 --> 00:20:03.040
+then what shape does A transpose
+A have?
+
+00:20:09.820 --> 00:20:15.070
+What is the shape of A transpose
+A?
+
+00:20:15.300 --> 00:20:18.480
+How do we figure it out?
+
+00:20:18.480 --> 00:20:20.420
+The shape of A transpose A.
+
+00:20:20.420 --> 00:20:21.200
+Yeah?
+
+00:20:21.200 --> 00:20:22.560
+n times n,
+
+00:20:22.560 --> 00:20:24.260
+m by n.
+
+00:20:24.260 --> 00:20:26.060
+How'd you get that?
+
+00:20:26.060 --> 00:20:28.460
+I think the right order can be
+like.
+
+00:20:28.460 --> 00:20:29.460
+Good.
+
+00:20:29.740 --> 00:20:32.080
+Knowing that this is what the
+result ends up being, that it
+
+00:20:32.080 --> 00:20:34.300
+has the dot products of all
+pairs of columns,
+
+00:20:34.300 --> 00:20:37.360
+we know that A has d columns.
+
+00:20:37.360 --> 00:20:41.740
+So we should have a grid with d
+rows and d columns.
+
+00:20:41.740 --> 00:20:43.980
+And if we don't think about that
+interpretation, Well then A
+
+00:20:43.980 --> 00:20:44.980
+transpose,
+
+00:20:45.440 --> 00:20:49.800
+because we turned A's rows into
+columns and vice-versa, should
+
+00:20:49.800 --> 00:20:50.940
+be D by N.
+
+00:20:50.940 --> 00:20:54.080
+A is N by D.
+
+00:20:54.080 --> 00:20:55.960
+You see those inner dimensions
+match.
+
+00:20:55.960 --> 00:21:01.210
+So that tells you A transpose A
+is D by D.
+
+00:21:09.480 --> 00:21:12.200
+Now the point I was trying to
+make here is that So A transpose
+
+00:21:12.200 --> 00:21:17.480
+A is a symmetric matrix.
+
+00:21:21.080 --> 00:21:24.830
+What do you think symmetric
+means?
+
+00:21:27.680 --> 00:21:28.680
+Yeah?
+
+00:21:30.560 --> 00:21:33.020
+Like the ends need to be the
+same, the inner ones, but it
+
+00:21:33.020 --> 00:21:35.900
+also means that these are the
+same?
+
+00:21:35.900 --> 00:21:37.280
+Not necessarily.
+
+00:21:37.280 --> 00:21:38.260
+So,
+
+00:21:38.260 --> 00:21:42.680
+A transpose A is symmetric, even
+if A wasn't square.
+
+00:21:42.680 --> 00:21:45.380
+So like, what you just said is
+that N would have to be equal to
+
+00:21:45.380 --> 00:21:45.920
+D,
+
+00:21:45.920 --> 00:21:49.040
+but that would just mean A is a
+square matrix.
+
+00:21:49.040 --> 00:21:53.560
+And that's equal to just the
+fact that D is equal,
+
+00:21:54.320 --> 00:21:57.320
+but that happens naturally
+within like the transpose,
+
+00:21:57.500 --> 00:22:00.800
+just like the values as well.
+
+00:22:00.800 --> 00:22:04.760
+It does have to do with the
+values, but all you're getting
+
+00:22:04.760 --> 00:22:07.700
+at is the fact that A transpose
+A is square,
+
+00:22:07.700 --> 00:22:10.020
+which is a pre, like the,
+
+00:22:10.020 --> 00:22:11.640
+you're saying the,
+
+00:22:11.640 --> 00:22:15.020
+like your observation, I think,
+was that this number and this
+
+00:22:15.020 --> 00:22:16.980
+number are the same.
+
+00:22:16.980 --> 00:22:19.230
+Yeah, but that tells you A
+transpose A is square,
+
+00:22:19.230 --> 00:22:21.820
+which is a necessary condition
+for being symmetric, but not
+
+00:22:21.820 --> 00:22:24.820
+every square matrix is
+symmetric.
+
+00:22:24.940 --> 00:22:28.880
+The, you have the right main
+idea.
+
+00:22:28.880 --> 00:22:31.580
+What is a symmetric matrix?
+
+00:22:31.580 --> 00:22:34.040
+Yeah.
+The diagonal values are the
+
+00:22:34.040 --> 00:22:35.040
+same.
+
+00:22:36.680 --> 00:22:39.840
+That's also part of it, but it's
+not the entire thing.
+
+00:22:39.840 --> 00:22:41.480
+Let me give you two examples,
+
+00:22:41.480 --> 00:22:45.980
+and you tell me which is
+symmetric.
+
+00:22:53.700 --> 00:22:57.450
+Which matrix here is symmetric
+and why?
+
+00:22:58.120 --> 00:22:58.680
+Yeah.
+
+00:22:58.680 --> 00:23:00.060
+The second one, because it's
+equal.
+
+00:23:00.060 --> 00:23:00.900
+It's transposed.
+
+00:23:00.900 --> 00:23:01.900
+Exactly.
+
+00:23:02.200 --> 00:23:05.500
+A matrix is symmetric when it's
+equal to its transpose.
+
+00:23:05.500 --> 00:23:08.360
+If its first row is equal to its
+first column,
+
+00:23:08.360 --> 00:23:11.160
+its second row is equal to its
+second column.
+
+00:23:11.160 --> 00:23:14.220
+Its third row is equal to its
+third column.
+
+00:23:14.220 --> 00:23:18.240
+So if we look at these two
+examples,
+
+00:23:18.240 --> 00:23:21.040
+this matrix's first row is not
+the same as its first column.
+
+00:23:21.040 --> 00:23:23.940
+Its first row is 1, 2, but its
+first column is 1, 3.
+
+00:23:23.940 --> 00:23:26.940
+So it's not symmetric.
+
+00:23:29.560 --> 00:23:33.640
+It's not symmetric.
+
+00:23:34.940 --> 00:23:38.160
+Whereas 1, 2, 2, 4, it is
+symmetric.
+
+00:23:38.160 --> 00:23:40.600
+Its first row is the same as its
+first column, and its second row
+
+00:23:40.600 --> 00:23:41.700
+is the same as the second
+column.
+
+00:23:41.700 --> 00:23:42.400
+Yeah, question.
+
+00:23:42.400 --> 00:23:47.060
+Is it like if you have a
+diagonal,
+
+00:23:47.060 --> 00:23:49.300
+and you flip it, then what do
+you say? Yeah, you can think of
+
+00:23:49.300 --> 00:23:50.440
+it like that.
+
+00:23:50.440 --> 00:23:52.920
+Everything above the diagonal is
+a mirror image of everything
+
+00:23:52.920 --> 00:23:55.170
+below the diagonal.
+Yeah.
+
+00:24:07.900 --> 00:24:09.320
+So this matrix,
+
+00:24:09.320 --> 00:24:12.280
+the second one, is symmetric
+because it is equal to its own
+
+00:24:12.280 --> 00:24:13.280
+transpose.
+
+00:24:14.220 --> 00:24:17.120
+Now, why is A transpose
+asymmetric?
+
+00:24:17.120 --> 00:24:22.120
+I don't even know what A is in
+this hypothetical.
+
+00:24:22.120 --> 00:24:28.120
+But how do I know A transpose A
+is symmetric?
+
+00:24:29.940 --> 00:24:31.900
+Again, this is not saying A is
+symmetric.
+
+00:24:31.900 --> 00:24:34.820
+A is not even necessarily
+square.
+
+00:24:34.820 --> 00:24:37.260
+And of course, if a matrix is
+not square,
+
+00:24:37.260 --> 00:24:39.840
+it can't be equal to its
+transpose because its transpose
+
+00:24:39.840 --> 00:24:41.960
+will have a different shape than
+it does.
+
+00:24:41.960 --> 00:24:45.500
+So in order to be symmetric, you
+have to be square.
+
+00:24:45.500 --> 00:24:47.900
+But as we're seeing, not every
+square matrix is symmetric.
+
+00:24:47.900 --> 00:24:50.700
+My claim is that A transpose A
+is symmetric.
+
+00:24:50.700 --> 00:24:52.200
+But why?
+
+00:24:52.640 --> 00:24:53.620
+Why is that?
+
+00:24:53.620 --> 00:24:57.120
+If you transpose A transpose A,
+
+00:24:57.120 --> 00:24:59.460
+and you reverse the order,
+
+00:24:59.460 --> 00:25:02.540
+and then one becomes A
+transpose,
+
+00:25:02.540 --> 00:25:04.660
+and then the other becomes A,
+and their order flips out.
+
+00:25:04.660 --> 00:25:06.000
+So it's the same thing.
+Exactly.
+
+00:25:06.000 --> 00:25:09.080
+What happens if we consider the
+transpose of A transpose A? It's
+
+00:25:09.080 --> 00:25:11.380
+a little funky to think about,
+because the matrix itself is
+
+00:25:11.380 --> 00:25:13.160
+defined in terms of a transpose.
+
+00:25:13.160 --> 00:25:16.640
+But this is a totally legal
+operation.
+
+00:25:16.640 --> 00:25:19.260
+Think of this as box and this as
+being triangle.
+
+00:25:19.260 --> 00:25:21.960
+You can take the transpose of
+the product of two matrices.
+
+00:25:21.960 --> 00:25:23.040
+That's just fine.
+
+00:25:23.040 --> 00:25:25.640
+What does that end up being?
+
+00:25:25.640 --> 00:25:28.100
+And just to show you where
+things are coming from, why
+
+00:25:28.100 --> 00:25:29.860
+don't we toss some colors into
+here,
+
+00:25:29.860 --> 00:25:31.840
+call this A transpose and A.
+
+00:25:31.840 --> 00:25:36.340
+What does this end up becoming?
+
+00:25:39.880 --> 00:25:44.380
+How do I simplify this? A
+transpose A transpose.
+
+00:25:55.560 --> 00:25:56.800
+What was the rule,
+
+00:25:56.800 --> 00:25:58.800
+the transpose of a product?
+
+00:25:58.800 --> 00:26:00.980
+It should just be equal to A
+transpose A, right? It is.
+
+00:26:00.980 --> 00:26:04.560
+But I don't want to skip steps.
+I want to see where that comes
+
+00:26:04.560 --> 00:26:05.560
+from.
+
+00:26:08.380 --> 00:26:10.780
+Remember, the rule was that if
+you have one matrix and
+
+00:26:10.780 --> 00:26:13.600
+multiplied by another matrix and
+you're taking their transpose,
+
+00:26:13.600 --> 00:26:17.350
+what did the rule say?
+
+00:26:17.780 --> 00:26:21.040
+What does this equal to?
+
+00:26:21.040 --> 00:26:22.040
+Yeah.
+
+00:26:22.220 --> 00:26:25.970
+A transpose transpose times A
+transpose.
+
+00:26:26.960 --> 00:26:28.820
+Not quite.
+
+00:26:30.880 --> 00:26:35.380
+Remember you have to reverse the
+order.
+
+00:26:38.100 --> 00:26:42.860
+So if we of box times triangle
+transpose, that's the same as
+
+00:26:42.860 --> 00:26:45.110
+triangle transpose box
+transpose.
+
+00:26:46.300 --> 00:26:48.680
+I'm not using A and B here,
+because that'll confuse you with
+
+00:26:48.680 --> 00:26:52.430
+the A in this question.
+
+00:26:52.440 --> 00:26:54.620
+So what does that tell you here?
+
+00:26:54.620 --> 00:26:58.520
+A transpose A transpose is the
+transpose of the second matrix,
+
+00:26:58.520 --> 00:27:01.520
+which is just A,
+
+00:27:03.960 --> 00:27:06.580
+times the transpose of the first
+matrix.
+
+00:27:06.580 --> 00:27:10.880
+But the first matrix itself was
+a transpose.
+
+00:27:10.880 --> 00:27:15.380
+So it's A transpose times A
+transpose transpose.
+
+00:27:16.760 --> 00:27:20.510
+But what is A transpose
+transpose?
+
+00:27:21.300 --> 00:27:25.800
+Seems like that should just work
+out to being A transpose A.
+
+00:27:33.660 --> 00:27:34.660
+OK.
+
+00:27:37.760 --> 00:27:39.080
+So again,
+
+00:27:39.080 --> 00:27:42.080
+your symmetric just means
+
+00:27:42.760 --> 00:27:48.140
+square and equal to its
+
+00:27:48.140 --> 00:27:49.140
+transpose.
+
+00:27:52.320 --> 00:27:53.320
+OK.
+
+00:27:53.760 --> 00:27:59.360
+Questions with this idea of A
+transpose A being a symmetric
+
+00:27:59.360 --> 00:28:00.360
+matrix?
+
+00:28:02.040 --> 00:28:03.040
+Yeah.
+
+00:28:03.240 --> 00:28:07.360
+Why does saving the transpose of
+them necessarily show that it's
+
+00:28:07.360 --> 00:28:08.360
+symmetric?
+
+00:28:08.940 --> 00:28:13.520
+Well, all this is showing is
+that A transpose A,
+
+00:28:14.940 --> 00:28:17.520
+when you take its transpose, it
+doesn't do anything.
+
+00:28:17.520 --> 00:28:19.560
+It gives you back the same
+matrix.
+
+00:28:19.560 --> 00:28:22.120
+Most matrices don't work this
+way.
+
+00:28:22.120 --> 00:28:25.380
+If I start with this matrix,
+
+00:28:25.380 --> 00:28:28.100
+when I take its transpose, I get
+something different.
+
+00:28:28.100 --> 00:28:30.200
+It doesn't have the same shape,
+and the numbers aren't in the
+
+00:28:30.200 --> 00:28:31.200
+same places.
+
+00:28:31.200 --> 00:28:34.520
+Okay, so this is saying A
+transpose A is special.
+
+00:28:34.520 --> 00:28:36.820
+It is symmetric because when you
+take its transpose, it doesn't
+
+00:28:36.820 --> 00:28:38.100
+do anything
+
+00:28:38.100 --> 00:28:39.780
+Yeah, good
+
+00:28:41.840 --> 00:28:44.640
+Okay, so there's a question in
+this week's homework that
+
+00:28:44.640 --> 00:28:48.840
+involves showing for a very
+special type of matrix
+
+00:28:50.200 --> 00:28:56.060
+That the length of A times X is
+equal to the length of
+
+00:28:56.060 --> 00:28:57.060
+X
+
+00:28:58.330 --> 00:28:59.510
+That's not true in general.
+
+00:28:59.510 --> 00:29:05.130
+In general, it is not true that
+multiplying a vector by a matrix
+
+00:29:05.130 --> 00:29:06.710
+doesn't change its length.
+
+00:29:06.710 --> 00:29:08.830
+It's not true in general.
+But there's a special type of
+
+00:29:08.830 --> 00:29:10.870
+matrix for which that's true.
+
+00:29:10.870 --> 00:29:12.510
+And if that were true,
+
+00:29:12.510 --> 00:29:17.610
+what would need to be true about
+A transpose A?
+
+00:29:17.610 --> 00:29:19.290
+We've basically done that
+question here together.
+
+00:29:19.290 --> 00:29:24.010
+But if it were true that A times
+x had the same length as x,
+
+00:29:24.010 --> 00:29:28.510
+what would have to happen down
+here?
+
+00:29:33.610 --> 00:29:35.990
+If Ax and x have the same
+length, what's going on down
+
+00:29:35.990 --> 00:29:36.390
+here?
+
+00:29:36.390 --> 00:29:38.930
+Would it turn into an identity
+matrix? Yeah, you would need A
+
+00:29:38.930 --> 00:29:42.230
+transpose A to be the identity
+matrix,
+
+00:29:42.230 --> 00:29:45.710
+which is the matrix that when
+you multiply it by other stuff,
+
+00:29:45.710 --> 00:29:48.170
+doesn't change their value.
+
+00:29:48.170 --> 00:29:49.290
+Then the question is,
+
+00:29:49.290 --> 00:29:50.050
+well,
+
+00:29:50.050 --> 00:29:54.550
+what would need to be stored in
+A for A transpose A to be the
+
+00:29:54.550 --> 00:29:55.510
+identity matrix?
+
+00:29:55.510 --> 00:29:56.770
+Okay, and that's the kind of
+thing you'll explore on that
+
+00:29:56.770 --> 00:30:00.170
+question and it comes back to
+this interpretation of A
+
+00:30:00.170 --> 00:30:02.250
+transpose A having the dot
+products of all pairs of
+
+00:30:02.250 --> 00:30:03.250
+columns.
+
+00:30:03.470 --> 00:30:03.890
+If,
+
+00:30:03.890 --> 00:30:05.390
+for example,
+
+00:30:05.890 --> 00:30:07.610
+I guess I'll talk about it here
+because it's important,
+
+00:30:07.610 --> 00:30:13.430
+suppose I have a matrix A where
+A transpose A is equal to the
+
+00:30:13.430 --> 00:30:14.910
+identity matrix.
+
+00:30:14.910 --> 00:30:20.160
+What does this tell you about A?
+
+00:30:28.090 --> 00:30:28.810
+Yeah,
+
+00:30:28.810 --> 00:30:33.310
+tell me all the things this
+tells me about A.
+
+00:30:34.710 --> 00:30:39.210
+Does it tell me A's shape?
+
+00:30:39.830 --> 00:30:43.580
+Do I know A's shape?
+
+00:30:47.330 --> 00:30:48.330
+Yeah,
+
+00:30:48.730 --> 00:30:49.510
+no,
+
+00:30:49.510 --> 00:30:52.010
+I don't know all of it.
+I just know one part of it,
+
+00:30:52.010 --> 00:30:53.670
+which is
+
+00:30:53.670 --> 00:30:58.830
+the second
+
+00:30:58.830 --> 00:31:03.830
+element of its shape, which is
+its number of columns.
+
+00:31:04.930 --> 00:31:08.850
+What this is telling me is that
+A has two columns.
+
+00:31:08.850 --> 00:31:10.410
+How many rows does it have?
+
+00:31:10.410 --> 00:31:11.350
+No clue.
+
+00:31:11.350 --> 00:31:14.550
+So there's no way to know just
+by looking at this.
+
+00:31:14.550 --> 00:31:16.210
+A has two rows,
+
+00:31:16.210 --> 00:31:19.210
+or sorry, two columns.
+
+00:31:19.450 --> 00:31:22.670
+Number of rows unknown.
+
+00:31:25.390 --> 00:31:27.820
+OK, what else do I know about A
+
+00:31:27.820 --> 00:31:30.270
+just from knowing that A
+transpose A is equal to the
+
+00:31:30.270 --> 00:31:31.270
+identity?
+
+00:31:32.130 --> 00:31:33.950
+What else does this tell me?
+Yeah?
+
+00:31:33.950 --> 00:31:37.410
+Any pairing of the columns where
+they're not the exact same
+
+00:31:37.410 --> 00:31:38.970
+column or orthogonal?
+
+00:31:38.970 --> 00:31:40.150
+Good.
+Remember,
+
+00:31:40.830 --> 00:31:42.650
+and again, this goes back to
+something you need to review
+
+00:31:42.650 --> 00:31:44.150
+from Thursday,
+
+00:31:44.590 --> 00:31:46.690
+the element at position
+
+00:31:46.690 --> 00:31:52.210
+i,j of this matrix is the dot
+product of column i of A
+
+00:31:52.210 --> 00:31:54.510
+with column j of A.
+
+00:31:54.510 --> 00:31:56.750
+Remember, because this contains
+the dot products of all pairs of
+
+00:31:56.750 --> 00:31:58.670
+columns.
+So you can think of A transpose
+
+00:31:58.670 --> 00:32:03.350
+A as like a grid of all possible
+dot products of A's columns.
+
+00:32:03.350 --> 00:32:07.370
+So the fact that you have zeros
+here
+
+00:32:07.370 --> 00:32:08.870
+tells you
+
+00:32:09.310 --> 00:32:13.590
+that A's first
+
+00:32:13.590 --> 00:32:17.050
+and second columns
+
+00:32:17.050 --> 00:32:21.970
+are orthogonal.
+So,
+
+00:32:32.390 --> 00:32:38.070
+what do the
+
+00:32:38.070 --> 00:32:41.070
+diagonal entries tell you?
+
+00:32:50.030 --> 00:32:54.530
+You have ones on the diagonal.
+What does that tell you?
+
+00:32:57.450 --> 00:33:00.130
+So this is saying the dot
+product of A's first column with
+
+00:33:00.130 --> 00:33:01.730
+A's first column is 1,
+
+00:33:01.730 --> 00:33:04.070
+and the dot product of A's
+second column with A's second
+
+00:33:04.070 --> 00:33:05.290
+column is also 1.
+
+00:33:05.290 --> 00:33:10.540
+What does that tell you about A
+or about A's columns?
+
+00:33:11.390 --> 00:33:14.930
+The dot product of column 1 with
+column 1 is 1.
+
+00:33:14.930 --> 00:33:18.830
+The dot product of column 2 with
+column 2 is also 1.
+
+00:33:18.830 --> 00:33:19.570
+What does that mean?
+
+00:33:19.570 --> 00:33:20.990
+Yeah? Something to do with unit
+vectors?
+
+00:33:20.990 --> 00:33:24.740
+Yeah, it's columns or unit
+vectors.
+
+00:33:31.570 --> 00:33:37.390
+So this is, for example, telling
+you column one dot producted
+
+00:33:37.390 --> 00:33:40.970
+with column one is one.
+
+00:33:40.970 --> 00:33:46.770
+So column one has a length of
+one.
+
+00:33:48.210 --> 00:33:49.210
+OK?
+
+00:33:49.370 --> 00:33:53.210
+So knowing about A transpose A
+tells you various things about
+
+00:33:53.210 --> 00:33:54.210
+A.
+
+00:33:55.650 --> 00:33:58.050
+And again, this is the kind of
+thing you're going to explore in
+
+00:33:58.050 --> 00:33:59.790
+one of the questions of this
+week's homework.
+
+00:33:59.790 --> 00:34:03.750
+And this idea of understanding
+what A transpose A tells us
+
+00:34:03.750 --> 00:34:06.670
+about A is one that we're going
+to use throughout the semester a
+
+00:34:06.670 --> 00:34:07.670
+lot.
+
+00:34:08.450 --> 00:34:11.290
+And one of the nice properties
+of A transpose A
+
+00:34:11.290 --> 00:34:12.790
+is that it doesn't require,
+
+00:34:12.790 --> 00:34:14.710
+no matter what A's shape is,
+
+00:34:14.710 --> 00:34:17.670
+A transpose A is square.
+Okay,
+
+00:34:17.670 --> 00:34:21.210
+and so not today, but later we
+will see lots of properties or
+
+00:34:21.210 --> 00:34:22.710
+lots of
+
+00:34:24.610 --> 00:34:28.410
+Operations only work with square
+matrices and fortunately every
+
+00:34:28.410 --> 00:34:32.350
+matrix Whether it's square or
+not has a friend who is square
+
+00:34:32.350 --> 00:34:34.650
+and that friend is a transpose a
+
+00:34:34.650 --> 00:34:35.650
+Okay
+
+00:34:36.010 --> 00:34:40.790
+And there's also we said this on
+Thursday a a transpose
+
+00:34:40.790 --> 00:34:44.540
+Which contains the dot products
+of all pairs of what?
+
+00:34:45.510 --> 00:34:47.790
+If A transpose A has the dot
+products of all pairs of
+
+00:34:47.790 --> 00:34:48.710
+columns,
+
+00:34:48.710 --> 00:34:53.210
+what does A A transpose have?
+
+00:34:56.390 --> 00:34:58.750
+A transpose A has the dot
+products of all pairs of
+
+00:34:58.750 --> 00:35:00.710
+columns, what does A A transpose
+have?
+
+00:35:00.710 --> 00:35:02.530
+The dot products of all pairs of
+rows.
+
+00:35:02.530 --> 00:35:03.050
+Exactly.
+
+00:35:03.050 --> 00:35:06.870
+The dot products of all pairs of
+rows.
+
+00:35:06.870 --> 00:35:09.870
+All right, questions with
+anything we've looked at so far?
+
+00:35:12.990 --> 00:35:14.890
+Questions do we have?
+
+00:35:14.890 --> 00:35:17.510
+So when you say that it's a dot
+product of all the derivatives
+
+00:35:17.510 --> 00:35:18.770
+of column 1,
+
+00:35:18.770 --> 00:35:20.990
+is the top rate 0,
+
+00:35:20.990 --> 00:35:23.330
+column 1, dot column 2? Yes.
+
+00:35:23.330 --> 00:35:24.430
+All right.
+And then the other one would be
+
+00:35:24.430 --> 00:35:25.030
+2.
+
+00:35:25.030 --> 00:35:25.810
+Yes.
+
+00:35:25.810 --> 00:35:29.590
+Is there a general rule for
+which index corresponds to which
+
+00:35:29.590 --> 00:35:30.590
+columns?
+
+00:35:33.570 --> 00:35:36.310
+You can think of this as being
+the dot products of column 1
+
+00:35:36.310 --> 00:35:39.570
+with things, and this as being
+the dot product of column ones
+
+00:35:39.570 --> 00:35:41.230
+with things.
+It's symmetric, right? Which is
+
+00:35:41.230 --> 00:35:42.410
+one of the things we just
+showed.
+
+00:35:42.410 --> 00:35:44.190
+So it doesn't matter which way
+you think about it.
+
+00:35:44.190 --> 00:35:44.990
+So we know,
+
+00:35:44.990 --> 00:35:47.250
+based on what we discussed
+before,
+
+00:35:47.250 --> 00:35:49.470
+knowing that this matrix was
+symmetric tells you,
+
+00:35:49.470 --> 00:35:51.890
+pretend I covered up this top
+right entry,
+
+00:35:51.890 --> 00:35:53.130
+you know what it's going to be.
+
+00:35:53.130 --> 00:35:57.030
+It has to be also 0.
+
+00:35:57.030 --> 00:35:58.210
+Good.
+Good question.
+
+00:35:58.490 --> 00:36:00.030
+I think there's another
+question.
+
+00:36:00.030 --> 00:36:01.530
+Yeah, no?
+
+00:36:02.390 --> 00:36:03.350
+OK,
+
+00:36:03.350 --> 00:36:04.350
+awesome.
+
+00:36:05.590 --> 00:36:09.510
+So, the main new thing I wanted
+to discuss was that of the
+
+00:36:09.510 --> 00:36:13.260
+column space of a matrix.
+
+00:36:13.430 --> 00:36:15.470
+And for this I want to make sure
+I use the same example I have
+
+00:36:15.470 --> 00:36:18.530
+written up in the notes.
+
+00:36:18.530 --> 00:36:19.670
+Let's use,
+
+00:36:19.670 --> 00:36:23.420
+and this starts chapter 5.3,
+I should write that.
+
+00:36:25.130 --> 00:36:29.450
+Let's use throughout today the
+matrix A,
+
+00:36:29.670 --> 00:36:32.890
+whose first column is 5, 0,
+
+00:36:32.890 --> 00:36:33.410
+3,
+
+00:36:33.410 --> 00:36:34.550
+6, 1,
+
+00:36:34.550 --> 00:36:36.070
+second column is 3,
+
+00:36:36.070 --> 00:36:37.130
+negative 1,
+
+00:36:37.130 --> 00:36:37.870
+4,
+
+00:36:37.870 --> 00:36:39.110
+2, 0,
+
+00:36:39.110 --> 00:36:41.050
+and last column is 2, 1,
+
+00:36:41.050 --> 00:36:42.170
+negative 1,
+
+00:36:42.170 --> 00:36:43.670
+4, 1.
+
+00:36:46.250 --> 00:36:51.500
+Okay, this is a five by three
+matrix.
+
+00:36:52.610 --> 00:36:55.270
+Can you remind me,
+
+00:36:55.270 --> 00:36:58.910
+if I want to multiply matrix
+
+00:36:58.910 --> 00:37:12.850
+A
+
+00:37:12.850 --> 00:37:13.850
+by
+
+00:37:14.090 --> 00:37:16.530
+And that product of Ax,
+
+00:37:16.530 --> 00:37:19.150
+so far today we've really just
+talked about its shape, but the
+
+00:37:19.150 --> 00:37:22.290
+product itself, there were two
+ways of interpreting it.
+
+00:37:22.290 --> 00:37:25.050
+What was the first way, the way
+that made it easy to calculate
+
+00:37:25.050 --> 00:37:26.050
+things?
+
+00:37:26.230 --> 00:37:29.330
+I needed to multiply A by x.
+What would I do?
+
+00:37:29.330 --> 00:37:29.810
+Yeah?
+
+00:37:29.810 --> 00:37:32.930
+Make a combination of all the
+columns A.
+
+00:37:32.930 --> 00:37:34.670
+That's the second way.
+Let's think of that as the more
+
+00:37:34.670 --> 00:37:36.730
+conceptual, which is what we're
+getting to.
+
+00:37:36.730 --> 00:37:39.850
+But if I just needed to do the
+calculation quickly,
+
+00:37:39.850 --> 00:37:43.930
+how would I multiply a by x?
+
+00:37:43.930 --> 00:37:44.930
+Yeah.
+
+00:37:46.890 --> 00:37:47.890
+Yeah.
+
+00:37:48.070 --> 00:37:53.270
+The way I would do the
+calculation is to take x
+
+00:37:53.270 --> 00:37:58.520
+and slide it down a taking the
+dot product with each row.
+
+00:37:58.690 --> 00:38:02.150
+So the dot product of x with a's
+first row, if you think of it as
+
+00:38:02.150 --> 00:38:03.170
+a column vector,
+
+00:38:03.170 --> 00:38:05.530
+that would be the first entry in
+the output of ax.
+
+00:38:05.530 --> 00:38:08.310
+And then the dot product of x
+with the second row of a,
+
+00:38:08.310 --> 00:38:10.530
+that would be the second entry
+in the output.
+
+00:38:10.530 --> 00:38:12.290
+So that's true.
+
+00:38:12.290 --> 00:38:14.510
+But then there's the more
+conceptual interpretation, as
+
+00:38:14.510 --> 00:38:17.590
+you mentioned, which is, can you
+say it again?
+
+00:38:17.590 --> 00:38:20.550
+A linear combination of all of
+a's columns,
+
+00:38:20.550 --> 00:38:23.470
+the coefficients given with
+that.
+
+00:38:23.470 --> 00:38:24.070
+Exactly.
+
+00:38:24.070 --> 00:38:26.390
+The way that you should think
+about this conceptually
+
+00:38:26.390 --> 00:38:29.490
+is that all we are doing is
+taking a linear combination of
+
+00:38:29.490 --> 00:38:31.250
+a's three columns,
+
+00:38:31.250 --> 00:38:33.750
+which remember is just something
+times the first column plus
+
+00:38:33.750 --> 00:38:35.910
+something times the second
+column plus something times the
+
+00:38:35.910 --> 00:38:38.990
+third column where those some
+things are just coming from the
+
+00:38:38.990 --> 00:38:40.150
+numbers in X
+
+00:38:40.150 --> 00:38:42.310
+So what what is this result?
+
+00:38:42.310 --> 00:38:43.810
+It's two
+
+00:38:44.470 --> 00:38:49.690
+Times the first column five zero
+three six one
+
+00:38:51.770 --> 00:38:55.520
+That's the same as this
+
+00:38:56.790 --> 00:38:58.290
+Plus zero
+
+00:39:00.530 --> 00:39:04.280
+Times the second column three
+negative one four two zero
+
+00:39:05.790 --> 00:39:10.290
+plus negative 1 times the third
+column.
+
+00:39:11.450 --> 00:39:11.790
+2,
+
+00:39:11.790 --> 00:39:12.850
+1, negative 1,
+
+00:39:12.850 --> 00:39:14.350
+4, 1.
+
+00:39:15.030 --> 00:39:16.030
+Okay?
+
+00:39:23.170 --> 00:39:24.670
+So remember,
+
+00:39:24.690 --> 00:39:30.630
+it's important to never forget.
+that Ax is just
+
+00:39:30.630 --> 00:39:32.910
+a linear
+
+00:39:32.910 --> 00:39:37.950
+combination
+
+00:39:37.950 --> 00:39:42.410
+of A's columns.
+
+00:39:47.070 --> 00:39:52.910
+So what was the term before
+midterm one that we
+
+00:39:52.910 --> 00:39:56.710
+used for the set of all linear
+combinations of a given
+
+00:39:56.710 --> 00:39:58.550
+collection of vectors.
+
+00:39:58.550 --> 00:40:00.610
+What was that again?
+
+00:40:00.610 --> 00:40:03.710
+Set of all linear combinations
+of some vectors that I give.
+
+00:40:03.710 --> 00:40:06.710
+What was that called?
+
+00:40:08.090 --> 00:40:09.090
+Yeah.
+
+00:40:09.110 --> 00:40:11.590
+Yeah, it's the span of those
+vectors.
+
+00:40:11.590 --> 00:40:13.950
+The span of a collection of
+vectors is the set of all of
+
+00:40:13.950 --> 00:40:16.150
+their linear combinations.
+
+00:40:16.150 --> 00:40:18.550
+So it seems natural to consider,
+
+00:40:18.550 --> 00:40:22.590
+well, what is the span of the
+columns of a matrix?
+
+00:40:22.590 --> 00:40:26.970
+But what we're seeing is that
+the span of the columns of a
+
+00:40:26.970 --> 00:40:29.530
+matrix is really just asking,
+
+00:40:29.530 --> 00:40:32.910
+what are all possible outputs I
+could get
+
+00:40:32.910 --> 00:40:36.430
+when I multiply A by a vector?
+
+00:40:36.430 --> 00:40:38.710
+Because multiplying A by a
+vector
+
+00:40:38.710 --> 00:40:41.710
+is just taking a linear
+combination of the matrix's
+
+00:40:41.710 --> 00:40:42.650
+columns.
+
+00:40:42.650 --> 00:40:45.290
+So Ax is a linear combination of
+A's columns.
+
+00:40:45.290 --> 00:40:48.970
+So the span of A's columns is
+just the set of possible outputs
+
+00:40:48.970 --> 00:40:50.470
+of Ax.
+
+00:40:50.810 --> 00:40:52.810
+Do we see the equivalence
+between those things?
+
+00:40:52.810 --> 00:40:55.690
+The span of A's columns is the
+same as all possible vectors
+
+00:40:55.690 --> 00:40:59.050
+that could be made by taking A
+and multiplying it by a vector
+
+00:40:59.050 --> 00:41:00.050
+x.
+
+00:41:01.290 --> 00:41:03.730
+Let me write that down.
+
+00:41:03.730 --> 00:41:07.990
+And so the term for this new
+idea, which is not really new,
+
+00:41:07.990 --> 00:41:10.830
+it's just new because it
+involves a matrix, is called the
+
+00:41:10.830 --> 00:41:16.470
+column space of a matrix A,
+
+00:41:18.250 --> 00:41:23.930
+which I'll denote with this
+symbol,
+
+00:41:26.950 --> 00:41:29.810
+sort of like the function
+C-O-L-S-P,
+
+00:41:29.810 --> 00:41:31.330
+called an A,
+
+00:41:31.330 --> 00:41:37.330
+is the span of A's columns.
+
+00:41:41.330 --> 00:41:43.910
+Another way of thinking about it
+
+00:41:43.910 --> 00:41:48.310
+is it's the set of all possible
+
+00:41:48.310 --> 00:41:51.750
+linear combinations
+
+00:41:59.670 --> 00:42:02.530
+Now the way of thinking about it
+is that it's the set of all
+
+00:42:02.530 --> 00:42:04.310
+possible outputs
+
+00:42:11.330 --> 00:42:17.090
+of A times x for
+
+00:42:17.090 --> 00:42:20.870
+all possible x's.
+
+00:42:21.790 --> 00:42:24.390
+So the column space of a matrix,
+
+00:42:24.390 --> 00:42:28.730
+think of it as the reach of the
+columns of that matrix.
+
+00:42:28.730 --> 00:42:31.430
+It's the same thing as thinking
+about all possible vectors you
+
+00:42:31.430 --> 00:42:35.930
+could get by taking the matrix
+and multiplying it by a vector.
+
+00:42:40.070 --> 00:42:43.270
+Questions with these equivalent
+ways of thinking about this new
+
+00:42:43.270 --> 00:42:44.270
+idea,
+
+00:42:44.730 --> 00:42:47.930
+the column space of a matrix?
+
+00:42:47.930 --> 00:42:48.930
+Again,
+
+00:42:49.150 --> 00:42:53.050
+it's really just a new term for
+an idea that you are already
+
+00:42:53.050 --> 00:42:54.550
+familiar with.
+
+00:42:59.330 --> 00:43:00.270
+Okay,
+
+00:43:00.270 --> 00:43:03.670
+so let me give you one more
+general definition here,
+
+00:43:03.670 --> 00:43:06.550
+or piece of notation, and then
+have you work on an example
+
+00:43:06.550 --> 00:43:07.550
+here.
+
+00:43:08.950 --> 00:43:12.250
+Suppose A is an n by d matrix,
+
+00:43:12.250 --> 00:43:18.030
+and let's say its columns are
+the vectors A1,
+
+00:43:19.450 --> 00:43:24.530
+A2 through a how many columns
+does a have
+
+00:43:24.530 --> 00:43:29.630
+how many columns does this a
+have
+
+00:43:29.630 --> 00:43:35.030
+not a trick question how many
+columns
+
+00:43:35.030 --> 00:43:40.850
+yeah deep good now the reason
+I'm
+
+00:43:40.850 --> 00:43:44.210
+writing the column indices as
+superscripts instead of
+
+00:43:44.210 --> 00:43:48.310
+subscripts is as I talked about
+before when I have a subscript
+
+00:43:48.310 --> 00:43:51.670
+usually it indexes the row first
+and than the column.
+
+00:43:51.670 --> 00:43:54.770
+A2, 3 is row 2, column 3,
+
+00:43:54.770 --> 00:43:57.730
+which means if I write A2,
+
+00:43:57.730 --> 00:43:59.430
+you're thinking about A's second
+row.
+
+00:43:59.430 --> 00:44:01.890
+So to get you to think about the
+column instead, I've written
+
+00:44:01.890 --> 00:44:04.140
+them as superscripts.
+
+00:44:05.850 --> 00:44:11.230
+So each Ai is column
+
+00:44:11.230 --> 00:44:15.010
+i of A.
+
+00:44:16.270 --> 00:44:21.290
+And these columns, how many
+things are in each one?
+
+00:44:23.330 --> 00:44:25.350
+Each of these column vectors,
+
+00:44:25.350 --> 00:44:26.110
+the AIs,
+
+00:44:26.110 --> 00:44:26.970
+they're in R1.
+
+00:44:26.970 --> 00:44:27.650
+Yeah,
+
+00:44:27.650 --> 00:44:28.650
+good.
+
+00:44:30.170 --> 00:44:31.130
+Okay,
+
+00:44:31.130 --> 00:44:33.790
+so the column space of A,
+
+00:44:33.790 --> 00:44:38.450
+you can think of as the span of
+these D vectors.
+
+00:44:38.450 --> 00:44:42.200
+in the span of A1,
+
+00:44:42.650 --> 00:44:43.650
+A2,
+
+00:44:44.630 --> 00:44:46.130
+through AD.
+
+00:44:48.110 --> 00:44:51.110
+Now here's the question.
+
+00:44:51.130 --> 00:44:54.130
+What is this a subspace of?
+
+00:44:54.130 --> 00:44:58.630
+It's a subspace of R what?
+
+00:45:13.730 --> 00:45:15.350
+It's a subspace of R something,
+
+00:45:15.350 --> 00:45:18.350
+what is the something?
+
+00:45:19.190 --> 00:45:20.190
+Yeah?
+
+00:45:23.290 --> 00:45:24.550
+So good.
+So I think that's why there's
+
+00:45:24.550 --> 00:45:27.130
+some confusion here.
+What it is a subspace of has
+
+00:45:27.130 --> 00:45:30.090
+nothing to do with whether
+they're linearly independent or
+
+00:45:30.090 --> 00:45:31.030
+not.
+
+00:45:31.030 --> 00:45:33.630
+It is always a subspace of the
+same thing.
+
+00:45:33.630 --> 00:45:35.890
+What you're thinking about is
+the dimension of the subspace,
+
+00:45:35.890 --> 00:45:38.110
+which I didn't ask about yet.
+
+00:45:38.110 --> 00:45:40.810
+So what is it a subspace of?
+Regardless of its dimension,
+
+00:45:40.810 --> 00:45:43.470
+what is it a subspace of?
+
+00:45:43.470 --> 00:45:45.270
+The vectors are in Rn?
+
+00:45:45.270 --> 00:45:45.930
+Yeah.
+
+00:45:45.930 --> 00:45:47.610
+So Rn? Good.
+
+00:45:47.610 --> 00:45:49.250
+That's all I was asking.
+
+00:45:49.250 --> 00:45:51.730
+This is a subspace of Rn.
+
+00:45:51.730 --> 00:45:54.150
+The question of what is the
+dimension of that subspace,
+
+00:45:54.150 --> 00:45:58.650
+Well, that's one we're going to
+look at now in some examples.
+
+00:46:02.130 --> 00:46:03.010
+OK,
+
+00:46:03.010 --> 00:46:06.010
+so let's have you work on an
+example.
+
+00:46:06.010 --> 00:46:08.210
+Let's go back to that matrix A.
+
+00:46:08.210 --> 00:46:12.710
+Let me write it out without
+those highlights.
+
+00:46:15.090 --> 00:46:16.030
+5,
+
+00:46:16.030 --> 00:46:17.150
+0, 3,
+
+00:46:17.150 --> 00:46:18.650
+6, 1,
+
+00:46:18.810 --> 00:46:20.010
+3,
+
+00:46:20.230 --> 00:46:21.270
+negative 1,
+
+00:46:21.270 --> 00:46:21.870
+4,
+
+00:46:21.870 --> 00:46:23.370
+2, 0,
+
+00:46:24.290 --> 00:46:29.090
+2, 1, negative 1, 4, 1.
+
+00:46:30.490 --> 00:46:34.990
+I'm going to give you several
+tasks I want you to identify.
+
+00:46:35.830 --> 00:46:41.710
+First, I want you to find the
+dimension of the column space
+
+00:46:41.710 --> 00:46:43.210
+of A.
+
+00:46:45.330 --> 00:46:50.250
+Then, I want you to think about
+and find the dimension of the
+
+00:46:50.250 --> 00:46:54.000
+column space of A transpose.
+
+00:47:03.590 --> 00:47:07.250
+If the column space is a
+subspace of R5,
+
+00:47:07.250 --> 00:47:11.750
+the column space of A transpose
+is a subspace of what?
+
+00:47:15.870 --> 00:47:17.510
+R3.
+It's a subspace of R3.
+
+00:47:18.430 --> 00:47:21.650
+Another name for the column
+space of A transpose
+
+00:47:21.650 --> 00:47:23.900
+could be what?
+
+00:47:24.050 --> 00:47:26.370
+Instead of calling it the column
+space of A transpose, what could
+
+00:47:26.370 --> 00:47:27.730
+I also call it?
+
+00:47:27.730 --> 00:47:28.730
+Yeah?
+
+00:47:28.950 --> 00:47:33.450
+Yeah, the row space of A.
+
+00:47:33.450 --> 00:47:35.810
+We're just going to call it the
+column space of A transpose,
+
+00:47:35.810 --> 00:47:39.070
+just so that any formulas or
+definitions that involve the
+
+00:47:39.070 --> 00:47:42.410
+column space can just apply
+directly.
+
+00:47:42.410 --> 00:47:44.510
+So we're not going to use a
+symbol for the row space, we're
+
+00:47:44.510 --> 00:47:47.330
+just going to call it the column
+space of A transpose.
+
+00:47:47.330 --> 00:47:47.610
+Okay,
+
+00:47:47.610 --> 00:47:52.210
+so what I want you to do is take
+some time and identify both of
+
+00:47:52.210 --> 00:47:53.710
+these things.
+
+00:47:57.810 --> 00:48:00.090
+And we'll give you some time to
+work on this while doing
+
+00:48:00.090 --> 00:48:05.310
+attendance and it's 11 18.
+
+00:48:05.510 --> 00:48:09.010
+Why don't we come back at 11 23?
+
+00:48:09.010 --> 00:48:11.650
+Identify the dimension of the
+column space of a and the column
+
+00:48:11.650 --> 00:48:14.510
+space of a transpose and also do
+attendance.
+
+00:48:14.510 --> 00:48:19.010
+Let me open up the form
+
+00:48:23.330 --> 00:48:25.580
+There you go.
+
+00:48:31.050 --> 00:48:33.050
+But then, Scott, I want you to
+work on this with other people.
+
+00:48:33.050 --> 00:48:38.300
+I don't want you to struggle on
+your own.
+
+00:49:33.110 --> 00:49:38.650
+I'm glad you brought that up
+because I still have
+
+00:49:38.650 --> 00:49:43.650
+like left-to-right bias where
+like if you wrote it the other
+
+00:49:43.650 --> 00:49:46.010
+order I would have totally saw
+that I don't know I I would have
+
+00:49:46.010 --> 00:49:49.890
+picked up on that if one of the
+things I have to work on is
+
+00:49:49.890 --> 00:49:50.890
+like,
+
+00:49:53.190 --> 00:49:56.950
+if you're claiming to use the
+redo button,
+
+00:49:56.950 --> 00:50:02.590
+and you're trying to have an AI
+button,
+
+00:50:05.810 --> 00:50:07.610
+because of that now,
+
+00:50:07.610 --> 00:50:11.360
+like the tutorials keep going
+back up.
+
+00:50:11.590 --> 00:50:12.590
+Okay,
+
+00:50:12.630 --> 00:50:16.130
+let's go back to the demo.
+So, we know that there's at
+
+00:50:16.130 --> 00:50:17.690
+least one that's a linear
+combination,
+
+00:50:17.690 --> 00:50:21.270
+so the dimensions at most two
+will help you if you know
+
+00:50:21.270 --> 00:50:22.550
+they're a linear combination,
+
+00:50:22.550 --> 00:50:23.350
+right?
+
+00:50:23.350 --> 00:50:25.410
+Yeah, and then the other two are
+linearly related, so we can just
+
+00:50:25.410 --> 00:50:27.870
+say the dimensions two here.
+
+00:50:27.870 --> 00:50:30.970
+Does everyone check in? I think
+there's an identity where two
+
+00:50:30.970 --> 00:50:34.330
+has to be the same dimension,
+right, as the rank, but let's
+
+00:50:34.330 --> 00:50:37.970
+pretend we don't know that.
+
+00:50:37.970 --> 00:50:42.470
+So if we're looking at these,
+
+00:50:44.310 --> 00:50:46.560
+we can say,
+
+00:50:46.850 --> 00:50:49.910
+these two are linearly
+independent,
+
+00:50:50.930 --> 00:50:51.930
+right?
+
+00:50:56.490 --> 00:50:57.810
+Yeah.
+
+00:51:02.790 --> 00:51:03.790
+Yeah.
+Okay,
+
+00:51:06.090 --> 00:51:11.930
+so then we eliminate these two,
+We should
+
+00:51:11.930 --> 00:51:13.190
+be able to,
+
+00:51:13.190 --> 00:51:17.330
+if period is less than 5,000
+games.
+
+00:51:17.330 --> 00:51:20.010
+Keep it how it is, 5 minus 3 is
+2.
+
+00:51:20.010 --> 00:51:22.090
+So there's no, this has to be.
+
+00:51:22.090 --> 00:51:25.090
+This has to be.
+
+00:51:28.350 --> 00:51:31.370
+I'm just saying that these two
+are going to depend on each
+
+00:51:31.370 --> 00:51:31.790
+other.
+
+00:51:31.790 --> 00:51:33.970
+90 seconds or so.
+Nearly independent of
+
+00:51:33.970 --> 00:51:34.970
+everything.
+Keep discussing.
+
+00:51:34.970 --> 00:51:36.550
+I just started.
+
+00:51:36.550 --> 00:51:37.510
+You might as well.
+
+00:51:37.510 --> 00:51:38.990
+If I know that you can win,
+you're probably just the top
+
+00:51:38.990 --> 00:51:39.990
+one.
+
+00:51:40.430 --> 00:51:41.430
+Yeah.
+
+00:51:42.070 --> 00:51:45.820
+I'm going to do three.
+
+00:51:47.010 --> 00:51:52.730
+How do you get to the top? It's
+called the rank.
+
+00:51:52.730 --> 00:51:53.710
+Three.
+
+00:51:53.710 --> 00:51:54.410
+Two.
+
+00:51:54.410 --> 00:51:55.930
+Yeah.
+Uh huh.
+
+00:52:01.610 --> 00:52:05.110
+One.
+
+00:52:21.950 --> 00:52:25.690
+So if you take negative for the
+first one, you get zero for
+
+00:52:25.690 --> 00:52:28.410
+negative.
+Okay, so then it's in front of
+
+00:52:28.410 --> 00:52:31.130
+the finger six one.
+Take three of the second one.
+
+00:52:31.130 --> 00:52:34.880
+Three of the third one.
+
+00:52:36.170 --> 00:52:41.170
+I think it's three.
+
+00:52:44.570 --> 00:52:47.770
+Oh, when I mean the first one,
+it means zero, negative one,
+
+00:52:47.770 --> 00:52:48.330
+one.
+
+00:52:48.330 --> 00:52:49.290
+Oh,
+
+00:52:49.290 --> 00:52:50.450
+oh.
+I didn't mean very unclear.
+
+00:52:50.630 --> 00:52:51.790
+I apologize.
+Yeah, yeah,
+
+00:52:51.790 --> 00:52:52.790
+yeah.
+
+00:52:53.430 --> 00:52:56.830
+Isn't that the top linearly
+independent factor that we've
+
+00:52:56.830 --> 00:52:57.830
+assigned?
+
+00:52:58.030 --> 00:52:59.030
+OK.
+
+00:52:59.470 --> 00:53:02.830
+So let's start by taking up the
+dimension of the column space of
+
+00:53:02.830 --> 00:53:03.350
+A.
+
+00:53:03.350 --> 00:53:05.610
+We'll get to the dimension of
+the column space of A transpose
+
+00:53:05.610 --> 00:53:09.360
+in just a little bit.
+
+00:53:10.910 --> 00:53:13.250
+Firstly, conceptually, can you
+remind me what is the column
+
+00:53:13.250 --> 00:53:15.500
+space of A?
+
+00:53:17.630 --> 00:53:20.530
+What is the column space of A if
+you had to describe it to
+
+00:53:20.530 --> 00:53:23.750
+someone who didn't come to
+lecture today?
+
+00:53:23.750 --> 00:53:24.750
+Yeah.
+
+00:53:25.210 --> 00:53:26.370
+Yeah, go for it.
+
+00:53:26.370 --> 00:53:29.490
+The span of the subspace.
+
+00:53:29.490 --> 00:53:32.030
+So close.
+It's the span of the columns,
+
+00:53:32.270 --> 00:53:37.520
+which is the set of all linear
+combinations of the columns.
+
+00:53:38.410 --> 00:53:42.210
+So what we're asking is, find
+the dimension
+
+00:53:42.210 --> 00:53:45.350
+of the subspace spanned by the
+columns of A.
+
+00:53:45.350 --> 00:53:47.110
+And that could have been a
+question on midterm 1.
+
+00:53:47.110 --> 00:53:49.730
+Right? That doesn't really
+involve anything new about
+
+00:53:49.730 --> 00:53:50.730
+today.
+
+00:53:51.210 --> 00:53:53.710
+Now, what do you notice about
+the columns?
+
+00:53:53.710 --> 00:53:56.170
+The numbers are chosen very
+particularly.
+
+00:53:56.170 --> 00:53:58.650
+Can you identify any
+relationships between the
+
+00:53:58.650 --> 00:53:59.650
+columns?
+
+00:54:02.750 --> 00:54:03.630
+Yeah?
+
+00:54:03.630 --> 00:54:07.230
+When is the linear combination
+of C2 plus C3?
+
+00:54:07.230 --> 00:54:07.610
+Yeah,
+
+00:54:07.610 --> 00:54:09.670
+the first column is just the
+second plus the third.
+
+00:54:09.670 --> 00:54:11.110
+3 plus 2 is 5.
+
+00:54:11.110 --> 00:54:12.550
+Negative 1 plus 1 is 0.
+
+00:54:12.550 --> 00:54:13.930
+4 minus 1 is 3.
+
+00:54:13.930 --> 00:54:16.450
+2 plus 4 is 6.
+And 0 plus 1 is 1.
+
+00:54:16.450 --> 00:54:18.070
+Do you agree with that?
+
+00:54:18.070 --> 00:54:18.390
+OK,
+
+00:54:18.390 --> 00:54:22.510
+so if we call these column 1,
+
+00:54:22.510 --> 00:54:23.750
+column 2,
+
+00:54:23.750 --> 00:54:25.710
+and column 3,
+
+00:54:25.710 --> 00:54:30.960
+column 1 is equal to column 2
+plus column 3,
+
+00:54:32.650 --> 00:54:34.670
+which means there's lots of
+linear dependence relationships
+
+00:54:34.670 --> 00:54:37.870
+you could say about the columns.
+You could have said column 3 is
+
+00:54:37.870 --> 00:54:40.350
+equal to column 1 minus column
+2, which just comes from
+
+00:54:40.350 --> 00:54:42.130
+rearranging this equation.
+
+00:54:42.130 --> 00:54:45.050
+However you put it,
+
+00:54:45.050 --> 00:54:49.210
+you only need two of the three
+columns
+
+00:54:49.210 --> 00:54:52.430
+to be able to create the third.
+
+00:54:52.430 --> 00:54:56.990
+What that means is the column
+space is a two-dimensional
+
+00:54:56.990 --> 00:54:58.950
+subspace of R5.
+
+00:54:58.950 --> 00:55:02.010
+You look at all possible linear
+combinations of the columns,
+
+00:55:02.010 --> 00:55:05.760
+they live in a two-dimensional
+slice of R5.
+
+00:55:06.230 --> 00:55:08.830
+Do we agree with that?
+
+00:55:08.830 --> 00:55:09.830
+OK.
+
+00:55:12.370 --> 00:55:16.690
+So one column is redundant.
+
+00:55:22.270 --> 00:55:25.910
+And so we'll say the column
+space
+
+00:55:25.910 --> 00:55:29.130
+is a two-dimensional
+
+00:55:29.130 --> 00:55:32.510
+subspace
+
+00:55:32.510 --> 00:55:36.410
+of R5.
+
+00:55:37.970 --> 00:55:38.250
+OK,
+
+00:55:38.250 --> 00:55:39.190
+good.
+
+00:55:39.190 --> 00:55:41.470
+Again, we'll get back to the
+column space of A transpose in a
+
+00:55:41.470 --> 00:55:42.470
+moment,
+
+00:55:42.950 --> 00:55:47.430
+just so it's a little more clear
+on what we mean by this column
+
+00:55:47.430 --> 00:55:49.150
+space to be two-dimensional,
+
+00:55:49.150 --> 00:55:52.230
+is that you can think of it as
+the span of two linearly
+
+00:55:52.230 --> 00:55:53.410
+independent vectors.
+
+00:55:53.410 --> 00:55:54.450
+Now, which two?
+
+00:55:54.450 --> 00:55:56.450
+There are infinitely many
+answers to this.
+
+00:55:56.450 --> 00:55:56.970
+And remember,
+
+00:55:56.970 --> 00:55:59.850
+can you remind me, what's the
+name for a set of linearly
+
+00:55:59.850 --> 00:56:02.710
+independent vectors who spans
+the entire subspace?
+
+00:56:02.710 --> 00:56:05.690
+What was the word for that?
+
+00:56:05.690 --> 00:56:06.390
+Yeah.
+
+00:56:06.390 --> 00:56:07.890
+Basis.
+Yeah, it's a basis for the
+
+00:56:07.890 --> 00:56:08.890
+subspace.
+Okay,
+
+00:56:09.150 --> 00:56:12.350
+so how many basis sees how many
+bases are there for the column
+
+00:56:12.350 --> 00:56:15.090
+space of a infinitely many,
+right?
+
+00:56:15.090 --> 00:56:18.990
+Let's write one down one could
+be three negative one four two
+
+00:56:18.990 --> 00:56:20.490
+zero and
+
+00:56:22.270 --> 00:56:26.130
+Two one negative one four one
+that's a basis for the column
+
+00:56:26.130 --> 00:56:27.130
+space
+
+00:56:28.490 --> 00:56:32.310
+But it's also equal to the span
+of lots of other pairs of
+
+00:56:32.310 --> 00:56:37.930
+vectors, okay Let me just write
+that
+
+00:56:37.930 --> 00:56:38.930
+here.
+
+00:56:41.630 --> 00:56:43.470
+One of infinitely
+
+00:56:43.470 --> 00:56:48.070
+many
+
+00:56:48.070 --> 00:56:50.810
+pieces.
+
+00:56:53.390 --> 00:56:56.750
+What questions do we have with
+why the column space of A here
+
+00:56:56.750 --> 00:56:59.750
+is two dimensional? No.
+
+00:57:01.690 --> 00:57:02.690
+Two-dimensional,
+
+00:57:03.230 --> 00:57:06.230
+like it's a two-dimensional
+subspace of R5.
+
+00:57:08.650 --> 00:57:12.450
+Are we clear on what that means?
+
+00:57:12.450 --> 00:57:13.250
+OK.
+
+00:57:13.250 --> 00:57:16.330
+So it turns out that the
+dimension of the column space of
+
+00:57:16.330 --> 00:57:19.170
+a matrix has an important name,
+
+00:57:19.170 --> 00:57:23.850
+which is that it's the rank of a
+matrix.
+
+00:57:23.850 --> 00:57:29.670
+So the rank of the matrix A is
+just a shorthand for the
+
+00:57:29.670 --> 00:57:34.170
+dimension of the column space of
+A.
+
+00:57:34.410 --> 00:57:37.550
+So a more intuitive way to think
+about it is that it's sort of
+
+00:57:37.550 --> 00:57:41.570
+like the number of linearly
+independent
+
+00:57:41.570 --> 00:57:44.470
+columns.
+
+00:57:54.550 --> 00:57:58.590
+Now, calling it the number of
+linearly independent columns
+
+00:57:58.590 --> 00:58:01.830
+is a little misleading, because
+if you ask, OK, how many
+
+00:58:01.830 --> 00:58:06.310
+linearly independent columns
+does this matrix have any one of
+
+00:58:06.310 --> 00:58:10.390
+these three columns could be
+included in a basis okay so it's
+
+00:58:10.390 --> 00:58:11.390
+not
+
+00:58:11.590 --> 00:58:15.070
+like linear independence is a
+binary yes or no yes or no yes
+
+00:58:15.070 --> 00:58:17.350
+or no it's not quite how it
+works or linear independence is
+
+00:58:17.350 --> 00:58:21.010
+about a collection of vectors
+we're really asking is what is
+
+00:58:21.010 --> 00:58:23.670
+the max number of linearly
+independent vectors you could
+
+00:58:23.670 --> 00:58:27.450
+pull out at the same time okay
+and what I found is that people
+
+00:58:27.450 --> 00:58:30.210
+like when I say number of
+linearly independent vectors
+
+00:58:30.210 --> 00:58:32.690
+They that's what they understand
+this to me.
+
+00:58:32.690 --> 00:58:36.750
+So do we are we clear on this
+matrix as having two linearly
+
+00:58:36.750 --> 00:58:38.890
+independent column vectors?
+
+00:58:38.890 --> 00:58:39.290
+Okay,
+
+00:58:39.290 --> 00:58:42.230
+which two well, there's no one
+answer to that any pair of them
+
+00:58:42.230 --> 00:58:43.610
+would work here
+
+00:58:43.610 --> 00:58:44.350
+Okay,
+
+00:58:44.350 --> 00:58:46.890
+so the rank of this matrix is
+two
+
+00:58:46.890 --> 00:58:49.350
+And what we're gonna see
+throughout the remainder of the
+
+00:58:49.350 --> 00:58:52.650
+semester is that the rank of a
+matrix is the single most
+
+00:58:52.650 --> 00:58:54.150
+important number
+
+00:58:54.270 --> 00:58:57.510
+Associated with the matrix more
+so than its number of rows or
+
+00:58:57.510 --> 00:59:02.450
+columns The rank of a matrix
+tells you with one number how
+
+00:59:02.450 --> 00:59:05.310
+much information is stored in
+the matrix
+
+00:59:05.310 --> 00:59:10.560
+Okay, like how much detail is in
+the matrix?
+
+00:59:10.690 --> 00:59:14.310
+We'll say this is important
+
+00:59:14.310 --> 00:59:16.560
+Don't forget this
+
+00:59:19.910 --> 00:59:22.160
+It's the most
+
+00:59:24.230 --> 00:59:25.730
+Important number
+
+00:59:30.330 --> 00:59:33.330
+associated with a matrix.
+
+00:59:35.570 --> 00:59:36.430
+OK,
+
+00:59:36.430 --> 00:59:39.430
+so as an aside,
+
+00:59:39.970 --> 00:59:42.850
+I have another short activity
+for you.
+
+00:59:42.850 --> 00:59:48.630
+What I want you to do is think
+of a 3 by 4
+
+00:59:48.630 --> 00:59:49.630
+matrix
+
+00:59:51.930 --> 00:59:56.430
+with first a rank of 1,
+
+00:59:59.730 --> 01:00:04.010
+second a rank of 2,
+
+01:00:05.710 --> 01:00:08.790
+third a rank of 3,
+
+01:00:08.790 --> 01:00:14.040
+and then fourth a rank of 4.
+
+01:00:18.850 --> 01:00:21.750
+I'll give you a couple of
+minutes to think about this.
+
+01:00:21.750 --> 01:00:24.630
+I want you to think of a 3 by 4
+matrix, which is a matrix with
+
+01:00:24.630 --> 01:00:28.380
+three rows and four columns
+
+01:00:30.890 --> 01:00:33.610
+in each of these categories.
+
+01:00:33.610 --> 01:00:36.390
+What I'll say is work smarter,
+not harder.
+
+01:00:36.390 --> 01:00:40.140
+That is, there is infinitely
+many possible answers for these.
+
+01:00:40.270 --> 01:00:42.050
+I want you to just think of one.
+Yes,
+
+01:00:42.050 --> 01:00:45.730
+so the rank is like the number
+of vectors in the basis for the
+
+01:00:45.730 --> 01:00:47.230
+column space.
+Yes.
+
+01:00:47.230 --> 01:00:48.230
+Yes
+
+01:00:49.830 --> 01:00:53.810
+The rank is indeed the number of
+vectors in any basis for the
+
+01:00:53.810 --> 01:00:55.310
+column space
+
+01:00:58.190 --> 01:01:00.930
+Discuss discuss for a minute
+with the people near you and
+
+01:01:00.930 --> 01:01:05.430
+then we'll take up what you
+thought
+
+01:01:11.310 --> 01:01:11.310
+I'm going
+
+01:01:11.310 --> 01:01:22.670
+to
+
+01:01:22.670 --> 01:01:28.530
+write a piece of paper to write
+him down, but...
+
+01:01:28.530 --> 01:01:58.510
+They're
+
+01:01:58.510 --> 01:01:58.530
+all in
+
+01:01:58.530 --> 01:02:27.810
+but
+
+01:02:27.810 --> 01:02:29.510
+you can't get Oh yeah,
+
+01:02:29.510 --> 01:02:31.760
+what was that?
+
+01:02:34.370 --> 01:02:38.120
+Okay, let's see what you
+thought.
+
+01:02:38.410 --> 01:02:40.910
+Can someone give me a three by
+four matrix?
+
+01:02:40.910 --> 01:02:43.050
+Again, this is a matrix with
+three rows and four columns
+
+01:02:43.050 --> 01:02:45.030
+whose rank is what?
+
+01:02:45.030 --> 01:02:46.010
+First,
+
+01:02:46.010 --> 01:02:47.770
+you know, give me your matrix
+and then tell me how you thought
+
+01:02:47.770 --> 01:02:48.570
+of it.
+
+01:02:48.570 --> 01:02:50.250
+The matrix with rank one,
+
+01:02:50.250 --> 01:02:52.270
+three rows, four columns.
+How'd you think of a rank one
+
+01:02:52.270 --> 01:02:53.670
+matrix that
+
+01:02:53.670 --> 01:02:56.850
+has three rows and four columns?
+How'd you do it? Yeah? I just
+
+01:02:56.850 --> 01:02:59.130
+did 1, 1, 1, 1, 1, 1, 1.
+
+01:02:59.130 --> 01:03:00.390
+I'll make it 2 points.
+
+01:03:00.390 --> 01:03:00.910
+OK,
+
+01:03:00.910 --> 01:03:03.160
+that's totally fine.
+
+01:03:03.770 --> 01:03:06.070
+Just to make it a little more
+interesting, why don't we do 1,
+
+01:03:06.070 --> 01:03:08.150
+1, 1, 2, 2, 2,
+
+01:03:08.150 --> 01:03:10.150
+7, 7, 7,
+
+01:03:10.150 --> 01:03:12.400
+4, 4, 4.
+
+01:03:12.650 --> 01:03:13.350
+OK?
+
+01:03:13.350 --> 01:03:16.370
+And when you thought of your
+matrix, what was the criteria
+
+01:03:16.370 --> 01:03:20.270
+you were looking for? They all
+need to be basically identical.
+
+01:03:20.270 --> 01:03:21.330
+Maybe a scalar one.
+
+01:03:21.330 --> 01:03:24.970
+Yeah, so the key is that all of
+the columns here have to be
+
+01:03:24.970 --> 01:03:27.050
+scalar multiples of each other.
+
+01:03:27.050 --> 01:03:29.710
+Why? Well, it's because the rank
+being one
+
+01:03:29.710 --> 01:03:33.150
+tells you the dimension of the
+column space has to be one,
+
+01:03:33.150 --> 01:03:39.010
+which means all of the columns
+must live along the same line,
+
+01:03:39.430 --> 01:03:42.010
+meaning they all must be scalar
+multiples of each other.
+
+01:03:42.010 --> 01:03:42.870
+Now,
+
+01:03:42.870 --> 01:03:46.970
+we happen to also use an example
+where within any one vector,
+
+01:03:46.970 --> 01:03:50.010
+all the numbers are the same,
+but that wasn't necessary.
+
+01:03:50.010 --> 01:03:53.830
+We could have made it more
+complicated, And like this would
+
+01:03:53.830 --> 01:03:55.570
+have been fine,
+
+01:03:55.570 --> 01:03:56.690
+1, 2, 3,
+
+01:03:56.690 --> 01:03:57.270
+2,
+
+01:03:57.270 --> 01:03:58.270
+4, 6,
+
+01:03:58.270 --> 01:04:00.310
+7, 14, 21,
+
+01:04:00.310 --> 01:04:02.010
+4, 8, 12.
+
+01:04:02.010 --> 01:04:04.770
+This is also a rank one matrix
+because all of its columns are
+
+01:04:04.770 --> 01:04:07.350
+scalar multiples of each other.
+
+01:04:07.350 --> 01:04:12.600
+So it didn't have to look as
+simple as our previous examples.
+
+01:04:13.310 --> 01:04:17.230
+Are we clear on why this is a
+rank one matrix?
+
+01:04:17.230 --> 01:04:20.390
+One thing I wanted to point out
+here is that yes, it's true here
+
+01:04:20.390 --> 01:04:24.550
+that all of the columns are
+scalar multiples of each other.
+
+01:04:24.550 --> 01:04:25.810
+What is also true,
+
+01:04:25.810 --> 01:04:26.810
+though?
+
+01:04:27.110 --> 01:04:29.070
+All of the columns are scalar
+multiples of each other, but
+
+01:04:29.070 --> 01:04:32.070
+what is also true?
+
+01:04:33.310 --> 01:04:34.310
+Yeah?
+
+01:04:35.130 --> 01:04:38.410
+All of the rows are also scalar
+multiples of each other,
+
+01:04:38.410 --> 01:04:39.410
+right?
+
+01:04:40.590 --> 01:04:44.030
+The second row is just double
+the first row, and the third row
+
+01:04:44.030 --> 01:04:46.590
+is just triple the first row.
+
+01:04:46.590 --> 01:04:48.150
+Do we agree?
+
+01:04:48.150 --> 01:04:50.510
+OK.
+So here the dimension of the
+
+01:04:50.510 --> 01:04:51.890
+column space is one.
+
+01:04:51.890 --> 01:04:57.140
+What is the dimension of the row
+space?
+
+01:04:58.030 --> 01:05:01.030
+What's the dimension of the row
+space here?
+
+01:05:01.030 --> 01:05:01.390
+Yeah,
+
+01:05:01.390 --> 01:05:03.230
+it's also one.
+
+01:05:03.230 --> 01:05:04.190
+Okay.
+Keep that thought at the back of
+
+01:05:04.190 --> 01:05:05.690
+your mind
+
+01:05:06.170 --> 01:05:11.420
+Give me a three by four matrix
+with rank two
+
+01:05:15.410 --> 01:05:18.390
+Three by four matrix with rank
+two
+
+01:05:18.390 --> 01:05:19.170
+Yeah.
+
+01:05:19.170 --> 01:05:20.930
+I did 0, 0,
+
+01:05:20.930 --> 01:05:21.690
+1,
+
+01:05:21.690 --> 01:05:24.630
+0, 1, 0, 0, 2, 0, 0, 3,
+
+01:05:24.630 --> 01:05:25.630
+0.
+
+01:05:30.390 --> 01:05:33.090
+Sure, that works perfectly fine.
+
+01:05:33.090 --> 01:05:36.970
+What you did is you made the
+first two columns not scalar
+
+01:05:36.970 --> 01:05:38.630
+multiples of each other.
+
+01:05:38.630 --> 01:05:41.050
+And since they point in
+different directions,
+
+01:05:41.050 --> 01:05:44.150
+what this guarantees is that the
+column space is at least of two
+
+01:05:44.150 --> 01:05:45.070
+dimensions.
+
+01:05:45.070 --> 01:05:47.650
+And then what you did is you
+made the other two columns
+
+01:05:47.650 --> 01:05:50.650
+Scalar, or like linear
+combinations of the first.
+
+01:05:51.170 --> 01:05:53.830
+And so the easy way to think
+about it is just double or
+
+01:05:53.830 --> 01:05:55.370
+triple the first column.
+
+01:05:55.370 --> 01:05:57.810
+But just so it's clear,
+
+01:05:57.810 --> 01:06:00.810
+these don't have to necessarily
+be scalar multiples of any one
+
+01:06:00.810 --> 01:06:03.350
+of them they can be any linear
+combination of both of them.
+
+01:06:03.350 --> 01:06:06.150
+So like this would have been
+fine too.
+
+01:06:06.150 --> 01:06:10.650
+Because it's pi times the first
+plus 2 times the second.
+
+01:06:12.970 --> 01:06:15.510
+And so is this.
+Again, I'm not saying you have
+
+01:06:15.510 --> 01:06:18.510
+to think of this.
+
+01:06:18.750 --> 01:06:24.000
+But I'm just saying this is also
+a rank 2 matrix.
+
+01:06:24.690 --> 01:06:25.690
+OK.
+
+01:06:25.850 --> 01:06:26.610
+Let's notice here,
+
+01:06:26.610 --> 01:06:27.490
+what is,
+
+01:06:27.490 --> 01:06:31.590
+so the dimension of the column
+space is 2.
+
+01:06:31.590 --> 01:06:36.840
+What is the dimension of the row
+space?
+
+01:06:37.830 --> 01:06:42.330
+What's the dimension of the row
+space of this matrix?
+
+01:06:45.070 --> 01:06:46.450
+Column space is two dimensional.
+
+01:06:46.450 --> 01:06:49.450
+There's only two linearly
+independent columns.
+
+01:06:49.530 --> 01:06:52.070
+Or with two linearly independent
+columns, you can make the
+
+01:06:52.070 --> 01:06:53.070
+others.
+
+01:06:53.210 --> 01:06:55.930
+What is the dimension of the row
+space?
+
+01:06:55.930 --> 01:06:58.180
+Maybe it's two.
+
+01:06:58.530 --> 01:06:59.670
+Why is that?
+
+01:06:59.670 --> 01:07:00.050
+Well,
+
+01:07:00.050 --> 01:07:02.030
+if you look at the last two
+columns,
+
+01:07:02.030 --> 01:07:02.370
+0,
+
+01:07:02.370 --> 01:07:02.770
+1,
+
+01:07:02.770 --> 01:07:05.210
+2, negative, sorry, the last two
+rows,
+
+01:07:05.210 --> 01:07:08.710
+0, 1, 2, negative 15 and 1, 0,
+pi,
+
+01:07:08.710 --> 01:07:09.710
+412,
+
+01:07:09.790 --> 01:07:13.540
+they're not scalar multiples of
+each other.
+
+01:07:14.550 --> 01:07:17.110
+So this row and this row,
+
+01:07:17.110 --> 01:07:19.970
+those are linearly independent.
+
+01:07:19.970 --> 01:07:22.950
+And then the top row you can
+make by just taking zero times
+
+01:07:22.950 --> 01:07:25.270
+any of the other two rows.
+
+01:07:25.270 --> 01:07:28.190
+If you have the zero vector in a
+collection,
+
+01:07:28.190 --> 01:07:31.190
+that collection is automatically
+not linearly independent.
+
+01:07:32.290 --> 01:07:34.710
+Because you can make one of the
+vectors the zero vector by
+
+01:07:34.710 --> 01:07:37.310
+taking zero times any other
+vector.
+
+01:07:37.310 --> 01:07:40.270
+So the column space is
+two-dimensional,
+
+01:07:40.270 --> 01:07:41.970
+but the row space here is also
+two-dimensional.
+
+01:07:41.970 --> 01:07:42.870
+Yeah.
+
+01:07:42.870 --> 01:07:46.190
+In the original example before
+you changed it, it was like the
+
+01:07:46.190 --> 01:07:49.550
+last two was 0, 2, 0 and 0, 3,
+0, right? Yeah.
+
+01:07:49.550 --> 01:07:51.110
+So why does that not,
+
+01:07:51.110 --> 01:07:53.250
+like then couldn't you make the
+third column using the middle
+
+01:07:53.250 --> 01:07:54.250
+two?
+
+01:07:57.070 --> 01:08:00.070
+So you're saying this?
+
+01:08:00.410 --> 01:08:01.410
+Yeah.
+
+01:08:02.390 --> 01:08:04.030
+You're saying, can I make,
+
+01:08:04.030 --> 01:08:06.750
+so you're talking about the
+rows, right?
+
+01:08:06.750 --> 01:08:08.350
+Oh, yeah, never mind.
+
+01:08:08.350 --> 01:08:11.150
+So no, you're good.
+
+01:08:11.150 --> 01:08:14.330
+This example and what I
+previously had written are
+
+01:08:14.330 --> 01:08:18.470
+equivalent from the perspectives
+we're looking at which is In
+
+01:08:18.470 --> 01:08:20.950
+both cases the number of
+linearly independent columns at
+
+01:08:20.950 --> 01:08:23.610
+a time is two and number of
+linearly independent rows at a
+
+01:08:23.610 --> 01:08:25.770
+time is also two Okay, good.
+
+01:08:25.770 --> 01:08:31.020
+How'd you think of a rank three
+example?
+
+01:08:32.330 --> 01:08:35.570
+How'd you think of a rank three
+example
+
+01:08:35.570 --> 01:08:38.610
+What's the easy way to think of
+a rank three example?
+
+01:08:38.610 --> 01:08:39.610
+Yeah
+
+01:08:40.370 --> 01:08:41.890
+Ten in the identity matrix,
+
+01:08:41.890 --> 01:08:44.070
+and then one through the
+diagonals, and then the last one
+
+01:08:44.070 --> 01:08:46.170
+was just a repeat of the third
+one.
+
+01:08:46.170 --> 01:08:46.670
+Good.
+
+01:08:46.670 --> 01:08:48.830
+You know if you start with 100,
+
+01:08:48.830 --> 01:08:53.150
+010, and 001, those are the
+default basis vectors for R3.
+
+01:08:53.150 --> 01:08:53.970
+Using them,
+
+01:08:53.970 --> 01:08:55.870
+you can make any vector in R3.
+
+01:08:55.870 --> 01:08:58.190
+So all this means is the fourth
+column just needs to be anything
+
+01:08:58.190 --> 01:08:59.690
+in R3.
+
+01:09:00.950 --> 01:09:03.200
+7, 14, 21.
+Doesn't really matter.
+
+01:09:04.750 --> 01:09:09.770
+OK? Okay, the rank of this
+matrix is three,
+
+01:09:10.090 --> 01:09:13.840
+because the dimension of its
+column space is three.
+
+01:09:14.090 --> 01:09:17.990
+Now why don't we ask, what's the
+dimension of its row space?
+
+01:09:17.990 --> 01:09:20.990
+How many linearly independent
+rows does it have?
+
+01:09:28.590 --> 01:09:30.630
+Is there a quick way to see
+this? how many linearly
+
+01:09:30.630 --> 01:09:34.380
+independent rows is this matrix
+in?
+
+01:09:36.830 --> 01:09:39.450
+Let's look top to bottom.
+
+01:09:39.450 --> 01:09:41.010
+If we start with this row,
+
+01:09:41.010 --> 01:09:43.550
+can you make the second row
+using a scalar multiple of the
+
+01:09:43.550 --> 01:09:44.490
+first row?
+
+01:09:44.490 --> 01:09:45.490
+No.
+Why not?
+
+01:09:45.630 --> 01:09:48.670
+Well, it's because the second
+row has a 1 here where the first
+
+01:09:48.670 --> 01:09:49.910
+row only had a 0.
+
+01:09:49.910 --> 01:09:52.050
+You can't multiply 0 by anything
+to get 1.
+
+01:09:52.050 --> 01:09:54.770
+So the first two rows are
+linearly independent.
+
+01:09:54.770 --> 01:09:58.010
+Can you make the third row using
+linear combinations of the first
+
+01:09:58.010 --> 01:09:58.790
+two?
+
+01:09:58.790 --> 01:10:00.610
+No, why not?
+
+01:10:00.610 --> 01:10:03.690
+It has a 1 in s bar, where the
+other two have a 0.
+
+01:10:03.690 --> 01:10:05.810
+Yeah, the other two have 0s
+here,
+
+01:10:05.810 --> 01:10:09.770
+and the third one has a 1 here.
+There's no amount of multiplying
+
+01:10:09.770 --> 01:10:12.770
+the first by something plus the
+second by something will lift
+
+01:10:12.770 --> 01:10:14.810
+this 0 to be something non-zero,
+
+01:10:14.810 --> 01:10:16.770
+which means the third row can't
+be made from the first two
+
+01:10:16.770 --> 01:10:17.490
+either.
+
+01:10:17.490 --> 01:10:19.310
+So what we're seeing is that
+here,
+
+01:10:19.310 --> 01:10:21.610
+the dimension of the column
+space is 3, and also the
+
+01:10:21.610 --> 01:10:24.890
+dimension of the row space is 3.
+
+01:10:24.890 --> 01:10:25.770
+All right.
+
+01:10:25.770 --> 01:10:26.770
+Lastly,
+
+01:10:27.090 --> 01:10:31.590
+can you think of a 3 by 4 matrix
+whose rank is 4?
+
+01:10:31.590 --> 01:10:33.990
+No, why can't you do it?
+
+01:10:33.990 --> 01:10:38.010
+I think the amount of rows
+limits the amount of dimensions.
+
+01:10:38.010 --> 01:10:41.490
+Yeah, it's because we're dealing
+with columns who are in R3.
+
+01:10:41.490 --> 01:10:43.590
+And what we've seen is that the
+max number of linearly
+
+01:10:43.590 --> 01:10:47.130
+independent vectors you could
+have in R3 is 3.
+
+01:10:47.750 --> 01:10:51.630
+You can't have four linearly
+independent directions in R3,
+
+01:10:51.630 --> 01:10:54.290
+just as you can't have three
+linearly independent directions
+
+01:10:54.290 --> 01:10:55.370
+in R2,
+
+01:10:55.370 --> 01:10:59.390
+or seven linearly independent
+directions in R6, 5, 4, 3, 2, or
+
+01:10:59.390 --> 01:11:00.390
+1.
+
+01:11:00.490 --> 01:11:04.990
+So rank 4 is not possible.
+
+01:11:06.270 --> 01:11:11.830
+You can't have four linearly
+independent
+
+01:11:11.830 --> 01:11:15.170
+vectors in R3.
+
+01:11:19.430 --> 01:11:24.170
+So are we comfortable with the
+rank as being the dimension of
+
+01:11:24.170 --> 01:11:26.270
+the column space of a matrix.
+
+01:11:26.270 --> 01:11:28.250
+Comfortable with that idea?
+
+01:11:28.250 --> 01:11:29.250
+OK.
+
+01:11:29.450 --> 01:11:30.350
+Now,
+
+01:11:30.350 --> 01:11:33.830
+going back to our original
+example,
+
+01:11:33.830 --> 01:11:37.350
+at first I asked you for the
+dimension of the column space.
+
+01:11:37.350 --> 01:11:39.670
+We found that that was 2.
+
+01:11:39.670 --> 01:11:43.730
+But I also told you to work on
+the dimension of the row space,
+
+01:11:43.730 --> 01:11:47.480
+which, again, is the column
+space of A transpose.
+
+01:11:47.590 --> 01:11:51.370
+And why don't we write out A
+transpose here?
+
+01:11:51.370 --> 01:11:52.570
+5, 3,
+
+01:11:52.570 --> 01:11:53.250
+2,
+
+01:11:53.250 --> 01:11:54.930
+0, negative 1,
+
+01:11:54.930 --> 01:11:56.430
+1, 3,
+
+01:11:56.530 --> 01:11:57.290
+4,
+
+01:11:57.290 --> 01:11:58.550
+negative 1,
+
+01:11:58.550 --> 01:12:00.800
+6, 2, 4,
+
+01:12:00.990 --> 01:12:05.510
+and 1, 0, 1.
+
+01:12:06.630 --> 01:12:08.880
+That's A's transpose.
+
+01:12:09.010 --> 01:12:12.170
+What we saw before is that the
+dimension of the column space of
+
+01:12:12.170 --> 01:12:14.590
+A was 2.
+
+01:12:15.450 --> 01:12:19.150
+Then I asked you to find the
+dimension of the column space of
+
+01:12:19.150 --> 01:12:20.650
+A transpose,
+
+01:12:21.090 --> 01:12:22.590
+which again,
+
+01:12:22.690 --> 01:12:27.190
+the column space of A transpose,
+that is the row space of A.
+
+01:12:39.350 --> 01:12:42.910
+Are we clear on that? Any time I
+say the column space of A
+
+01:12:42.910 --> 01:12:46.450
+transpose, I'm really asking for
+the row space of A, the set of
+
+01:12:46.450 --> 01:12:49.350
+all linear combinations of A's
+rows?
+
+01:12:49.350 --> 01:12:50.230
+Yeah?
+
+01:12:50.230 --> 01:12:50.990
+OK.
+
+01:12:50.990 --> 01:12:55.030
+And I asked you for its
+dimension.
+
+01:12:55.030 --> 01:12:55.910
+What did you find?
+
+01:12:55.910 --> 01:12:58.190
+This was maybe 20 minutes ago
+now.
+
+01:12:58.190 --> 01:13:01.190
+What did you find?
+
+01:13:05.110 --> 01:13:07.310
+What did you find?
+
+01:13:07.310 --> 01:13:08.130
+Yeah?
+
+01:13:08.130 --> 01:13:09.150
+It was 2.
+
+01:13:09.150 --> 01:13:11.690
+OK, you found that it was 2.
+
+01:13:11.690 --> 01:13:15.430
+What that means is it's possible
+to pick two of these five
+
+01:13:15.430 --> 01:13:16.410
+vectors,
+
+01:13:16.410 --> 01:13:19.350
+because none of them seem to be
+scalar multiples of each other.
+
+01:13:19.350 --> 01:13:20.970
+You can pick two of the five,
+
+01:13:20.970 --> 01:13:22.450
+and using them,
+
+01:13:22.450 --> 01:13:25.730
+you can make all the other ones.
+
+01:13:25.730 --> 01:13:30.490
+If I were setting off in a goal
+to accomplish that,
+
+01:13:30.490 --> 01:13:33.690
+I would probably show that it's
+possible to make all five of
+
+01:13:33.690 --> 01:13:35.130
+these with just two of them.
+
+01:13:35.130 --> 01:13:37.450
+I would probably pick this one
+and this one, because their
+
+01:13:37.450 --> 01:13:39.510
+numbers are the simplest.
+
+01:13:39.510 --> 01:13:42.370
+And it makes it easiest to
+reverse engineer or how to write
+
+01:13:42.370 --> 01:13:45.150
+the other three as linear
+combinations of those too.
+
+01:13:45.150 --> 01:13:46.430
+So for example,
+
+01:13:46.430 --> 01:13:48.210
+if I call this,
+
+01:13:48.210 --> 01:13:51.590
+let's just call this the vector
+a,
+
+01:13:51.590 --> 01:13:53.690
+and call this the vector b,
+
+01:13:53.690 --> 01:13:56.930
+why does this make it easy to
+find what the linear combination
+
+01:13:56.930 --> 01:13:57.830
+will be?
+
+01:13:57.830 --> 01:13:58.430
+Well,
+
+01:13:58.430 --> 01:13:59.870
+any linear combination of a,
+
+01:13:59.870 --> 01:14:02.230
+let's not call it a, because you
+use those for the scalars.
+
+01:14:02.230 --> 01:14:04.480
+Let's call these,
+
+01:14:06.950 --> 01:14:11.550
+why don't we call these a
+subscript A subscript 2 and A
+
+01:14:11.550 --> 01:14:13.670
+subscript 5.
+Notice I'm using subscript here
+
+01:14:13.670 --> 01:14:16.270
+to refer to the rows, because
+these came ultimately from the
+
+01:14:16.270 --> 01:14:18.520
+rows of A.
+
+01:14:19.010 --> 01:14:21.870
+Why are these the easiest to use
+as building blocks? Well, it's
+
+01:14:21.870 --> 01:14:26.470
+because A2 has a 0 in the first
+component, and A5 has a 1 in the
+
+01:14:26.470 --> 01:14:27.790
+first component.
+
+01:14:27.790 --> 01:14:30.470
+What that tells you is that if I
+need to make another vector as a
+
+01:14:30.470 --> 01:14:33.650
+linear combination of A2 and A5,
+
+01:14:33.650 --> 01:14:36.310
+its first coordinate is just
+going to be the number I
+
+01:14:36.310 --> 01:14:39.230
+multiply A5 by.
+To get 6, 2, 4, I'm going to
+
+01:14:39.230 --> 01:14:41.850
+have to multiply this by 6.
+
+01:14:41.850 --> 01:14:44.570
+So it makes the solving work a
+little easier.
+
+01:14:44.570 --> 01:14:45.830
+And it's possible.
+I'm not going to do all the
+
+01:14:45.830 --> 01:14:48.850
+algebra right now, but it's
+possible to write all three of
+
+01:14:48.850 --> 01:14:50.410
+the other columns
+
+01:14:50.410 --> 01:14:58.270
+can
+
+01:14:58.270 --> 01:14:59.770
+be written
+
+01:15:04.090 --> 01:15:08.730
+as linear combinations of A2 and
+A5.
+
+01:15:10.710 --> 01:15:11.310
+Okay,
+
+01:15:11.310 --> 01:15:14.130
+and assuming we take for now for
+granted that that's true,
+
+01:15:14.130 --> 01:15:16.890
+what that means is that the
+column space of A transpose,
+
+01:15:16.890 --> 01:15:18.450
+which is the row space of A,
+
+01:15:18.450 --> 01:15:20.610
+is also two-dimensional.
+
+01:15:20.610 --> 01:15:23.210
+Okay, another perspective that's
+important to have here,
+
+01:15:23.210 --> 01:15:26.930
+can you think of like a simple
+algebraic rule in terms of X, Y,
+
+01:15:26.930 --> 01:15:29.410
+and Z? If you think of X as
+being the first component, y is
+
+01:15:29.410 --> 01:15:32.090
+being the second component, and
+z is being the third component.
+
+01:15:32.090 --> 01:15:34.130
+Can you think of a simple
+algebraic rule that the
+
+01:15:34.130 --> 01:15:39.950
+components of a's row space,
+that is the
+
+01:15:39.950 --> 01:15:42.430
+column space of A transpose,
+like any vector that lives in
+
+01:15:42.430 --> 01:15:43.050
+there,
+
+01:15:43.050 --> 01:15:48.300
+can you think of a simple rule
+they all obey?
+
+01:15:50.210 --> 01:15:53.410
+There's something that's true
+about this vector
+
+01:15:53.950 --> 01:15:57.210
+and this vector and this vector
+and this vector,
+
+01:15:57.210 --> 01:15:59.460
+and this vector.
+
+01:16:03.070 --> 01:16:04.070
+Yeah?
+
+01:16:05.010 --> 01:16:08.470
+You mean like the amount of
+linearly independent vectors is
+
+01:16:08.470 --> 01:16:11.190
+the same as the column space?
+
+01:16:11.190 --> 01:16:12.750
+That's true.
+That's what we're getting to.
+
+01:16:13.030 --> 01:16:15.530
+But what I'm asking you is sort
+of an aside here.
+
+01:16:15.530 --> 01:16:18.830
+All five of these vectors, they
+have one algebraic property in
+
+01:16:18.830 --> 01:16:19.830
+common.
+
+01:16:22.210 --> 01:16:23.670
+Like something about their
+components.
+
+01:16:23.670 --> 01:16:25.170
+Yeah? Yeah.
+
+01:16:25.870 --> 01:16:27.790
+Like each of the vectors,
+
+01:16:27.790 --> 01:16:29.830
+like the second column,
+
+01:16:29.830 --> 01:16:31.610
+or no, second row element,
+
+01:16:31.610 --> 01:16:34.010
+and add it to the third row and
+that equals the first.
+
+01:16:34.010 --> 01:16:34.570
+Yeah.
+
+01:16:34.570 --> 01:16:38.290
+In all of them, it seems like x
+equals y plus z.
+
+01:16:38.290 --> 01:16:40.370
+5 equals 3 plus 2.
+
+01:16:40.370 --> 01:16:42.670
+0 equals negative 1 plus 1.
+
+01:16:42.670 --> 01:16:44.510
+3 equals 4 minus 1.
+
+01:16:44.510 --> 01:16:46.230
+This shouldn't actually be a
+surprise, because if you think
+
+01:16:46.230 --> 01:16:49.250
+about the relationship we found
+with the columns before,
+
+01:16:49.250 --> 01:16:53.290
+we found that a's second column
+plus A's third column is equal
+
+01:16:53.290 --> 01:16:56.290
+to A's first column.
+
+01:16:56.610 --> 01:16:57.050
+Right?
+
+01:16:57.050 --> 01:16:59.850
+So we shouldn't be surprised
+that there's also dependence
+
+01:16:59.850 --> 01:17:02.530
+amongst the rows because we
+found dependence amongst the
+
+01:17:02.530 --> 01:17:03.530
+columns.
+
+01:17:04.350 --> 01:17:07.250
+And now A transpose's
+
+01:17:07.250 --> 01:17:09.710
+rows are A's columns.
+
+01:17:09.710 --> 01:17:12.010
+Why? Like what does it have to
+do with this?
+
+01:17:12.010 --> 01:17:14.610
+Because here I was asking you
+about A transpose's columns.
+
+01:17:14.610 --> 01:17:17.190
+It's because all five of the the
+
+01:17:17.190 --> 01:17:22.830
+row vectors of A
+
+01:17:22.830 --> 01:17:28.830
+satisfy x
+
+01:17:28.830 --> 01:17:33.330
+minus y minus z equals 0.
+
+01:17:33.950 --> 01:17:37.610
+Now, why did I write it this
+way?
+
+01:17:37.610 --> 01:17:41.190
+x minus y minus z equals 0.
+What is that the equation of?
+
+01:17:41.190 --> 01:17:41.970
+Yeah.
+
+01:17:41.970 --> 01:17:46.470
+Yeah, it's the equation of a
+plane in R3.
+
+01:17:51.330 --> 01:17:55.630
+What this is telling me is all
+five of A's rows all live on the
+
+01:17:55.630 --> 01:17:57.830
+same plane in R3.
+
+01:17:57.830 --> 01:18:03.080
+Which means they all live in a
+two-dimensional subspace of R3.
+
+01:18:03.710 --> 01:18:07.410
+What that tells you is the
+dimension of the column space of
+
+01:18:07.410 --> 01:18:09.370
+A transpose, which is the row
+space of A,
+
+01:18:09.370 --> 01:18:10.590
+is two.
+
+01:18:10.590 --> 01:18:12.730
+So the main punchline here,
+
+01:18:12.730 --> 01:18:16.390
+and I've kind of just done this
+as a proof by example, but,
+
+01:18:16.390 --> 01:18:17.230
+um,
+
+01:18:17.230 --> 01:18:21.510
+or lots of examples because it
+was also true here.
+
+01:18:21.510 --> 01:18:26.710
+The main punch line here is that
+for any
+
+01:18:26.710 --> 01:18:28.210
+matrix A,
+
+01:18:28.630 --> 01:18:32.380
+the dimension of its column
+space
+
+01:18:34.050 --> 01:18:39.300
+is equal to the dimension of its
+row space.
+
+01:18:41.530 --> 01:18:44.990
+And both of those are equal to
+the rank of the matrix.
+
+01:18:44.990 --> 01:18:47.270
+So you can think of the rank as
+the number of linearly
+
+01:18:47.270 --> 01:18:50.350
+independent columns, or also as
+the number of linearly
+
+01:18:50.350 --> 01:18:51.850
+independent rows.
+
+01:19:13.110 --> 01:19:17.370
+Maybe I'll write this up here.
+
+01:19:17.370 --> 01:19:20.390
+The dimension of the column
+space of A is always equal to
+
+01:19:20.390 --> 01:19:23.350
+the dimension of the column
+space of A transpose.
+
+01:19:23.350 --> 01:19:26.470
+What that tells you is that the
+rank of A is also equal to the
+
+01:19:26.470 --> 01:19:28.720
+rank of what?
+
+01:19:31.170 --> 01:19:32.670
+A transpose.
+
+01:19:33.290 --> 01:19:35.730
+A and A transpose always have
+the same rank,
+
+01:19:35.730 --> 01:19:38.670
+and the number of linearly
+independent columns and rows is
+
+01:19:38.670 --> 01:19:40.870
+always the same in a matrix,
+
+01:19:40.870 --> 01:19:41.870
+which
+
+01:19:42.970 --> 01:19:45.770
+I think is a cool result.
+If you're coming into class
+
+01:19:45.770 --> 01:19:46.430
+today,
+
+01:19:46.430 --> 01:19:50.180
+there's no reason necessarily to
+believe that that would be true.
+
+01:19:50.550 --> 01:19:51.930
+But it is.
+The number of linearly
+
+01:19:51.930 --> 01:19:55.680
+independent rows and columns in
+a matrix is always the same.
+
+01:19:56.890 --> 01:19:59.140
+So really quickly,
+
+01:20:00.370 --> 01:20:04.120
+pretend my matrix looks like
+this.
+
+01:20:04.470 --> 01:20:07.050
+What was the name for a matrix
+whose shape kind of looked like
+
+01:20:07.050 --> 01:20:07.530
+this,
+
+01:20:07.530 --> 01:20:10.730
+where it has way more rows than
+columns?
+
+01:20:10.730 --> 01:20:15.230
+Yeah, this would be a tall
+matrix.
+
+01:20:15.810 --> 01:20:20.030
+Could this matrix's columns all
+be linearly independent?
+
+01:20:23.890 --> 01:20:26.150
+Could its columns? Its columns
+could be,
+
+01:20:26.150 --> 01:20:27.150
+right?
+
+01:20:27.330 --> 01:20:28.210
+You could just imagine,
+
+01:20:28.210 --> 01:20:28.670
+like,
+
+01:20:28.670 --> 01:20:32.610
+pretend you have the vector 1,
+0, 0, 0 and 0, 0, 0, 1.
+
+01:20:32.610 --> 01:20:34.110
+That's a tall matrix.
+Its columns are linearly
+
+01:20:34.110 --> 01:20:35.110
+independent.
+
+01:20:35.250 --> 01:20:40.690
+The columns could all be
+linearly
+
+01:20:40.690 --> 01:20:41.690
+independent.
+
+01:20:43.190 --> 01:20:46.190
+But can it's rows?
+
+01:20:46.190 --> 01:20:49.190
+No, it's rows cannot.
+
+01:20:51.810 --> 01:20:52.530
+Why?
+
+01:20:52.530 --> 01:20:53.530
+Well,
+
+01:20:53.850 --> 01:20:56.150
+its number of linearly
+independent rows and columns
+
+01:20:56.150 --> 01:20:57.390
+have to be the same.
+
+01:20:57.390 --> 01:21:00.410
+The max number of linearly
+independent columns is D,
+
+01:21:00.410 --> 01:21:02.890
+but if D is less than N, that
+means the rows can't all be
+
+01:21:02.890 --> 01:21:06.030
+linearly independent because for
+them to be linearly independent
+
+01:21:07.090 --> 01:21:09.910
+the rank of the matrix would
+have to be N, but the rank has
+
+01:21:09.910 --> 01:21:15.910
+to be to be less than or equal
+to the smaller of these two.
+
+01:21:20.910 --> 01:21:25.830
+And this is nothing new.
+
+01:21:26.170 --> 01:21:29.730
+We said that the dimension of
+the subspace spanned
+
+01:21:29.730 --> 01:21:32.310
+by a collection of vectors is
+less than or equal to the min of
+
+01:21:32.310 --> 01:21:33.090
+n and d.
+
+01:21:33.090 --> 01:21:35.990
+The rank is just the dimension
+of the subspace spanned by the
+
+01:21:35.990 --> 01:21:39.010
+columns or the rows of the
+matrix.
+
+01:21:39.010 --> 01:21:39.550
+Okay.
+
+01:21:39.550 --> 01:21:40.910
+So that's it for today.
+
+01:21:40.910 --> 01:21:43.550
+We will review some of this when
+we come back on Thursday.
+
+01:21:43.550 --> 01:21:48.800
+And you will review some of this
+in lab tomorrow as well.
+
+01:22:08.010 --> 01:22:11.070
+I'm going to take that.
+
+01:22:11.070 --> 01:22:15.650
+I'm going to take that.
+I'm going to take that.
+
+01:22:15.650 --> 01:22:17.530
+It doesn't count at all.
+
+01:22:17.530 --> 01:22:18.070
+It doesn't count at all.
+
+01:22:18.070 --> 01:22:18.990
+It doesn't count at all.
+It doesn't count at all.
+
+01:22:18.990 --> 01:22:21.950
+It doesn't count at all.
+
+01:22:21.950 --> 01:22:24.130
+It doesn't count at all.
+
+01:22:24.130 --> 01:22:30.050
+It doesn't count at all.
+It doesn't count at
+
+01:22:30.050 --> 01:22:31.050
+all.
+
+01:22:35.050 --> 01:22:38.800
+It doesn't count at all.
+
+01:22:49.430 --> 01:22:54.680
+I'm taking it at the same time,
+
+01:22:55.130 --> 01:22:56.630
+in China.
+
+01:22:56.930 --> 01:23:00.680
+It's probably not called 270.
+
+01:23:02.510 --> 01:23:05.050
+It's a collaboration.
+I see,
+
+01:23:05.690 --> 01:23:07.190
+I see.
+
+01:23:10.050 --> 01:23:11.050
+Wow.
+
+01:23:15.370 --> 01:23:21.330
+This guy is...
+Oh, this guy was not going
+
+01:23:21.330 --> 01:23:23.580
+to show up.
+
+01:24:00.930 --> 01:24:03.970
+I think we have to do the
+homework in commercial.
+
+01:24:03.970 --> 01:24:04.970
+groups,
+
+01:24:06.030 --> 01:24:09.010
+which I figured we'd be doing
+during the meeting, but if you
+
+01:24:09.010 --> 01:24:11.710
+can't make the meeting,
+
+01:24:11.710 --> 01:24:14.490
+I don't look at it that way.
+
+01:24:14.490 --> 01:24:17.010
+So we're waiting for the
+first...
+
+01:24:17.010 --> 01:24:21.770
+is this meeting with Zoe as
+well?
+
+01:24:22.750 --> 01:24:28.000
+I don't know if she really wants
+to hang in there.
+
+01:24:36.730 --> 01:24:39.730
+We can probably send you some
+stuff too, I just don't know
+
+01:24:39.730 --> 01:24:42.630
+what we have to do, if it's like
+discussion based, or if it's
+
+01:24:42.630 --> 01:24:43.630
+like,
+
+01:24:46.250 --> 01:24:49.370
+I just briefly asked about it
+yesterday,
+
+01:24:49.370 --> 01:24:54.930
+and and said, OK, I get to wait.
+
+01:24:54.930 --> 01:24:55.930
+Exactly.
