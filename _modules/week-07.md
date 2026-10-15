@@ -25,7 +25,7 @@ days:
     events:
       - name: LEC 13
         type: lecture
-        live_notes: https://web.goodnotes.com/s/s5M0b9K4C4RqrJkrTZf9p9
+        live_notes: resources/lecture-pdfs/lec13-filled.pdf
         videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qTw4_nsPMtpDG34ugpPlFkx
         title: Null Space, Rank-Nullity, and Inverses
         reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
