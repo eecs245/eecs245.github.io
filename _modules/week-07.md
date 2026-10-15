@@ -20,6 +20,7 @@ days:
       - name: LAB 6
         type: lab
         title: Rank and Column Space
+        problems: ../resources/labs/lab06/
   - date: "2026-10-15"
     events:
       - name: LEC 13
