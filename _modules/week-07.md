@@ -28,6 +28,7 @@ days:
         live_notes: resources/lecture-pdfs/lec13-filled.pdf
         videos: https://www.youtube.com/playlist?list=PLEFTQpsm47qTw4_nsPMtpDG34ugpPlFkx
         title: Null Space, Rank-Nullity, and Inverses
+        recording: https://leccap.engin.umich.edu/leccap/player/r/grOzS3
         reading: https://notes.eecs245.org/matrices/null-space-rank-nullity/
         reading_text: Ch. 5.4
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
