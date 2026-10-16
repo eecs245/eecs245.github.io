@@ -22,6 +22,26 @@ The events are color-coded:
 We will not be using the EECS Office Hours Queue in this class – look for [Suraj, Tugrul, or Shubham](../staff) in office hours. If you can't find us, post on Ed! **Can't make it to any of the office hours? Send Suraj an email at rampure@umich.edu.**
 
 {: .green }
-**New**: Suraj will host some Zoom office hours by appointment, separate from the office hours listed below. To schedule an appointment, click [**here**](https://calendar.app.google/4yRfRT8zTtXH8q8C9). Availability will be updated weekly.
+**New**: Suraj will host some Zoom office hours by appointment, separate from the office hours listed below. To schedule an appointment, click [**here**](#book-office-hours). Availability will be updated weekly.
 
 <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FDetroit&showPrint=0&showTitle=0&mode=WEEK&showCalendars=0&showTabs=0&src=Y19hMGZiMmVmOGJhY2E4ZTA0ZjVmZTcxMjc3ZWQyYmZkNWUyMjAwZmViYzMwNzhkMjQzMzQ4NmNjYWE5NDdiYjQ0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y180MTk3M2Y4Yjk1MTU5NDMyM2Y2Mzk5NTNmZTJiNzhhYjkwODlkZWVmNzEyNzMwMmU3NTgzNzBhNmE0ZjRkNmM3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y18zOTAyZDJkNzI4OGM0MDA4MjMyNDdlZGM4MWRlMWEzM2E0ZDE3NGIyNTM3ZTQyYTYzY2YxOTQ3NzRlZGVmNGFkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y183MmFiY2MxZjJjNWUyMDJiNTdjMmY4OWY5ODExN2RiMmJhMWVlY2EwOGQ5OWM4MWRmMjA4MjllZjk5N2EzOTBlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y183NmRlZWI0OGNiYjJmYWMwNTJhNzgwNjI0Y2UyMmEwNDBlNzk2ZDMwNTAzODA2ZmI5NGFmNzhmZDczMzZhNGFjQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23c0ca33&color=%23009688&color=%23d50000&color=%23039be5&color=%23f4511e" title="EECS 245 course calendar" style="border-width:0" width="800" height="800" frameborder="0" scrolling="no"></iframe>
+
+<section id="book-office-hours" class="appointment-strip" aria-label="Book office hours with Suraj">
+  <div class="appointment-strip-heading">
+    <strong>Suraj’s Zoom office hours (by appointment)</strong>
+    <span class="appointment-availability">Availability updated weekly.</span>
+    <a href="https://calendar.app.google/4yRfRT8zTtXH8q8C9" target="_blank" rel="noopener">Open full booking page ↗</a>
+  </div>
+  <div class="appointment-slots-window">
+  <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1jxskRMW2w3LXNMNsM-6p8yBvMSg58B_N-inCuaia1gTxzl1A4QxyBwuuhlTZXdMltIwtrwEXu?gv=true" title="Book Suraj’s Zoom office hours" width="100%" height="662" frameborder="0"></iframe>
+  </div>
+</section>
+
+<style>
+.appointment-strip { scroll-margin-top: 80px; margin: 20px 0 24px; border: 1px solid #dadce0; border-radius: 8px; overflow: hidden; background: #fff; }
+.appointment-strip-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding: 10px 14px; background: #f0f7f4; font-size: 14px; }
+.appointment-availability { font-size: 12px; }
+.appointment-strip-heading a { font-size: 12px; white-space: nowrap; }
+.appointment-slots-window { height: 450px; overflow: hidden; }
+.appointment-strip iframe { display: block; border: 0; height: 662px; margin-top: -212px; }
+</style>
