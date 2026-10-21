@@ -37,6 +37,7 @@ days:
     events:
       - name: HW 5
         problems: ../resources/homeworks/hw05/
+        solutions: true
         type: hw
-        title: "<b>Matrices</b>"
+        title: "Matrices"
 ---

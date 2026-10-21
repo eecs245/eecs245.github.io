@@ -155,6 +155,7 @@ img[src$="rotation-derivation.png"] { width: 300px !important; }
 
 <div class="assignment-actions">
 <a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw05/hw05.pdf" target="_blank">View as PDF ✏️</a>
+<a class="btn btn-info assignment-pdf-button" href="/resources/homeworks/hw05/hw05-solutions.pdf" target="_blank">Solutions PDF ✅</a>
 </div>
 
 {: .yellow }
@@ -233,6 +234,27 @@ $$
 <div class="assignment-part-content" markdown="1">
 (4 pts) Find a nonzero vector <span class="math-inline">\\(\vec n\\)</span> orthogonal to both <span class="math-inline">\\(\vec v&#95;1\\)</span> and <span class="math-inline">\\(\vec v&#95;2\\)</span>, and use it to find an equation for the plane <span class="math-inline">\\(S\\)</span> of the form <span class="math-inline">\\(ax+by+cz=0\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+Let's write <span class="math-inline">\\(\vec n=\begin{bmatrix}a\\\\b\\\\c\end{bmatrix}\\)</span>. For <span class="math-inline">\\(\vec n\\)</span> to be orthogonal to both vectors, we need
+
+<div class="math-display">
+$$
+2a+3b-c=0,\qquad 3a+4b-2c=0.
+$$
+</div>
+
+ The first equation gives <span class="math-inline">\\(c=2a+3b\\)</span>. Substituting into the second gives <span class="math-inline">\\(a=-2b\\)</span>, and then <span class="math-inline">\\(c=-b\\)</span>. Choosing <span class="math-inline">\\(b=1\\)</span> gives
+
+<div class="math-display">
+$$
+\boxed{\vec n=\begin{bmatrix}-2\\\\1\\\\-1\end{bmatrix}},\qquad \boxed{-2x+y-z=0}.
+$$
+</div>
+
+ Since <span class="math-inline">\\(\vec v&#95;1\\)</span> and <span class="math-inline">\\(\vec v&#95;2\\)</span> aren't scalar multiples, their span is a plane. Both are orthogonal to <span class="math-inline">\\(\vec n\\)</span>, so this is exactly the plane <span class="math-inline">\\(S\\)</span>.
+</details>
+
 </div>
 </div>
 
@@ -240,6 +262,28 @@ $$
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
 (3 pts) Find <span class="math-inline">\\(\vec q\\)</span>, the projection of <span class="math-inline">\\(\vec u\\)</span> onto <span class="math-inline">\\(\vec n\\)</span>. Then compute <span class="math-inline">\\(\vec p=\vec u-\vec q\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+Using the projection formula,
+
+<div class="math-display">
+$$
+\vec q=\frac{\vec u\cdot\vec n}{\vec n\cdot\vec n}\vec n
+=\frac{-7}{6}\begin{bmatrix}-2\\\\1\\\\-1\end{bmatrix}
+=\boxed{\begin{bmatrix}7/3\\\\-7/6\\\\7/6\end{bmatrix}}.
+$$
+</div>
+
+ So,
+
+<div class="math-display">
+$$
+\vec p=\vec u-\vec q=\begin{bmatrix}4\\\\1\\\\0\end{bmatrix}-\begin{bmatrix}7/3\\\\-7/6\\\\7/6\end{bmatrix}=\boxed{\begin{bmatrix}5/3\\\\13/6\\\\-7/6\end{bmatrix}}.
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -265,6 +309,37 @@ Explain why <span class="math-inline">\\(\vec p\\)</span> is the projection of <
 
 </li>
 </ol>
+
+<details markdown="1"><summary>Solution</summary>
+
+**(i)** Substituting the components of <span class="math-inline">\\(\vec p\\)</span> into our plane equation gives
+
+<div class="math-display">
+$$
+-2\left(\frac53\right)+\frac{13}{6}-\left(-\frac76\right)=0,
+$$
+</div>
+
+ so <span class="math-inline">\\(\vec p\\)</span> is on the plane.
+
+**(ii)** To write <span class="math-inline">\\(\vec p=a\vec v&#95;1+b\vec v&#95;2\\)</span>, we need
+
+<div class="math-display">
+$$
+2a+3b=\frac53,\qquad 3a+4b=\frac{13}{6},\qquad -a-2b=-\frac76.
+$$
+</div>
+
+ The first two equations give <span class="math-inline">\\(b=\frac23\\)</span> and <span class="math-inline">\\(a=-\frac16\\)</span>, which also satisfy the third. So,
+
+<div class="math-display">
+$$
+\boxed{\vec p=-\frac16\vec v_1+\frac23\vec v_2}.
+$$
+</div>
+
+ **(iii)** We know that <span class="math-inline">\\(\vec p\\)</span> is in <span class="math-inline">\\(S\\)</span>, and <span class="math-inline">\\(\vec u-\vec p=\vec q\\)</span> is a multiple of <span class="math-inline">\\(\vec n\\)</span>, so it's perpendicular to <span class="math-inline">\\(S\\)</span>. These are exactly the two properties we need: the projection lies on the plane, and the leftover vector is perpendicular to it.
+</details>
 
 </div>
 </div>
@@ -327,6 +402,49 @@ $$
 </li>
 </ol>
 
+<details markdown="1"><summary>Solution</summary>
+
+Since <span class="math-inline">\\(A\\)</span> has shape <span class="math-inline">\\(5\times3\\)</span>, we get:
+
+<ol class="assignment-list" markdown="1" data-item-count="7" start="1" style="list-style-type: decimal;">
+<li markdown="1" value="1">
+
+A matrix with shape <span class="math-inline">\\(3\times5\\)</span>. Transposing swaps rows and columns.
+
+</li>
+<li markdown="1" value="2">
+
+A matrix with shape <span class="math-inline">\\(3\times3\\)</span>, since <span class="math-inline">\\((3\times5)(5\times3)\\)</span> gives <span class="math-inline">\\(3\times3\\)</span>.
+
+</li>
+<li markdown="1" value="3">
+
+A matrix with shape <span class="math-inline">\\(5\times5\\)</span>, since <span class="math-inline">\\((5\times3)(3\times5)\\)</span> gives <span class="math-inline">\\(5\times5\\)</span>.
+
+</li>
+<li markdown="1" value="4">
+
+Undefined: we can't add matrices with different shapes.
+
+</li>
+<li markdown="1" value="5">
+
+Undefined: the inner dimensions in <span class="math-inline">\\((3\times5)(3\times1)\\)</span> don't match.
+
+</li>
+<li markdown="1" value="6">
+
+A vector in <span class="math-inline">\\(\mathbb R^3\\)</span>, since <span class="math-inline">\\((3\times5)(5\times1)\\)</span> gives <span class="math-inline">\\(3\times1\\)</span>.
+
+</li>
+<li markdown="1" value="7">
+
+A scalar. We can write this as <span class="math-inline">\\((A\vec x)^T(A\vec x)\\)</span>, the dot product of <span class="math-inline">\\(A\vec x\\)</span> with itself.
+
+</li>
+</ol>
+</details>
+
 </div>
 </div>
 
@@ -336,6 +454,21 @@ $$
 (3 pts) Evaluate <span class="math-inline">\\(A\begin{bmatrix} 3 \\\\ 0 \\\\ -2 \end{bmatrix}\\)</span>.
 
 There are two interpretations of the resulting vector, based on what we've seen in [Chapter 5.1](https://notes.eecs245.org/matrices/matrix-operations/) --- what are they?
+
+<details markdown="1"><summary>Solution</summary>
+
+Multiplying each row of <span class="math-inline">\\(A\\)</span> by the vector gives
+
+<div class="math-display">
+$$
+A\begin{bmatrix}3\\\\0\\\\-2\end{bmatrix}
+=\begin{bmatrix}9-8\\\\0\\\\6+6\\\\15+2\\\\9\end{bmatrix}
+=\boxed{\begin{bmatrix}1\\\\0\\\\12\\\\17\\\\9\end{bmatrix}}.
+$$
+</div>
+
+ There are two ways to read this calculation. Each component is the dot product of a row of <span class="math-inline">\\(A\\)</span> with the input vector. Alternatively, the entire result is a linear combination of the columns of <span class="math-inline">\\(A\\)</span>: 3 times the first column, plus 0 times the second, minus 2 times the third.
+</details>
 
 </div>
 </div>
@@ -358,6 +491,30 @@ There are two interpretations of the resulting vector, based on what we've seen 
 </li>
 </ol>
 
+<details markdown="1"><summary>Solution</summary>
+
+<ol class="assignment-list" markdown="1" data-item-count="2" start="1" style="list-style-type: decimal;">
+<li markdown="1" value="1">
+
+There is **no solution**. The second row gives <span class="math-inline">\\(x&#95;2=5\\)</span>, and the fifth row then gives <span class="math-inline">\\(3x&#95;1+10=4\\)</span>, so <span class="math-inline">\\(x&#95;1=-2\\)</span>. But the first row requires <span class="math-inline">\\(-6+4x&#95;3=0\\)</span>, or <span class="math-inline">\\(x&#95;3=\frac32\\)</span>, while the fourth requires <span class="math-inline">\\(-10-x&#95;3=-1\\)</span>, or <span class="math-inline">\\(x&#95;3=-9\\)</span>. We can't satisfy both, so <span class="math-inline">\\(\vec b\\)</span> isn't in the column space of <span class="math-inline">\\(A\\)</span>.
+
+</li>
+<li markdown="1" value="2">
+
+The second row gives <span class="math-inline">\\(x&#95;2=1\\)</span>, and the fifth gives <span class="math-inline">\\(3x&#95;1+2=-4\\)</span>, so <span class="math-inline">\\(x&#95;1=-2\\)</span>. The first row then gives <span class="math-inline">\\(-6+4x&#95;3=10\\)</span>, so <span class="math-inline">\\(x&#95;3=4\\)</span>. We still need to check the other rows:
+
+<div class="math-display">
+$$
+2(-2)-1-3(4)=-17,\qquad 5(-2)-4=-14.
+$$
+</div>
+
+ Both work! So <span class="math-inline">\\(\boxed{\vec x=\begin{bmatrix}-2\\\\1\\\\4\end{bmatrix}}\\)</span> satisfies <span class="math-inline">\\(A\vec x=\vec b\\)</span>.
+
+</li>
+</ol>
+</details>
+
 </div>
 </div>
 
@@ -365,6 +522,21 @@ There are two interpretations of the resulting vector, based on what we've seen 
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
 (3 pts) Explain why it's the case that --- for this particular matrix <span class="math-inline">\\(A\\)</span> --- if <span class="math-inline">\\(A \vec x&#95;1 = \vec b\\)</span> and <span class="math-inline">\\(A \vec x&#95;2 = \vec b\\)</span>, then <span class="math-inline">\\(\vec x&#95;1 = \vec x&#95;2\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+The key is that the columns of <span class="math-inline">\\(A\\)</span> are linearly independent. Let's verify this: if <span class="math-inline">\\(A\vec z=\vec0\\)</span>, row 2 gives <span class="math-inline">\\(z&#95;2=0\\)</span>, row 5 then gives <span class="math-inline">\\(z&#95;1=0\\)</span>, and row 1 gives <span class="math-inline">\\(z&#95;3=0\\)</span>. So the only solution is <span class="math-inline">\\(\vec z=\vec0\\)</span>.
+
+Now, if <span class="math-inline">\\(A\vec x&#95;1=\vec b\\)</span> and <span class="math-inline">\\(A\vec x&#95;2=\vec b\\)</span>, subtracting gives
+
+<div class="math-display">
+$$
+A(\vec x_1-\vec x_2)=\vec0.
+$$
+</div>
+
+ By what we just showed, <span class="math-inline">\\(\vec x&#95;1-\vec x&#95;2=\vec0\\)</span>, so <span class="math-inline">\\(\boxed{\vec x&#95;1=\vec x&#95;2}\\)</span>. In other words, a vector can be written as a linear combination of linearly independent vectors in only one way.
+</details>
 
 </div>
 </div>
@@ -408,6 +580,22 @@ $$
 <div class="assignment-part-content" markdown="1">
 (4 pts) For this particular matrix <span class="math-inline">\\(D\\)</span>, find <span class="math-inline">\\(\Sigma\\)</span>. All four components of <span class="math-inline">\\(\Sigma\\)</span> should be expressions involving the points <span class="math-inline">\\(x&#95;1, x&#95;2, \ldots, x&#95;n\\)</span> and/or <span class="math-inline">\\(y&#95;1, y&#95;2, \ldots, y&#95;n\\)</span>. Feel free to use summation notation in your answers.
 
+<details markdown="1"><summary>Solution</summary>
+
+Each entry of <span class="math-inline">\\(D^TD\\)</span> is a dot product of two columns of <span class="math-inline">\\(D\\)</span>. So,
+
+<div class="math-display">
+$$
+\boxed{\Sigma=\frac1n\begin{bmatrix}
+\sum_{i=1}^n(x_i-\bar x)^2 & \sum_{i=1}^n(x_i-\bar x)(y_i-\bar y)\\\\
+\sum_{i=1}^n(x_i-\bar x)(y_i-\bar y) & \sum_{i=1}^n(y_i-\bar y)^2
+\end{bmatrix}}.
+$$
+</div>
+
+ Notice that the two off-diagonal entries are the same: swapping the order of a dot product doesn't change its value.
+</details>
+
 </div>
 </div>
 
@@ -415,6 +603,11 @@ $$
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
 (2 pts) In English, what do the two elements on the diagonal (top-left and bottom-right) of <span class="math-inline">\\(\Sigma\\)</span> represent?
+
+<details markdown="1"><summary>Solution</summary>
+
+The top-left entry is the variance of <span class="math-inline">\\(x\\)</span>, <span class="math-inline">\\(\sigma&#95;x^2\\)</span>, and the bottom-right entry is the variance of <span class="math-inline">\\(y\\)</span>, <span class="math-inline">\\(\sigma&#95;y^2\\)</span>.
+</details>
 
 </div>
 </div>
@@ -427,6 +620,19 @@ $$
 Find an expression for the off-diagonal elements of <span class="math-inline">\\(\Sigma\\)</span> in terms of the correlation coefficient, <span class="math-inline">\\(r\\)</span>, <span class="math-inline">\\(\sigma&#95;x\\)</span>, and <span class="math-inline">\\(\sigma&#95;y\\)</span>, but with no summation notation or other variables.
 
 <em>Hint: This only requires 1-2 lines of work. Remember the definition of <span class="math-inline">\\(r\\)</span> from <a href="https://notes.eecs245.org/simple-linear-regression/correlation/">Chapter 2.4</a>.</em>
+
+<details markdown="1"><summary>Solution</summary>
+
+Recall that
+
+<div class="math-display">
+$$
+r=\frac{1}{n\sigma_x\sigma_y}\sum_{i=1}^n(x_i-\bar x)(y_i-\bar y).
+$$
+</div>
+
+ Multiplying both sides by <span class="math-inline">\\(\sigma&#95;x\sigma&#95;y\\)</span> tells us that each off-diagonal entry is <span class="math-inline">\\(\boxed{r\sigma&#95;x\sigma&#95;y}\\)</span>.
+</details>
 
 </div>
 </div>
@@ -443,6 +649,13 @@ $$
 </div>
 
 In English, explain what the element in row 3 and column 5 of this <span class="math-inline">\\(\Sigma\\)</span> represents.
+
+<details markdown="1"><summary>Solution</summary>
+
+Assuming each column of <span class="math-inline">\\(X\\)</span> has been mean-centered, this entry is the **covariance between features 3 and 5**. It's their correlation multiplied by their two standard deviations.
+
+The mean-centering assumption matters here, just as it did for <span class="math-inline">\\(D\\)</span>. Without it, the entry is the average of the products of the two features, <span class="math-inline">\\(\frac1n\sum&#95;{i=1}^n X&#95;{i3}X&#95;{i5}\\)</span>; we'd need to subtract the product of their means to get the covariance.
+</details>
 
 </div>
 </div>
@@ -481,6 +694,28 @@ Think of <span class="math-inline">\\(P\\)</span> as a matrix that transforms <s
 
 <em>Hint: Start by writing <span class="math-inline">\\(P = \begin{bmatrix} a &amp; b \\\\ c &amp; d \end{bmatrix}\\)</span> and solve for <span class="math-inline">\\(a, b, c, d\\)</span> in terms of <span class="math-inline">\\(v&#95;1\\)</span> and <span class="math-inline">\\(v&#95;2\\)</span>; <span class="math-inline">\\(P\\)</span> should not involve <span class="math-inline">\\(u&#95;1\\)</span> or <span class="math-inline">\\(u&#95;2\\)</span>. Don't forget that <span class="math-inline">\\(\vec v\\)</span> is a unit vector, and both <span class="math-inline">\\(\vec u, \vec v \in \mathbb{R}^2\\)</span>.</em>
 
+<details markdown="1"><summary>Solution</summary>
+
+Let's expand the projection formula:
+
+<div class="math-display">
+$$
+(\vec u\cdot\vec v)\vec v
+=\begin{bmatrix}u_1v_1^2+u_2v_1v_2\\\\u_1v_1v_2+u_2v_2^2\end{bmatrix}.
+$$
+</div>
+
+ The coefficients on <span class="math-inline">\\(u&#95;1\\)</span> and <span class="math-inline">\\(u&#95;2\\)</span> give us the entries of <span class="math-inline">\\(P\\)</span>:
+
+<div class="math-display">
+$$
+\boxed{P=\begin{bmatrix}v_1^2&v_1v_2\\\\v_1v_2&v_2^2\end{bmatrix}}.
+$$
+</div>
+
+ This works for every <span class="math-inline">\\(\vec u\\)</span>, and only depends on the direction we're projecting onto.
+</details>
+
 </div>
 </div>
 
@@ -502,6 +737,30 @@ The projection matrix <span class="math-inline">\\(P\\)</span> you found in part
 </li>
 </ol>
 
+<details markdown="1"><summary>Solution</summary>
+
+**(i)** Using the projection formula,
+
+<div class="math-display">
+$$
+\vec p=\left(9\cdot\frac35-3\cdot\frac45\right)\begin{bmatrix}3/5\\\\4/5\end{bmatrix}
+=3\begin{bmatrix}3/5\\\\4/5\end{bmatrix}
+=\boxed{\begin{bmatrix}9/5\\\\12/5\end{bmatrix}}.
+$$
+</div>
+
+ **(ii)** Our projection matrix gives the same result:
+
+<div class="math-display">
+$$
+P\vec u=\frac1{25}\begin{bmatrix}9&12\\\\12&16\end{bmatrix}\begin{bmatrix}9\\\\-3\end{bmatrix}
+=\frac1{25}\begin{bmatrix}45\\\\60\end{bmatrix}
+=\begin{bmatrix}9/5\\\\12/5\end{bmatrix}.
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -520,6 +779,22 @@ This means that <span class="math-inline">\\(P\\)</span> is an **idempotent** ma
 
 <em>Hint: You'll likely end up with terms of the form <span class="math-inline">\\(v&#95;1^4\\)</span>. Remember that <span class="math-inline">\\(\vec v\\)</span> is a unit vector; use this to help you simplify.</em>
 
+<details markdown="1"><summary>Solution</summary>
+
+Since <span class="math-inline">\\(\vec v\\)</span> is a unit vector, <span class="math-inline">\\(v&#95;1^2+v&#95;2^2=1\\)</span>. Multiplying gives
+
+<div class="math-display">
+$$
+\begin{align*}
+P^2&=\begin{bmatrix}v_1^4+v_1^2v_2^2&v_1^3v_2+v_1v_2^3\\\\v_1^3v_2+v_1v_2^3&v_1^2v_2^2+v_2^4\end{bmatrix}\\\\
+&=(v_1^2+v_2^2)\begin{bmatrix}v_1^2&v_1v_2\\\\v_1v_2&v_2^2\end{bmatrix}=P.
+\end{align*}
+$$
+</div>
+
+Once we've projected onto the line, projecting again doesn't move us anywhere!
+</details>
+
 </div>
 </div>
 
@@ -530,6 +805,35 @@ This means that <span class="math-inline">\\(P\\)</span> is an **idempotent** ma
 
 Go to Problem 5d and complete the tasks in that section. **There is no autograded code for Problem 5d --** instead, include screenshots of your code and its output when you drag the slider to <span class="math-inline">\\(30^\circ\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+For the first plot, fill in
+
+```python
+P = np.array([[9/25, 12/25], [12/25, 16/25]])
+```
+This gives <span class="math-inline">\\(P\vec u=\begin{bmatrix}9/5\\\\12/5\end{bmatrix}\\)</span>, as in part (b).
+
+For the explorer at <span class="math-inline">\\(30^\circ\\)</span>, the unit vector along the line is <span class="math-inline">\\(\begin{bmatrix}\sqrt3/2\\\\1/2\end{bmatrix}\\)</span>, so
+
+<div class="math-display">
+$$
+P=\frac14\begin{bmatrix}3&\sqrt3\\\\\sqrt3&1\end{bmatrix}.
+$$
+</div>
+
+ Both projected vectors lie on that line:
+
+<div class="math-display">
+$$
+P\vec x=\frac14\begin{bmatrix}6+\sqrt3\\\\2\sqrt3+1\end{bmatrix},\qquad
+P\vec y=\frac14\begin{bmatrix}-3+2\sqrt3\\\\-\sqrt3+2\end{bmatrix}.
+$$
+</div>
+
+ These are the endpoints you should see in the plot.
+</details>
+
 </div>
 </div>
 
@@ -537,6 +841,11 @@ Go to Problem 5d and complete the tasks in that section. **There is no autograde
 <div class="assignment-part-label">e)</div>
 <div class="assignment-part-content" markdown="1">
 (2 pts) Reflect on what you observed above. What angle does the dashed segment make with the projection line? Try a horizontal line, a vertical line, and a tilted line using the slider. Explain how what you see illustrates <span class="math-inline">\\(P^2=P\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+The dashed segment is perpendicular to the projection line, so the angle is <span class="math-inline">\\(90^\circ\\)</span>. This stays true whether the line is horizontal, vertical, or tilted. Once a vector has been projected, it's already on the line, so projecting it again leaves it where it is. That's what <span class="math-inline">\\(P^2=P\\)</span> means geometrically.
+</details>
 
 </div>
 </div>
@@ -547,6 +856,27 @@ Go to Problem 5d and complete the tasks in that section. **There is no autograde
 (5 pts) Find a matrix <span class="math-inline">\\(R\\)</span> such that <span class="math-inline">\\(R\vec u\\)</span> is the reflection of <span class="math-inline">\\(\vec u\\)</span> across the line spanned by the **unit vector** <span class="math-inline">\\(\vec v\\)</span>, using the reflection operation you learned about in [Homework 4, Problem 4](https://eecs245.org/resources/homeworks/hw04/#problem-4-a-change-of-reflection-10-pts). Express <span class="math-inline">\\(R\\)</span> in terms of <span class="math-inline">\\(P\\)</span> and the identity matrix <span class="math-inline">\\(I\\)</span>.
 
 Then show algebraically that <span class="math-inline">\\(R^2=I\\)</span>. Use your equation for <span class="math-inline">\\(R\\)</span> and the identity <span class="math-inline">\\(P^2=P\\)</span>, rather than expanding the individual entries of <span class="math-inline">\\(R\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+From Homework 4, the reflection is <span class="math-inline">\\(2\vec p-\vec u\\)</span>. Since <span class="math-inline">\\(\vec p=P\vec u\\)</span>, we get
+
+<div class="math-display">
+$$
+R\vec u=2P\vec u-\vec u=(2P-I)\vec u,\qquad \boxed{R=2P-I}.
+$$
+</div>
+
+ Now use <span class="math-inline">\\(P^2=P\\)</span>:
+
+<div class="math-display">
+$$
+R^2=(2P-I)^2=4P^2-4P+I=4P-4P+I=\boxed I.
+$$
+</div>
+
+ Reflecting across the same line twice takes us back to the original vector.
+</details>
 
 </div>
 </div>
@@ -573,6 +903,31 @@ C=\begin{bmatrix}3/5&0&1/\sqrt2\\\\4/5&0&1/\sqrt2\\\\0&1&0\end{bmatrix}
 $$
 </div>
 
+<details markdown="1"><summary>Solution</summary>
+
+**<span class="math-inline">\\(A\\)</span> is not orthogonal.** Its columns are perpendicular, but their lengths are 5 and 2, so they aren't unit vectors. Also, an orthogonal matrix must be square, and <span class="math-inline">\\(A\\)</span> isn't.
+
+**<span class="math-inline">\\(B\\)</span> is orthogonal.** Each column has length 1. The dot product of the first two columns is
+
+<div class="math-display">
+$$
+\frac35\cdot\frac45+\frac45\left(-\frac35\right)=0,
+$$
+</div>
+
+ and the third column is perpendicular to both. So <span class="math-inline">\\(B\\)</span> is square with orthonormal columns, which means <span class="math-inline">\\(B^TB=BB^T=I\\)</span>.
+
+**<span class="math-inline">\\(C\\)</span> is not orthogonal.** Its columns all have length 1, but the first and third aren't perpendicular:
+
+<div class="math-display">
+$$
+\frac35\cdot\frac1{\sqrt2}+\frac45\cdot\frac1{\sqrt2}=\frac7{5\sqrt2}\ne0.
+$$
+</div>
+
+ Unit-length columns alone aren't enough!
+</details>
+
 </div>
 </div>
 
@@ -580,6 +935,13 @@ $$
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
 (3 pts) Explain why the following statement is true: If <span class="math-inline">\\(Q\\)</span> is an orthogonal matrix, then the **rows** of <span class="math-inline">\\(Q\\)</span> form an orthonormal set, in addition to the columns. <em>Hint: Think about what <span class="math-inline">\\(Q^TQ\\)</span> and <span class="math-inline">\\(QQ^T\\)</span> each are.</em>
+
+<details markdown="1"><summary>Solution</summary>
+
+Since <span class="math-inline">\\(Q\\)</span> is orthogonal, <span class="math-inline">\\(QQ^T=I\\)</span>. The entry in row <span class="math-inline">\\(i\\)</span> and column <span class="math-inline">\\(j\\)</span> of <span class="math-inline">\\(QQ^T\\)</span> is the dot product of rows <span class="math-inline">\\(i\\)</span> and <span class="math-inline">\\(j\\)</span> of <span class="math-inline">\\(Q\\)</span>.
+
+On the diagonal, we get 1, so each row has squared length 1. Off the diagonal, we get 0, so different rows are perpendicular. Together, these tell us that the rows form an orthonormal set.
+</details>
 
 </div>
 </div>
@@ -591,6 +953,21 @@ $$
 
 Go to **Problem 6c** and complete the tasks in that section. **There is no autograded code for this problem.** Instead, include screenshots of your code and its output when you drag the slider to <span class="math-inline">\\(30^\circ\\)</span>, along with your written observations.
 
+<details markdown="1"><summary>Solution</summary>
+
+At <span class="math-inline">\\(30^\circ\\)</span>, both vectors turn <span class="math-inline">\\(30^\circ\\)</span> counterclockwise. Their lengths stay <span class="math-inline">\\(\sqrt5\\)</span>, and the angle between them stays <span class="math-inline">\\(90^\circ\\)</span>. This is also what we see at the other slider settings: rotation changes direction, but preserves lengths and angles.
+
+Using <span class="math-inline">\\(R=\begin{bmatrix}\sqrt3/2&amp;-1/2\\\\1/2&amp;\sqrt3/2\end{bmatrix}\\)</span>, the endpoints at <span class="math-inline">\\(30^\circ\\)</span> are
+
+<div class="math-display">
+$$
+R\vec x=\begin{bmatrix}\sqrt3-1/2\\\\1+\sqrt3/2\end{bmatrix},\qquad
+R\vec y=\begin{bmatrix}-\sqrt3/2-1\\\\-1/2+\sqrt3\end{bmatrix}.
+$$
+</div>
+
+</details>
+
 </div>
 </div>
 
@@ -598,6 +975,23 @@ Go to **Problem 6c** and complete the tasks in that section. **There is no autog
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
 (3 pts) Prove that an orthogonal matrix preserves the norm of every vector: if <span class="math-inline">\\(Q\in\mathbb R^{n\times n}\\)</span> is orthogonal and <span class="math-inline">\\(\vec x\in\mathbb R^n\\)</span>, then <span class="math-inline">\\(\lVert Q\vec x\rVert=\lVert\vec x\rVert\\)</span>.
+
+<details markdown="1"><summary>Solution</summary>
+
+Let's write the squared norm as a dot product and use <span class="math-inline">\\(Q^TQ=I\\)</span>:
+
+<div class="math-display">
+$$
+\begin{align*}
+\lVert Q\vec x\rVert^2&=(Q\vec x)^T(Q\vec x)\\\\
+&=\vec x^TQ^TQ\vec x\\\\
+&=\vec x^T\vec x=\lVert\vec x\rVert^2.
+\end{align*}
+$$
+</div>
+
+Both norms are nonnegative, so taking square roots gives <span class="math-inline">\\(\boxed{\lVert Q\vec x\rVert=\lVert\vec x\rVert}\\)</span>.
+</details>
 
 </div>
 </div>
@@ -638,6 +1032,29 @@ $$
 $$
 </div>
 
+<details markdown="1"><summary>Solution</summary>
+
+**(i)** A unit vector at angle <span class="math-inline">\\(\alpha\\)</span> has components <span class="math-inline">\\(\cos\alpha\\)</span> and <span class="math-inline">\\(\sin\alpha\\)</span>. So,
+
+<div class="math-display">
+$$
+\vec u=\begin{bmatrix}\cos\alpha\\\\\sin\alpha\end{bmatrix},\qquad
+\vec v=\begin{bmatrix}\cos(\alpha+\theta)\\\\\sin(\alpha+\theta)\end{bmatrix}.
+$$
+</div>
+
+ **(ii)** Expanding with the angle-addition identities gives
+
+<div class="math-display">
+$$
+\vec v=\begin{bmatrix}\cos\theta\cos\alpha-\sin\theta\sin\alpha\\\\\sin\theta\cos\alpha+\cos\theta\sin\alpha\end{bmatrix}
+=\underbrace{\begin{bmatrix}\cos\theta&-\sin\theta\\\\\sin\theta&\cos\theta\end{bmatrix}}_{R}\vec u.
+$$
+</div>
+
+ **(iii)** Any nonzero vector is <span class="math-inline">\\(r\vec u\\)</span> for some unit vector <span class="math-inline">\\(\vec u\\)</span> and length <span class="math-inline">\\(r&gt;0\\)</span>. Matrix multiplication gives <span class="math-inline">\\(R(r\vec u)=rR\vec u\\)</span>, so we get the rotated direction with the original length. The zero vector stays at the origin.
+</details>
+
 </div>
 </div>
 
@@ -647,6 +1064,19 @@ $$
 (2 pts) Prove that the rotation matrix <span class="math-inline">\\(R\\)</span> you found in part **e)** is orthogonal for every angle <span class="math-inline">\\(\theta\\)</span>.
 
 <em>Hint: Use <span class="math-inline">\\(\cos^2(\theta)+\sin^2(\theta)=1\\)</span>.</em>
+
+<details markdown="1"><summary>Solution</summary>
+
+The columns of <span class="math-inline">\\(R\\)</span> are <span class="math-inline">\\(\begin{bmatrix}\cos\theta\\\\\sin\theta\end{bmatrix}\\)</span> and <span class="math-inline">\\(\begin{bmatrix}-\sin\theta\\\\\cos\theta\end{bmatrix}\\)</span>. Each has squared length <span class="math-inline">\\(\cos^2\theta+\sin^2\theta=1\\)</span>, and their dot product is
+
+<div class="math-display">
+$$
+\cos\theta(-\sin\theta)+\sin\theta\cos\theta=0.
+$$
+</div>
+
+ So <span class="math-inline">\\(R\\)</span> is square with orthonormal columns, and hence is orthogonal for every <span class="math-inline">\\(\theta\\)</span>.
+</details>
 
 </div>
 </div>
@@ -702,6 +1132,27 @@ Can you find a **nonzero** vector <span class="math-inline">\\(\vec v\\)</span> 
 (3 pts)
 <span class="math-inline">\\(A=\begin{bmatrix}1&amp;2&amp;3\\\\4&amp;5&amp;6\\\\7&amp;8&amp;9\end{bmatrix}\\)</span>
 
+<details markdown="1"><summary>Solution</summary>
+
+The first two columns aren't scalar multiples, so they're linearly independent. The third is <span class="math-inline">\\(-1\\)</span> times the first plus 2 times the second. So,
+
+<div class="math-display">
+$$
+\boxed{C=\begin{bmatrix}1&2\\\\4&5\\\\7&8\end{bmatrix},\qquad R=\begin{bmatrix}1&0&-1\\\\0&1&2\end{bmatrix}}.
+$$
+</div>
+
+ The rank is <span class="math-inline">\\(\boxed2\\)</span>, the number of columns in <span class="math-inline">\\(C\\)</span>. Moving our column relationship to one side gives column 1 minus 2 times column 2 plus column 3 equal to zero, so
+
+<div class="math-display">
+$$
+\boxed{\vec v=\begin{bmatrix}1\\\\-2\\\\1\end{bmatrix}}
+$$
+</div>
+
+ is one nonzero vector with <span class="math-inline">\\(A\vec v=\vec0\\)</span>.
+</details>
+
 </div>
 </div>
 
@@ -711,6 +1162,19 @@ Can you find a **nonzero** vector <span class="math-inline">\\(\vec v\\)</span> 
 (3 pts)
 <span class="math-inline">\\(A=\begin{bmatrix}3&amp;5\\\\1&amp;1\\\\2&amp;-4\\\\30&amp;0\end{bmatrix}\\)</span>
 
+<details markdown="1"><summary>Solution</summary>
+
+The two columns aren't scalar multiples, so they're linearly independent. We keep both:
+
+<div class="math-display">
+$$
+\boxed{C=\begin{bmatrix}3&5\\\\1&1\\\\2&-4\\\\30&0\end{bmatrix},\qquad R=\begin{bmatrix}1&0\\\\0&1\end{bmatrix}}.
+$$
+</div>
+
+ The rank is <span class="math-inline">\\(\boxed2\\)</span>, again the number of columns in <span class="math-inline">\\(C\\)</span>. There is **no nonzero** <span class="math-inline">\\(\vec v\\)</span> with <span class="math-inline">\\(A\vec v=\vec0\\)</span>, since linear independence means the only coefficients that give the zero vector are both zero.
+</details>
+
 </div>
 </div>
 
@@ -719,6 +1183,26 @@ Can you find a **nonzero** vector <span class="math-inline">\\(\vec v\\)</span> 
 <div class="assignment-part-content" markdown="1">
 (4 pts)
 <span class="math-inline">\\(A=\begin{bmatrix}1&amp;-2&amp;3&amp;-1\\\\-2&amp;4&amp;1&amp;-5\\\\3&amp;-6&amp;4&amp;2\\\\0&amp;0&amp;5&amp;-5\end{bmatrix}\\)</span>
+
+<details markdown="1"><summary>Solution</summary>
+
+Column 2 is <span class="math-inline">\\(-2\\)</span> times column 1, so we skip it. Column 3 isn't a multiple of column 1, so we keep it. Finally, column 4 is 2 times column 1 minus column 3. This gives
+
+<div class="math-display">
+$$
+\boxed{C=\begin{bmatrix}1&3\\\\-2&1\\\\3&4\\\\0&5\end{bmatrix},\qquad R=\begin{bmatrix}1&-2&0&2\\\\0&0&1&-1\end{bmatrix}}.
+$$
+</div>
+
+ The rank is <span class="math-inline">\\(\boxed2\\)</span>, the number of columns in <span class="math-inline">\\(C\\)</span>. Since 2 times column 1 plus column 2 is zero, one choice is
+
+<div class="math-display">
+$$
+\boxed{\vec v=\begin{bmatrix}2\\\\1\\\\0\\\\0\end{bmatrix}}.
+$$
+</div>
+
+</details>
 
 </div>
 </div>
@@ -759,5 +1243,20 @@ Task 4 (2 pts): Your handwritten responses to both questions about cosine simila
 </ul>
 
 Your submission time for Homework 5 is the later of the two submission times: your Problem 1 video link and your regular Homework 5 PDF.
+
+<details markdown="1"><summary>Solution</summary>
+
+**Task 1.** The rank is almost always 3 because the columns span <span class="math-inline">\\(\mathbb R^3\\)</span>: with independent Gaussian entries, an exact linear dependence among the first three columns has probability zero.
+
+**Task 2.** The largest possible rank is <span class="math-inline">\\(\boxed3\\)</span>, since the product has only 3 rows. We also almost always observe rank 3. To see why, call the factors <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(B\\)</span>. The columns of the <span class="math-inline">\\(4\times5\\)</span> matrix <span class="math-inline">\\(B\\)</span> almost surely span <span class="math-inline">\\(\mathbb R^4\\)</span>. Applying <span class="math-inline">\\(A\\)</span> to those columns therefore spans the entire column space of <span class="math-inline">\\(A\\)</span>, which almost surely has dimension 3.
+
+**Task 3.** With binary entries, exact dependencies have positive probability. For instance, a column can be all zeros, or two columns can be identical. Either factor can lose rank this way, and the product can't have more rank than either factor. That's why we see several possible ranks, especially for the <span class="math-inline">\\(3\times3\\)</span> products.
+
+As the matrices get larger, the plots concentrate near full rank. One way to build intuition is to look at a particular pair of columns: the probability that they match in every entry is <span class="math-inline">\\(2^{-n}\\)</span>. The probability that a particular column is all zeros is also <span class="math-inline">\\(2^{-n}\\)</span>. These simple dependencies become much less likely as <span class="math-inline">\\(n\\)</span> grows. There are other ways to be dependent, too, so this is intuition for the pattern, rather than a proof covering every possible dependency.
+
+**Task 4.** As <span class="math-inline">\\(n\\)</span> increases, the cosine similarities concentrate around 0. In other words, two independent random Gaussian vectors are increasingly likely to be **nearly perpendicular**. They aren't usually exactly perpendicular; the angle is just close to <span class="math-inline">\\(90^\circ\\)</span>.
+
+The "curse of dimensionality" refers to difficulties that arise when we have many features. For example, data become sparse in a high-dimensional space, and similarity becomes less useful for distinguishing points when most pairs have nearly the same similarity. This experiment illustrates that issue: as the number of components grows, most pairs of these random vectors have cosine similarity close to 0.
+</details>
 
 {% endraw %}
