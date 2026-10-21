@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Lab 7: Null Space and Inverses"
-description: "Lab 7: Null Space and Inverses activities."
+title: "Lab 7: Null Space and Rank-Nullity Theorem"
+description: "Lab 7: Null Space and Rank-Nullity Theorem activities."
 nav_exclude: true
 hide_footer_hr: true
 ---
@@ -147,7 +147,7 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 </style>
 
-# Lab 7: Null Space and Inverses
+# Lab 7: Null Space and Rank-Nullity Theorem
 
 **due** by the end of your lab section on Wednesday, October 21st, 2026
 
@@ -167,28 +167,43 @@ While you must get checked off by your lab TA **individually**, we encourage you
 
 ## Activities
 
-- [Activity 1: PrairieLearn Practice Problems](#activity-1-prairielearn-practice-problems)
-- [Activity 2: Null Space of a Matrix with Linearly Independent Columns](#activity-2-null-space-of-a-matrix-with-linearly-independent-columns)
-- [Activity 3: Null Space from Column Relationships](#activity-3-null-space-from-column-relationships)
-- [Activity 4: The Systems of Equations View](#activity-4-the-systems-of-equations-view)
-- [Activity 5: Symbolic Inverses](#activity-5-symbolic-inverses)
-- [Activity 6: Basics of Invertibility](#activity-6-basics-of-invertibility)
-- [Activity 7: Invertibility of $X^TX$](#activity-7-invertibility-of-xtx)
-- [Activity 8: Doing Things Differently](#activity-8-doing-things-differently)
+- [Activity 1: Null Space of a Matrix with Linearly Independent Columns](#activity-1-null-space-of-a-matrix-with-linearly-independent-columns)
+- [Activity 2: Null Space from Column Relationships](#activity-2-null-space-from-column-relationships)
+- [Activity 3: Four Spaces Warm-Up](#activity-3-four-spaces-warm-up)
+- [Activity 4: Constructing a Matrix](#activity-4-constructing-a-matrix)
+- [Activity 5: The Systems of Equations View](#activity-5-the-systems-of-equations-view)
+- [Activity 6: Columns in a Null Space](#activity-6-columns-in-a-null-space)
+- [Activity 7: Can the Column Space Equal the Null Space?](#activity-7-can-the-column-space-equal-the-null-space)
 
 ---
 
-## Recap: Rank, Column Space, Null Space, and Inverses
+## Recap: Rank, Column Space, and Null Space
 
-<ul class="assignment-list" markdown="1" data-item-count="4">
+<ul class="assignment-list" markdown="1" data-item-count="5">
 <li markdown="1">
 
-For an <span class="math-inline">\\(n\times d\\)</span> matrix <span class="math-inline">\\(A\\)</span>, <span class="math-inline">\\(\operatorname{colsp}(A)\subseteq\mathbb R^n\\)</span> has dimension <span class="math-inline">\\(\operatorname{rank}(A)\\)</span>.
+For an <span class="math-inline">\\(n\times d\\)</span> matrix <span class="math-inline">\\(A\\)</span>, <span class="math-inline">\\(\operatorname{colsp}(A)\\)</span> is a subspace of <span class="math-inline">\\(\mathbb R^n\\)</span>; it is the span of <span class="math-inline">\\(A\\)</span>'s columns.
 
 </li>
 <li markdown="1">
 
-<span class="math-inline">\\(\operatorname{nullsp}(A)=\lbrace\vec x\in\mathbb R^d:A\vec x=\vec 0\rbrace\\)</span>, and <span class="math-inline">\\(\dim(\operatorname{nullsp}(A))=d-\operatorname{rank}(A)\\)</span>.
+<span class="math-inline">\\(\operatorname{rank}(A)=\dim(\operatorname{colsp}(A))\\)</span>.
+
+</li>
+<li markdown="1">
+
+<span class="math-inline">\\(\operatorname{nullsp}(A)=\lbrace\vec x\in\mathbb R^d:A\vec x=\vec 0\rbrace\\)</span>.
+
+</li>
+<li markdown="1">
+
+The **rank-nullity theorem** states that
+
+<div class="math-display">
+$$
+\operatorname{rank}(A)+\dim(\operatorname{nullsp}(A))=d
+$$
+</div>
 
 </li>
 <li markdown="1">
@@ -196,54 +211,34 @@ For an <span class="math-inline">\\(n\times d\\)</span> matrix <span class="math
 <span class="math-inline">\\(\operatorname{rank}(A^T)=\operatorname{rank}(A)\\)</span>.
 
 </li>
-<li markdown="1">
-
-A square matrix <span class="math-inline">\\(A\\)</span> is invertible if and only if it has full rank. Its inverse satisfies <span class="math-inline">\\(AA^{-1}=A^{-1}A=I\\)</span>.
-
-</li>
 </ul>
 
 ---
 
-## Activity 1: PrairieLearn Practice Problems
-
-We're testing out a new website for practicing linear algebra problems: PrairieLearn.
-
-Click [**this link**](https://us.prairielearn.com/pl/course_instance/217357) to access the relevant problems for this activity. It consists of 6 problems, each worth 1 point. The numbers in the problems are randomized; everyone will receive slightly different problems.
-
-To get credit for Activity 1, you must **eventually** correctly answer all 6 problems, earning a score of 6/6. If you answer a problem incorrectly, click "New Variant" to generate a new version and then try again. There is no penalty for answering a problem incorrectly, as long as you eventually get it correct.
-
-To be clear, you don't need to include anything in your PDF for Activity 1; we will manually verify that you've finished all 6 problems.
-
-If you have trouble accessing PrairieLearn, message Suraj on Slack.
-
----
-
-## Activity 2: Null Space of a Matrix with Linearly Independent Columns
+## Activity 1: Null Space of a Matrix with Linearly Independent Columns
 
 Let <span class="math-inline">\\(A = \begin{bmatrix} 3 &amp; 0 \\\\ 0 &amp; 4 \\\\ 1 &amp; 0 \end{bmatrix}\\)</span>. What is <span class="math-inline">\\(\text{nullsp}(A)\\)</span>?
 
 <details markdown="1"><summary>Solution</summary>
 
-The columns of <span class="math-inline">\\(A\\)</span> are linearly independent, so the only linear combination that gives <span class="math-inline">\\(\vec0\\)</span> has both coefficients zero. Equivalently,
+The columns of <span class="math-inline">\\(A\\)</span> are linearly independent. So, the only way to combine them to get <span class="math-inline">\\(\vec 0\\)</span> is to use zero for both coefficients. This means
 
 <div class="math-display">
 $$
-A\begin{bmatrix}x_1\\\\x_2\end{bmatrix}=\begin{bmatrix}3x_1\\\\4x_2\\\\x_1\end{bmatrix}=\vec0
-\quad\Longrightarrow\quad x_1=x_2=0
+\boxed{\text{nullsp}(A)=\left\{\begin{bmatrix}0\\\\0\end{bmatrix}\right\}}
 $$
 </div>
 
- Thus <span class="math-inline">\\(\boxed{\text{nullsp}(A)=\left\lbrace\begin{bmatrix}0\\\\0\end{bmatrix}\right\rbrace}\\)</span>.
+ Notice that the null space contains the zero vector in <span class="math-inline">\\(\mathbb R^2\\)</span>, not <span class="math-inline">\\(\mathbb R^3\\)</span>, since <span class="math-inline">\\(A\\)</span> has two columns.
 </details>
 
 ---
 
-## Activity 3: Null Space from Column Relationships
+## Activity 2: Null Space from Column Relationships
 
 Let <span class="math-inline">\\(X=\begin{bmatrix}1 &amp; 2 &amp; -1 &amp; 3 &amp; 4 &amp; 4 \\\\ 2 &amp; 5 &amp; -2 &amp; 7 &amp; 11 &amp; 10 \\\\ 4 &amp; 8 &amp; -4 &amp; 12 &amp; 16 &amp; 16\end{bmatrix}\\)</span>.
 
-This is the matrix from Lab 6. Recall that its first two columns form a basis for its column space and its rank is 2.
+Note that <span class="math-inline">\\(X\\)</span>'s first two columns form a basis for its column space; verify this before proceeding.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
@@ -253,40 +248,17 @@ Fill in the blanks: <span class="math-inline">\\(\text{nullsp}(X)\\)</span> is a
 
 <details markdown="1"><summary>Solution</summary>
 
-From [Chapter 5.4](https://notes.eecs245.org/matrices/null-space-rank-nullity/), the **rank-nullity theorem** states that for any <span class="math-inline">\\(n \times d\\)</span> matrix <span class="math-inline">\\(X\\)</span>,
+The rank-nullity theorem tells us that
 
 <div class="math-display">
 $$
-\text{rank}(X) + \dim(\text{nullsp}(X)) = \underbrace{d}_{\text{# columns in } X}
+2+\dim(\text{nullsp}(X))=6
 $$
 </div>
 
-The rank of <span class="math-inline">\\(X\\)</span> was found to be <span class="math-inline">\\(2\\)</span>, and <span class="math-inline">\\(X\\)</span> has <span class="math-inline">\\(6\\)</span> columns, so
+ so <span class="math-inline">\\(\dim(\text{nullsp}(X))=4\\)</span>. Since <span class="math-inline">\\(X\\)</span> has six columns, the vectors in its null space have six components.
 
-<div class="math-display">
-$$
-2 + \dim(\text{nullsp}(X)) = 6
-$$
-</div>
-
-
-
-<div class="math-display">
-$$
-\dim(\text{nullsp}(X)) = 6 - 2 = 4
-$$
-</div>
-
-By definition, <span class="math-inline">\\(\text{nullsp}(X)\\)</span> is the set of all vectors <span class="math-inline">\\(\vec{v} \in \mathbb{R}^6\\)</span> such that <span class="math-inline">\\(X\vec{v} = \vec{0}\\)</span>. Therefore, it is a subspace of <span class="math-inline">\\(\mathbb{R}^6\\)</span>.
-
-<div class="math-display">
-$$
-\boxed{
-\text{nullsp}(X) \text{ is a 4-dimensional subspace of } \mathbb{R}^6
-}
-$$
-</div>
-
+So, the blanks are <span class="math-inline">\\(\boxed{4}\\)</span> and <span class="math-inline">\\(\boxed{\mathbb R^6}\\)</span>.
 </details>
 
 </div>
@@ -299,18 +271,16 @@ Find a basis for <span class="math-inline">\\(\text{nullsp}(X)\\)</span>. <em>Hi
 
 <details markdown="1"><summary>Solution</summary>
 
-Let <span class="math-inline">\\(\vec v&#95;j\\)</span> be column <span class="math-inline">\\(j\\)</span> of <span class="math-inline">\\(X\\)</span>. The relationships
+Let <span class="math-inline">\\(\vec v&#95;j\\)</span> be column <span class="math-inline">\\(j\\)</span> of <span class="math-inline">\\(X\\)</span>. From the columns, we can see that
 
 <div class="math-display">
 $$
-\vec v_1+\vec v_3=\vec0,\quad
-\vec v_1+\vec v_2-\vec v_4=\vec0,\quad
--2\vec v_1+3\vec v_2-\vec v_5=\vec0,\quad
-2\vec v_2-\vec v_6=\vec0
+\vec v_3=-\vec v_1,\qquad \vec v_4=\vec v_1+\vec v_2,\qquad
+\vec v_5=-2\vec v_1+3\vec v_2,\qquad \vec v_6=2\vec v_2
 $$
 </div>
 
- give the following four vectors in the null space:
+ Moving everything to one side in each equation gives a linear combination of the columns equal to <span class="math-inline">\\(\vec 0\\)</span>. The coefficients give us four vectors in <span class="math-inline">\\(\text{nullsp}(X)\\)</span>:
 
 <div class="math-display">
 $$
@@ -323,7 +293,7 @@ $$
 $$
 </div>
 
- They are linearly independent: looking at coordinates 3, 4, 5, and 6 in a linear combination equal to zero forces all four coefficients to be zero. Since the null space has dimension 4, these four independent vectors form a basis.
+ These vectors are linearly independent: in components 3 through 6, each vector has a non-zero entry where the other three have zeros. Since the null space has dimension 4, these four vectors form a basis.
 </details>
 
 </div>
@@ -333,7 +303,129 @@ $$
 
 ---
 
-## Activity 4: The Systems of Equations View
+## Activity 3: Four Spaces Warm-Up
+
+Let <span class="math-inline">\\(A\\)</span> be a <span class="math-inline">\\(7 \times 9\\)</span> matrix with rank <span class="math-inline">\\(5\\)</span>. For each space below, state its dimension and the space <span class="math-inline">\\(\mathbb R^k\\)</span> of which it is a subspace.
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Space</th>
+<th style="text-align: center;">Dimension</th>
+<th style="text-align: center;">Subspace of <span class="math-inline">\(\mathbb R^k\)</span> (state <span class="math-inline">\(k\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{colsp}(A)\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{colsp}(A^T)\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{nullsp}(A)\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{nullsp}(A^T)\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+
+<details markdown="1"><summary>Solution</summary>
+
+The completed table is:
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Space</th>
+<th style="text-align: center;">Dimension</th>
+<th style="text-align: center;">Subspace of</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{colsp}(A)\)</span></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math-inline">\(\mathbb R^7\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{colsp}(A^T)\)</span></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math-inline">\(\mathbb R^9\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{nullsp}(A)\)</span></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math-inline">\(\mathbb R^9\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math-inline">\(\text{nullsp}(A^T)\)</span></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math-inline">\(\mathbb R^7\)</span></td>
+</tr>
+</tbody>
+</table>
+
+Both column spaces have dimension 5, since <span class="math-inline">\\(\text{rank}(A)=\text{rank}(A^T)=5\\)</span>. For the null spaces, apply the rank-nullity theorem to <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(A^T\\)</span>:
+
+<div class="math-display">
+$$
+\dim(\text{nullsp}(A))=9-5=4,\qquad \dim(\text{nullsp}(A^T))=7-5=2
+$$
+</div>
+
+ Remember that <span class="math-inline">\\(A^T\\)</span> has shape <span class="math-inline">\\(9\times 7\\)</span>.
+</details>
+
+---
+
+## Activity 4: Constructing a Matrix
+
+Find a matrix <span class="math-inline">\\(A\\)</span> such that
+
+<div class="math-display">
+$$
+\begin{bmatrix}3\\\\1\end{bmatrix}\in\text{colsp}(A)
+\qquad\text{and}\qquad
+\begin{bmatrix}1\\\\3\end{bmatrix}\in\text{nullsp}(A).
+$$
+</div>
+
+<details markdown="1"><summary>Solution</summary>
+
+The first condition tells us that <span class="math-inline">\\(A\\)</span> needs two rows, and the second tells us that it needs two columns.
+
+Let's make the first column <span class="math-inline">\\(\begin{bmatrix}3\\\\1\end{bmatrix}\\)</span>. Then the first condition is automatically satisfied. For the second condition, we need the first column plus three times the second column to be <span class="math-inline">\\(\vec 0\\)</span>. So, one answer is
+
+<div class="math-display">
+$$
+\boxed{A=\begin{bmatrix}3&-1\\\\1&-1/3\end{bmatrix}}
+$$
+</div>
+
+ We can check that
+
+<div class="math-display">
+$$
+A\begin{bmatrix}1\\\\3\end{bmatrix}=\begin{bmatrix}3-3\\\\1-1\end{bmatrix}=\vec 0
+$$
+</div>
+
+ There are many other correct answers!
+</details>
+
+---
+
+## Activity 5: The Systems of Equations View
 
 Let <span class="math-inline">\\(A\\)</span> be an <span class="math-inline">\\(n \times d\\)</span> matrix of rank <span class="math-inline">\\(r\\)</span>, and suppose there exist vectors <span class="math-inline">\\(\vec b \in \mathbb{R}^n\\)</span> such that
 
@@ -353,30 +445,17 @@ What are all inequalities (<span class="math-inline">\\(&lt;\\)</span> or <span 
 
 <details markdown="1"><summary>Solution</summary>
 
-If <span class="math-inline">\\(A\vec{x} = \vec{b}\\)</span> has no solution for some <span class="math-inline">\\(\vec{b}\\)</span>, then <span class="math-inline">\\(\vec{b}\\)</span> does not lie in <span class="math-inline">\\(\text{colsp}(A)\\)</span>. Thus, the column space of <span class="math-inline">\\(A\\)</span> is a proper subspace of <span class="math-inline">\\(\mathbb{R}^n\\)</span>, meaning its dimension (the rank) is strictly less than <span class="math-inline">\\(n\\)</span>:
+If <span class="math-inline">\\(A\vec x=\vec b\\)</span> has no solution, then <span class="math-inline">\\(\vec b\\)</span> is not in <span class="math-inline">\\(\text{colsp}(A)\\)</span>. So, the columns of <span class="math-inline">\\(A\\)</span> don't span all of <span class="math-inline">\\(\mathbb R^n\\)</span>, which means <span class="math-inline">\\(r&lt;n\\)</span>.
+
+Also, <span class="math-inline">\\(A\\)</span> only has <span class="math-inline">\\(d\\)</span> columns, so it can't have more than <span class="math-inline">\\(d\\)</span> linearly independent columns. This gives
 
 <div class="math-display">
 $$
-r < n
+\boxed{r<n\qquad\text{and}\qquad r\le d}
 $$
 </div>
 
- By general rank properties, rank cannot exceed either the number of rows or columns:
-
-<div class="math-display">
-$$
-r \le n, \quad r \le d
-$$
-</div>
-
- Combining these gives:
-
-<div class="math-display">
-$$
-\boxed{r < n \quad \text{and} \quad r \le d}
-$$
-</div>
-
+ We can't conclude whether <span class="math-inline">\\(n&lt;d\\)</span>, <span class="math-inline">\\(n=d\\)</span>, or <span class="math-inline">\\(n&gt;d\\)</span>; all three are possible.
 </details>
 
 </div>
@@ -389,15 +468,15 @@ How do you know that <span class="math-inline">\\(A^T\vec y= \vec 0\\)</span> ha
 
 <details markdown="1"><summary>Solution</summary>
 
-By the rank-nullity theorem,
+From part (a), <span class="math-inline">\\(r&lt;n\\)</span>. Since <span class="math-inline">\\(A^T\\)</span> has <span class="math-inline">\\(n\\)</span> columns and rank <span class="math-inline">\\(r\\)</span>, the rank-nullity theorem gives
 
 <div class="math-display">
 $$
-\text{rank}(A^T) + \dim(\text{nullsp}(A^T)) = \underbrace{n}_{\text{# columns in } A^T}
+\dim(\text{nullsp}(A^T))=n-r>0
 $$
 </div>
 
- and since <span class="math-inline">\\(\text{rank}(A^T)=r&lt;n\\)</span>, it follows that <span class="math-inline">\\(\dim(\text{nullsp}(A^T))=n-r&gt;0\\)</span>. Therefore, <span class="math-inline">\\(\text{nullsp}(A^T)\\)</span> contains non-zero vectors, so there must exist some <span class="math-inline">\\(\vec{y} \ne \vec{0}\\)</span> such that <span class="math-inline">\\(A^T \vec{y} = \vec{0}\\)</span>.
+ So, <span class="math-inline">\\(\text{nullsp}(A^T)\\)</span> contains more than just the zero vector. Any non-zero vector in this null space is a solution to <span class="math-inline">\\(A^T\vec y=\vec 0\\)</span>.
 </details>
 
 </div>
@@ -407,114 +486,21 @@ $$
 
 ---
 
-## Activity 5: Symbolic Inverses
+## Activity 6: Columns in a Null Space
 
-Given that <span class="math-inline">\\(A\\)</span> is an invertible <span class="math-inline">\\(n \times n\\)</span> matrix that satisfies <span class="math-inline">\\(A^4 - 3A^2 + 2A - 4I = 0\\)</span>, find an expression for <span class="math-inline">\\(A^{-1}\\)</span> in terms of <span class="math-inline">\\(A\\)</span>.
-
-<details markdown="1"><summary>Solution</summary>
-
-The goal is to find another matrix <span class="math-inline">\\(B\\)</span> such that <span class="math-inline">\\(AB = BA = I\\)</span>. We can do this by isolating the identity matrix, <span class="math-inline">\\(I\\)</span>, and then trying to write the other side of the equation as <span class="math-inline">\\(A\\)</span> times some other matrix.
-
-<div class="math-display">
-$$
-\begin{align*}
-A^4 - 3A^2 + 2A - 4I &= 0 \\\\
-A^4 - 3A^2 + 2A &= 4I \\\\
-A(A^3 - 3A + 2I) &= 4I \\\\
-A \left( \frac{1}{4}(A^3 - 3A + 2I) \right) &= I
-\end{align*}
-$$
-</div>
-
-So, <span class="math-inline">\\(\boxed{A^{-1} = \frac{1}{4}(A^3 - 3A + 2I)}\\)</span>.
-
-Because <span class="math-inline">\\(A\\)</span> is invertible, multiplying <span class="math-inline">\\(A(A^3-3A+2I)=4I\\)</span> on the left by <span class="math-inline">\\(A^{-1}\\)</span> proves the formula. Also, any polynomial in <span class="math-inline">\\(A\\)</span> commutes with <span class="math-inline">\\(A\\)</span>, so the displayed candidate satisfies both <span class="math-inline">\\(AB=I\\)</span> and <span class="math-inline">\\(BA=I\\)</span>.
-</details>
-
----
-
-## Activity 6: Basics of Invertibility
-
-Suppose <span class="math-inline">\\(A\\)</span> is an <span class="math-inline">\\(n \times n\\)</span> matrix. State as many of the equivalent conditions for invertibility as you can.
-
-<details markdown="1"><summary>Solution</summary>
-
-If <span class="math-inline">\\(A\\)</span> is an <span class="math-inline">\\(n \times n\\)</span> matrix, then <span class="math-inline">\\(A\\)</span> is invertible if and only if:
-
-<ul class="assignment-list" markdown="1" data-item-count="5">
-<li markdown="1">
-
-<span class="math-inline">\\(\text{rank}(A) = n\\)</span>
-
-</li>
-<li markdown="1">
-
-<span class="math-inline">\\(A\\)</span>'s columns are linearly independent (and hence <span class="math-inline">\\(\text{colsp}(A) = \mathbb{R}^n\\)</span>)
-
-</li>
-<li markdown="1">
-
-<span class="math-inline">\\(A\\)</span>'s rows are linearly independent (and hence <span class="math-inline">\\(\text{rowsp}(A) = \text{colsp}(A^T) = \mathbb{R}^n\\)</span>)
-
-</li>
-<li markdown="1">
-
-<span class="math-inline">\\(A\\)</span>'s null space is only the zero vector, i.e. <span class="math-inline">\\(\text{nullsp}(A) = \lbrace\vec 0\rbrace\\)</span>
-
-</li>
-<li markdown="1">
-
-<span class="math-inline">\\(\text{det}(A) \neq 0\\)</span>
-
-</li>
-</ul>
-</details>
-
----
-
-## Activity 7: Invertibility of <span class="math-inline">\\(X^TX\\)</span>
+Let <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(B\\)</span> be non-zero <span class="math-inline">\\(6 \times 6\\)</span> matrices. Suppose <span class="math-inline">\\(\text{rank}(A)=4\\)</span>, and that every column of <span class="math-inline">\\(B\\)</span> is in <span class="math-inline">\\(\text{nullsp}(A)\\)</span>.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Let <span class="math-inline">\\(X\\)</span> be an <span class="math-inline">\\(n \times d\\)</span> matrix. Fill in the blanks: <span class="math-inline">\\(X^TX\\)</span> is invertible if and only if <span class="math-inline">\\(X\\)</span>'s columns are \_\_\_\_.
+Show that every row of <span class="math-inline">\\(A\\)</span> is orthogonal to every column of <span class="math-inline">\\(B\\)</span>.
 
 <details markdown="1"><summary>Solution</summary>
 
-<span class="math-inline">\\(X^TX\\)</span> is invertible if and only if <span class="math-inline">\\(X\\)</span>'s columns are **linearly independent**. This is because <span class="math-inline">\\(\text{rank}(X) = \text{rank}(X^TX)\\)</span>, as we proved in [Chapter 5.4](https://notes.eecs245.org/matrices/null-space-rank-nullity/#example-rank-of-x-tx), and a square matrix is invertible if and only if its rank is equal to its number of columns.
+Take any column <span class="math-inline">\\(\vec b\\)</span> of <span class="math-inline">\\(B\\)</span>. Since <span class="math-inline">\\(\vec b\in\text{nullsp}(A)\\)</span>, we know that <span class="math-inline">\\(A\vec b=\vec 0\\)</span>.
 
-For <span class="math-inline">\\(\text{rank}(X^TX) = d\\)</span>, we need <span class="math-inline">\\(\text{rank}(X) = d\\)</span>, meaning <span class="math-inline">\\(X\\)</span>'s columns must be linearly independent.
-</details>
-
-</div>
-</div>
-
-</div>
-
----
-
-## Activity 8: Doing Things Differently
-
-Matrix multiplication does not always behave like multiplication of numbers. All matrices below are <span class="math-inline">\\(2\times2\\)</span>, and all vectors are in <span class="math-inline">\\(\mathbb R^2\\)</span>. Justify each answer. For a counterexample, give specific matrices or vectors and show the relevant products.
-
-<div class="assignment-parts" markdown="1">
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">a)</div>
-<div class="assignment-part-content" markdown="1">
-If <span class="math-inline">\\(B\vec v=\vec0\\)</span>, must <span class="math-inline">\\(AB\vec v=\vec0\\)</span>? If <span class="math-inline">\\(AB\vec v=\vec0\\)</span>, must <span class="math-inline">\\(B\vec v=\vec0\\)</span>? Address both directions.
-
-<details markdown="1"><summary>Solution</summary>
-
-Yes in the first direction: <span class="math-inline">\\(AB\vec v=A(B\vec v)=A\vec0=\vec0\\)</span>. The converse is false. Take
-
-<div class="math-display">
-$$
-A=\begin{bmatrix}1&0\\\\0&0\end{bmatrix},\quad B=I,\quad\vec v=\begin{bmatrix}0\\\\1\end{bmatrix}
-$$
-</div>
-
- Then <span class="math-inline">\\(B\vec v=\vec v\ne\vec0\\)</span>, but <span class="math-inline">\\(AB\vec v=A\vec v=\vec0\\)</span>.
+Each entry of <span class="math-inline">\\(A\vec b\\)</span> is the dot product of a row of <span class="math-inline">\\(A\\)</span> with <span class="math-inline">\\(\vec b\\)</span>. Since every entry is zero, every row of <span class="math-inline">\\(A\\)</span> is orthogonal to <span class="math-inline">\\(\vec b\\)</span>. This works for every column of <span class="math-inline">\\(B\\)</span>.
 </details>
 
 </div>
@@ -523,21 +509,19 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Can <span class="math-inline">\\(AB=0&#95;{2\times2}\\)</span> even when neither <span class="math-inline">\\(A\\)</span> nor <span class="math-inline">\\(B\\)</span> is the zero matrix? Give an example or explain why it is impossible.
+Find <span class="math-inline">\\(AB\\)</span> and <span class="math-inline">\\(\text{rank}(AB)\\)</span>. Justify your answers.
 
 <details markdown="1"><summary>Solution</summary>
 
-Yes. For example,
+Each column of <span class="math-inline">\\(AB\\)</span> is <span class="math-inline">\\(A\\)</span> times the corresponding column of <span class="math-inline">\\(B\\)</span>. All of these products are <span class="math-inline">\\(\vec 0\\)</span>, so
 
 <div class="math-display">
 $$
-A=\begin{bmatrix}1&0\\\\0&0\end{bmatrix},\qquad
-B=\begin{bmatrix}0&0\\\\0&1\end{bmatrix},\qquad
-AB=\begin{bmatrix}0&0\\\\0&0\end{bmatrix}
+\boxed{AB=0_{6\times6}\qquad\text{and}\qquad\text{rank}(AB)=0}
 $$
 </div>
 
- Both factors are nonzero.
+ The zero matrix has no linearly independent columns.
 </details>
 
 </div>
@@ -546,35 +530,88 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-Expand <span class="math-inline">\\((A+B)^2\\)</span> using distributivity, keeping the factors in their original order. Is it always equal to <span class="math-inline">\\(A^2+2AB+B^2\\)</span>? If not, give a counterexample.
+What are the possible values of <span class="math-inline">\\(\text{rank}(B)\\)</span>? Explain why these are the only possibilities, and why each one is possible.
 
 <details markdown="1"><summary>Solution</summary>
 
-Distributivity gives
+By the rank-nullity theorem, <span class="math-inline">\\(\dim(\text{nullsp}(A))=6-4=2\\)</span>. Every column of <span class="math-inline">\\(B\\)</span> is in this two-dimensional space, so at most two columns of <span class="math-inline">\\(B\\)</span> can be linearly independent. Also, <span class="math-inline">\\(B\\)</span> is non-zero, so its rank can't be 0.
+
+This leaves <span class="math-inline">\\(\boxed{\text{rank}(B)\in\lbrace1,2\rbrace}\\)</span>. Both are possible. Let <span class="math-inline">\\(\lbrace\vec u,\vec v\rbrace\\)</span> be a basis for <span class="math-inline">\\(\text{nullsp}(A)\\)</span>:
+
+<ul class="assignment-list" markdown="1" data-item-count="2">
+<li markdown="1">
+
+For rank 1, make every column of <span class="math-inline">\\(B\\)</span> equal to <span class="math-inline">\\(\vec u\\)</span>.
+
+</li>
+<li markdown="1">
+
+For rank 2, make the first two columns <span class="math-inline">\\(\vec u\\)</span> and <span class="math-inline">\\(\vec v\\)</span>, and make the remaining columns <span class="math-inline">\\(\vec 0\\)</span>.
+
+</li>
+</ul>
+
+Both choices satisfy all of the conditions in the question.
+</details>
+
+</div>
+</div>
+
+</div>
+
+---
+
+## Activity 7: Can the Column Space Equal the Null Space?
+
+In each part, determine whether it's possible to find a matrix whose column space and null space are the same. If it is, give an example and show that it works. If not, explain why not.
+
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
+Can you find a <span class="math-inline">\\(2 \times 2\\)</span> matrix <span class="math-inline">\\(A\\)</span> such that <span class="math-inline">\\(\text{colsp}(A)=\text{nullsp}(A)\\)</span>?
+
+<details markdown="1"><summary>Solution</summary>
+
+Yes! One example is
 
 <div class="math-display">
 $$
-(A+B)^2=A^2+AB+BA+B^2
+\boxed{A=\begin{bmatrix}0&1\\\\0&0\end{bmatrix}}
 $$
 </div>
 
- This equals <span class="math-inline">\\(A^2+2AB+B^2\\)</span> if and only if <span class="math-inline">\\(AB=BA\\)</span>, which need not hold. For example, take
+ Its column space is <span class="math-inline">\\(\text{span}\left\lbrace\begin{bmatrix}1\\\\0\end{bmatrix}\right\rbrace\\)</span>. To find its null space, note that
 
 <div class="math-display">
 $$
-A=\begin{bmatrix}1&0\\\\0&0\end{bmatrix},\qquad B=\begin{bmatrix}0&1\\\\0&0\end{bmatrix}
+A\begin{bmatrix}x_1\\\\x_2\end{bmatrix}=\begin{bmatrix}x_2\\\\0\end{bmatrix}=\vec 0
+\quad\Longleftrightarrow\quad x_2=0
 $$
 </div>
 
- Then <span class="math-inline">\\(A^2=A\\)</span>, <span class="math-inline">\\(B^2=0\\)</span>, <span class="math-inline">\\(AB=B\\)</span>, and <span class="math-inline">\\(BA=0\\)</span>. Hence
+ So, its null space is also <span class="math-inline">\\(\text{span}\left\lbrace\begin{bmatrix}1\\\\0\end{bmatrix}\right\rbrace\\)</span>. Both spaces are the horizontal axis in <span class="math-inline">\\(\mathbb R^2\\)</span>.
+</details>
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+Can you find a <span class="math-inline">\\(3 \times 3\\)</span> matrix <span class="math-inline">\\(A\\)</span> such that <span class="math-inline">\\(\text{colsp}(A)=\text{nullsp}(A)\\)</span>?
+
+<details markdown="1"><summary>Solution</summary>
+
+No. If the column space and null space were equal, they would have the same dimension. Calling this dimension <span class="math-inline">\\(r\\)</span>, the rank-nullity theorem would give
 
 <div class="math-display">
 $$
-(A+B)^2=\begin{bmatrix}1&1\\\\0&0\end{bmatrix}
-\ne\begin{bmatrix}1&2\\\\0&0\end{bmatrix}=A^2+2AB+B^2
+r+r=3\quad\Longrightarrow\quad r=\frac32
 $$
 </div>
 
+ But the dimension of a subspace must be an integer, so this is impossible.
 </details>
 </div>
 </div>
