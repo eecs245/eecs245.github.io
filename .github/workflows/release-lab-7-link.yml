@@ -1,0 +1,52 @@
+name: Release Lab 7 homepage link
+
+on:
+  schedule:
+    # October 21, 2026, 5:30 PM EDT = 21:30 UTC.
+    - cron: "30 21 21 10 *"
+    # Retry if the initial scheduled run is dropped or fails.
+    - cron: "15 22 21 10 *"
+    - cron: "15 1 22 10 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: release-lab-7-link
+  cancel-in-progress: false
+
+jobs:
+  release-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Release Lab 7 link when due
+        id: release
+        run: python3 .github/scripts/release_lab_7_link.py
+
+      - name: Commit and push
+        if: steps.release.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _modules/week-08.md
+          git commit -m "Release Lab 7 homepage link"
+          git push
+
+      - name: Deploy the released link
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          # GITHUB_TOKEN pushes do not trigger the normal push workflow.
+          # Retry deployment even if a preceding attempt already pushed the link.
+          if grep -q 'problems: ../resources/labs/lab07/' _modules/week-08.md; then
+            gh workflow run build-site.yml --ref "$DEFAULT_BRANCH"
+          fi
