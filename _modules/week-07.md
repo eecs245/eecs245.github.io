@@ -39,5 +39,5 @@ days:
         problems: ../resources/homeworks/hw05/
         solutions: true
         type: hw
-        title: "Matrices"
+        title: <b>Matrices</b>
 ---
