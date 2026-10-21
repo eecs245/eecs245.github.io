@@ -15,7 +15,7 @@ def release(path: Path, now: datetime) -> bool:
     text = path.read_text()
     entry = """      - name: LAB 7
         type: lab
-        title: Null Space and Rank-Nullity Theorem
+        title: Null Space and the Rank-Nullity Theorem
 """
     linked = entry + "        problems: ../resources/labs/lab07/\n"
     if linked in text:

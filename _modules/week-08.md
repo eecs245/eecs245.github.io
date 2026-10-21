@@ -11,7 +11,7 @@ days:
     events:
       - name: LAB 7
         type: lab
-        title: Null Space and Rank-Nullity Theorem
+        title: Null Space and the Rank-Nullity Theorem
   - date: "2026-10-22"
     events:
       - name: LEC 14

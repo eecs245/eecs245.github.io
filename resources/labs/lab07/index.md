@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Lab 7: Null Space and Rank-Nullity Theorem"
-description: "Lab 7: Null Space and Rank-Nullity Theorem activities."
+title: "Lab 7: Null Space and the Rank-Nullity Theorem"
+description: "Lab 7: Null Space and the Rank-Nullity Theorem activities."
 nav_exclude: true
 hide_footer_hr: true
 ---
@@ -147,7 +147,7 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 </style>
 
-# Lab 7: Null Space and Rank-Nullity Theorem
+# Lab 7: Null Space and the Rank-Nullity Theorem
 
 **due** by the end of your lab section on Wednesday, October 21st, 2026
 
@@ -197,7 +197,7 @@ For an <span class="math-inline">\\(n\times d\\)</span> matrix <span class="math
 </li>
 <li markdown="1">
 
-The **rank-nullity theorem** states that
+The **Rank-Nullity Theorem** states that
 
 <div class="math-display">
 $$
@@ -248,7 +248,7 @@ Fill in the blanks: <span class="math-inline">\\(\text{nullsp}(X)\\)</span> is a
 
 <details markdown="1"><summary>Solution</summary>
 
-The rank-nullity theorem tells us that
+The Rank-Nullity Theorem tells us that
 
 <div class="math-display">
 $$
@@ -375,7 +375,7 @@ The completed table is:
 </tbody>
 </table>
 
-Both column spaces have dimension 5, since <span class="math-inline">\\(\text{rank}(A)=\text{rank}(A^T)=5\\)</span>. For the null spaces, apply the rank-nullity theorem to <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(A^T\\)</span>:
+Both column spaces have dimension 5, since <span class="math-inline">\\(\text{rank}(A)=\text{rank}(A^T)=5\\)</span>. For the null spaces, apply the Rank-Nullity Theorem to <span class="math-inline">\\(A\\)</span> and <span class="math-inline">\\(A^T\\)</span>:
 
 <div class="math-display">
 $$
@@ -468,7 +468,7 @@ How do you know that <span class="math-inline">\\(A^T\vec y= \vec 0\\)</span> ha
 
 <details markdown="1"><summary>Solution</summary>
 
-From part (a), <span class="math-inline">\\(r&lt;n\\)</span>. Since <span class="math-inline">\\(A^T\\)</span> has <span class="math-inline">\\(n\\)</span> columns and rank <span class="math-inline">\\(r\\)</span>, the rank-nullity theorem gives
+From part (a), <span class="math-inline">\\(r&lt;n\\)</span>. Since <span class="math-inline">\\(A^T\\)</span> has <span class="math-inline">\\(n\\)</span> columns and rank <span class="math-inline">\\(r\\)</span>, the Rank-Nullity Theorem gives
 
 <div class="math-display">
 $$
@@ -534,7 +534,7 @@ What are the possible values of <span class="math-inline">\\(\text{rank}(B)\\)</
 
 <details markdown="1"><summary>Solution</summary>
 
-By the rank-nullity theorem, <span class="math-inline">\\(\dim(\text{nullsp}(A))=6-4=2\\)</span>. Every column of <span class="math-inline">\\(B\\)</span> is in this two-dimensional space, so at most two columns of <span class="math-inline">\\(B\\)</span> can be linearly independent. Also, <span class="math-inline">\\(B\\)</span> is non-zero, so its rank can't be 0.
+By the Rank-Nullity Theorem, <span class="math-inline">\\(\dim(\text{nullsp}(A))=6-4=2\\)</span>. Every column of <span class="math-inline">\\(B\\)</span> is in this two-dimensional space, so at most two columns of <span class="math-inline">\\(B\\)</span> can be linearly independent. Also, <span class="math-inline">\\(B\\)</span> is non-zero, so its rank can't be 0.
 
 This leaves <span class="math-inline">\\(\boxed{\text{rank}(B)\in\lbrace1,2\rbrace}\\)</span>. Both are possible. Let <span class="math-inline">\\(\lbrace\vec u,\vec v\rbrace\\)</span> be a basis for <span class="math-inline">\\(\text{nullsp}(A)\\)</span>:
 
@@ -603,7 +603,7 @@ Can you find a <span class="math-inline">\\(3 \times 3\\)</span> matrix <span cl
 
 <details markdown="1"><summary>Solution</summary>
 
-No. If the column space and null space were equal, they would have the same dimension. Calling this dimension <span class="math-inline">\\(r\\)</span>, the rank-nullity theorem would give
+No. If the column space and null space were equal, they would have the same dimension. Calling this dimension <span class="math-inline">\\(r\\)</span>, the Rank-Nullity Theorem would give
 
 <div class="math-display">
 $$
