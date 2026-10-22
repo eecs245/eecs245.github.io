@@ -17,6 +17,7 @@ days:
     events:
       - name: LEC 14
         type: lecture
+        live_notes: https://web.goodnotes.com/s/cKDFPcOD1U6YPpTeGqXbbW
         title: Inverses and Linear Transformations
         reading: https://notes.eecs245.org/linear-transformations-and-projections/linear-transformations/
         reading_text: Ch. 6.1
