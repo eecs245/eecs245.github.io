@@ -33,7 +33,7 @@ days:
         note: 'From 2:30-4:30PM, you will take <a href="https://exams.eecs245.org/exams/sp26-mt2/">Spring 2026 Midterm 2</a>. From 4:30-5:30PM, we will take it up. The review will be recorded.'
   - date: "2026-11-15"
     events:
-      - name: HW 9
+      - name: HW 8
         type: hw
         title: Multiple Linear Regression and Gradients
 ---

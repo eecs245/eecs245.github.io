@@ -27,7 +27,7 @@ days:
         reading2_text: Ch. 10.5
   - date: "2026-12-13"
     events:
-      - name: HW 12
+      - name: HW 11
         type: hw
         title: SVD and PCA
 ---

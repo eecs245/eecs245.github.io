@@ -27,7 +27,7 @@ days:
         reading2_text: Ch. 8.4
   - date: "2026-11-08"
     events:
-      - name: HW 8
+      - name: HW 7
         type: hw
-        title: Regression using Linear Algebra
+        title: Projections and Regression
 ---

@@ -29,7 +29,7 @@ days:
         reading2_text: Ch. 10.2
   - date: "2026-12-06"
     events:
-      - name: HW 11
+      - name: HW 10
         type: hw
         title: Diagonalization
 ---

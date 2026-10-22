@@ -21,9 +21,4 @@ days:
         reading_text: Ch. 6.1
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
         reading2_text: Ch. 6.2
-  - date: "2026-10-25"
-    events:
-      - name: HW 6
-        type: hw
-        title: Rank and Inverses
 ---

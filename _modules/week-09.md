@@ -27,7 +27,7 @@ days:
         reading2_text: Ch. 7.2
   - date: "2026-11-01"
     events:
-      - name: HW 7
+      - name: HW 6
         type: hw
-        title: Inverses, Projecting onto the Column Space
+        title: Rank and Inverses
 ---
