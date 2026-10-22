@@ -20,6 +20,7 @@ days:
         live_notes: resources/lecture-pdfs/lec14-filled.pdf
         videos: https://youtube.com/playlist?list=PLEFTQpsm47qSEmQRCtKfN7dj2qg9xzgai&si=l4jfK4UbrG0pBL9Z
         title: Inverses and Linear Transformations
+        recording: https://leccap.engin.umich.edu/leccap/player/r/cdyCZq
         reading: https://notes.eecs245.org/linear-transformations-and-projections/linear-transformations/
         reading_text: Ch. 6.1
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
