@@ -1265,7 +1265,7 @@ def remove_pandoc_layout_fences(text: str) -> str:
     suppress_next_closing = 0
 
     for line in lines:
-        if re.fullmatch(r"[ \t]*:::[ \t]*(?:center|minipage)[ \t]*", line):
+        if re.fullmatch(r"[ \t]*:::[ \t]*(?:center|minipage|tcolorbox)[ \t]*", line):
             suppress_next_closing += 1
             continue
         if suppress_next_closing and re.fullmatch(r"[ \t]*:::[ \t]*", line):

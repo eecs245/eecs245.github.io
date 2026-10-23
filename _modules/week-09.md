@@ -29,5 +29,6 @@ days:
     events:
       - name: HW 6
         type: hw
-        title: Rank and Inverses
+        title: <b>Rank and Inverses</b>
+        problems: ../resources/homeworks/hw06/
 ---
