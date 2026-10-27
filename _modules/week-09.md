@@ -6,11 +6,14 @@ days:
     events:
       - name: LEC 15
         type: lecture
-        title: Projections, Revisited
-        reading: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
-        reading_text: Ch. 6.3
-        reading2: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
-        reading2_text: Ch. 6.4
+        title: Inverses; Projecting onto the Column Space
+        live_notes: https://web.goodnotes.com/s/CAqQfof8fa8hf4vY7pH5Pd
+        reading: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
+        reading_text: Ch. 6.2
+        reading2: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
+        reading2_text: Ch. 6.3
+        reading3: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
+        reading3_text: Ch. 6.4
   - date: "2026-10-28"
     events:
       - name: LAB 8
