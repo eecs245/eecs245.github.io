@@ -7,7 +7,7 @@ days:
       - name: LEC 15
         type: lecture
         title: Inverses; Projecting onto the Column Space
-        live_notes: https://web.goodnotes.com/s/CAqQfof8fa8hf4vY7pH5Pd
+        live_notes: resources/lecture-pdfs/lec15-filled.pdf
         reading: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
         reading_text: Ch. 6.2
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
