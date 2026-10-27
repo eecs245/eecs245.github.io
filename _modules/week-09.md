@@ -7,6 +7,7 @@ days:
       - name: LEC 15
         type: lecture
         title: Inverses; Projecting onto the Column Space
+        recording: https://leccap.engin.umich.edu/leccap/player/r/FXT5Zc
         live_notes: resources/lecture-pdfs/lec15-filled.pdf
         reading: https://notes.eecs245.org/linear-transformations-and-projections/inverses/
         reading_text: Ch. 6.2
