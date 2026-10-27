@@ -19,7 +19,8 @@ days:
     events:
       - name: LAB 8
         type: lab
-        title: Inverses and Projections
+        title: Linear Transformations, Inverses, and Projections
+        pl_direct: https://us.prairielearn.com/pl/course_instance/236398/assessment/2742917
   - date: "2026-10-29"
     events:
       - name: LEC 16

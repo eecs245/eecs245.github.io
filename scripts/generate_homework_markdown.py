@@ -561,7 +561,7 @@ def render_tikz_figures(text: str, imgs_dir: Path) -> tuple[str, list[str]]:
         placeholder = f"TIKZHTMLPLACEHOLDER{len(figures)}"
         figures.append(
             f'<img src="imgs/{filename}" alt="Figure from the assignment PDF" '
-            'style="width: 60%; max-width: 100%;">'
+            'style="display: block; margin-left: auto; margin-right: auto; width: 60%; max-width: 100%;">'
         )
         return f"\n\n{placeholder}\n\n"
 
