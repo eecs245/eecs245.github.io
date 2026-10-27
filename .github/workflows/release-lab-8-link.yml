@@ -1,0 +1,51 @@
+name: Release Lab 8 homepage link
+
+on:
+  schedule:
+    # October 28, 2026, 5:30 PM EDT = 21:30 UTC.
+    - cron: "30 21 28 10 *"
+    # Retry if the first run is dropped or fails; the script enforces the year.
+    - cron: "15 22 28 10 *"
+    - cron: "15 1 29 10 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: release-lab-8-link
+  cancel-in-progress: false
+
+jobs:
+  release-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Link Lab 8 and remove PrairieLearn when due
+        id: release
+        run: python3 .github/scripts/release_lab_8_link.py
+
+      - name: Commit and push
+        if: steps.release.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _modules/week-09.md
+          git commit -m "Link Lab 8 and remove its PrairieLearn button"
+          git push
+
+      - name: Deploy the updated homepage
+        if: steps.release.outputs.due == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          # GITHUB_TOKEN pushes do not trigger the normal push workflow.
+          # Retry deployment even if a preceding attempt already committed.
+          gh workflow run build-site.yml --ref "$DEFAULT_BRANCH"
