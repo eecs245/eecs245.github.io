@@ -1,0 +1,5588 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.500
+Like, I know that's a good
+score.
+
+00:00:01.500 --> 00:00:03.040
+It's 10.30,
+so we'll get started.
+
+00:00:03.380 --> 00:00:05.100
+Good to see everyone again.
+
+00:00:05.100 --> 00:00:07.060
+I hope you had a good fall
+break.
+
+00:00:07.060 --> 00:00:09.200
+Probably wasn't as good as mine,
+because I got engaged over fall
+
+00:00:09.200 --> 00:00:10.200
+break.
+
+00:00:12.240 --> 00:00:13.740
+Thank you.
+
+00:00:14.260 --> 00:00:16.480
+So my girlfriend and I, we went
+to San Diego, which is where I
+
+00:00:16.480 --> 00:00:19.060
+used to live before coming to
+Michigan.
+
+00:00:19.060 --> 00:00:21.240
+And yeah, I did the proposal by
+the water.
+
+00:00:21.240 --> 00:00:21.640
+Pardon?
+
+00:00:21.640 --> 00:00:23.360
+Your fiancee.
+My fiancee now, yes.
+
+00:00:23.520 --> 00:00:25.160
+Yes, correct.
+Thank you for correcting me.
+
+00:00:27.140 --> 00:00:27.960
+And,
+
+00:00:27.960 --> 00:00:28.420
+yeah,
+
+00:00:28.420 --> 00:00:31.540
+she kind of knew it was going to
+happen, but I flew her sister
+
+00:00:31.540 --> 00:00:32.940
+out, her friend out, my brother
+out.
+
+00:00:32.940 --> 00:00:35.700
+It was a nice big surprise.
+It was really fun.
+
+00:00:35.700 --> 00:00:38.380
+Hope you guys had good fall
+breaks as well.
+
+00:00:38.380 --> 00:00:39.980
+Back to reality here,
+
+00:00:39.980 --> 00:00:40.980
+announcements.
+
+00:00:41.780 --> 00:00:44.920
+Homework 6 is going to be
+released tomorrow,
+
+00:00:44.920 --> 00:00:46.240
+and it's going to be due next
+Sunday.
+
+00:00:46.240 --> 00:00:49.580
+So originally the schedule said
+that we would have a homework
+
+00:00:49.580 --> 00:00:51.740
+due this Sunday, but of course
+the homework wasn't released, as
+
+00:00:51.740 --> 00:00:54.420
+you can see I was busy.
+
+00:00:54.420 --> 00:00:57.140
+But we will have a homework
+that's released tomorrow that's
+
+00:00:57.140 --> 00:00:59.520
+about the content we covered
+right before fall break and the
+
+00:00:59.520 --> 00:01:01.220
+content we will cover today.
+
+00:01:01.220 --> 00:01:04.160
+And the solutions to everything,
+including yesterday's lab and
+
+00:01:04.160 --> 00:01:06.320
+homework five, which was due a
+couple of days ago,
+
+00:01:06.320 --> 00:01:07.480
+that's all posted.
+
+00:01:07.480 --> 00:01:09.380
+So make sure to take a look at
+that as well.
+
+00:01:09.380 --> 00:01:12.260
+And in addition, if you go on
+the course homepage
+
+00:01:12.260 --> 00:01:16.080
+for lecture 13, which was last
+Thursday and today, you'll see a
+
+00:01:16.080 --> 00:01:18.100
+button that says videos.
+Those aren't the recording.
+
+00:01:18.100 --> 00:01:21.280
+Those are just supplemental
+YouTube playlists that I made
+
+00:01:21.280 --> 00:01:26.140
+over the past year with extra
+material explaining some of
+
+00:01:26.140 --> 00:01:27.860
+these ideas.
+I think I mentioned this before,
+
+00:01:28.020 --> 00:01:30.800
+but like this part of the course
+between the first and second
+
+00:01:30.800 --> 00:01:31.520
+midterm,
+
+00:01:31.520 --> 00:01:34.820
+students have typically found to
+be the most conceptually
+
+00:01:34.820 --> 00:01:36.260
+challenging part of the
+semester.
+
+00:01:36.260 --> 00:01:39.680
+So we want to provide you with
+as many resources as we can.
+
+00:01:39.680 --> 00:01:45.420
+The plan for today is to mostly
+address this question of what is
+
+00:01:45.420 --> 00:01:49.240
+the inverse of a matrix.
+We'll start by understanding why
+
+00:01:49.240 --> 00:01:53.120
+we would want such a thing, what
+properties it should satisfy,
+
+00:01:53.120 --> 00:01:56.760
+and then spend most of our time
+trying to understand the more
+
+00:01:56.760 --> 00:01:58.460
+interesting question which is,
+
+00:01:58.460 --> 00:02:01.020
+when does the inverse of a
+matrix exist?
+
+00:02:01.020 --> 00:02:03.920
+And to do that we will sort of
+go on this side quest to
+
+00:02:03.920 --> 00:02:07.060
+understand something related
+which is the idea of a linear
+
+00:02:07.060 --> 00:02:08.220
+transformation,
+
+00:02:08.720 --> 00:02:09.660
+okay,
+
+00:02:09.660 --> 00:02:11.920
+and whatever we don't finish of
+course we will pick back up with
+
+00:02:11.920 --> 00:02:14.140
+on Tuesday.
+OK,
+
+00:02:14.560 --> 00:02:14.940
+so
+
+00:02:14.940 --> 00:02:22.860
+we
+
+00:02:22.860 --> 00:02:25.940
+want to talk about the idea of
+the inverse of a matrix.
+
+00:02:25.940 --> 00:02:28.900
+But before that, we should talk
+about the inverse
+
+00:02:28.900 --> 00:02:32.020
+in contexts which you are
+already familiar with.
+
+00:02:32.020 --> 00:02:33.520
+For example,
+
+00:02:34.000 --> 00:02:36.250
+with scalar multiplication.
+
+00:02:36.600 --> 00:02:42.060
+Suppose you needed to solve the
+equation 2x equals 5, where x is
+
+00:02:42.060 --> 00:02:43.240
+a scalar,
+
+00:02:43.240 --> 00:02:47.920
+how would you solve for x here?
+
+00:02:47.920 --> 00:02:51.080
+Not a trick question, how would
+you solve for x?
+
+00:02:51.080 --> 00:02:51.480
+Yeah,
+
+00:02:51.480 --> 00:02:53.000
+I had both sides by two.
+
+00:02:53.000 --> 00:02:55.180
+Yeah, you would divide both
+sides by two,
+
+00:02:55.180 --> 00:02:58.420
+but another way of thinking
+about this And you space this
+
+00:02:58.420 --> 00:03:02.920
+out a little is you would
+multiply both sides
+
+00:03:03.200 --> 00:03:07.580
+By the multiplicative inverse of
+two which we know
+
+00:03:08.780 --> 00:03:10.840
+is a half,
+
+00:03:10.840 --> 00:03:13.020
+right? And why is it defined
+that way?
+
+00:03:13.020 --> 00:03:16.480
+Well, it's because 2 times its
+multiplicative inverse gives you
+
+00:03:16.480 --> 00:03:17.480
+what?
+
+00:03:19.740 --> 00:03:20.700
+Yeah,
+
+00:03:20.700 --> 00:03:26.140
+1, which is called the identity
+element in multiplication, or at
+
+00:03:26.140 --> 00:03:27.940
+least in scalar multiplication.
+
+00:03:27.940 --> 00:03:31.980
+So this gives me 1x is equal to
+5 over 2,
+
+00:03:31.980 --> 00:03:32.600
+OK?
+
+00:03:32.600 --> 00:03:38.560
+And this 1 here is called the
+identity
+
+00:03:38.560 --> 00:03:40.420
+element,
+
+00:03:42.440 --> 00:03:44.100
+OK?
+
+00:03:46.460 --> 00:03:51.600
+So what should a matrix's
+inverse do for us?
+
+00:03:52.120 --> 00:03:53.120
+Well,
+
+00:03:54.200 --> 00:03:57.950
+suppose A is a matrix.
+
+00:04:00.760 --> 00:04:05.260
+What do you think its inverse
+should satisfy?
+
+00:04:08.000 --> 00:04:09.880
+Following the same pattern here,
+
+00:04:09.880 --> 00:04:13.440
+where 2's inverse was the number
+you could multiply it by to get
+
+00:04:13.440 --> 00:04:16.200
+the identity element, which was
+the number 1,
+
+00:04:16.200 --> 00:04:19.540
+what should the matrix A's
+inverse be?
+
+00:04:19.540 --> 00:04:22.500
+Yeah? If you multiply A by A,
+you get the identity matrix.
+
+00:04:22.500 --> 00:04:23.500
+Good.
+
+00:04:24.340 --> 00:04:25.840
+A's inverse,
+
+00:04:29.700 --> 00:04:35.700
+which we will denote with the
+symbol that looks
+
+00:04:35.700 --> 00:04:37.860
+like A to the negative 1,
+
+00:04:37.860 --> 00:04:42.340
+but it's not a power, it's its
+inverse,
+
+00:04:42.340 --> 00:04:48.140
+should satisfy A times A inverse
+is
+
+00:04:48.140 --> 00:04:50.680
+equal to the identity.
+
+00:04:50.680 --> 00:04:51.680
+Okay?
+
+00:04:52.040 --> 00:04:55.080
+Now an additional desirable
+property will be that it
+
+00:04:55.080 --> 00:04:59.660
+shouldn't matter which order you
+multiply a matrix by its
+
+00:04:59.660 --> 00:05:00.320
+inverse.
+
+00:05:00.320 --> 00:05:02.920
+You should get the identity
+matrix in either way.
+
+00:05:02.920 --> 00:05:08.920
+So A times A inverse should be A
+inverse A as well.
+
+00:05:09.440 --> 00:05:10.440
+Okay?
+
+00:05:10.860 --> 00:05:14.840
+Now but suppose we want both of
+these to be We want A times A
+
+00:05:14.840 --> 00:05:18.500
+inverse to be the identity and A
+inverse A to be the identity.
+
+00:05:18.500 --> 00:05:23.000
+What does that require about A's
+shape?
+
+00:05:34.520 --> 00:05:40.320
+Okay, so this idea of an inverse
+only applies to square matrices
+
+00:05:40.320 --> 00:05:41.320
+or
+
+00:05:45.920 --> 00:05:51.340
+only square matrices have an
+inverse.
+
+00:05:54.320 --> 00:05:55.660
+Is that clear?
+
+00:05:55.660 --> 00:05:56.660
+Okay.
+
+00:05:56.800 --> 00:05:59.920
+Now, if we do have the inverse
+of a square matrix, what would
+
+00:05:59.920 --> 00:06:04.420
+it allow us to do? Well,
+
+00:06:06.380 --> 00:06:11.020
+let's say suppose A is N by
+
+00:06:11.020 --> 00:06:13.060
+N.
+
+00:06:18.880 --> 00:06:23.380
+The equation Ax equals b, where
+x is a vector and b is a vector.
+
+00:06:25.100 --> 00:06:29.020
+I can think of this as a system
+of equations and unknowns.
+
+00:06:29.020 --> 00:06:32.770
+How many equations and unknowns
+are there here?
+
+00:06:36.580 --> 00:06:41.080
+How many equations and how many
+unknowns?
+
+00:06:45.880 --> 00:06:50.040
+Yeah, actually before you answer
+that let me have discussed the
+
+00:06:50.040 --> 00:06:53.700
+more complicated case which is
+where a is not square So suppose
+
+00:06:53.700 --> 00:06:56.200
+a is n by d
+
+00:06:56.200 --> 00:06:59.020
+Then ax equals b
+
+00:06:59.020 --> 00:07:03.520
+is a system of how many
+equations and how many unknowns?
+
+00:07:04.060 --> 00:07:04.860
+Yeah?
+
+00:07:04.860 --> 00:07:08.220
+N equations and d unknowns.
+
+00:07:08.220 --> 00:07:08.580
+Good.
+
+00:07:08.580 --> 00:07:12.330
+N equations and d unknowns.
+
+00:07:13.100 --> 00:07:16.320
+So here you have to imagine the
+vector x.
+
+00:07:16.320 --> 00:07:19.640
+Its components are x1, x2,
+
+00:07:19.640 --> 00:07:21.140
+through xd.
+
+00:07:22.460 --> 00:07:25.340
+And a and b are treated as
+constants,
+
+00:07:25.340 --> 00:07:27.160
+like matrices whose values you
+know.
+
+00:07:27.160 --> 00:07:28.800
+And the question is,
+
+00:07:28.800 --> 00:07:30.300
+what vector x
+
+00:07:30.300 --> 00:07:34.280
+will allow us to multiply into A
+and get B?
+
+00:07:34.280 --> 00:07:38.080
+So what this is really asking us
+to do is write B as a linear
+
+00:07:38.080 --> 00:07:40.260
+combination of A's columns.
+
+00:07:40.260 --> 00:07:41.540
+Do we agree with that?
+
+00:07:41.540 --> 00:07:42.540
+OK.
+
+00:07:45.520 --> 00:07:48.520
+This is asking us.
+
+00:07:59.420 --> 00:08:00.580
+And now,
+
+00:08:00.580 --> 00:08:04.330
+if there is a solution,
+
+00:08:09.000 --> 00:08:11.900
+suppose there is at least one
+solution to this.
+
+00:08:11.900 --> 00:08:17.150
+Suppose there is at least one x
+where ax equals b.
+
+00:08:21.230 --> 00:08:24.230
+At least one solution.
+
+00:08:24.240 --> 00:08:26.820
+What does it tell you about b
+and a?
+
+00:08:26.820 --> 00:08:30.360
+Suppose it's possible to find an
+x that Ax equals b.
+
+00:08:30.360 --> 00:08:35.280
+What does that tell you about b
+and a?
+
+00:08:35.280 --> 00:08:37.080
+Maybe I'll put it like this.
+
+00:08:37.080 --> 00:08:38.580
+b is,
+
+00:08:40.260 --> 00:08:43.240
+what is true about this vector b
+
+00:08:43.240 --> 00:08:48.490
+if it's possible to find an x
+where Ax equals b?
+
+00:08:51.580 --> 00:08:52.360
+Yeah?
+
+00:08:52.360 --> 00:08:54.800
+In the column space? Good.
+It's in the column space of a.
+
+00:08:54.800 --> 00:08:56.520
+Can you remind me what that is?
+
+00:08:56.520 --> 00:09:00.000
+It's the set of all linear
+combinations, base columns.
+
+00:09:00.000 --> 00:09:01.000
+Exactly.
+
+00:09:01.140 --> 00:09:03.700
+The column space of A is the set
+of everything you can make with
+
+00:09:03.700 --> 00:09:05.000
+A's columns.
+
+00:09:05.000 --> 00:09:09.640
+If it's possible for you to find
+an x where Ax equals b,
+
+00:09:09.640 --> 00:09:12.260
+then it just means b is a
+possible linear combination of
+
+00:09:12.260 --> 00:09:13.460
+A's columns.
+
+00:09:13.460 --> 00:09:14.880
+Do we agree with that?
+
+00:09:14.880 --> 00:09:15.380
+OK.
+
+00:09:15.380 --> 00:09:18.080
+But now if A is a non-square
+matrix,
+
+00:09:18.080 --> 00:09:21.200
+right? On this page, I'm
+assuming for a second that it's
+
+00:09:21.200 --> 00:09:24.280
+not square.
+It possibly has more or fewer
+
+00:09:24.280 --> 00:09:26.160
+rows than columns.
+
+00:09:26.160 --> 00:09:27.160
+Then,
+
+00:09:27.180 --> 00:09:28.660
+as we've started to see,
+
+00:09:28.660 --> 00:09:31.220
+there may be one solution.
+There may be infinitely many
+
+00:09:31.220 --> 00:09:32.980
+solutions.
+There may not be a solution at
+
+00:09:32.980 --> 00:09:33.980
+all.
+
+00:09:35.020 --> 00:09:38.420
+Now, let's suppose we're dealing
+with a matrix that is square,
+
+00:09:38.420 --> 00:09:39.380
+n by n.
+
+00:09:39.380 --> 00:09:44.630
+This is a system of how many
+equations and how many unknowns.
+
+00:09:45.220 --> 00:09:45.980
+Previously,
+
+00:09:45.980 --> 00:09:47.380
+we had d equations,
+
+00:09:47.380 --> 00:09:52.100
+sorry, d unknowns, because each
+component of the vector x was an
+
+00:09:52.100 --> 00:09:53.100
+unknown,
+
+00:09:53.360 --> 00:09:57.020
+and n equations, because each
+row of A was an unknown,
+
+00:09:57.020 --> 00:09:58.560
+or an equation.
+
+00:09:58.560 --> 00:10:01.060
+How many equations and unknowns
+do we have here?
+
+00:10:01.060 --> 00:10:03.000
+The n equations and unknowns.
+Good.
+
+00:10:03.000 --> 00:10:08.100
+n equations and n unknowns.
+
+00:10:09.360 --> 00:10:13.860
+And those unknowns are coming in
+the vector x.
+
+00:10:21.860 --> 00:10:26.300
+What the inverse of A would
+allow us to find is the unique
+
+00:10:26.300 --> 00:10:30.460
+solution x for Ax equals b.
+
+00:10:30.460 --> 00:10:34.220
+It would allow us to find the
+one vector x that when you
+
+00:10:34.220 --> 00:10:35.700
+multiply it by A,
+
+00:10:35.700 --> 00:10:36.980
+you get b.
+
+00:10:36.980 --> 00:10:40.260
+It's like the one ingredient
+that tells you how many,
+
+00:10:40.260 --> 00:10:42.920
+or like the one recipe that
+tells you how to make a linear
+
+00:10:42.920 --> 00:10:46.560
+combination of A's columns to
+get b as an output,
+
+00:10:46.560 --> 00:10:47.560
+okay?
+
+00:10:48.360 --> 00:10:52.110
+So if A is invertible,
+
+00:10:53.260 --> 00:10:58.740
+and all that means is this
+inverse matrix
+
+00:10:58.740 --> 00:10:59.740
+exists,
+
+00:11:01.380 --> 00:11:06.600
+then I could multiply both sides
+of Ax equals B
+
+00:11:06.600 --> 00:11:08.850
+by A's inverse.
+
+00:11:11.760 --> 00:11:15.510
+And what would multiplying A
+inverse by A give me?
+
+00:11:18.900 --> 00:11:21.900
+Good, the identity matrix.
+
+00:11:21.920 --> 00:11:27.110
+And that would just tell me X is
+equal to A inverse B.
+
+00:11:27.110 --> 00:11:32.740
+And this tells me how to make
+
+00:11:32.740 --> 00:11:38.640
+B as a linear combination
+
+00:11:43.160 --> 00:11:45.410
+of A's columns.
+
+00:11:47.060 --> 00:11:50.740
+So that's what we can do if a
+matrix is invertible.
+
+00:11:50.740 --> 00:11:55.840
+If it's invertible, we can find
+how to make any possible output
+
+00:11:55.840 --> 00:11:58.840
+vector using a linear
+combination of the inputs.
+
+00:12:01.160 --> 00:12:04.460
+That's what we will do with a
+matrix if we find that it is
+
+00:12:04.460 --> 00:12:05.460
+invertible.
+
+00:12:06.420 --> 00:12:08.600
+But the question now is,
+
+00:12:08.600 --> 00:12:09.540
+well,
+
+00:12:09.540 --> 00:12:11.660
+what makes a matrix invertible?
+
+00:12:11.660 --> 00:12:14.120
+I can just tell you the answer,
+
+00:12:14.120 --> 00:12:19.370
+but I'd like us to discover it
+through this other discovery.
+
+00:12:19.560 --> 00:12:23.080
+But I want you to start thinking
+about invertibility through
+
+00:12:23.080 --> 00:12:24.180
+these lenses.
+
+00:12:24.180 --> 00:12:27.740
+If a matrix is invertible, then
+it has to be the case that you
+
+00:12:27.740 --> 00:12:31.640
+tell me any vector b in Rn,
+
+00:12:31.640 --> 00:12:38.240
+And I am able to tell you what x
+makes Ax equal to b.
+
+00:12:38.240 --> 00:12:40.100
+Not every matrix will allow you
+to do that.
+
+00:12:40.100 --> 00:12:43.220
+There will be matrices who are
+not invertible, meaning you
+
+00:12:43.220 --> 00:12:48.470
+won't be able to find an input
+for every possible output.
+
+00:12:48.540 --> 00:12:49.540
+OK?
+
+00:12:49.540 --> 00:12:53.290
+So that's where we're heading.
+
+00:12:54.760 --> 00:13:00.640
+But to understand deeply what
+makes a matrix
+
+00:13:00.640 --> 00:13:04.040
+invertible, we need to talk
+about this related idea,
+
+00:13:04.040 --> 00:13:08.540
+which is that of a linear
+transformation.
+
+00:13:08.940 --> 00:13:11.780
+Now a linear transformation, all
+it is,
+
+00:13:11.780 --> 00:13:15.530
+is a type of function.
+
+00:13:20.000 --> 00:13:23.040
+And for a second here, what we
+discuss is going to seem like
+
+00:13:23.040 --> 00:13:26.020
+it's not at all related to what
+we've been discussing before.
+
+00:13:26.020 --> 00:13:28.420
+It's going to sound like some
+new topic, but as we were about
+
+00:13:28.420 --> 00:13:29.320
+to see,
+
+00:13:29.320 --> 00:13:31.900
+linear transformations are
+closely related to everything
+
+00:13:31.900 --> 00:13:35.360
+we've studied over the past few
+weeks.
+
+00:13:35.360 --> 00:13:39.360
+What I'll say is suppose T,
+
+00:13:39.360 --> 00:13:42.100
+capital T, is a function.
+
+00:13:42.100 --> 00:13:46.720
+And capital T is a common letter
+that we use in linear algebra to
+
+00:13:46.720 --> 00:13:49.720
+denote a linear transformation.
+
+00:13:59.320 --> 00:14:02.460
+What does this notation mean?
+
+00:14:02.460 --> 00:14:06.040
+T colon rd arrow rn.
+
+00:14:06.040 --> 00:14:09.040
+What does that mean?
+
+00:14:09.920 --> 00:14:12.920
+What does that mean?
+
+00:14:13.020 --> 00:14:17.620
+It's like the function of d
+inputs and n outputs.
+
+00:14:18.320 --> 00:14:18.920
+Yeah,
+
+00:14:18.920 --> 00:14:21.980
+one way you can think about this
+is that the function,
+
+00:14:21.980 --> 00:14:26.280
+its inputs are vectors with d
+things in them, and its outputs
+
+00:14:26.280 --> 00:14:28.900
+are vectors with n things in
+them.
+
+00:14:28.900 --> 00:14:29.900
+OK?
+
+00:14:29.980 --> 00:14:32.660
+Can you remind me, what's the
+name for this set,
+
+00:14:32.660 --> 00:14:35.080
+the set of possible inputs?
+
+00:14:35.080 --> 00:14:36.200
+Yeah? Yeah,
+
+00:14:36.200 --> 00:14:36.660
+domain,
+
+00:14:36.660 --> 00:14:37.660
+good.
+
+00:14:38.680 --> 00:14:43.180
+And the set of possible outputs,
+I'll call it's codomain.
+
+00:14:46.960 --> 00:14:49.920
+Now most functions you've
+probably thought of in terms of
+
+00:14:49.920 --> 00:14:52.880
+domain and codomain before this
+class
+
+00:14:52.880 --> 00:14:55.780
+probably just had a domain and
+codomain of real numbers, or
+
+00:14:55.780 --> 00:14:57.900
+like some subset of real
+numbers.
+
+00:14:57.900 --> 00:15:00.740
+But as we'll see, functions can
+take in a vector and output a
+
+00:15:00.740 --> 00:15:01.620
+vector too.
+
+00:15:01.620 --> 00:15:05.220
+But if this seems confusing,
+just replace d and n both with
+
+00:15:05.220 --> 00:15:07.580
+1, and then this is just real
+numbers to real numbers,
+
+00:15:07.580 --> 00:15:08.580
+OK?
+
+00:15:12.360 --> 00:15:15.200
+T is a linear transformation
+
+00:15:15.200 --> 00:15:21.820
+if
+
+00:15:21.820 --> 00:15:27.420
+it satisfies two
+
+00:15:27.420 --> 00:15:28.420
+properties.
+
+00:15:32.600 --> 00:15:34.480
+If you had to guess,
+
+00:15:34.480 --> 00:15:38.440
+based on the order in which
+we've introduced things in this
+
+00:15:38.440 --> 00:15:39.440
+class,
+
+00:15:39.480 --> 00:15:43.200
+anytime I've introduced a new
+structure and said the structure
+
+00:15:43.200 --> 00:15:44.840
+supports two properties,
+
+00:15:44.840 --> 00:15:48.590
+what were those two properties?
+
+00:15:49.800 --> 00:15:51.780
+What were those two properties?
+What was one of them?
+
+00:15:51.780 --> 00:15:52.320
+Yeah?
+
+00:15:52.320 --> 00:15:53.000
+Addition.
+
+00:15:53.000 --> 00:15:54.080
+Good.
+And what was the other one?
+
+00:15:55.360 --> 00:15:56.320
+Addition and scalar
+multiplication.
+
+00:15:56.320 --> 00:15:58.800
+This is not the first time where
+I've presented you with
+
+00:15:58.800 --> 00:16:00.900
+something new and said, OK, this
+new thing allows you to do
+
+00:16:00.900 --> 00:16:03.150
+addition and scalar
+multiplication.
+
+00:16:03.160 --> 00:16:06.910
+What does that mean here?
+
+00:16:07.980 --> 00:16:10.780
+What does it mean for linear
+transformations to support
+
+00:16:10.780 --> 00:16:11.760
+addition?
+
+00:16:11.760 --> 00:16:13.340
+It means
+
+00:16:13.340 --> 00:16:18.860
+that it shouldn't matter
+
+00:16:19.680 --> 00:16:23.140
+if you add two inputs before
+sending them through the
+
+00:16:23.140 --> 00:16:27.320
+transformation or send them
+individually through the
+
+00:16:27.320 --> 00:16:29.000
+transformation and add the
+results.
+
+00:16:29.000 --> 00:16:30.880
+You should get the same result.
+
+00:16:30.880 --> 00:16:34.080
+So the mental model I have when
+thinking about this is you
+
+00:16:34.080 --> 00:16:37.080
+should imagine the linear
+transformation
+
+00:16:37.180 --> 00:16:42.620
+as being a machine that all it
+does is it
+
+00:16:42.620 --> 00:16:44.460
+multiplies it, you know,
+
+00:16:44.460 --> 00:16:47.100
+sorry, I shouldn't say that yet.
+
+00:16:47.100 --> 00:16:50.160
+It applies whatever function
+we're discussing to an input
+
+00:16:50.160 --> 00:16:51.340
+that you provide.
+
+00:16:51.340 --> 00:16:55.620
+So if I pass the input x through
+the machine,
+
+00:16:55.620 --> 00:16:58.800
+what comes back out is t of x.
+
+00:16:58.800 --> 00:17:01.880
+And so when I say send through
+the machine, all I just mean is
+
+00:17:01.880 --> 00:17:03.400
+call the function on the input.
+
+00:17:03.400 --> 00:17:08.650
+So what this is saying is for
+all possible x and y's
+
+00:17:10.960 --> 00:17:13.040
+in the domain,
+
+00:17:13.040 --> 00:17:17.180
+it should be the case that if
+you add x and y and send that
+
+00:17:17.180 --> 00:17:21.080
+sum through the machine, you get
+the same result as if you sent x
+
+00:17:21.080 --> 00:17:22.040
+through the machine,
+
+00:17:22.040 --> 00:17:24.320
+y through the machine, and added
+those results.
+
+00:17:24.320 --> 00:17:26.860
+Adding before is the same as
+adding after,
+
+00:17:26.860 --> 00:17:28.020
+OK?
+
+00:17:29.660 --> 00:17:31.160
+And secondly,
+
+00:17:31.780 --> 00:17:34.880
+a linear transformation should
+support scalar multiplication.
+
+00:17:35.700 --> 00:17:40.620
+What that means is multiplying
+an input by a scalar and then
+
+00:17:40.620 --> 00:17:44.480
+sending that through the machine
+should be the same as sending
+
+00:17:44.480 --> 00:17:47.220
+the vector without the scalar
+attached through the machine and
+
+00:17:47.220 --> 00:17:50.970
+then multiplying the result by
+the scalar.
+
+00:17:52.420 --> 00:17:55.740
+And that should be true for
+every possible x in the domain
+
+00:17:55.740 --> 00:17:58.740
+and every scalar c.
+
+00:17:59.940 --> 00:18:05.940
+So if you put properties 1 and 2
+together,
+
+00:18:12.860 --> 00:18:16.080
+what is an easier way of
+thinking about this? What is the
+
+00:18:16.080 --> 00:18:19.940
+bigger pattern that linear
+transformations support?
+
+00:18:23.180 --> 00:18:26.600
+If we can do addition and we can
+do scalar multiplication,
+
+00:18:26.600 --> 00:18:31.100
+what can we do with linear
+transformation?
+
+00:18:35.920 --> 00:18:38.040
+There's a term we've used a lot
+this semester.
+
+00:18:38.040 --> 00:18:41.900
+It's made up of two words.
+The first one is linear.
+
+00:18:41.900 --> 00:18:42.900
+Yeah.
+Yeah.
+
+00:18:43.520 --> 00:18:43.860
+Yeah,
+
+00:18:43.860 --> 00:18:44.180
+yeah.
+
+00:18:44.180 --> 00:18:45.680
+Linear combinations.
+Linear combinations, yeah.
+
+00:18:47.000 --> 00:18:51.960
+What this says is that T of Ax
+plus By
+
+00:18:51.960 --> 00:18:58.710
+is equal to A times T of X plus
+B times T of Y.
+
+00:19:00.340 --> 00:19:05.200
+A linear combination of inputs
+gets sent to a linear
+
+00:19:05.200 --> 00:19:06.740
+combination of the outputs.
+
+00:19:06.740 --> 00:19:10.490
+Not only a linear combination,
+but the same linear combination.
+
+00:19:11.160 --> 00:19:12.160
+Okay?
+
+00:19:13.700 --> 00:19:14.580
+Now,
+
+00:19:14.580 --> 00:19:17.040
+what are some examples of linear
+transformations? And to keep it
+
+00:19:17.040 --> 00:19:20.700
+simple, let's start with
+functions where the domain and
+
+00:19:20.700 --> 00:19:23.460
+codomain are just both real
+numbers,
+
+00:19:23.460 --> 00:19:24.460
+R.
+
+00:19:32.240 --> 00:19:35.540
+f of x equals x squared.
+
+00:19:35.540 --> 00:19:39.290
+Is this a linear transformation?
+
+00:19:42.320 --> 00:19:43.320
+No,
+
+00:19:44.180 --> 00:19:45.680
+why not?
+
+00:19:46.100 --> 00:19:48.400
+It feels like it shouldn't,
+because there's a squared.
+
+00:19:48.400 --> 00:19:50.900
+But what I want us to identify
+is which properties does it not
+
+00:19:50.900 --> 00:19:51.900
+satisfy?
+
+00:19:53.080 --> 00:19:59.080
+One where f of x plus y isn't
+equal to x plus y squared.
+
+00:19:59.360 --> 00:20:00.360
+Good.
+
+00:20:00.780 --> 00:20:01.380
+Remember,
+
+00:20:01.380 --> 00:20:04.240
+if it's a linear transformation,
+it needs to be the case that for
+
+00:20:04.240 --> 00:20:06.960
+any inputs x and y,
+
+00:20:06.960 --> 00:20:09.880
+t of x plus y is equal to t of x
+plus t of y.
+
+00:20:09.880 --> 00:20:13.240
+So if I can find any example
+where that doesn't happen,
+
+00:20:13.240 --> 00:20:15.460
+then I know this is not a linear
+transformation.
+
+00:20:15.460 --> 00:20:18.480
+And I see a squared, so it's
+probably not going to happen.
+
+00:20:18.480 --> 00:20:19.740
+So I can just make up some
+numbers.
+
+00:20:19.740 --> 00:20:24.020
+OK, so why do we test out 1 and
+2?
+
+00:20:24.020 --> 00:20:29.440
+f of 1 plus 2 is equal to f of
+3, which is 9.
+
+00:20:29.440 --> 00:20:35.560
+But f of 1 plus f of 2 is equal
+to 1 plus 4, which is 5.
+
+00:20:35.560 --> 00:20:37.420
+9 is not equal to 5.
+
+00:20:37.420 --> 00:20:38.920
+So no.
+
+00:20:40.000 --> 00:20:43.680
+The squared part sort of gives
+you a hint that this is not
+
+00:20:43.680 --> 00:20:45.020
+going to be a linear
+transformation.
+
+00:20:45.020 --> 00:20:47.780
+But this is the reason.
+OK?
+
+00:20:47.780 --> 00:20:53.460
+It also doesn't obey the scaling
+property, because f of cx is
+
+00:20:53.460 --> 00:20:56.260
+equal to c squared f of x.
+
+00:20:56.260 --> 00:20:57.260
+OK?
+
+00:20:57.320 --> 00:20:59.570
+So also no.
+
+00:20:59.980 --> 00:21:01.480
+All right?
+
+00:21:01.540 --> 00:21:03.780
+So OK, that one's a little
+straightforward.
+
+00:21:03.780 --> 00:21:09.700
+What about f of
+
+00:21:09.700 --> 00:21:12.560
+x equals 2x plus 5?
+
+00:21:12.560 --> 00:21:16.310
+Is that a linear transformation?
+
+00:21:29.880 --> 00:21:31.940
+Is that a linear transformation?
+
+00:21:31.940 --> 00:21:32.940
+No,
+
+00:21:33.000 --> 00:21:36.080
+because the plus 5 and the first
+rule just don't work together.
+
+00:21:36.080 --> 00:21:37.080
+Yes.
+
+00:21:37.260 --> 00:21:39.500
+It seems like it would be,
+
+00:21:39.500 --> 00:21:40.920
+right? Because it seems like
+this is a line.
+
+00:21:40.920 --> 00:21:43.500
+and why would a line not be a
+linear transformation?
+
+00:21:43.500 --> 00:21:44.500
+Well,
+
+00:21:45.060 --> 00:21:47.800
+this plus 5 actually messes
+things up.
+
+00:21:47.800 --> 00:21:48.620
+Let's see why.
+
+00:21:48.620 --> 00:21:50.880
+Remember, if this is a linear
+transformation,
+
+00:21:50.880 --> 00:21:54.300
+it needs to be the case that f
+of x plus y equals f of x plus f
+
+00:21:54.300 --> 00:21:55.020
+of y.
+
+00:21:55.020 --> 00:21:55.640
+But let's see.
+
+00:21:55.640 --> 00:21:57.280
+Is that true?
+
+00:21:57.280 --> 00:21:59.260
+Well, let's look at f of 1 plus
+2.
+
+00:21:59.260 --> 00:22:02.080
+Let's just use the same inputs
+as we used in our previous
+
+00:22:02.080 --> 00:22:03.080
+counterexample.
+
+00:22:03.280 --> 00:22:05.360
+This should be the same as f of
+3,
+
+00:22:05.360 --> 00:22:09.780
+which is 2 times 3 plus 5, which
+is 11.
+
+00:22:09.780 --> 00:22:12.160
+What's f of 1 plus f of 2?
+
+00:22:12.160 --> 00:22:14.120
+It should be equal to 11 as
+well.
+
+00:22:14.120 --> 00:22:15.120
+But is it?
+
+00:22:15.120 --> 00:22:17.460
+Well f of 1 is 2 times 1 plus 5,
+
+00:22:17.460 --> 00:22:21.460
+and f of 2 is 2 times 2 plus 5.
+
+00:22:21.460 --> 00:22:24.340
+And notice, we still end up
+doing 2 times 3,
+
+00:22:24.340 --> 00:22:27.500
+but we have the plus 5 twice.
+
+00:22:27.500 --> 00:22:27.980
+Okay?
+
+00:22:27.980 --> 00:22:31.020
+So the result isn't 11, but it's
+16.
+
+00:22:31.020 --> 00:22:35.060
+16 is not 11, And so no.
+
+00:22:35.060 --> 00:22:41.040
+The plus 5 makes
+
+00:22:41.040 --> 00:22:45.480
+this not a linear
+transformation.
+
+00:22:52.580 --> 00:22:55.900
+So can you think of a simple
+property
+
+00:22:55.900 --> 00:22:58.900
+that a linear transformation
+needs to satisfy?
+
+00:22:59.200 --> 00:23:02.000
+A property that's necessary for
+a linear transformation to
+
+00:23:02.000 --> 00:23:02.840
+satisfy,
+
+00:23:02.840 --> 00:23:05.090
+but not sufficient.
+
+00:23:06.180 --> 00:23:09.180
+That is, every linear
+transformation has to do this.
+
+00:23:09.460 --> 00:23:11.380
+But just because it does this,
+
+00:23:11.380 --> 00:23:15.130
+doesn't make it a linear
+transformation.
+
+00:23:18.820 --> 00:23:21.820
+Necessary, but not sufficient.
+
+00:23:25.580 --> 00:23:29.620
+For all linear transformations,
+
+00:23:33.820 --> 00:23:37.600
+T of what equals what? There's
+like a fixed point that every
+
+00:23:37.600 --> 00:23:39.850
+linear transformation obeys.
+
+00:23:40.740 --> 00:23:42.180
+Yeah? 0 equals 0.
+
+00:23:42.180 --> 00:23:43.180
+Good.
+
+00:23:43.240 --> 00:23:45.440
+If you send the 0 vector through
+the machine,
+
+00:23:45.440 --> 00:23:47.380
+the 0 vector should come out.
+
+00:23:47.380 --> 00:23:52.540
+Why is that? Well look at this
+second property.
+
+00:23:52.540 --> 00:23:56.200
+It says T of CX should be equal
+to C times T of X for every
+
+00:23:56.200 --> 00:23:59.020
+possible scalar C in vector X.
+
+00:23:59.020 --> 00:24:02.080
+But that means T of 0 times X,
+
+00:24:02.080 --> 00:24:03.520
+that is T of 0,
+
+00:24:03.520 --> 00:24:07.660
+should also be equal to 0 times
+T of X.
+
+00:24:07.660 --> 00:24:09.120
+Do we agree?
+
+00:24:09.120 --> 00:24:10.960
+So if you send 0 through the
+machine,
+
+00:24:10.960 --> 00:24:12.340
+0 is what should come out.
+
+00:24:12.340 --> 00:24:16.680
+So anytime you have these plus
+scalars,
+
+00:24:16.680 --> 00:24:18.720
+you're not going to have a
+linear transformation because
+
+00:24:18.720 --> 00:24:23.040
+it's not going to obey that
+scaling property.
+
+00:24:23.040 --> 00:24:25.780
+Even though we used the
+additivity property to show that
+
+00:24:25.780 --> 00:24:26.640
+this didn't work,
+
+00:24:26.640 --> 00:24:30.300
+we could have used the scaling
+property as well.
+
+00:24:30.300 --> 00:24:32.980
+So this particular
+transformation
+
+00:24:33.560 --> 00:24:38.810
+is what we might call an affine
+transformation.
+
+00:24:39.620 --> 00:24:42.100
+Can you remind me what's an
+affine line
+
+00:24:42.100 --> 00:24:45.180
+and an affine plane? and this is
+a term we used earlier.
+
+00:24:45.180 --> 00:24:48.860
+What was an affine line or
+plane?
+
+00:24:48.860 --> 00:24:49.860
+Yeah.
+
+00:24:51.240 --> 00:24:51.880
+Exactly,
+
+00:24:51.880 --> 00:24:54.460
+an affine line was a line that
+doesn't necessarily pass through
+
+00:24:54.460 --> 00:24:55.400
+the origin.
+
+00:24:55.400 --> 00:24:58.160
+An affine plane was a plane that
+doesn't necessarily pass through
+
+00:24:58.160 --> 00:24:59.220
+the origin.
+
+00:24:59.220 --> 00:25:02.600
+An affine transformation is a
+transformation that otherwise
+
+00:25:02.600 --> 00:25:04.940
+would be linear, but doesn't
+pass through the origin.
+
+00:25:04.940 --> 00:25:08.860
+So it's like a shifted version
+of a linear transformation.
+
+00:25:08.860 --> 00:25:11.120
+So let's look at some examples
+of things that are linear
+
+00:25:11.120 --> 00:25:12.380
+transformations.
+Because we've looked at two
+
+00:25:12.380 --> 00:25:14.060
+examples of things that are not.
+
+00:25:14.060 --> 00:25:16.240
+Well, first, hopefully, you'll
+agree with me that if I remove
+
+00:25:16.240 --> 00:25:17.280
+the plus 5,
+
+00:25:17.280 --> 00:25:20.240
+this is a linear transformation.
+
+00:25:20.240 --> 00:25:24.020
+2 times a plus b is the same as
+2a plus 2b,
+
+00:25:24.020 --> 00:25:26.600
+and the scaling works as well.
+
+00:25:26.600 --> 00:25:29.540
+But let's look at some more
+sophisticated examples,
+
+00:25:29.540 --> 00:25:33.290
+ones that involve vector inputs
+and vector outputs.
+
+00:25:35.500 --> 00:25:38.520
+I'm going to imagine a
+transformation that takes in two
+
+00:25:38.520 --> 00:25:43.860
+inputs, that is a vector in R2,
+and returns a vector in
+
+00:25:43.860 --> 00:25:44.860
+R3.
+
+00:25:59.980 --> 00:26:02.520
+Is this a linear transformation?
+
+00:26:02.520 --> 00:26:02.980
+Well,
+
+00:26:02.980 --> 00:26:04.300
+looking at it,
+
+00:26:04.300 --> 00:26:07.180
+it may not be particularly
+obvious.
+
+00:26:07.180 --> 00:26:11.040
+Like maybe it's possible to come
+up with Two inputs where t of x
+
+00:26:11.040 --> 00:26:13.580
+plus y is not the same as t of x
+plus t of y.
+
+00:26:13.580 --> 00:26:16.420
+But if you look at this
+carefully,
+
+00:26:16.420 --> 00:26:21.100
+it turns out that you can write
+this as
+
+00:26:21.100 --> 00:26:26.500
+a matrix times the vector x1,
+
+00:26:26.700 --> 00:26:27.700
+x2.
+
+00:26:31.700 --> 00:26:33.060
+And if we can do that,
+
+00:26:33.060 --> 00:26:36.810
+then some nice properties of
+matrix-vector multiplication
+
+00:26:37.060 --> 00:26:39.310
+automatically will apply.
+
+00:26:40.120 --> 00:26:44.080
+Can you think of how to write
+this linear transformation, the
+
+00:26:44.080 --> 00:26:46.960
+one that takes in a vector with
+components x1 and x2,
+
+00:26:46.960 --> 00:26:50.600
+and returns the vector x1 plus
+x2,
+
+00:26:50.600 --> 00:26:51.600
+2x1,
+
+00:26:51.860 --> 00:26:54.300
+and 3x1 minus 4x2?
+
+00:26:54.300 --> 00:26:58.800
+Can we think of what matrix
+would send x to this new vector?
+
+00:27:01.340 --> 00:27:02.840
+Yeah, one,
+
+00:27:03.140 --> 00:27:03.940
+one,
+
+00:27:03.940 --> 00:27:05.440
+two, zero,
+
+00:27:05.700 --> 00:27:07.040
+three, negative four.
+
+00:27:07.040 --> 00:27:08.040
+Awesome.
+
+00:27:10.580 --> 00:27:12.760
+Let's work in reverse here.
+
+00:27:12.760 --> 00:27:16.240
+If I multiply this matrix A by
+the vector x1, x2,
+
+00:27:16.240 --> 00:27:19.560
+well then the first component of
+the output will be 1 times x1
+
+00:27:19.560 --> 00:27:21.020
+plus 1 times x2,
+
+00:27:21.020 --> 00:27:22.940
+which is x1 plus x2.
+
+00:27:22.940 --> 00:27:27.540
+The second component will be 2
+times x1 plus 0 times x2, which
+
+00:27:27.540 --> 00:27:28.920
+is just 2 times x1.
+
+00:27:28.920 --> 00:27:33.360
+And the third component will be
+3 times x1 minus 4 times x2,
+
+00:27:33.360 --> 00:27:38.610
+which is 3x1 minus 4x2, which is
+what we have here.
+
+00:27:39.800 --> 00:27:42.800
+Do we see that?
+
+00:27:43.340 --> 00:27:49.280
+So this transformation is really
+just a matrix times a
+
+00:27:49.280 --> 00:27:50.280
+vector.
+
+00:27:51.480 --> 00:27:57.200
+And matrix-vector multiplication
+obeys or supports
+
+00:27:57.200 --> 00:27:59.260
+addition and scalar
+multiplication.
+
+00:27:59.260 --> 00:28:00.760
+It's distributive,
+
+00:28:01.060 --> 00:28:01.980
+right?
+
+00:28:01.980 --> 00:28:05.800
+So things like t of x plus y,
+
+00:28:05.800 --> 00:28:09.780
+I know that that is going to be
+equal to t of x plus t of y.
+
+00:28:09.780 --> 00:28:10.580
+Why is that?
+
+00:28:10.580 --> 00:28:14.520
+Well, it's because t of x plus y
+is the same as multiplying the
+
+00:28:14.520 --> 00:28:16.480
+sum x plus y by a,
+
+00:28:16.480 --> 00:28:18.560
+but this operation is
+distributive.
+
+00:28:18.560 --> 00:28:22.940
+This is the same as ax plus ay.
+
+00:28:22.940 --> 00:28:28.940
+But that's the same as t of x
+plus t of y.
+
+00:28:30.180 --> 00:28:32.960
+So if we can write our function
+
+00:28:32.960 --> 00:28:36.240
+in the form of matrix times
+vector,
+
+00:28:36.240 --> 00:28:38.900
+well then we know it will be a
+linear transformation.
+
+00:28:38.900 --> 00:28:43.440
+Because the act of multiplying a
+vector by a matrix,
+
+00:28:43.980 --> 00:28:46.480
+that is distributive.
+And that supports linear
+
+00:28:46.480 --> 00:28:47.480
+combinations.
+
+00:28:48.580 --> 00:28:51.700
+If you want to see the other
+property written down,
+
+00:28:51.700 --> 00:28:56.200
+T of C times X is the same as A
+times C of X, where A is now a
+
+00:28:56.200 --> 00:28:57.200
+matrix.
+
+00:28:57.880 --> 00:29:00.340
+I can pull the scalar up front.
+
+00:29:00.340 --> 00:29:02.600
+This is C times A times X,
+
+00:29:02.600 --> 00:29:06.700
+but that's just C times T of X.
+
+00:29:06.700 --> 00:29:09.780
+This notation here, it may be a
+little confusing because
+
+00:29:09.780 --> 00:29:13.040
+here T is a function and A is a
+matrix.
+
+00:29:13.040 --> 00:29:15.160
+And I'm using parentheses after
+both of them, But the
+
+00:29:15.160 --> 00:29:16.740
+parentheses are doing different
+things.
+
+00:29:16.740 --> 00:29:19.740
+The first parentheses, t
+parentheses x plus y,
+
+00:29:20.000 --> 00:29:22.280
+that's because t is a function
+and I'm calling it.
+
+00:29:22.280 --> 00:29:25.960
+The second parentheses is to
+denote multiplication,
+
+00:29:25.960 --> 00:29:30.460
+which is why there aren't any
+here because I don't have a sum.
+
+00:29:32.240 --> 00:29:34.240
+OK, are we clear on how I was
+able to write my linear
+
+00:29:34.240 --> 00:29:37.240
+transformation as a matrix times
+a vector?
+
+00:29:37.240 --> 00:29:39.860
+And because I was able to do
+that,
+
+00:29:39.860 --> 00:29:43.280
+then I know this function is a
+linear transformation Because it
+
+00:29:43.280 --> 00:29:46.000
+will automatically obeys the
+properties that I said a linear
+
+00:29:46.000 --> 00:29:48.620
+transformation had to obey
+earlier
+
+00:29:48.620 --> 00:29:53.120
+Okay, so that's the big idea
+
+00:29:58.160 --> 00:30:00.540
+All linear transformations
+
+00:30:06.300 --> 00:30:10.120
+Are matrix vector
+multiplications
+
+00:30:15.860 --> 00:30:19.460
+So in general, you can think of
+a linear transformation as
+
+00:30:19.460 --> 00:30:23.960
+taking in a vector x and
+returning Ax.
+
+00:30:24.860 --> 00:30:30.140
+And now this hopefully gives
+some context for why I said the
+
+00:30:30.140 --> 00:30:33.300
+domain of a linear
+transformation in general was Rd
+
+00:30:33.300 --> 00:30:37.050
+and the codomain was Rn.
+
+00:30:37.280 --> 00:30:40.180
+Typically, when I have a matrix
+A,
+
+00:30:40.180 --> 00:30:42.740
+which is n by d,
+
+00:30:42.740 --> 00:30:46.380
+what must the shape of x be for
+it to be legal to multiply A by
+
+00:30:46.380 --> 00:30:47.380
+x?
+
+00:30:48.660 --> 00:30:51.220
+How many things were allowed to
+be in x?
+
+00:30:51.220 --> 00:30:51.620
+Yeah?
+
+00:30:51.620 --> 00:30:52.500
+d by 1.
+
+00:30:52.500 --> 00:30:55.600
+Yeah, x had to be d by 1.
+Or in other words, the x that
+
+00:30:55.600 --> 00:31:01.000
+I'm sending through this machine
+had to be a vector in Rd,
+
+00:31:01.940 --> 00:31:04.920
+because it had to be legal to
+multiply at a by x in the first
+
+00:31:04.920 --> 00:31:05.920
+place.
+
+00:31:07.540 --> 00:31:12.790
+So that's why Rd was the domain.
+
+00:31:14.540 --> 00:31:16.380
+What comes out?
+
+00:31:16.380 --> 00:31:21.630
+That is, what is the shape of
+the vector Ax?
+
+00:31:23.560 --> 00:31:28.060
+How many things are in the
+vector Ax?
+
+00:31:28.760 --> 00:31:29.760
+Yeah.
+
+00:31:29.840 --> 00:31:32.400
+Yeah.
+The shape is n by 1 or it's a
+
+00:31:32.400 --> 00:31:34.180
+vector in Rn.
+
+00:31:34.180 --> 00:31:38.680
+So that's why Rn is the
+codomain.
+
+00:31:39.540 --> 00:31:40.980
+Do we agree?
+
+00:31:40.980 --> 00:31:42.700
+So in general,
+
+00:31:42.700 --> 00:31:45.380
+anytime you see the term linear
+transformation, you should just
+
+00:31:45.380 --> 00:31:48.540
+think okay under the hood.
+This is just matrix times
+
+00:31:48.540 --> 00:31:49.540
+vector.
+
+00:31:50.200 --> 00:31:53.880
+Okay, and in next week's lab and
+in the upcoming homework, you'll
+
+00:31:53.880 --> 00:31:57.020
+practice with the idea of given
+some information about a
+
+00:31:57.020 --> 00:32:00.020
+transformation and find the
+associated matrix.
+
+00:32:00.680 --> 00:32:04.100
+I want to keep our focus in
+today's lecture
+
+00:32:04.100 --> 00:32:07.400
+a little more high level and
+visual.
+
+00:32:07.400 --> 00:32:08.300
+First, I want to give,
+
+00:32:08.300 --> 00:32:10.300
+like here's a cool example I
+made for my other class that I
+
+00:32:10.300 --> 00:32:12.720
+added to our notes earlier
+today,
+
+00:32:12.720 --> 00:32:16.140
+a cool example of a linear
+transformation in practice,
+
+00:32:16.140 --> 00:32:20.180
+which is imagine you're building
+a video game or some other 3D
+
+00:32:20.180 --> 00:32:24.280
+software in which you have a
+model of your world that is in
+
+00:32:24.280 --> 00:32:26.200
+three dimensions.
+You can imagine if you were
+
+00:32:26.200 --> 00:32:27.900
+implementing code for a game,
+
+00:32:27.900 --> 00:32:31.200
+you'd store an X, a Y, and a Z
+component for everything.
+
+00:32:31.200 --> 00:32:31.880
+But,
+
+00:32:31.880 --> 00:32:32.460
+of course,
+
+00:32:32.460 --> 00:32:34.300
+computer screens are
+two-dimensional.
+
+00:32:34.300 --> 00:32:37.620
+So somehow you have to take your
+three-dimensional world view and
+
+00:32:37.620 --> 00:32:40.600
+turn it into something that's
+two-dimensional.
+
+00:32:40.600 --> 00:32:44.180
+And the way that that is done is
+through a linear transformation.
+
+00:32:44.180 --> 00:32:48.380
+And so what you're seeing here
+is these sliders that allow you
+
+00:32:48.380 --> 00:32:52.440
+to change the viewpoint by which
+you're looking at this game and
+
+00:32:52.440 --> 00:32:54.680
+also the height of this
+building,
+
+00:32:54.680 --> 00:32:59.040
+and what it shows you is the
+original coordinates of this top
+
+00:32:59.040 --> 00:33:01.720
+right corner of the building in
+R3.
+
+00:33:01.720 --> 00:33:03.420
+So you can see X, Y, and Z,
+
+00:33:03.420 --> 00:33:06.520
+and then the transformed
+coordinates based on the height
+
+00:33:06.520 --> 00:33:09.720
+we chose and the angle that
+we're looking at this at.
+
+00:33:09.720 --> 00:33:13.820
+So if I move this view to 0% or
+overhead,
+
+00:33:13.820 --> 00:33:17.000
+this looks like a perfect bird's
+eye view of the building.
+
+00:33:17.000 --> 00:33:18.940
+It doesn't matter what its
+height is,
+
+00:33:18.940 --> 00:33:20.540
+it doesn't reflect itself in,
+
+00:33:20.540 --> 00:33:22.720
+like it doesn't show up in the
+bird's-eye view.
+
+00:33:22.720 --> 00:33:24.060
+But if we change the angle,
+
+00:33:24.060 --> 00:33:27.260
+well, then the height does make
+a difference.
+
+00:33:27.260 --> 00:33:29.300
+And what you can see down here,
+
+00:33:29.300 --> 00:33:30.720
+when you play around with this,
+
+00:33:30.720 --> 00:33:32.900
+is the associated matrix
+
+00:33:32.900 --> 00:33:38.150
+that takes a point in R3 and
+turns it into a point in R2.
+
+00:33:41.020 --> 00:33:42.800
+Now, my question is,
+
+00:33:42.800 --> 00:33:45.700
+why is this a linear
+transformation?
+
+00:33:45.700 --> 00:33:47.480
+It's some kind of
+transformation.
+
+00:33:47.480 --> 00:33:50.780
+There's some math under the hood
+that's taking a point in 3D and
+
+00:33:50.780 --> 00:33:52.720
+turning it into a point in 2D.
+
+00:33:52.720 --> 00:33:54.000
+You agree with that?
+
+00:33:54.000 --> 00:33:57.000
+That didn't require really
+anything about today's lecture.
+
+00:33:57.200 --> 00:33:59.720
+Somehow they're turning 3D
+points into 2D things on your
+
+00:33:59.720 --> 00:34:00.300
+screen.
+
+00:34:00.300 --> 00:34:03.020
+But why are they doing it with a
+linear transformation,
+
+00:34:03.020 --> 00:34:05.680
+as opposed to some other more
+complex transformation?
+
+00:34:05.680 --> 00:34:11.180
+Why do I know for sure that this
+is a linear transformation?
+
+00:34:11.180 --> 00:34:12.680
+Any ideas?
+
+00:34:13.080 --> 00:34:18.300
+Why do I know for sure this is a
+linear transformation?
+
+00:34:18.300 --> 00:34:20.900
+And what you should be thinking
+of is, what properties do a
+
+00:34:20.900 --> 00:34:23.150
+linear transformation satisfy?
+
+00:34:30.040 --> 00:34:31.380
+And you should also think about,
+
+00:34:31.380 --> 00:34:34.180
+as I drag the slider to change
+my game view,
+
+00:34:34.180 --> 00:34:38.680
+what is true about the building
+that appears?
+
+00:34:43.780 --> 00:34:45.280
+Any ideas,
+
+00:34:45.360 --> 00:34:46.360
+guesses?
+
+00:34:46.940 --> 00:34:49.440
+Why is this a linear
+transformation and not just any
+
+00:34:49.440 --> 00:34:50.440
+transformation?
+
+00:34:51.620 --> 00:34:52.060
+Yeah?
+
+00:34:52.060 --> 00:34:54.960
+It may just be an observation,
+but it feels like the red dot is
+
+00:34:54.960 --> 00:34:57.040
+traveling along like a line when
+you transform.
+
+00:34:57.040 --> 00:34:58.600
+It has something to do with a
+line.
+
+00:34:58.600 --> 00:34:59.600
+Good.
+
+00:34:59.960 --> 00:35:01.560
+Here's what I want you to
+observe.
+
+00:35:01.560 --> 00:35:03.800
+No matter what viewpoint I take,
+
+00:35:03.800 --> 00:35:06.780
+there are no curved lines here.
+
+00:35:06.780 --> 00:35:10.380
+My building started off being a
+box or like a rectangular prism,
+
+00:35:10.380 --> 00:35:12.260
+and no matter what angle I use,
+
+00:35:12.260 --> 00:35:14.900
+it's still a rectangular prism.
+There's no curved lines, and
+
+00:35:14.900 --> 00:35:17.640
+none of the lines are broken,
+and they're not like broken.
+
+00:35:17.640 --> 00:35:20.140
+It's not like a scissor cut them
+or anything.
+
+00:35:20.140 --> 00:35:23.890
+Every straight line remains a
+straight line.
+
+00:35:24.200 --> 00:35:26.260
+Do you see what I mean by that?
+
+00:35:26.260 --> 00:35:29.260
+Straight lines remain straight
+lines,
+
+00:35:29.900 --> 00:35:33.460
+OK? And that's a useful property
+that linear transformations
+
+00:35:33.460 --> 00:35:34.460
+preserve
+
+00:35:37.400 --> 00:35:42.650
+Let me add a picture of this
+here
+
+00:35:48.560 --> 00:35:50.810
+And say linear
+
+00:35:53.920 --> 00:35:54.920
+Transformations
+
+00:35:56.820 --> 00:35:57.820
+Preserve
+
+00:36:00.600 --> 00:36:02.100
+straight lines.
+
+00:36:03.560 --> 00:36:09.420
+Another way of thinking about
+what this means is if I have
+
+00:36:09.420 --> 00:36:13.120
+several points, you can think of
+them as being the endpoints of
+
+00:36:13.120 --> 00:36:14.120
+vectors,
+
+00:36:19.260 --> 00:36:23.500
+I have several points that live
+on a line and I send all of
+
+00:36:23.500 --> 00:36:27.250
+these points through the linear
+transformation,
+
+00:36:27.920 --> 00:36:33.800
+they will still all
+
+00:36:33.800 --> 00:36:37.550
+live on the same line.
+Not the same line as before,
+
+00:36:37.740 --> 00:36:41.460
+but they will still be
+collinear.
+
+00:36:41.460 --> 00:36:43.980
+Which line they are moved to
+depends on the linear
+
+00:36:43.980 --> 00:36:45.460
+transformation itself.
+
+00:36:45.460 --> 00:36:47.840
+But that's the property we're
+really saying here.
+
+00:36:47.840 --> 00:36:49.900
+A linear transformation is such
+that if you have a collection of
+
+00:36:49.900 --> 00:36:52.480
+points that live on a line and
+send them all through this
+
+00:36:52.480 --> 00:36:55.040
+machine, when they come out,
+they'll all live on some
+
+00:36:55.040 --> 00:36:57.290
+possibly new line.
+But they'll be on a line still.
+
+00:36:57.800 --> 00:37:02.100
+That's really what I mean by
+line-stay lines.
+
+00:37:02.100 --> 00:37:03.360
+Do you see that?
+
+00:37:03.360 --> 00:37:05.180
+Now, you might wonder, why is
+that true?
+
+00:37:05.180 --> 00:37:07.380
+Why is it true that linear
+transformations preserve
+
+00:37:07.380 --> 00:37:08.880
+straight lines?
+
+00:37:16.420 --> 00:37:21.670
+Well, can you remind me what the
+parametric form of a line was,
+
+00:37:25.480 --> 00:37:30.780
+right? The equation y equals mx
+plus b, that only works in R2.
+
+00:37:31.400 --> 00:37:34.280
+What about a line in R3 or R4 or
+R5?
+
+00:37:34.280 --> 00:37:37.260
+What was that in parametric
+form?
+
+00:37:37.260 --> 00:37:41.640
+Can someone remind me what that
+was?
+
+00:37:41.640 --> 00:37:42.640
+Yeah?
+
+00:37:43.100 --> 00:37:47.900
+Is it like R0 plus t to the
+directional vector? Good.
+
+00:37:47.900 --> 00:37:51.740
+We had a scalar t times a
+direction vector,
+
+00:37:51.740 --> 00:37:52.040
+which,
+
+00:37:52.040 --> 00:37:54.780
+I don't know, we can call it v
+here,
+
+00:37:54.780 --> 00:37:57.780
+plus a position vector.
+
+00:37:57.820 --> 00:37:59.680
+Does this sound kind of
+familiar?
+
+00:37:59.680 --> 00:38:01.580
+We had a position vector
+
+00:38:01.580 --> 00:38:07.280
+and a
+
+00:38:07.280 --> 00:38:10.720
+direction vector,
+
+00:38:15.540 --> 00:38:17.660
+where the scalar t could be any
+real number.
+
+00:38:17.660 --> 00:38:21.440
+Just to make it not confusing,
+why don't I change the scalar to
+
+00:38:21.440 --> 00:38:23.690
+S or something?
+
+00:38:26.300 --> 00:38:31.740
+What happens if we transform the
+whole line?
+
+00:38:41.580 --> 00:38:44.740
+So if I take every vector who
+lives on the line and send it
+
+00:38:44.740 --> 00:38:47.740
+through this machine that
+transforms them.
+
+00:38:47.820 --> 00:38:49.320
+Well then,
+
+00:38:49.540 --> 00:38:54.040
+I have the transformation of P
+plus S times V.
+
+00:38:55.580 --> 00:38:58.120
+But using the properties of
+linear transformations, I can
+
+00:38:58.120 --> 00:39:01.120
+break this down a little
+further.
+
+00:39:01.120 --> 00:39:05.620
+How can I break this down?
+
+00:39:06.300 --> 00:39:08.420
+T of P plus SV.
+How does that break down
+
+00:39:08.420 --> 00:39:09.420
+further?
+
+00:39:10.660 --> 00:39:16.500
+Yeah? You can rewrite it as T of
+P plus S T of P.
+
+00:39:16.500 --> 00:39:18.000
+That's good.
+
+00:39:20.460 --> 00:39:23.040
+Why can I do the first
+separation? Well, it's because
+
+00:39:23.040 --> 00:39:27.860
+linear transformations allow you
+to separate addition within the
+
+00:39:27.860 --> 00:39:28.860
+domain.
+
+00:39:28.940 --> 00:39:32.640
+So T of box plus triangle is
+equal to T of box plus T of
+
+00:39:32.640 --> 00:39:33.400
+triangle.
+
+00:39:33.400 --> 00:39:36.380
+And then once I've separated to
+T of S times V,
+
+00:39:36.380 --> 00:39:38.840
+I can pull the scalar constant
+out.
+
+00:39:38.840 --> 00:39:42.840
+But what is this the equation
+of? T of P plus S times T of V.
+
+00:39:42.840 --> 00:39:47.340
+What is that the equation of?
+
+00:39:52.540 --> 00:39:54.790
+What is that?
+
+00:39:54.980 --> 00:39:58.720
+The parametric form of a
+transformed line.
+
+00:39:58.720 --> 00:40:00.800
+Exactly.
+It's also the parametric form of
+
+00:40:00.800 --> 00:40:02.480
+a line,
+
+00:40:06.340 --> 00:40:09.360
+Just with a different position
+vector and a different direction
+
+00:40:09.360 --> 00:40:09.980
+vector.
+
+00:40:09.980 --> 00:40:12.540
+But it's still the parametric
+form of a line.
+
+00:40:12.540 --> 00:40:16.240
+No bending or piecewise nature
+was introduced.
+
+00:40:16.240 --> 00:40:19.300
+So that's why linear
+transformations are very useful.
+
+00:40:20.060 --> 00:40:23.000
+Straight lines stay straight
+lines.
+
+00:40:23.000 --> 00:40:25.780
+And so in a lot of real world
+applications,
+
+00:40:25.780 --> 00:40:28.860
+they are what we use to move
+from high dimensional spaces to
+
+00:40:28.860 --> 00:40:31.110
+lower dimensional spaces.
+
+00:40:31.660 --> 00:40:32.900
+Sound reasonable?
+
+00:40:32.900 --> 00:40:33.900
+Yeah.
+
+00:40:34.100 --> 00:40:39.920
+Does the transform line have the
+same proportional distance,
+
+00:40:40.760 --> 00:40:43.380
+other than they were in the
+original?
+
+00:40:43.380 --> 00:40:44.340
+That is,
+
+00:40:44.340 --> 00:40:45.060
+like,
+
+00:40:45.060 --> 00:40:49.260
+if these distances were 1 and 2,
+would this be like 1 times
+
+00:40:49.260 --> 00:40:53.740
+something and this be 2 times
+something?
+
+00:40:53.740 --> 00:40:56.000
+Good question.
+My guess would be yes, but I'd
+
+00:40:56.000 --> 00:40:57.440
+have to double check.
+OK.
+
+00:40:57.440 --> 00:40:58.120
+OK.
+
+00:40:58.120 --> 00:40:59.620
+Good question.
+
+00:41:03.300 --> 00:41:04.800
+OK, awesome.
+
+00:41:05.500 --> 00:41:06.080
+All right.
+
+00:41:06.080 --> 00:41:10.580
+What questions do we have with
+linear transformation so far?
+
+00:41:10.780 --> 00:41:11.520
+Yeah?
+
+00:41:11.520 --> 00:41:15.220
+Do we use them to visualize
+four-dimensional data in 3D?
+
+00:41:15.220 --> 00:41:17.000
+Totally.
+You can use them to visualize
+
+00:41:17.000 --> 00:41:20.220
+100-dimensional data in 2D.
+And that's exactly what we will
+
+00:41:20.220 --> 00:41:20.980
+do
+
+00:41:20.980 --> 00:41:23.600
+when we get to the end of the
+semester and talk about the
+
+00:41:23.600 --> 00:41:26.340
+singular value decomposition.
+You can think of the role of
+
+00:41:26.340 --> 00:41:27.160
+that tool,
+
+00:41:27.160 --> 00:41:30.260
+and I think I talked about this
+on the very first day of class,
+
+00:41:30.260 --> 00:41:32.920
+you can think of the role of
+that tool as just being how we
+
+00:41:32.920 --> 00:41:35.780
+transform high dimensional data
+into low dimensional data.
+
+00:41:35.780 --> 00:41:36.840
+In that sense,
+
+00:41:36.840 --> 00:41:38.160
+or when we get to that,
+
+00:41:38.160 --> 00:41:40.940
+what we will be doing is finding
+the most optimal linear
+
+00:41:40.940 --> 00:41:41.940
+transformation.
+
+00:41:42.400 --> 00:41:45.400
+That obeys some other
+characteristics that we want.
+
+00:41:45.940 --> 00:41:46.940
+Awesome.
+
+00:41:47.240 --> 00:41:47.660
+Okay,
+
+00:41:47.660 --> 00:41:50.420
+so we've discussed linear
+transformations in general,
+
+00:41:50.420 --> 00:41:54.100
+and this graphics example is one
+that takes vectors in R3 and
+
+00:41:54.100 --> 00:41:55.940
+sends them to vectors in R2.
+
+00:41:55.940 --> 00:41:58.040
+But remember, what was the
+overall goal of today's lecture?
+
+00:41:58.040 --> 00:42:00.480
+It wasn't really about this
+stuff, though this is still
+
+00:42:00.480 --> 00:42:01.740
+important to know.
+
+00:42:01.740 --> 00:42:04.880
+What was the overall goal of
+today's lecture?
+
+00:42:04.880 --> 00:42:08.630
+I said at the start.
+
+00:42:10.220 --> 00:42:13.080
+Well, what was the point of
+today?
+
+00:42:13.080 --> 00:42:14.080
+What did I say we were going to
+do?
+
+00:42:14.080 --> 00:42:16.340
+You now need to determine if A
+is inversible.
+
+00:42:16.340 --> 00:42:16.920
+Yeah.
+
+00:42:16.920 --> 00:42:20.800
+This is all about trying to find
+and understand what makes a
+
+00:42:20.800 --> 00:42:22.700
+square matrix invertible.
+
+00:42:22.700 --> 00:42:25.360
+So what I want to do now
+
+00:42:25.360 --> 00:42:32.120
+is
+
+00:42:32.120 --> 00:42:35.640
+focus on transformations defined
+by a square matrix.
+
+00:42:36.700 --> 00:42:39.700
+I should say linear
+transformation.
+
+00:42:52.900 --> 00:42:54.400
+For example,
+
+00:42:54.900 --> 00:42:59.500
+if we work with a matrix that is
+2 by 2,
+
+00:42:59.500 --> 00:43:01.960
+then for the linear
+transformation t of x is equal
+
+00:43:01.960 --> 00:43:03.460
+to ax,
+
+00:43:04.200 --> 00:43:08.700
+the domain is vectors in R2,
+
+00:43:09.080 --> 00:43:12.220
+and the codomain is also vectors
+in R2.
+
+00:43:12.220 --> 00:43:16.180
+And what that will allow us to
+do is visualize the before and
+
+00:43:16.180 --> 00:43:21.430
+after on the same set of axes.
+Whereas in the graphics example,
+
+00:43:22.460 --> 00:43:24.860
+you know, I wasn't also showing
+you the 3D world.
+
+00:43:24.860 --> 00:43:27.880
+I was just showing you the
+result of the transformation.
+
+00:43:27.880 --> 00:43:30.660
+Because the inputs and outputs
+lived in different universes.
+
+00:43:30.660 --> 00:43:32.400
+If I work with a square matrix,
+
+00:43:32.400 --> 00:43:34.380
+then the inputs and outputs live
+in the same universe.
+
+00:43:34.380 --> 00:43:38.820
+So it's easier to understand in
+English what the transformation
+
+00:43:38.820 --> 00:43:39.740
+is doing.
+
+00:43:39.740 --> 00:43:40.760
+And as we will see,
+
+00:43:40.760 --> 00:43:43.380
+invertibility requires the
+matrix to be square as well.
+
+00:43:44.940 --> 00:43:48.380
+Okay, so what I want to do is
+look at a few examples of named
+
+00:43:48.380 --> 00:43:52.240
+transformations and see what
+they do and think about in the
+
+00:43:52.240 --> 00:43:55.840
+back of our mind if we had to
+undo this transformation would
+
+00:43:55.840 --> 00:43:57.740
+we be able to do it?
+
+00:43:57.740 --> 00:44:02.400
+Okay, so the first example I'd
+like to look at is this one.
+
+00:44:03.400 --> 00:44:07.900
+So there's a few things being
+visualized here.
+
+00:44:08.160 --> 00:44:09.160
+Actually,
+
+00:44:09.240 --> 00:44:12.240
+before we do that,
+
+00:44:14.940 --> 00:44:18.860
+let's suppose
+
+00:44:18.860 --> 00:44:24.860
+A is a 2x2 matrix and I have the
+function T
+
+00:44:24.860 --> 00:44:29.360
+of X is equal to AX.
+
+00:44:29.360 --> 00:44:35.180
+Given that T of 1, 0 is equal to
+
+00:44:35.180 --> 00:44:35.920
+15,
+
+00:44:35.920 --> 00:44:41.900
+4 and T of 0, 1 is equal to 6,
+
+00:44:41.900 --> 00:44:43.400
+negative 2,
+
+00:44:44.040 --> 00:44:47.040
+can you find A?
+
+00:44:51.600 --> 00:44:53.660
+So think about how weird this
+is.
+
+00:44:53.660 --> 00:44:58.060
+I'm saying I'm just giving you
+two pairs of inputs and outputs.
+
+00:44:58.060 --> 00:45:03.660
+I'm saying there's some 2 by 2
+square matrix A who
+
+00:45:03.660 --> 00:45:05.600
+defines this linear
+transformation,
+
+00:45:05.600 --> 00:45:08.340
+which is the act of getting
+multiplied by A.
+
+00:45:08.340 --> 00:45:12.280
+And I'm saying if you send 1, 0
+through this process of getting
+
+00:45:12.280 --> 00:45:14.380
+multiplied by A, what comes out
+is 15, 4.
+
+00:45:14.380 --> 00:45:17.400
+And if you send 0, 1 through
+this process, what comes out is
+
+00:45:17.400 --> 00:45:18.880
+6, negative 2.
+
+00:45:18.880 --> 00:45:20.380
+Just with that information,
+
+00:45:20.380 --> 00:45:22.780
+can you find what the matrix A
+had to be?
+
+00:45:22.780 --> 00:45:25.660
+And can you do it?
+
+00:45:25.660 --> 00:45:29.720
+Just with knowing what happens
+to 1, 0, and 0, 1.
+
+00:45:30.200 --> 00:45:33.200
+Can you find A?
+
+00:45:37.020 --> 00:45:39.270
+If you can,
+
+00:45:39.380 --> 00:45:41.630
+what is it?
+
+00:45:45.240 --> 00:45:50.580
+Just knowing what happens to 1,
+0 and 0, 1 does actually let you
+
+00:45:50.580 --> 00:45:52.020
+find A.
+
+00:45:52.020 --> 00:45:53.020
+How?
+
+00:45:53.280 --> 00:45:53.920
+Yeah?
+
+00:45:53.920 --> 00:45:56.340
+It would be 15, 6, 4, negative
+2.
+
+00:45:56.340 --> 00:45:56.880
+Good.
+
+00:45:56.880 --> 00:45:58.220
+How'd you find that?
+
+00:45:58.220 --> 00:46:01.700
+I just thought of it as like a
+linear combination for the first
+
+00:46:01.700 --> 00:46:05.160
+one of one times like the first
+column.
+
+00:46:05.160 --> 00:46:05.700
+Exactly.
+
+00:46:05.700 --> 00:46:07.220
+The second column and then the
+same for the second.
+
+00:46:07.220 --> 00:46:08.220
+Exactly.
+
+00:46:08.980 --> 00:46:13.840
+T called on the input 1, 0 is
+the same as A times the matrix
+
+00:46:13.840 --> 00:46:15.020
+1, 0.
+
+00:46:15.020 --> 00:46:16.160
+But A times the matrix,
+
+00:46:16.160 --> 00:46:19.760
+sorry, A times the vector 1, 0.
+
+00:46:19.760 --> 00:46:24.060
+But all A times the vector 1, 0
+is saying,
+
+00:46:24.060 --> 00:46:26.820
+remember, anytime you see matrix
+times vector, you should think
+
+00:46:26.820 --> 00:46:29.900
+of it as a linear combination of
+the matrix's columns.
+
+00:46:29.900 --> 00:46:34.900
+This is just saying 1 of A's
+first column plus 0 of A's
+
+00:46:34.900 --> 00:46:37.300
+second column is equal to 15, 4.
+
+00:46:37.300 --> 00:46:40.980
+That's just telling you A's
+first column is 15, 4.
+
+00:46:40.980 --> 00:46:42.480
+We agree?
+
+00:46:42.480 --> 00:46:44.540
+Just from this information
+alone,
+
+00:46:44.540 --> 00:46:49.040
+you know that A's first column
+is 15, 4.
+
+00:46:49.780 --> 00:46:52.640
+Do we agree with that?
+
+00:46:52.640 --> 00:46:54.260
+Yeah.
+Can you explain that again?
+
+00:46:54.500 --> 00:46:55.100
+OK.
+OK,
+
+00:46:55.100 --> 00:46:58.200
+what does multiplying a by 1, 0
+do?
+
+00:46:58.200 --> 00:46:59.440
+Tell me then.
+
+00:46:59.440 --> 00:47:01.740
+It multiplies the first column
+into one of the second columns.
+
+00:47:01.740 --> 00:47:02.560
+Exactly.
+
+00:47:02.560 --> 00:47:05.540
+But 1 of the first column plus 0
+of the second column is just
+
+00:47:05.540 --> 00:47:07.480
+equal to the first column.
+
+00:47:07.480 --> 00:47:11.000
+And so this is just telling you
+the first column is 15, 4.
+
+00:47:11.000 --> 00:47:12.000
+Good.
+
+00:47:14.280 --> 00:47:15.280
+So 15,
+
+00:47:15.280 --> 00:47:16.280
+4.
+
+00:47:17.640 --> 00:47:19.640
+It also tells us what the second
+column is.
+
+00:47:19.640 --> 00:47:21.120
+Because this is saying,
+
+00:47:21.120 --> 00:47:25.560
+if you multiply A by 0, 1,
+
+00:47:25.560 --> 00:47:28.440
+which, again, all it does is it
+takes none of the first column
+
+00:47:28.440 --> 00:47:31.600
+and one of the second, which is
+just equal to the second column,
+
+00:47:31.600 --> 00:47:34.740
+you get 6, negative 2.
+
+00:47:34.740 --> 00:47:36.040
+So what's my point?
+
+00:47:36.040 --> 00:47:39.680
+If you know what happens to the
+vectors 1, 0, and 0, 1,
+
+00:47:39.680 --> 00:47:41.760
+you can find the matrix
+associated with the
+
+00:47:41.760 --> 00:47:44.460
+transformation, which means then
+you can find what happens to any
+
+00:47:44.460 --> 00:47:45.460
+input.
+
+00:47:47.740 --> 00:47:49.800
+And these vectors,
+
+00:47:49.800 --> 00:47:53.550
+1, 0, and 0, 1,
+
+00:47:54.080 --> 00:47:57.830
+are called the standard basis
+vectors.
+
+00:48:01.320 --> 00:48:04.600
+In R2, there are two standard
+basis vectors, 1, 0, 0, 1.
+
+00:48:04.600 --> 00:48:06.260
+In R3, there are three,
+
+00:48:06.260 --> 00:48:07.420
+1, 0, 0,
+
+00:48:07.420 --> 00:48:11.600
+0, 1, 0, 0, 0, 1.
+R1 and R15, there are 15
+
+00:48:11.600 --> 00:48:15.350
+standard basis vectors and so
+on.
+
+00:48:15.560 --> 00:48:17.440
+Now with that in mind,
+
+00:48:17.440 --> 00:48:19.760
+let's take a look at this first
+visual that I showed you a few
+
+00:48:19.760 --> 00:48:21.000
+minutes ago.
+
+00:48:21.000 --> 00:48:25.540
+What I've drawn on the left are
+the two standard basis vectors
+
+00:48:25.540 --> 00:48:26.700
+in R2,
+
+00:48:26.700 --> 00:48:30.360
+which for this demonstration I
+will call U1,
+
+00:48:30.360 --> 00:48:32.100
+which is the first one, one
+zero,
+
+00:48:32.100 --> 00:48:33.960
+and U2, which is the second one,
+
+00:48:33.960 --> 00:48:35.160
+zero one.
+
+00:48:35.160 --> 00:48:40.880
+And what I've drawn for you is
+the result of sending just
+
+00:48:40.880 --> 00:48:45.380
+U1 and U2 through the linear
+transformation.
+
+00:48:45.960 --> 00:48:48.400
+And again, sending through the
+transformation
+
+00:48:48.400 --> 00:48:52.150
+just means multiplying by A.
+
+00:48:53.680 --> 00:48:57.100
+And what do we see about the
+result?
+
+00:48:57.100 --> 00:48:57.660
+Well,
+
+00:48:57.660 --> 00:49:01.240
+what this is showing us is what
+the linear transformation does
+
+00:49:01.240 --> 00:49:04.000
+to each column of A
+individually,
+
+00:49:04.000 --> 00:49:07.180
+or sorry, each standard basis
+vector individually.
+
+00:49:07.180 --> 00:49:11.180
+So what happened to the first
+standard basis vector, u1?
+
+00:49:11.180 --> 00:49:14.180
+The vector 1, 0.
+What happened to it?
+
+00:49:17.400 --> 00:49:19.660
+What happened to it? You got
+double?
+
+00:49:19.660 --> 00:49:25.340
+Yeah, I got stretched by a
+factor of 2.
+
+00:49:25.880 --> 00:49:30.380
+And what happened to the second
+standard basis vector?
+
+00:49:38.120 --> 00:49:41.870
+What happened to the second
+standard basis vector?
+
+00:49:42.620 --> 00:49:45.220
+One third of the length and it
+points in the other direction.
+
+00:49:45.220 --> 00:49:46.220
+Yeah.
+
+00:49:46.280 --> 00:49:48.660
+It's one third of the length and
+now points in the other
+
+00:49:48.660 --> 00:49:49.660
+direction.
+
+00:49:50.880 --> 00:49:53.940
+So what I'm trying to get at
+here is understanding what
+
+00:49:53.940 --> 00:49:57.340
+happens to the two standard
+basis vectors helps us
+
+00:49:57.340 --> 00:50:00.320
+understand what happens to any
+arbitrary vector.
+
+00:50:00.320 --> 00:50:01.220
+Okay,
+
+00:50:01.220 --> 00:50:04.160
+if these are how our building
+blocks change,
+
+00:50:04.160 --> 00:50:07.560
+then we can use this to
+understand how any arbitrary
+
+00:50:07.560 --> 00:50:09.060
+input changes.
+
+00:50:09.180 --> 00:50:11.520
+Here's what I mean.
+
+00:50:11.520 --> 00:50:17.520
+Suppose I start with the vector
+AB and I send it
+
+00:50:17.520 --> 00:50:23.220
+through the transformation and
+what comes out is the vector
+
+00:50:23.220 --> 00:50:28.480
+that is transformed.
+
+00:50:30.700 --> 00:50:34.450
+But the vector that is
+transformed,
+
+00:50:35.620 --> 00:50:37.000
+maybe I'll think of it this way,
+
+00:50:37.000 --> 00:50:38.280
+is vector AB
+
+00:50:38.280 --> 00:50:42.800
+is really just A times the first
+standard basis vector
+
+00:50:42.800 --> 00:50:45.360
+plus B times the second standard
+basis vector.
+
+00:50:45.360 --> 00:50:49.860
+This is just a complicated way
+of writing the vector AB.
+
+00:50:50.320 --> 00:50:52.720
+Do you agree with that?
+
+00:50:52.720 --> 00:50:58.300
+This is just saying any vector
+a, b is a times 1, 0 plus b
+
+00:50:58.300 --> 00:50:59.540
+times 0,
+
+00:50:59.540 --> 00:51:00.400
+1.
+
+00:51:00.400 --> 00:51:03.480
+Are we 100% OK with that?
+
+00:51:03.480 --> 00:51:07.980
+When I send that through the
+transformation,
+
+00:51:08.060 --> 00:51:09.720
+as we saw before,
+
+00:51:09.720 --> 00:51:14.120
+the result is a times t of u1
+
+00:51:14.120 --> 00:51:17.580
+plus b times t of u2.
+
+00:51:17.580 --> 00:51:23.080
+So if we figure out how u1 and
+u2 get
+
+00:51:23.080 --> 00:51:24.080
+transformed,
+
+00:51:24.680 --> 00:51:28.280
+then the vector ab gets
+transformed to a times the
+
+00:51:28.280 --> 00:51:31.780
+output of the first standard
+basis vector plus b times the
+
+00:51:31.780 --> 00:51:35.530
+output of the second standard
+basis vector.
+
+00:51:35.880 --> 00:51:41.860
+So with t of x being equal
+
+00:51:41.860 --> 00:51:45.660
+to the matrix we saw in the
+previous slide,
+
+00:51:45.660 --> 00:51:46.160
+2,
+
+00:51:46.160 --> 00:51:51.410
+0, 0, negative a third times x,
+
+00:51:53.080 --> 00:51:57.720
+T of AB ends up being equal to A
+
+00:51:57.720 --> 00:52:02.220
+times T of U1 plus B
+
+00:52:02.840 --> 00:52:05.120
+times T of U2,
+
+00:52:05.120 --> 00:52:10.080
+which is equal to A times not 1,
+0, but now 2, 0, because that's
+
+00:52:10.080 --> 00:52:11.800
+what happens to the first
+standard basis factor.
+
+00:52:11.800 --> 00:52:16.300
+Maybe I'll put that in red.
+
+00:52:22.360 --> 00:52:26.080
+Plus b times the transformed
+second standard basis vector,
+
+00:52:26.080 --> 00:52:27.000
+which is 0,
+
+00:52:27.000 --> 00:52:29.220
+negative 1 third.
+
+00:52:29.220 --> 00:52:29.960
+OK?
+
+00:52:29.960 --> 00:52:31.740
+And again, I'm not trying to
+give you an easy way to
+
+00:52:31.740 --> 00:52:33.760
+calculate the output.
+Of course, the easy way to
+
+00:52:33.760 --> 00:52:35.640
+calculate the output, as we will
+see,
+
+00:52:35.640 --> 00:52:38.260
+is you just multiply the first
+component by 2 and the second by
+
+00:52:38.260 --> 00:52:39.380
+negative 1 third.
+
+00:52:39.380 --> 00:52:41.740
+I'm trying to give you a way of
+interpreting what happens
+
+00:52:41.740 --> 00:52:43.820
+through the linear
+transformation,
+
+00:52:43.820 --> 00:52:46.640
+which will be useful when we
+look at more complicated linear
+
+00:52:46.640 --> 00:52:47.640
+transformations.
+
+00:52:48.600 --> 00:52:51.600
+So what we're saying here is
+that previously the vector we
+
+00:52:51.600 --> 00:52:55.300
+started with was just A of the
+first standard basis vector plus
+
+00:52:55.300 --> 00:52:56.880
+B of the second standard basis
+vector.
+
+00:52:56.880 --> 00:52:58.360
+It was just the vector AB,
+
+00:52:58.360 --> 00:53:00.700
+one, two, or seven, five, or
+something like that.
+
+00:53:00.700 --> 00:53:02.780
+Now instead of being one, two,
+or seven,
+
+00:53:02.780 --> 00:53:03.380
+five,
+
+00:53:03.380 --> 00:53:08.680
+it's one times the transformed
+standard basis vector plus 2
+
+00:53:08.680 --> 00:53:11.880
+times the next transform
+standard basis vector.
+
+00:53:12.400 --> 00:53:14.560
+So it used to be a linear
+combination of the original
+
+00:53:14.560 --> 00:53:15.680
+building blocks.
+
+00:53:15.680 --> 00:53:18.180
+Now it's a linear combination of
+these transformed building
+
+00:53:18.180 --> 00:53:19.180
+blocks.
+
+00:53:19.980 --> 00:53:21.780
+You kind of see what I mean by
+that?
+
+00:53:21.780 --> 00:53:24.200
+So understanding what happens to
+the standard building blocks
+
+00:53:24.200 --> 00:53:27.460
+tells us what happens to any
+other vector.
+
+00:53:27.460 --> 00:53:31.640
+That's why we're visualizing the
+transformation that's happening
+
+00:53:31.640 --> 00:53:35.390
+to the standard basis blocks.
+
+00:53:37.340 --> 00:53:39.960
+Now, let's think about how we
+would describe this
+
+00:53:39.960 --> 00:53:42.210
+transformation in English.
+
+00:53:46.760 --> 00:53:50.140
+What does this transformation do
+to an arbitrary vector,
+
+00:53:50.140 --> 00:53:53.890
+like the vector 2, 2?
+
+00:53:56.260 --> 00:54:01.510
+In English, what does it do to
+it?
+
+00:54:10.550 --> 00:54:15.800
+What does this matrix do to an
+arbitrary vector?
+
+00:54:23.020 --> 00:54:23.740
+Well,
+
+00:54:23.740 --> 00:54:28.000
+to see, we can multiply it out.
+
+00:54:28.000 --> 00:54:31.750
+What is the vector AV?
+
+00:54:32.880 --> 00:54:34.860
+What comes out?
+
+00:54:34.860 --> 00:54:36.100
+Negative 2 thirds.
+
+00:54:36.100 --> 00:54:38.180
+4 and negative 2 thirds.
+
+00:54:38.180 --> 00:54:42.420
+And how would you describe the
+process of changing 2, 2 to 4
+
+00:54:42.420 --> 00:54:46.170
+and negative 2 thirds? Like,
+what did we do?
+
+00:54:47.760 --> 00:54:48.760
+Yeah?
+
+00:54:49.020 --> 00:54:51.320
+Stretched it and multiply it by
+2,
+
+00:54:51.320 --> 00:54:55.820
+and then we multiply the y
+component by negative 1 third.
+
+00:54:56.280 --> 00:54:57.220
+Good.
+
+00:54:57.220 --> 00:55:01.540
+So what A does is it stretches,
+or compresses,
+
+00:55:01.540 --> 00:55:03.040
+or rotates,
+
+00:55:03.280 --> 00:55:04.040
+not rotates,
+
+00:55:04.040 --> 00:55:05.040
+reflects,
+
+00:55:08.040 --> 00:55:12.000
+each component independently.
+
+00:55:15.780 --> 00:55:17.620
+What do I mean by independently?
+
+00:55:17.620 --> 00:55:20.660
+The thing that I did to the y
+component, which is multiplied
+
+00:55:20.660 --> 00:55:22.240
+by negative 1 third,
+
+00:55:22.240 --> 00:55:25.020
+was unrelated to the thing I did
+to the x component, which is
+
+00:55:25.020 --> 00:55:26.020
+double.
+
+00:55:26.560 --> 00:55:30.140
+The x component and y component
+were transformed totally
+
+00:55:30.140 --> 00:55:31.140
+separately.
+
+00:55:32.040 --> 00:55:35.660
+You can imagine a transformation
+that uses both the x and
+
+00:55:35.660 --> 00:55:38.960
+y-coordinates and somehow uses
+the joint position to configure
+
+00:55:38.960 --> 00:55:41.700
+where the output will be.
+We'll see that in just a moment
+
+00:55:41.700 --> 00:55:44.120
+when we talk about a rotation.
+
+00:55:44.120 --> 00:55:46.960
+But what this matrix is doing is
+it's just separately doing
+
+00:55:46.960 --> 00:55:49.720
+something to x and separately
+doing something to y.
+
+00:55:49.720 --> 00:55:52.360
+And the doing something is just
+multiplying it by a scalar.
+
+00:55:52.360 --> 00:55:55.100
+If it's a scalar greater than 1,
+it stretches it.
+
+00:55:55.100 --> 00:55:57.920
+It's a scalar between 0 and 1.
+It compresses it.
+
+00:55:57.920 --> 00:56:01.840
+If it's a negative scalar, then
+it also flips its direction.
+
+00:56:01.840 --> 00:56:04.760
+So 2, 2 gets sent to
+
+00:56:04.760 --> 00:56:08.820
+4 negative 2 thirds.
+
+00:56:09.620 --> 00:56:15.420
+So the output vector is going to
+look something like that.
+
+00:56:19.820 --> 00:56:20.500
+Now,
+
+00:56:20.500 --> 00:56:23.360
+there is a name for this kind of
+matrix that we've discussed.
+
+00:56:23.360 --> 00:56:27.860
+What would you call this matrix?
+
+00:56:33.640 --> 00:56:37.980
+And it has to do with the fact
+that the new x component only
+
+00:56:37.980 --> 00:56:39.680
+depended on the old x component,
+
+00:56:39.680 --> 00:56:43.380
+and the new y component only
+depended on the old y component.
+
+00:56:43.380 --> 00:56:45.420
+What was the name for this
+matrix?
+
+00:56:45.420 --> 00:56:48.080
+What is a rotation matrix?
+
+00:56:48.080 --> 00:56:48.900
+Not quite.
+
+00:56:48.900 --> 00:56:52.620
+We haven't yet discussed about a
+rotation matrix.
+
+00:56:52.620 --> 00:56:55.460
+This is not what I would say is
+a rotation matrix.
+
+00:56:55.460 --> 00:56:59.960
+It's a diagonal? It's a diagonal
+matrix.
+
+00:57:07.660 --> 00:57:10.720
+And sorry, to make more clear
+what I mean by it affects each
+
+00:57:10.720 --> 00:57:12.220
+component individually,
+
+00:57:12.700 --> 00:57:14.960
+if I transform the vector AB,
+
+00:57:14.960 --> 00:57:17.600
+what is the result?
+
+00:57:17.600 --> 00:57:21.380
+It's 2A and negative B over 3.
+
+00:57:21.380 --> 00:57:24.860
+There's not a B up here, and
+there's not an A down here.
+
+00:57:24.860 --> 00:57:28.140
+The new A only depends on the
+old A, And the new B only
+
+00:57:28.140 --> 00:57:31.040
+depends on the old B.
+
+00:57:31.040 --> 00:57:34.520
+And that's happening because
+these off-diagonal terms are
+
+00:57:34.520 --> 00:57:35.520
+zeros.
+
+00:57:36.200 --> 00:57:37.880
+When you have a diagonal matrix,
+
+00:57:37.880 --> 00:57:40.200
+each component is just scaled
+independently.
+
+00:57:40.200 --> 00:57:43.020
+So you should think of a
+diagonal matrix's job as being
+
+00:57:43.020 --> 00:57:46.760
+to stretch or compress each
+direction on its own.
+
+00:57:46.760 --> 00:57:49.240
+This is an idea we will use a
+lot this semester.
+
+00:57:49.240 --> 00:57:53.740
+A diagonal matrix is used for
+stretching.
+
+00:57:55.380 --> 00:57:58.560
+Okay, we've briefly discussed a
+rotation matrix, and you've seen
+
+00:57:58.560 --> 00:58:00.420
+them in your homework.
+
+00:58:00.420 --> 00:58:03.580
+Here's what a rotation matrix
+might look like.
+
+00:58:03.580 --> 00:58:09.200
+So what we're seeing is a matrix
+B, and on the left, again, I
+
+00:58:09.200 --> 00:58:12.980
+have the standard basis vectors
+u1 and u2, 1, 0, and 0, 1.
+
+00:58:13.740 --> 00:58:18.580
+And on the right, what I've seen
+is how they get transformed.
+
+00:58:18.580 --> 00:58:21.580
+And how were they transformed?
+
+00:58:21.580 --> 00:58:26.220
+They were rotated 45 degrees
+counterclockwise.
+
+00:58:37.680 --> 00:58:41.430
+Now in the homework you
+submitted on Sunday,
+
+00:58:41.860 --> 00:58:46.360
+there was a property of rotation
+matrices
+
+00:58:47.020 --> 00:58:52.840
+that you proved it was that the
+length of
+
+00:58:52.840 --> 00:58:58.100
+say B is our rotation matrix and
+V is our vector the length of B
+
+00:58:58.100 --> 00:59:00.760
+V is equal to the length of
+something else
+
+00:59:00.760 --> 00:59:06.680
+what is it equal
+
+00:59:06.680 --> 00:59:12.520
+to the length the length of B V
+is equal to yeah V it's equal to
+
+00:59:12.520 --> 00:59:14.120
+the length of v.
+
+00:59:14.120 --> 00:59:20.000
+What that means is if we started
+with the vector 2, 2,
+
+00:59:23.120 --> 00:59:25.620
+the result we get back, which is
+going to look something like
+
+00:59:25.620 --> 00:59:26.620
+this,
+
+00:59:28.480 --> 00:59:30.800
+is going to have the same
+length.
+
+00:59:30.800 --> 00:59:34.060
+All that's going to be different
+is its angle with the origin is
+
+00:59:34.060 --> 00:59:36.840
+going to be changed because it's
+being rotated by whatever amount
+
+00:59:36.840 --> 00:59:38.840
+b tells us to rotate by.
+
+00:59:38.840 --> 00:59:41.320
+Not true here.
+Right here,
+
+00:59:41.600 --> 00:59:42.260
+A, V,
+
+00:59:42.260 --> 00:59:44.640
+and V don't have to have the
+same length.
+
+00:59:44.640 --> 00:59:48.060
+And in general, they won't,
+because we're stretching each
+
+00:59:48.060 --> 00:59:50.100
+component by a different amount.
+
+00:59:50.100 --> 00:59:52.350
+In this rotation,
+
+00:59:52.740 --> 00:59:54.500
+the length of the vector is not
+changing.
+
+00:59:54.500 --> 00:59:57.860
+It's just that its direction is
+changing.
+
+00:59:57.860 --> 01:00:03.110
+And can you also remind me what
+the name of B is as a matrix?
+
+01:00:04.460 --> 01:00:07.440
+Its action is that it rotates,
+but there is like an algebraic
+
+01:00:07.440 --> 01:00:09.420
+property that we said it had.
+
+01:00:09.420 --> 01:00:12.780
+And what was that algebraic
+property?
+
+01:00:12.780 --> 01:00:17.580
+It was a word that started with
+an O.
+
+01:00:17.580 --> 01:00:18.320
+Yeah?
+
+01:00:18.320 --> 01:00:18.940
+Orthogonal?
+
+01:00:18.940 --> 01:00:22.690
+Yeah, it was an orthogonal
+matrix.
+
+01:00:23.800 --> 01:00:26.000
+Can you remind me what the
+properties of an orthogonal
+
+01:00:26.000 --> 01:00:27.500
+matrix are?
+
+01:00:33.640 --> 01:00:35.140
+Yeah? Yeah.
+
+01:00:35.200 --> 01:00:37.840
+All the vectors are unit
+vectors.
+
+01:00:37.840 --> 01:00:38.840
+Good.
+
+01:00:40.220 --> 01:00:44.620
+Did you dot the rows with the
+columns?
+
+01:00:44.620 --> 01:00:46.420
+Close.
+It's that you dot the columns
+
+01:00:46.420 --> 01:00:47.920
+with themselves,
+
+01:00:48.040 --> 01:00:49.420
+you either get 1 or 0.
+
+01:00:49.420 --> 01:00:52.060
+If you dot a column with itself,
+you get 1,
+
+01:00:52.060 --> 01:00:53.520
+because that means it's a unit
+vector.
+
+01:00:53.520 --> 01:00:55.700
+The dot product of the vector
+with itself is its squared
+
+01:00:55.700 --> 01:00:56.500
+length,
+
+01:00:56.500 --> 01:00:59.040
+and if that's equal to 1, then
+its squared length is 1,
+
+01:00:59.040 --> 01:01:00.960
+which means its length is also
+1.
+
+01:01:00.960 --> 01:01:03.200
+And if you dot a column with a
+different column, you get 0,
+
+01:01:03.200 --> 01:01:06.950
+which means the columns are
+orthogonal.
+
+01:01:07.080 --> 01:01:09.880
+So it means B transpose B, which
+is,
+
+01:01:09.880 --> 01:01:13.000
+remember, the dot products of
+the pairs of columns is equal to
+
+01:01:13.000 --> 01:01:14.500
+the identity.
+
+01:01:18.520 --> 01:01:22.260
+But using things we just
+introduced today,
+
+01:01:22.260 --> 01:01:27.860
+what this means is that B
+transpose is B's
+
+01:01:27.860 --> 01:01:28.860
+inverse.
+
+01:01:29.520 --> 01:01:32.860
+Because I found a matrix that I
+can multiply B by to get the
+
+01:01:32.860 --> 01:01:33.860
+identity.
+
+01:01:34.560 --> 01:01:38.980
+So B and B transpose are
+inverses of each other, which is
+
+01:01:38.980 --> 01:01:42.680
+a special case when the columns
+are unit vectors
+
+01:01:42.680 --> 01:01:44.140
+and orthogonal to each other.
+
+01:01:44.140 --> 01:01:44.920
+In general,
+
+01:01:44.920 --> 01:01:47.380
+a matrix's inverse is not the
+same as its transpose.
+
+01:01:47.380 --> 01:01:49.440
+It's true in this particular
+case.
+
+01:01:49.440 --> 01:01:53.280
+But because an inverse can be
+applied in either direction,
+
+01:01:53.280 --> 01:01:57.780
+this also means that B B
+transpose is the identity.
+
+01:01:58.280 --> 01:02:00.820
+Again, in general, it's not true
+that B transpose B and B B
+
+01:02:00.820 --> 01:02:02.420
+transpose are the same,
+
+01:02:02.420 --> 01:02:03.080
+right?
+
+01:02:03.080 --> 01:02:05.080
+If B is not a square matrix,
+
+01:02:05.080 --> 01:02:07.280
+then B transpose B and BB
+transpose don't even have the
+
+01:02:07.280 --> 01:02:08.400
+same shape.
+
+01:02:08.400 --> 01:02:12.360
+But when they're square and the
+matrix is an orthogonal matrix,
+
+01:02:12.360 --> 01:02:16.140
+then these are both the same.
+
+01:02:16.140 --> 01:02:19.780
+OK, so the role of an orthogonal
+matrix is to rotate.
+
+01:02:19.780 --> 01:02:22.220
+That's something that you should
+keep in mind.
+
+01:02:22.220 --> 01:02:24.940
+And we will see repeatedly
+throughout the semester.
+
+01:02:24.940 --> 01:02:27.560
+What happens to a vector when
+multiplied by an orthogonal
+
+01:02:27.560 --> 01:02:28.400
+matrix?
+
+01:02:28.400 --> 01:02:31.400
+Its length doesn't change.
+it just rotates.
+
+01:02:32.640 --> 01:02:33.640
+OK.
+
+01:02:33.680 --> 01:02:34.680
+Now,
+
+01:02:36.480 --> 01:02:38.380
+we've seen two examples,
+
+01:02:38.380 --> 01:02:40.300
+a matrix that stretches
+
+01:02:40.300 --> 01:02:42.880
+and a matrix that rotates.
+
+01:02:42.880 --> 01:02:45.060
+What happens if we apply both of
+them?
+
+01:02:45.060 --> 01:02:45.640
+Sorry.
+
+01:02:45.640 --> 01:02:48.500
+Don't look at that.
+
+01:02:48.500 --> 01:02:52.180
+What happens if we apply both of
+them?
+
+01:02:52.180 --> 01:02:56.080
+What I've done is I've defined
+the matrix C, which is the
+
+01:02:56.080 --> 01:03:00.580
+product of A and then B.
+
+01:03:00.580 --> 01:03:05.040
+Now, what do you think this does
+first?
+
+01:03:05.040 --> 01:03:10.290
+Does it rotate first, or does it
+stretch first?
+
+01:03:10.300 --> 01:03:13.560
+A was the stretch or scaling
+matrix, and B was the rotating
+
+01:03:13.560 --> 01:03:14.560
+matrix.
+
+01:03:15.940 --> 01:03:17.100
+But AB,
+
+01:03:17.100 --> 01:03:21.600
+does that rotate first, or does
+it scale first?
+
+01:03:22.280 --> 01:03:26.030
+Why does it rotate first?
+
+01:03:26.220 --> 01:03:30.060
+It's when you put the vectors on
+the most right-hand side.
+
+01:03:30.060 --> 01:03:30.980
+Good.
+
+01:03:30.980 --> 01:03:32.600
+That's which supplies.
+
+01:03:32.600 --> 01:03:34.520
+This is very counterintuitive,
+yes.
+
+01:03:34.520 --> 01:03:38.580
+But you have to read from right
+to left, which is opposite from
+
+01:03:38.580 --> 01:03:40.940
+how we normally read.
+If I'm a vector and I'm getting
+
+01:03:40.940 --> 01:03:44.690
+multiplied by the product AB,
+
+01:03:45.320 --> 01:03:48.520
+well, the first thing that eats
+me is the B part,
+
+01:03:48.520 --> 01:03:50.180
+which is going to rotate me.
+
+01:03:50.180 --> 01:03:54.680
+And then the result of the
+rotation gets stretched.
+
+01:03:55.780 --> 01:03:58.780
+So this rotates first,
+
+01:03:58.960 --> 01:04:01.740
+then stretches,
+
+01:04:03.040 --> 01:04:08.480
+which is why the resulting shape
+you get when you transform the
+
+01:04:08.480 --> 01:04:10.420
+standard basis vectors.
+
+01:04:10.420 --> 01:04:12.480
+By the way, I haven't called
+this out really, because the
+
+01:04:12.480 --> 01:04:14.620
+point that I will make with it
+comes later,
+
+01:04:14.620 --> 01:04:16.220
+realistically on Tuesday.
+
+01:04:16.220 --> 01:04:19.970
+But the standard basis vectors
+1, 0, and 0, 1,
+
+01:04:20.380 --> 01:04:23.640
+they define this square with an
+area of 1.
+
+01:04:23.640 --> 01:04:26.760
+Okay, and what I've been
+visualizing is how that square
+
+01:04:26.760 --> 01:04:29.540
+gets transformed into a
+parallelogram
+
+01:04:29.540 --> 01:04:33.140
+depending on how the standard
+basis vectors get shifted.
+
+01:04:33.140 --> 01:04:36.200
+What I'm seeing here is the
+result of rotating this square
+
+01:04:36.200 --> 01:04:40.140
+into like a diagonal shape and
+then stretching that, right? And
+
+01:04:40.140 --> 01:04:42.500
+why do I see it stretched this
+way?
+
+01:04:42.500 --> 01:04:45.100
+Why is its width doubled?
+
+01:04:45.100 --> 01:04:48.600
+Well, it's because this
+stretches the horizontal
+
+01:04:48.600 --> 01:04:51.560
+component of whatever vector it
+sees by two.
+
+01:04:51.560 --> 01:04:54.940
+And it stretches the vertical
+component by a factor of a third
+
+01:04:54.940 --> 01:04:59.560
+and also flips it.
+Which is why what I'm seeing is
+
+01:04:59.560 --> 01:05:03.960
+a diamond shape that's pulled
+apart wide and compressed
+
+01:05:03.960 --> 01:05:04.960
+vertically.
+
+01:05:06.240 --> 01:05:07.080
+Now,
+
+01:05:07.080 --> 01:05:11.020
+I want you to tell me what would
+happen if I changed the order of
+
+01:05:11.020 --> 01:05:12.320
+these matrices.
+
+01:05:12.320 --> 01:05:14.940
+If instead of AB I did BA,
+
+01:05:14.940 --> 01:05:19.060
+what do you think the resulting
+shape would look like?
+
+01:05:19.060 --> 01:05:21.980
+It's not the same shape.
+
+01:05:21.980 --> 01:05:24.920
+What would the shape be on the
+right if instead of multiplying
+
+01:05:24.920 --> 01:05:25.920
+AB,
+
+01:05:26.120 --> 01:05:28.370
+I multiplied BA?
+
+01:05:32.180 --> 01:05:33.860
+That's a good point to do
+attendance.
+
+01:05:33.860 --> 01:05:34.340
+I mean,
+
+01:05:34.340 --> 01:05:36.480
+class is almost over, but I'll
+still give you a little break to
+
+01:05:36.480 --> 01:05:37.480
+discuss.
+
+01:05:47.020 --> 01:05:48.520
+It's OK.
+
+01:05:50.080 --> 01:05:53.080
+That's the question I want you
+to think about.
+
+01:05:53.080 --> 01:05:54.940
+Here we multiplied AB,
+
+01:05:54.940 --> 01:05:56.680
+and our square,
+
+01:05:56.680 --> 01:05:59.460
+enclosed by the standard basis
+vectors,
+
+01:05:59.460 --> 01:06:02.460
+turned into a compressed
+diamond.
+
+01:06:02.720 --> 01:06:06.460
+What happens if we did BA
+instead?
+
+01:06:06.460 --> 01:06:10.960
+What would the square turn into?
+
+01:06:28.920 --> 01:06:31.440
+I don't know which way it
+rotates.
+
+01:06:31.440 --> 01:06:37.060
+Well, is it always going to be a
+trouble where the lag is?
+
+01:06:37.060 --> 01:06:38.060
+Oh,
+
+01:06:38.560 --> 01:06:39.260
+wait, I don't know.
+
+01:06:39.260 --> 01:06:41.510
+Yeah, you're right.
+
+01:06:52.660 --> 01:06:57.910
+I don't know if that's going to
+be here that way.
+
+01:07:17.020 --> 01:07:19.270
+Let's do it.
+Did it finish?
+
+01:07:23.800 --> 01:07:26.800
+I had your back.
+
+01:07:28.240 --> 01:07:29.320
+I have a mental heart.
+
+01:07:29.320 --> 01:07:30.520
+I'll bring it with me.
+
+01:07:30.520 --> 01:07:32.480
+You're not supposed to bring
+your debit card to me.
+
+01:07:32.480 --> 01:07:33.420
+It's like a computer.
+
+01:07:33.420 --> 01:07:34.360
+No, it's a computer.
+Oh,
+
+01:07:34.360 --> 01:07:34.900
+well then,
+
+01:07:34.900 --> 01:07:36.940
+it doesn't have any protection.
+
+01:07:36.940 --> 01:07:38.140
+It does.
+It does.
+
+01:07:38.140 --> 01:07:38.440
+It's movies.
+Oh,
+
+01:07:38.440 --> 01:07:38.820
+OK.
+
+01:07:38.820 --> 01:07:40.360
+So it's live TV.
+
+01:07:40.360 --> 01:07:41.860
+It has live TV.
+OK, great.
+
+01:07:41.860 --> 01:07:42.880
+It's a computer.
+It has bank protection.
+
+01:07:42.880 --> 01:07:45.980
+The problem is that your body's
+not on this.
+
+01:07:45.980 --> 01:07:47.640
+Mm-hm.
+That's probably what they said.
+
+01:07:47.820 --> 01:07:50.900
+I think I just misinterpreted
+what they said then.
+
+01:07:50.900 --> 01:07:53.220
+Because it's like, until I just
+use my credit card.
+
+01:07:53.220 --> 01:07:55.980
+I got a bank prediction for like
+$12,000,
+
+01:07:55.980 --> 01:07:57.920
+but it took like 90 days.
+
+01:07:57.920 --> 01:07:59.600
+And then every day is going to
+be the same.
+
+01:07:59.600 --> 01:08:01.860
+So we're just going to go to the
+credit card.
+
+01:08:01.860 --> 01:08:03.540
+Is everyone checked in?
+
+01:08:03.540 --> 01:08:06.040
+It's easy for them to decide.
+Everyone checked in?
+
+01:08:06.040 --> 01:08:07.040
+OK.
+
+01:08:08.680 --> 01:08:10.180
+All right.
+
+01:08:13.800 --> 01:08:17.240
+So, again the question is,
+
+01:08:17.240 --> 01:08:22.960
+if multiplying A then B
+transforms our unit
+
+01:08:22.960 --> 01:08:25.620
+square into a compressed
+diamond,
+
+01:08:25.620 --> 01:08:28.420
+what would multiplying B then A
+do?
+
+01:08:28.420 --> 01:08:30.400
+What would the shape on the
+right be?
+
+01:08:30.400 --> 01:08:31.340
+Any guesses? is,
+
+01:08:31.340 --> 01:08:35.840
+what would the shape on the
+right be?
+
+01:08:39.520 --> 01:08:42.040
+I changed the order.
+What happens to the shape on the
+
+01:08:42.040 --> 01:08:43.040
+right?
+
+01:08:43.580 --> 01:08:44.580
+Yeah?
+
+01:08:44.640 --> 01:08:46.140
+Skinny rectangle.
+
+01:08:46.540 --> 01:08:50.900
+It's going to be a rectangle,
+but it's not just a rectangle.
+
+01:08:50.900 --> 01:08:53.240
+Like, what is the rectangle
+going to look like?
+
+01:08:53.240 --> 01:08:58.320
+Or where is it going to be
+positioned?
+
+01:08:58.320 --> 01:08:59.820
+It is?
+
+01:09:02.500 --> 01:09:08.140
+It's going to be a rotated
+
+01:09:08.140 --> 01:09:09.140
+rectangle,
+
+01:09:09.400 --> 01:09:10.400
+okay?
+
+01:09:13.760 --> 01:09:17.300
+This is the picture to have in
+your mind.
+
+01:09:17.300 --> 01:09:18.080
+Why?
+
+01:09:18.080 --> 01:09:19.020
+Once again,
+
+01:09:19.020 --> 01:09:23.340
+remember, if I'm a vector and I
+get multiplied by BA,
+
+01:09:23.340 --> 01:09:28.940
+then what happens to me first is
+stretching and then
+
+01:09:28.940 --> 01:09:29.940
+rotating,
+
+01:09:33.360 --> 01:09:37.500
+which is why you can think of
+this as being two successive
+
+01:09:37.500 --> 01:09:39.000
+linear transformations.
+
+01:09:39.460 --> 01:09:42.460
+That's all matrix multiplication
+is doing.
+
+01:09:42.540 --> 01:09:46.880
+a, b, x is two back-to-back
+linear transformations of x,
+
+01:09:46.880 --> 01:09:49.300
+first b and then a.
+
+01:09:49.300 --> 01:09:53.900
+The first transformation turned
+our square into a rectangle, and
+
+01:09:53.900 --> 01:09:57.280
+then the second transformation
+rotated whatever shape we have.
+
+01:09:58.880 --> 01:09:59.880
+Okay,
+
+01:10:00.380 --> 01:10:01.880
+so B-A
+
+01:10:01.960 --> 01:10:04.140
+does the stretching first,
+
+01:10:04.140 --> 01:10:08.080
+A-B does the rotating first, and
+the confusing part is the thing
+
+01:10:08.080 --> 01:10:11.440
+that happens first is the one
+that multiplies the vector
+
+01:10:11.440 --> 01:10:14.420
+first, not the one that appears
+first left to right.
+
+01:10:14.420 --> 01:10:15.420
+Okay,
+
+01:10:15.660 --> 01:10:16.660
+good.
+
+01:10:17.960 --> 01:10:19.300
+All right,
+
+01:10:19.300 --> 01:10:20.300
+um
+
+01:10:21.280 --> 01:10:22.780
+Let's see.
+
+01:10:28.440 --> 01:10:32.760
+There are a few other examples
+of sort of harder to describe
+
+01:10:32.760 --> 01:10:33.760
+transformations.
+
+01:10:34.520 --> 01:10:38.560
+The one that I've drawn here is
+what's called a shear.
+
+01:10:38.560 --> 01:10:43.060
+What this is doing is it's
+keeping one axis fixed in place
+
+01:10:43.060 --> 01:10:46.100
+and dragging the other one.
+So the way that I like to
+
+01:10:46.100 --> 01:10:47.380
+imagine this
+
+01:10:47.380 --> 01:10:50.900
+is that I'm grabbing this top
+left corner
+
+01:10:50.900 --> 01:10:53.100
+and pulling it with me.
+
+01:10:53.100 --> 01:10:56.560
+But I'm keeping the bottom
+standard basis vector in place.
+
+01:10:56.560 --> 01:10:59.280
+This is what's called a
+horizontal shear,
+
+01:10:59.280 --> 01:11:03.280
+a vertical shear, you could
+imagine, keeping the vertical
+
+01:11:03.280 --> 01:11:06.440
+standard basis vector fixed and
+taking this point and dragging
+
+01:11:06.440 --> 01:11:07.940
+it up.
+
+01:11:08.280 --> 01:11:11.280
+Just another example of a linear
+transformation that appears.
+
+01:11:11.280 --> 01:11:13.300
+And in your next homework,
+you'll lots of more visual
+
+01:11:13.300 --> 01:11:15.540
+examples of these kinds of
+things.
+
+01:11:15.540 --> 01:11:18.700
+And I put together this cool
+assignment where you implement a
+
+01:11:18.700 --> 01:11:23.480
+basic version of Canva where you
+implement each one of these
+
+01:11:23.480 --> 01:11:24.880
+linear transformations.
+
+01:11:24.880 --> 01:11:28.060
+And it allows you to upload an
+image, and you can see what it
+
+01:11:28.060 --> 01:11:31.060
+does to those images.
+
+01:11:31.380 --> 01:11:35.200
+So the bigger point here is that
+every transformation we've seen
+
+01:11:35.200 --> 01:11:38.950
+so far behaves a little
+differently than this one.
+
+01:11:39.380 --> 01:11:41.640
+Now I'm considering the
+transformation defined by the
+
+01:11:41.640 --> 01:11:42.840
+matrix G,
+
+01:11:42.840 --> 01:11:45.860
+which is 1, 0, 0, 0.
+
+01:11:45.860 --> 01:11:48.360
+And what is right off the bat
+different about this
+
+01:11:48.360 --> 01:11:51.360
+transformation compared to the
+previous ones?
+
+01:11:53.480 --> 01:11:54.980
+What's different?
+
+01:12:00.020 --> 01:12:00.660
+Yeah.
+
+01:12:00.660 --> 01:12:01.940
+It's flat.
+
+01:12:01.940 --> 01:12:03.160
+What's flat?
+
+01:12:03.160 --> 01:12:04.080
+Line.
+
+01:12:04.080 --> 01:12:06.440
+It goes from a square to being a
+line.
+
+01:12:06.440 --> 01:12:07.320
+Exactly.
+
+01:12:07.320 --> 01:12:09.900
+In every other transformation
+we've seen, Including the ones
+
+01:12:09.900 --> 01:12:12.660
+that were made up of multiple
+smaller transformations
+
+01:12:12.660 --> 01:12:16.580
+This square that you saw in blue
+on the left was transformed into
+
+01:12:16.580 --> 01:12:20.330
+some sort of parallelogram on
+the right still with some area
+
+01:12:20.720 --> 01:12:21.720
+Okay
+
+01:12:21.920 --> 01:12:24.480
+All right, that was true here.
+That was true here.
+
+01:12:24.480 --> 01:12:26.520
+That was true here
+
+01:12:26.520 --> 01:12:29.520
+Square turned into parallelogram
+
+01:12:31.160 --> 01:12:35.660
+There we go not true now
+
+01:12:36.860 --> 01:12:37.660
+Why?
+
+01:12:37.660 --> 01:12:41.060
+Well, it's because the standard
+basis vectors u1 and u2,
+
+01:12:41.060 --> 01:12:43.620
+after they get sent through this
+transformation of getting
+
+01:12:43.620 --> 01:12:45.700
+multiplied by 1, 0, 0, 0,
+
+01:12:45.700 --> 01:12:50.950
+they both live on the same line.
+
+01:12:51.100 --> 01:12:53.880
+And so, remember, the whole
+point of this is to think about
+
+01:12:53.880 --> 01:12:57.200
+whether I can undo a
+transformation.
+
+01:12:57.200 --> 01:12:58.780
+And if you think about the
+transformations we've seen
+
+01:12:58.780 --> 01:12:59.620
+before,
+
+01:12:59.620 --> 01:13:01.760
+you can imagine how I might undo
+them.
+
+01:13:01.760 --> 01:13:03.000
+For example,
+
+01:13:03.000 --> 01:13:07.240
+if I have a machine that rotates
+things by 30 degrees, can I undo
+
+01:13:07.240 --> 01:13:08.060
+that?
+
+01:13:08.060 --> 01:13:11.000
+Sure, just unrotate by 30
+degrees or rotate by negative 30
+
+01:13:11.000 --> 01:13:13.020
+degrees.
+If I have a machine that
+
+01:13:13.020 --> 01:13:16.300
+stretches the x by 5 and the y
+by negative 2,
+
+01:13:16.300 --> 01:13:17.560
+can I undo that?
+
+01:13:17.560 --> 01:13:18.440
+Sure,
+
+01:13:18.440 --> 01:13:23.620
+just stretch the x by 1 5th and
+the y by negative 2.
+
+01:13:23.620 --> 01:13:28.800
+If I have a transformation that
+stretches and then rotates, how
+
+01:13:28.800 --> 01:13:33.300
+do I undo that? Well, I
+un-rotate and then un-stretch.
+
+01:13:33.620 --> 01:13:36.440
+But if I have this
+transformation,
+
+01:13:36.440 --> 01:13:41.100
+which you can think of it as
+projecting onto the x-axis,
+
+01:13:41.100 --> 01:13:44.100
+can that be undone?
+
+01:13:44.660 --> 01:13:45.440
+Well,
+
+01:13:45.440 --> 01:13:49.660
+not exactly, because if I
+consider the vector 2,
+
+01:13:59.540 --> 01:14:00.540
+2
+
+01:14:04.540 --> 01:14:08.240
+They both end up at the same
+place after you send them
+
+01:14:08.240 --> 01:14:10.420
+through the transformation.
+They both end up at the vector
+
+01:14:10.420 --> 01:14:11.920
+2, 0.
+
+01:14:11.920 --> 01:14:15.480
+Really what this transformation
+is doing is say, keep the x
+
+01:14:15.480 --> 01:14:18.780
+component and set the y
+component to 0.
+
+01:14:18.780 --> 01:14:20.120
+That's all this is doing.
+
+01:14:20.120 --> 01:14:21.300
+Do we agree?
+
+01:14:21.300 --> 01:14:21.820
+Okay.
+
+01:14:21.820 --> 01:14:24.380
+So if I tell you, okay, a vector
+that came out of the
+
+01:14:24.380 --> 01:14:26.240
+transformation was 2, 0.
+
+01:14:26.240 --> 01:14:29.360
+What did I send through the
+transformation?
+
+01:14:29.360 --> 01:14:31.020
+You don't know.
+It could have been 2, 3, it
+
+01:14:31.020 --> 01:14:32.960
+could have been 2, 100, it could
+have been 2,
+
+01:14:32.960 --> 01:14:34.100
+negative 15.
+
+01:14:34.100 --> 01:14:36.520
+All of those get sent to the
+same place,
+
+01:14:36.520 --> 01:14:37.900
+2, 0.
+
+01:14:37.900 --> 01:14:39.460
+Do we agree?
+
+01:14:39.460 --> 01:14:43.400
+Okay, so is this transformation
+reversible or invertible?
+
+01:14:45.760 --> 01:14:46.760
+No.
+Now,
+
+01:14:47.400 --> 01:14:53.340
+transformation can't be
+
+01:14:53.340 --> 01:14:54.340
+inverted.
+
+01:14:57.160 --> 01:14:59.560
+And here's another reason it
+can't be inverted.
+
+01:14:59.560 --> 01:15:03.160
+Suppose I give you a possible
+output,
+
+01:15:03.160 --> 01:15:05.740
+like this vector,
+
+01:15:07.580 --> 01:15:09.700
+negative 2, 2.
+
+01:15:09.700 --> 01:15:10.740
+And I said,
+
+01:15:10.740 --> 01:15:11.500
+hey,
+
+01:15:11.500 --> 01:15:15.980
+this came out of the machine
+where the machine, all it does
+
+01:15:15.980 --> 01:15:19.280
+is it takes a vector and
+multiplies it by 1, 0, 0, 0.
+
+01:15:19.280 --> 01:15:20.220
+And I say, OK,
+
+01:15:20.220 --> 01:15:21.380
+this is the vector
+
+01:15:21.380 --> 01:15:22.980
+that came out of the machine.
+
+01:15:22.980 --> 01:15:26.730
+What would you tell me?
+
+01:15:30.500 --> 01:15:33.000
+I say, OK, I have this machine
+where all it does is it
+
+01:15:33.000 --> 01:15:35.320
+multiplies vectors by 1, 0, 0,
+0.
+
+01:15:35.320 --> 01:15:38.280
+And I claim this vector that
+I've drawn in purple, Well,
+
+01:15:38.280 --> 01:15:40.140
+negative 2, 2 is what came out.
+
+01:15:40.140 --> 01:15:43.140
+What would you say?
+
+01:15:49.620 --> 01:15:52.800
+Vectors not linearly on
+combinations,
+
+01:15:53.200 --> 01:15:55.720
+because you have to add the 2,
+2s,
+
+01:15:55.720 --> 01:15:58.280
+the 0, 2 on to that, whatever
+comes out.
+
+01:15:58.280 --> 01:16:01.300
+So what would you say? Is this a
+possible thing that could come
+
+01:16:01.300 --> 01:16:03.180
+out of the machine?
+
+01:16:03.180 --> 01:16:04.180
+No.
+
+01:16:04.420 --> 01:16:04.880
+You'd say,
+
+01:16:04.880 --> 01:16:05.300
+OK,
+
+01:16:05.300 --> 01:16:06.020
+you're lying,
+
+01:16:06.020 --> 01:16:11.080
+because that can't happen.
+Right? This is not a possible
+
+01:16:11.080 --> 01:16:12.800
+output.
+
+01:16:17.180 --> 01:16:18.180
+Okay?
+
+01:16:18.320 --> 01:16:22.560
+So what we're seeing is that for
+this matrix,
+
+01:16:22.560 --> 01:16:26.380
+there are multiple reasons the
+associated transformation can't
+
+01:16:26.380 --> 01:16:27.600
+be undone.
+
+01:16:27.600 --> 01:16:30.860
+One reason is that it sends
+multiple inputs to the same
+
+01:16:30.860 --> 01:16:31.860
+output.
+
+01:16:32.160 --> 01:16:34.340
+In fact, it sends infinitely
+many inputs to the same output.
+
+01:16:34.340 --> 01:16:37.180
+There are infinitely many
+vectors that all get sent to the
+
+01:16:37.180 --> 01:16:38.800
+vector 2, 0.
+
+01:16:38.800 --> 01:16:39.400
+And then,
+
+01:16:39.400 --> 01:16:42.340
+for lots of possible outputs,
+
+01:16:42.340 --> 01:16:44.820
+there's no input that sends us
+there,
+
+01:16:44.820 --> 01:16:45.820
+OK?
+
+01:16:47.080 --> 01:16:51.580
+What do you notice about the
+columns of this matrix?
+
+01:16:53.480 --> 01:16:56.480
+Are they linearly independent?
+
+01:16:56.560 --> 01:16:57.220
+No.
+
+01:16:57.220 --> 01:17:00.300
+Any time the 0 vector is one of
+the vectors in your collection,
+
+01:17:00.300 --> 01:17:02.100
+the collection is not linearly
+independent.
+
+01:17:02.100 --> 01:17:05.440
+calls not linearly independent.
+
+01:17:07.020 --> 01:17:10.020
+Here's another such example.
+
+01:17:11.380 --> 01:17:15.130
+Actually I didn't draw the
+example.
+
+01:17:16.020 --> 01:17:18.270
+Here you go.
+
+01:17:21.860 --> 01:17:24.600
+Here's a matrix H where the
+calls are not linearly
+
+01:17:24.600 --> 01:17:25.600
+independent.
+
+01:17:26.960 --> 01:17:30.900
+And what you see is that the
+transformed standard basis
+
+01:17:30.900 --> 01:17:34.220
+vectors still live on a line.
+
+01:17:34.220 --> 01:17:37.000
+It's not the x-axis like it was
+in the previous example, but
+
+01:17:37.000 --> 01:17:39.940
+they still all live on the same
+line.
+
+01:17:39.940 --> 01:17:40.700
+OK?
+
+01:17:40.700 --> 01:17:44.480
+What this means is if I give you
+a candidate vector like this one
+
+01:17:44.480 --> 01:17:46.240
+and said,
+
+01:17:46.980 --> 01:17:50.600
+what vector, when I send it
+through the machine,
+
+01:17:50.600 --> 01:17:52.780
+lives here afterwards,
+
+01:17:52.780 --> 01:17:54.140
+the answer is nothing,
+
+01:17:54.140 --> 01:17:56.160
+because everything that comes
+out of the machine has to live
+
+01:17:56.160 --> 01:17:58.410
+on this line.
+
+01:17:58.780 --> 01:18:01.200
+What that means is this
+transformation is not
+
+01:18:01.200 --> 01:18:01.920
+reversible.
+
+01:18:01.920 --> 01:18:04.920
+You can't invert it.
+Because if it were invertible,
+
+01:18:05.200 --> 01:18:08.420
+I should be able to provide any
+vector in R2,
+
+01:18:08.420 --> 01:18:11.340
+and you should tell me the one
+place it had to come from.
+
+01:18:11.340 --> 01:18:12.820
+But that's not possible here.
+
+01:18:12.820 --> 01:18:15.500
+Because if I pick something not
+on the line,
+
+01:18:15.500 --> 01:18:16.640
+well, then it didn't come from
+anywhere.
+
+01:18:16.640 --> 01:18:18.220
+It's not a possible output.
+
+01:18:18.220 --> 01:18:20.300
+And if I pick something on the
+line, well, there are infinitely
+
+01:18:20.300 --> 01:18:24.740
+many ways to have made it.
+
+01:18:24.740 --> 01:18:28.880
+Do we see the bigger point I'm
+getting at here?
+
+01:18:28.880 --> 01:18:29.860
+OK.
+
+01:18:29.860 --> 01:18:35.700
+So the big idea is that
+
+01:18:35.700 --> 01:18:37.950
+A is invertible
+
+01:18:40.360 --> 01:18:46.260
+when the transformation T of x
+is equal
+
+01:18:46.260 --> 01:18:49.260
+to Ax is invertible.
+
+01:18:53.600 --> 01:18:59.600
+So, suppose A is an n by n
+matrix,
+
+01:19:00.320 --> 01:19:06.180
+A is invertible when,
+
+01:19:08.260 --> 01:19:10.180
+given your understanding of what
+we've just discussed,
+
+01:19:10.180 --> 01:19:14.100
+can you tell me some conditions
+that would make A invertible?
+
+01:19:14.100 --> 01:19:19.350
+And remember, it's an n by n
+matrix.
+
+01:19:20.980 --> 01:19:24.280
+Can you tell me one thing that
+if I know that that's true,
+
+01:19:24.280 --> 01:19:27.520
+then A will be invertible?
+
+01:19:27.520 --> 01:19:28.520
+Yeah.
+
+01:19:29.340 --> 01:19:30.340
+Good.
+
+01:19:30.440 --> 01:19:35.900
+A's columns are linearly
+independent.
+
+01:19:40.220 --> 01:19:44.720
+Because I have a square matrix
+in which I have n columns,
+
+01:19:44.920 --> 01:19:47.700
+and each column has n things in
+them.
+
+01:19:47.700 --> 01:19:51.080
+So I have n column vectors in
+Rn.
+
+01:19:51.080 --> 01:19:52.820
+If they're linearly independent,
+
+01:19:52.820 --> 01:19:55.820
+what is their span?
+
+01:19:57.600 --> 01:20:01.600
+If I have seven linearly
+independent vectors in R7,
+
+01:20:01.860 --> 01:20:04.820
+or two linearly independent
+vectors in R2,
+
+01:20:04.820 --> 01:20:07.820
+what is their span?
+
+01:20:10.800 --> 01:20:13.800
+Or three linearly independent
+vectors in R3.
+
+01:20:14.360 --> 01:20:15.500
+What is their span?
+
+01:20:15.500 --> 01:20:18.280
+All of R3? Yeah, the whole
+space.
+
+01:20:18.280 --> 01:20:19.940
+Do we agree?
+
+01:20:19.940 --> 01:20:25.220
+So if I have A's columns being
+linearly independent, that means
+
+01:20:25.220 --> 01:20:28.240
+the column space of A is what?
+
+01:20:28.240 --> 01:20:30.490
+All of Rn.
+
+01:20:31.100 --> 01:20:34.160
+What does that mean? Well, it
+means any vector in Rn is a
+
+01:20:34.160 --> 01:20:37.160
+possible linear combination of
+these columns.
+
+01:20:38.060 --> 01:20:41.440
+But also, because A's columns
+are linearly independent,
+
+01:20:41.440 --> 01:20:44.120
+it means their linear
+combinations are unique.
+
+01:20:44.120 --> 01:20:46.580
+This is something we focused on
+before midterm one.
+
+01:20:46.580 --> 01:20:49.740
+If you have building blocks that
+are linearly independent,
+
+01:20:49.740 --> 01:20:53.360
+then every one of its linear
+combinations can only be made in
+
+01:20:53.360 --> 01:20:54.860
+one way.
+
+01:20:55.660 --> 01:21:00.100
+But if the building blocks are
+not linearly independent,
+
+01:21:00.100 --> 01:21:03.920
+then any one of its linear
+combinations can be made in lots
+
+01:21:03.920 --> 01:21:06.170
+of different ways.
+
+01:21:06.960 --> 01:21:11.620
+But A's columns being linearly
+independent for a square matrix
+
+01:21:11.620 --> 01:21:15.080
+is also equivalent to lots of
+other things.
+
+01:21:15.080 --> 01:21:15.880
+Like,
+
+01:21:15.880 --> 01:21:18.880
+A's rows are linearly
+independent.
+
+01:21:24.940 --> 01:21:30.190
+Or the rank of A is what?
+
+01:21:32.140 --> 01:21:33.520
+N, good.
+
+01:21:33.520 --> 01:21:36.400
+Or something we talked about
+before the break,
+
+01:21:36.400 --> 01:21:41.650
+the null space of A is what?
+
+01:21:42.860 --> 01:21:45.500
+If the matrix's columns are
+linearly dependent, what is the
+
+01:21:45.500 --> 01:21:47.560
+matrix's null space?
+
+01:21:47.560 --> 01:21:50.560
+Just the 0 vector.
+
+01:21:51.360 --> 01:21:53.200
+And there's a few other
+equivalent ways of thinking
+
+01:21:53.200 --> 01:21:54.380
+about this.
+
+01:21:54.380 --> 01:21:58.130
+But these are all equivalent.
+
+01:22:00.080 --> 01:22:02.380
+So if any one of these are true,
+then they're all true.
+
+01:22:02.380 --> 01:22:04.460
+And if any one of them is not
+true, then none of them are
+
+01:22:04.460 --> 01:22:05.460
+true.
+
+01:22:05.520 --> 01:22:08.860
+And we say a matrix is
+invertible if any one of these
+
+01:22:08.860 --> 01:22:10.080
+things happens.
+
+01:22:10.080 --> 01:22:10.760
+Why?
+
+01:22:10.760 --> 01:22:14.510
+Well it's because the associated
+transformation can be undone.
+
+01:22:15.840 --> 01:22:19.060
+So next week's lab and this
+homework will help you sort of
+
+01:22:19.060 --> 01:22:21.840
+internalize these ideas and when
+we come back on Tuesday we will
+
+01:22:21.840 --> 01:22:23.960
+review some of this because I
+know we went over time and went
+
+01:22:23.960 --> 01:22:27.240
+pretty quickly and then the next
+big idea which will help us
+
+01:22:27.240 --> 01:22:30.900
+return to linear regression is
+how we project onto the column
+
+01:22:30.900 --> 01:22:33.900
+space of a matrix.
+
+01:22:57.560 --> 01:23:26.080
+with
+
+01:23:26.080 --> 01:23:28.330
+the area of
+
+01:23:49.380 --> 01:23:52.360
+Okay, if we want to do that, if
+we want to do that, let's eat
+
+01:23:52.360 --> 01:23:54.000
+first, eat first,
+
+01:23:54.000 --> 01:23:57.000
+also Oh, you're trying?
+
+01:23:57.980 --> 01:24:00.230
+Always after luck.
+I know, you always get it.
+
+01:24:04.740 --> 01:24:09.000
+I was playing for like two
+years.
+
+01:24:09.000 --> 01:24:11.080
+That's where every class is
+always just scooching.
+
+01:24:11.080 --> 01:24:11.520
+It's like,
+
+01:24:11.520 --> 01:24:14.280
+we're going to be on the
+whiteboard.
+
+01:24:14.280 --> 01:24:15.680
+Like the laser matrix thing.
+
+01:24:15.680 --> 01:24:18.500
+It's like this way and this way.
+
+01:24:18.500 --> 01:24:20.560
+That was like three years ago.
+
+01:24:20.560 --> 01:24:24.310
+Something like that, it's not
+playing then.
+
+01:24:24.440 --> 01:24:25.940
+Really, is it better?
+
+01:24:25.940 --> 01:24:27.780
+I remember when I stopped
+playing it was creeping up
+
+01:24:27.780 --> 01:24:28.900
+pretty bad.
+
+01:24:28.900 --> 01:24:30.080
+It's complicated,
+
+01:24:30.080 --> 01:24:32.100
+but the FCA balancing is a lot
+better.
+
+01:24:32.100 --> 01:24:34.460
+It's better than it was a few
+years ago.
+
+01:24:34.460 --> 01:24:36.710
+Is Bono still...
+Interesting though.
+
+01:24:37.000 --> 01:24:38.420
+Bono is still there.
+
+01:24:38.420 --> 01:24:39.420
+No,
+
+01:24:39.560 --> 01:24:41.100
+the weather was great.
+
+01:24:41.100 --> 01:24:42.600
+I just...
+What about Mav?
+
+01:24:43.400 --> 01:24:46.000
+I've seen your beautiful fall
+weather every day.
+
+01:24:46.000 --> 01:24:47.580
+It's all worthless.
+I mean, there's still a lot of
+
+01:24:47.580 --> 01:24:48.520
+good examples.
+
+01:24:48.520 --> 01:24:49.020
+That's funny.
+
+01:24:49.020 --> 01:24:51.160
+You have pieces set up for
+everything that's covered in
+
+01:24:51.160 --> 01:24:53.160
+snow and ice.
+
+01:24:53.160 --> 01:24:53.860
+It's like,
+
+01:24:53.860 --> 01:24:55.140
+it's not bad at all.
+
+01:24:55.140 --> 01:24:56.280
+If you have this,
+
+01:24:56.280 --> 01:24:57.500
+it's like,
+
+01:24:57.500 --> 01:24:58.980
+it's like, it's.
+Can you describe it like up to
+
+01:24:58.980 --> 01:25:00.480
+an hour?

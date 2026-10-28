@@ -1,0 +1,5361 @@
+WEBVTT
+
+00:00:02.340 --> 00:00:03.800
+I mean,
+
+00:00:03.800 --> 00:00:05.380
+if not, that would be really
+dangerous, because that's how
+
+00:00:05.380 --> 00:00:06.380
+you get into your form.
+
+00:00:06.380 --> 00:00:08.080
+All right.
+It's 10 30, so we'll get
+
+00:00:08.080 --> 00:00:08.740
+started.
+
+00:00:08.740 --> 00:00:11.200
+Good to see everyone again.
+
+00:00:11.200 --> 00:00:12.200
+Announcements-wise,
+
+00:00:12.220 --> 00:00:14.880
+homework six is due on Sunday.
+Remember,
+
+00:00:14.880 --> 00:00:17.660
+homeworks for the rest of the
+semester will be due on Sundays.
+
+00:00:17.660 --> 00:00:21.440
+Yesterday, we released homework
+five scores and updated the
+
+00:00:21.440 --> 00:00:23.080
+grade report.
+So make sure to take a look at
+
+00:00:23.080 --> 00:00:26.460
+that and let me know if anything
+still needs to be updated.
+
+00:00:26.460 --> 00:00:29.040
+And then for the past few
+lectures, If you go to the
+
+00:00:29.040 --> 00:00:32.880
+course website, there will be a
+videos button with supplemental
+
+00:00:32.880 --> 00:00:35.300
+videos that we recorded about
+some of this more theoretical
+
+00:00:35.300 --> 00:00:36.300
+material.
+
+00:00:36.420 --> 00:00:38.500
+Make sure to take a look at
+those as well.
+
+00:00:38.500 --> 00:00:40.940
+And there will be some for
+today's lecture and tomorrow's
+
+00:00:40.940 --> 00:00:43.040
+lab as well.
+
+00:00:43.040 --> 00:00:46.580
+The plan for today is to start
+by recapping the big idea from
+
+00:00:46.580 --> 00:00:48.740
+Thursday's class, which we sort
+of rushed through at the very
+
+00:00:48.740 --> 00:00:53.340
+end when trying to recap it
+then, which is what makes a
+
+00:00:53.340 --> 00:00:55.920
+matrix invertible.
+I want us to deeply understand
+
+00:00:55.920 --> 00:00:59.760
+that coming out of today.
+We will look at a few special
+
+00:00:59.760 --> 00:01:03.140
+cases.
+We will think about how you
+
+00:01:03.140 --> 00:01:06.520
+might find the inverse of a
+matrix using a formula for
+
+00:01:06.520 --> 00:01:09.920
+smaller matrices, some
+considerations about solving for
+
+00:01:09.920 --> 00:01:11.280
+the inverse in practice,
+
+00:01:11.280 --> 00:01:15.580
+and this related idea of the
+determinant of a matrix.
+
+00:01:15.580 --> 00:01:19.380
+And then we will also start to
+talk about the next big idea,
+
+00:01:19.380 --> 00:01:24.160
+which is how to project not onto
+one vector, but onto the column
+
+00:01:24.160 --> 00:01:27.260
+space of a matrix.
+or, in other words, onto the
+
+00:01:27.260 --> 00:01:31.020
+span of several vectors.
+And that is, in other words,
+
+00:01:31.560 --> 00:01:33.120
+multiple linear regression.
+
+00:01:33.120 --> 00:01:36.900
+So this is now the point where
+we connect to the ideas that we
+
+00:01:36.900 --> 00:01:38.860
+saw at the start of the
+semester.
+
+00:01:38.860 --> 00:01:40.760
+But first, we need to deeply
+understand
+
+00:01:40.760 --> 00:01:42.480
+what makes a matrix invertible.
+
+00:01:42.480 --> 00:01:45.380
+So suppose A is an invertible
+matrix.
+
+00:01:45.380 --> 00:01:49.880
+What does that mean? Like, what
+does that tell you about A?
+
+00:01:51.280 --> 00:01:52.500
+Can someone tell me?
+
+00:01:52.500 --> 00:01:54.040
+There are several things this
+tells you about A.
+
+00:01:54.040 --> 00:01:57.100
+What's the first thing this
+tells you about A?
+
+00:01:57.100 --> 00:02:01.600
+Yeah, A is a square matrix.
+
+00:02:05.120 --> 00:02:07.900
+Remember, invertibility is only
+a property of square matrices.
+
+00:02:07.900 --> 00:02:10.620
+So if I tell you A is
+invertible,
+
+00:02:10.620 --> 00:02:12.540
+well, then it has to be square.
+
+00:02:12.540 --> 00:02:16.160
+But it tells you more than that.
+It's not just any square matrix.
+
+00:02:16.160 --> 00:02:19.780
+What is also true about A if it
+is invertible?
+
+00:02:19.780 --> 00:02:24.280
+Yeah? I have a full rank.
+
+00:02:26.700 --> 00:02:29.700
+A is full rank.
+And what does that mean?
+
+00:02:30.240 --> 00:02:33.460
+I have a rank of A.
+
+00:02:33.460 --> 00:02:34.440
+Good.
+
+00:02:34.440 --> 00:02:40.440
+The rank of A is as large as
+physically possible.
+
+00:02:41.020 --> 00:02:44.560
+What are some other ways to
+interpret that?
+
+00:02:44.560 --> 00:02:45.520
+Columns are literally
+independent.
+
+00:02:45.520 --> 00:02:46.520
+Yeah,
+
+00:02:47.260 --> 00:02:48.760
+AKA,
+
+00:02:50.040 --> 00:02:53.520
+A's columns are linearly
+independent.
+
+00:02:58.160 --> 00:03:01.910
+Give me another way of
+interpreting that.
+
+00:03:02.600 --> 00:03:06.740
+So yes, it's true that if A is
+invertible, then its rank has to
+
+00:03:06.740 --> 00:03:10.180
+be equal to n, which is its
+number of rows and columns.
+
+00:03:10.180 --> 00:03:13.140
+All of that implies that its
+columns are linearly
+
+00:03:13.140 --> 00:03:15.320
+independent, but it also implies
+a few other things.
+
+00:03:15.320 --> 00:03:15.820
+Yeah.
+
+00:03:15.820 --> 00:03:17.140
+The rows are linearly
+independent? Yeah.
+
+00:03:17.140 --> 00:03:19.390
+It also means,
+
+00:03:20.660 --> 00:03:22.910
+let's see, also,
+
+00:03:27.880 --> 00:03:35.840
+what
+
+00:03:35.840 --> 00:03:39.590
+else does this tell you?
+
+00:03:41.260 --> 00:03:42.260
+Yeah.
+
+00:03:43.920 --> 00:03:47.020
+Is the null space only the zero
+vector?
+
+00:03:47.020 --> 00:03:48.020
+Good.
+
+00:03:48.240 --> 00:03:50.840
+It tells you that the null space
+of A
+
+00:03:50.840 --> 00:03:54.590
+is the trivial null space.
+It's just the zero vector.
+
+00:03:54.960 --> 00:03:57.960
+This is really just another way
+of saying A's columns are
+
+00:03:57.960 --> 00:03:59.280
+linearly independent,
+
+00:03:59.280 --> 00:04:02.340
+because this is saying the only
+way you can make the zero vector
+
+00:04:02.340 --> 00:04:04.880
+as a linear combination of A's
+columns
+
+00:04:04.880 --> 00:04:07.960
+is by taking zero of each
+column.
+
+00:04:07.960 --> 00:04:09.300
+OK, awesome.
+
+00:04:09.300 --> 00:04:14.940
+There's another way of thinking
+about this, which we will get to
+
+00:04:14.940 --> 00:04:15.980
+in just a little bit.
+
+00:04:15.980 --> 00:04:18.260
+I'll write it for now just so
+it's here and we will come back
+
+00:04:18.260 --> 00:04:19.140
+to it.
+
+00:04:19.140 --> 00:04:23.640
+The determinant of A is not
+equal to 0.
+
+00:04:24.480 --> 00:04:27.160
+What is the determinant of A?
+We're gonna get there in just a
+
+00:04:27.160 --> 00:04:28.160
+second.
+
+00:04:28.840 --> 00:04:29.160
+Now,
+
+00:04:29.160 --> 00:04:30.280
+okay, these are all great.
+
+00:04:30.280 --> 00:04:33.240
+It's good that we have this
+understanding of what it means
+
+00:04:33.240 --> 00:04:36.220
+for a matrix to be invertible in
+terms of its properties
+
+00:04:36.220 --> 00:04:38.640
+involving its rows and columns.
+
+00:04:38.640 --> 00:04:41.740
+But what does the inverse
+satisfy?
+
+00:04:41.740 --> 00:04:46.420
+Suppose A inverse exists.
+
+00:04:49.820 --> 00:04:55.020
+What properties does it satisfy?
+
+00:04:57.840 --> 00:05:02.340
+We just discussed what it means
+for A to have an inverse.
+
+00:05:02.720 --> 00:05:03.460
+Now,
+
+00:05:03.460 --> 00:05:04.660
+that inverse itself,
+
+00:05:04.660 --> 00:05:05.940
+what does it do?
+
+00:05:05.940 --> 00:05:10.440
+What is its relationship to A?
+
+00:05:12.140 --> 00:05:16.640
+What is the relationship of A
+and its inverse?
+
+00:05:18.860 --> 00:05:22.100
+Yeah? If you multiply it by A,
+you get the identity.
+
+00:05:22.100 --> 00:05:23.100
+Good.
+
+00:05:25.080 --> 00:05:28.000
+Not only is that true,
+
+00:05:28.000 --> 00:05:32.500
+it is the unique matrix where
+that happens.
+
+00:05:45.300 --> 00:05:48.360
+It's the unique matrix where A
+times its inverse is the
+
+00:05:48.360 --> 00:05:51.860
+identity.
+And it's also true that A
+
+00:05:51.860 --> 00:05:54.980
+inverse times A is the identity.
+
+00:05:54.980 --> 00:05:56.160
+In general,
+
+00:05:56.160 --> 00:05:58.760
+we know that AB is not the same
+as BA.
+
+00:05:58.760 --> 00:06:01.500
+But for the inverse of a square
+matrix,
+
+00:06:01.500 --> 00:06:03.200
+this commutativity is
+guaranteed.
+
+00:06:03.200 --> 00:06:07.700
+It doesn't matter what order you
+multiply A by its inverse by,
+
+00:06:07.840 --> 00:06:11.520
+what you get back is the
+identity.
+
+00:06:11.520 --> 00:06:12.220
+Now,
+
+00:06:12.220 --> 00:06:12.900
+good.
+
+00:06:12.900 --> 00:06:16.020
+We've mostly spent our time on
+Thursday and today so far are
+
+00:06:16.020 --> 00:06:19.820
+thinking about how do we know if
+a matrix is invertible? And on
+
+00:06:19.820 --> 00:06:22.980
+Thursday, we spent time thinking
+about this in the context of a
+
+00:06:22.980 --> 00:06:24.320
+type of function.
+
+00:06:24.320 --> 00:06:26.680
+Can you remind me what the name
+of that special type of function
+
+00:06:26.680 --> 00:06:27.680
+was?
+
+00:06:31.320 --> 00:06:34.140
+It's made up of two words.
+
+00:06:34.140 --> 00:06:39.320
+What did we talk about all of
+Thursday?
+
+00:06:39.320 --> 00:06:41.570
+Yeah, linear transformations.
+
+00:06:41.660 --> 00:06:42.660
+Remember,
+
+00:06:48.460 --> 00:06:50.800
+The function T of x
+
+00:06:50.800 --> 00:06:56.560
+is equal to matrix A
+
+00:06:56.560 --> 00:06:58.060
+times vector x.
+
+00:06:58.060 --> 00:07:01.820
+You can think of this as an
+operation happening to the
+
+00:07:01.820 --> 00:07:03.320
+vector x.
+
+00:07:03.400 --> 00:07:07.620
+The way I talked about this is
+you imagine the vector x goes
+
+00:07:07.620 --> 00:07:09.870
+through this machine,
+
+00:07:10.140 --> 00:07:13.260
+which multiplies it by A.
+
+00:07:13.260 --> 00:07:17.220
+And what comes out is a new
+vector,
+
+00:07:17.220 --> 00:07:18.040
+Ax.
+
+00:07:18.040 --> 00:07:21.140
+And we spent some time looking
+at some special cases of
+
+00:07:21.140 --> 00:07:26.620
+matrices where the action that A
+does to x is describable in
+
+00:07:26.620 --> 00:07:27.300
+English.
+
+00:07:27.300 --> 00:07:30.400
+Things like it rotates x or it
+stretches its components
+
+00:07:30.400 --> 00:07:31.400
+separately.
+
+00:07:32.540 --> 00:07:34.060
+Does that kind of sound
+familiar?
+
+00:07:34.060 --> 00:07:35.480
+OK, good.
+
+00:07:35.480 --> 00:07:36.520
+And so there,
+
+00:07:36.520 --> 00:07:41.280
+the idea was that a matrix is
+invertible if its associated
+
+00:07:41.280 --> 00:07:44.420
+linear transformation, which
+again is just the function that
+
+00:07:44.420 --> 00:07:47.120
+takes that matrix and multiplies
+it by incoming vectors,
+
+00:07:47.120 --> 00:07:50.870
+if that operation is invertible.
+
+00:07:51.780 --> 00:07:53.840
+That's something to review.
+
+00:07:53.840 --> 00:07:56.660
+Now that was our focus so far,
+
+00:07:56.660 --> 00:07:59.840
+this more theoretical idea of
+what makes a matrix invertible.
+
+00:07:59.840 --> 00:08:00.940
+Now I want to ask,
+
+00:08:00.940 --> 00:08:04.100
+how would you actually find the
+inverse?
+
+00:08:04.100 --> 00:08:04.820
+OK.
+OK,
+
+00:08:04.820 --> 00:08:05.820
+now,
+
+00:08:18.600 --> 00:08:21.740
+let me give you an example of a
+matrix.
+
+00:08:21.740 --> 00:08:23.780
+Why don't we use 1,
+
+00:08:23.780 --> 00:08:24.340
+5,
+
+00:08:24.340 --> 00:08:25.840
+2, 12.
+
+00:08:26.360 --> 00:08:29.460
+Now, if you've read the notes,
+or you've maybe seen this
+
+00:08:29.460 --> 00:08:30.460
+before,
+
+00:08:30.600 --> 00:08:34.520
+you may be familiar with the
+formula that tells you the
+
+00:08:34.520 --> 00:08:37.000
+inverse of a two by two matrix.
+And I'll tell it to you in just
+
+00:08:37.000 --> 00:08:38.760
+a little bit.
+Not expecting you to already
+
+00:08:38.760 --> 00:08:39.560
+know it.
+
+00:08:39.560 --> 00:08:40.900
+What I'm getting at, though,
+
+00:08:40.900 --> 00:08:45.120
+is you don't strictly need to
+know any formula ahead of time
+
+00:08:45.120 --> 00:08:46.380
+to find the inverse.
+
+00:08:46.380 --> 00:08:48.860
+There is like a first principles
+way
+
+00:08:48.860 --> 00:08:53.360
+of finding the inverse of any
+matrix.
+
+00:08:55.180 --> 00:08:59.680
+What shape must the inverse of
+this matrix have?
+
+00:09:01.000 --> 00:09:03.180
+I'm trying to find the inverse
+of this matrix, but I don't know
+
+00:09:03.180 --> 00:09:04.720
+any formula that does it.
+
+00:09:04.720 --> 00:09:07.960
+So I'm trying to figure it out
+from scratch.
+
+00:09:07.960 --> 00:09:13.160
+How would I go about doing this?
+
+00:09:13.160 --> 00:09:14.160
+Yeah?
+
+00:09:15.020 --> 00:09:17.600
+It needs to be a square.
+It needs to be a square 2 by 2
+
+00:09:17.600 --> 00:09:18.600
+matrix.
+
+00:09:18.740 --> 00:09:22.980
+So why don't I say the inverse X
+is the matrix
+
+00:09:22.980 --> 00:09:28.920
+X, Y,
+
+00:09:29.160 --> 00:09:30.080
+Z,
+
+00:09:30.080 --> 00:09:31.080
+W.
+
+00:09:36.080 --> 00:09:37.060
+Now,
+
+00:09:37.060 --> 00:09:43.810
+how do I solve for X, Y, Z, and
+W?
+
+00:09:43.900 --> 00:09:47.100
+Can I set up a system of
+equations that would tell me
+
+00:09:47.100 --> 00:09:50.160
+what these four numbers would
+have to be?
+
+00:09:50.160 --> 00:09:51.160
+Yeah?
+
+00:09:51.440 --> 00:09:54.040
+Doesn't it equal the identity?
+
+00:09:54.040 --> 00:09:55.920
+When you multiply it by A.
+
+00:09:55.920 --> 00:09:57.420
+Yeah, exactly.
+
+00:09:57.500 --> 00:10:01.340
+So what I could do is write out
+1,
+
+00:10:01.340 --> 00:10:01.780
+5,
+
+00:10:01.780 --> 00:10:04.500
+2, 12 multiplied
+
+00:10:09.720 --> 00:10:13.470
+by x, y, z, w.
+
+00:10:13.660 --> 00:10:16.480
+That product needs to be the
+identity matrix,
+
+00:10:16.480 --> 00:10:17.080
+1, 0,
+
+00:10:17.080 --> 00:10:18.580
+0, 1.
+
+00:10:27.060 --> 00:10:33.060
+So what I could do is expand the
+left-hand side of this equation,
+
+00:10:33.100 --> 00:10:36.100
+and it tells me
+
+00:10:36.450 --> 00:10:40.950
+a system of four equations and
+four unknowns.
+
+00:10:50.420 --> 00:10:51.560
+Right?
+
+00:10:53.380 --> 00:10:58.840
+One equation is x plus 5z is
+equal to what?
+
+00:11:04.160 --> 00:11:05.120
+Yeah,
+
+00:11:05.120 --> 00:11:06.080
+1.
+
+00:11:06.080 --> 00:11:10.940
+Another equation is 2x plus 12z
+is equal to what?
+
+00:11:15.680 --> 00:11:16.680
+Yeah,
+
+00:11:16.700 --> 00:11:20.940
+0.
+So another is y plus 5w is equal
+
+00:11:20.940 --> 00:11:22.020
+to 0.
+
+00:11:22.020 --> 00:11:25.620
+Another is 2y plus 12w is equal
+to 1.
+
+00:11:25.620 --> 00:11:28.520
+If I solve these equations for
+x, y, z, and w,
+
+00:11:28.520 --> 00:11:30.160
+it'll tell me the inverse of it.
+
+00:11:30.160 --> 00:11:32.320
+So I could do this.
+
+00:11:32.320 --> 00:11:36.260
+And there is nothing unique to 2
+by 2 matrices here.
+
+00:11:36.260 --> 00:11:39.120
+If I give you a 7 by 7 matrix,
+
+00:11:39.120 --> 00:11:40.500
+you could.
+I mean, I wouldn't ask you to do
+
+00:11:40.500 --> 00:11:43.020
+this, at least not this way.
+
+00:11:43.020 --> 00:11:47.160
+But you could make a template
+for what its inverse would be,
+
+00:11:47.160 --> 00:11:49.560
+which would be a grid of 49
+numbers.
+
+00:11:49.560 --> 00:11:51.840
+I mean, you would run out of
+letters if you tried to assign
+
+00:11:51.840 --> 00:11:54.000
+them letters, so you'd have to
+index them somehow.
+
+00:11:54.000 --> 00:11:58.480
+And you could set up a system of
+49 equations and 49 unknowns to
+
+00:11:58.480 --> 00:12:00.560
+find the inverse.
+
+00:12:00.560 --> 00:12:03.820
+It's not particularly efficient,
+but you could do this without
+
+00:12:03.820 --> 00:12:06.520
+needing to memorize any
+formulas.
+
+00:12:06.520 --> 00:12:08.520
+Note, by the way,
+
+00:12:08.520 --> 00:12:11.560
+I just thought of an exam
+question while I was talking
+
+00:12:11.560 --> 00:12:13.480
+about this, so I figured I may
+as well tell it to you.
+
+00:12:13.480 --> 00:12:17.060
+All the inverse is really asking
+us to do
+
+00:12:17.060 --> 00:12:21.560
+is write the default or the
+standard basis vectors in R2
+
+00:12:21.760 --> 00:12:25.340
+as linear combinations of the
+columns of the matrix.
+
+00:12:25.340 --> 00:12:28.840
+If I find x and z,
+
+00:12:28.840 --> 00:12:31.760
+well, that's telling me how much
+to take of A's first column and
+
+00:12:31.760 --> 00:12:35.540
+A's second column to make 1, 0.
+
+00:12:35.540 --> 00:12:40.790
+And if I find y and w,
+
+00:12:40.820 --> 00:12:45.080
+that's telling me how much to
+take of A's first column and A's
+
+00:12:45.080 --> 00:12:48.060
+second column to make 0, 1,
+which is the second standard
+
+00:12:48.060 --> 00:12:49.780
+basis vector in R2.
+
+00:12:49.780 --> 00:12:53.760
+So normally, we use the standard
+basis vectors 1, 0, and 0, 1 as
+
+00:12:53.760 --> 00:12:56.300
+our building blocks.
+And any vector in R2 is
+
+00:12:56.300 --> 00:12:59.020
+implicitly a linear combination
+of those things.
+
+00:12:59.020 --> 00:13:04.800
+Like 5 times this plus 12 times
+that is just
+
+00:13:04.800 --> 00:13:05.800
+512.
+
+00:13:06.920 --> 00:13:08.600
+Here, we're asking for the
+opposite.
+
+00:13:08.600 --> 00:13:09.240
+We're saying,
+
+00:13:09.240 --> 00:13:11.500
+OK, we have some matrix whose
+columns are just made up of
+
+00:13:11.500 --> 00:13:12.920
+arbitrary numbers,
+
+00:13:12.920 --> 00:13:15.860
+how do we combine those to get
+the building blocks,
+
+00:13:15.860 --> 00:13:17.440
+1, 0, and 0, 1?
+
+00:13:17.440 --> 00:13:20.580
+So you can imagine if an exam
+question said,
+
+00:13:20.580 --> 00:13:21.580
+OK,
+
+00:13:21.700 --> 00:13:24.060
+I have a 3 by 3 matrix A,
+
+00:13:24.060 --> 00:13:28.720
+and A times 3, 4, 5 is equal to
+1, 0, 0.
+
+00:13:28.720 --> 00:13:30.120
+What does that tell you?
+
+00:13:30.120 --> 00:13:32.740
+It tells you 3, 4, 5 is the
+first column of the inverse of
+
+00:13:32.740 --> 00:13:34.990
+A, for example.
+
+00:13:39.500 --> 00:13:42.920
+By the way, I said 512.
+
+00:13:42.920 --> 00:13:48.460
+This past Saturday was the last
+Pythagorean triplet day likely
+
+00:13:48.460 --> 00:13:50.280
+of our lifetimes, because I
+think the next one is in like
+
+00:13:50.280 --> 00:13:51.280
+2103.
+
+00:13:52.600 --> 00:13:55.720
+Maybe some of you will live till
+then.
+
+00:13:55.720 --> 00:14:00.220
+But 10 squared plus 24 squared
+is 26 squared.
+
+00:14:00.280 --> 00:14:01.280
+OK.
+
+00:14:01.780 --> 00:14:02.780
+Anyways,
+
+00:14:04.000 --> 00:14:08.220
+so I could give you a matrix in
+theory of any size, and you have
+
+00:14:08.220 --> 00:14:12.840
+the basic understanding of how
+you would find its inverse.
+
+00:14:13.680 --> 00:14:16.920
+Now, in practice, this is not
+how you would find an inverse.
+
+00:14:16.920 --> 00:14:20.000
+There's really only one case in
+which you need to memorize a
+
+00:14:20.000 --> 00:14:21.000
+formula,
+
+00:14:21.140 --> 00:14:24.520
+and it's for a 2 by 2 matrix.
+
+00:14:24.520 --> 00:14:24.880
+OK,
+
+00:14:24.880 --> 00:14:27.040
+the 2 by 2 inverse comes up
+often enough that you should
+
+00:14:27.040 --> 00:14:31.540
+just know what its formula is,
+And I'll tell it to you.
+
+00:14:39.260 --> 00:14:41.540
+If your matrix has components A,
+
+00:14:41.540 --> 00:14:41.980
+B,
+
+00:14:41.980 --> 00:14:44.230
+C, and D,
+
+00:14:44.240 --> 00:14:45.680
+the inverse
+
+00:14:45.680 --> 00:14:51.480
+involves taking the
+
+00:14:51.480 --> 00:14:52.980
+diagonal elements,
+
+00:14:53.080 --> 00:14:54.650
+A and D,
+
+00:14:54.650 --> 00:14:56.900
+and swapping them,
+
+00:14:57.000 --> 00:15:00.230
+turning it to D and A,
+
+00:15:00.230 --> 00:15:03.230
+and taking the off-diagonal
+elements, B and C,
+
+00:15:04.320 --> 00:15:07.320
+and making them negative.
+
+00:15:09.660 --> 00:15:11.320
+But that's not all.
+
+00:15:11.320 --> 00:15:16.560
+You also multiply all of this by
+1 over AD
+
+00:15:16.560 --> 00:15:18.460
+minus BC.
+
+00:15:25.340 --> 00:15:29.090
+And I'll say, remember this.
+
+00:15:32.760 --> 00:15:33.760
+OK?
+
+00:15:35.680 --> 00:15:36.680
+Now,
+
+00:15:37.160 --> 00:15:39.220
+pretend you don't believe me.
+I don't think you think I'm
+
+00:15:39.220 --> 00:15:40.700
+lying.
+But if you didn't believe me,
+
+00:15:41.520 --> 00:15:44.840
+how would you verify that this
+is indeed actually the formula
+
+00:15:44.840 --> 00:15:48.400
+for the inverse of a 2 by 2
+matrix? How would you check this
+
+00:15:48.400 --> 00:15:53.650
+if you weren't sure that this is
+true?
+
+00:15:54.180 --> 00:15:55.060
+Yeah?
+
+00:15:55.060 --> 00:15:57.820
+Multiply them together and see
+if it equals any matrix.
+
+00:15:57.820 --> 00:15:58.420
+Yeah.
+
+00:15:58.420 --> 00:15:59.960
+You have a built-in way of
+verifying.
+
+00:15:59.960 --> 00:16:01.940
+You just multiply A by A
+inverse,
+
+00:16:01.940 --> 00:16:04.980
+or A inverse by A, either order,
+and it should give you the
+
+00:16:04.980 --> 00:16:07.480
+identity matrix if I'm telling
+you the truth,
+
+00:16:07.480 --> 00:16:08.480
+OK?
+
+00:16:08.940 --> 00:16:12.060
+So you could apply this to the
+matrix
+
+00:16:12.060 --> 00:16:15.480
+that we had in the previous
+example,
+
+00:16:15.480 --> 00:16:15.860
+1,
+
+00:16:15.860 --> 00:16:18.110
+5, 2, 12.
+
+00:16:20.460 --> 00:16:21.800
+What does it involve?
+
+00:16:21.800 --> 00:16:24.500
+We swap the diagonal.
+So on the diagonal, instead of 1
+
+00:16:24.500 --> 00:16:29.340
+and 12, we have 12 and 1.
+And the off diagonals we negate.
+
+00:16:29.340 --> 00:16:33.080
+We also have to multiply all of
+this by 1 over the product of
+
+00:16:33.080 --> 00:16:35.960
+the diagonals minus the product
+of the off diagonals.
+
+00:16:35.960 --> 00:16:40.460
+So here, that's 12 minus 10,
+which is 2.
+
+00:16:43.000 --> 00:16:48.250
+So if you were to simplify a
+little.
+
+00:16:52.800 --> 00:16:56.200
+this 1 half gets multiplied into
+every element.
+
+00:16:56.200 --> 00:16:58.260
+So this is really the matrix 6,
+
+00:16:58.260 --> 00:16:59.760
+negative 1,
+
+00:17:00.060 --> 00:17:01.480
+negative 5 halves,
+
+00:17:01.480 --> 00:17:04.480
+and positive 1 half.
+
+00:17:09.860 --> 00:17:12.920
+So for example, this is telling
+me,
+
+00:17:12.920 --> 00:17:18.920
+if all you know is that this is
+the inverse of A,
+
+00:17:20.080 --> 00:17:26.060
+This tells you that 6 times A's
+first column minus 1 times A's
+
+00:17:26.060 --> 00:17:30.560
+second column is equal to the
+vector 1, 0.
+
+00:17:30.920 --> 00:17:33.280
+Are we clear on why that is the
+case?
+
+00:17:33.280 --> 00:17:36.440
+Just from looking at what's on
+the page and nothing else,
+
+00:17:36.440 --> 00:17:38.700
+we know that whatever A is,
+
+00:17:38.700 --> 00:17:42.480
+6 times its first column minus 1
+times its second column is equal
+
+00:17:42.480 --> 00:17:45.980
+to the vector 1, 0.
+
+00:17:45.980 --> 00:17:50.480
+What questions do we have with
+that idea?
+
+00:17:51.160 --> 00:17:55.660
+Do we see where that's coming
+from?
+
+00:17:58.720 --> 00:18:04.500
+Now, there's a name for this
+denominator
+
+00:18:04.500 --> 00:18:05.500
+here.
+
+00:18:08.060 --> 00:18:09.260
+Does anyone know what it's
+called?
+
+00:18:09.260 --> 00:18:11.560
+I mentioned it earlier today.
+
+00:18:11.560 --> 00:18:14.060
+What is this denominator here
+called? Is it the determinant?
+
+00:18:14.060 --> 00:18:18.380
+Yeah, this is called the
+determinant,
+
+00:18:23.500 --> 00:18:25.660
+written dete.
+
+00:18:33.620 --> 00:18:38.120
+OK, so let's talk about what
+that is.
+
+00:18:44.400 --> 00:18:49.920
+So if A is a 2 by 2 matrix,
+
+00:18:49.920 --> 00:18:52.920
+the determinant of A
+
+00:18:53.190 --> 00:18:55.080
+is AD minus BC,
+
+00:18:55.080 --> 00:18:58.080
+which is a scalar.
+
+00:18:58.900 --> 00:19:01.800
+So you can think of the
+determinant as a function that
+
+00:19:01.800 --> 00:19:04.600
+takes in a matrix and returns a
+single number.
+
+00:19:04.600 --> 00:19:08.920
+And somehow that number
+describes something about the
+
+00:19:08.920 --> 00:19:11.960
+matrix, including whether or not
+it is invertible.
+
+00:19:11.960 --> 00:19:14.960
+Because what would happen,
+
+00:19:15.900 --> 00:19:16.900
+actually,
+
+00:19:17.500 --> 00:19:19.680
+instead of just asking
+hypothetically,
+
+00:19:19.680 --> 00:19:22.340
+why don't I give you another
+matrix?
+
+00:19:22.340 --> 00:19:22.740
+1,
+
+00:19:22.740 --> 00:19:23.200
+6,
+
+00:19:23.200 --> 00:19:24.700
+2, 12.
+
+00:19:25.600 --> 00:19:30.100
+What is the determinant of this
+matrix?
+
+00:19:34.380 --> 00:19:36.380
+What is the determinant of 1,
+
+00:19:36.380 --> 00:19:36.920
+6,
+
+00:19:36.920 --> 00:19:38.420
+2, 12?
+
+00:19:44.180 --> 00:19:45.180
+Yeah.
+
+00:19:45.500 --> 00:19:46.500
+0.
+
+00:19:51.000 --> 00:19:55.500
+And what do you also notice
+about the matrix?
+
+00:19:57.820 --> 00:19:59.320
+A is?
+
+00:20:01.540 --> 00:20:04.540
+It's determinant to 0.
+
+00:20:05.580 --> 00:20:06.580
+Yeah.
+
+00:20:07.360 --> 00:20:08.360
+Yeah,
+
+00:20:08.720 --> 00:20:10.300
+rank is 1, meaning,
+
+00:20:10.300 --> 00:20:12.720
+in the context of the stuff
+we're talking about here,
+
+00:20:12.720 --> 00:20:14.180
+is it invertible?
+
+00:20:14.180 --> 00:20:14.680
+No,
+
+00:20:14.680 --> 00:20:17.680
+A is not invertible.
+
+00:20:20.660 --> 00:20:22.440
+Why is it not invertible?
+
+00:20:22.440 --> 00:20:23.280
+Well, it's because,
+
+00:20:23.280 --> 00:20:26.240
+if you go back to the list of
+equivalent conditions we said
+
+00:20:26.240 --> 00:20:27.180
+before,
+
+00:20:27.180 --> 00:20:29.540
+remember all of these are
+equivalent to each other.
+
+00:20:29.540 --> 00:20:31.960
+If any one of them is true,
+they're all true.
+
+00:20:31.960 --> 00:20:34.960
+Should maybe emphasize that.
+
+00:20:36.900 --> 00:20:42.420
+all equivalent for square
+
+00:20:42.420 --> 00:20:44.020
+matrices.
+
+00:20:47.160 --> 00:20:50.240
+It's not the case that A's
+columns are linearly
+
+00:20:50.240 --> 00:20:51.220
+independent.
+
+00:20:51.220 --> 00:20:51.680
+They're not.
+
+00:20:51.680 --> 00:20:57.380
+The second column in this
+example here is double
+
+00:20:57.380 --> 00:20:59.630
+the first column.
+
+00:20:59.940 --> 00:21:02.320
+It's also not the case that the
+rows are linearly independent.
+
+00:21:02.320 --> 00:21:05.020
+The second row is six times the
+first row.
+
+00:21:05.020 --> 00:21:08.160
+It's also not the case that the
+rank is equal to n.
+
+00:21:08.160 --> 00:21:11.780
+The rank here is 1, not 2.
+
+00:21:11.780 --> 00:21:14.340
+So it seems like this
+determinant, however it is
+
+00:21:14.340 --> 00:21:15.180
+defined,
+
+00:21:15.180 --> 00:21:19.680
+has something to do with the
+invertibility of the matrix.
+
+00:21:20.540 --> 00:21:22.800
+Now, this matrix back here,
+
+00:21:22.800 --> 00:21:24.400
+what was its determinant?
+
+00:21:24.400 --> 00:21:26.740
+Notice the only difference
+between this one now that's
+
+00:21:26.740 --> 00:21:29.680
+currently on the page and the
+one we were just looking at is
+
+00:21:29.680 --> 00:21:32.900
+the top right entry is a 5
+instead of a 6.
+
+00:21:32.900 --> 00:21:35.140
+What is this matrix's
+determinant? Matrix is
+
+00:21:35.140 --> 00:21:36.140
+determinant.
+
+00:21:37.260 --> 00:21:38.260
+2.
+
+00:21:38.420 --> 00:21:41.220
+So the question is, what does 2
+mean
+
+00:21:41.220 --> 00:21:43.840
+in the context of this matrix?
+
+00:21:43.840 --> 00:21:45.340
+So remember,
+
+00:21:56.800 --> 00:21:57.780
+last class,
+
+00:21:57.780 --> 00:22:00.060
+and let me use that same matrix
+that we've just written out
+
+00:22:00.060 --> 00:22:00.580
+here,
+
+00:22:00.580 --> 00:22:00.960
+1,
+
+00:22:00.960 --> 00:22:03.210
+5, 2, 12.
+
+00:22:04.720 --> 00:22:07.720
+We've visualized the linear
+transformation
+
+00:22:07.870 --> 00:22:12.120
+that a matrix performs by, on
+the left,
+
+00:22:12.120 --> 00:22:16.740
+drawing the vectors 1, 0, and 0,
+1,
+
+00:22:16.740 --> 00:22:21.990
+which there we called the u1 and
+u2.
+
+00:22:25.730 --> 00:22:30.530
+And we sort of showed the
+parallelogram that was enclosed
+
+00:22:30.530 --> 00:22:32.870
+by those standard basis vectors.
+
+00:22:32.870 --> 00:22:36.990
+What shape is this that I've
+just colored in?
+
+00:22:36.990 --> 00:22:38.290
+Not a trick question.
+
+00:22:38.290 --> 00:22:39.430
+What shape is that?
+
+00:22:39.430 --> 00:22:39.950
+Yeah,
+
+00:22:39.950 --> 00:22:42.200
+it's a square.
+
+00:22:45.310 --> 00:22:48.090
+I would draw this square on the
+left and then on the right I
+
+00:22:48.090 --> 00:22:51.840
+wouldn't draw a square, where
+instead, what was I drawing?
+
+00:22:52.070 --> 00:22:54.530
+To show the effect of this
+linear transformation, what did
+
+00:22:54.530 --> 00:22:58.280
+I draw on the right?
+
+00:23:05.150 --> 00:23:06.310
+Didn't draw a square.
+
+00:23:06.310 --> 00:23:07.550
+What did I draw?
+
+00:23:07.550 --> 00:23:09.490
+It was in orange.
+
+00:23:09.490 --> 00:23:14.030
+But what did we draw on the
+right?
+
+00:23:14.030 --> 00:23:16.280
+Is it vectors?
+
+00:23:17.510 --> 00:23:20.110
+There's multiple vectors that I
+would draw on the right.
+
+00:23:20.110 --> 00:23:23.890
+We were trying to visualize the
+effect of multiplying vectors by
+
+00:23:23.890 --> 00:23:24.890
+a.
+
+00:23:25.170 --> 00:23:28.830
+And we were trying to do this in
+the context of the two standard
+
+00:23:28.830 --> 00:23:30.950
+building blocks, 1, 0, and 0, 1.
+
+00:23:30.950 --> 00:23:34.070
+So what was I drawing on the
+right before?
+
+00:23:34.070 --> 00:23:36.310
+Like a rectangle or a triangle?
+
+00:23:36.310 --> 00:23:39.230
+Was it a triangle? Sometimes a
+rectangle, sometimes a diagonal
+
+00:23:39.230 --> 00:23:40.030
+shape,
+
+00:23:40.030 --> 00:23:42.510
+or sorry, like a diamond shape.
+But where were those coming
+
+00:23:42.510 --> 00:23:43.510
+from?
+
+00:23:45.090 --> 00:23:46.250
+How did I do,
+
+00:23:46.250 --> 00:23:46.610
+like,
+
+00:23:46.610 --> 00:23:49.550
+those diamonds and rectangles,
+
+00:23:49.550 --> 00:23:52.550
+how are they defined?
+
+00:23:59.230 --> 00:24:01.750
+remember what
+
+00:24:01.750 --> 00:24:07.150
+we did is we multiplied
+
+00:24:07.150 --> 00:24:12.190
+both of these basis vectors by
+the matrix A.
+
+00:24:13.930 --> 00:24:17.010
+So instead of drawing 1, 0,
+
+00:24:17.010 --> 00:24:22.650
+I would draw A times 1, 0, which
+is just the vector 1, 2.
+
+00:24:22.650 --> 00:24:25.850
+Remember, A times 1, 0 is just
+the first column of A.
+
+00:24:25.850 --> 00:24:29.130
+And A times 0, 1 is the second
+column of A.
+
+00:24:29.130 --> 00:24:32.590
+So I would draw A times 1, 0,
+
+00:24:32.590 --> 00:24:33.990
+and then A.
+
+00:24:33.990 --> 00:24:35.530
+OK, well, it's not quite going
+to look like that.
+
+00:24:35.530 --> 00:24:40.780
+It's going to be more like that.
+
+00:24:43.570 --> 00:24:45.490
+A times 0, 1,
+
+00:24:45.490 --> 00:24:50.590
+which is the second column of A,
+which is 5, 12.
+
+00:24:50.590 --> 00:24:54.130
+Does this now kind of seem
+familiar?
+
+00:24:54.130 --> 00:24:57.950
+OK, this is an important idea,
+so make sure to review it.
+
+00:24:57.950 --> 00:24:59.890
+In addition to just drawing
+these,
+
+00:24:59.890 --> 00:25:00.750
+though,
+
+00:25:00.750 --> 00:25:04.890
+I also colored in the
+parallelogram
+
+00:25:06.550 --> 00:25:09.550
+that these vectors enclose.
+OK,
+
+00:25:09.850 --> 00:25:14.350
+actually, it would be a little
+taller than that.
+
+00:25:16.170 --> 00:25:18.420
+Something like this,
+
+00:25:21.390 --> 00:25:22.390
+this.
+
+00:25:25.790 --> 00:25:28.950
+And this idea of two vectors and
+their sum and difference in
+
+00:25:28.950 --> 00:25:31.770
+closing of parallelogram is one
+that you saw in earlier
+
+00:25:31.770 --> 00:25:32.770
+homeworks.
+
+00:25:33.270 --> 00:25:34.270
+OK?
+
+00:25:35.010 --> 00:25:38.950
+The determinant of a matrix
+tells you
+
+00:25:40.110 --> 00:25:43.860
+the area of that parallelogram,
+
+00:25:44.590 --> 00:25:54.510
+or
+
+00:25:54.510 --> 00:25:56.870
+more precisely, the absolute
+value of the determinant,
+
+00:25:56.870 --> 00:26:00.620
+because the determinant could be
+positive or negative.
+
+00:26:00.650 --> 00:26:05.150
+Now, this square that we started
+with, What was its area?
+
+00:26:05.450 --> 00:26:08.250
+The square on the left.
+What's its area?
+
+00:26:08.250 --> 00:26:09.250
+Yeah?
+
+00:26:09.430 --> 00:26:10.270
+1.
+
+00:26:10.270 --> 00:26:11.270
+OK.
+
+00:26:13.450 --> 00:26:15.150
+This parallelogram on the right,
+
+00:26:15.150 --> 00:26:18.900
+its determinant is the absolute
+value of,
+
+00:26:19.710 --> 00:26:20.230
+sorry,
+
+00:26:20.230 --> 00:26:22.370
+its area is the absolute value
+of the determinant of the
+
+00:26:22.370 --> 00:26:23.370
+matrix.
+
+00:26:23.710 --> 00:26:24.450
+Now the thing is,
+
+00:26:24.450 --> 00:26:30.070
+this area interpretation works
+in R2, or when you're dealing
+
+00:26:30.070 --> 00:26:32.650
+with a 2 by 2 matrix.
+But what if you're dealing with
+
+00:26:32.650 --> 00:26:34.900
+a three-by-three matrix?
+
+00:26:39.270 --> 00:26:42.270
+Let's come down here.
+
+00:26:43.430 --> 00:26:46.070
+That's not what I'm looking for.
+
+00:26:46.070 --> 00:26:48.320
+Here we go.
+
+00:26:50.690 --> 00:26:53.110
+With a three-by-three matrix,
+it's not colored in for some
+
+00:26:53.110 --> 00:26:54.050
+reason.
+I'll fix that.
+
+00:26:54.050 --> 00:26:58.870
+But instead, you have three
+standard basis vectors,
+
+00:26:59.450 --> 00:27:02.790
+and they don't form a square
+with area one,
+
+00:27:02.790 --> 00:27:05.070
+what do they form on the left?
+The shape on the left, what is
+
+00:27:05.070 --> 00:27:06.070
+it?
+
+00:27:06.390 --> 00:27:07.130
+Yeah,
+
+00:27:07.130 --> 00:27:09.970
+it's a cube with volume one,
+
+00:27:09.970 --> 00:27:10.970
+okay?
+
+00:27:11.130 --> 00:27:12.770
+Now on the right,
+
+00:27:12.770 --> 00:27:16.710
+what I've shown for some matrix
+K, we've called it,
+
+00:27:16.710 --> 00:27:20.090
+I've shown the result of
+transforming the three standard
+
+00:27:20.090 --> 00:27:22.930
+basis vectors in R3,
+
+00:27:22.930 --> 00:27:24.170
+1, 0, 0,
+
+00:27:24.170 --> 00:27:27.870
+0, 1, 0, and 0, 0, 1.
+I've multiplied them all by the
+
+00:27:27.870 --> 00:27:28.570
+matrix,
+
+00:27:28.570 --> 00:27:30.530
+and we're looking at the results
+here.
+
+00:27:30.530 --> 00:27:35.330
+And if I were to draw in the
+shape that they
+
+00:27:35.330 --> 00:27:36.850
+enclose,
+
+00:27:38.370 --> 00:27:40.490
+it's not a parallelogram,
+
+00:27:40.490 --> 00:27:42.010
+because that's a 2D thing,
+
+00:27:42.010 --> 00:27:45.010
+but what is it?
+
+00:27:46.030 --> 00:27:48.130
+What shape would these things
+enclose? Does anyone know what
+
+00:27:48.130 --> 00:27:49.980
+it's called? It's kind of a
+weird name.
+
+00:27:49.980 --> 00:27:52.930
+Yeah? It would be a rectangular
+prism.
+
+00:27:52.930 --> 00:27:55.510
+Close.
+That's like a box where all the
+
+00:27:55.510 --> 00:27:56.830
+edges are straight.
+
+00:27:56.830 --> 00:27:58.330
+But here,
+
+00:27:58.350 --> 00:28:02.100
+the edges can be slanted.
+
+00:28:05.570 --> 00:28:08.790
+It's called the parallelepiped
+weird name.
+
+00:28:12.930 --> 00:28:16.390
+And the determinant of the
+matrix,
+
+00:28:16.390 --> 00:28:21.210
+or its absolute value, tells you
+the volume of this slanted box,
+
+00:28:24.080 --> 00:28:27.080
+just like the determinant of the
+identity matrix
+
+00:28:27.080 --> 00:28:30.370
+would tell you the volume of
+this box,
+
+00:28:30.370 --> 00:28:32.620
+which is what?
+
+00:28:37.570 --> 00:28:43.390
+The matrix was
+
+00:28:43.390 --> 00:28:44.890
+called K.
+
+00:28:45.010 --> 00:28:46.630
+So in general,
+
+00:28:46.630 --> 00:28:48.630
+what does the determinant tell
+you?
+
+00:28:48.630 --> 00:28:52.450
+It tells you the n-dimensional
+volume
+
+00:28:55.050 --> 00:28:58.470
+enclosed by the standard basis
+vectors
+
+00:28:58.470 --> 00:29:01.070
+after they are transformed by
+the matrix.
+
+00:29:01.070 --> 00:29:03.210
+What do I mean by n-dimensional
+volume?
+
+00:29:03.210 --> 00:29:03.690
+Well,
+
+00:29:03.690 --> 00:29:06.430
+in 2D, that was area.
+In 3D, that was volume.
+
+00:29:06.430 --> 00:29:07.870
+In R4,
+
+00:29:07.870 --> 00:29:11.620
+it's like whatever the version
+of volume is in R4,
+
+00:29:11.810 --> 00:29:13.970
+the four-dimensional volume.
+
+00:29:13.970 --> 00:29:17.410
+How much space in 4D does it
+take up?
+
+00:29:17.410 --> 00:29:20.190
+Kind of a confusing concept to
+think about because, again, it's
+
+00:29:20.190 --> 00:29:21.570
+not something we can visualize.
+
+00:29:21.570 --> 00:29:23.990
+But in general, the determinant
+is measuring
+
+00:29:23.990 --> 00:29:26.240
+the n-dimensional volume.
+
+00:29:27.550 --> 00:29:31.210
+An example of not n-dimensional
+volume would be surface area in
+
+00:29:31.210 --> 00:29:32.210
+3D.
+
+00:29:32.630 --> 00:29:35.290
+Surface area is not the same as
+the amount of space a thing
+
+00:29:35.290 --> 00:29:36.790
+takes up.
+It's like how much,
+
+00:29:37.230 --> 00:29:37.750
+you know,
+
+00:29:37.750 --> 00:29:40.310
+like what is the perimeter kind
+of an object.
+
+00:29:40.310 --> 00:29:41.230
+Yeah?
+
+00:29:41.230 --> 00:29:44.890
+So based on what the volume like
+question says,
+
+00:29:44.890 --> 00:29:49.390
+so the volume is independent of
+what the original vector is?
+
+00:29:50.890 --> 00:29:54.640
+Is it only the determinant?
+
+00:29:55.070 --> 00:29:56.490
+So the determinant,
+
+00:29:56.490 --> 00:30:00.110
+you should think of it as the
+volume of the box that results
+
+00:30:00.110 --> 00:30:02.850
+from transforming the three
+standard basis vectors.
+
+00:30:02.850 --> 00:30:04.830
+Now, of all three of these
+vectors on the left, if I
+
+00:30:04.830 --> 00:30:06.510
+doubled all of them,
+
+00:30:06.510 --> 00:30:08.230
+that would have some other
+effect on the volume here.
+
+00:30:08.230 --> 00:30:10.290
+It would actually multiply it by
+8,
+
+00:30:10.290 --> 00:30:13.170
+because you're doubling each.
+Like if you take a box in 3D and
+
+00:30:13.170 --> 00:30:16.270
+stretch it lengthwise,
+widthwise, and heightwise by 2,
+
+00:30:16.970 --> 00:30:19.590
+you increase its volume by a
+factor of 8.
+
+00:30:19.590 --> 00:30:22.190
+Yeah, but do you change the
+determinant?
+
+00:30:22.190 --> 00:30:24.330
+Well, no, the determinant is
+defined this very particular
+
+00:30:24.330 --> 00:30:24.930
+way.
+
+00:30:24.930 --> 00:30:28.790
+It's the volume of the box that
+results from transforming the
+
+00:30:28.790 --> 00:30:30.450
+standard basis vectors.
+
+00:30:30.450 --> 00:30:31.450
+Yeah.
+
+00:31:05.370 --> 00:31:08.850
+Now, the actual value of the
+determinant is not something we
+
+00:31:08.850 --> 00:31:11.790
+care that much about in this
+class,
+
+00:31:11.790 --> 00:31:13.270
+care that much about.
+
+00:31:13.270 --> 00:31:17.710
+Really, all I care about is
+whether or not the determinant
+
+00:31:17.710 --> 00:31:19.210
+is 0.
+
+00:31:19.350 --> 00:31:23.330
+Now, what would a determinant of
+0 mean?
+
+00:31:23.330 --> 00:31:24.630
+Let's go back to this example.
+
+00:31:24.630 --> 00:31:27.650
+This matrix does not have a
+determinant of 0.
+
+00:31:27.650 --> 00:31:30.090
+But can you give me a matrix
+that does have a determinant of
+
+00:31:30.090 --> 00:31:31.090
+0?
+
+00:31:34.370 --> 00:31:38.450
+You can just replace the 5 with
+the 6 in the parametrics.
+
+00:31:38.450 --> 00:31:42.950
+What if the determinant is 0?
+
+00:31:45.830 --> 00:31:49.990
+We already saw an example, 1, 6,
+2, 12.
+
+00:31:49.990 --> 00:31:53.030
+If I want to draw that
+equivalent figure,
+
+00:31:53.030 --> 00:31:57.170
+I have my box on the left
+enclosed, or my square on the
+
+00:31:57.170 --> 00:32:01.010
+left enclosed by 1, 0, and 0, 1.
+
+00:32:01.010 --> 00:32:03.310
+It had an area of 1.
+
+00:32:03.310 --> 00:32:06.230
+But on the right,
+
+00:32:06.230 --> 00:32:10.690
+when I multiply
+
+00:32:10.690 --> 00:32:16.510
+A
+
+00:32:16.510 --> 00:32:20.910
+by the first standard basis
+vector 1, 0, I get 1, 2.
+
+00:32:21.410 --> 00:32:26.660
+And when I multiply a by the
+second standard basis vector,
+
+00:32:29.310 --> 00:32:31.050
+I get 6, 12.
+I mean, this should be six times
+
+00:32:31.050 --> 00:32:33.250
+as long, but you get the idea.
+
+00:32:33.250 --> 00:32:36.310
+And what's the area of the
+parallelogram enclosed by those
+
+00:32:36.310 --> 00:32:37.310
+vectors?
+
+00:32:40.050 --> 00:32:42.910
+0, because there isn't a
+parallelogram enclosed by them,
+
+00:32:42.910 --> 00:32:45.910
+because they live on the same
+line.
+
+00:32:45.910 --> 00:32:47.410
+OK? OK,
+
+00:32:48.210 --> 00:32:51.790
+no enclosed
+
+00:32:51.790 --> 00:32:54.910
+parallelogram.
+
+00:32:58.670 --> 00:33:00.770
+Determinant is 0.
+
+00:33:00.770 --> 00:33:03.970
+But why is the determinant 0?
+Why is there no enclosed
+
+00:33:03.970 --> 00:33:04.970
+parallelogram?
+
+00:33:05.050 --> 00:33:08.210
+Well, it's because these vectors
+are linearly dependent.
+
+00:33:08.210 --> 00:33:10.070
+They live on the same line.
+
+00:33:10.070 --> 00:33:12.870
+But if vectors are linearly
+dependent,
+
+00:33:12.870 --> 00:33:13.870
+Well,
+
+00:33:14.410 --> 00:33:14.790
+then,
+
+00:33:14.790 --> 00:33:18.090
+a matrix that is made up of
+those vectors in its columns is
+
+00:33:18.090 --> 00:33:19.590
+not invertible.
+
+00:33:24.050 --> 00:33:24.990
+OK?
+
+00:33:24.990 --> 00:33:25.570
+Yeah?
+
+00:33:25.570 --> 00:33:29.530
+So is the determinant also the
+factor by how much the area
+
+00:33:29.530 --> 00:33:31.330
+changes of the original?
+
+00:33:31.330 --> 00:33:32.890
+Indeed.
+Yeah, that's exactly what it is,
+
+00:33:32.890 --> 00:33:35.250
+because the starting area is 1.
+
+00:33:35.250 --> 00:33:41.250
+So if it was 2, then the second
+one would be 2.
+
+00:33:42.010 --> 00:33:45.610
+If the determinant was two,
+let's look at this exact
+
+00:33:45.610 --> 00:33:46.590
+example.
+
+00:33:46.590 --> 00:33:48.930
+The determinant of this matrix
+is two.
+
+00:33:48.930 --> 00:33:51.490
+This area is one.
+This area is two.
+
+00:33:51.490 --> 00:33:52.490
+Yeah?
+
+00:33:54.750 --> 00:33:57.830
+So if you change the original,
+like the two factors,
+
+00:33:57.830 --> 00:34:00.610
+to 2, 0, and 0, 2,
+
+00:34:00.610 --> 00:34:03.430
+doesn't the area also change,
+but the determinant will stay
+
+00:34:03.430 --> 00:34:07.930
+the same? The determinant is a
+fixed number
+
+00:34:08.290 --> 00:34:13.570
+that is defined only involving
+the transformation
+
+00:34:13.570 --> 00:34:16.570
+of 1, 0, and 0, 1.
+
+00:34:16.570 --> 00:34:20.730
+If you were to create a new
+shape enclosed by 2, 0, and 0,
+
+00:34:20.730 --> 00:34:23.850
+2, and the transformations of
+them,
+
+00:34:23.850 --> 00:34:26.590
+that would be some shape with
+some area, but its area is not
+
+00:34:26.590 --> 00:34:28.930
+the determinant of this matrix.
+It's related to the determinant
+
+00:34:28.930 --> 00:34:30.870
+of the area of this matrix,
+
+00:34:30.870 --> 00:34:32.870
+or the determinant of this
+matrix, but it's not the same.
+
+00:34:32.870 --> 00:34:34.370
+Oh, OK.
+
+00:34:34.730 --> 00:34:37.990
+I'll comment on that in just a
+moment.
+
+00:34:37.990 --> 00:34:42.750
+The bigger idea here is that the
+determinant being 0 tells you
+
+00:34:42.750 --> 00:34:46.510
+that the standard basis vectors,
+after being transformed by this
+
+00:34:46.510 --> 00:34:47.490
+matrix,
+
+00:34:47.490 --> 00:34:50.910
+no longer enclose an
+n-dimensional shape.
+
+00:34:51.770 --> 00:34:52.710
+Like here,
+
+00:34:52.710 --> 00:34:54.390
+we have a 2 by 2 matrix.
+
+00:34:54.390 --> 00:34:55.970
+Before the transformation,
+
+00:34:55.970 --> 00:34:58.550
+the standard basis vectors
+enclose the square.
+
+00:34:58.550 --> 00:35:00.990
+If the columns were linearly
+independent, we'd expect them to
+
+00:35:00.990 --> 00:35:03.450
+still enclose some
+parallelogram.
+
+00:35:03.670 --> 00:35:06.030
+But here, the columns are
+linearly dependent, so they live
+
+00:35:06.030 --> 00:35:07.690
+on a line.
+So there's no area, so the
+
+00:35:07.690 --> 00:35:09.110
+determinant is 0.
+
+00:35:09.110 --> 00:35:12.430
+But the fact that the column
+vectors live on a line
+
+00:35:12.430 --> 00:35:14.950
+means they are not linearly
+independent, which means the
+
+00:35:14.950 --> 00:35:17.030
+matrix is not invertible.
+
+00:35:17.030 --> 00:35:20.750
+What is the equivalent of this
+
+00:35:20.750 --> 00:35:23.850
+in the case of three by three
+matrices?
+
+00:35:23.850 --> 00:35:25.490
+There's a good visual of this
+there.
+
+00:35:25.490 --> 00:35:29.530
+Put this load,
+
+00:35:34.370 --> 00:35:36.620
+put that again.
+
+00:35:36.670 --> 00:35:38.830
+Here we go.
+
+00:35:38.830 --> 00:35:39.830
+Here,
+
+00:35:40.110 --> 00:35:42.090
+I've given you a matrix L,
+
+00:35:42.090 --> 00:35:46.590
+where the second column is just
+half of the first column.
+
+00:35:47.050 --> 00:35:50.010
+The columns are linearly
+dependent.
+
+00:35:50.010 --> 00:35:51.950
+So this matrix is not
+invertible.
+
+00:35:51.950 --> 00:35:54.450
+And what happens when I
+transform the three standard
+
+00:35:54.450 --> 00:35:55.750
+basis vectors,
+
+00:35:55.750 --> 00:35:58.870
+well, they don't all point in
+different directions now.
+
+00:35:58.870 --> 00:36:02.530
+The three columns of this matrix
+are not linearly independent.
+
+00:36:02.530 --> 00:36:04.510
+They all live on a plane.
+
+00:36:04.510 --> 00:36:07.350
+So the shape that they enclose
+also lives on that plane.
+
+00:36:07.350 --> 00:36:09.270
+And that plane, what is the
+volume of it? Or like that
+
+00:36:09.270 --> 00:36:11.530
+shape, what is its volume?
+
+00:36:11.530 --> 00:36:11.910
+Zero.
+
+00:36:11.910 --> 00:36:13.110
+This shape doesn't have a
+volume.
+
+00:36:13.110 --> 00:36:14.330
+It has an area,
+
+00:36:14.330 --> 00:36:15.410
+but that's not what we're
+asking.
+
+00:36:15.410 --> 00:36:18.410
+We're asking for its
+n-dimensional volume,
+
+00:36:19.130 --> 00:36:20.630
+OK? OK.
+
+00:36:21.510 --> 00:36:26.760
+So this idea scales up to higher
+dimensions as well.
+
+00:36:31.990 --> 00:36:36.510
+Here, the determinant of L is 0
+because
+
+00:36:36.510 --> 00:36:40.190
+enclosed shape
+
+00:36:42.450 --> 00:36:44.700
+has no volume.
+
+00:36:46.610 --> 00:36:47.410
+OK.
+
+00:36:47.410 --> 00:36:50.790
+So are we clear on why the
+determinant of this matrix L is
+
+00:36:50.790 --> 00:36:56.730
+0 and the various ways to
+interpret that? Tells you
+
+00:36:56.730 --> 00:36:59.590
+this matrix is not invertible.
+
+00:36:59.590 --> 00:37:03.310
+It tells you the volume of the
+box enclosed
+
+00:37:03.310 --> 00:37:06.490
+by the standard basis vectors.
+Once they have been transformed
+
+00:37:06.490 --> 00:37:10.470
+by the matrix, the volume of
+that box is 0.
+
+00:37:10.470 --> 00:37:12.430
+And then it also means all the
+other things that come with
+
+00:37:12.430 --> 00:37:13.430
+non-invertibility.
+
+00:37:13.750 --> 00:37:15.490
+Columns are linearly dependent.
+
+00:37:15.490 --> 00:37:18.110
+Rows are linearly dependent.
+Null space is more than just the
+
+00:37:18.110 --> 00:37:19.610
+0 vector.
+
+00:37:19.990 --> 00:37:24.450
+So if that bottom right one was
+a 0 and they're on the same
+
+00:37:24.450 --> 00:37:25.610
+line,
+
+00:37:26.470 --> 00:37:28.990
+the determinant would also be 0?
+Correct.
+
+00:37:28.990 --> 00:37:30.710
+Let's take the most extreme
+example.
+
+00:37:30.710 --> 00:37:35.110
+What if all numbers in the
+matrix are just 1?
+
+00:37:35.110 --> 00:37:39.470
+Then the column space of this
+matrix would just be a line.
+
+00:37:39.470 --> 00:37:41.530
+Not only would there not be
+volume, there wouldn't be even
+
+00:37:41.530 --> 00:37:42.590
+an area enclosed.
+
+00:37:42.590 --> 00:37:44.090
+They would all live on a line.
+
+00:37:44.090 --> 00:37:46.340
+Determinant's still 0.
+Yeah.
+
+00:37:46.410 --> 00:37:47.110
+So like,
+
+00:37:47.110 --> 00:37:49.570
+the determinant being 0 just
+tells you the matrix's rank
+
+00:37:49.570 --> 00:37:51.030
+isn't 3,
+
+00:37:51.030 --> 00:37:52.750
+but it could be 2, 1, or 0.
+
+00:37:52.750 --> 00:37:55.210
+And they would all still have a
+determinant of 0.
+
+00:37:55.210 --> 00:37:57.590
+It's a good point.
+
+00:37:57.590 --> 00:38:00.510
+So all you know by a matrix's
+determinant being 0 is that its
+
+00:38:00.510 --> 00:38:03.350
+rank isn't as high as possible.
+But what is its actual rank? We
+
+00:38:03.350 --> 00:38:04.690
+don't know.
+
+00:38:04.690 --> 00:38:05.010
+Yeah,
+
+00:38:05.010 --> 00:38:06.010
+good.
+
+00:38:06.710 --> 00:38:11.210
+What other questions do we have?
+
+00:38:11.670 --> 00:38:12.670
+Okay,
+
+00:38:13.350 --> 00:38:17.100
+some other thoughts on the
+determinant.
+
+00:38:24.770 --> 00:38:30.070
+If you swap two rows,
+
+00:38:30.070 --> 00:38:34.050
+the determinant is multiplied
+
+00:38:34.050 --> 00:38:37.990
+by what?
+
+00:38:41.370 --> 00:38:44.690
+Let's test it out.
+1,
+
+00:38:44.950 --> 00:38:45.430
+5,
+
+00:38:45.430 --> 00:38:50.650
+2, 12 versus 2, 12, 1, 5.
+
+00:38:50.650 --> 00:38:54.400
+What's the determinant of the
+matrix on the left?
+
+00:38:59.270 --> 00:39:00.270
+2.
+
+00:39:00.490 --> 00:39:02.670
+What's the determinant of the
+matrix on the right?
+
+00:39:02.670 --> 00:39:04.050
+Negative 2.
+
+00:39:04.050 --> 00:39:07.510
+So swapping rows multiplies the
+determinant by negative 1.
+
+00:39:07.510 --> 00:39:09.910
+And swapping columns also
+multiplies the determinant by
+
+00:39:09.910 --> 00:39:11.410
+negative 1.
+Notice,
+
+00:39:11.630 --> 00:39:15.390
+if I go back here,
+
+00:39:16.390 --> 00:39:19.050
+I would draw the same shape
+
+00:39:19.050 --> 00:39:23.050
+even if I swapped the order of
+the columns.
+
+00:39:23.050 --> 00:39:26.350
+Like if 512 was the first column
+and 12 is the second column,
+
+00:39:26.350 --> 00:39:28.310
+the shape would look the same.
+I would just have labeled it
+
+00:39:28.310 --> 00:39:29.310
+differently.
+
+00:39:30.070 --> 00:39:33.610
+Like this would say a times u2,
+
+00:39:33.610 --> 00:39:37.350
+and this would say a times u1.
+It would be the same shape.
+
+00:39:37.350 --> 00:39:38.690
+Do we agree with that?
+
+00:39:38.690 --> 00:39:41.190
+OK, so the area of the enclosed
+shape should be the same,
+
+00:39:41.190 --> 00:39:44.830
+but the determinants are
+negative 1 times each other in
+
+00:39:44.830 --> 00:39:48.650
+those cases, which is why we
+take the absolute value when
+
+00:39:48.650 --> 00:39:53.150
+measuring the area of the shape.
+
+00:39:53.730 --> 00:39:55.690
+So when you multiply by,
+
+00:39:55.690 --> 00:39:58.130
+or when you swap two rows, the
+determinant gets multiplied by
+
+00:39:58.130 --> 00:39:59.450
+negative 1.
+
+00:39:59.450 --> 00:40:02.190
+When you swap two columns,
+
+00:40:02.190 --> 00:40:05.190
+the determinant gets multiplied
+by negative 1.
+
+00:40:07.070 --> 00:40:08.590
+And then finally,
+
+00:40:08.590 --> 00:40:11.590
+there's one more property.
+
+00:40:13.450 --> 00:40:17.950
+If you multiply a row or a
+column
+
+00:40:17.950 --> 00:40:21.910
+by the scalar c,
+
+00:40:23.450 --> 00:40:27.200
+what does the determinant get
+multiplied by?
+
+00:40:28.570 --> 00:40:30.250
+If you had to guess.
+
+00:40:30.250 --> 00:40:33.170
+If I multiply just one column by
+c,
+
+00:40:33.170 --> 00:40:36.050
+or just one row by c,
+
+00:40:36.050 --> 00:40:38.650
+what do you think happens?
+
+00:40:38.650 --> 00:40:40.950
+Yeah? We can multiply by c,
+right? The determinant gets
+
+00:40:40.950 --> 00:40:42.610
+multiplied by c.
+
+00:40:42.610 --> 00:40:45.470
+What that means is if you
+multiply a whole matrix by c,
+
+00:40:45.470 --> 00:40:47.930
+what does the determinant get
+multiplied by?
+
+00:40:47.930 --> 00:40:49.350
+Yeah? c squared.
+
+00:40:49.350 --> 00:40:51.210
+c to the power of n in general.
+
+00:40:51.210 --> 00:40:52.010
+Yeah.
+
+00:40:52.010 --> 00:40:52.390
+OK?
+
+00:40:52.390 --> 00:40:53.950
+And this is really just a
+consequence of what I said
+
+00:40:53.950 --> 00:40:54.690
+before.
+
+00:40:54.690 --> 00:40:57.230
+Imagine a 1 by 1 by 1 cube,
+
+00:40:57.230 --> 00:40:59.190
+and you double its length.
+
+00:40:59.190 --> 00:41:01.250
+Well, then its volume gets
+doubled.
+
+00:41:01.250 --> 00:41:04.210
+But if you double its length,
+width, and height, its volume
+
+00:41:04.210 --> 00:41:07.190
+gets multiplied by 8.
+
+00:41:07.190 --> 00:41:11.110
+By going from a 1 by 1 by 1
+cubed to a 2 by 2 by 2 cubed,
+
+00:41:11.110 --> 00:41:14.350
+the volume doesn't double, it
+increases by 8 times.
+
+00:41:14.350 --> 00:41:15.810
+So if you think of the
+determinant as being this
+
+00:41:15.810 --> 00:41:16.810
+volume,
+
+00:41:16.850 --> 00:41:20.750
+changing just one of the columns
+scales up the volume.
+
+00:41:20.750 --> 00:41:25.250
+So changing all of its columns
+scales up the volume n times.
+
+00:41:26.990 --> 00:41:27.990
+OK,
+
+00:41:29.350 --> 00:41:29.790
+and
+
+00:41:29.790 --> 00:41:36.930
+what
+
+00:41:36.930 --> 00:41:40.680
+is the determinant of the
+identity matrix?
+
+00:41:46.710 --> 00:41:50.430
+Should just be 1 because the
+area of the box or the n
+
+00:41:50.430 --> 00:41:53.410
+dimensional volume of the box
+enclosed by the standard basis
+
+00:41:53.410 --> 00:41:54.410
+vectors.
+
+00:41:54.490 --> 00:41:56.430
+When you transform by the
+identity matrix, it doesn't
+
+00:41:56.430 --> 00:41:57.250
+change them.
+
+00:41:57.250 --> 00:42:01.450
+So it's really just the volume
+of this cube
+
+00:42:01.450 --> 00:42:04.590
+or the area of that square,
+which is 1 in all of those
+
+00:42:04.590 --> 00:42:05.590
+cases.
+
+00:42:06.390 --> 00:42:08.850
+Now, the reason I'm writing all
+of this out is because you can
+
+00:42:08.850 --> 00:42:11.650
+sort of this is more abstract
+than we will get into.
+
+00:42:11.650 --> 00:42:16.590
+But the determinant is the only
+operation that satisfies all of
+
+00:42:16.590 --> 00:42:17.850
+these properties.
+
+00:42:17.850 --> 00:42:21.570
+So like just with these
+properties alone, So you can
+
+00:42:21.570 --> 00:42:25.630
+find that the determinant
+formula that we found for two by
+
+00:42:25.630 --> 00:42:27.970
+two matrices is the only
+possible formula that matches
+
+00:42:27.970 --> 00:42:29.670
+all of these things.
+
+00:42:29.670 --> 00:42:33.420
+So the determinant is uniquely
+defined by these things.
+
+00:42:49.850 --> 00:42:52.990
+There's one other property I'll
+state, not because we'll need it
+
+00:42:52.990 --> 00:42:55.230
+now, but because it'll come up
+later,
+
+00:42:55.230 --> 00:42:58.650
+is that the determinant of a
+matrix
+
+00:42:58.650 --> 00:43:03.150
+is also equal to the determinant
+of the transpose.
+
+00:43:06.430 --> 00:43:09.250
+Now, in the context of rows and
+columns being linearly
+
+00:43:09.250 --> 00:43:11.410
+independent, this sort of makes
+sense.
+
+00:43:11.410 --> 00:43:14.070
+If the rows are not linearly
+independent,
+
+00:43:14.070 --> 00:43:16.390
+although the determinant should
+be 0,
+
+00:43:16.390 --> 00:43:18.090
+that should also mean the
+columns are not linearly
+
+00:43:18.090 --> 00:43:20.650
+independent.
+And so we've seen that a and a
+
+00:43:20.650 --> 00:43:23.410
+transpose have the same rank So
+they should also both be
+
+00:43:23.410 --> 00:43:25.570
+invertible at the same time and
+not be invertible at the same
+
+00:43:25.570 --> 00:43:29.950
+time So it makes sense that the
+determinants are the same
+
+00:43:29.950 --> 00:43:34.450
+Okay, what I'll say is that
+there exists a
+
+00:43:37.290 --> 00:43:40.290
+Three by three determinant
+formula
+
+00:43:43.630 --> 00:43:46.250
+Which I'll have you practice
+once or twice in a homework or
+
+00:43:46.250 --> 00:43:47.110
+lab
+
+00:43:47.110 --> 00:43:50.070
+But it's like not the most
+important thing in the world.
+
+00:43:50.070 --> 00:43:53.070
+It's defined this way.
+
+00:43:54.450 --> 00:43:57.310
+And if you take a closer look at
+the notes, it shows how to
+
+00:43:57.310 --> 00:44:00.010
+extend this to the determinant
+of a four by four or five by
+
+00:44:00.010 --> 00:44:00.770
+five.
+
+00:44:00.770 --> 00:44:04.520
+Again, not really the point
+because we don't really care
+
+00:44:12.170 --> 00:44:14.230
+about the value of the
+determinant in general.
+
+00:44:14.230 --> 00:44:16.170
+We mostly just care if it's zero
+or not.
+
+00:44:16.170 --> 00:44:18.670
+But sometimes, to check if it's
+zero or not, you may need to use
+
+00:44:18.670 --> 00:44:20.170
+this formula.
+
+00:44:20.270 --> 00:44:22.490
+OK, so what this is showing you
+is how you would calculate the
+
+00:44:22.490 --> 00:44:24.610
+determinant of a 3 by 3 matrix.
+
+00:44:24.610 --> 00:44:27.890
+And the way you think about it
+is that you break it up into
+
+00:44:27.890 --> 00:44:31.410
+three 2 by 2 determinants and
+then stitch them together.
+
+00:44:31.410 --> 00:44:35.590
+So it's A times the determinant
+of the matrix you get when you
+
+00:44:35.590 --> 00:44:38.290
+erase the row and column A is
+in.
+
+00:44:38.290 --> 00:44:40.730
+So it's A times the determinant
+of whatever's left over right
+
+00:44:40.730 --> 00:44:43.510
+now, which is the matrix EFHI.
+
+00:44:43.510 --> 00:44:48.430
+So it'd be EI minus FH.
+then it's B times whatever's
+
+00:44:48.430 --> 00:44:52.090
+left over if you delete the row
+and column that B is in.
+
+00:44:52.090 --> 00:44:56.250
+So you have D F G I and
+hopefully the coloring sort of
+
+00:44:56.250 --> 00:44:58.950
+implies where that's coming
+from.
+
+00:44:58.950 --> 00:44:59.330
+Plus,
+
+00:44:59.330 --> 00:45:01.370
+so these signs are alternating,
+
+00:45:01.370 --> 00:45:04.390
+C times the determinant of
+whatever's left over when you
+
+00:45:04.390 --> 00:45:06.410
+delete the row and column C is
+in.
+
+00:45:06.410 --> 00:45:11.290
+So the determinant of D E G H.
+
+00:45:11.290 --> 00:45:14.750
+Okay again not super
+enlightening but you should
+
+00:45:14.750 --> 00:45:16.150
+practice it once or twice.
+
+00:45:16.150 --> 00:45:20.130
+And we will sort of have you do
+that in upcoming lives and
+
+00:45:20.130 --> 00:45:22.930
+homeworks, but not the most
+important thing in the world to
+
+00:45:22.930 --> 00:45:23.930
+memorize.
+
+00:45:24.010 --> 00:45:26.290
+Is that related to the cross
+product at all? Because that's
+
+00:45:26.290 --> 00:45:28.070
+exactly the formula.
+
+00:45:28.070 --> 00:45:29.510
+It is.
+
+00:45:29.510 --> 00:45:31.010
+It is.
+
+00:45:31.090 --> 00:45:31.470
+Now,
+
+00:45:31.470 --> 00:45:32.230
+the thing is,
+
+00:45:32.230 --> 00:45:34.010
+the cross product, of course,
+
+00:45:34.010 --> 00:45:36.270
+only involves two vectors in R3.
+
+00:45:36.270 --> 00:45:39.110
+So you have to do this weird
+trick to make this formula work
+
+00:45:39.110 --> 00:45:41.530
+with the cross product, which I
+don't want to get into because
+
+00:45:41.530 --> 00:45:43.910
+it uses the physics
+interpretation of a vector, like
+
+00:45:43.910 --> 00:45:46.470
+writing I, J, K in one of the
+columns or something like that,
+
+00:45:46.470 --> 00:45:47.570
+which is a little strange.
+
+00:45:47.570 --> 00:45:52.070
+But these ideas are all related,
+
+00:45:52.650 --> 00:45:56.930
+which is why if you've seen a
+physics example,
+
+00:45:56.930 --> 00:46:00.970
+the cross product also measures
+the area of some region.
+
+00:46:03.750 --> 00:46:04.750
+OK.
+
+00:46:05.030 --> 00:46:06.550
+Again, big picture takeaway for
+us.
+
+00:46:06.550 --> 00:46:09.590
+The real reason we care about
+the determinant of the matrix,
+
+00:46:09.590 --> 00:46:14.410
+yes, it tells us the volume, the
+n-dimensional volume enclosed by
+
+00:46:14.410 --> 00:46:17.430
+the standard basis vectors after
+they're transformed by the
+
+00:46:17.430 --> 00:46:20.850
+matrix We really we just care
+about whether the determinant is
+
+00:46:20.850 --> 00:46:25.690
+0 or not And if it's 0 it tells
+us the matrix is not invertible
+
+00:46:25.690 --> 00:46:31.690
+if it's not 0 it tells us the
+matrix is invertible
+
+00:46:35.610 --> 00:46:37.860
+All right Um,
+
+00:46:38.250 --> 00:46:41.230
+one last idea I want to comment
+on before I have you work on a
+
+00:46:41.230 --> 00:46:42.730
+few activities.
+
+00:46:46.250 --> 00:46:48.170
+We've talked about the
+determinant,
+
+00:46:48.170 --> 00:46:51.920
+but what about finding inverses
+in general?
+
+00:46:58.670 --> 00:47:03.170
+A few moments ago, we looked at
+the formula for a 2x2 inverse,
+
+00:47:03.170 --> 00:47:06.170
+and that's like the one formula
+to memorize.
+
+00:47:06.170 --> 00:47:09.730
+And before that, we talked about
+how you would find the inverse
+
+00:47:09.730 --> 00:47:15.350
+of a larger matrix if you had no
+other knowledge of a formula.
+
+00:47:15.350 --> 00:47:17.490
+You could set up a system of
+equations if you really needed
+
+00:47:17.490 --> 00:47:19.670
+to do it.
+
+00:47:19.670 --> 00:47:22.910
+Now, there exist faster
+implementations of inverse
+
+00:47:22.910 --> 00:47:26.660
+finding in packages like NumPy.
+
+00:47:26.790 --> 00:47:30.010
+But in general, it's actually
+rare that we ever need to write
+
+00:47:30.010 --> 00:47:33.750
+code or use code that finds an
+inverse.
+
+00:47:33.750 --> 00:47:36.390
+And here's why.
+So last class,
+
+00:47:36.890 --> 00:47:39.410
+when I introduced the idea of an
+inverse,
+
+00:47:39.410 --> 00:47:42.650
+I said that it's useful for one
+thing in particular.
+
+00:47:42.650 --> 00:47:44.910
+What did I say the inverse was
+useful for?
+
+00:47:44.910 --> 00:47:48.430
+If I had the inverse of a
+matrix, what could I do with it?
+
+00:47:48.430 --> 00:47:52.930
+What kind of problem could I
+solve with it?
+
+00:47:58.550 --> 00:48:03.050
+What kind of problem could I
+solve with an inverse?
+
+00:48:04.010 --> 00:48:05.010
+Yeah.
+
+00:48:05.130 --> 00:48:06.750
+Reversal linear transformation?
+
+00:48:06.750 --> 00:48:08.530
+I could reverse a linear
+transformation.
+
+00:48:08.530 --> 00:48:10.930
+That was the way you should
+think about whether a matrix is
+
+00:48:10.930 --> 00:48:12.670
+invertible or not.
+
+00:48:12.670 --> 00:48:15.290
+But there was a more practical
+problem that we could solve
+
+00:48:15.290 --> 00:48:19.250
+using the inverse of a matrix if
+it existed and we had it.
+
+00:48:19.250 --> 00:48:21.570
+What a diagonal projection?
+
+00:48:21.570 --> 00:48:23.030
+That's where we're going to come
+after this.
+
+00:48:23.030 --> 00:48:25.470
+And we're going to use inverses
+there.
+
+00:48:25.470 --> 00:48:28.090
+But there was an initial problem
+I said that you could use
+
+00:48:28.090 --> 00:48:31.090
+inverses to help you solve.
+
+00:48:31.090 --> 00:48:34.210
+It was for solving a system of
+equations.
+
+00:48:34.210 --> 00:48:38.050
+Remember, we said Ax equals b.
+
+00:48:38.050 --> 00:48:40.990
+This is a system of how many
+equations and how many unknowns
+
+00:48:40.990 --> 00:48:44.010
+if A is n by n.
+
+00:48:44.010 --> 00:48:46.730
+If A is n by n, how many
+equations are there and how many
+
+00:48:46.730 --> 00:48:48.980
+unknowns are there?
+
+00:48:56.450 --> 00:49:02.410
+Yeah? n equations and n
+
+00:49:02.410 --> 00:49:03.430
+unknowns.
+
+00:49:05.780 --> 00:49:06.780
+Now,
+
+00:49:07.070 --> 00:49:10.070
+if A is invertible,
+
+00:49:11.130 --> 00:49:16.470
+the unique x
+
+00:49:16.470 --> 00:49:22.210
+that satisfies Ax equals B.
+
+00:49:23.350 --> 00:49:26.210
+By the way, these variable names
+are chosen to illuminate the
+
+00:49:26.210 --> 00:49:29.110
+setting where A and B,
+
+00:49:29.110 --> 00:49:31.450
+usually we use those for
+constants in a question.
+
+00:49:31.450 --> 00:49:33.350
+You should think of these as
+being given to you in a
+
+00:49:33.350 --> 00:49:34.310
+question,
+
+00:49:34.310 --> 00:49:38.510
+like these are provided to you
+by the data in a question, or
+
+00:49:38.510 --> 00:49:40.550
+just otherwise are given to you.
+
+00:49:40.550 --> 00:49:42.330
+And x is the unknown,
+
+00:49:42.330 --> 00:49:46.080
+which we are solving for.
+
+00:49:47.070 --> 00:49:50.790
+If A is invertible, well, then I
+can multiply both sides of this
+
+00:49:50.790 --> 00:49:54.390
+equation by its inverse.
+
+00:49:56.610 --> 00:49:58.110
+And A inverse times A,
+
+00:49:58.110 --> 00:50:01.210
+that's just the identity matrix,
+
+00:50:01.210 --> 00:50:06.460
+which tells me A inverse times B
+
+00:50:08.830 --> 00:50:12.030
+is what I would have to multiply
+A by to get B.
+
+00:50:12.030 --> 00:50:16.910
+It tells me what the solution to
+this system of equations is.
+
+00:50:16.910 --> 00:50:20.150
+You should think of this as
+conceptually the reason then we
+
+00:50:20.150 --> 00:50:25.400
+would need an inverse to solve a
+large system of equations.
+
+00:50:25.610 --> 00:50:29.910
+If you had A and its inverse,
+
+00:50:29.910 --> 00:50:34.230
+well, then you can very quickly
+solve any system of equations.
+
+00:50:34.230 --> 00:50:36.470
+But where is the issue with
+this?
+
+00:50:36.470 --> 00:50:40.930
+Pretend all I had was my system
+of equations.
+
+00:50:40.930 --> 00:50:44.680
+Finding A inverse is actually
+really hard to do.
+
+00:50:59.750 --> 00:51:03.110
+If you think back to maybe half
+an hour ago when I said you
+
+00:51:03.110 --> 00:51:07.610
+could find A inverse manually if
+you really needed to,
+
+00:51:08.530 --> 00:51:12.710
+how did I say you could do it?
+
+00:51:12.710 --> 00:51:14.850
+If I just gave you a pencil
+paper and as much time as you
+
+00:51:14.850 --> 00:51:15.550
+wanted,
+
+00:51:15.550 --> 00:51:17.550
+you could find the inverse to
+any matrix.
+
+00:51:17.550 --> 00:51:18.610
+But what would you have to do?
+
+00:51:18.610 --> 00:51:20.030
+Another system of equations.
+
+00:51:20.030 --> 00:51:23.150
+Yes, but it's a way larger
+system of equations.
+
+00:51:23.150 --> 00:51:25.850
+Let's go back here.
+
+00:51:25.850 --> 00:51:28.070
+Remember I said, by first
+principles, you could find the
+
+00:51:28.070 --> 00:51:29.470
+inverse of any matrix.
+
+00:51:29.470 --> 00:51:32.810
+Here I had a 2 by 2 matrix.
+And I said, OK,
+
+00:51:32.810 --> 00:51:34.070
+you don't know the inverse
+formula.
+
+00:51:34.070 --> 00:51:36.390
+Just figure it out.
+Find the inverse of A.
+
+00:51:36.390 --> 00:51:40.190
+And what we said was, well, then
+the inverse of A had two rows
+
+00:51:40.190 --> 00:51:41.530
+and two columns.
+
+00:51:41.530 --> 00:51:43.830
+So it has four entries.
+
+00:51:43.830 --> 00:51:46.110
+To uniquely find all of them, I
+needed a system of four
+
+00:51:46.110 --> 00:51:48.170
+equations and four unknowns.
+
+00:51:48.170 --> 00:51:49.170
+OK?
+
+00:51:49.210 --> 00:51:53.690
+But if all I was looking for is
+to find an x where ax equals b
+
+00:51:53.690 --> 00:51:55.350
+and x was a vector,
+
+00:51:55.350 --> 00:51:58.850
+that's just a system of two
+equations and two unknowns.
+
+00:51:58.850 --> 00:52:01.850
+If I instead said,
+
+00:52:02.230 --> 00:52:04.430
+just solve for x in 1,
+
+00:52:04.430 --> 00:52:06.010
+5, 2, 12
+
+00:52:06.010 --> 00:52:09.850
+times xy equals 7,
+
+00:52:10.810 --> 00:52:11.810
+1,
+
+00:52:12.030 --> 00:52:14.510
+that's an easier question.
+
+00:52:14.510 --> 00:52:19.050
+So the inverse is like bringing
+a sledgehammer when all you need
+
+00:52:19.050 --> 00:52:20.390
+is a screwdriver.
+
+00:52:20.390 --> 00:52:23.330
+Like, yeah, it could help you
+answer this,
+
+00:52:23.330 --> 00:52:26.490
+but there's no need to find the
+inverse just to answer this.
+
+00:52:26.490 --> 00:52:29.210
+You could answer this directly
+and more quickly.
+
+00:52:29.210 --> 00:52:30.950
+You see what I'm getting at by
+that?
+
+00:52:30.950 --> 00:52:32.350
+If you had the inverse,
+
+00:52:32.350 --> 00:52:34.890
+then sure, you could multiply it
+by 7, 1, and it would tell you
+
+00:52:34.890 --> 00:52:36.550
+what x and y are supposed to be.
+
+00:52:36.550 --> 00:52:38.350
+But if all you need to do is
+find x, y, you don't need to
+
+00:52:38.350 --> 00:52:40.150
+find the inverse, because that's
+way more difficult.
+
+00:52:40.150 --> 00:52:44.870
+So this is a system of two
+equations and two unknowns, but
+
+00:52:44.870 --> 00:52:47.070
+finding the inverse involves
+solving a system of four
+
+00:52:47.070 --> 00:52:48.930
+equations and four unknowns.
+
+00:52:48.930 --> 00:52:49.930
+Similarly,
+
+00:52:53.070 --> 00:52:55.790
+this is a system of n equations
+and n unknowns.
+
+00:52:55.790 --> 00:52:58.270
+But if you wanted to use this
+naive approach to find the
+
+00:52:58.270 --> 00:52:59.110
+inverse,
+
+00:52:59.110 --> 00:53:02.150
+you'd have to solve a system of
+n squared equations and n
+
+00:53:02.150 --> 00:53:03.150
+squared
+
+00:53:03.410 --> 00:53:05.930
+unknowns, because the inverse is
+a matrix with n squared things
+
+00:53:05.930 --> 00:53:07.430
+in it.
+
+00:53:07.630 --> 00:53:12.880
+Do we see why that would make
+finding the inverse hard?
+
+00:53:14.370 --> 00:53:18.870
+Ax equals b has n equations,
+
+00:53:20.170 --> 00:53:21.670
+n unknowns.
+
+00:53:24.690 --> 00:53:28.440
+A inverse has n squared
+unknowns.
+
+00:53:29.270 --> 00:53:31.450
+Now, the inverse is really
+powerful because if someone
+
+00:53:31.450 --> 00:53:33.350
+already gave it to you,
+
+00:53:33.350 --> 00:53:36.430
+it's sort of like you ahead of
+time solved every possible
+
+00:53:36.430 --> 00:53:40.180
+system of equations and unknowns
+involving this matrix.
+
+00:53:40.430 --> 00:53:42.790
+No matter what b is,
+
+00:53:42.790 --> 00:53:44.430
+if you have a inverse,
+
+00:53:44.430 --> 00:53:47.270
+you can really quickly figure
+out what x was supposed to be.
+
+00:53:47.270 --> 00:53:49.350
+But if I'm just giving you one
+b,
+
+00:53:49.350 --> 00:53:52.350
+then finding the inverse is
+doing an order of magnitude more
+
+00:53:52.350 --> 00:53:54.010
+work for no reason,
+
+00:53:54.010 --> 00:53:55.130
+which is why,
+
+00:53:55.130 --> 00:53:56.350
+in practice,
+
+00:53:56.350 --> 00:53:58.490
+and I talk more about this in
+the notes,
+
+00:53:58.490 --> 00:54:02.710
+it's way quicker to ask NumPy to
+solve one system of equations
+
+00:54:02.710 --> 00:54:04.810
+than it it is to find the
+inverse of a and then multiply
+
+00:54:04.810 --> 00:54:06.490
+it by b.
+
+00:54:06.490 --> 00:54:07.350
+And also,
+
+00:54:07.350 --> 00:54:09.950
+the act of finding the inverse
+
+00:54:09.950 --> 00:54:13.590
+introduces lots of numerical
+precision issues that come from
+
+00:54:13.590 --> 00:54:15.890
+taking reciprocals of numbers.
+
+00:54:15.890 --> 00:54:20.390
+You saw that this formula, at
+least in the 2 by 2 case,
+
+00:54:21.590 --> 00:54:24.110
+involved 1 over the determinant.
+
+00:54:24.110 --> 00:54:26.430
+But if the determinant is a
+really small number, like the
+
+00:54:26.430 --> 00:54:30.490
+matrix is very close to having a
+determinant of 0,
+
+00:54:30.490 --> 00:54:32.330
+then 1 over that is a really big
+number.
+
+00:54:32.330 --> 00:54:35.790
+And if there's even a tiny bit
+of floating point imprecision,
+
+00:54:35.790 --> 00:54:38.630
+this is sort of like some 370
+stuff,
+
+00:54:38.630 --> 00:54:41.630
+but if there's even a tiny bit
+of floating point imprecision in
+
+00:54:41.630 --> 00:54:43.250
+that really small determinant,
+
+00:54:43.250 --> 00:54:46.530
+it messes with the determinant
+of the inverse of the matrix.
+
+00:54:46.530 --> 00:54:50.090
+And you can get results that are
+less accurate than just solving
+
+00:54:50.090 --> 00:54:51.590
+the system directly,
+
+00:54:51.590 --> 00:54:55.410
+which is why in practice you
+rarely,
+
+00:54:55.410 --> 00:54:57.210
+unless it's for teaching
+purposes,
+
+00:54:57.210 --> 00:54:59.490
+ask for the inverse of a matrix.
+You,
+
+00:54:59.490 --> 00:55:03.230
+instead, use np.lenalge.solve
+to solve whatever system you
+
+00:55:03.230 --> 00:55:04.730
+actually need.
+
+00:55:05.490 --> 00:55:06.210
+Okay.
+
+00:55:06.210 --> 00:55:08.210
+So you should think of the
+inverse and its existence as
+
+00:55:08.210 --> 00:55:10.590
+more of a conceptual idea that
+we will need for whatever we're
+
+00:55:10.590 --> 00:55:13.850
+about to do, but not something
+that you will calculate a ton
+
+00:55:13.850 --> 00:55:14.850
+directly.
+
+00:55:15.970 --> 00:55:20.470
+Okay, what questions do we have
+with any of that?
+
+00:55:21.630 --> 00:55:22.270
+Yeah.
+
+00:55:22.270 --> 00:55:23.910
+So if the determinant's not
+zero,
+
+00:55:23.910 --> 00:55:26.050
+that's how we know the inverse
+exists?
+
+00:55:26.050 --> 00:55:27.050
+Correct.
+
+00:55:36.810 --> 00:55:37.810
+OK,
+
+00:55:39.610 --> 00:55:41.860
+let's do attendance.
+
+00:55:42.410 --> 00:55:43.930
+And while you do that,
+
+00:55:43.930 --> 00:55:49.050
+I want you to think about this
+activity.
+
+00:55:49.050 --> 00:55:54.490
+Suppose A and B are n by n
+matrices,
+
+00:55:54.490 --> 00:55:58.530
+A is invertible.
+
+00:56:00.710 --> 00:56:02.960
+B is not.
+
+00:56:04.450 --> 00:56:05.950
+Is AB,
+
+00:56:06.170 --> 00:56:07.670
+their product.
+
+00:56:09.970 --> 00:56:13.720
+We'll come back at 1130.
+
+00:56:21.470 --> 00:56:22.270
+All right,
+
+00:56:22.270 --> 00:56:26.020
+the form should be open.
+
+00:57:26.870 --> 00:57:29.030
+Yeah, it doesn't hurt,
+
+00:57:29.030 --> 00:57:32.730
+you
+
+00:57:32.730 --> 00:57:35.750
+know,
+
+00:57:39.410 --> 00:57:40.410
+like,
+
+00:57:41.370 --> 00:57:43.970
+it shifts everything in the one
+direction.
+
+00:57:43.970 --> 00:57:46.970
+You really don't know.
+
+00:57:53.830 --> 00:57:56.080
+Everyone checked in?
+
+00:57:57.430 --> 00:58:01.180
+I had to be checked.
+
+00:58:11.110 --> 00:58:12.070
+Yeah.
+
+00:58:12.070 --> 00:58:18.070
+I'm not sure did you take a lot
+of smells to eat?
+
+00:58:33.110 --> 00:58:37.470
+I think like,
+
+00:58:37.850 --> 00:58:38.570
+okay,
+
+00:58:38.570 --> 00:58:40.790
+you didn't go that bad, but I
+try not to have time for a 3D
+
+00:58:40.790 --> 00:58:41.790
+algorithm.
+
+00:58:44.650 --> 00:58:48.110
+I'm going abroad next semester,
+
+00:58:48.110 --> 00:58:54.110
+so I'm going to have to take it
+next year,
+
+00:59:03.450 --> 00:59:03.450
+which
+
+00:59:03.450 --> 00:59:10.750
+is
+
+00:59:10.750 --> 00:59:11.750
+really
+
+00:59:14.210 --> 00:59:17.230
+But this one, like, let's say
+it's not on.
+
+00:59:17.230 --> 00:59:20.980
+Yeah, that's actually more than
+a project.
+
+00:59:21.670 --> 00:59:23.510
+I wanted to finish it this
+weekend.
+
+00:59:23.510 --> 00:59:25.410
+I just did that fucking lesson
+this weekend.
+
+00:59:25.410 --> 00:59:26.850
+I don't know what it was.
+It was, like,
+
+00:59:26.850 --> 00:59:27.510
+so, like,
+
+00:59:27.510 --> 00:59:29.090
+abstract that it was, like...
+No,
+
+00:59:29.090 --> 00:59:30.430
+for some reason I was still on
+the line.
+
+00:59:30.430 --> 00:59:32.230
+It's very red and visualizing
+me,
+
+00:59:32.230 --> 00:59:34.790
+so I had to spare it and give
+the exam review.
+
+00:59:34.790 --> 00:59:40.790
+How do I make these kids do this
+possible?
+
+01:00:02.390 --> 01:00:05.190
+Okay, so tell me what you're
+thinking here.
+
+01:00:05.190 --> 01:00:09.450
+Suppose A and B are two square
+matrices.
+
+01:00:09.450 --> 01:00:13.650
+A is invertible and B isn't.
+Is AB invertible?
+
+01:00:13.650 --> 01:00:15.390
+There are a few ways we can
+think about this, but what do we
+
+01:00:15.390 --> 01:00:16.390
+think?
+
+01:00:17.170 --> 01:00:19.330
+Is AB invertible? Is it yes?
+
+01:00:19.330 --> 01:00:21.250
+Is it no? Is it maybe it
+depends?
+
+01:00:21.250 --> 01:00:21.990
+Yeah.
+
+01:00:21.990 --> 01:00:24.430
+I mean, I just kind of thought
+of it logically.
+
+01:00:24.430 --> 01:00:28.250
+Since B is not invertible, then
+it's probably like linearly
+
+01:00:28.250 --> 01:00:29.250
+dependent?
+
+01:00:29.450 --> 01:00:32.210
+Its columns are linearly
+dependent, yes.
+
+01:00:32.210 --> 01:00:35.390
+And then I feel like that would
+just mean that you'd be shifting
+
+01:00:35.390 --> 01:00:38.850
+A all in one direction, which
+would still make it linearly
+
+01:00:38.850 --> 01:00:41.100
+independent and invertible?
+
+01:00:44.010 --> 01:00:46.170
+So your perspective is,
+
+01:00:46.170 --> 01:00:50.150
+while the columns of B are
+linearly dependent,
+
+01:00:50.150 --> 01:00:53.190
+the columns of A are linearly
+independent.
+
+01:00:53.190 --> 01:00:57.470
+And even if we're taking these
+linearly dependent linear
+
+01:00:57.470 --> 01:00:59.790
+combinations of a linearly
+independent matrix,
+
+01:00:59.790 --> 01:01:01.250
+the result would still be
+linearly independent.
+
+01:01:01.250 --> 01:01:02.030
+Yeah.
+
+01:01:02.030 --> 01:01:04.370
+OK, so that's one perspective.
+
+01:01:04.370 --> 01:01:08.870
+What other thoughts did we have?
+
+01:01:13.470 --> 01:01:17.110
+What other thoughts did we have?
+
+01:01:17.110 --> 01:01:19.110
+Well, here's another way to look
+at it.
+
+01:01:19.110 --> 01:01:21.270
+If AB is invertible,
+
+01:01:21.270 --> 01:01:24.270
+then we need to be able to undo
+the linear transformation of
+
+01:01:24.270 --> 01:01:28.020
+multiplying a vector by the
+matrix AB.
+
+01:01:33.890 --> 01:01:36.190
+So if a,
+
+01:01:36.410 --> 01:01:38.810
+b is invertible,
+
+01:01:41.850 --> 01:01:43.350
+we must
+
+01:01:44.230 --> 01:01:49.970
+be able to undo this linear
+transformation.
+
+01:01:53.410 --> 01:01:58.110
+What does that mean? It means
+for any possible vector in
+
+01:01:58.110 --> 01:02:01.330
+Rn,
+
+01:02:01.690 --> 01:02:06.750
+I need to be able to tell you
+the x that makes a b x equal to
+
+01:02:06.750 --> 01:02:07.570
+y.
+
+01:02:07.570 --> 01:02:09.290
+So for any possible y,
+
+01:02:09.290 --> 01:02:14.610
+you need to be able to solve for
+x in y equals a b x.
+
+01:02:14.610 --> 01:02:23.010
+i.e.,
+
+01:02:23.010 --> 01:02:38.090
+OK,
+
+01:02:39.630 --> 01:02:41.990
+what this means is there should
+be some formula that tells me
+
+01:02:41.990 --> 01:02:44.010
+what x is supposed to be.
+
+01:02:44.010 --> 01:02:44.830
+Now,
+
+01:02:44.830 --> 01:02:47.080
+A is invertible.
+
+01:02:47.550 --> 01:02:52.800
+So what does that mean I could
+do here?
+
+01:02:53.390 --> 01:02:54.670
+Yeah.
+Multiply by the inverse.
+
+01:02:55.050 --> 01:02:56.950
+Yeah, I can multiply both sides
+by A inverse.
+
+01:02:56.950 --> 01:03:01.030
+That tells me A inverse Y is
+equal to BX.
+
+01:03:01.030 --> 01:03:01.610
+But then,
+
+01:03:01.610 --> 01:03:06.860
+if we're trying to solve for X
+here, what issue do we run into?
+
+01:03:08.530 --> 01:03:11.890
+B is not invertible, which means
+at this stage, when we're trying
+
+01:03:11.890 --> 01:03:14.730
+to undo the transformation,
+
+01:03:14.730 --> 01:03:19.370
+there are multiple or maybe no
+x's that make
+
+01:03:19.370 --> 01:03:23.150
+Bx equal to A inverse y.
+
+01:03:23.150 --> 01:03:26.030
+So this entire transformation
+cannot be undone.
+
+01:03:26.030 --> 01:03:30.230
+While the second step of the
+transformation can be undone,
+
+01:03:30.230 --> 01:03:33.390
+the first one can't because of
+the premise that AB is not
+
+01:03:33.390 --> 01:03:34.390
+invertible.
+
+01:03:36.070 --> 01:03:36.930
+OK,
+
+01:03:36.930 --> 01:03:38.330
+here's another way to look at
+it.
+
+01:03:38.330 --> 01:03:40.710
+Suppose B's action,
+
+01:03:40.930 --> 01:03:43.410
+pretend these matrices are two
+by two.
+
+01:03:43.410 --> 01:03:48.310
+Suppose B's action is that it
+deletes the y-coordinate of a
+
+01:03:48.310 --> 01:03:49.130
+vector,
+
+01:03:49.130 --> 01:03:50.210
+and it just
+
+01:03:50.210 --> 01:03:52.250
+projects it onto the x-axis.
+
+01:03:52.250 --> 01:03:56.590
+So it's like the matrix 1, 0, 0,
+0.
+
+01:03:56.590 --> 01:03:59.890
+Then no matter what this A does,
+
+01:03:59.890 --> 01:04:03.710
+all of the results of A times Bx
+are going to live on the same
+
+01:04:03.710 --> 01:04:04.710
+line,
+
+01:04:06.130 --> 01:04:10.670
+Because all of the BXs live on
+the same line.
+
+01:04:10.670 --> 01:04:13.190
+These things all live on a line.
+
+01:04:13.190 --> 01:04:15.270
+So there's no way this can
+spread those out if they all
+
+01:04:15.270 --> 01:04:17.270
+came from the same place to
+begin with because this is a
+
+01:04:17.270 --> 01:04:18.770
+linear transformation.
+
+01:04:19.970 --> 01:04:22.350
+So we need every individual
+matrix
+
+01:04:22.350 --> 01:04:25.770
+to be invertible if the product
+is invertible.
+
+01:04:25.770 --> 01:04:28.790
+Okay,
+
+01:04:29.790 --> 01:04:32.090
+so here,
+
+01:04:33.850 --> 01:04:38.010
+but B is not invertible.
+
+01:04:44.370 --> 01:04:48.120
+So the answer is no.
+
+01:04:52.170 --> 01:04:55.930
+So a couple of thoughts here.
+
+01:04:55.930 --> 01:05:03.670
+If a and b are both n by n in an
+invertible,
+
+01:05:03.670 --> 01:05:07.930
+what is the inverse of a times
+b?
+
+01:05:07.930 --> 01:05:11.590
+We sort of implied it on the
+previous page,
+
+01:05:11.590 --> 01:05:12.890
+but I've never actually stated
+this.
+
+01:05:12.890 --> 01:05:18.140
+What is the inverse of A times
+B?
+
+01:05:23.810 --> 01:05:27.650
+Is it A inverse times B inverse?
+
+01:05:27.650 --> 01:05:29.850
+Yeah.
+B inverse times A inverse.
+
+01:05:30.010 --> 01:05:31.310
+Yeah, why?
+
+01:05:31.310 --> 01:05:34.170
+Because you're applying B first
+and then A second.
+
+01:05:34.170 --> 01:05:36.650
+So to reverse it, you have to
+reverse A first and then B
+
+01:05:36.650 --> 01:05:37.650
+second.
+Exactly.
+
+01:05:38.390 --> 01:05:40.550
+Remember, think of this in terms
+of applying linear
+
+01:05:40.550 --> 01:05:43.550
+transformations back to back.
+
+01:05:43.710 --> 01:05:46.710
+ABX does B first.
+
+01:05:47.770 --> 01:05:50.510
+It does B first and then A.
+
+01:05:50.510 --> 01:05:53.010
+So if you need to retrace your
+steps and undo where you just
+
+01:05:53.010 --> 01:05:53.750
+went,
+
+01:05:53.750 --> 01:05:56.170
+you have to undo them in reverse
+order.
+
+01:05:56.170 --> 01:05:59.370
+If you traveled from point A to
+point B on Google Maps or
+
+01:05:59.370 --> 01:06:02.150
+whatever and need to go back to
+where you came from,
+
+01:06:02.150 --> 01:06:04.590
+you retrace your steps in the
+reverse order.
+
+01:06:04.590 --> 01:06:06.390
+This is the same idea.
+
+01:06:06.390 --> 01:06:07.390
+Similarly,
+
+01:06:07.610 --> 01:06:10.630
+another way to think about this
+is if you have AB and multiply
+
+01:06:10.630 --> 01:06:13.110
+it by its inverse,
+
+01:06:13.110 --> 01:06:16.170
+well, then only when you swap
+the order of the factors
+
+01:06:16.170 --> 01:06:18.870
+do things cancel out to the
+identity, right? You need B to
+
+01:06:18.870 --> 01:06:22.790
+be next to its inverse in order
+for those things to cancel out.
+
+01:06:22.790 --> 01:06:24.710
+Yeah, safe trip.
+
+01:06:24.710 --> 01:06:27.350
+And then you have A times A
+inverse, and that gives you the
+
+01:06:27.350 --> 01:06:28.350
+identity as well.
+
+01:06:28.350 --> 01:06:30.930
+So the orders need to be
+reversed,
+
+01:06:30.930 --> 01:06:31.930
+OK?
+
+01:06:32.610 --> 01:06:35.610
+Now, here's another related
+idea.
+
+01:06:38.370 --> 01:06:40.730
+The determinant of AB,
+
+01:06:40.730 --> 01:06:43.690
+is that separable?
+
+01:06:48.890 --> 01:06:50.330
+Turns out it is,
+
+01:06:50.330 --> 01:06:54.010
+and you'll experiment with this
+in lab more tomorrow.
+
+01:06:54.010 --> 01:06:58.130
+The determinant of a product is
+equal to a product of
+
+01:06:58.130 --> 01:06:59.130
+determinants.
+
+01:06:59.250 --> 01:07:01.770
+And this is actually a really
+easy way to see that if any one
+
+01:07:01.770 --> 01:07:04.110
+of the matrices is not
+invertible,
+
+01:07:04.110 --> 01:07:05.790
+the whole thing can't be,
+because then you'd have a
+
+01:07:05.790 --> 01:07:08.550
+determinant of 0 in here.
+
+01:07:08.550 --> 01:07:10.770
+Then the whole thing's
+determinant would have to be 0.
+
+01:07:10.770 --> 01:07:12.510
+The way you should think about
+this
+
+01:07:12.510 --> 01:07:17.950
+is that unit square is being
+transformed after back-to-back
+
+01:07:17.950 --> 01:07:19.450
+linear transformations.
+
+01:07:19.790 --> 01:07:23.310
+Like if it gets rotated and then
+stretched,
+
+01:07:23.310 --> 01:07:27.890
+the area of the new figure is
+the result of performing each
+
+01:07:27.890 --> 01:07:30.310
+one of those transformations
+separately and chaining them
+
+01:07:30.310 --> 01:07:31.310
+together.
+
+01:07:32.990 --> 01:07:33.990
+OK?
+
+01:07:35.450 --> 01:07:38.730
+You'll see this more in lab
+tomorrow.
+
+01:07:38.730 --> 01:07:40.810
+One final idea.
+
+01:07:40.810 --> 01:07:46.130
+Suppose AB is invertible,
+
+01:07:47.650 --> 01:07:53.510
+but you know nothing else
+
+01:07:53.510 --> 01:07:58.050
+about A or B.
+
+01:08:01.850 --> 01:08:03.350
+R, A,
+
+01:08:03.450 --> 01:08:05.700
+and B, invertible.
+
+01:08:08.330 --> 01:08:11.330
+Discuss for a moment.
+
+01:08:12.230 --> 01:08:15.980
+And I'm emphasizing here, you
+know nothing else.
+
+01:08:16.130 --> 01:08:19.350
+All you know is that AB is an
+invertible matrix.
+
+01:08:19.350 --> 01:08:21.990
+R, A, and B, invertible.
+
+01:08:21.990 --> 01:08:22.990
+Non-invertible?
+
+01:08:23.010 --> 01:08:24.610
+Discuss.
+Turn B 0 to the number of
+
+01:08:24.610 --> 01:08:27.610
+invertibles at the top?
+
+01:08:28.270 --> 01:08:31.990
+Is there a trick here with the
+thing
+
+01:08:31.990 --> 01:08:37.470
+that might screw it up? Yeah,
+
+01:08:38.150 --> 01:08:42.670
+we might try to make an example
+of that.
+
+01:08:42.670 --> 01:08:47.170
+But then they both put the
+details in the product.
+
+01:08:47.850 --> 01:08:50.150
+Probably the best spot.
+
+01:08:50.150 --> 01:08:53.850
+Maybe this is a good case for
+the art.
+
+01:08:53.850 --> 01:08:56.010
+I don't know,
+
+01:08:56.010 --> 01:08:56.690
+like,
+
+01:08:56.690 --> 01:08:58.770
+maybe they can't be interviewed
+by each other.
+
+01:08:58.770 --> 01:08:59.770
+Really?
+
+01:08:59.970 --> 01:09:02.150
+Nah, I'm working on it.
+But that would just give the
+
+01:09:02.150 --> 01:09:04.230
+matrices our schedule.
+
+01:09:04.230 --> 01:09:07.170
+I could break this.
+I don't think you can create a
+
+01:09:07.170 --> 01:09:08.170
+person.
+
+01:09:08.530 --> 01:09:10.030
+We would still be inverted.
+
+01:09:10.030 --> 01:09:10.950
+Like, later,
+
+01:09:10.950 --> 01:09:13.910
+we'd just have to turn them into
+the other two.
+
+01:09:13.910 --> 01:09:14.630
+Oh, OK.
+
+01:09:14.630 --> 01:09:15.430
+You need later.
+
+01:09:15.430 --> 01:09:16.710
+But it's a person.
+
+01:09:16.710 --> 01:09:19.710
+What are our thoughts?
+
+01:09:19.870 --> 01:09:22.910
+Suppose all you know is A times
+B is a matrix that is
+
+01:09:22.910 --> 01:09:23.910
+invertible.
+
+01:09:25.190 --> 01:09:26.670
+That's all you're given,
+
+01:09:26.670 --> 01:09:30.420
+our A and B invertible.
+
+01:09:30.670 --> 01:09:33.430
+What did you think?
+
+01:09:33.430 --> 01:09:36.970
+Yeah? You said, like, there's a
+chance that they would not be
+
+01:09:36.970 --> 01:09:39.070
+because they wouldn't have to be
+squares.
+
+01:09:39.070 --> 01:09:39.910
+Exactly.
+
+01:09:39.910 --> 01:09:43.550
+The key is that they don't have
+to be square matrices.
+
+01:09:43.550 --> 01:09:47.270
+It is perfectly possible to
+multiply two non-square matrices
+
+01:09:47.270 --> 01:09:51.020
+and get an invertible square
+matrix.
+
+01:09:51.990 --> 01:09:54.390
+Now, if they are square,
+
+01:09:54.390 --> 01:09:57.010
+then the answer is yes, they
+have to be because of the logic
+
+01:09:57.010 --> 01:09:58.430
+we just discussed.
+
+01:09:58.430 --> 01:10:00.690
+The determinant of their product
+has to be the product of the
+
+01:10:00.690 --> 01:10:03.350
+individual determinants.
+And if this is not 0,
+
+01:10:04.990 --> 01:10:09.490
+well, then these can't be 0
+either.
+
+01:10:12.530 --> 01:10:17.030
+So the answer is not necessarily
+
+01:10:18.390 --> 01:10:24.390
+because A and B don't have to be
+square.
+
+01:10:31.190 --> 01:10:33.630
+If they are square,
+
+01:10:33.630 --> 01:10:36.630
+they must be invertible.
+
+01:10:40.570 --> 01:10:43.450
+Now, can you give me an easy
+example of an a and b that are
+
+01:10:43.450 --> 01:10:48.700
+not square, but a times b is
+invertible?
+
+01:10:50.190 --> 01:10:53.210
+There should be like a default
+example that comes to mind based
+
+01:10:53.210 --> 01:10:56.210
+on recent homework examples.
+
+01:11:01.050 --> 01:11:02.550
+Any ideas?
+
+01:11:09.370 --> 01:11:10.570
+So remember,
+
+01:11:10.570 --> 01:11:13.670
+a few times now I've mentioned
+that no matter what the shape of
+
+01:11:13.670 --> 01:11:15.920
+a matrix is,
+
+01:11:16.070 --> 01:11:18.630
+it has a friend or has two
+friends who are both square.
+
+01:11:18.630 --> 01:11:21.630
+What am I getting?
+
+01:11:22.230 --> 01:11:25.930
+Pretend x is a 5 by 2 matrix,
+
+01:11:25.930 --> 01:11:27.430
+not square.
+
+01:11:27.490 --> 01:11:31.970
+There is a matrix that I can
+make with x that is square.
+
+01:11:31.970 --> 01:11:34.550
+There are two, in fact.
+
+01:11:34.550 --> 01:11:35.550
+Yeah?
+
+01:11:35.750 --> 01:11:37.630
+A times A transpose.
+
+01:11:37.630 --> 01:11:41.410
+Yeah, I can multiply it by its
+transpose in either order.
+
+01:11:41.410 --> 01:11:42.410
+Remember,
+
+01:11:47.010 --> 01:11:51.050
+if A is n by d,
+
+01:11:51.050 --> 01:11:55.670
+then A transpose A is d by d.
+
+01:11:55.670 --> 01:11:58.870
+And A A transpose is n by n.
+
+01:11:58.870 --> 01:12:03.030
+So if I just find a matrix A,
+
+01:12:03.030 --> 01:12:06.330
+or let me just say, I can find a
+matrix A
+
+01:12:06.330 --> 01:12:12.230
+and maybe put the right numbers
+in it so that A transpose
+
+01:12:12.230 --> 01:12:15.590
+A is equal to the identity
+matrix.
+
+01:12:15.590 --> 01:12:18.650
+Or I didn't have to say identity
+matrix, an invertible matrix,
+
+01:12:18.650 --> 01:12:21.410
+and then this would be possible.
+I'd just say B is equal to A
+
+01:12:21.410 --> 01:12:22.410
+transpose.
+
+01:12:24.490 --> 01:12:25.310
+OK?
+
+01:12:25.310 --> 01:12:25.930
+Now,
+
+01:12:25.930 --> 01:12:27.710
+what was the interpretation
+
+01:12:27.710 --> 01:12:32.960
+of the things in A transpose A?
+This has come up a lot.
+
+01:12:38.930 --> 01:12:42.610
+A transpose A or X transpose X.
+
+01:12:42.610 --> 01:12:45.530
+We're going to start using this
+when we talk about regression as
+
+01:12:45.530 --> 01:12:46.270
+well.
+
+01:12:46.270 --> 01:12:49.230
+What is contained in that
+matrix?
+
+01:12:49.230 --> 01:12:52.070
+There's an easy English
+interpretation of the entries of
+
+01:12:52.070 --> 01:12:54.320
+A transpose A.
+
+01:12:54.370 --> 01:12:56.620
+What was that?
+
+01:13:09.270 --> 01:13:11.550
+Remember, I'll give you a hint.
+What's the shape of A transpose
+
+01:13:11.550 --> 01:13:13.110
+A? It's d by d.
+
+01:13:13.110 --> 01:13:15.730
+And what is d with regards to A?
+
+01:13:15.730 --> 01:13:18.050
+It's its number of columns.
+
+01:13:18.050 --> 01:13:20.290
+Something about the columns.
+
+01:13:20.290 --> 01:13:22.310
+It's like the dot product of the
+columns of the columns.
+
+01:13:22.310 --> 01:13:26.810
+Yeah, it's the dot products of
+all pairs of columns.
+
+01:13:35.530 --> 01:13:40.250
+So if I tell you that for some
+matrix,
+
+01:13:40.250 --> 01:13:43.530
+I think we did this as an
+example a few lectures ago,
+
+01:13:43.530 --> 01:13:47.270
+A transpose A is 1, 0, 0, 1,
+what does this tell you?
+
+01:13:47.270 --> 01:13:50.650
+It tells you column 1 is a unit
+vector,
+
+01:13:50.650 --> 01:13:52.870
+because its dot product with
+itself is 1.
+
+01:13:52.870 --> 01:13:55.710
+So its squared length is 1, so
+its length is 1.
+
+01:13:55.710 --> 01:13:57.710
+Column 2 is a unit vector.
+
+01:13:57.710 --> 01:13:59.790
+And column 1 and column 2 are
+orthogonal.
+
+01:13:59.790 --> 01:14:04.410
+But I could make that set up for
+
+01:14:04.410 --> 01:14:07.350
+vectors of any shape,
+
+01:14:07.350 --> 01:14:08.350
+really.
+
+01:14:09.130 --> 01:14:11.380
+So for example,
+
+01:14:13.090 --> 01:14:18.230
+let's make a clearly not square
+example, like
+
+01:14:18.230 --> 01:14:22.930
+3 fifths,
+
+01:14:23.290 --> 01:14:23.790
+0,
+
+01:14:23.790 --> 01:14:24.490
+0,
+
+01:14:24.490 --> 01:14:26.740
+4 fifths, 0,
+
+01:14:27.010 --> 01:14:29.990
+and 4 fifths, 0,
+
+01:14:29.990 --> 01:14:30.990
+0,
+
+01:14:31.130 --> 01:14:34.130
+negative 3 fifths, 0.
+
+01:14:34.870 --> 01:14:38.070
+These columns are both unit
+vectors,
+
+01:14:38.070 --> 01:14:41.310
+because remember 3 squared plus
+4 squared equals 5 squared.
+
+01:14:41.310 --> 01:14:44.930
+So if I divide those both by 5,
+I get 3 fifths squared plus 4
+
+01:14:44.930 --> 01:14:47.810
+fifths squared is equal to 1.
+These zeros don't really change
+
+01:14:47.810 --> 01:14:48.810
+anything.
+
+01:14:48.890 --> 01:14:51.230
+And if I take the dot product of
+these two columns with each
+
+01:14:51.230 --> 01:14:52.530
+other, I get 0.
+
+01:14:52.530 --> 01:14:55.250
+So this is a matrix where A
+transpose A is equal to the
+
+01:14:55.250 --> 01:14:58.250
+identity matrix, which is
+invertible.
+
+01:14:58.750 --> 01:15:03.250
+But the matrix is not square.
+
+01:15:07.790 --> 01:15:10.850
+So is it possible to multiply
+two matrices and get an
+
+01:15:10.850 --> 01:15:13.190
+invertible matrix, but the two
+things you multiplied are not
+
+01:15:13.190 --> 01:15:13.990
+invertible?
+
+01:15:13.990 --> 01:15:15.970
+Yes, because the things you
+multiply don't have to be
+
+01:15:15.970 --> 01:15:16.970
+square.
+
+01:15:17.010 --> 01:15:20.760
+And only square matrices could
+be invertible.
+
+01:15:32.850 --> 01:15:33.850
+OK.
+
+01:15:34.330 --> 01:15:38.830
+So a lot of theoretical ideas
+were presented today.
+
+01:15:41.010 --> 01:15:43.830
+And you're going to practice a
+lot with this stuff in
+
+01:15:43.830 --> 01:15:45.210
+tomorrow's lab,
+
+01:15:45.210 --> 01:15:48.810
+in the current homework, in the
+next homework.
+
+01:15:48.810 --> 01:15:50.890
+But what bigger picture
+questions do we have with
+
+01:15:50.890 --> 01:15:54.640
+anything we've done so far
+today?
+
+01:16:05.470 --> 01:16:08.970
+So for the equation where the
+determinant of A and B equals
+
+01:16:08.970 --> 01:16:11.310
+determinant of A times
+determinant of B, do you have to
+
+01:16:11.310 --> 01:16:13.490
+confirm that A and B are
+squared? Yes, only square
+
+01:16:13.490 --> 01:16:14.890
+matrices have a determinant.
+
+01:16:14.890 --> 01:16:15.530
+Yes, the
+
+01:16:15.530 --> 01:16:26.650
+determinant
+
+01:16:26.650 --> 01:16:28.870
+is only a concept for square
+matrices.
+
+01:16:28.870 --> 01:16:29.750
+Why is that?
+
+01:16:29.750 --> 01:16:32.690
+And why is invertibility only a
+concept for square matrices?
+
+01:16:32.690 --> 01:16:35.350
+Well, remember, in all of these
+diagrams,
+
+01:16:35.350 --> 01:16:37.630
+where I would visualize the
+standard basis vector,
+
+01:16:37.630 --> 01:16:38.170
+you know,
+
+01:16:38.170 --> 01:16:40.210
+here, the standard basis vectors
+before and after the
+
+01:16:40.210 --> 01:16:43.910
+transformation, I was drawing
+the same Rn in the left and
+
+01:16:43.910 --> 01:16:44.710
+right.
+
+01:16:44.710 --> 01:16:47.670
+Here I was also drawing the same
+Rn here, R2,
+
+01:16:47.670 --> 01:16:48.570
+on the left and right.
+
+01:16:48.570 --> 01:16:51.690
+In order to be able to think
+about what
+
+01:16:51.690 --> 01:16:55.890
+the act of multiplying a vector
+as rotating it or stretching it,
+
+01:16:55.890 --> 01:16:57.850
+it needs to stay in the same
+space,
+
+01:16:57.850 --> 01:17:00.450
+which only happens when you
+multiply it by a square matrix.
+
+01:17:00.450 --> 01:17:03.190
+If you multiplied it by a
+rectangular matrix, well then it
+
+01:17:03.190 --> 01:17:07.210
+would change from being an Rd to
+being an Rn if d and n are
+
+01:17:07.210 --> 01:17:08.210
+different.
+
+01:17:08.690 --> 01:17:11.750
+Okay, so indeed a determinant is
+also a concept only for square
+
+01:17:11.750 --> 01:17:12.750
+matrices.
+
+01:17:14.590 --> 01:17:19.090
+Okay, what other questions do we
+have?
+
+01:17:22.270 --> 01:17:23.150
+Okay,
+
+01:17:23.150 --> 01:17:27.650
+the first half of tomorrow's lab
+will review these ideas.
+
+01:17:27.970 --> 01:17:31.090
+The second half will introduce,
+I spent more time on inverses
+
+01:17:31.090 --> 01:17:33.070
+today than I wanted to, but
+that's okay, it's an important
+
+01:17:33.070 --> 01:17:33.950
+idea.
+
+01:17:33.950 --> 01:17:38.290
+the next part will introduce you
+to this idea
+
+01:17:38.290 --> 01:17:41.890
+of projecting onto the column
+space.
+
+01:17:41.890 --> 01:17:44.310
+And we actually briefly talked
+about this after midterm one.
+
+01:17:44.310 --> 01:17:46.950
+And you'll get an intro to this
+in lab and then we will talk
+
+01:17:46.950 --> 01:17:50.990
+more about it on Thursday.
+OK,
+
+01:17:52.630 --> 01:17:58.630
+suppose x is an n by d matrix,
+
+01:17:59.370 --> 01:18:05.370
+and y is a vector in R what?
+
+01:18:06.110 --> 01:18:09.150
+If I've drawn this picture where
+y and the column space of x are
+
+01:18:09.150 --> 01:18:11.250
+in the same picture,
+
+01:18:11.250 --> 01:18:12.350
+this vector y,
+
+01:18:12.350 --> 01:18:16.850
+what universe should it live in?
+
+01:18:18.410 --> 01:18:21.850
+In order for it to be physically
+possible for them to live in the
+
+01:18:21.850 --> 01:18:23.170
+same picture,
+
+01:18:23.170 --> 01:18:26.920
+there's only one possible shape
+of y.
+
+01:18:37.690 --> 01:18:40.730
+The column space of x,
+
+01:18:40.730 --> 01:18:45.230
+it is a subspace of something.
+What is it a subspace of?
+
+01:18:50.890 --> 01:18:51.550
+Yeah?
+
+01:18:51.550 --> 01:18:53.310
+Is it R d?
+
+01:18:53.310 --> 01:18:54.190
+Close.
+
+01:18:54.190 --> 01:18:55.910
+It's the other one.
+R n.
+
+01:18:55.910 --> 01:18:56.590
+Why?
+
+01:18:56.590 --> 01:19:00.310
+Well, it's because the columns
+of x all have n things in them.
+
+01:19:00.310 --> 01:19:02.770
+So if you had to draw even just
+one column of x, it would be an
+
+01:19:02.770 --> 01:19:03.850
+R n.
+
+01:19:03.850 --> 01:19:06.690
+The column space of x, which is
+the set of all of x's linear
+
+01:19:06.690 --> 01:19:07.690
+combinations,
+
+01:19:07.990 --> 01:19:12.310
+is a subspace of R n.
+So y is also in Rn.
+
+01:19:12.310 --> 01:19:15.410
+The big question we're now going
+to ask, and again, this is what
+
+01:19:15.410 --> 01:19:18.350
+brings us back to regression is,
+
+01:19:18.350 --> 01:19:20.310
+this business of solving
+equations,
+
+01:19:20.310 --> 01:19:21.850
+solving systems of equations,
+
+01:19:21.850 --> 01:19:25.230
+presumed that y was already in
+this column space, and there was
+
+01:19:25.230 --> 01:19:27.990
+a way to find y exactly.
+
+01:19:27.990 --> 01:19:29.050
+But in general,
+
+01:19:29.050 --> 01:19:31.130
+as we know from the start of the
+class when it comes to making
+
+01:19:31.130 --> 01:19:32.130
+predictions,
+
+01:19:32.250 --> 01:19:34.430
+your predictions are in general
+not going to be perfect.
+
+01:19:34.430 --> 01:19:36.190
+There will be some error.
+
+01:19:36.190 --> 01:19:39.510
+And so the analog of that here
+is, well, Well, y is not in the
+
+01:19:39.510 --> 01:19:41.490
+column space of x.
+
+01:19:41.490 --> 01:19:44.250
+But among the infinitely many
+vectors that are in the column
+
+01:19:44.250 --> 01:19:47.730
+space of x, which of them is
+closest to y?
+
+01:19:47.730 --> 01:19:49.370
+That's what we now want to try
+and find.
+
+01:19:49.370 --> 01:19:51.610
+I've drawn this as if it's a
+plane,
+
+01:19:51.610 --> 01:19:53.990
+but you have to imagine this is
+a placeholder for a seven
+
+01:19:53.990 --> 01:19:56.190
+dimensional subspace of R29.
+
+01:19:56.190 --> 01:19:58.730
+I don't know how to draw that,
+so I'm drawing it like a plane.
+
+01:19:58.730 --> 01:20:00.810
+But this is some high
+dimensional subspace,
+
+01:20:00.810 --> 01:20:03.430
+and y is just some other vector
+in R29.
+
+01:20:03.430 --> 01:20:05.350
+And the question is, among
+everything in this subspace,
+
+01:20:05.350 --> 01:20:06.950
+which of them is closest to y,
+
+01:20:06.950 --> 01:20:10.230
+given that none of them are
+equal to y exactly.
+
+01:20:10.230 --> 01:20:12.550
+And what's the answer?
+
+01:20:12.550 --> 01:20:17.050
+It's the vector who we'll call
+p.
+
+01:20:18.750 --> 01:20:23.250
+Is this p orthogonal to y?
+
+01:20:24.490 --> 01:20:25.490
+No.
+
+01:20:25.650 --> 01:20:30.150
+But what is orthogonal to y?
+
+01:20:30.410 --> 01:20:30.790
+Yeah.
+
+01:20:30.790 --> 01:20:32.610
+The error vector between y and
+p.
+
+01:20:32.610 --> 01:20:35.170
+Good.
+The error vector between y and p
+
+01:20:35.170 --> 01:20:40.730
+is orthogonal to y.
+But this p is just x
+
+01:20:40.730 --> 01:20:43.650
+multiplied by some vector.
+
+01:20:43.650 --> 01:20:46.390
+Because this column space is
+just made up of all possible
+
+01:20:46.390 --> 01:20:48.550
+outputs of x times a vector.
+
+01:20:48.550 --> 01:20:53.050
+So there's a special vector that
+when you multiply by x,
+
+01:20:53.790 --> 01:20:58.910
+the resulting error vector is
+orthogonal to p itself.
+
+01:20:59.810 --> 01:21:02.070
+And that's what we're going to
+explore how to find on Thursday
+
+01:21:02.070 --> 01:21:04.150
+and see how this connects to
+linear regression.
+
+01:21:04.150 --> 01:21:08.410
+And you will start exploring
+this idea in lab tomorrow
+
+01:21:09.230 --> 01:21:10.230
+Okay,
+
+01:21:10.230 --> 01:21:12.010
+I have office hours after this
+as per usual.
+
+01:21:12.010 --> 01:21:15.760
+Otherwise, I'll see you on
+Thursday
+
+01:21:46.950 --> 01:21:51.450
+I don't feel sick, bro, it's
+just like my throat got so calm.
+
+01:21:54.910 --> 01:21:56.570
+My throat just got hella dry.
+
+01:21:56.570 --> 01:22:11.560
+Okay.
+
+01:22:46.030 --> 01:22:50.530
+Oh, you know what it was?
+
+01:22:53.710 --> 01:22:57.790
+In the last one where I had it
+reformat in that conversation,
+
+01:22:57.790 --> 01:22:59.730
+it was somewhere else.
+
+01:22:59.730 --> 01:23:01.290
+I probably still thought this
+was working.
+
+01:23:01.290 --> 01:23:02.610
+Why were you doing a new cover?
+
+01:23:02.610 --> 01:23:04.170
+Oh no, this was a new cover.
+
+01:23:04.170 --> 01:23:04.850
+Yeah,
+
+01:23:04.850 --> 01:23:06.350
+you're right.
+
+01:23:06.730 --> 01:23:08.230
+So that's not an excuse.
+
+01:23:08.230 --> 01:23:09.990
+You can do it one day, but no.
+
+01:23:09.990 --> 01:23:12.240
+This is insane.
+
+01:23:15.530 --> 01:23:16.530
+No,
+
+01:23:17.970 --> 01:23:18.670
+I was,
+
+01:23:18.670 --> 01:23:23.050
+I talked to Josh because we were
+in the same lab,
+
+01:23:23.050 --> 01:23:27.510
+but basically I read over the
+requirements.
+
+01:23:27.510 --> 01:23:29.230
+So I'm thinking, like, is this
+country,
+
+01:23:29.230 --> 01:23:29.490
+like,
+
+01:23:29.490 --> 01:23:32.010
+best? I'm thinking of, like,
+some of the orbit stuff.
+
+01:23:32.010 --> 01:23:34.550
+I'm like, I don't know, like,
+what the device would do.
+
+01:23:34.550 --> 01:23:36.590
+I'm just not confident that the
+example I just created I did the
+
+01:23:36.590 --> 01:23:37.310
+SDK,
+
+01:23:37.310 --> 01:23:39.550
+and I changed it to performance.
+
+01:23:39.550 --> 01:23:42.090
+And it's still, again, just,
+like, all attached to me.
+
+01:23:42.090 --> 01:23:42.910
+All right.
+
+01:23:42.910 --> 01:23:43.910
+So.
+
+01:23:44.110 --> 01:23:46.490
+Let me think about it, and then
+you can actually do this.
+
+01:23:46.490 --> 01:23:49.270
+You could actually find a file.
+Am I kind of spreading over
+
+01:23:49.270 --> 01:23:52.630
+there in terms that we can kind
+of separate from us working here
+
+01:23:52.630 --> 01:23:53.950
+with the individual sub-teams,
+
+01:23:53.950 --> 01:23:56.230
+and then the rest of the
+sub-teams working separately?
+
+01:23:56.230 --> 01:23:57.630
+Yeah.
+exam on Monday 7th at I.
+
+01:23:58.870 --> 01:24:02.290
+Let me check with the instructor
+of the other class.
+
+01:24:02.290 --> 01:24:05.230
+And I'll try to get back to you,
+like, five minutes.
+
+01:24:05.230 --> 01:24:07.170
+There's one hard thing that
+needs to happen.
+
+01:24:07.170 --> 01:24:08.230
+So if not,
+
+01:24:08.230 --> 01:24:11.980
+the solution would be exactly.
+
+01:24:12.750 --> 01:24:14.690
+You don't have to turn the table
+around.
+
+01:24:14.690 --> 01:24:15.630
+Yeah.
+
+01:24:15.630 --> 01:24:18.810
+Or are there other, like,
+
+01:24:18.810 --> 01:24:22.990
+Michigan professors going to? We
+do whatever.
+
+01:24:36.970 --> 01:24:39.750
+In your group so you can work on
+stuff while we meet with
+
+01:24:39.750 --> 01:24:41.250
+individual teams
+
+01:24:52.990 --> 01:24:58.990
+Thank you.
