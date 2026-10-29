@@ -6,11 +6,11 @@ days:
     events:
       - name: LEC 17
         type: lecture
-        title: The Gradient Vector
-        reading: https://notes.eecs245.org/gradients/gradient-vector/
-        reading_text: Ch. 8.1
-        reading2: https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/
-        reading2_text: Ch. 8.2
+        title: Multiple Linear Regression; Gradients
+        reading: https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/
+        reading_text: Ch. 7.2
+        reading2: https://notes.eecs245.org/gradients/gradient-vector/
+        reading2_text: Ch. 8.1
   - date: "2026-11-04"
     events:
       - name: LAB 9
