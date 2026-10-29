@@ -26,6 +26,8 @@ days:
       - name: LEC 16
         type: lecture
         title: Projecting onto the Column Space; Regression
+        live_notes: https://web.goodnotes.com/s/RhhESR6pSt1FtZ6jiM0rUD
+        videos: https://www.youtube.com/watch?v=RH5OVaJOjiY&list=PLEFTQpsm47qQeWokuNgEIryDcVJ9iVQbx
         reading: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
         reading_text: Ch. 6.3
         reading2: https://notes.eecs245.org/linear-transformations-and-projections/complete-solution/
