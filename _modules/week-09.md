@@ -26,6 +26,7 @@ days:
       - name: LEC 16
         type: lecture
         title: Projecting onto the Column Space; Regression
+        recording: https://leccap.engin.umich.edu/leccap/player/r/7qCAru
         live_notes: resources/lecture-pdfs/lec16-filled.pdf
         videos: https://www.youtube.com/watch?v=RH5OVaJOjiY&list=PLEFTQpsm47qQeWokuNgEIryDcVJ9iVQbx
         reading: https://notes.eecs245.org/linear-transformations-and-projections/projecting-onto-column-space/
