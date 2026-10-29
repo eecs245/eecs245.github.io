@@ -208,6 +208,18 @@ def main():
             }
         ]
 
+    # Validate every upload before changing links or consuming incoming files.
+    for request in requests:
+        source = request.get("incoming_pdf") or request["pdf_path"]
+        if not os.path.isfile(source):
+            raise RuntimeError(
+                f"Lecture {request['lecture']} PDF is missing: {source}. "
+                "Upload the PDF before running Attach live lecture notes."
+            )
+        with open(source, "rb") as pdf:
+            if pdf.read(5) != b"%PDF-":
+                raise RuntimeError(f"Not a PDF file: {source}")
+
     changed_files = []
     consumed_paths = []
 
