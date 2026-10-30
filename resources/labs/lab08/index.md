@@ -319,6 +319,10 @@ $$
 
 ## Activity 4: Linear Transformations
 
+[**Watch the TA walkthrough for Activity 4.**](https://youtu.be/r5N26V-WEaA)
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/r5N26V-WEaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+
 Suppose <span class="math-inline">\\(f: \mathbb{R}^3 \to \mathbb{R}^3\\)</span> is a linear transformation represented by the matrix <span class="math-inline">\\(A\\)</span>.
 
 Furthermore, suppose that <span class="math-inline">\\(f\left(\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \end{bmatrix}\right) = \begin{bmatrix} 0 \\\\ 3 \\\\ 4 \end{bmatrix}\\)</span>, <span class="math-inline">\\(f\left(\begin{bmatrix} 0 \\\\ 10 \\\\ 0 \end{bmatrix}\right) = \begin{bmatrix} 0 \\\\ 4 \\\\ -3 \end{bmatrix}\\)</span>, and <span class="math-inline">\\(f\left(\begin{bmatrix} 0 \\\\ 0 \\\\ 1 \end{bmatrix}\right) = \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \end{bmatrix}\\)</span>.
