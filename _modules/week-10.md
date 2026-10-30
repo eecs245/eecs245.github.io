@@ -29,6 +29,6 @@ days:
     events:
       - name: HW 7
         type: hw
-        title: <b>Projections and Regression</b>
+        title: <b>Projections; Regression using Linear Algebra</b>
         problems: ../resources/homeworks/hw07/
 ---
