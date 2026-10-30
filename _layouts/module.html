@@ -20,6 +20,34 @@
               {% if event.type == "lab" or event.type == "hw" %}
                 {% if event.problems %}
                 <a href="{{ event.problems }}">{{ event.title }}</a>
+                {% elsif event.scheduled_problems and event.problems_release_at %}
+                <span data-scheduled-href="{{ event.scheduled_problems | escape }}" data-release-at="{{ event.problems_release_at | escape }}">{{ event.title }}</span>
+                <script>
+                  (() => {
+                    const title = document.currentScript.previousElementSibling;
+                    const releaseAt = Date.parse(title.dataset.releaseAt);
+                    if (!Number.isFinite(releaseAt)) return;
+                    let timer;
+                    let released = false;
+                    function reveal() {
+                      clearTimeout(timer);
+                      if (released) return;
+                      const remaining = releaseAt - Date.now();
+                      if (remaining > 0) {
+                        timer = setTimeout(reveal, Math.min(remaining, 3600000));
+                        return;
+                      }
+                      const link = document.createElement('a');
+                      link.href = title.dataset.scheduledHref;
+                      link.innerHTML = title.innerHTML;
+                      title.replaceWith(link);
+                      released = true;
+                      document.removeEventListener('visibilitychange', reveal);
+                    }
+                    document.addEventListener('visibilitychange', reveal);
+                    reveal();
+                  })();
+                </script>
                 {% else %}
                 {{ event.title }}
                 {% endif %}
