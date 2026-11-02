@@ -350,6 +350,10 @@ Every week, Lauren goes to her local grocery store and buys exactly one pound of
 <img src="imgs/lab09_act2.png" alt="image" style="width: 80%; max-width: 100%;">
 </div>
 
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
 In each part below, we provide you with a model that predicts `total` (her total grocery bill), fit to the dataset by minimizing mean squared error. For each model, determine whether **each optimal parameter <span class="math-inline">\\(w^{\ast}\\)</span> is positive, negative or exactly 0**. For example, in part (iv), you'll need to provide 3 answers: one for <span class="math-inline">\\(w&#95;0^{\ast}\\)</span>, one for <span class="math-inline">\\(w&#95;1^{\ast}\\)</span>, and one for <span class="math-inline">\\(w&#95;2^{\ast}\\)</span>.
 
 <ol class="assignment-list" markdown="1" data-item-count="5" start="1" style="list-style-type: decimal;">
@@ -459,6 +463,75 @@ For example, <span class="math-inline">\\(\vec w^{\ast} = \begin{bmatrix} 1 \\\\
 </li>
 </ol>
 </details>
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+Consider the fitted model
+
+<div class="math-display">
+$$
+h(\vec x_i)=w_0+w_1\cdot\text{veg}_i+w_2\cdot(\text{meat=beef})_i+w_3\cdot(\text{meat=fish})_i,
+$$
+</div>
+
+ with optimal parameters <span class="math-inline">\\(\vec w^{\ast} = \begin{bmatrix}-3 &amp; 5 &amp; 8 &amp; 12\end{bmatrix}^T\\)</span>. What total bill does this model predict for the first row of the dataset?
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(-3\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(2\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(5\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(10\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(13\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(22\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(25\)</span></span></div>
+
+<details markdown="1"><summary>Solution</summary>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(-3\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(2\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(5\)</span></span><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> <span class="math-inline">\(10\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(13\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(22\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(25\)</span></span></div>
+
+Let's plug the first row into our fitted model. Lauren bought 1 pound of vegetables and beef, so <span class="math-inline">\\(\text{veg}&#95;1=1\\)</span>, <span class="math-inline">\\((\text{meat=beef})&#95;1=1\\)</span>, and <span class="math-inline">\\((\text{meat=fish})&#95;1=0\\)</span>. This gives
+
+<div class="math-display">
+$$
+h(\vec x_1)=-3+5(1)+8(1)+12(0)=\boxed{10}.
+$$
+</div>
+
+</details>
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">c)</div>
+<div class="assignment-part-content" markdown="1">
+Using the model and optimal parameters in part (b), compute the squared loss for the second row of the dataset.
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(0\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(1\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(5\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(6\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(8\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(24\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(25\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(169\)</span></span></div>
+
+<details markdown="1"><summary>Solution</summary>
+
+<div class="mc-options"><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(0\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(1\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(5\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(6\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(8\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(24\)</span></span><span class="mc-option"><span class="mc-bubble mc-correct" aria-hidden="true"></span> <span class="math-inline">\(25\)</span></span><span class="mc-option"><span class="mc-bubble" aria-hidden="true"></span> <span class="math-inline">\(169\)</span></span></div>
+
+This time, Lauren bought 3 pounds of vegetables and fish. So, our prediction is
+
+<div class="math-display">
+$$
+h(\vec x_2)=-3+5(3)+8(0)+12(1)=24.
+$$
+</div>
+
+ The actual total bill was 19. Remember that squared loss is the square of the difference between the actual value and our prediction, so the squared loss for this row is
+
+<div class="math-display">
+$$
+(19-24)^2=\boxed{25}.
+$$
+</div>
+
+</details>
+
+</div>
+</div>
+
+</div>
 
 ---
 
