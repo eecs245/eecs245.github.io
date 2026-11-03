@@ -1,0 +1,47 @@
+name: Release Homework 6 solutions
+on:
+  schedule:
+    # November 4, 2026 at 12:01 AM Eastern (EST).
+    - cron: '1 5 4 11 *'
+    - cron: '16,31,46 5 4 11 *'
+    - cron: '16 6,8,12 4 11 *'
+  workflow_dispatch:
+    inputs:
+      validate_only:
+        description: Validate the encrypted package without publishing
+        type: boolean
+        default: true
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: release-hw06-solutions-2026
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - name: Release solutions only when due
+        id: release
+        env:
+          HW06_RELEASE_PASSWORD: ${{ secrets.HW06_RELEASE_PASSWORD }}
+          VALIDATE_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.validate_only && 'true' || 'false' }}
+        run: python3 .github/scripts/release_hw06_solutions.py
+      - name: Commit and push the solutions
+        if: steps.release.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add resources/homeworks/hw06 _modules/week-09.md .github/releases/hw06-solutions-2026.complete
+          git commit -m 'Release Homework 6 solutions'
+          git push
+      - name: Deploy the solutions
+        if: steps.release.outputs.due == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: gh workflow run build-site.yml --ref "$DEFAULT_BRANCH"
