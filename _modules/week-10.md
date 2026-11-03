@@ -7,7 +7,7 @@ days:
       - name: LEC 17
         type: lecture
         title: Multiple Linear Regression; Gradients
-        live_notes: https://web.goodnotes.com/s/o6OBcghghJLYbYEI2yLXh9
+        live_notes: resources/lecture-pdfs/lec17-filled.pdf
         reading: https://notes.eecs245.org/regression-using-linear-algebra/regression-using-linear-algebra/
         reading_text: Ch. 7.1
         reading2: https://notes.eecs245.org/regression-using-linear-algebra/multiple-linear-regression/
