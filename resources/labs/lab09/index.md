@@ -344,6 +344,10 @@ $$
 
 ## Activity 2: Chicken, Beef, or Fish?
 
+[**Watch the TA walkthrough for Activity 2.**](https://youtu.be/mfJzCU5s9R8)
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/mfJzCU5s9R8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+
 Every week, Lauren goes to her local grocery store and buys exactly one pound of meat (either beef, fish, or chicken) but varying amounts of vegetables. We've collected a dataset containing the pounds of vegetables bought, the type of meat bought, and the total bill. Below we display the first few rows of the dataset and two plots generated using the entire (training) dataset.
 
 <div style="text-align: center;">
