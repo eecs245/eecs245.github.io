@@ -41,4 +41,5 @@ days:
         type: hw
         title: <b>Rank and Inverses</b>
         problems: ../resources/homeworks/hw06/
+        solutions: true
 ---
