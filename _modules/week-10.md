@@ -27,6 +27,7 @@ days:
       - name: LEC 18
         type: lecture
         title: Gradients and Gradient Descent
+        live_notes: https://web.goodnotes.com/s/AdFsYTDyLgPo2z7rf7tzXy
         reading: https://notes.eecs245.org/gradients/gradient-descent/
         reading_text: Ch. 8.3
         reading2: https://notes.eecs245.org/gradients/gradient-descent-erm/
