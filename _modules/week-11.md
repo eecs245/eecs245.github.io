@@ -29,5 +29,5 @@ days:
     events:
       - name: HW 8
         type: hw
-        title: Multiple Linear Regression and Gradients
+        title: Multiple Linear Regression; Gradients
 ---
