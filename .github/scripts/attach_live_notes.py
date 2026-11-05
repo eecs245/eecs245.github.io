@@ -218,7 +218,11 @@ def main():
             )
         with open(source, "rb") as pdf:
             if pdf.read(5) != b"%PDF-":
-                raise RuntimeError(f"Not a PDF file: {source}")
+                raise RuntimeError(
+                    f"Not a PDF file: {source}. "
+                    "In Goodnotes, export as PDF and send the exported file to the shortcut; "
+                    "sharing a document link uploads URL text instead of PDF data."
+                )
 
     changed_files = []
     consumed_paths = []
