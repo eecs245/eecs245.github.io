@@ -20,8 +20,7 @@ days:
       - name: LAB 9
         type: lab
         title: Multiple Linear Regression; Gradients
-        scheduled_problems: ../resources/labs/lab09/
-        problems_release_at: "2026-11-04T17:30:00-05:00"
+        problems: ../resources/labs/lab09/
   - date: "2026-11-05"
     events:
       - name: LEC 18
