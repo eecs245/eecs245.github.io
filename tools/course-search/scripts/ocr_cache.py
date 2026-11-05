@@ -1,12 +1,16 @@
 """Reuse verified Vision transcripts; OCR newly published PDFs on Linux CI."""
 from pathlib import Path
-import os,json,hashlib,subprocess,tempfile,re
+import os,json,hashlib,subprocess,tempfile,re,sys
 site=Path(os.environ['EECS245_SOURCES'])/'website'
 cache=Path(os.environ['EECS245_OCR']);cache.mkdir(parents=True,exist_ok=True)
 paths=subprocess.check_output(['git','-C',str(site),'ls-tree','-r','--name-only','HEAD']).decode().splitlines()
 for name in paths:
  if not re.match(r'resources/lecture-pdfs/lec\d+-filled\.pdf$',name):continue
- data=subprocess.check_output(['git','-C',str(site),'show','HEAD:'+name]);digest=hashlib.sha256(data).hexdigest()
+ data=subprocess.check_output(['git','-C',str(site),'show','HEAD:'+name])
+ if b'%PDF-' not in data[:1024]:
+  print('Warning: skipping non-PDF lecture file: '+name, file=sys.stderr)
+  continue
+ digest=hashlib.sha256(data).hexdigest()
  target=cache/(Path(name).stem+'.json')
  if target.exists() and json.loads(target.read_text()).get('sha256')==digest:continue
  pages=[]
