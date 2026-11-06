@@ -29,7 +29,7 @@ days:
     events:
       - name: HW 8
         type: hw
-        title: Multiple Linear Regression; Gradients
+        title: <b>Multiple Linear Regression; Gradients</b>
         problems: ../resources/homeworks/hw08/
         title_suffix: '<strong style="color: red;">(no slip days!)</strong>'
 ---
