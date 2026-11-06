@@ -1,0 +1,5130 @@
+WEBVTT
+
+00:00:04.620 --> 00:00:10.520
+Good to see everyone again, hope
+you had a
+
+00:00:10.520 --> 00:00:13.800
+good Halloween weekend, and
+happy election day.
+
+00:00:15.020 --> 00:00:17.340
+I've mentioned this before, but
+I'm Canadian, so I can't vote,
+
+00:00:17.340 --> 00:00:21.180
+so on behalf of the people who
+can't vote,
+
+00:00:21.180 --> 00:00:23.180
+please if you are able to, you
+should go and exercise that
+
+00:00:23.180 --> 00:00:24.180
+ability.
+
+00:00:24.340 --> 00:00:26.520
+As far as announcements go,
+
+00:00:26.520 --> 00:00:30.400
+Homework 7 was recently released
+and it is due on Sunday.
+
+00:00:30.940 --> 00:00:34.020
+You can technically still submit
+Homework 6 with slip days as
+
+00:00:34.020 --> 00:00:37.860
+late as tonight, which is why we
+will release solutions tomorrow
+
+00:00:37.860 --> 00:00:38.860
+morning.
+
+00:00:38.900 --> 00:00:40.160
+And then Midterm 2,
+
+00:00:40.160 --> 00:00:42.480
+this is kind of scary, is in two
+weeks from today, so it's
+
+00:00:42.480 --> 00:00:44.020
+already fast approaching.
+
+00:00:44.020 --> 00:00:47.500
+So now is the time to start
+thinking about how you're going
+
+00:00:47.500 --> 00:00:51.300
+to prepare for Midterm 2 as it
+approaches and reflect on the
+
+00:00:51.300 --> 00:00:54.900
+things that you did for midterm
+one that did or didn't go so
+
+00:00:54.900 --> 00:00:55.440
+well.
+
+00:00:55.440 --> 00:00:57.440
+Okay, and if you want to talk
+about your study strategy,
+
+00:00:57.440 --> 00:00:59.200
+please do reach out.
+
+00:00:59.200 --> 00:00:59.700
+Okay,
+
+00:00:59.700 --> 00:01:03.500
+the plan for today's lecture is
+to start by recapping the big
+
+00:01:03.500 --> 00:01:09.120
+idea from Thursday, which is how
+we recast and revisited the
+
+00:01:09.120 --> 00:01:12.740
+simple linear regression problem
+using these ideas we've
+
+00:01:12.740 --> 00:01:14.540
+developed over the past month,
+
+00:01:14.540 --> 00:01:19.360
+like matrices and projections
+and norms and invertibility, all
+
+00:01:19.360 --> 00:01:20.380
+of these things.
+
+00:01:20.380 --> 00:01:23.860
+We will see how we can use this
+new linear algebraic formulation
+
+00:01:23.860 --> 00:01:27.100
+of regression to do more
+sophisticated things, like add
+
+00:01:27.100 --> 00:01:31.060
+new features or add features
+that maybe are categorical and
+
+00:01:31.060 --> 00:01:33.900
+what the linear algebra
+implications of that are,
+
+00:01:33.900 --> 00:01:37.060
+and that'll be the first big
+idea for today.
+
+00:01:37.060 --> 00:01:40.320
+The second big idea for today,
+which is what we will discuss
+
+00:01:40.320 --> 00:01:43.900
+for the remainder of the week,
+and will be the final new idea
+
+00:01:43.900 --> 00:01:48.580
+for the midterm, is that of the
+gradient, which you can think of
+
+00:01:48.580 --> 00:01:53.300
+as the extension of derivatives
+for functions that have several
+
+00:01:53.300 --> 00:01:54.740
+input variables.
+
+00:01:54.740 --> 00:01:58.020
+Okay, and this will require us
+to revisit some of the calculus
+
+00:01:58.020 --> 00:02:01.320
+ideas we saw at the start of the
+semester, but in perhaps a more
+
+00:02:01.320 --> 00:02:02.820
+visual way.
+
+00:02:03.160 --> 00:02:04.380
+So that's the plan.
+
+00:02:04.380 --> 00:02:09.200
+So to recap, remember last class
+we revisited the same picture
+
+00:02:09.200 --> 00:02:11.560
+that we started looking at on
+the very first day of this
+
+00:02:11.560 --> 00:02:15.600
+semester in which we had this
+data set in which we were trying
+
+00:02:15.600 --> 00:02:18.660
+to predict commute time that is
+how long it was going to take
+
+00:02:18.660 --> 00:02:22.740
+for us to get to school that was
+our Y variable given the time we
+
+00:02:22.740 --> 00:02:27.040
+left in the morning that was our
+X variable okay and you know
+
+00:02:27.040 --> 00:02:29.840
+over a month ago we spent quite
+a bit of time trying to figure
+
+00:02:29.840 --> 00:02:34.200
+out well if what we want to is
+find the line that best fits
+
+00:02:34.200 --> 00:02:37.100
+this data so that we can use it
+to make predictions about future
+
+00:02:37.100 --> 00:02:40.000
+commute times when we don't
+already have the right answer.
+
+00:02:40.000 --> 00:02:43.380
+If that's what we want to do
+well then we developed a recipe
+
+00:02:43.380 --> 00:02:46.920
+which we called the three-step
+modeling recipe for finding the
+
+00:02:46.920 --> 00:02:51.240
+intercept which we called W
+naught star and slope W 1 star
+
+00:02:51.240 --> 00:02:53.300
+that best fit this data.
+
+00:02:53.300 --> 00:02:55.760
+Okay and how did we do this
+before?
+
+00:02:55.760 --> 00:03:00.300
+Well we wrote out the mean
+squared error of the predictions
+
+00:03:00.300 --> 00:03:02.820
+made by an arbitrary intercept
+and slope.
+
+00:03:02.820 --> 00:03:06.760
+We took the partial derivatives
+of that with respect to w0 and
+
+00:03:06.760 --> 00:03:09.960
+w1, and then we solved that
+system
+
+00:03:09.960 --> 00:03:12.720
+to find the optimal intercept
+and slope.
+
+00:03:12.720 --> 00:03:14.000
+But last class,
+
+00:03:14.000 --> 00:03:17.750
+we saw a new formula
+
+00:03:18.940 --> 00:03:21.940
+for mean squared error.
+
+00:03:28.860 --> 00:03:31.400
+Or a new way of writing mean
+squared error.
+
+00:03:31.400 --> 00:03:34.680
+I shouldn't say that it's a new
+formula in that it's different
+
+00:03:34.680 --> 00:03:40.680
+So I should say a new way of
+writing
+
+00:03:43.140 --> 00:03:48.760
+Mean squared error and we wrote
+it as 1 over n times the squared
+
+00:03:48.760 --> 00:03:50.260
+length of
+
+00:03:51.000 --> 00:03:52.500
+some vector
+
+00:03:53.700 --> 00:03:59.020
+What was the vector That should
+go in this squared length piece
+
+00:03:59.020 --> 00:04:00.020
+here.
+
+00:04:00.660 --> 00:04:03.300
+When we thought of this new way
+of writing mean squared error
+
+00:04:03.300 --> 00:04:07.050
+last Thursday, what vector went
+in there?
+
+00:04:13.920 --> 00:04:14.920
+Good,
+
+00:04:15.540 --> 00:04:17.180
+or in English,
+
+00:04:17.180 --> 00:04:20.680
+we would call that the error
+vector.
+
+00:04:20.680 --> 00:04:23.580
+Remember, mean squared error,
+the way we saw it before, was
+
+00:04:23.580 --> 00:04:27.200
+the sum of the squared errors
+for every point in our data set
+
+00:04:27.200 --> 00:04:28.760
+divided by n.
+
+00:04:28.760 --> 00:04:33.180
+So if we had a vector that had
+all of our errors in it,
+
+00:04:33.180 --> 00:04:35.600
+the squared length of that error
+vector
+
+00:04:35.600 --> 00:04:38.460
+would be the sum of the squares
+of the errors, and then the 1
+
+00:04:38.460 --> 00:04:41.940
+over n changes it from a sum to
+a mean.
+
+00:04:41.940 --> 00:04:47.160
+And what was that error vector?
+Well, it was the vector y minus
+
+00:04:47.160 --> 00:04:52.410
+the matrix x times the vector w.
+
+00:04:52.740 --> 00:04:56.700
+What did we store in each of
+these creatures?
+
+00:04:56.700 --> 00:05:01.860
+The vector y contains our n y
+values.
+
+00:05:01.860 --> 00:05:05.610
+We called this the observation
+vector.
+
+00:05:08.940 --> 00:05:10.900
+The matrix X,
+
+00:05:10.900 --> 00:05:16.220
+what was its shape and what was
+its name
+
+00:05:16.220 --> 00:05:20.720
+that we introduced for it on
+Thursday?
+
+00:05:21.300 --> 00:05:22.800
+What was its shape and what was
+its name?
+
+00:05:22.800 --> 00:05:25.460
+N by 2.
+Good.
+
+00:05:26.240 --> 00:05:27.540
+First column 1,
+
+00:05:27.540 --> 00:05:30.760
+second column values.
+
+00:05:31.240 --> 00:05:32.240
+Good.
+
+00:05:32.320 --> 00:05:37.740
+this matrix X was n by 2 and
+what was its name
+
+00:05:37.740 --> 00:05:42.680
+good it was called the design
+matrix
+
+00:05:42.680 --> 00:05:48.300
+and it stores the inputs
+
+00:05:48.300 --> 00:05:53.440
+to our model okay why did we
+have that column of all ones
+
+00:05:53.440 --> 00:05:59.200
+well it makes more sense when we
+consider it alongside
+
+00:05:59.200 --> 00:06:02.300
+its friend that it's being
+multiplied by,
+
+00:06:02.300 --> 00:06:04.200
+which was the parameter vector,
+
+00:06:04.200 --> 00:06:04.700
+w.
+
+00:06:04.700 --> 00:06:08.100
+And how many things must be in
+this parameter vector?
+
+00:06:08.100 --> 00:06:08.560
+Yeah,
+
+00:06:08.560 --> 00:06:10.840
+two, good.
+Because in order to multiply x
+
+00:06:10.840 --> 00:06:11.860
+by w,
+
+00:06:11.860 --> 00:06:17.110
+w must have two things in it.
+
+00:06:19.340 --> 00:06:20.240
+Awesome.
+
+00:06:20.240 --> 00:06:23.420
+So you can think of y as being a
+vector that has all of our
+
+00:06:23.420 --> 00:06:25.120
+actual y values
+
+00:06:25.120 --> 00:06:28.780
+and x, w as being a vector that
+has all of our predicted y
+
+00:06:28.780 --> 00:06:29.780
+values.
+
+00:06:30.280 --> 00:06:35.640
+The only thing in this equation
+we have control over is w.
+
+00:06:36.360 --> 00:06:38.140
+The data is provided to us.
+
+00:06:38.140 --> 00:06:39.700
+We didn't create the data.
+
+00:06:39.700 --> 00:06:43.400
+So the design matrix x and the
+observation vector y, those are
+
+00:06:43.400 --> 00:06:45.540
+just provided to us.
+
+00:06:45.540 --> 00:06:49.320
+The only knob we can tune is the
+parameter vector.
+
+00:06:49.320 --> 00:06:52.400
+And the goal is to pick the
+parameter vector who makes the
+
+00:06:52.400 --> 00:06:55.080
+output of this function as small
+as possible.
+
+00:06:55.080 --> 00:06:58.080
+So that's it, OK?
+
+00:06:59.780 --> 00:07:02.030
+As an aside,
+
+00:07:06.160 --> 00:07:09.160
+just so we remember,
+
+00:07:09.180 --> 00:07:13.680
+well, actually, let me copy all
+of these friends.
+
+00:07:17.600 --> 00:07:23.480
+There was one more vector we
+introduced last time, which
+
+00:07:23.480 --> 00:07:26.260
+involved some of the things on
+this page,
+
+00:07:26.260 --> 00:07:28.320
+its name was P.
+
+00:07:28.320 --> 00:07:32.820
+And we called it the prediction
+vector.
+
+00:07:34.240 --> 00:07:36.100
+And how is it defined?
+
+00:07:36.100 --> 00:07:39.460
+It was the result of just
+multiplying the design matrix by
+
+00:07:39.460 --> 00:07:40.980
+the parameter vector.
+
+00:07:40.980 --> 00:07:42.440
+Notice when you do that,
+
+00:07:42.440 --> 00:07:46.920
+the results you get back are w0
+plus w1 x1,
+
+00:07:46.920 --> 00:07:52.260
+w0 plus w1 x2, all the way
+through w naught plus w1 xn,
+
+00:07:53.460 --> 00:07:54.460
+okay.
+
+00:07:56.580 --> 00:08:00.180
+So you can think of our goal
+here as being choosing the
+
+00:08:00.180 --> 00:08:01.680
+parameter vector,
+
+00:08:01.940 --> 00:08:02.940
+w,
+
+00:08:03.220 --> 00:08:07.480
+that makes the error between
+this prediction vector and the
+
+00:08:07.480 --> 00:08:11.230
+observation vector as small as
+possible.
+
+00:08:11.640 --> 00:08:13.140
+Sound reasonable?
+
+00:08:13.500 --> 00:08:14.320
+Okay,
+
+00:08:14.320 --> 00:08:18.070
+now what was the optimal
+parameter vector.
+
+00:08:20.860 --> 00:08:26.540
+That is, what vector w minimizes
+mean squared
+
+00:08:26.540 --> 00:08:27.540
+error?
+
+00:08:32.940 --> 00:08:36.960
+And if it minimizes mean squared
+error, I would call it w star.
+
+00:08:36.960 --> 00:08:41.980
+Which w star minimizes X means
+squared error,
+
+00:08:47.280 --> 00:08:49.530
+which was it?
+
+00:08:52.000 --> 00:08:55.000
+We've already seen this.
+
+00:08:56.380 --> 00:08:57.380
+Yeah?
+
+00:08:57.480 --> 00:09:02.640
+The inverse of X transpose X
+times X transpose times Y.
+
+00:09:03.980 --> 00:09:06.080
+Awesome.
+X transpose X inverse X
+
+00:09:06.080 --> 00:09:07.580
+transpose Y.
+
+00:09:08.800 --> 00:09:14.320
+That is the formula for the
+optimal
+
+00:09:14.320 --> 00:09:16.570
+parameter vector W*.
+
+00:09:17.420 --> 00:09:18.440
+Why is that?
+
+00:09:18.440 --> 00:09:20.880
+Well if you take a closer look
+at mean squared error,
+
+00:09:20.880 --> 00:09:23.300
+it's really the same
+
+00:09:23.300 --> 00:09:29.100
+as the projection
+
+00:09:29.100 --> 00:09:34.200
+problem we saw before.
+x, w is a vector in the column
+
+00:09:34.200 --> 00:09:35.860
+space of x.
+
+00:09:35.860 --> 00:09:39.280
+y is some other vector in Rn.
+
+00:09:39.280 --> 00:09:42.040
+And our goal is to try and find
+the vector in the column space
+
+00:09:42.040 --> 00:09:44.400
+of x that is closest to y.
+
+00:09:44.400 --> 00:09:49.080
+The vector that is closest to y
+in the column space of x
+
+00:09:49.080 --> 00:09:50.360
+is that vector p,
+
+00:09:50.360 --> 00:09:54.260
+which is both the prediction
+vector but also the projection
+
+00:09:54.260 --> 00:10:00.260
+of y onto the column space of x.
+This is the same problem.
+
+00:10:00.400 --> 00:10:01.140
+OK?
+
+00:10:01.140 --> 00:10:02.140
+Now,
+
+00:10:02.760 --> 00:10:05.500
+this closed form solution
+doesn't always exist.
+
+00:10:05.500 --> 00:10:08.500
+It requires something specific.
+
+00:10:13.220 --> 00:10:16.970
+What did this formula require?
+
+00:10:18.900 --> 00:10:19.460
+Yeah?
+
+00:10:19.460 --> 00:10:22.380
+x transpose x is invertible.
+
+00:10:22.380 --> 00:10:27.700
+Yeah, this requires x transpose
+x to be invertible,
+
+00:10:30.200 --> 00:10:35.840
+which requires what was the
+equivalent condition?
+
+00:10:36.280 --> 00:10:40.780
+x transpose x is invertible when
+what?
+
+00:10:41.980 --> 00:10:45.080
+It has full rank, but I want to
+think of it
+
+00:10:45.080 --> 00:10:47.360
+in terms of x instead of x
+transpose x.
+
+00:10:47.360 --> 00:10:51.110
+So what was the connection
+there?
+
+00:10:53.020 --> 00:10:54.020
+Yeah,
+
+00:10:55.300 --> 00:10:58.800
+well x is not necessarily square
+right x is like in this example
+
+00:10:58.800 --> 00:10:59.620
+here
+
+00:10:59.620 --> 00:11:02.900
+Unless we only have two data
+points x is not square, so we
+
+00:11:02.900 --> 00:11:04.860
+can't say it's invertible But I
+think you both have the right
+
+00:11:04.860 --> 00:11:05.860
+idea.
+Yeah
+
+00:11:06.740 --> 00:11:10.920
+The columns of X are linearly
+independent yeah, or X itself is
+
+00:11:10.920 --> 00:11:13.100
+said to be full rank
+
+00:11:13.100 --> 00:11:16.640
+And this is because X and X
+transpose X have the same rank
+
+00:11:16.640 --> 00:11:21.140
+which is something we looked at
+a few lectures ago
+
+00:11:28.060 --> 00:11:32.030
+OK, what do we do if x's columns
+are not linearly independent
+
+00:11:32.030 --> 00:11:34.280
+and x transpose x doesn't exist?
+
+00:11:34.280 --> 00:11:38.030
+Is there still an optimal
+parameter vector?
+
+00:11:38.900 --> 00:11:40.160
+What do we do then?
+
+00:11:40.160 --> 00:11:40.460
+Yeah?
+
+00:11:40.460 --> 00:11:43.500
+You can remove all of the
+columns that are linearly
+
+00:11:43.500 --> 00:11:45.680
+dependent and then project onto
+that.
+
+00:11:45.680 --> 00:11:46.180
+Yeah,
+
+00:11:46.180 --> 00:11:49.020
+there's still an optimal
+parameter vector even when x's
+
+00:11:49.020 --> 00:11:50.380
+columns are not linearly
+independent.
+
+00:11:50.380 --> 00:11:53.300
+The issue is there are
+infinitely many optimal
+
+00:11:53.300 --> 00:11:56.540
+parameter vectors that all
+correspond to this same P
+
+00:11:57.060 --> 00:11:59.000
+Okay, and one of the questions
+on the homework you're working
+
+00:11:59.000 --> 00:12:01.580
+on right now, or we'll start
+working on at some point this
+
+00:12:01.580 --> 00:12:05.500
+week Hopefully talks to you
+about how you would find all of
+
+00:12:05.500 --> 00:12:08.500
+those infinitely many parameter
+vectors
+
+00:12:28.280 --> 00:12:32.420
+Okay, so the big idea is that
+those formulas you saw when
+
+00:12:32.420 --> 00:12:35.160
+studying for midterm one that
+involve the correlation
+
+00:12:35.160 --> 00:12:35.960
+coefficient,
+
+00:12:35.960 --> 00:12:38.820
+standard deviation of y,
+standard deviation of x,
+
+00:12:38.820 --> 00:12:44.660
+they all are equal to this
+
+00:12:44.660 --> 00:12:46.320
+new formula.
+That seems like it has nothing
+
+00:12:46.320 --> 00:12:49.020
+to do with that.
+
+00:12:49.020 --> 00:12:52.480
+So this is a vector in R2.
+
+00:12:52.480 --> 00:12:56.980
+Its first component is the mean
+of y minus the slope
+
+00:12:57.190 --> 00:12:59.640
+times the mean of x.
+And the second component is
+
+00:12:59.640 --> 00:13:03.390
+whatever, any of those various
+formulas you saw before.
+
+00:13:12.520 --> 00:13:13.580
+That's the key.
+
+00:13:13.580 --> 00:13:15.340
+So this is not anything
+different than we've seen
+
+00:13:15.340 --> 00:13:17.440
+before.
+It's just a new way of thinking
+
+00:13:17.440 --> 00:13:18.940
+about it
+
+00:13:19.500 --> 00:13:22.000
+But what was the point of doing
+all this I didn't we didn't go
+
+00:13:22.000 --> 00:13:24.660
+through this rabbit hole of
+Converting everything to linear
+
+00:13:24.660 --> 00:13:26.540
+algebra just to do the same
+thing as before.
+
+00:13:26.540 --> 00:13:29.020
+What can we now do?
+
+00:13:29.020 --> 00:13:33.520
+That we have this linear algebra
+way of thinking about regression
+
+00:13:36.120 --> 00:13:40.620
+What are we gonna do now
+
+00:13:41.860 --> 00:13:45.600
+Yeah, exactly.
+The idea now is this formulation
+
+00:13:45.600 --> 00:13:46.600
+here
+
+00:13:47.400 --> 00:13:50.700
+of minimizing mean squared
+error, it doesn't really care if
+
+00:13:50.700 --> 00:13:52.880
+your parameter vector has two
+things in it, three things in
+
+00:13:52.880 --> 00:13:55.820
+it, or 700 million things in it.
+It's the same formula.
+
+00:13:55.820 --> 00:13:58.440
+And the solution for the optimal
+parameter vector,
+
+00:13:58.440 --> 00:14:00.880
+this works regardless of how
+many parameters you actually
+
+00:14:00.880 --> 00:14:01.440
+have.
+
+00:14:01.440 --> 00:14:04.160
+That's different than the way we
+found our optimal parameters
+
+00:14:04.160 --> 00:14:06.920
+before at the start of the
+semester, where we had these
+
+00:14:06.920 --> 00:14:09.840
+very hard-coded formulas that
+required there to only be two
+
+00:14:09.840 --> 00:14:10.760
+parameters,
+
+00:14:10.760 --> 00:14:15.420
+right? Now we have this more
+general-purpose regression setup
+
+00:14:15.420 --> 00:14:19.660
+that allows us to incorporate as
+many input variables as we want.
+
+00:14:19.660 --> 00:14:22.980
+So let's see if we can take
+advantage of that.
+
+00:14:22.980 --> 00:14:25.500
+Remember this is the data set I
+showed you on the very first day
+
+00:14:25.500 --> 00:14:26.280
+of class.
+
+00:14:26.280 --> 00:14:30.680
+So far the only input variable
+we've used is departure hour.
+
+00:14:30.680 --> 00:14:32.480
+That has been our X,
+
+00:14:32.480 --> 00:14:37.200
+but now I'm going to call this
+X1,
+
+00:14:37.200 --> 00:14:42.450
+as in it'll be our first input
+variable.
+
+00:14:44.100 --> 00:14:45.340
+The more,
+
+00:14:45.340 --> 00:14:47.300
+and I should say,
+
+00:14:47.300 --> 00:14:49.980
+the minutes column, that is the
+commute times themselves,
+
+00:14:49.980 --> 00:14:53.720
+that will continue to be our Y.
+
+00:14:53.720 --> 00:14:56.220
+Now, the thing that we would
+like to use in predicting
+
+00:14:56.220 --> 00:14:58.720
+commute time is not the day of
+month.
+
+00:14:58.720 --> 00:15:02.280
+Like, that doesn't really seem
+like it would make a difference.
+
+00:15:02.280 --> 00:15:03.940
+But the day of the week,
+
+00:15:03.940 --> 00:15:06.240
+like it seems like commuting on
+a Monday versus Friday could
+
+00:15:06.240 --> 00:15:07.320
+actually be different,
+
+00:15:07.320 --> 00:15:08.280
+okay?
+
+00:15:08.280 --> 00:15:10.680
+But then we have to cross this
+bridge of how do you convert
+
+00:15:10.680 --> 00:15:11.680
+numbers,
+
+00:15:12.260 --> 00:15:14.940
+or words to numbers, and we will
+do that in just a little bit.
+
+00:15:14.940 --> 00:15:17.420
+But first, just to show you the
+mechanics of it,
+
+00:15:17.420 --> 00:15:19.700
+why don't we look at including
+day of month? Even though it
+
+00:15:19.700 --> 00:15:22.100
+doesn't really seem like it
+would do anything,
+
+00:15:22.100 --> 00:15:23.000
+let's just see what would
+happen.
+
+00:15:23.000 --> 00:15:26.400
+And then we will discuss whether
+including this
+
+00:15:26.400 --> 00:15:29.660
+is a good or a bad thing.
+
+00:15:29.660 --> 00:15:31.160
+So now,
+
+00:15:31.720 --> 00:15:35.470
+let's use two input variables.
+
+00:15:39.460 --> 00:15:41.840
+So our new model
+
+00:15:41.840 --> 00:15:47.060
+for one data
+
+00:15:47.060 --> 00:15:48.060
+point
+
+00:15:49.900 --> 00:15:53.240
+doesn't have just a single h of
+xi.
+
+00:15:53.240 --> 00:15:54.220
+Previously,
+
+00:15:54.220 --> 00:15:57.970
+maybe I should write this,
+before,
+
+00:15:59.880 --> 00:16:05.860
+we would say h of xi equals w0
+plus w1 xi,
+
+00:16:05.860 --> 00:16:09.610
+where xi referred to departure
+hour.
+
+00:16:11.680 --> 00:16:14.200
+That's what we were used to.
+
+00:16:14.200 --> 00:16:15.700
+But now,
+
+00:16:16.420 --> 00:16:19.840
+we have multiple input
+variables.
+
+00:16:21.340 --> 00:16:23.720
+So we can't just say a single h
+of xi.
+
+00:16:23.720 --> 00:16:26.120
+I might say h of xi 1,
+
+00:16:26.120 --> 00:16:29.120
+h of xi 2.
+
+00:16:30.260 --> 00:16:33.380
+But this seems a little silly,
+because what if I have 50 input
+
+00:16:33.380 --> 00:16:34.160
+variables?
+
+00:16:34.160 --> 00:16:37.910
+What's the more convenient way
+to write this?
+
+00:16:40.440 --> 00:16:43.700
+Instead of in here having to
+write out,
+
+00:16:43.700 --> 00:16:44.700
+comma,
+
+00:16:44.700 --> 00:16:46.480
+all my other input variables,
+what would I do?
+
+00:16:46.480 --> 00:16:47.880
+Just write like a vector.
+
+00:16:47.880 --> 00:16:53.130
+Yeah, why don't I make a vector
+xi?
+
+00:16:58.100 --> 00:17:00.280
+And what is this going to
+return?
+
+00:17:00.280 --> 00:17:02.720
+Well, it's going to return.
+
+00:17:02.720 --> 00:17:06.860
+I can still have an intercept.
+Except I can still have one
+
+00:17:06.860 --> 00:17:10.280
+parameter multiplied by the
+first input variable.
+
+00:17:10.780 --> 00:17:11.520
+So this,
+
+00:17:11.520 --> 00:17:13.480
+as we saw in the previous page,
+
+00:17:13.480 --> 00:17:17.230
+would now be departure hour.
+
+00:17:18.730 --> 00:17:23.580
+But I'll now also add w2 times
+xi2.
+
+00:17:23.580 --> 00:17:28.080
+And this is day of month.
+
+00:17:36.040 --> 00:17:41.820
+What we are doing now is called
+multiple linear
+
+00:17:41.820 --> 00:17:42.820
+regression.
+
+00:17:49.560 --> 00:17:54.060
+Why? Well, it's because we have
+multiple features.
+
+00:18:01.060 --> 00:18:02.240
+So the question is,
+
+00:18:02.240 --> 00:18:05.990
+how do we find optimal
+parameters now?
+
+00:18:08.760 --> 00:18:11.560
+How do you think we find optimal
+parameters now? We have three
+
+00:18:11.560 --> 00:18:13.060
+optimal parameters.
+
+00:18:14.720 --> 00:18:19.970
+How do we find w naught star,
+
+00:18:20.380 --> 00:18:23.880
+w1 star, and w2 star?
+
+00:18:23.880 --> 00:18:26.880
+How do we do?
+
+00:18:38.460 --> 00:18:41.380
+Would we still be able to use
+the same formula for w star
+
+00:18:41.380 --> 00:18:44.640
+where it's x transpose x inverse
+times x transpose y?
+
+00:18:44.640 --> 00:18:48.360
+Somehow we need to be able to
+relate this to the stuff we saw
+
+00:18:48.360 --> 00:18:50.920
+a few moments ago, where we have
+x transpose x inverse x
+
+00:18:50.920 --> 00:18:51.960
+transpose y.
+
+00:18:51.960 --> 00:18:56.020
+The question is, what is the x?
+Like, what do I put in my matrix
+
+00:18:56.020 --> 00:18:57.020
+X?
+
+00:18:57.240 --> 00:19:00.360
+My observation vector y, nothing
+about that has really changed,
+
+00:19:00.360 --> 00:19:03.080
+right? The things I am trying to
+predict,
+
+00:19:03.080 --> 00:19:04.840
+the actual commute times,
+
+00:19:04.840 --> 00:19:06.540
+nothing has changed about those.
+
+00:19:06.540 --> 00:19:09.880
+What has changed is what goes in
+my design matrix, because I'm
+
+00:19:09.880 --> 00:19:12.920
+using more information to
+actually make the prediction.
+
+00:19:12.960 --> 00:19:16.710
+So that design matrix itself
+should also change,
+
+00:19:17.340 --> 00:19:18.340
+OK?
+
+00:19:18.340 --> 00:19:24.260
+So how do we do it? Well, let me
+copy this
+
+00:19:24.260 --> 00:19:25.260
+over,
+
+00:19:30.980 --> 00:19:36.860
+and let me bring back the
+
+00:19:36.860 --> 00:19:38.360
+example dataset.
+
+00:19:41.470 --> 00:19:44.470
+Our parameter vector now,
+
+00:19:45.560 --> 00:19:50.060
+how many things are in it?
+
+00:19:52.200 --> 00:19:54.040
+Not a trick question.
+How many things are in the
+
+00:19:54.040 --> 00:19:55.560
+parameter vector now?
+
+00:19:55.560 --> 00:19:56.560
+Three.
+
+00:19:59.960 --> 00:20:02.820
+So that design matrix x,
+
+00:20:02.820 --> 00:20:06.570
+what should its shape be?
+
+00:20:09.320 --> 00:20:10.320
+Yeah.
+
+00:20:10.820 --> 00:20:13.220
+We add another column.
+Exactly.
+
+00:20:13.220 --> 00:20:17.140
+So it has n rows like before.
+It just has three columns.
+
+00:20:17.140 --> 00:20:21.100
+Can you tell me what the first
+two rows of the design matrix
+
+00:20:21.100 --> 00:20:23.350
+here would be?
+
+00:20:28.800 --> 00:20:33.960
+What are the first two rows of
+the design matrix?
+
+00:20:33.960 --> 00:20:36.740
+Someone tell me the first row.
+
+00:20:36.740 --> 00:20:38.700
+I should have three columns, so
+I'm asking for three numbers
+
+00:20:38.700 --> 00:20:39.700
+here.
+
+00:20:40.000 --> 00:20:41.340
+What are those three numbers?
+
+00:20:41.340 --> 00:20:42.340
+Ones.
+
+00:20:42.720 --> 00:20:44.500
+I'm asking for the first row,
+not the first column.
+
+00:20:44.500 --> 00:20:45.160
+First row.
+
+00:20:45.160 --> 00:20:46.700
+Yeah.
+Yeah, so 1 is the first thing,
+
+00:20:46.840 --> 00:20:47.840
+yeah?
+
+00:20:48.460 --> 00:20:50.720
+Then, yeah, go for it.
+
+00:20:50.720 --> 00:20:53.180
+10.81
+and 15.
+
+00:20:55.320 --> 00:20:56.320
+Awesome.
+
+00:20:56.760 --> 00:20:59.980
+It includes all of the input
+information for the first row of
+
+00:20:59.980 --> 00:21:01.420
+our data set.
+
+00:21:01.420 --> 00:21:04.040
+The rows of this design matrix
+correspond to different data
+
+00:21:04.040 --> 00:21:04.740
+points.
+
+00:21:04.740 --> 00:21:07.820
+The columns correspond to
+different features or input
+
+00:21:07.820 --> 00:21:08.820
+variables.
+
+00:21:08.900 --> 00:21:10.960
+What's the second row?
+
+00:21:10.960 --> 00:21:13.360
+Let me just highlight this.
+
+00:21:13.360 --> 00:21:16.520
+The second row will be 1,
+
+00:21:16.520 --> 00:21:18.280
+7.75,
+and 16.
+
+00:21:33.600 --> 00:21:38.480
+First two rows of design matrix.
+
+00:21:41.400 --> 00:21:45.340
+So once we define this design
+matrix and we have our
+
+00:21:45.340 --> 00:21:49.180
+observation vector y, which just
+has all of the actual commute
+
+00:21:49.180 --> 00:21:51.100
+times like it did before,
+
+00:21:51.100 --> 00:21:53.000
+finding the optimal parameters
+
+00:21:53.000 --> 00:21:56.750
+is no different than before.
+
+00:22:08.840 --> 00:22:10.980
+Now, that's the cool thing.
+
+00:22:10.980 --> 00:22:13.380
+We already have solved, in
+general,
+
+00:22:13.380 --> 00:22:17.480
+for what the optimal parameters
+will be for a model that is made
+
+00:22:17.480 --> 00:22:20.480
+up of terms parameter
+
+00:22:20.640 --> 00:22:23.620
+times feature plus parameter
+times feature.
+
+00:22:23.620 --> 00:22:25.980
+That's how we've defined our
+model here.
+
+00:22:25.980 --> 00:22:27.660
+Parameter times feature,
+
+00:22:27.660 --> 00:22:29.910
+parameter times feature.
+
+00:22:30.200 --> 00:22:32.200
+By the way, this particular
+model,
+
+00:22:32.200 --> 00:22:35.950
+what does it look like?
+
+00:22:41.460 --> 00:22:44.380
+If I were to graph it out, what
+would it look like?
+
+00:22:44.380 --> 00:22:48.020
+Once I find my optimal w0, w1,
+and w2,
+
+00:22:48.020 --> 00:22:53.580
+if I had to draw it, what would
+it look like?
+
+00:22:53.580 --> 00:22:54.540
+Any guesses?
+
+00:22:54.540 --> 00:22:54.980
+Yeah?
+
+00:22:54.980 --> 00:22:56.780
+You mean you can still use a
+line?
+
+00:22:56.780 --> 00:22:59.380
+Not quite, because now we have
+two input variables.
+
+00:22:59.380 --> 00:23:02.900
+This model should give me a
+prediction for my commute time,
+
+00:23:02.900 --> 00:23:06.650
+no matter what departure hour
+and day of month I pick.
+
+00:23:06.860 --> 00:23:09.660
+So imagine the floor here,
+
+00:23:09.660 --> 00:23:12.780
+one axis is departure hour, and
+the other axis is day of the
+
+00:23:12.780 --> 00:23:13.260
+month.
+
+00:23:13.260 --> 00:23:16.160
+There should be a prediction for
+my commute time above every
+
+00:23:16.160 --> 00:23:17.160
+point.
+
+00:23:17.260 --> 00:23:19.160
+So we should be thinking in 3D.
+
+00:23:19.160 --> 00:23:22.560
+And what shape will this be in
+3D? It'll be a plane.
+
+00:23:22.560 --> 00:23:24.340
+Yeah, exactly.
+It'll be a plane in 3D.
+
+00:23:25.100 --> 00:23:28.220
+If you look at chapter 7.2,
+
+00:23:28.220 --> 00:23:33.140
+we can see an equation of this
+plane,
+
+00:23:33.140 --> 00:23:35.260
+something like this.
+
+00:23:35.260 --> 00:23:39.760
+I don't know why it's so
+rotated, but you get the idea.
+
+00:23:40.540 --> 00:23:45.790
+So now we've found a plane of
+best fit.
+
+00:24:00.540 --> 00:24:02.790
+Here's a question.
+
+00:24:03.380 --> 00:24:09.180
+is this plane a subspace of
+
+00:24:09.180 --> 00:24:10.180
+R3?
+
+00:24:12.960 --> 00:24:13.940
+Why?
+
+00:24:13.940 --> 00:24:16.640
+It doesn't necessarily contain
+the zero vector.
+
+00:24:16.640 --> 00:24:17.160
+Yeah, good.
+
+00:24:17.160 --> 00:24:18.280
+So remember,
+
+00:24:18.280 --> 00:24:23.040
+a plane in R3 is a subspace of
+R3 when it passes through the
+
+00:24:23.040 --> 00:24:24.040
+origin.
+
+00:24:24.180 --> 00:24:26.860
+This doesn't necessarily pass
+through the origin,
+
+00:24:26.860 --> 00:24:28.540
+so it's not necessarily a
+subspace.
+
+00:24:28.540 --> 00:24:34.260
+It only is a subspace if the
+optimal w0
+
+00:24:34.260 --> 00:24:36.000
+ends up being 0.
+
+00:24:36.000 --> 00:24:38.680
+And if that happened, then this
+would be a subspace.
+
+00:24:38.680 --> 00:24:39.640
+Otherwise,
+
+00:24:39.640 --> 00:24:44.140
+it would be what's called an
+affine subspace,
+
+00:24:46.820 --> 00:24:51.100
+which is a subspace if it were
+shifted to contain the origin.
+
+00:24:51.100 --> 00:24:52.080
+But the shape is correct.
+
+00:24:52.080 --> 00:24:55.720
+Yeah? Is there a world where w0
+is not 0 and it still passes to
+
+00:24:55.720 --> 00:24:57.220
+the origin?
+
+00:25:01.980 --> 00:25:05.730
+No, because suppose that were
+true.
+
+00:25:05.800 --> 00:25:08.540
+If this was like 7,
+
+00:25:08.540 --> 00:25:12.320
+you plug in 0 here and 0 here,
+the output would be 7, not 0.
+
+00:25:12.320 --> 00:25:14.360
+Because x and y have to both be
+0.
+
+00:25:14.360 --> 00:25:14.880
+Yeah,
+
+00:25:14.880 --> 00:25:18.100
+if you think of this as your x
+and this as your y.
+
+00:25:18.100 --> 00:25:19.100
+Yeah,
+
+00:25:19.480 --> 00:25:20.480
+good.
+OK,
+
+00:25:21.680 --> 00:25:24.860
+so adding new features is pretty
+straightforward.
+
+00:25:24.860 --> 00:25:27.520
+All you have to do is just add
+new things to your design
+
+00:25:27.520 --> 00:25:28.520
+matrix.
+
+00:25:29.980 --> 00:25:34.480
+So how far can this go?
+
+00:25:34.480 --> 00:25:38.420
+This is not a line,
+
+00:25:39.720 --> 00:25:45.200
+but can I find this degree 10
+polynomial,
+
+00:25:46.880 --> 00:25:49.700
+the one that minimizes mean
+squared error, Or can I find it
+
+00:25:49.700 --> 00:25:53.450
+using the ideas we've just
+discovered?
+
+00:25:54.020 --> 00:25:59.960
+Can I find the coefficients of
+the x to the 10 and
+
+00:25:59.960 --> 00:26:03.740
+x to the 9 and x to the 8 terms?
+Can I find all of that using
+
+00:26:03.740 --> 00:26:05.320
+linear regression?
+
+00:26:06.280 --> 00:26:13.030
+And if I were to, how would I do
+that?
+
+00:26:14.920 --> 00:26:18.670
+How would I do that?
+
+00:26:44.820 --> 00:26:48.640
+All right, something seems a
+little weird because I'm saying
+
+00:26:48.640 --> 00:26:50.980
+this is linear regression.
+It seems to be about lines and
+
+00:26:50.980 --> 00:26:53.420
+planes.
+But how can you find this curve?
+
+00:26:55.580 --> 00:26:56.000
+Yeah?
+
+00:26:56.000 --> 00:26:57.240
+Y degree 10?
+
+00:26:57.240 --> 00:27:01.740
+I just picked a random degree.
+
+00:27:03.520 --> 00:27:06.800
+Well, let's think about what the
+equation of this polynomial
+
+00:27:06.800 --> 00:27:08.300
+looks like.
+
+00:27:09.160 --> 00:27:13.660
+Its equation is going to be
+something like h of xi
+
+00:27:15.220 --> 00:27:21.060
+is equal to w0 plus w1 xi
+
+00:27:21.060 --> 00:27:25.620
+plus w2 xi squared.
+
+00:27:26.340 --> 00:27:29.040
+Notice I didn't write
+parentheses around this.
+
+00:27:29.040 --> 00:27:32.120
+I'm not saying this I could
+have, because it is my second
+
+00:27:32.120 --> 00:27:36.060
+feature in a way in which you
+are about to see.
+
+00:27:36.060 --> 00:27:38.760
+But here I do actually mean xi
+squared.
+
+00:27:38.760 --> 00:27:40.480
+Whereas over here,
+
+00:27:40.480 --> 00:27:44.230
+I did not mean squared.
+
+00:27:47.060 --> 00:27:51.560
+But now I'm saying the features
+in my model
+
+00:27:51.880 --> 00:27:56.340
+are the original data points
+raised to the power of 2 or 3
+
+00:27:56.830 --> 00:27:59.400
+or all the way to the 10.
+
+00:27:59.400 --> 00:28:02.040
+That is what my model looks
+like.
+
+00:28:02.040 --> 00:28:05.620
+Here's the connection.
+You can find these optimal w's
+
+00:28:05.620 --> 00:28:09.060
+using linear regression.
+you just have to treat
+
+00:28:09.060 --> 00:28:14.660
+these x's raised to the powers
+as new
+
+00:28:14.660 --> 00:28:18.620
+features that you create before
+putting information into the
+
+00:28:18.620 --> 00:28:20.120
+design matrix.
+
+00:28:20.220 --> 00:28:23.860
+Here's the bigger idea.
+As long as you can store the
+
+00:28:23.860 --> 00:28:28.300
+input variables in your model in
+a design matrix, you can put
+
+00:28:28.300 --> 00:28:29.800
+whatever you want in the design
+matrix.
+
+00:28:29.800 --> 00:28:34.300
+It doesn't need to be linear
+operations of the original data.
+
+00:28:34.760 --> 00:28:37.160
+So the design matrix here,
+
+00:28:37.160 --> 00:28:39.460
+we'll still have a column of
+1's, because remember this
+
+00:28:39.460 --> 00:28:42.480
+column of 1's is there anytime
+we have an intercept term.
+
+00:28:42.480 --> 00:28:44.220
+That's why it was there.
+
+00:28:44.220 --> 00:28:48.720
+The next column can contain my
+x's.
+
+00:28:49.140 --> 00:28:53.640
+My next column can just contain
+the x's squared.
+
+00:28:54.700 --> 00:28:56.460
+Nothing wrong with that.
+
+00:28:56.460 --> 00:29:00.960
+The next column can contain the
+x's cubed.
+
+00:29:03.880 --> 00:29:09.130
+And I have a column for each
+power.
+
+00:29:10.500 --> 00:29:16.500
+So this is an n by 11 design
+matrix.
+
+00:29:19.440 --> 00:29:20.440
+Now,
+
+00:29:20.600 --> 00:29:23.880
+here I happen to choose a
+polynomial example just to show
+
+00:29:23.880 --> 00:29:25.300
+you that it's possible.
+
+00:29:25.300 --> 00:29:29.060
+But any one of these columns
+could be replaced with whatever
+
+00:29:29.060 --> 00:29:31.040
+function of x I want it to be.
+
+00:29:31.040 --> 00:29:34.320
+So this column with the x's
+cubed,
+
+00:29:34.320 --> 00:29:40.080
+instead I could replace this
+with sine of
+
+00:29:40.080 --> 00:29:40.720
+x1,
+
+00:29:40.720 --> 00:29:41.680
+sine of x2,
+
+00:29:41.680 --> 00:29:42.920
+sine of x3.
+
+00:29:42.920 --> 00:29:46.200
+It could be whatever I want them
+to be.
+
+00:29:46.200 --> 00:29:48.360
+So what is the limitation here?
+
+00:29:48.360 --> 00:29:53.060
+What models can I produce with
+multiple linear regression? In
+
+00:29:53.060 --> 00:29:53.480
+addition,
+
+00:29:53.480 --> 00:29:57.820
+the idea is that any model
+
+00:29:57.820 --> 00:30:03.620
+that is a linear combination of
+features
+
+00:30:12.060 --> 00:30:17.840
+can be fit using multiple
+
+00:30:17.840 --> 00:30:20.460
+linear regression,
+
+00:30:27.510 --> 00:30:30.510
+meaning its optimal parameters
+can come from this formula.
+
+00:30:32.120 --> 00:30:33.640
+So,
+
+00:30:33.880 --> 00:30:35.380
+for example,
+
+00:30:35.600 --> 00:30:40.260
+consider the model H of
+
+00:30:40.260 --> 00:30:44.880
+X1, X2
+
+00:30:44.880 --> 00:30:50.640
+is equal to W0 plus W1
+
+00:30:50.640 --> 00:30:54.780
+sine of the product of my two
+features
+
+00:30:54.780 --> 00:30:58.860
+plus w2
+
+00:30:58.860 --> 00:31:04.440
+first feature raised to the
+power of 17 plus
+
+00:31:04.440 --> 00:31:08.880
+w3 e to the second feature
+
+00:31:08.880 --> 00:31:13.940
+this seems totally random
+
+00:31:13.940 --> 00:31:19.800
+but if you look at it it really
+is just a sum of terms of the
+
+00:31:19.800 --> 00:31:22.860
+form parameter times feature.
+
+00:31:24.780 --> 00:31:30.030
+All of the w's just exist up
+front.
+
+00:31:31.320 --> 00:31:34.480
+This is a sum of w's times
+things.
+
+00:31:34.480 --> 00:31:38.980
+And these things would all just
+go in my design matrix.
+
+00:31:39.700 --> 00:31:42.360
+So the design matrix here would
+have four columns.
+
+00:31:42.360 --> 00:31:44.480
+The first column would have a
+bunch of 1's.
+
+00:31:44.480 --> 00:31:49.040
+The next column would have the
+signs of my original two
+
+00:31:49.040 --> 00:31:50.460
+features being multiplied.
+
+00:31:50.460 --> 00:31:53.820
+The next column would have my
+original first feature, all of
+
+00:31:53.820 --> 00:31:56.020
+those values raised to the power
+of 17.
+
+00:31:56.020 --> 00:31:59.380
+And the next column would have
+all of my second features
+
+00:31:59.380 --> 00:32:01.420
+exponentiated on e.
+
+00:32:01.420 --> 00:32:02.260
+So the idea is,
+
+00:32:02.260 --> 00:32:06.640
+as long as I can separate the
+parameters and features in this
+
+00:32:06.640 --> 00:32:08.720
+sort of linear combination way,
+
+00:32:08.720 --> 00:32:13.440
+then I can use x transpose x
+inverse x transpose y to find
+
+00:32:13.440 --> 00:32:15.200
+the optimal parameters.
+
+00:32:15.200 --> 00:32:18.200
+So this is good.
+
+00:32:19.300 --> 00:32:22.840
+An example of a model that
+doesn't work
+
+00:32:22.840 --> 00:32:27.340
+is one where you have two
+features
+
+00:32:27.690 --> 00:32:33.220
+and you return something like w0
+plus sine of
+
+00:32:33.220 --> 00:32:34.720
+w1 x.
+
+00:32:36.620 --> 00:32:40.370
+Why is that not good?
+
+00:32:42.480 --> 00:32:45.840
+That is, why can you not use
+linear regression to find the
+
+00:32:45.840 --> 00:32:47.340
+optimal parameter?
+
+00:32:48.000 --> 00:32:50.000
+But you could in the first case,
+
+00:32:50.000 --> 00:32:51.460
+which looked just as
+complicated.
+
+00:32:51.460 --> 00:32:52.460
+Yeah?
+
+00:32:52.600 --> 00:32:57.940
+Because the parameter w1 is not
+scaling by the same factor for
+
+00:32:57.940 --> 00:32:59.900
+each xi?
+
+00:33:00.500 --> 00:33:03.040
+Right, or it's what I think
+you're getting at is the w1 is
+
+00:33:03.040 --> 00:33:04.080
+within the sign.
+
+00:33:04.080 --> 00:33:04.740
+Yeah.
+
+00:33:04.740 --> 00:33:07.300
+Right.
+we need the parameters to be in
+
+00:33:07.300 --> 00:33:08.760
+front of the features.
+
+00:33:08.760 --> 00:33:12.280
+And the reason for that is if
+you think back to how this
+
+00:33:12.280 --> 00:33:15.520
+prediction vector is produced,
+
+00:33:16.880 --> 00:33:19.280
+it takes our design matrix,
+which doesn't have any
+
+00:33:19.280 --> 00:33:22.360
+parameters in it, and multiplies
+it by a thing that just has the
+
+00:33:22.360 --> 00:33:23.360
+parameters.
+
+00:33:23.740 --> 00:33:27.040
+And when I multiply design
+matrix by parameter vector,
+
+00:33:27.040 --> 00:33:30.780
+it puts these parameters in
+front of the features.
+
+00:33:30.780 --> 00:33:31.600
+Okay,
+
+00:33:31.600 --> 00:33:34.220
+it doesn't like there's no way
+to multiply matrix X by
+
+00:33:34.220 --> 00:33:38.540
+parameter vector W and that
+process puts the W's within a
+
+00:33:38.540 --> 00:33:40.860
+sign or something like that,
+right?
+
+00:33:40.860 --> 00:33:43.400
+Remember X W is always a linear
+combination of columns.
+
+00:33:43.400 --> 00:33:47.800
+So a multiple linear regression
+model must always be a linear
+
+00:33:47.800 --> 00:33:50.050
+combination of features.
+
+00:33:53.360 --> 00:33:58.560
+So here w1 is within sine
+
+00:33:58.560 --> 00:34:00.160
+bad.
+
+00:34:02.120 --> 00:34:03.000
+Okay?
+
+00:34:03.000 --> 00:34:07.140
+So while this is called linear
+regression, it can be used to
+
+00:34:07.140 --> 00:34:12.700
+create arbitrarily flexible
+models as long as they are of
+
+00:34:12.700 --> 00:34:15.000
+the form parameter parameter
+times feature,
+
+00:34:15.000 --> 00:34:18.000
+plus parameter times feature,
+plus parameter times feature.
+
+00:34:18.940 --> 00:34:19.940
+Okay.
+
+00:34:24.690 --> 00:34:28.400
+Two quick things before we move
+on to the next idea.
+
+00:34:28.400 --> 00:34:31.400
+Any questions here first?
+
+00:34:35.820 --> 00:34:38.070
+All good? Okay,
+
+00:34:39.020 --> 00:34:42.020
+so first some notation,
+
+00:34:48.300 --> 00:34:53.460
+so before I was implying that
+the general way we will write
+
+00:34:53.460 --> 00:34:57.880
+our multiple linear regression
+model was instead of putting xi,
+
+00:34:58.680 --> 00:35:01.400
+this first feature, comma xi,
+second feature as the inputs
+
+00:35:01.400 --> 00:35:02.280
+here,
+
+00:35:02.280 --> 00:35:07.120
+I would instead just write this
+input vector or what I might
+
+00:35:07.120 --> 00:35:09.340
+call a feature vector.
+
+00:35:09.340 --> 00:35:11.120
+The general case
+
+00:35:11.120 --> 00:35:16.800
+involves not
+
+00:35:16.800 --> 00:35:22.180
+just one or two features but
+what do you think the
+
+00:35:22.180 --> 00:35:24.420
+placeholder for the number of
+features is? If you had to guess
+
+00:35:24.420 --> 00:35:27.300
+based on the choices we've made
+in this semester.
+
+00:35:27.300 --> 00:35:29.040
+What do you think the
+placeholder for the number of
+
+00:35:29.040 --> 00:35:32.040
+features in general is.
+
+00:35:35.260 --> 00:35:36.260
+Well,
+
+00:35:36.880 --> 00:35:40.560
+n is the number of data points,
+remember.
+
+00:35:40.560 --> 00:35:42.740
+So it's not n, but d,
+
+00:35:42.740 --> 00:35:46.280
+because d has always referred to
+the number of columns in a
+
+00:35:46.280 --> 00:35:47.280
+matrix.
+
+00:35:52.600 --> 00:35:56.350
+So I'll say, in general,
+
+00:35:57.620 --> 00:35:59.870
+n data points,
+
+00:36:00.600 --> 00:36:03.280
+d features.
+
+00:36:07.640 --> 00:36:08.300
+Yeah?
+
+00:36:08.300 --> 00:36:12.200
+What is the i on the xi? I mean,
+can we plug in something for i?
+
+00:36:12.200 --> 00:36:16.440
+The subscript i refers to the
+fact that this is referring to
+
+00:36:16.440 --> 00:36:20.000
+how the prediction is made for
+one data point.
+
+00:36:20.000 --> 00:36:25.250
+Versus if I have the big matrix
+x times parameter vector w,
+
+00:36:25.500 --> 00:36:28.740
+that produces my predictions for
+all n data points.
+
+00:36:28.740 --> 00:36:31.160
+So the subscript i means we're
+referring to just one data
+
+00:36:31.160 --> 00:36:32.160
+point.
+
+00:36:32.840 --> 00:36:33.480
+Good.
+
+00:36:33.480 --> 00:36:33.780
+Yeah?
+
+00:36:33.780 --> 00:36:37.580
+Does that mean that the x's are
+actually n by d plus 1?
+
+00:36:37.580 --> 00:36:38.360
+We're getting there.
+
+00:36:38.360 --> 00:36:39.460
+We're getting there.
+Yeah, yeah, yeah.
+
+00:36:39.460 --> 00:36:43.960
+These x's right now are all
+scalars, right?
+
+00:36:44.880 --> 00:36:46.060
+This is,
+
+00:36:46.060 --> 00:36:47.680
+you know, you could think of
+this as x,
+
+00:36:47.680 --> 00:36:48.660
+y, z,
+
+00:36:48.660 --> 00:36:49.780
+some other things.
+
+00:36:49.780 --> 00:36:53.620
+But we just need an arbitrary
+number of these inputs, so we've
+
+00:36:53.620 --> 00:36:55.220
+indexed them off.
+
+00:36:55.220 --> 00:36:57.540
+Now, what I'm getting at is this
+
+00:36:57.540 --> 00:37:03.380
+model form sort of
+
+00:37:03.380 --> 00:37:06.320
+looks like a dot product
+
+00:37:06.320 --> 00:37:10.520
+between a parameter vector that
+has all of my w's in it,
+
+00:37:10.880 --> 00:37:15.100
+with the vector xi.
+
+00:37:15.780 --> 00:37:19.200
+But it's not exactly that.
+
+00:37:19.200 --> 00:37:22.950
+Because there are only d
+features,
+
+00:37:23.080 --> 00:37:27.580
+but there are d plus one
+parameters.
+
+00:37:28.040 --> 00:37:31.480
+So there's something we have to
+do here.
+
+00:37:31.480 --> 00:37:32.780
+I guess what I'm getting at is
+this.
+
+00:37:32.780 --> 00:37:34.700
+Our parameter vector
+
+00:37:34.700 --> 00:37:40.700
+has d plus 1
+
+00:37:40.700 --> 00:37:41.700
+things.
+
+00:37:45.740 --> 00:37:51.340
+And if I have a vector made up
+of all of my features,
+
+00:37:51.340 --> 00:37:54.200
+I can't dot product it with my
+parameter vector directly
+
+00:37:54.200 --> 00:37:56.780
+because those vectors have
+different shapes.
+
+00:37:56.780 --> 00:37:58.980
+One has one more thing than the
+other.
+
+00:37:58.980 --> 00:38:01.500
+So there's several ways that you
+could address this.
+
+00:38:01.500 --> 00:38:04.940
+That's the way we will do it is
+by just adding a 1 to the start
+
+00:38:04.940 --> 00:38:07.940
+of the feature vector.
+
+00:38:08.920 --> 00:38:11.580
+Which allows it to have the same
+shape as the parameter vector
+
+00:38:11.580 --> 00:38:16.260
+and it allows you to write the
+multiple linear regression model
+
+00:38:16.260 --> 00:38:21.340
+as a dot product between a
+parameter vector
+
+00:38:23.160 --> 00:38:28.120
+and not a feature vector but
+what I will call an augmented
+
+00:38:28.120 --> 00:38:31.980
+feature vector.
+The augmentation is just adding
+
+00:38:31.980 --> 00:38:35.320
+the one up front to account for
+the intercept term which doesn't
+
+00:38:35.320 --> 00:38:39.780
+multiply an X itself It just has
+to exist
+
+00:38:39.780 --> 00:38:40.780
+So
+
+00:38:42.160 --> 00:38:49.660
+W which is in R D plus 1 is our
+parameter vector
+
+00:38:50.520 --> 00:38:58.020
+X I which is in R D is a feature
+vector
+
+00:38:58.360 --> 00:39:04.320
+And the augmented feature vector
+is in R
+
+00:39:04.320 --> 00:39:06.480
+d plus 1.
+And it can be dotted with the
+
+00:39:06.480 --> 00:39:07.480
+parameter.
+
+00:39:12.760 --> 00:39:16.510
+And these features can be
+whatever we want them to be,
+
+00:39:16.720 --> 00:39:20.440
+including arbitrary functions of
+the original features of the
+
+00:39:20.440 --> 00:39:21.980
+data set, or squares,
+
+00:39:21.980 --> 00:39:22.480
+cubes,
+
+00:39:22.480 --> 00:39:24.020
+signs, whatever you want.
+
+00:39:24.020 --> 00:39:26.900
+As long as your model can be
+separated in this form,
+
+00:39:26.900 --> 00:39:28.400
+you're fine.
+
+00:39:29.240 --> 00:39:30.980
+So as you mentioned earlier,
+
+00:39:30.980 --> 00:39:33.940
+this tells us the general shape
+of the design matrix
+
+00:39:33.940 --> 00:39:39.160
+is what?
+
+00:39:39.560 --> 00:39:42.000
+How many rows does the design
+matrix have,
+
+00:39:42.000 --> 00:39:46.500
+and how many columns does the
+design matrix have?
+
+00:39:55.840 --> 00:40:01.140
+So if there's one row per data
+point and one column per
+
+00:40:01.140 --> 00:40:01.920
+parameter,
+
+00:40:01.920 --> 00:40:06.160
+what is the shape of the design
+matrix?
+
+00:40:06.160 --> 00:40:11.380
+Remember, if you look back to
+this example where we had three
+
+00:40:11.380 --> 00:40:15.240
+parameters and two features, the
+design matrix was n by 3.
+
+00:40:16.440 --> 00:40:20.200
+Now I'm saying we have d
+parameters,
+
+00:40:20.200 --> 00:40:22.140
+sorry, D plus 1 parameters,
+
+00:40:22.140 --> 00:40:24.060
+and D features.
+
+00:40:24.060 --> 00:40:29.310
+So what should the shape of the
+design matrix be?
+
+00:40:30.420 --> 00:40:31.180
+Good.
+
+00:40:31.180 --> 00:40:36.430
+N rows and D plus 1 columns.
+
+00:40:43.720 --> 00:40:46.760
+And these augmented feature
+vectors are just the rows of the
+
+00:40:46.760 --> 00:40:48.440
+design matrix.
+right?
+
+00:40:49.500 --> 00:40:54.750
+This is row I of the design
+matrix,
+
+00:40:56.620 --> 00:40:57.620
+right?
+
+00:41:01.160 --> 00:41:04.040
+And to see that if we go a few
+slides back,
+
+00:41:04.040 --> 00:41:07.720
+this is the first row of the
+design matrix, it is also the
+
+00:41:07.720 --> 00:41:10.920
+same as the first augmented
+feature, right? This is the
+
+00:41:10.920 --> 00:41:12.420
+vector x1,
+
+00:41:12.520 --> 00:41:14.220
+this is the vector,
+
+00:41:14.220 --> 00:41:15.800
+augmented X1.
+
+00:41:16.680 --> 00:41:18.380
+Just to write that out here.
+
+00:41:18.380 --> 00:41:22.880
+X1 would be something like this.
+
+00:41:25.360 --> 00:41:30.560
+The augmented X1 would have a 1,
+
+00:41:30.560 --> 00:41:32.360
+and then the 10.816,
+
+00:41:32.360 --> 00:41:35.160
+and then the 15.
+
+00:41:35.160 --> 00:41:37.900
+The first augmented feature
+vector is the first row of the
+
+00:41:37.900 --> 00:41:39.400
+design matrix.
+
+00:41:39.700 --> 00:41:41.060
+So in general,
+
+00:41:41.060 --> 00:41:43.620
+the design matrix says n rows,
+
+00:41:43.620 --> 00:41:47.500
+each of them is something of
+this form.
+
+00:41:47.500 --> 00:41:48.360
+OK.
+
+00:41:48.360 --> 00:41:51.200
+So this is just sort of some
+general notation,
+
+00:41:51.200 --> 00:41:53.680
+just so that you're familiar
+with this problem when you see
+
+00:41:53.680 --> 00:41:55.220
+it in the future.
+
+00:41:55.220 --> 00:41:57.800
+But in most problems that we
+deal with,
+
+00:41:57.800 --> 00:42:01.060
+things will be slightly more
+specific than this.
+
+00:42:01.060 --> 00:42:02.060
+OK.
+
+00:42:03.460 --> 00:42:07.960
+What other questions do we have
+about this notation?
+
+00:42:16.140 --> 00:42:17.140
+OK.
+
+00:42:18.160 --> 00:42:23.480
+The final thing I want to
+mention here is how we go about
+
+00:42:23.480 --> 00:42:27.230
+including day of the week
+
+00:42:29.060 --> 00:42:30.580
+as an input variable.
+
+00:42:30.580 --> 00:42:34.330
+How would we do that?
+
+00:42:34.940 --> 00:42:35.940
+Well,
+
+00:42:37.280 --> 00:42:41.540
+the naive thing to do would be
+to replace every day of the week
+
+00:42:41.540 --> 00:42:42.480
+with a number,
+
+00:42:42.480 --> 00:42:46.230
+like Monday equals 1, Tuesday
+equals 2, Wednesday equals 3.
+
+00:42:46.840 --> 00:42:50.020
+What's wrong with doing that?
+
+00:42:50.020 --> 00:42:54.520
+Why should we not do that?
+
+00:43:01.340 --> 00:43:02.480
+What would be wrong with that?
+
+00:43:02.480 --> 00:43:02.980
+Yeah?
+
+00:43:02.980 --> 00:43:06.730
+If you're saying that Sunday
+equals 7 and Monday equals 1,
+
+00:43:06.960 --> 00:43:10.000
+then you're saying that they're
+very far apart when they're not
+
+00:43:10.000 --> 00:43:11.200
+actually far apart.
+
+00:43:11.200 --> 00:43:12.700
+So that's related to it.
+Were you going to add to that? I
+
+00:43:12.700 --> 00:43:14.800
+was going to say it implies a
+mathematical relationship
+
+00:43:14.800 --> 00:43:16.300
+between them.
+Exactly.
+
+00:43:16.440 --> 00:43:20.120
+It's saying that Tuesday is more
+of something than Monday, and
+
+00:43:20.120 --> 00:43:21.840
+Wednesday is triple Monday,
+
+00:43:21.840 --> 00:43:23.920
+and Sunday is seven times
+Monday.
+
+00:43:23.920 --> 00:43:27.020
+But in reality, these are just
+different categories.
+
+00:43:27.020 --> 00:43:29.620
+It seems like there is a default
+ordering to Monday, Tuesday,
+
+00:43:29.620 --> 00:43:31.820
+Wednesday, the order in which
+they appear in the week.
+
+00:43:31.820 --> 00:43:35.000
+But what if this problem
+extended to colors or something?
+
+00:43:35.000 --> 00:43:36.380
+How would you sort those?
+
+00:43:36.380 --> 00:43:39.040
+And you shouldn't make an
+arbitrary choice, because
+
+00:43:39.040 --> 00:43:41.200
+different choices would lead to
+different predictions.
+
+00:43:41.200 --> 00:43:44.360
+So what we will do is a
+technique
+
+00:43:44.360 --> 00:43:46.610
+called one-hot encoding.
+
+00:43:49.400 --> 00:43:53.780
+What this does is it produces a
+binary column,
+
+00:43:53.780 --> 00:43:58.500
+one for each unique value of the
+categorical column.
+
+00:43:58.500 --> 00:44:00.380
+So if we had five days of the
+week,
+
+00:44:00.380 --> 00:44:02.360
+Monday, Tuesday, Wednesday,
+Thursday, Friday,
+
+00:44:02.360 --> 00:44:06.110
+we produce five binary columns.
+
+00:44:06.140 --> 00:44:08.580
+One for whether or not the day
+is Monday,
+
+00:44:08.580 --> 00:44:10.380
+one for whether or not the day
+is Tuesday,
+
+00:44:10.380 --> 00:44:11.760
+Wednesday, Thursday, and Friday.
+
+00:44:11.760 --> 00:44:14.420
+It looks like all the Wednesdays
+and Fridays are zero,
+
+00:44:14.420 --> 00:44:16.880
+but that's just because in this
+preview of the first three and
+
+00:44:16.880 --> 00:44:19.340
+last three rows, there are no
+Wednesdays or Fridays.
+
+00:44:19.340 --> 00:44:22.180
+If none of them were Wednesday
+or Friday, we wouldn't have had
+
+00:44:22.180 --> 00:44:24.000
+a column for them because we
+wouldn't have known that that
+
+00:44:24.000 --> 00:44:25.140
+was a possibility,
+
+00:44:25.140 --> 00:44:27.380
+if you think about this more
+generally.
+
+00:44:27.380 --> 00:44:28.820
+So that's the solution.
+
+00:44:28.820 --> 00:44:32.620
+And so each of these categories
+will have its own parameter.
+
+00:44:32.620 --> 00:44:36.660
+And this implies lots of
+interesting geometric properties
+
+00:44:36.660 --> 00:44:38.300
+of the resulting model.
+
+00:44:38.300 --> 00:44:40.940
+So one of the final question in
+the homework you're working on
+
+00:44:40.940 --> 00:44:44.820
+right now involves one-hot
+encoding a simple linear
+
+00:44:44.820 --> 00:44:45.940
+regression model.
+
+00:44:45.940 --> 00:44:48.860
+And what you will end up seeing
+is if you have just one input
+
+00:44:48.860 --> 00:44:52.610
+variable or one numerical input
+variable like commute time,
+
+00:44:52.820 --> 00:44:54.840
+sorry, departure hour, and you
+ignore day of month.
+
+00:44:54.840 --> 00:44:57.240
+So otherwise, without one-hot
+encoding, you'd just have a
+
+00:44:57.240 --> 00:44:58.740
+straight line.
+
+00:44:59.060 --> 00:45:02.140
+One-hot encoding makes it so
+that every category has its own
+
+00:45:02.140 --> 00:45:03.380
+different intercept,
+
+00:45:03.380 --> 00:45:05.080
+but all of the slopes are the
+same.
+
+00:45:05.080 --> 00:45:07.320
+So you have lots of parallel
+lines.
+
+00:45:07.320 --> 00:45:08.740
+Depending on the day of the
+week,
+
+00:45:08.740 --> 00:45:10.120
+you change the intercept.
+
+00:45:10.120 --> 00:45:12.540
+That's the kind of thing you
+will explore in the homework
+
+00:45:12.540 --> 00:45:15.460
+problem you're working on at the
+end of the current homework.
+
+00:45:15.460 --> 00:45:19.440
+But there's an issue when it
+comes to linear independence
+
+00:45:19.440 --> 00:45:22.020
+when we do this.
+
+00:45:22.020 --> 00:45:27.270
+What do you think that issue is?
+
+00:45:44.260 --> 00:45:47.940
+Suppose we took all five of
+these binary columns
+
+00:45:47.940 --> 00:45:51.040
+and added them to our design
+matrix, which already we had the
+
+00:45:51.040 --> 00:45:54.820
+column of ones and the columns
+corresponding to our other
+
+00:45:54.820 --> 00:45:56.320
+numerical features.
+
+00:45:56.740 --> 00:46:00.490
+What would be the problem?
+
+00:46:14.920 --> 00:46:20.800
+You know what? I'll have you
+think
+
+00:46:20.800 --> 00:46:24.500
+about it while you do
+attendance.
+
+00:46:24.500 --> 00:46:26.680
+And we'll come back at 11.19.
+
+00:46:26.680 --> 00:46:28.540
+The question is,
+
+00:46:28.540 --> 00:46:32.290
+adding all of these binary
+columns,
+
+00:46:33.560 --> 00:46:36.620
+what does that do to the linear
+independence of the columns of
+
+00:46:36.620 --> 00:46:39.220
+the design matrix? It does
+something.
+
+00:46:39.220 --> 00:46:41.470
+Why is that?
+
+00:46:44.820 --> 00:46:47.820
+The form is open.
+
+00:47:02.220 --> 00:47:08.080
+the day is not Monday
+
+00:47:08.080 --> 00:47:11.080
+Tuesday Wednesday or Thursday
+Friday
+
+00:47:50.540 --> 00:47:52.040
+I'm sorry.
+
+00:48:03.420 --> 00:48:04.840
+You broke my arm, sir.
+
+00:48:04.840 --> 00:48:08.590
+Don't get me a beer.
+
+00:48:09.320 --> 00:48:12.000
+I'm about to start your talking.
+
+00:48:12.000 --> 00:48:14.880
+This is a gossip hearing on this
+phone.
+
+00:48:14.880 --> 00:48:16.380
+Thank you.
+
+00:48:16.460 --> 00:48:16.760
+Yo,
+
+00:48:16.760 --> 00:48:20.510
+that is really good beer.
+
+00:48:25.000 --> 00:48:30.040
+I also realized so this is our
+usually for Halloween we go back
+
+00:48:30.040 --> 00:48:34.140
+to my mom's house to hand out
+candy so my wife now and I and
+
+00:48:34.140 --> 00:48:39.780
+my whole family dressed up as
+jelly cats and we we give out
+
+00:48:39.780 --> 00:48:42.460
+lots of random stuff so like I
+went to Costco in Canada they
+
+00:48:42.460 --> 00:48:46.040
+had Krispy Kreme donuts so I
+bought a box of donuts,
+
+00:48:46.040 --> 00:48:47.860
+so we gave some of those out.
+
+00:48:47.860 --> 00:48:51.540
+I bought cans of Diet Coke, we
+gave those out, and full-sized
+
+00:48:51.540 --> 00:48:52.600
+chocolate bars.
+
+00:48:52.600 --> 00:48:54.140
+And we made a bunch of little
+goodie bags.
+
+00:48:54.140 --> 00:48:55.900
+And I was going to bring one
+today and raffle it off at this
+
+00:48:55.900 --> 00:48:56.460
+point.
+
+00:48:56.460 --> 00:49:00.940
+But I forgot, so I'll bring it
+on Thursday.
+
+00:49:00.940 --> 00:49:03.190
+OK, it's 1119.
+
+00:49:05.360 --> 00:49:07.980
+What do we think the linear
+independence issue is?
+
+00:49:07.980 --> 00:49:09.860
+I heard a few of you mention it.
+
+00:49:09.860 --> 00:49:13.720
+If we add a binary column for
+all five of these categorical
+
+00:49:13.720 --> 00:49:14.720
+variables,
+
+00:49:15.320 --> 00:49:18.940
+what happens to the linear
+independence of the columns of
+
+00:49:18.940 --> 00:49:21.190
+the design matrix?
+
+00:49:21.260 --> 00:49:22.760
+What happens?
+
+00:49:25.980 --> 00:49:29.730
+What is problematic with doing
+that?
+
+00:49:30.380 --> 00:49:31.380
+Yeah?
+
+00:49:33.940 --> 00:49:39.720
+Most in the same category will
+now
+
+00:49:39.720 --> 00:49:41.220
+have that.
+
+00:49:43.020 --> 00:49:45.460
+We'll have that last feature in
+common, I guess.
+
+00:49:45.460 --> 00:49:47.700
+So they'll be linear.
+
+00:49:47.700 --> 00:49:51.450
+So you're talking about these
+rows?
+
+00:49:51.920 --> 00:49:54.170
+I don't know.
+
+00:49:54.500 --> 00:49:59.000
+I think you have the right
+general idea.
+
+00:49:59.300 --> 00:50:02.140
+I heard a few people discuss
+exactly what I wanted to say.
+
+00:50:02.140 --> 00:50:05.340
+What happens with the linear
+independence of the columns of
+
+00:50:05.340 --> 00:50:08.340
+the design matrix here?
+
+00:50:13.020 --> 00:50:14.420
+What happens?
+
+00:50:14.420 --> 00:50:15.080
+Well,
+
+00:50:15.080 --> 00:50:17.600
+something else is also a column
+of the design matrix.
+
+00:50:17.600 --> 00:50:20.840
+If our model has an intercept
+term,
+
+00:50:20.840 --> 00:50:24.120
+what column is always in our
+design matrix?
+
+00:50:24.120 --> 00:50:25.620
+The column of what?
+
+00:50:25.620 --> 00:50:27.870
+So if intercept,
+
+00:50:28.500 --> 00:50:30.280
+we'll have a column 1,
+
+00:50:30.280 --> 00:50:32.960
+1, 1, 1, all the way through
+there.
+
+00:50:32.960 --> 00:50:37.420
+And something you'll explore is
+what does having this intercept
+
+00:50:37.420 --> 00:50:40.260
+term do?
+
+00:50:40.960 --> 00:50:43.380
+OK, in addition to giving you an
+intercept,
+
+00:50:43.380 --> 00:50:45.960
+it unlocks a lot of interesting
+properties about the model.
+
+00:50:45.960 --> 00:50:49.160
+One of the big ones, and you'll
+explore this in the coming week,
+
+00:50:49.160 --> 00:50:51.440
+is that when you have this
+intercept term, it guarantees
+
+00:50:51.440 --> 00:50:55.440
+that the errors of the model add
+up to zero.
+
+00:50:55.440 --> 00:50:58.840
+And you will see why that is in
+a little bit.
+
+00:50:58.840 --> 00:51:00.260
+But for now,
+
+00:51:00.260 --> 00:51:01.840
+that part's not directly
+relevant.
+
+00:51:01.840 --> 00:51:03.960
+But we have this column of all
+ones.
+
+00:51:03.960 --> 00:51:09.210
+How is that related to these new
+one-hot encoded columns?
+
+00:51:09.460 --> 00:51:10.200
+Yeah?
+
+00:51:10.200 --> 00:51:13.180
+If you add all the columns
+together, it becomes the 1, 1,
+
+00:51:13.180 --> 00:51:13.800
+1.
+Exactly.
+
+00:51:13.800 --> 00:51:16.900
+If you add all five of these
+binary columns together, because
+
+00:51:16.900 --> 00:51:19.380
+each one of them has exactly 1,
+
+00:51:19.380 --> 00:51:20.240
+1
+
+00:51:20.240 --> 00:51:22.080
+and four zeros,
+
+00:51:22.080 --> 00:51:24.720
+you add them up,
+
+00:51:24.720 --> 00:51:28.080
+these also give you 1, 1, 1, 1,
+
+00:51:28.080 --> 00:51:29.080
+1.
+
+00:51:34.320 --> 00:51:38.820
+sum, but that is a linear
+combination,
+
+00:51:39.440 --> 00:51:42.140
+or sorry, this linear
+combination of this column plus
+
+00:51:42.140 --> 00:51:44.840
+this plus this plus this plus
+this gives you the intercept
+
+00:51:44.840 --> 00:51:47.060
+column of all the ones.
+
+00:51:47.060 --> 00:51:50.240
+What that means is the columns
+of your design matrix then are
+
+00:51:50.240 --> 00:51:52.160
+no longer linearly independent,
+
+00:51:52.160 --> 00:51:54.060
+and so x transpose x doesn't,
+
+00:51:54.060 --> 00:51:56.060
+inverse doesn't exist.
+
+00:51:56.060 --> 00:51:59.540
+Does that mean there is no
+optimal parameter vector? No, it
+
+00:51:59.540 --> 00:52:00.980
+doesn't mean that.
+It means there are infinitely
+
+00:52:00.980 --> 00:52:03.780
+many optimal parameter vectors.
+
+00:52:03.780 --> 00:52:07.000
+There is always at least one
+optimal parameter vector because
+
+00:52:07.000 --> 00:52:10.580
+there is always some way to make
+the closest predictions.
+
+00:52:10.580 --> 00:52:12.660
+The question is, is there only
+one way to do that or infinitely
+
+00:52:12.660 --> 00:52:15.520
+many ways to do that?
+
+00:52:15.520 --> 00:52:18.960
+And when we keep all five of
+these columns, then there are
+
+00:52:18.960 --> 00:52:21.840
+infinitely many solutions to, if
+you recall, we call this the
+
+00:52:21.840 --> 00:52:23.340
+normal equation.
+
+00:52:24.020 --> 00:52:29.120
+What do you think a remedy to
+this is?
+
+00:52:29.120 --> 00:52:32.480
+What's a solution to this?
+
+00:52:32.480 --> 00:52:34.730
+We give up.
+
+00:52:35.080 --> 00:52:40.140
+Well, we're going to give up a
+little, not completely.
+
+00:52:40.140 --> 00:52:42.260
+What we give up is what?
+
+00:52:42.260 --> 00:52:43.260
+Exactly.
+
+00:52:43.640 --> 00:52:45.800
+We just give up on caring if
+it's Friday or not.
+
+00:52:45.800 --> 00:52:48.020
+If we remove the Friday column,
+
+00:52:48.020 --> 00:52:49.320
+you realize you don't really
+need it.
+
+00:52:49.320 --> 00:52:51.480
+Because if it's not Monday,
+Tuesday, Wednesday, or Thursday,
+
+00:52:51.480 --> 00:52:53.740
+it had to be Friday.
+
+00:52:53.740 --> 00:52:55.500
+Conceptually, that makes sense.
+
+00:52:55.500 --> 00:52:56.500
+Mathematically,
+
+00:52:56.640 --> 00:53:00.540
+this Friday column still exists
+in the span of the columns of
+
+00:53:00.540 --> 00:53:03.700
+the design matrix, because that
+Friday column is just the ones
+
+00:53:03.700 --> 00:53:06.900
+column minus Monday, Tuesday,
+Wednesday, or Thursday's
+
+00:53:06.900 --> 00:53:07.900
+columns.
+
+00:53:08.920 --> 00:53:11.920
+So that's the solution.
+You drop one of the categories.
+
+00:53:12.020 --> 00:53:14.160
+And again, you're going to
+explore this in coming
+
+00:53:14.160 --> 00:53:15.160
+homeworks.
+
+00:53:15.760 --> 00:53:19.760
+A related idea going back to
+here
+
+00:53:19.760 --> 00:53:25.700
+is compare the okay maybe I'll
+draw this one more time.
+
+00:53:26.260 --> 00:53:31.940
+Compare the mean squared error
+of this degree 10
+
+00:53:31.940 --> 00:53:37.180
+polynomial to the humble simple
+linear regression than mine.
+
+00:53:49.480 --> 00:53:52.760
+Which one has a lower mean
+squared error on the data that
+
+00:53:52.760 --> 00:53:56.510
+is drawn on the screen?
+
+00:54:01.380 --> 00:54:03.560
+Which one has a lower mean
+squared error? It's not a trick
+
+00:54:03.560 --> 00:54:04.560
+question.
+
+00:54:06.440 --> 00:54:11.260
+Yeah, the degree 10 polynomial.
+It definitely passes through the
+
+00:54:11.260 --> 00:54:15.240
+blue points more closely than
+the simple linear regression.
+
+00:54:15.850 --> 00:54:17.720
+Now why is this?
+
+00:54:17.720 --> 00:54:20.860
+Well, if you think about it from
+the perspective
+
+00:54:20.860 --> 00:54:26.260
+of the projection of the y
+vector onto the column space of
+
+00:54:26.260 --> 00:54:26.800
+x,
+
+00:54:26.800 --> 00:54:32.680
+if these new columns didn't help
+us make a
+
+00:54:32.680 --> 00:54:36.940
+better estimation of y using the
+columns of x,
+
+00:54:36.940 --> 00:54:40.200
+these optimal parameters could
+have just been set equal to 0.
+
+00:54:41.140 --> 00:54:44.400
+The only case in which they're
+not set equal to 0 is if it
+
+00:54:44.400 --> 00:54:46.740
+further decreases the mean
+squared error,
+
+00:54:46.740 --> 00:54:50.760
+if it allows us to bring our
+prediction vector, p,
+
+00:54:50.760 --> 00:54:52.480
+closer to y.
+
+00:54:52.480 --> 00:54:54.940
+There's nothing forcing these to
+be non-zero.
+
+00:54:54.940 --> 00:54:58.180
+These could be 0 if these
+additional higher order features
+
+00:54:58.180 --> 00:54:59.680
+did nothing.
+
+00:55:00.140 --> 00:55:06.040
+So adding more features doesn't
+hurt your
+
+00:55:06.040 --> 00:55:07.380
+model's mean squared error.
+
+00:55:07.380 --> 00:55:08.700
+But there's a caveat.
+
+00:55:08.700 --> 00:55:11.440
+It doesn't hurt your model's
+mean squared error
+
+00:55:11.440 --> 00:55:13.980
+on the data you use to train the
+model.
+
+00:55:13.980 --> 00:55:17.120
+That is, on your training data.
+
+00:55:17.120 --> 00:55:20.140
+So on this data that we're
+looking at here, the degree 10
+
+00:55:20.140 --> 00:55:22.390
+polynomial fits better.
+
+00:55:46.940 --> 00:55:50.640
+But, and we talked about this at
+the very start of the semester,
+
+00:55:50.640 --> 00:55:52.700
+there's something still not,
+
+00:55:52.700 --> 00:55:54.720
+something doesn't feel right
+about this degree 10 polynomial.
+
+00:55:54.720 --> 00:55:59.060
+Like, why would we not actually
+use this?
+
+00:55:59.060 --> 00:55:59.500
+Yeah?
+
+00:55:59.500 --> 00:56:01.860
+Can you overfit to the training
+data?
+
+00:56:01.860 --> 00:56:03.360
+Yes, exactly.
+
+00:56:05.340 --> 00:56:10.180
+So adding more features
+
+00:56:10.180 --> 00:56:15.480
+can cause overfitting.
+
+00:56:22.520 --> 00:56:24.840
+And what would that mean if
+we're overfit to the training
+
+00:56:24.840 --> 00:56:25.400
+data,
+
+00:56:25.400 --> 00:56:30.650
+what is the risk of that, or
+what is the harm of that?
+
+00:56:31.560 --> 00:56:32.560
+Yeah?
+
+00:56:33.140 --> 00:56:36.700
+We want it to generalize well on
+unseen data.
+
+00:56:36.700 --> 00:56:39.340
+Exactly.
+The whole point here is
+
+00:56:39.340 --> 00:56:42.900
+hopefully this model that we
+train on our training data will
+
+00:56:42.900 --> 00:56:45.200
+perform well when we don't
+already know the right answer.
+
+00:56:45.200 --> 00:56:47.080
+We want it to generalize well.
+
+00:56:47.080 --> 00:56:49.520
+And if we make it hyperspecific
+to the data we've already
+
+00:56:49.520 --> 00:56:50.460
+collected,
+
+00:56:50.460 --> 00:56:53.040
+sure, that'll drive the mean
+squared error down on the data
+
+00:56:53.040 --> 00:56:55.360
+we've collected.
+But we ultimately don't really
+
+00:56:55.360 --> 00:56:56.600
+care about that mean squared
+error.
+
+00:56:56.600 --> 00:56:58.620
+We care about the mean squared
+error on some other data we
+
+00:56:58.620 --> 00:57:00.120
+haven't seen.
+
+00:57:00.400 --> 00:57:04.040
+And making the model too highly
+specific to the training data
+
+00:57:04.040 --> 00:57:07.000
+can cause worse
+
+00:57:07.000 --> 00:57:12.780
+performance
+
+00:57:12.780 --> 00:57:16.540
+on unseen data.
+
+00:57:18.740 --> 00:57:20.900
+So then your question is, well,
+how do we pick the right
+
+00:57:20.900 --> 00:57:23.520
+polynomial degree? if what we
+wanted to pick is polynomial
+
+00:57:23.520 --> 00:57:24.280
+degree.
+
+00:57:24.280 --> 00:57:26.560
+And there's a solution to that.
+And again, it's something you're
+
+00:57:26.560 --> 00:57:28.720
+going to explore in upcoming
+homework.
+
+00:57:28.720 --> 00:57:31.300
+So you're working on homework 7
+now.
+
+00:57:31.300 --> 00:57:34.000
+Homework 8 will also be
+similarly mathematical.
+
+00:57:34.000 --> 00:57:36.600
+But the following homework,
+homework 9, is going to be
+
+00:57:36.600 --> 00:57:39.340
+almost exclusively programming
+questions where you explore the
+
+00:57:39.340 --> 00:57:41.360
+answers to things like this.
+
+00:57:41.360 --> 00:57:43.460
+Some of you will like that.
+If you like the programming
+
+00:57:43.460 --> 00:57:44.760
+questions, some of you won't
+like that.
+
+00:57:44.760 --> 00:57:48.880
+But it'll be useful to tie all
+of these ideas together.
+
+00:57:48.880 --> 00:57:52.200
+Okay, any questions with
+multiple linear regression so
+
+00:57:52.200 --> 00:57:53.200
+far?
+
+00:57:54.760 --> 00:57:57.860
+And again there's a review
+problem I wanted to do but we'll
+
+00:57:57.860 --> 00:57:59.800
+do it at the start of Thursday's
+lecture because I want to
+
+00:57:59.800 --> 00:58:03.600
+introduce you to this next idea
+so you can have some context in
+
+00:58:03.600 --> 00:58:05.100
+tomorrow's lab.
+
+00:58:06.020 --> 00:58:06.360
+Okay,
+
+00:58:06.360 --> 00:58:11.960
+so to find
+
+00:58:11.960 --> 00:58:16.820
+our optimal parameters in
+multiple linear regression
+
+00:58:16.820 --> 00:58:22.460
+what we've done
+
+00:58:22.460 --> 00:58:24.580
+is we minimized
+
+00:58:24.580 --> 00:58:30.460
+mean squared error
+
+00:58:30.460 --> 00:58:37.400
+and
+
+00:58:37.400 --> 00:58:42.720
+the new way we've learned to
+write mean squared error is as 1
+
+00:58:42.720 --> 00:58:47.220
+over n times the squared norm,
+
+00:58:47.720 --> 00:58:49.240
+or the squared length,
+
+00:58:49.240 --> 00:58:52.240
+of the error vector.
+
+00:58:53.260 --> 00:58:54.020
+Now,
+
+00:58:54.020 --> 00:58:57.140
+how did we minimize mean squared
+error?
+
+00:58:57.140 --> 00:58:59.580
+We used a geometrical argument.
+
+00:58:59.580 --> 00:59:03.700
+We said minimizing mean squared
+error is the same as finding the
+
+00:59:03.700 --> 00:59:07.140
+orthogonal projection of y onto
+the column space of x.
+
+00:59:07.140 --> 00:59:10.890
+That's how we did this
+minimization.
+
+00:59:22.900 --> 00:59:28.150
+This is the picture we used, if
+this is the column space of X,
+
+00:59:29.020 --> 00:59:32.770
+this is our vector Y,
+
+00:59:34.220 --> 00:59:37.970
+and this is our orthogonal
+projection P,
+
+00:59:38.280 --> 00:59:44.240
+This is the picture we used to
+find a formula for
+
+00:59:44.240 --> 00:59:47.990
+the W that minimizes mean
+squared error.
+
+00:59:48.800 --> 00:59:51.620
+And that led us to the normal
+equations, which we saw last
+
+00:59:51.620 --> 00:59:52.620
+time.
+
+00:59:55.640 --> 00:59:58.940
+But that's not the usual way
+you've learned to minimize
+
+00:59:58.940 --> 01:00:00.780
+functions, or not even just you,
+
+01:00:00.780 --> 01:00:02.960
+even us at the start of the
+semester.
+
+01:00:02.960 --> 01:00:05.960
+When we minimized functions, we
+didn't straightaway jump to
+
+01:00:05.960 --> 01:00:08.960
+drawing pictures like this that
+involve orthogonality and
+
+01:00:08.960 --> 01:00:11.960
+projections, there was another
+approach we would take.
+
+01:00:12.800 --> 01:00:17.300
+And what was that approach to
+minimizing functions?
+
+01:00:18.720 --> 01:00:20.580
+Derivative and set it equal to
+0.
+
+01:00:20.580 --> 01:00:22.980
+Yeah, we would take some
+derivative and set it equal to
+
+01:00:22.980 --> 01:00:23.760
+0.
+
+01:00:23.760 --> 01:00:24.900
+The thing is,
+
+01:00:24.900 --> 01:00:26.400
+this function,
+
+01:00:27.360 --> 01:00:31.110
+what are its domain and
+codomain?
+
+01:00:40.280 --> 01:00:45.530
+So let me write this on, again,
+on another page.
+
+01:00:53.800 --> 01:00:54.800
+Well,
+
+01:00:54.960 --> 01:00:57.040
+first, we can start with the
+easier one,
+
+01:00:57.040 --> 01:00:59.940
+which is, what is its codomain?
+What are the outputs of this
+
+01:00:59.940 --> 01:01:00.940
+function?
+
+01:01:04.200 --> 01:01:07.580
+The things that come out of this
+function are all what?
+
+01:01:07.580 --> 01:01:08.780
+I give you a w,
+
+01:01:08.780 --> 01:01:10.000
+plug it in,
+
+01:01:10.000 --> 01:01:12.440
+like what shape is the output of
+this?
+
+01:01:12.440 --> 01:01:14.120
+It's a scalar.
+The mean squared error is just
+
+01:01:14.120 --> 01:01:15.060
+one number.
+
+01:01:15.060 --> 01:01:16.780
+And if you have a parameter
+vector, the mean squared error
+
+01:01:16.780 --> 01:01:17.760
+is one number.
+
+01:01:17.760 --> 01:01:20.520
+So the outputs are real numbers.
+
+01:01:20.520 --> 01:01:25.020
+What are the inputs to this
+function?
+
+01:01:34.980 --> 01:01:37.230
+Yeah, very close.
+
+01:01:37.520 --> 01:01:40.040
+It's R d, in the general case,
+
+01:01:40.040 --> 01:01:42.290
+d plus 1.
+
+01:01:45.600 --> 01:01:49.360
+This is an example of what I
+will call in the next few weeks
+
+01:01:49.360 --> 01:01:54.840
+a vector to scalar function.
+
+01:01:58.260 --> 01:02:02.160
+That's a function who takes in a
+vector and returns a scalar.
+
+01:02:02.160 --> 01:02:05.040
+That terminology implies the
+existence of other things, like
+
+01:02:05.040 --> 01:02:07.140
+a vector-to-vector function.
+
+01:02:07.140 --> 01:02:09.420
+What's a simple vector-to-vector
+function?
+
+01:02:09.420 --> 01:02:11.840
+You can imagine f of the vector
+x
+
+01:02:11.840 --> 01:02:15.340
+equals 2 times the vector x,
+doubles the vector.
+
+01:02:15.340 --> 01:02:17.590
+That's a vector-to-vector.
+
+01:02:19.420 --> 01:02:21.820
+But this is a vector-to-scalar
+function.
+
+01:02:21.820 --> 01:02:24.700
+And what we are now going to
+study for the next 2 and a half
+
+01:02:24.700 --> 01:02:29.580
+lectures is vector to scalar
+functions in depth.
+
+01:02:31.100 --> 01:02:36.500
+What I would like to do is take
+the equivalent of the derivative
+
+01:02:36.500 --> 01:02:38.340
+of this function,
+
+01:02:38.340 --> 01:02:39.760
+set it equal to 0,
+
+01:02:39.760 --> 01:02:43.510
+and solve for my optimal
+parameter vector.
+
+01:02:43.640 --> 01:02:46.860
+And hopefully, if this is all
+set up coherently,
+
+01:02:46.860 --> 01:02:49.120
+I will get the same result I got
+before.
+
+01:02:49.120 --> 01:02:52.140
+Because it would be weird to do
+all of this and get something
+
+01:02:52.140 --> 01:02:55.660
+that is not X transpose X
+inverse X transpose Y, because
+
+01:02:55.660 --> 01:02:59.410
+then I did something wrong.
+
+01:02:59.980 --> 01:03:00.980
+Now,
+
+01:03:01.600 --> 01:03:03.000
+that's what we were building
+towards.
+
+01:03:03.000 --> 01:03:04.980
+And on Thursday, that's what we
+will eventually see.
+
+01:03:04.980 --> 01:03:07.900
+We will see the way of taking
+the equivalent of the derivative
+
+01:03:07.900 --> 01:03:08.840
+of this,
+
+01:03:08.840 --> 01:03:11.020
+which is called the gradient of
+it.
+
+01:03:11.020 --> 01:03:15.320
+We will set that equal to zero
+and see that the result is the
+
+01:03:15.320 --> 01:03:16.960
+same as we saw before.
+
+01:03:16.960 --> 01:03:21.200
+But there's a little bit we need
+to discuss before we get there.
+
+01:03:21.200 --> 01:03:26.980
+Now, if you think back to in
+your more familiar single
+
+01:03:26.980 --> 01:03:28.480
+variable calculus,
+
+01:03:29.480 --> 01:03:33.980
+what did the derivative of a
+function at a point tell you?
+
+01:03:34.760 --> 01:03:37.360
+The derivative at that point in
+black,
+
+01:03:37.360 --> 01:03:41.110
+what did it tell you?
+
+01:03:45.700 --> 01:03:46.440
+Yeah?
+
+01:03:46.440 --> 01:03:48.540
+The rate of change at that point
+of the slope.
+
+01:03:48.540 --> 01:03:50.080
+Good.
+It would tell you the slope of
+
+01:03:50.080 --> 01:03:52.330
+the tangent line.
+
+01:04:04.200 --> 01:04:05.480
+But now,
+
+01:04:05.480 --> 01:04:07.760
+and we've seen this already a
+little bit when we discussed
+
+01:04:07.760 --> 01:04:09.260
+partial derivatives,
+
+01:04:09.340 --> 01:04:12.920
+if our function has multiple
+input variables,
+
+01:04:12.920 --> 01:04:14.960
+and we can think of this
+function,
+
+01:04:14.960 --> 01:04:17.280
+mean squared error, as just
+having d plus one input
+
+01:04:17.280 --> 01:04:18.280
+variables.
+
+01:04:18.800 --> 01:04:21.680
+Well then, it doesn't have just
+one derivative.
+
+01:04:21.680 --> 01:04:24.200
+It has d plus one derivatives,
+
+01:04:24.200 --> 01:04:27.060
+a partial derivative in each
+direction.
+
+01:04:27.060 --> 01:04:28.420
+Do we agree?
+
+01:04:28.420 --> 01:04:31.320
+This is not entirely a new idea.
+
+01:04:31.320 --> 01:04:36.980
+And so let's consider what would
+happen if I
+
+01:04:36.980 --> 01:04:41.120
+take a function and compute its
+partial derivatives.
+
+01:04:41.120 --> 01:04:46.620
+Let's consider the function f of
+the vector x, who returns
+
+01:04:46.620 --> 01:04:51.180
+x1 squared plus x2 squared plus
+
+01:04:51.180 --> 01:04:55.480
+3x1x2.
+
+01:04:55.780 --> 01:05:00.860
+And here I'm supposing my vector
+x has two components named x1
+
+01:05:00.860 --> 01:05:02.360
+and x2.
+
+01:05:04.480 --> 01:05:09.200
+Let's recap and compute the
+partial derivatives of this
+
+01:05:09.200 --> 01:05:15.120
+function with respect to each
+
+01:05:15.120 --> 01:05:17.860
+of its input variables.
+So what is the partial
+
+01:05:17.860 --> 01:05:21.610
+derivative of this function with
+respect to x1?
+
+01:05:31.840 --> 01:05:32.840
+Yeah?
+
+01:05:33.440 --> 01:05:37.100
+I got 2x1 minus 3.
+
+01:05:37.100 --> 01:05:39.040
+Close.
+2x1 minus 3,
+
+01:05:39.780 --> 01:05:41.360
+x2.
+
+01:05:41.660 --> 01:05:45.800
+and what's the partial
+derivative with respect to x2?
+
+01:05:51.160 --> 01:05:55.420
+2x2 minus 3x1.
+
+01:05:57.220 --> 01:06:01.080
+Now imagine this function had 17
+input variables.
+
+01:06:01.080 --> 01:06:04.360
+That would lead to 17 partial
+derivatives.
+
+01:06:04.360 --> 01:06:08.140
+Here's how we're going to store
+that information more
+
+01:06:08.140 --> 01:06:09.140
+efficiently,
+
+01:06:10.760 --> 01:06:15.260
+we are going to put these
+partial derivatives in a vector.
+
+01:06:15.660 --> 01:06:19.080
+That vector is called the
+gradient vector.
+
+01:06:19.080 --> 01:06:22.830
+Here's the symbol for it.
+It's an upside down triangle.
+
+01:06:25.740 --> 01:06:31.560
+The gradient vector contains the
+partial derivatives
+
+01:06:31.560 --> 01:06:35.310
+with respect to each input
+variable.
+
+01:06:45.360 --> 01:06:49.860
+Now the gradient itself is also
+a function.
+
+01:06:50.240 --> 01:06:52.820
+What type of function is this?
+In the new terminology I
+
+01:06:52.820 --> 01:06:53.660
+introduced,
+
+01:06:53.660 --> 01:06:54.700
+the gradient,
+
+01:06:54.700 --> 01:06:59.950
+it takes in a vector and returns
+what?
+
+01:07:00.160 --> 01:07:03.160
+Yeah, it's a vector-to-vector
+function.
+
+01:07:03.260 --> 01:07:07.520
+Okay, so to actually put numbers
+to this,
+
+01:07:07.520 --> 01:07:10.000
+and let me just highlight these
+so it's clear
+
+01:07:10.000 --> 01:07:16.000
+where these expressions are
+coming from.
+
+01:07:17.600 --> 01:07:22.850
+If I consider the input to the
+function 2,1,
+
+01:07:23.560 --> 01:07:29.120
+the gradient at 2,1 is another
+vector.
+
+01:07:29.620 --> 01:07:33.440
+I get 2 times 2, which is 4,
+minus 3, which is 1,
+
+01:07:33.440 --> 01:07:35.580
+and 2 times 1, which is 2,
+
+01:07:35.580 --> 01:07:37.660
+minus 3 times 2, which is 6.
+
+01:07:37.660 --> 01:07:41.600
+I think that gives me minus 4.
+
+01:07:41.600 --> 01:07:45.200
+So the question is, what does 1,
+
+01:07:45.200 --> 01:07:51.160
+negative 4 mean about the input
+
+01:07:51.160 --> 01:07:52.660
+2, 1?
+
+01:07:53.580 --> 01:07:55.940
+Somehow we want to connect this
+vector,
+
+01:07:55.940 --> 01:07:57.560
+1, negative 4,
+
+01:07:57.560 --> 01:07:59.280
+to the first vector, 2,
+
+01:07:59.280 --> 01:08:00.280
+1.
+
+01:08:01.280 --> 01:08:04.720
+And currently, all we really are
+going to think about this as is
+
+01:08:04.720 --> 01:08:06.880
+as being the partial derivatives
+
+01:08:06.880 --> 01:08:09.880
+at that point.
+But it turns out there's a more
+
+01:08:09.880 --> 01:08:15.400
+fundamental geometric meaning
+about the gradient of a function
+
+01:08:15.400 --> 01:08:18.100
+at a particular input.
+
+01:08:18.100 --> 01:08:19.100
+OK.
+
+01:08:20.440 --> 01:08:22.690
+Here's the meaning.
+
+01:08:26.280 --> 01:08:28.530
+At the input,
+
+01:08:30.200 --> 01:08:35.640
+why don't we say x0, The
+gradient
+
+01:08:35.640 --> 01:08:41.860
+is
+
+01:08:41.860 --> 01:08:46.580
+the direction of
+
+01:08:46.580 --> 01:08:50.040
+steepest increase.
+
+01:08:51.880 --> 01:08:55.440
+What does this mean?
+
+01:08:57.460 --> 01:09:03.060
+This is not an idea that existed
+when it came to single variable
+
+01:09:03.060 --> 01:09:04.840
+calculus.
+If we consider that black point
+
+01:09:04.840 --> 01:09:05.820
+there,
+
+01:09:05.820 --> 01:09:07.920
+the derivative is either
+positive or negative, which
+
+01:09:07.920 --> 01:09:10.280
+means either at that point the
+function is increasing or
+
+01:09:10.280 --> 01:09:11.280
+decreasing.
+
+01:09:11.340 --> 01:09:13.660
+That's because there's only two
+directions in which you could
+
+01:09:13.660 --> 01:09:15.460
+change the input.
+You could increase it by moving
+
+01:09:15.460 --> 01:09:16.420
+it to the right,
+
+01:09:16.420 --> 01:09:18.860
+or decrease it by moving it to
+the left.
+
+01:09:18.860 --> 01:09:21.580
+But now that we're thinking in
+the world of functions who have
+
+01:09:21.580 --> 01:09:23.440
+multiple input variables,
+
+01:09:23.440 --> 01:09:26.560
+It's not as simple as just
+increase or decrease and here's
+
+01:09:26.560 --> 01:09:28.810
+what I mean
+
+01:09:31.880 --> 01:09:34.880
+Here's a different function
+
+01:09:36.840 --> 01:09:39.560
+If I pick a point on that
+function
+
+01:09:39.560 --> 01:09:43.920
+And I imagine we live on that we
+were living at that point
+
+01:09:43.920 --> 01:09:47.720
+I'll copy this but we'll play
+around with it here There are
+
+01:09:47.720 --> 01:09:51.700
+lots of ways in which I could
+travel and still go up the
+
+01:09:51.700 --> 01:09:52.700
+function
+
+01:09:54.460 --> 01:09:57.400
+If I'm standing at this point,
+there are infinitely many ways I
+
+01:09:57.400 --> 01:09:59.620
+could move.
+I could move this way or this
+
+01:09:59.620 --> 01:10:01.200
+way or this way or this way.
+
+01:10:01.200 --> 01:10:03.480
+I could rotate whatever angle I
+want and move a little bit in
+
+01:10:03.480 --> 01:10:04.980
+that direction.
+
+01:10:05.020 --> 01:10:08.260
+What we're seeing is that in
+some of those directions,
+
+01:10:08.260 --> 01:10:11.400
+it would cause me to go further
+up the hill.
+
+01:10:11.400 --> 01:10:14.340
+In some of those directions, it
+would cause me to go further
+
+01:10:14.340 --> 01:10:17.580
+down the hill.
+Okay, so it's not just what
+
+01:10:17.580 --> 01:10:20.580
+direction is the function
+increasing in
+
+01:10:21.500 --> 01:10:23.900
+Because there are lots of
+directions in which you can move
+
+01:10:23.900 --> 01:10:28.580
+not just left or right What the
+gradient describes is among all
+
+01:10:28.580 --> 01:10:32.330
+of those directions along which
+you could be moving
+
+01:10:32.800 --> 01:10:37.980
+Which direction increases the
+quickest that is what the
+
+01:10:37.980 --> 01:10:39.480
+gradient describes
+
+01:10:45.380 --> 01:10:46.420
+Oops.
+
+01:10:53.380 --> 01:10:57.440
+So roughly here, the gradient
+probably looks something like
+
+01:10:57.440 --> 01:10:58.440
+that.
+
+01:11:01.820 --> 01:11:05.360
+Gradient describes
+
+01:11:05.360 --> 01:11:10.220
+direction of
+
+01:11:10.220 --> 01:11:12.880
+steepest increase.
+
+01:11:14.480 --> 01:11:16.480
+Again, it's not the only
+direction of increase.
+
+01:11:16.480 --> 01:11:19.840
+That's the thing I want to
+emphasize here.
+
+01:11:19.840 --> 01:11:23.180
+If I traveled in that direction,
+I would also be increasing.
+
+01:11:23.180 --> 01:11:25.420
+If I traveled in that direction,
+I would also be increasing.
+
+01:11:25.420 --> 01:11:27.340
+That direction, I would also be
+increasing.
+
+01:11:27.340 --> 01:11:30.880
+In all of these directions, I
+would be increasing.
+
+01:11:30.880 --> 01:11:34.380
+In these directions, I would be
+decreasing.
+
+01:11:34.380 --> 01:11:37.400
+Among all of those directions in
+which I could move, the gradient
+
+01:11:37.400 --> 01:11:41.150
+tells me which direction I'm
+moving in,
+
+01:11:41.600 --> 01:11:44.600
+or which direction increases
+most steeply.
+
+01:11:46.040 --> 01:11:47.040
+Okay?
+
+01:11:48.600 --> 01:11:50.320
+This is a confusing idea.
+
+01:11:50.320 --> 01:11:54.380
+It's like one that you'll work
+with this semester, but it'll
+
+01:11:54.380 --> 01:11:56.820
+still be marinating and it'll
+take years for it to like really
+
+01:11:56.820 --> 01:11:57.820
+internalize.
+
+01:11:58.760 --> 01:12:01.320
+The gradient describes the
+direction along which the
+
+01:12:01.320 --> 01:12:04.320
+function is increasing most
+steeply.
+
+01:12:05.360 --> 01:12:07.340
+Now here's another way of
+visualizing that.
+
+01:12:07.340 --> 01:12:10.540
+I believe I included this here.
+
+01:12:10.540 --> 01:12:13.820
+What we will start doing over
+the next few lectures
+
+01:12:13.820 --> 01:12:19.070
+is convert this 3D graph into a
+2D graph called a contour plot.
+
+01:12:19.300 --> 01:12:22.120
+Notice in the colors here,
+
+01:12:22.120 --> 01:12:25.320
+the blue values are really low
+and the red values are really
+
+01:12:25.320 --> 01:12:26.320
+high.
+
+01:12:28.300 --> 01:12:31.660
+To convert this from a 3D graph
+to a 2D graph that I can draw on
+
+01:12:31.660 --> 01:12:32.880
+more easily,
+
+01:12:32.880 --> 01:12:35.560
+what I'll do is I'll just take a
+bird's-eye view of it
+
+01:12:35.560 --> 01:12:38.260
+and then just draw those colors
+in 2D.
+
+01:12:38.260 --> 01:12:41.220
+So red, again, will mean high.
+Blue will mean low.
+
+01:12:41.220 --> 01:12:43.260
+White will mean somewhere in
+between.
+
+01:12:43.260 --> 01:12:48.510
+So I have the same two axes
+here, x1 and x2,
+
+01:12:48.600 --> 01:12:53.160
+and all I've done is I've just
+converted it to a 2D graph.
+
+01:12:53.160 --> 01:12:54.900
+And what you are seeing here,
+
+01:12:54.900 --> 01:12:57.740
+where it says minus 0.1
+and minus 0.3
+
+01:12:57.740 --> 01:13:02.040
+and minus 0.4,
+is it's showing slices of the
+
+01:13:02.040 --> 01:13:03.960
+original 3D graph
+
+01:13:03.960 --> 01:13:06.300
+that all correspond to the same
+height.
+
+01:13:06.300 --> 01:13:07.440
+So for example,
+
+01:13:07.440 --> 01:13:08.840
+this circle here,
+
+01:13:08.840 --> 01:13:10.920
+or this ellipse,
+
+01:13:10.920 --> 01:13:13.580
+the one labeled 0.3,
+
+01:13:13.580 --> 01:13:16.120
+this is showing you all of the
+inputs.
+
+01:13:16.120 --> 01:13:16.900
+Whoa,
+
+01:13:16.900 --> 01:13:18.400
+not that.
+
+01:13:19.860 --> 01:13:22.180
+It's always weird on the iPad.
+
+01:13:22.180 --> 01:13:26.680
+Let me reload the page here.
+
+01:13:35.940 --> 01:13:36.840
+Yeah,
+
+01:13:36.840 --> 01:13:40.020
+so for example, this is showing
+you all of the original points,
+
+01:13:40.020 --> 01:13:41.740
+x1 and x2,
+
+01:13:41.740 --> 01:13:46.060
+whose output of the graph was
+0.3.
+
+01:13:46.060 --> 01:13:49.060
+That's a contour point.
+
+01:13:49.900 --> 01:13:54.440
+So the gradient vector is a
+vector in R2,
+
+01:13:55.240 --> 01:13:57.260
+because this function has two
+input variables.
+
+01:13:57.260 --> 01:14:01.820
+So it's sort of weird to draw
+the gradient vector in the 3D
+
+01:14:01.820 --> 01:14:04.820
+graph, because the gradient
+isn't in 3D, it's in 2D.
+
+01:14:06.420 --> 01:14:09.640
+So this is perhaps a more
+natural setting in which to draw
+
+01:14:09.640 --> 01:14:11.880
+the gradient vector, because
+again, it only has two
+
+01:14:11.880 --> 01:14:13.380
+components in it.
+
+01:14:13.380 --> 01:14:16.660
+And what I'm visualizing here
+for several different inputs is
+
+01:14:16.660 --> 01:14:19.220
+where the gradient vector
+points.
+
+01:14:19.220 --> 01:14:21.900
+What is this telling me? This is
+telling me the gradient at the
+
+01:14:21.900 --> 01:14:26.400
+input 1, 0 points directly to
+the left.
+
+01:14:28.580 --> 01:14:29.580
+Why?
+
+01:14:32.460 --> 01:14:36.210
+Why does that make sense?
+
+01:14:39.460 --> 01:14:40.460
+Yeah?
+
+01:14:41.540 --> 01:14:43.500
+I'm assuming like the contours,
+
+01:14:43.500 --> 01:14:45.420
+so like the output of the
+function,
+
+01:14:45.420 --> 01:14:48.860
+and it's like the contours like
+increase as you go to the left.
+
+01:14:48.860 --> 01:14:49.980
+Yeah, remember,
+
+01:14:49.980 --> 01:14:53.380
+this is a 2D version of this
+graph.
+
+01:14:53.380 --> 01:14:55.440
+And this is saying, if you live
+here,
+
+01:14:55.440 --> 01:14:57.680
+what's the way to escape the
+quickest? Well, it's to move to
+
+01:14:57.680 --> 01:14:59.180
+the left.
+
+01:14:59.480 --> 01:15:01.940
+So you have to try and think of
+the correspondence between this
+
+01:15:01.940 --> 01:15:06.120
+3D graph and this 2D version of
+it.
+
+01:15:06.120 --> 01:15:07.760
+Here's another example.
+
+01:15:07.760 --> 01:15:09.240
+If I'm somewhere here,
+
+01:15:09.240 --> 01:15:11.740
+what is the direction along
+which the function is increasing
+
+01:15:11.740 --> 01:15:12.820
+the quickest?
+
+01:15:12.820 --> 01:15:13.820
+Well,
+
+01:15:14.620 --> 01:15:19.960
+why does this make sense? Well,
+remember, this red dark pit is
+
+01:15:19.960 --> 01:15:22.640
+the top of the function.
+
+01:15:22.640 --> 01:15:24.560
+So from the perspective here,
+
+01:15:24.560 --> 01:15:26.360
+that is the direction along
+which I should travel the
+
+01:15:26.360 --> 01:15:27.360
+quickest.
+
+01:15:28.780 --> 01:15:31.920
+Are we clear on what the
+gradient is telling us?
+
+01:15:31.920 --> 01:15:34.260
+It's telling us, among all of
+the directions in which you can
+
+01:15:34.260 --> 01:15:39.440
+move around the current input
+you're looking at, this is the
+
+01:15:39.440 --> 01:15:42.440
+direction that increases the
+quickest.
+
+01:15:43.520 --> 01:15:47.960
+And I'll include this in the
+notes as well.
+
+01:15:47.960 --> 01:15:48.440
+And then
+
+01:15:48.440 --> 01:16:03.060
+we'll
+
+01:16:03.060 --> 01:16:07.460
+say that this is called a
+contour plot.
+
+01:16:07.460 --> 01:16:10.560
+What questions do we have with
+the idea of a gradient so far?
+
+01:16:10.560 --> 01:16:15.120
+So like if you had like a point,
+let's say like the top in the
+
+01:16:15.120 --> 01:16:17.420
+negative 0.1
+contour would it go to the right
+
+01:16:17.420 --> 01:16:19.220
+or would it go up?
+
+01:16:19.220 --> 01:16:22.140
+You're saying up here like if
+I'm starting here.
+
+01:16:22.140 --> 01:16:26.180
+Yeah, I think in the original
+graph It was like mostly flat
+
+01:16:26.180 --> 01:16:27.560
+there.
+So I think it would do something
+
+01:16:27.560 --> 01:16:29.060
+slightly unpredictable
+
+01:16:29.360 --> 01:16:31.880
+Maybe move there or something
+like that
+
+01:16:31.880 --> 01:16:32.880
+Yeah.
+
+01:16:33.700 --> 01:16:34.700
+OK.
+
+01:16:34.740 --> 01:16:35.400
+So again,
+
+01:16:35.400 --> 01:16:38.580
+the gradient vector for a vector
+to scalar function is made up of
+
+01:16:38.580 --> 01:16:42.020
+all of the partial derivatives
+of that function.
+
+01:16:42.020 --> 01:16:44.860
+What it tells you at a point is
+the direction along which the
+
+01:16:44.860 --> 01:16:46.740
+function is increasing the
+quickest.
+
+01:16:46.740 --> 01:16:47.240
+OK?
+
+01:16:47.240 --> 01:16:50.100
+If we can find the gradient of a
+function,
+
+01:16:50.100 --> 01:16:52.880
+the way we will minimize it is
+by setting the gradient equal to
+
+01:16:52.880 --> 01:16:53.580
+0.
+
+01:16:53.580 --> 01:16:55.800
+We will do that on Thursday.
+
+01:16:55.800 --> 01:16:58.640
+The last thing I want to mention
+here,
+
+01:16:58.640 --> 01:17:01.680
+And this will give you enough
+context for tomorrow's lab, is
+
+01:17:01.680 --> 01:17:03.640
+that for the most part in this
+class,
+
+01:17:03.640 --> 01:17:06.720
+the functions we will want to
+take the gradient of
+
+01:17:06.720 --> 01:17:10.400
+are not random functions made up
+of x squareds and sines and
+
+01:17:10.400 --> 01:17:11.020
+stuff.
+
+01:17:11.020 --> 01:17:12.640
+Like at the start of the
+semester when we looked at
+
+01:17:12.640 --> 01:17:13.520
+partial derivatives,
+
+01:17:13.520 --> 01:17:16.700
+we maybe had to do some examples
+like that.
+
+01:17:16.700 --> 01:17:19.180
+But most of the functions we
+will actually need to take the
+
+01:17:19.180 --> 01:17:23.980
+gradient of will be defined in
+terms of matrix vector
+
+01:17:23.980 --> 01:17:24.980
+operations.
+
+01:17:25.520 --> 01:17:28.480
+This was not.
+All right, this function did not
+
+01:17:28.480 --> 01:17:30.360
+really involve any matrix vector
+operations.
+
+01:17:30.360 --> 01:17:33.240
+I just gave you some random
+formula.
+
+01:17:33.240 --> 01:17:38.200
+But the kind of function we will
+want to take the gradient of is
+
+01:17:38.200 --> 01:17:39.120
+the function,
+
+01:17:39.120 --> 01:17:43.500
+and also I'll say this is in
+chapter 8.2,
+
+01:17:43.500 --> 01:17:47.250
+called the Big Three Rules,
+
+01:17:48.320 --> 01:17:50.220
+which again, we will review all
+of this on Thursday.
+
+01:17:50.220 --> 01:17:52.680
+I just want you to have some
+context.
+
+01:17:52.680 --> 01:17:56.340
+The first one of these is the
+function f of x
+
+01:17:56.340 --> 01:17:59.780
+is equal to the dot product of A
+with x.
+
+01:17:59.780 --> 01:18:03.900
+This is a vector to scalar
+function.
+
+01:18:03.900 --> 01:18:04.900
+OK?
+
+01:18:05.820 --> 01:18:07.340
+The question is,
+
+01:18:07.340 --> 01:18:10.340
+what is its gradient?
+
+01:18:14.860 --> 01:18:17.840
+This is what I mean by being
+defined in terms of matrix
+
+01:18:17.840 --> 01:18:19.340
+vector operations.
+
+01:18:19.920 --> 01:18:20.920
+OK?
+
+01:18:21.260 --> 01:18:25.220
+So suppose A is some constant
+vector.
+
+01:18:25.220 --> 01:18:26.680
+a1, a2,
+
+01:18:26.680 --> 01:18:28.180
+through ad,
+
+01:18:28.600 --> 01:18:31.740
+and x has components x1 through
+xd,
+
+01:18:31.740 --> 01:18:36.990
+what is the gradient of f with
+respect to x?
+
+01:18:43.660 --> 01:18:47.600
+Well, I'm not expecting you to
+look at this and know.
+
+01:18:47.600 --> 01:18:51.200
+But if we wanted to try and
+figure this out,
+
+01:18:51.200 --> 01:18:54.800
+How could we expand the dot
+product of a and x?
+
+01:18:54.800 --> 01:18:57.140
+If I wanted to write this not
+involving vector operations,
+
+01:18:57.140 --> 01:19:01.640
+what would I say this is?
+
+01:19:04.460 --> 01:19:06.620
+If I wanted to write this as a
+sum of a bunch of things, what
+
+01:19:06.620 --> 01:19:08.380
+would those things be?
+
+01:19:08.380 --> 01:19:10.220
+a1x1 plus a2x2.
+
+01:19:10.220 --> 01:19:15.600
+Yeah, a1x1 plus a2x2
+
+01:19:15.600 --> 01:19:19.350
+all the way through adxd.
+
+01:19:20.400 --> 01:19:23.400
+And remember, the gradient
+vector,
+
+01:19:24.940 --> 01:19:26.440
+its components
+
+01:19:27.120 --> 01:19:32.540
+are the partial derivatives of f
+with respect to each of the
+
+01:19:32.540 --> 01:19:33.540
+inputs.
+
+01:19:38.400 --> 01:19:41.120
+It's the result of taking the
+partial derivative with respect
+
+01:19:41.120 --> 01:19:45.620
+to each input and stacking those
+into a new vector.
+
+01:19:47.400 --> 01:19:51.680
+So what is the partial
+derivative of f with respect to
+
+01:19:51.680 --> 01:19:52.680
+x1?
+
+01:19:57.240 --> 01:19:58.240
+a1.
+
+01:19:59.460 --> 01:20:01.880
+Do we agree with that? The
+partial derivative of this
+
+01:20:01.880 --> 01:20:04.560
+expression with respect to x1 is
+just a1.
+
+01:20:04.560 --> 01:20:05.560
+Yeah?
+
+01:20:06.380 --> 01:20:10.880
+What about with respect to x2?
+
+01:20:11.340 --> 01:20:13.660
+a2.
+with respect to x3,
+
+01:20:13.940 --> 01:20:14.940
+a3,
+
+01:20:15.340 --> 01:20:16.600
+with respect to xd,
+
+01:20:16.600 --> 01:20:17.600
+ad.
+
+01:20:18.220 --> 01:20:20.840
+Now what does this vector look
+like to you?
+
+01:20:20.840 --> 01:20:22.740
+Just the vector a.
+
+01:20:22.740 --> 01:20:27.240
+So the gradient of the dot
+product of a with x is a.
+
+01:20:29.220 --> 01:20:33.300
+That is the first of the three
+big three rules.
+
+01:20:33.300 --> 01:20:39.080
+The next one you will see in lab
+tomorrow So is the function
+
+01:20:39.080 --> 01:20:43.620
+f of x is equal to the squared
+norm of x,
+
+01:20:43.620 --> 01:20:44.360
+which,
+
+01:20:44.360 --> 01:20:48.480
+as you know, is x1 squared plus
+x2 squared,
+
+01:20:48.480 --> 01:20:51.520
+all the way through xd squared.
+
+01:20:51.520 --> 01:20:54.480
+What is the partial derivative
+of this with respect to any one
+
+01:20:54.480 --> 01:20:56.730
+of the x's?
+
+01:20:57.760 --> 01:20:59.500
+2 times that x,
+
+01:20:59.500 --> 01:20:59.900
+right?
+
+01:20:59.900 --> 01:21:03.650
+The partial derivative of this
+with respect to x7 is 2x7.
+
+01:21:03.760 --> 01:21:07.400
+So what is the gradient?
+
+01:21:07.400 --> 01:21:10.420
+Well, it's the vector whose
+components are 2x1,
+
+01:21:10.420 --> 01:21:11.420
+2x2,
+
+01:21:12.040 --> 01:21:15.140
+all the way through 2xd,
+
+01:21:15.140 --> 01:21:20.280
+but that is the vector 2 times
+x.
+
+01:21:20.280 --> 01:21:23.500
+And this matches what I said
+before, which is that the
+
+01:21:23.500 --> 01:21:26.400
+gradient is an operation who
+takes in a vector and returns a
+
+01:21:26.400 --> 01:21:27.640
+new vector.
+
+01:21:27.640 --> 01:21:29.660
+That was true here and also true
+here.
+
+01:21:29.660 --> 01:21:30.900
+a is a vector,
+
+01:21:30.900 --> 01:21:32.060
+2x is a vector.
+
+01:21:32.060 --> 01:21:35.360
+But the original function itself
+just outputs a number.
+
+01:21:35.360 --> 01:21:37.160
+The squared norm is a number,
+
+01:21:37.160 --> 01:21:39.620
+and the dot product is a number.
+
+01:21:39.620 --> 01:21:42.980
+So you will review all of this
+in lab tomorrow, and we will do
+
+01:21:42.980 --> 01:21:44.640
+so on Thursday.
+But now you have some context
+
+01:21:44.640 --> 01:21:48.390
+for what is to come.
+
+01:21:48.660 --> 01:21:49.160
+OK,
+
+01:21:49.160 --> 01:21:50.500
+as usual, I have office hours
+after this.
+
+01:21:50.500 --> 01:21:54.100
+Otherwise, I'll see you on
+Thursday.
+
+01:21:54.100 --> 01:21:58.860
+I actually did a lecture on
+this, but
+
+01:21:58.860 --> 01:22:12.080
+this
+
+01:22:12.080 --> 01:22:13.600
+one's a special one,
+
+01:22:13.600 --> 01:22:17.350
+if they're not teaching Anytime.
+
+01:22:17.800 --> 01:22:18.460
+People that vote,
+
+01:22:18.460 --> 01:22:19.460
+yeah.
+
+01:22:19.620 --> 01:22:21.870
+Which is great.
+
+01:22:26.200 --> 01:22:28.360
+See ya.
+
+01:22:41.980 --> 01:22:44.140
+Yeah, yeah.
+
+01:22:46.380 --> 01:22:48.860
+like x1 squared plus x2 squared,
+
+01:22:48.860 --> 01:22:51.780
+which would have like 10
+features, like x1, x2.
+
+01:22:51.780 --> 01:22:54.880
+So here, the features themselves
+were just the original data
+
+01:22:54.880 --> 01:22:56.660
+points raised to power.
+
+01:22:56.660 --> 01:23:01.820
+So that's why that was a little
+confusing in that x squared is
+
+01:23:01.820 --> 01:23:04.500
+the same as the second feature,
+and x cubed is the same as the
+
+01:23:04.500 --> 01:23:05.420
+third feature.
+
+01:23:05.420 --> 01:23:08.120
+That's just because we happened
+to be able to find a trial that
+
+01:23:08.120 --> 01:23:09.900
+is not as much.
+The original x is squared.
+
+01:23:09.900 --> 01:23:10.580
+Yeah,
+
+01:23:10.580 --> 01:23:11.940
+I said,
+
+01:23:11.940 --> 01:23:14.900
+you gotta go two down.
+
+01:23:14.900 --> 01:23:19.400
+This guy's spot on his wooden
+feet.
+
+01:23:21.800 --> 01:23:23.440
+Maybe we can't knock him.
+
+01:23:23.440 --> 01:23:25.120
+We don't have enough space.
+
+01:23:25.120 --> 01:23:26.100
+Dude,
+
+01:23:26.100 --> 01:23:26.640
+I did.
+
+01:23:26.640 --> 01:23:29.060
+I made it like homework six.
+
+01:23:29.060 --> 01:23:34.310
+I kind of made it number four.
+
+01:23:51.560 --> 01:23:53.400
+It's like crazy.
+
+01:23:53.400 --> 01:23:55.650
+Oh my god.
+
+01:23:58.260 --> 01:24:02.010
+It's gonna share that box.
+
+01:24:06.940 --> 01:24:08.740
+Well, yeah, we were like,
+
+01:24:08.740 --> 01:24:12.740
+everyone was kissing each other,
+and we were all just like, okay.
+
+01:24:13.180 --> 01:24:15.430
+It was awesome.
+
+01:24:15.760 --> 01:24:17.440
+How was your homework?
+
+01:24:17.440 --> 01:24:18.620
+It was good.
+
+01:24:18.620 --> 01:24:20.480
+What were your comments?
+
+01:24:20.480 --> 01:24:26.480
+My thing was that me and my two
+roommates went into sleep.
+
+01:24:31.460 --> 01:24:32.460
+Wait,
+
+01:24:33.680 --> 01:24:38.930
+I wish I saw you guys tomorrow.
+
+01:24:40.620 --> 01:24:42.140
+What party were we even at?
+
+01:24:42.140 --> 01:24:51.030
+Cheers!

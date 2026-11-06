@@ -1,0 +1,5055 @@
+WEBVTT
+
+00:00:10.700 --> 00:00:12.300
+All right.
+Welcome back, everyone.
+
+00:00:12.620 --> 00:00:14.120
+It's 10.30,
+so we'll get started.
+
+00:00:14.700 --> 00:00:16.640
+Before we talk about
+class-related stuff, I have a
+
+00:00:16.640 --> 00:00:19.240
+different personal announcement.
+So I told you that over fall
+
+00:00:19.240 --> 00:00:20.780
+break I got engaged.
+
+00:00:20.780 --> 00:00:23.780
+Well, for various bureaucratic
+reasons, we actually got married
+
+00:00:23.780 --> 00:00:24.780
+yesterday,
+
+00:00:25.040 --> 00:00:27.290
+so I'm lucky.
+
+00:00:29.920 --> 00:00:31.420
+Thank you.
+
+00:00:31.820 --> 00:00:33.380
+Again, it would just feel weird,
+
+00:00:33.380 --> 00:00:33.780
+like,
+
+00:00:33.780 --> 00:00:34.940
+coming to lecture Tuesday,
+
+00:00:34.940 --> 00:00:36.940
+doing all of this on Wednesday,
+and then coming back on Thursday
+
+00:00:36.940 --> 00:00:38.940
+without telling you guys, so
+yeah.
+
+00:00:38.940 --> 00:00:41.260
+All of my day yesterday was
+spent doing photo shoots like
+
+00:00:41.260 --> 00:00:42.320
+this one.
+It was pretty fun.
+
+00:00:42.320 --> 00:00:43.820
+Would recommend.
+
+00:00:44.140 --> 00:00:45.100
+Okay,
+
+00:00:45.100 --> 00:00:46.120
+back to our,
+
+00:00:46.120 --> 00:00:47.940
+also I should have said,
+
+00:00:47.940 --> 00:00:51.180
+my girlfriend's name is Dilraj,
+well,
+
+00:00:51.180 --> 00:00:52.800
+my wife's name is not being
+correct,
+
+00:00:52.800 --> 00:00:54.120
+taking a while to get used to
+it,
+
+00:00:54.120 --> 00:00:56.580
+her name is Dilraj, and both of
+our names end in a Raj.
+
+00:00:56.580 --> 00:00:59.720
+So she had these custom hats
+made for us, which say the Rajs,
+
+00:00:59.720 --> 00:01:01.600
+and it has yesterday's date on
+it, which is why I'm wearing
+
+00:01:01.600 --> 00:01:02.600
+this.
+
+00:01:03.520 --> 00:01:04.360
+OK,
+
+00:01:04.360 --> 00:01:07.180
+back to our regularly scheduled
+programming.
+
+00:01:07.180 --> 00:01:09.640
+Hopefully that'll be the last of
+my big life updates for the
+
+00:01:09.640 --> 00:01:10.600
+semester.
+
+00:01:10.600 --> 00:01:14.420
+But this has been a very big
+personal semester for me.
+
+00:01:14.420 --> 00:01:15.420
+Let's see.
+
+00:01:15.420 --> 00:01:17.920
+Homework six is still due on
+Sunday,
+
+00:01:17.920 --> 00:01:21.400
+and homework seven will be out
+sometime in the next few days,
+
+00:01:21.400 --> 00:01:24.560
+and it'll be due the following
+Sunday.
+
+00:01:24.560 --> 00:01:26.320
+That's sort of it.
+
+00:01:26.320 --> 00:01:31.020
+The plan for today is to talk
+all about projecting onto the
+
+00:01:31.020 --> 00:01:35.360
+column space of a matrix, which
+is something that I briefly
+
+00:01:35.360 --> 00:01:36.960
+alluded to on Tuesday.
+
+00:01:36.960 --> 00:01:41.440
+And you worked on an activity in
+yesterday's lab that introduced
+
+00:01:41.440 --> 00:01:46.080
+you to this idea yesterday.
+We will dive deep into that, and
+
+00:01:46.080 --> 00:01:50.080
+then towards the end of today's
+class, see how that relates to
+
+00:01:50.080 --> 00:01:53.020
+linear regression as we first
+saw it at the start of the
+
+00:01:53.020 --> 00:01:54.020
+semester.
+
+00:01:56.680 --> 00:01:59.920
+So what do I mean by projecting
+onto the column space of a
+
+00:01:59.920 --> 00:02:00.480
+matrix?
+
+00:02:00.480 --> 00:02:01.120
+Well,
+
+00:02:01.120 --> 00:02:02.500
+before we get into that,
+
+00:02:02.500 --> 00:02:06.620
+let's recap what projections
+meant at the start of the
+
+00:02:06.620 --> 00:02:07.620
+semester.
+
+00:02:15.360 --> 00:02:18.220
+So recall, at the start of the
+semester,
+
+00:02:18.220 --> 00:02:20.760
+maybe a couple of weeks in,
+
+00:02:20.760 --> 00:02:23.800
+we introduced this problem.
+It had different variables, but
+
+00:02:23.800 --> 00:02:28.300
+it was the same general idea.
+
+00:02:29.140 --> 00:02:31.990
+There, we said we had a vector u
+
+00:02:31.990 --> 00:02:33.660
+that we projected onto v.
+
+00:02:33.660 --> 00:02:36.700
+Here, I'll say I have a vector y
+that I'm projecting onto another
+
+00:02:36.700 --> 00:02:38.200
+vector x.
+
+00:02:38.700 --> 00:02:42.920
+And what was the projection of y
+onto x?
+
+00:02:42.920 --> 00:02:47.220
+It was another vector, but what
+properties did it satisfy?
+
+00:02:47.220 --> 00:02:50.720
+The projection of y onto x.
+
+00:02:50.720 --> 00:02:52.980
+I call it p.
+
+00:02:52.980 --> 00:02:58.560
+And it was the projection of y
+onto
+
+00:02:58.560 --> 00:02:59.560
+x.
+
+00:03:00.000 --> 00:03:03.750
+What did that vector satisfy?
+
+00:03:04.160 --> 00:03:07.640
+It was orthogonal to x.
+
+00:03:07.640 --> 00:03:08.600
+Close.
+
+00:03:08.600 --> 00:03:10.900
+Something is orthogonal to x,
+but it's not the projection
+
+00:03:10.900 --> 00:03:11.900
+itself.
+
+00:03:12.240 --> 00:03:14.920
+The error of that projection is
+orthogonal to x.
+
+00:03:14.920 --> 00:03:17.260
+So what does the projection
+itself look like?
+
+00:03:17.260 --> 00:03:23.260
+Well, here the projection was a
+scalar multiple of x.
+
+00:03:24.580 --> 00:03:27.760
+So we said p was equal to some k
+star times x.
+
+00:03:27.760 --> 00:03:30.340
+And it was chosen
+
+00:03:30.340 --> 00:03:36.380
+so
+
+00:03:36.380 --> 00:03:38.780
+that the error,
+
+00:03:39.020 --> 00:03:43.140
+which was y minus k star times
+x,
+
+00:03:43.140 --> 00:03:47.100
+was orthogonal to x.
+
+00:03:48.540 --> 00:03:49.120
+Why?
+
+00:03:49.120 --> 00:03:55.120
+Why did we want the error to be
+orthogonal?
+
+00:03:58.860 --> 00:04:03.420
+Like, why was the error being
+orthogonal something desirable?
+
+00:04:05.760 --> 00:04:08.680
+If you do it with the right
+triangles, you prove that that's
+
+00:04:08.680 --> 00:04:09.660
+the shortest,
+
+00:04:09.660 --> 00:04:11.820
+the best possible projection.
+
+00:04:11.820 --> 00:04:14.620
+Yes, exactly.
+The whole idea here was that if
+
+00:04:14.620 --> 00:04:18.200
+the error of our projection is
+orthogonal to the vector we're
+
+00:04:18.200 --> 00:04:21.820
+projecting onto, that is, if e
+is orthogonal to x,
+
+00:04:21.820 --> 00:04:25.300
+that is the way to make e as
+short as possible,
+
+00:04:25.300 --> 00:04:29.980
+right? That's how you make y as
+close as possible to its
+
+00:04:29.980 --> 00:04:32.230
+projection onto x.
+
+00:04:47.310 --> 00:04:52.660
+In other words, it minimizes the
+squared
+
+00:04:52.660 --> 00:04:53.660
+distance
+
+00:04:56.460 --> 00:05:00.300
+from y to its projection onto x.
+
+00:05:00.300 --> 00:05:05.900
+It also minimizes just the
+distance from y and projection
+
+00:05:05.900 --> 00:05:09.540
+onto x, but as you've seen in a
+homework problem earlier in the
+
+00:05:09.540 --> 00:05:13.820
+semester, this function down
+here, if you think of it as the
+
+00:05:13.820 --> 00:05:16.070
+function of k,
+
+00:05:16.420 --> 00:05:19.980
+has a nice clean derivative that
+you can set equal to 0 and
+
+00:05:19.980 --> 00:05:20.780
+solve,
+
+00:05:20.780 --> 00:05:24.520
+and it gives you the value of k
+that we also found in class
+
+00:05:24.520 --> 00:05:26.770
+using this orthogonality
+assumption.
+
+00:05:27.960 --> 00:05:29.320
+And that was something like,
+
+00:05:29.320 --> 00:05:31.570
+someone remind me?
+
+00:05:32.540 --> 00:05:36.900
+What was the k that minimized
+this quantity, which
+
+00:05:36.900 --> 00:05:41.040
+equivalently is the amount that
+you should multiply x by so that
+
+00:05:41.040 --> 00:05:43.920
+kx's error is orthogonal to x?
+
+00:05:43.920 --> 00:05:44.920
+Yeah?
+
+00:05:45.380 --> 00:05:51.000
+It was like the dot product over
+x squared.
+
+00:05:52.020 --> 00:05:54.600
+Good, or the squared length of
+x.
+
+00:05:54.600 --> 00:05:58.340
+So it was x dot y over x dot x,
+
+00:05:58.340 --> 00:06:03.780
+which is the same as x dot y
+over the length of
+
+00:06:03.780 --> 00:06:05.880
+x squared.
+
+00:06:07.820 --> 00:06:11.600
+So this is a problem we've
+solved already, projecting one
+
+00:06:11.600 --> 00:06:14.200
+vector onto one other vector.
+
+00:06:14.200 --> 00:06:15.420
+The thing is,
+
+00:06:15.420 --> 00:06:21.060
+what we're now interested in is
+projecting one
+
+00:06:21.060 --> 00:06:24.700
+vector not onto one other
+vector,
+
+00:06:24.700 --> 00:06:28.360
+but onto the span of multiple
+other vectors.
+
+00:06:28.360 --> 00:06:31.060
+So this is the setting we should
+be thinking about now.
+
+00:06:31.060 --> 00:06:34.810
+There's still just one y
+floating off in Rn.
+
+00:06:35.720 --> 00:06:39.540
+But instead of trying to find
+its closest approximation and
+
+00:06:39.540 --> 00:06:42.000
+along one other vector,
+
+00:06:42.000 --> 00:06:44.520
+which we called x in the picture
+I just drew.
+
+00:06:44.520 --> 00:06:47.560
+Now we're instead considering
+several x's,
+
+00:06:50.160 --> 00:06:54.560
+and we are trying to best
+approximate y as a linear
+
+00:06:54.560 --> 00:06:58.060
+combination of all of these x's.
+
+00:06:58.060 --> 00:07:00.820
+And the general setting we
+should think about
+
+00:07:00.820 --> 00:07:06.240
+is the one where y isn't an
+exact linear combination of the
+
+00:07:06.240 --> 00:07:08.200
+x's.
+That is,
+
+00:07:08.480 --> 00:07:11.900
+y isn't in the span of these
+x-vectors.
+
+00:07:11.900 --> 00:07:12.920
+If it is,
+
+00:07:12.920 --> 00:07:15.360
+well, then this is not really a
+new problem.
+
+00:07:15.360 --> 00:07:18.780
+Then this really just boils down
+to writing y as a linear
+
+00:07:18.780 --> 00:07:20.760
+combination of the x's exactly,
+
+00:07:20.760 --> 00:07:23.000
+which is just solving a system
+of equations.
+
+00:07:23.000 --> 00:07:24.760
+That is a known.
+
+00:07:24.760 --> 00:07:27.820
+That's something we know how to
+do.
+
+00:07:27.820 --> 00:07:30.760
+But this exact problem,
+
+00:07:30.760 --> 00:07:34.320
+and actually, this angle is a
+little possibly misleading.
+
+00:07:34.320 --> 00:07:37.740
+Let me change it to something
+like this.
+
+00:07:37.740 --> 00:07:39.990
+There you go.
+
+00:07:40.220 --> 00:07:45.980
+The problem we're now posing is
+one that we
+
+00:07:45.980 --> 00:07:48.980
+haven't actually solved yet.
+
+00:07:52.860 --> 00:07:55.860
+So the question is,
+
+00:07:57.420 --> 00:07:59.600
+well, first, let's suppose
+
+00:07:59.600 --> 00:08:04.760
+we have an n by d matrix X whose
+columns
+
+00:08:04.760 --> 00:08:09.780
+are called the vectors x1
+superscript,
+
+00:08:10.080 --> 00:08:13.940
+x2 superscript through xd.
+
+00:08:22.260 --> 00:08:23.700
+Now remember,
+
+00:08:23.700 --> 00:08:26.880
+the definition of the column
+space of x is just the span of
+
+00:08:26.880 --> 00:08:30.340
+these vectors x1 through xd.
+So when I say the column space
+
+00:08:30.340 --> 00:08:31.700
+of the matrix x,
+
+00:08:31.700 --> 00:08:35.480
+I'm really just saying the span
+of these d column vectors,
+
+00:08:35.480 --> 00:08:38.160
+though that means the same
+thing.
+
+00:08:38.160 --> 00:08:43.410
+Remind me, what space do all of
+these column vectors live in?
+
+00:08:44.760 --> 00:08:49.260
+They all live in R what?
+
+00:08:50.160 --> 00:08:51.120
+Yeah?
+
+00:08:51.120 --> 00:08:53.500
+Rn, good, because remember,
+there are d columns and they
+
+00:08:53.500 --> 00:08:55.900
+each have n things in them.
+
+00:08:55.900 --> 00:09:01.150
+And this vector y also lives in
+Rn.
+
+00:09:01.560 --> 00:09:04.380
+And again, the thing to
+emphasize is that y is not
+
+00:09:04.380 --> 00:09:07.060
+necessarily in the column space.
+In this picture, it is clearly
+
+00:09:07.060 --> 00:09:09.480
+not.
+It is not in this plain-looking
+
+00:09:09.480 --> 00:09:10.480
+thing.
+
+00:09:13.440 --> 00:09:15.960
+And I said this at the end of
+Tuesday's class, but here this
+
+00:09:15.960 --> 00:09:19.120
+looks like a plane, but this is
+just like a hypothetical picture
+
+00:09:19.120 --> 00:09:22.120
+that exists in higher
+dimensions.
+
+00:09:23.340 --> 00:09:24.640
+In general,
+
+00:09:24.640 --> 00:09:26.320
+this column space,
+
+00:09:26.320 --> 00:09:29.320
+what is its dimension?
+
+00:09:32.940 --> 00:09:36.880
+This is a blank dimensional
+
+00:09:36.880 --> 00:09:42.460
+subspace of
+
+00:09:42.460 --> 00:09:43.960
+R blank.
+
+00:09:44.260 --> 00:09:47.080
+How do I fill in those blanks?
+
+00:09:47.080 --> 00:09:50.830
+In general, what is the
+dimension of this column space?
+
+00:09:52.780 --> 00:09:53.780
+Yeah.
+
+00:09:54.060 --> 00:09:55.560
+Well, remember,
+
+00:09:56.140 --> 00:09:58.560
+there's nothing like, I don't
+want you to think that there are
+
+00:09:58.560 --> 00:09:59.560
+only
+
+00:10:00.460 --> 00:10:03.520
+I'm trying to get us to think
+about not this being a plane I
+
+00:10:03.520 --> 00:10:05.540
+drew it as a plane because
+there's nothing else we as
+
+00:10:05.540 --> 00:10:07.280
+humans could visualize
+
+00:10:07.280 --> 00:10:09.760
+But there's nothing
+two-dimensional a ton
+
+00:10:09.760 --> 00:10:11.340
+two-dimensional about this in
+general.
+
+00:10:11.340 --> 00:10:13.260
+What would the dimension of the
+calm space be?
+
+00:10:13.260 --> 00:10:14.260
+Yeah
+
+00:10:17.840 --> 00:10:22.540
+Not necessarily not necessarily
+right the number of vectors we
+
+00:10:22.540 --> 00:10:23.540
+have
+
+00:10:24.340 --> 00:10:28.960
+is not necessarily related to
+the dimension of the column
+
+00:10:28.960 --> 00:10:29.580
+space,
+
+00:10:29.580 --> 00:10:33.420
+but those are ideas that can be
+different.
+
+00:10:33.420 --> 00:10:37.920
+Isn't it up to d dimensional
+subspace,
+
+00:10:38.460 --> 00:10:42.960
+because it was like the number
+of?
+
+00:10:43.860 --> 00:10:47.020
+Yeah, it has something to do
+with n and d.
+
+00:10:47.020 --> 00:10:49.820
+Whatever number I put in the
+first blank has to be less than
+
+00:10:49.820 --> 00:10:53.360
+or equal to n and also less than
+or equal to d.
+
+00:10:53.360 --> 00:10:54.820
+But what was the name for that?
+
+00:10:54.820 --> 00:10:57.680
+There was a name for the
+dimension of the column space.
+
+00:10:57.680 --> 00:10:59.060
+Yeah.
+The rank? Yeah, it's the rank of
+
+00:10:59.060 --> 00:11:00.120
+the matrix,
+
+00:11:00.120 --> 00:11:01.980
+which we don't know.
+But that's what I would put in
+
+00:11:01.980 --> 00:11:03.480
+this blank.
+
+00:11:08.580 --> 00:11:11.080
+The dimension of the column
+space
+
+00:11:11.080 --> 00:11:16.300
+is the definition of the rank of
+the matrix.
+
+00:11:16.300 --> 00:11:19.180
+And it's that dimension of a
+subspace.
+
+00:11:19.180 --> 00:11:22.700
+What is it a subspace of?
+
+00:11:22.700 --> 00:11:26.240
+It is a high dimensional slice
+of what universe?
+
+00:11:26.240 --> 00:11:27.240
+Rn.
+Rn, good.
+
+00:11:27.500 --> 00:11:31.380
+Because all of these vectors
+live in Rn.
+
+00:11:31.680 --> 00:11:32.240
+Yeah.
+
+00:11:32.240 --> 00:11:33.680
+So why did you say that,
+
+00:11:33.680 --> 00:11:34.340
+as a rule,
+
+00:11:34.340 --> 00:11:37.480
+the dimensions has to be less
+than e?
+
+00:11:37.480 --> 00:11:38.480
+Because, remember,
+
+00:11:38.480 --> 00:11:41.140
+the rank, you can think of it as
+being the number of linearly
+
+00:11:41.140 --> 00:11:42.640
+independent vectors.
+
+00:11:42.680 --> 00:11:44.720
+But the number of linearly
+independent vectors has to be
+
+00:11:44.720 --> 00:11:47.140
+less than or equal to the number
+of vectors you have.
+
+00:11:47.140 --> 00:11:48.640
+Oh, less than or equal to? Yeah,
+it could be equal.
+
+00:11:48.640 --> 00:11:50.980
+If you have a 3 by 3 invertible
+matrix, then it's equal to the
+
+00:11:50.980 --> 00:11:51.440
+right,
+
+00:11:51.440 --> 00:11:52.440
+yeah.
+
+00:11:53.560 --> 00:11:56.300
+And again, just so we're crystal
+clear here, the column space of
+
+00:11:56.300 --> 00:11:58.760
+x is the same as the span
+
+00:11:58.760 --> 00:12:01.760
+of these individual x-vectors.
+
+00:12:04.840 --> 00:12:05.240
+OK,
+
+00:12:05.240 --> 00:12:07.560
+so are we clear on that point?
+I've drawn the column space like
+
+00:12:07.560 --> 00:12:10.360
+a plane here, but that's just
+because that's easy to draw.
+
+00:12:10.360 --> 00:12:13.240
+In general, this is some
+high-dimensional slice of r.
+
+00:12:13.240 --> 00:12:15.160
+What is the dimension of the
+slice?
+
+00:12:15.160 --> 00:12:18.120
+That is, how many independent
+directions can you move on the
+
+00:12:18.120 --> 00:12:21.180
+slice? the answer to that is
+rank x.
+
+00:12:21.180 --> 00:12:22.160
+OK.
+
+00:12:22.160 --> 00:12:26.600
+So y is not in this high
+dimensional subspace, but we
+
+00:12:26.600 --> 00:12:32.560
+want to try and approximate y as
+best as we can using vectors in
+
+00:12:32.560 --> 00:12:34.000
+this subspace.
+
+00:12:34.000 --> 00:12:36.620
+There are infinitely many
+vectors in this subspace.
+
+00:12:36.620 --> 00:12:39.640
+None of them are equal to y
+exactly.
+
+00:12:39.640 --> 00:12:42.700
+How do I find the one that is
+closest to y?
+
+00:12:42.700 --> 00:12:44.950
+Okay, well first,
+
+00:12:45.560 --> 00:12:50.540
+note that any vector on this
+subspace, like let me draw one
+
+00:12:50.540 --> 00:12:51.680
+in here in green,
+
+00:12:51.680 --> 00:12:53.180
+like this,
+
+00:12:53.620 --> 00:12:57.660
+I don't know, let's draw this
+one,
+
+00:12:57.660 --> 00:13:00.660
+actually draw it in,
+
+00:13:02.500 --> 00:13:04.460
+okay, OK,
+
+00:13:05.520 --> 00:13:08.520
+that's a bad color.
+
+00:13:14.080 --> 00:13:17.500
+That vector in green here.
+
+00:13:17.500 --> 00:13:21.740
+There is a simple expression I
+can express it as.
+
+00:13:21.740 --> 00:13:23.000
+Give me the e like, you know,
+
+00:13:23.000 --> 00:13:24.000
+I,
+
+00:13:24.320 --> 00:13:29.460
+what I'm getting at is there is
+a convenient way to describe any
+
+00:13:29.460 --> 00:13:32.620
+vector that is in the column
+space of x.
+
+00:13:32.620 --> 00:13:36.160
+Every vector in the column space
+of x is written as something,
+
+00:13:36.160 --> 00:13:37.120
+something.
+
+00:13:37.120 --> 00:13:38.120
+Yeah?
+
+00:13:38.460 --> 00:13:40.560
+I was going to say linear
+combination.
+
+00:13:40.560 --> 00:13:42.080
+It's related to that, yeah.
+
+00:13:42.080 --> 00:13:42.940
+Go for it.
+
+00:13:42.940 --> 00:13:46.620
+I was going to say linear
+combination of x is with column.
+
+00:13:46.620 --> 00:13:47.940
+Good.
+And how do we express a linear
+
+00:13:47.940 --> 00:13:50.940
+combination of x's column?
+
+00:13:52.120 --> 00:13:54.320
+It's just like x times a vector.
+
+00:13:54.320 --> 00:13:55.800
+Yeah, x times a vector.
+
+00:13:55.800 --> 00:13:58.420
+Anything that lives in this
+subspace is just x times a
+
+00:13:58.420 --> 00:14:00.760
+vector.
+If you loop over all possible
+
+00:14:00.760 --> 00:14:05.120
+vectors in R d you get this
+entire subspace
+
+00:14:05.120 --> 00:14:05.960
+Okay,
+
+00:14:05.960 --> 00:14:10.540
+so why don't we say this is like
+X times?
+
+00:14:10.540 --> 00:14:12.520
+I don't know
+
+00:14:12.520 --> 00:14:15.180
+The letter you're we're gonna
+start using for this vector here
+
+00:14:15.180 --> 00:14:18.020
+for reasons we're about to see
+is called W So why don't we say
+
+00:14:18.020 --> 00:14:20.880
+this is X times WA?
+
+00:14:20.880 --> 00:14:23.300
+You know that could be
+
+00:14:23.300 --> 00:14:25.550
+X times WB
+
+00:14:26.680 --> 00:14:28.760
+So that's important.
+
+00:14:28.760 --> 00:14:29.760
+Remember,
+
+00:14:32.440 --> 00:14:37.720
+every vector in column space of
+x
+
+00:14:38.420 --> 00:14:43.860
+is of the form x, w,
+
+00:14:45.440 --> 00:14:49.420
+where w is in R, d.
+
+00:14:49.420 --> 00:14:52.680
+Are we clear on why I'm saying w
+is in R, d?
+
+00:14:52.680 --> 00:14:57.160
+Why is that? Well the mechanical
+way to think about it is W is a
+
+00:14:57.160 --> 00:15:00.780
+vector I'm multiplying X by the
+golden rule tells me it needs to
+
+00:15:00.780 --> 00:15:04.400
+have D things in it because X is
+N by D
+
+00:15:04.400 --> 00:15:08.060
+When we interpret that a little
+further we know that X times a
+
+00:15:08.060 --> 00:15:11.810
+vector is a linear combination
+of the columns of X
+
+00:15:12.340 --> 00:15:15.660
+So that vector should tell me
+how much to take of each column
+
+00:15:15.660 --> 00:15:20.910
+X has D columns So the vector
+should have D weights in it
+
+00:15:21.080 --> 00:15:22.080
+Okay
+
+00:15:25.600 --> 00:15:29.640
+So my question really now boils
+down to,
+
+00:15:29.640 --> 00:15:34.660
+among all of the possible
+vectors I could multiply x by,
+
+00:15:37.240 --> 00:15:41.740
+which makes the vector xw as
+close to y as possible?
+
+00:15:42.480 --> 00:15:43.980
+Do we see that?
+
+00:15:43.980 --> 00:15:46.840
+Because if we all go at it like,
+you know, if we had numbers
+
+00:15:46.840 --> 00:15:48.410
+associated with this situation
+
+00:15:48.410 --> 00:15:51.800
+and I told everybody in this
+room, pick a different vector w
+
+00:15:51.800 --> 00:15:54.600
+and multiply it by the matrix x,
+
+00:15:54.600 --> 00:15:58.160
+we're all going to end up with
+different xw's that live
+
+00:15:58.160 --> 00:16:00.640
+somewhere in the column space.
+If we pick a w,
+
+00:16:00.640 --> 00:16:02.940
+multiply it in through by this
+x, which we're all using the
+
+00:16:02.940 --> 00:16:03.700
+same x,
+
+00:16:03.700 --> 00:16:05.820
+we're all going to get different
+things in this column space.
+
+00:16:05.820 --> 00:16:08.080
+And now the question is, well,
+which of us
+
+00:16:08.080 --> 00:16:11.000
+found the one that is closest to
+y?
+
+00:16:11.000 --> 00:16:14.750
+That's really the problem we're
+trying to solve here.
+
+00:16:14.860 --> 00:16:15.860
+OK?
+
+00:16:16.720 --> 00:16:20.470
+Let me copy this picture.
+
+00:16:24.640 --> 00:16:26.040
+Question.
+
+00:16:29.660 --> 00:16:34.140
+What vector w
+
+00:16:34.140 --> 00:16:36.000
+minimizes,
+
+00:16:38.020 --> 00:16:40.940
+or let's start with that,
+
+00:16:40.940 --> 00:16:45.260
+what vector w makes xw
+
+00:16:45.260 --> 00:16:51.120
+as close to y as possible.
+
+00:16:55.360 --> 00:16:57.610
+In other words,
+
+00:17:00.520 --> 00:17:03.260
+what w minimizes.
+
+00:17:04.780 --> 00:17:10.030
+Can you give me a function that
+I'm trying to minimize?
+
+00:17:14.200 --> 00:17:17.020
+What am I really trying to
+minimize here?
+
+00:17:17.020 --> 00:17:19.440
+Yeah.
+If your normal is xw.
+
+00:17:19.760 --> 00:17:20.760
+Good.
+
+00:17:20.880 --> 00:17:26.860
+The squared length of y minus
+the vector in the
+
+00:17:26.860 --> 00:17:29.860
+column space I'm approximating
+it with.
+
+00:17:32.510 --> 00:17:37.010
+Now, this is really just the
+squared length of what vector?
+
+00:17:37.720 --> 00:17:38.120
+Yeah.
+
+00:17:38.120 --> 00:17:40.370
+The error vector.
+The error vector.
+
+00:17:40.780 --> 00:17:46.700
+All we're trying to do is pick
+to w that makes x, w as close
+
+00:17:46.700 --> 00:17:48.060
+to y as possible.
+
+00:17:48.060 --> 00:17:49.800
+But y minus x, w,
+
+00:17:49.800 --> 00:17:53.550
+that's just our error vector.
+
+00:17:58.900 --> 00:18:01.860
+And one important thing for me
+to note here is that,
+
+00:18:01.860 --> 00:18:07.280
+in this setting, we're assuming
+x and y are fixed,
+
+00:18:08.540 --> 00:18:13.040
+And the only thing we have
+control over is w.
+
+00:18:18.440 --> 00:18:23.980
+So what we're looking for is the
+w that makes y and x times w,
+
+00:18:24.240 --> 00:18:28.740
+which, again, is just a linear
+combination of x's columns.
+
+00:18:42.460 --> 00:18:44.940
+As close to y as possible.
+
+00:18:44.940 --> 00:18:46.120
+And now, geometrically,
+
+00:18:46.120 --> 00:18:50.620
+what do you think the resulting
+xw is going to look like?
+
+00:18:51.200 --> 00:18:55.700
+What property will the best w
+have?
+
+00:18:56.840 --> 00:18:59.080
+If you had to guess.
+Yeah? The error vector will be
+
+00:18:59.080 --> 00:19:01.120
+orthogonal to y.
+
+00:19:01.120 --> 00:19:01.820
+Close.
+
+00:19:01.820 --> 00:19:03.260
+Not orthogonal to y,
+
+00:19:03.260 --> 00:19:06.260
+but orthogonal to something.
+
+00:19:07.900 --> 00:19:08.900
+Yeah,
+
+00:19:09.140 --> 00:19:10.980
+to the column space.
+
+00:19:10.980 --> 00:19:14.300
+Remember, let's think about the
+equivalent picture back here.
+
+00:19:14.300 --> 00:19:16.580
+The error vector wasn't
+orthogonal to y.
+
+00:19:16.580 --> 00:19:19.120
+It was orthogonal to what we
+projected onto.
+
+00:19:19.120 --> 00:19:22.720
+The right angle was between the
+vector x and the vector e.
+
+00:19:22.720 --> 00:19:24.320
+This is not a right angle.
+
+00:19:24.320 --> 00:19:27.320
+So the analog of that here is
+the error vector should be
+
+00:19:27.320 --> 00:19:30.320
+orthogonal to this entire
+subspace.
+
+00:19:31.240 --> 00:19:31.660
+OK,
+
+00:19:31.660 --> 00:19:32.540
+good.
+OK,
+
+00:19:32.540 --> 00:19:36.100
+so our projection,
+
+00:19:37.600 --> 00:19:41.960
+which I will say is xw star,
+
+00:19:41.960 --> 00:19:46.460
+the star coming because it is
+the best value of w here,
+
+00:19:47.220 --> 00:19:50.300
+and this resulting vector we'll
+call p,
+
+00:19:50.300 --> 00:19:52.060
+it's going to be defined
+
+00:19:52.060 --> 00:19:57.900
+such that the
+
+00:19:57.900 --> 00:20:03.840
+error vector is orthogonal to
+the entirety of the
+
+00:20:03.840 --> 00:20:05.340
+column space.
+
+00:20:05.580 --> 00:20:08.220
+So this is sort of a confusing
+idea, because we're not saying
+
+00:20:08.220 --> 00:20:11.220
+the error vector is
+perpendicular to any one vector.
+
+00:20:11.540 --> 00:20:14.540
+We're saying it's perpendicular
+to infinitely many vectors.
+
+00:20:15.140 --> 00:20:17.900
+Any linear combination of the
+columns of x,
+
+00:20:17.900 --> 00:20:20.280
+this error vector would be
+perpendicular to.
+
+00:20:20.280 --> 00:20:22.900
+So the kind of picture you
+should be thinking about is like
+
+00:20:22.900 --> 00:20:27.720
+a plane of vectors and one
+vector perpendicular to that
+
+00:20:27.720 --> 00:20:29.240
+entire plane, like a normal
+vector.
+
+00:20:29.240 --> 00:20:31.400
+OK, but again, of course, this
+is not a plane.
+
+00:20:31.400 --> 00:20:34.100
+This is a high-dimensional
+subspace.
+
+00:20:34.100 --> 00:20:36.980
+And this error vector is
+perpendicular to everything in
+
+00:20:36.980 --> 00:20:38.480
+that subspace.
+
+00:20:39.740 --> 00:20:40.400
+OK,
+
+00:20:40.400 --> 00:20:46.320
+so let's say our goal was to
+choose
+
+00:20:46.320 --> 00:20:51.280
+the w that
+
+00:20:51.280 --> 00:20:55.680
+minimizes y
+
+00:20:55.680 --> 00:20:59.180
+minus xw squared length.
+
+00:20:59.700 --> 00:21:00.700
+How?
+
+00:21:01.820 --> 00:21:07.560
+Pick w so that y minus
+
+00:21:07.560 --> 00:21:08.560
+xw,
+
+00:21:08.760 --> 00:21:12.510
+again that's our error vector,
+
+00:21:14.080 --> 00:21:17.020
+is orthogonal
+
+00:21:17.020 --> 00:21:22.900
+to the column space of
+
+00:21:22.900 --> 00:21:23.900
+it.
+
+00:21:40.340 --> 00:21:41.700
+That's the solution.
+
+00:21:41.700 --> 00:21:46.260
+All we need to do now is figure
+out algebraically
+
+00:21:46.260 --> 00:21:51.510
+which w would make y minus xw
+orthogonal to the column space.
+
+00:21:55.300 --> 00:21:59.260
+All we are trying to do now is
+solve for the w.
+
+00:21:59.260 --> 00:22:02.180
+And remember, w is a vector with
+d things in it.
+
+00:22:02.180 --> 00:22:06.240
+We're looking for that vector w
+that allows this picture to be
+
+00:22:06.240 --> 00:22:06.860
+true,
+
+00:22:06.860 --> 00:22:10.640
+where this error vector would be
+perpendicular to this infinitely
+
+00:22:10.640 --> 00:22:13.740
+large set of linear combinations
+of the columns of x.
+
+00:22:13.740 --> 00:22:15.060
+And if we can do that,
+
+00:22:15.060 --> 00:22:18.360
+well, then we've found the
+vector in the column space of x
+
+00:22:18.360 --> 00:22:21.620
+that is closest to y.
+
+00:22:21.620 --> 00:22:25.560
+Are we convinced that doing this
+would get us as close to y as
+
+00:22:25.560 --> 00:22:26.420
+possible? Yeah.
+
+00:22:26.420 --> 00:22:27.600
+I just have a question.
+
+00:22:27.600 --> 00:22:31.620
+You said there's infinitely
+many, did you say there's
+
+00:22:31.620 --> 00:22:35.740
+infinitely many values that
+could get you to position? No,
+
+00:22:35.860 --> 00:22:36.920
+no, no.
+Good point.
+
+00:22:36.920 --> 00:22:39.760
+Maybe I shouldn't have said the
+infinitely many thing all I
+
+00:22:39.760 --> 00:22:41.860
+meant was that there are
+infinitely many vectors that
+
+00:22:41.860 --> 00:22:45.080
+live here But this is exactly
+one of them.
+
+00:22:45.080 --> 00:22:46.080
+Yeah
+
+00:22:50.180 --> 00:22:53.220
+So maybe instead of the infinite
+point was not important there I
+
+00:22:53.220 --> 00:22:56.970
+should say a subspace containing
+
+00:22:58.640 --> 00:23:00.890
+All linear combinations
+
+00:23:03.720 --> 00:23:05.970
+Of X's columns
+
+00:23:06.140 --> 00:23:07.140
+OK,
+
+00:23:07.900 --> 00:23:10.900
+so that's our goal.
+
+00:23:11.740 --> 00:23:14.980
+The question then is, how do we
+find
+
+00:23:14.980 --> 00:23:20.980
+w so that y minus
+
+00:23:20.980 --> 00:23:21.980
+xw
+
+00:23:23.540 --> 00:23:28.920
+is orthogonal to the entirety of
+the column space?
+
+00:23:30.540 --> 00:23:35.000
+Because this is asking y minus
+xw to be orthogonal to, as we
+
+00:23:35.000 --> 00:23:36.440
+just discussed,
+
+00:23:36.440 --> 00:23:39.440
+a collection of linear
+combinations.
+
+00:23:40.560 --> 00:23:44.310
+How would we do that?
+
+00:23:46.000 --> 00:23:47.500
+Well, remember,
+
+00:23:48.180 --> 00:23:52.820
+x itself we can think of as
+being made up.
+
+00:23:52.820 --> 00:23:55.700
+And this is an n by d matrix.
+
+00:23:55.700 --> 00:24:01.220
+We can think of it as being made
+up of d column vectors.
+
+00:24:01.220 --> 00:24:06.460
+And we want this error vector to
+be perpendicular
+
+00:24:06.460 --> 00:24:09.020
+to the column space of x.
+
+00:24:09.020 --> 00:24:11.780
+Again, what that means is any
+linear combination of the
+
+00:24:11.780 --> 00:24:13.320
+columns of x,
+
+00:24:13.320 --> 00:24:16.680
+my error vector has got to be
+perpendicular to that.
+
+00:24:16.680 --> 00:24:20.430
+How could I accomplish that
+algebraically?
+
+00:24:23.260 --> 00:24:25.740
+How could I find an error vector
+
+00:24:25.740 --> 00:24:29.320
+that is orthogonal to every
+possible linear combination of
+
+00:24:29.320 --> 00:24:30.820
+x's columns.
+
+00:24:33.700 --> 00:24:38.950
+How might I try and do that?
+
+00:24:40.780 --> 00:24:41.940
+Any ideas?
+
+00:24:41.940 --> 00:24:42.340
+Yeah.
+
+00:24:42.340 --> 00:24:45.420
+You'd want to project y onto the
+column space,
+
+00:24:45.420 --> 00:24:46.420
+please?
+
+00:24:46.500 --> 00:24:48.720
+Well, that's what we're doing
+overall.
+
+00:24:48.720 --> 00:24:52.640
+The vector that I've drawn here
+
+00:24:52.640 --> 00:24:55.940
+is the projection of y onto the
+column space.
+
+00:24:55.940 --> 00:24:58.520
+My question is, at this state,
+how do I, what I'm trying to
+
+00:24:58.520 --> 00:25:03.020
+build towards is writing down a
+formula for w.
+
+00:25:03.060 --> 00:25:06.340
+And somehow, that formula is
+going to have to take into
+
+00:25:06.340 --> 00:25:09.480
+consideration the property that
+we've identified as being
+
+00:25:09.480 --> 00:25:10.480
+desirable,
+
+00:25:11.180 --> 00:25:13.880
+which is that the error vector,
+
+00:25:13.880 --> 00:25:15.880
+which is defined in terms of w,
+
+00:25:15.880 --> 00:25:19.020
+right? There's a w in y minus
+xw,
+
+00:25:19.020 --> 00:25:22.000
+is orthogonal to the entirety of
+the column space.
+
+00:25:22.000 --> 00:25:27.250
+Like, we need this picture to be
+true.
+
+00:25:27.740 --> 00:25:30.880
+But how can I express that in a
+formula?
+
+00:25:30.880 --> 00:25:33.740
+Yeah? You need to be like x is
+column 1.e
+
+00:25:33.740 --> 00:25:35.240
+equals 0.
+Exactly.
+
+00:25:35.760 --> 00:25:37.100
+The key idea is this.
+
+00:25:37.100 --> 00:25:40.200
+If what we need is the error
+vector to be perpendicular to
+
+00:25:40.200 --> 00:25:43.780
+any linear combination of these
+x's,
+
+00:25:43.780 --> 00:25:46.860
+all we really need is this error
+vector to be perpendicular to
+
+00:25:46.860 --> 00:25:49.160
+all d of these columns
+individually.
+
+00:25:49.160 --> 00:25:52.340
+If it's perpendicular to all d
+of those building blocks,
+
+00:25:52.340 --> 00:25:54.840
+then it'll be perpendicular to
+anything you can make with those
+
+00:25:54.840 --> 00:25:57.120
+building blocks.
+Do we buy that?
+
+00:25:58.580 --> 00:25:59.820
+OK, awesome.
+
+00:25:59.820 --> 00:26:03.840
+So if the error vector
+
+00:26:03.840 --> 00:26:09.740
+is orthogonal to
+
+00:26:09.740 --> 00:26:14.460
+every column of x
+
+00:26:14.460 --> 00:26:15.880
+individually,
+
+00:26:19.760 --> 00:26:25.740
+it will be orthogonal to the
+
+00:26:25.740 --> 00:26:27.240
+column space.
+
+00:26:30.880 --> 00:26:35.380
+OK, and just really quickly to
+see why that's true,
+
+00:26:38.520 --> 00:26:41.800
+let's write out an arbitrary
+vector that would be in the
+
+00:26:41.800 --> 00:26:43.240
+column space.
+Remember, the column space is
+
+00:26:43.240 --> 00:26:46.300
+just the set of linear
+combinations of x's columns.
+
+00:26:46.300 --> 00:26:50.560
+So a vector in the column space
+is something like 3 times the
+
+00:26:50.560 --> 00:26:54.620
+first column minus 7 times the
+second column.
+
+00:26:54.620 --> 00:26:56.520
+That's a vector in the column
+space.
+
+00:26:56.520 --> 00:27:00.480
+It also corresponds to
+multiplying the matrix x by a
+
+00:27:00.480 --> 00:27:01.480
+vector.
+
+00:27:01.780 --> 00:27:05.100
+What vector did I multiply the
+matrix x by to come up with this
+
+00:27:05.100 --> 00:27:06.600
+new vector?
+
+00:27:09.900 --> 00:27:14.400
+What vector did I multiply the
+matrix x by to get this thing?
+
+00:27:15.620 --> 00:27:17.680
+Is it 3, negative 7,
+
+00:27:17.680 --> 00:27:19.860
+and 0's? And then a bunch of
+0's, exactly.
+
+00:27:19.860 --> 00:27:24.580
+This is the same as the matrix x
+times the vector 3, negative 7,
+
+00:27:24.580 --> 00:27:27.540
+and a bunch of 0's.
+
+00:27:27.540 --> 00:27:29.790
+That's hugely important.
+
+00:27:30.860 --> 00:27:33.020
+Are we clear on those meaning
+the same thing?
+
+00:27:33.020 --> 00:27:35.900
+OK, they're both a linear
+combination of x's columns,
+
+00:27:35.900 --> 00:27:37.980
+three of the first, negative
+seven of the second,
+
+00:27:37.980 --> 00:27:39.420
+none of the rest.
+
+00:27:39.420 --> 00:27:39.940
+OK,
+
+00:27:39.940 --> 00:27:43.600
+well, my claim is that if the
+error vector is perpendicular,
+
+00:27:43.600 --> 00:27:46.180
+if we just find the error vector
+that is perpendicular to the
+
+00:27:46.180 --> 00:27:47.520
+columns individually,
+
+00:27:47.520 --> 00:27:49.920
+it will be perpendicular to
+things like three times the
+
+00:27:49.920 --> 00:27:52.580
+first column minus seven times
+the second column also,
+
+00:27:52.580 --> 00:27:54.500
+which I kind of just asserted,
+and you kind of believed it.
+
+00:27:54.500 --> 00:27:57.400
+But let's work out why that
+would be true for a random
+
+00:27:57.400 --> 00:27:59.600
+example like this.
+
+00:27:59.600 --> 00:28:01.680
+Distributing the dot product
+would tell me that this is the
+
+00:28:01.680 --> 00:28:05.920
+same as 3 times the error
+vectors dot product with the
+
+00:28:05.920 --> 00:28:09.560
+first column minus 7 times the
+error vectors dot product with
+
+00:28:09.560 --> 00:28:10.720
+the second column.
+
+00:28:10.720 --> 00:28:13.360
+And if the error vector were
+perpendicular to these columns
+
+00:28:13.360 --> 00:28:16.360
+individually, what would happen
+at this stage?
+
+00:28:18.240 --> 00:28:21.360
+What would happen at this stage?
+
+00:28:21.360 --> 00:28:23.400
+Yeah? It would go 0 minus 0.
+
+00:28:23.400 --> 00:28:25.220
+Yeah, it would get a bunch of
+0's.
+
+00:28:25.220 --> 00:28:27.280
+And so this whole thing would
+become 0.
+
+00:28:27.280 --> 00:28:30.080
+So hopefully that's some quick
+intuition for why
+
+00:28:30.080 --> 00:28:32.840
+So finding the error vector that
+is perpendicular to all of the
+
+00:28:32.840 --> 00:28:35.660
+columns independently is all we
+really need to do.
+
+00:28:35.660 --> 00:28:38.180
+It's independent to all of the
+columns.
+
+00:28:38.180 --> 00:28:39.520
+It'll be independent.
+
+00:28:39.520 --> 00:28:44.020
+Or sorry, it'll be orthogonal to
+all of the columns.
+
+00:28:44.160 --> 00:28:47.910
+It'll be orthogonal to anything
+you can make with the columns.
+
+00:28:51.100 --> 00:28:57.250
+And so let me copy this again.
+
+00:29:11.600 --> 00:29:16.680
+What we really want is an error
+vector
+
+00:29:16.680 --> 00:29:22.560
+that is perpendicular to
+
+00:29:22.560 --> 00:29:26.740
+x1,
+
+00:29:27.900 --> 00:29:31.280
+which means it's dot product
+with x1 is 0.
+
+00:29:31.280 --> 00:29:33.720
+I want it to be perpendicular to
+x2.
+
+00:29:33.720 --> 00:29:37.020
+So it's dot product with x2 is
+0.
+
+00:29:37.020 --> 00:29:40.800
+And I want it to be
+perpendicular to xd.
+
+00:29:40.800 --> 00:29:45.840
+So it's dot product with xd is
+0.
+
+00:29:45.840 --> 00:29:49.040
+OK, how do I proceed from here?
+Remember, my goal in all of this
+
+00:29:49.040 --> 00:29:50.760
+is to find a formula for w.
+
+00:29:50.760 --> 00:29:54.080
+I'm just trying to find the best
+w.
+
+00:29:54.080 --> 00:29:56.200
+But none of these equations
+involve a w.
+
+00:29:56.200 --> 00:30:02.200
+how can I get them to involve a
+w?
+
+00:30:03.260 --> 00:30:07.140
+How do I get these equations to
+involve a w?
+
+00:30:07.140 --> 00:30:08.140
+Yeah.
+
+00:30:08.300 --> 00:30:09.300
+Yeah,
+
+00:30:10.000 --> 00:30:14.500
+remember the error vector is the
+same as y minus x w.
+
+00:30:21.360 --> 00:30:25.110
+So now there's a w.
+
+00:30:25.240 --> 00:30:31.040
+But this is a system of d
+equations and d unknowns.
+
+00:30:45.820 --> 00:30:50.680
+It would be nice if there were a
+more concise way of representing
+
+00:30:50.680 --> 00:30:55.180
+this entire system with just one
+equation,
+
+00:30:55.900 --> 00:31:01.900
+can you think of a way to
+represent this system
+
+00:31:01.900 --> 00:31:06.300
+of equations in just one
+equation.
+
+00:31:28.920 --> 00:31:31.600
+I want to take the system of d
+equations and d unknowns and
+
+00:31:31.600 --> 00:31:33.060
+write it as just one equation.
+
+00:31:33.060 --> 00:31:36.220
+That one equation will involve
+matrices and vectors.
+
+00:31:36.220 --> 00:31:39.200
+It'll be the same as the system
+of d equations and d unknowns.
+
+00:31:39.200 --> 00:31:45.200
+But how do I write it as just
+one equation?
+
+00:31:45.300 --> 00:31:47.160
+Well, tell me this.
+
+00:31:47.160 --> 00:31:49.980
+All d of these equations,
+
+00:31:49.980 --> 00:31:54.560
+they're the dot product between
+what and what.
+
+00:31:57.880 --> 00:31:59.600
+They all follow the same
+pattern.
+
+00:31:59.600 --> 00:32:04.040
+They're the dot products of what
+and what.
+
+00:32:04.040 --> 00:32:05.040
+Yeah?
+
+00:32:05.300 --> 00:32:09.800
+Between the column in the column
+space and the error vector.
+
+00:32:09.880 --> 00:32:11.360
+Good.
+They're all dot products between
+
+00:32:11.360 --> 00:32:13.340
+this error vector.
+That's the same in all of these
+
+00:32:13.340 --> 00:32:14.840
+d equations.
+
+00:32:15.000 --> 00:32:18.750
+And a column of x.
+
+00:32:18.940 --> 00:32:19.660
+Now,
+
+00:32:19.660 --> 00:32:22.000
+when I told you about the
+definition of matrix vector
+
+00:32:22.000 --> 00:32:23.000
+multiplication,
+
+00:32:23.580 --> 00:32:26.940
+I said that there were two ways
+to interpret this.
+
+00:32:26.940 --> 00:32:30.500
+But let's just say, as an aside,
+
+00:32:30.500 --> 00:32:33.500
+there were two interpretations.
+
+00:32:37.180 --> 00:32:38.920
+Let's just use different
+variables here,
+
+00:32:38.920 --> 00:32:40.660
+a times v.
+
+00:32:40.660 --> 00:32:43.900
+What were the two ways of
+interpreting a times v?
+
+00:32:43.900 --> 00:32:47.020
+There's the way that we've been
+using more recently, which is
+
+00:32:47.020 --> 00:32:48.440
+the conceptual way,
+
+00:32:48.440 --> 00:32:50.560
+which is this is a linear
+combination
+
+00:32:50.560 --> 00:32:55.140
+of what?
+
+00:32:57.050 --> 00:32:59.900
+The vector that comes out of a
+times v is what?
+
+00:32:59.900 --> 00:33:03.650
+A linear combination of what?
+
+00:33:06.240 --> 00:33:06.900
+Yeah.
+
+00:33:06.900 --> 00:33:09.980
+Both a's columns and b's
+coefficients.
+
+00:33:09.980 --> 00:33:14.040
+This is a linear combination of
+a's columns
+
+00:33:14.040 --> 00:33:19.140
+with coefficients from b.
+
+00:33:20.300 --> 00:33:23.300
+But there was another
+interpretation,
+
+00:33:24.200 --> 00:33:28.060
+Which is the way that we first
+looked at it,
+
+00:33:28.060 --> 00:33:30.480
+or when we were first looking at
+this, this is a way that you
+
+00:33:30.480 --> 00:33:31.600
+thought of as well.
+
+00:33:31.600 --> 00:33:35.820
+And it makes it sort of easier
+to do the calculation quickly.
+
+00:33:35.820 --> 00:33:38.280
+Yes, conceptually this is a
+linear combination of A's
+
+00:33:38.280 --> 00:33:39.280
+columns.
+
+00:33:39.400 --> 00:33:41.640
+But if you had to calculate it,
+what would you say this is?
+
+00:33:41.640 --> 00:33:44.060
+The dot product of the rows
+would be?
+
+00:33:44.060 --> 00:33:49.060
+Good.
+If the dot products of A's rows,
+
+00:33:49.060 --> 00:33:52.020
+if you think of them as column
+vectors,
+
+00:33:52.020 --> 00:33:54.980
+with v.
+
+00:33:58.540 --> 00:34:00.860
+So that's not exactly what we
+have here.
+
+00:34:00.860 --> 00:34:04.520
+Here we have the dot product of
+x's columns with this fixed
+
+00:34:04.520 --> 00:34:05.520
+vector.
+
+00:34:06.100 --> 00:34:11.600
+And it sort of seems like we
+have some matrix times is the
+
+00:34:11.600 --> 00:34:17.500
+error vector being equal to a
+
+00:34:17.500 --> 00:34:19.060
+vector of zeros.
+
+00:34:19.060 --> 00:34:21.680
+The thing is, if I put an x
+here,
+
+00:34:21.680 --> 00:34:22.600
+this is invalid.
+
+00:34:22.600 --> 00:34:26.980
+Because x is n by d,
+
+00:34:26.980 --> 00:34:30.180
+and this is a vector in Rn.
+
+00:34:30.180 --> 00:34:31.500
+So where are we getting with
+this,
+
+00:34:31.500 --> 00:34:33.040
+Paul? x transpose,
+
+00:34:33.040 --> 00:34:34.040
+exactly.
+
+00:34:37.180 --> 00:34:39.040
+Why is that? Well,
+
+00:34:39.040 --> 00:34:44.290
+the rows of x transpose are the
+same as the columns of x.
+
+00:34:44.520 --> 00:34:49.160
+So when I do the multiplication
+of x transpose with y minus xw,
+
+00:34:51.720 --> 00:34:55.720
+what this gives me on the left
+are linear combinations of x's
+
+00:34:55.720 --> 00:34:58.720
+rows instead of columns.
+
+00:34:59.200 --> 00:35:00.560
+Or similarly,
+
+00:35:00.560 --> 00:35:03.680
+it gives me the dot products of
+the error vector with x's
+
+00:35:03.680 --> 00:35:04.680
+columns.
+
+00:35:04.900 --> 00:35:07.520
+I reverse my default
+interpretations because I'm
+
+00:35:07.520 --> 00:35:12.020
+using X transpose instead of X.
+
+00:35:13.600 --> 00:35:19.060
+Rows of X transpose are columns
+of X.
+
+00:35:26.240 --> 00:35:32.080
+So my constraint of wanting the
+error vector
+
+00:35:32.080 --> 00:35:35.500
+to be perpendicular to the
+column space of X is
+
+00:35:35.500 --> 00:35:38.500
+encapsulated by this one
+equation.
+
+00:35:43.660 --> 00:35:46.380
+So again, let me draw this
+picture.
+
+00:35:46.380 --> 00:35:51.630
+I have the column space of x.
+
+00:35:51.880 --> 00:35:54.220
+y is some vector,
+
+00:35:54.220 --> 00:35:57.180
+probably not in it.
+
+00:35:57.180 --> 00:36:00.180
+I'm trying to describe
+
+00:36:00.700 --> 00:36:05.960
+the orthogonal projection of y
+onto this column space,
+
+00:36:06.000 --> 00:36:10.020
+and it is described by having
+this error vector that is
+
+00:36:10.020 --> 00:36:12.760
+perpendicular to the entire
+column space.
+
+00:36:12.760 --> 00:36:18.680
+And so I just want to remember
+our goal is to find w such that
+
+00:36:18.680 --> 00:36:22.500
+y i minus x, w is orthogonal
+
+00:36:22.500 --> 00:36:27.080
+to the column space of x.
+
+00:36:32.780 --> 00:36:35.740
+This is equivalent to
+
+00:36:35.740 --> 00:36:41.360
+finding w
+
+00:36:41.360 --> 00:36:45.840
+such that
+
+00:36:45.840 --> 00:36:51.640
+x transpose times
+
+00:36:51.640 --> 00:36:57.420
+y minus xw is equal to the zero
+vector.
+
+00:36:57.420 --> 00:36:59.840
+Are we clear on where we've come
+so far in the lecture? Our goal
+
+00:36:59.840 --> 00:37:02.820
+was really just to find the
+vector in this column space
+
+00:37:02.820 --> 00:37:04.960
+that's closest to y.
+
+00:37:04.960 --> 00:37:08.380
+We do that by finding the error,
+the vector whose error vector is
+
+00:37:08.380 --> 00:37:11.240
+perpendicular to the column
+space, and what we've simplified
+
+00:37:11.240 --> 00:37:14.440
+this now to is finding the w
+that satisfies this one equation
+
+00:37:14.440 --> 00:37:19.840
+we can solve this equation for W
+we know how to find the vector
+
+00:37:19.840 --> 00:37:24.240
+in the column space that's
+closest to Y okay let's try and
+
+00:37:24.240 --> 00:37:29.780
+isolate for W here how might we
+do that let's try and solve for
+
+00:37:29.780 --> 00:37:33.180
+W how can we do that
+
+00:37:33.180 --> 00:37:39.020
+yeah Now, why don't we
+distribute x
+
+00:37:39.020 --> 00:37:40.020
+transpose?
+
+00:37:41.700 --> 00:37:47.700
+x transpose y minus x transpose
+xw is equal to the zero vector.
+
+00:37:49.700 --> 00:37:55.700
+This is a quick shape check.
+
+00:37:56.000 --> 00:38:01.250
+This is the zero vector with how
+many zeros in it?
+
+00:38:02.460 --> 00:38:07.710
+How many zeros are in this zero
+vector?
+
+00:38:14.340 --> 00:38:15.340
+Yeah,
+
+00:38:15.420 --> 00:38:18.420
+good, it is D.
+
+00:38:20.260 --> 00:38:25.510
+All right, now if I add x
+transpose x w to both sides,
+
+00:38:26.980 --> 00:38:32.020
+I get a very important equation
+
+00:38:32.020 --> 00:38:36.080
+this is called
+
+00:38:36.080 --> 00:38:39.920
+the normal equation
+
+00:38:39.920 --> 00:38:45.680
+sometimes it's called normal
+equations plural why is that
+
+00:38:45.680 --> 00:38:50.580
+well this is a system of D
+equations and D unknowns
+
+00:38:50.580 --> 00:38:55.580
+that's not new we already wrote
+it as a system of D equations
+
+00:38:55.580 --> 00:38:58.300
+and D unknowns and all we did
+was just write this system with
+
+00:38:58.300 --> 00:39:01.280
+D equations as one concise
+equation, because it's easier to
+
+00:39:01.280 --> 00:39:02.960
+work with algebraically.
+
+00:39:02.960 --> 00:39:06.640
+Why do you think it's called the
+normal equation?
+
+00:39:06.640 --> 00:39:07.720
+I didn't make this up.
+
+00:39:07.720 --> 00:39:12.220
+Why do you think it's called
+that?
+
+00:39:14.920 --> 00:39:15.920
+Yeah?
+
+00:39:16.280 --> 00:39:18.180
+Something about orthonormality.
+
+00:39:18.180 --> 00:39:21.560
+Yeah, or something about the
+error vector being perpendicular
+
+00:39:21.560 --> 00:39:26.060
+or normal to this column space.
+
+00:39:37.200 --> 00:39:41.700
+So our job in finding the
+optimal or best w,
+
+00:39:41.720 --> 00:39:44.340
+the one that will give us the
+linear combination of x's
+
+00:39:44.340 --> 00:39:46.080
+columns that's closest to y,
+
+00:39:46.080 --> 00:39:50.260
+has been reduced to finding the
+w that satisfies the normal
+
+00:39:50.260 --> 00:39:51.260
+equation.
+
+00:39:52.820 --> 00:39:58.070
+Now, how do we find that w?
+
+00:39:58.780 --> 00:40:03.920
+All that's left is finding
+
+00:40:03.920 --> 00:40:07.800
+w such that
+
+00:40:07.800 --> 00:40:13.460
+this is true.
+
+00:40:14.900 --> 00:40:19.700
+Now, how do we find the w that
+achieves x transpose x w equals
+
+00:40:19.700 --> 00:40:21.160
+x transpose y?
+
+00:40:21.160 --> 00:40:21.780
+Yeah.
+
+00:40:21.780 --> 00:40:24.220
+Wouldn't it just be the w that
+gets you,
+
+00:40:24.220 --> 00:40:26.280
+that gets x to be equal to y,
+
+00:40:26.280 --> 00:40:28.600
+a vector of y?
+
+00:40:28.600 --> 00:40:31.280
+Well, the whole premise here is
+that there isn't a w that
+
+00:40:31.280 --> 00:40:33.530
+accomplishes that exactly.
+
+00:40:33.820 --> 00:40:35.600
+Right? This is the picture you
+should think about.
+
+00:40:35.600 --> 00:40:39.740
+You're right in that if y could
+be made as an exact linear
+
+00:40:39.740 --> 00:40:42.020
+combination of x's columns,
+
+00:40:42.020 --> 00:40:44.480
+then this error vector would be
+the zero vector, because you can
+
+00:40:44.480 --> 00:40:46.100
+make y exactly.
+
+00:40:46.100 --> 00:40:51.350
+But the premise here is that you
+can't, or you can't necessarily.
+
+00:40:51.520 --> 00:40:57.200
+So what I need to do is solve
+for the w that allows this to be
+
+00:40:57.200 --> 00:40:58.200
+true.
+
+00:41:00.140 --> 00:41:01.140
+Okay,
+
+00:41:01.280 --> 00:41:03.640
+one thing you might think try
+and think about is, well like it
+
+00:41:03.640 --> 00:41:06.400
+would be sick if we could just
+cancel the x transpose.
+
+00:41:06.400 --> 00:41:09.340
+But why is that not possible?
+
+00:41:09.340 --> 00:41:12.960
+like why can you not well
+firstly you can't you know
+
+00:41:12.960 --> 00:41:15.220
+there's no division what would
+you have to do if you wanted to
+
+00:41:15.220 --> 00:41:20.240
+cancel the X transposes what
+would you have to do yeah
+
+00:41:20.240 --> 00:41:23.660
+you have to multiply by the
+inverse of X transpose but why
+
+00:41:23.660 --> 00:41:29.040
+why can't we do that yeah
+because nobody said X transpose
+
+00:41:29.040 --> 00:41:34.220
+is a square matrix right X was
+assumed to be n by D X itself is
+
+00:41:34.220 --> 00:41:36.920
+not necessarily square so x
+transpose is not necessarily
+
+00:41:36.920 --> 00:41:40.480
+square but there is a square
+matrix on the page right now
+
+00:41:40.480 --> 00:41:44.660
+what is it yeah
+
+00:41:44.660 --> 00:41:50.360
+good x transpose x is a square
+matrix
+
+00:41:50.360 --> 00:41:55.920
+so So
+
+00:41:55.920 --> 00:41:59.200
+what can we do?
+
+00:42:01.700 --> 00:42:04.700
+We take this equation,
+
+00:42:07.740 --> 00:42:12.990
+and our goal is to isolate for
+w.
+
+00:42:13.920 --> 00:42:15.920
+How could we do that?
+
+00:42:15.920 --> 00:42:19.440
+Knowing that x transpose x is a
+square matrix.
+
+00:42:19.440 --> 00:42:19.940
+Yeah?
+
+00:42:19.940 --> 00:42:23.080
+Multiply both sides by x
+transpose x inverse.
+
+00:42:23.080 --> 00:42:26.820
+Exactly.
+We can multiply both sides by
+
+00:42:26.820 --> 00:42:30.570
+the inverse of this square
+matrix.
+
+00:42:32.540 --> 00:42:34.300
+What does that do?
+
+00:42:34.300 --> 00:42:37.920
+Well, x transpose x inverse
+times x transpose x
+
+00:42:37.920 --> 00:42:39.940
+is just the identity matrix.
+
+00:42:39.940 --> 00:42:44.120
+So what are we left with? Well,
+we're left with the formula for
+
+00:42:44.120 --> 00:42:45.320
+our optimal w,
+
+00:42:45.320 --> 00:42:49.120
+the w that makes x times w as
+close to y as possible.
+
+00:42:49.120 --> 00:42:54.370
+It is X transpose X inverse X
+transpose Y
+
+00:42:59.740 --> 00:43:00.740
+Okay
+
+00:43:02.420 --> 00:43:05.980
+And this is one of the most
+important formulas you'll see
+
+00:43:05.980 --> 00:43:09.100
+this semester It looks foreign
+to you now but by the time you
+
+00:43:09.100 --> 00:43:11.880
+come to midterm to you'll have
+seen it so much that you won't
+
+00:43:11.880 --> 00:43:13.220
+need to put it on your
+
+00:43:13.220 --> 00:43:16.560
+Cheat sheet because it'll be
+like ingrained in memory OK,
+
+00:43:16.560 --> 00:43:18.100
+this is one of the most
+important formulas of the
+
+00:43:18.100 --> 00:43:19.100
+semester.
+
+00:43:21.220 --> 00:43:24.800
+And you should notice it feels
+similar to the formula we looked
+
+00:43:24.800 --> 00:43:27.740
+at the start of class of x dot y
+over x dot x.
+
+00:43:27.740 --> 00:43:28.960
+It's kind of like that,
+
+00:43:28.960 --> 00:43:30.480
+but there x was a vector,
+
+00:43:30.480 --> 00:43:34.230
+here x is a matrix.
+
+00:43:35.600 --> 00:43:39.350
+But we made some assumptions
+here.
+
+00:43:41.120 --> 00:43:44.740
+What did we assume in order to
+solve for w?
+
+00:43:44.740 --> 00:43:46.920
+I'll write that down here what I
+just said most important
+
+00:43:46.920 --> 00:43:47.920
+equation
+
+00:43:59.100 --> 00:44:03.000
+What did we have to assume in
+order to do this
+
+00:44:03.000 --> 00:44:04.000
+Yeah
+
+00:44:05.240 --> 00:44:06.240
+Good
+
+00:44:06.840 --> 00:44:09.780
+It isn't necessarily We just
+spent,
+
+00:44:09.780 --> 00:44:12.920
+you know, two lectures thinking
+about when matrices are and are
+
+00:44:12.920 --> 00:44:14.420
+not invertible.
+
+00:44:14.600 --> 00:44:19.100
+Here we assumed x transpose x
+was.
+
+00:44:26.320 --> 00:44:29.320
+But it isn't necessary.
+
+00:44:30.480 --> 00:44:35.730
+So we should think about when is
+x transpose x invertible?
+
+00:44:39.660 --> 00:44:43.680
+How do we reason about this?
+
+00:44:43.680 --> 00:44:45.900
+Well, what is the shape of X
+transpose X?
+
+00:44:45.900 --> 00:44:46.620
+Remember,
+
+00:44:46.620 --> 00:44:48.040
+X is N by D.
+
+00:44:48.040 --> 00:44:50.440
+We've kind of already said this,
+but what is the shape of X
+
+00:44:50.440 --> 00:44:51.940
+transpose X?
+
+00:44:56.520 --> 00:44:57.140
+Yeah.
+
+00:44:57.140 --> 00:44:58.700
+D by D.
+Good.
+
+00:44:58.700 --> 00:44:59.280
+Remember,
+
+00:44:59.280 --> 00:45:01.340
+the way you interpret this is
+that it contains the dot
+
+00:45:01.340 --> 00:45:03.860
+products of all pairs of columns
+of x.
+
+00:45:03.860 --> 00:45:04.860
+OK.
+
+00:45:05.640 --> 00:45:09.700
+So in order for x transpose x to
+be invertible,
+
+00:45:09.700 --> 00:45:14.200
+what should the rank of x
+transpose x be?
+
+00:45:28.900 --> 00:45:31.660
+If x transpose x is to be
+invertible, what does its rank
+
+00:45:31.660 --> 00:45:32.760
+have to do?
+
+00:45:32.760 --> 00:45:33.700
+Yeah.
+
+00:45:33.700 --> 00:45:34.940
+It has to be D.
+
+00:45:34.940 --> 00:45:35.940
+Remember,
+
+00:45:36.300 --> 00:45:38.220
+if a matrix is square,
+
+00:45:38.220 --> 00:45:41.980
+it's invertible when its rank is
+equal to its number of rows and
+
+00:45:41.980 --> 00:45:42.980
+columns.
+
+00:45:44.080 --> 00:45:46.200
+Another way of thinking about
+this is that it's invertible
+
+00:45:46.200 --> 00:45:49.180
+when all of its columns are
+linearly independent, which
+
+00:45:49.180 --> 00:45:53.680
+happens when its rank is equal
+to its number of columns.
+
+00:45:55.660 --> 00:46:00.200
+But we need the rank of x
+transpose x to be equal to D.
+
+00:46:00.200 --> 00:46:04.520
+Now, there's a video I included
+in the notes and linked a few
+
+00:46:04.520 --> 00:46:06.780
+times in these lecture playlists
+
+00:46:06.780 --> 00:46:09.360
+that tells you, and it's related
+to a thing that's in your
+
+00:46:09.360 --> 00:46:10.680
+homework right now,
+
+00:46:10.680 --> 00:46:15.220
+that tells you about the rank of
+X transpose X.
+
+00:46:15.220 --> 00:46:18.970
+What am I getting at?
+
+00:46:22.420 --> 00:46:24.280
+What is the rank of X transpose
+X?
+
+00:46:24.280 --> 00:46:26.180
+You include the rank of X.
+
+00:46:26.180 --> 00:46:28.800
+Exactly.
+The rank of X transpose X is
+
+00:46:28.800 --> 00:46:33.740
+equal to the rank of X.
+
+00:46:44.140 --> 00:46:46.920
+X and X transpose X have the
+same rank,
+
+00:46:46.920 --> 00:46:49.040
+the same number of linearly
+independent columns.
+
+00:46:49.040 --> 00:46:54.900
+Now we'll say y c video
+
+00:46:54.900 --> 00:46:57.200
+on website.
+
+00:46:58.220 --> 00:47:01.280
+To prove that that's true,
+
+00:47:01.280 --> 00:47:04.260
+the way that we do it is by
+showing that both x and x
+
+00:47:04.260 --> 00:47:06.880
+transpose x have the same null
+space.
+
+00:47:06.880 --> 00:47:09.280
+And if they have the same null
+space
+
+00:47:09.280 --> 00:47:11.240
+and the same number of columns,
+
+00:47:11.240 --> 00:47:14.990
+the rank nullity theorem tells
+us they also have the same rank.
+
+00:47:16.480 --> 00:47:19.200
+So let's take a step back.
+We need x transpose x to be
+
+00:47:19.200 --> 00:47:20.200
+invertible.
+
+00:47:20.200 --> 00:47:23.160
+We've deduced that x transpose
+x's rank is d,
+
+00:47:23.160 --> 00:47:25.660
+but it's also equal to the rank
+of x.
+
+00:47:25.660 --> 00:47:29.800
+So in order for x transpose x to
+be invertible,
+
+00:47:29.800 --> 00:47:34.300
+what is the real condition that
+needs to be true?
+
+00:47:37.360 --> 00:47:43.240
+So we need x transpose x to be
+invertible.
+
+00:47:43.240 --> 00:47:49.160
+That means we need x transpose x
+to have a rank of d,
+
+00:47:53.060 --> 00:47:57.960
+which means we need x to have a
+rank of d,
+
+00:47:57.960 --> 00:48:02.460
+which means what do we need
+about x?
+
+00:48:10.920 --> 00:48:13.620
+In English, what would I say
+about x?
+
+00:48:13.620 --> 00:48:16.040
+What needs to be true about x
+for x transpose x to be
+
+00:48:16.040 --> 00:48:17.020
+invertible?
+
+00:48:17.020 --> 00:48:17.480
+Yeah?
+
+00:48:17.480 --> 00:48:19.880
+All its rows and columns are
+linearly independent.
+
+00:48:19.880 --> 00:48:20.400
+Close.
+
+00:48:20.400 --> 00:48:22.360
+It's all its columns are
+linearly independent.
+
+00:48:22.360 --> 00:48:26.100
+Because remember, x is not a
+square matrix.
+
+00:48:26.100 --> 00:48:27.980
+And d is its number of columns.
+
+00:48:27.980 --> 00:48:30.240
+We need x's rank to be d,
+
+00:48:30.240 --> 00:48:34.740
+which means we need x's columns.
+
+00:48:40.920 --> 00:48:43.920
+to be linearly independent.
+
+00:48:49.720 --> 00:48:54.220
+So when is there a unique
+solution to the normal equation?
+
+00:48:54.360 --> 00:48:56.140
+Let's come back here.
+
+00:48:56.140 --> 00:49:00.940
+This unique solution that tells
+you the best w only exists
+
+00:49:00.940 --> 00:49:04.690
+when x's columns are linearly
+independent.
+
+00:49:24.560 --> 00:49:29.060
+So what happens when x transpose
+x isn't invertible?
+
+00:49:30.520 --> 00:49:34.270
+Meaning x's columns are not
+linearly independent.
+
+00:49:35.080 --> 00:49:37.330
+Then what happens?
+
+00:49:43.060 --> 00:49:46.960
+What happens when X transpose X
+is not invertible?
+
+00:49:46.960 --> 00:49:50.700
+I would just guess that means
+there's more than one solution.
+
+00:49:50.700 --> 00:49:51.700
+Exactly.
+
+00:49:51.800 --> 00:49:55.400
+The issue is there are just
+multiple W's that give you the
+
+00:49:55.400 --> 00:49:57.080
+same projection.
+
+00:50:00.400 --> 00:50:04.840
+So let me write that down then
+draw a picture for you.
+
+00:50:04.840 --> 00:50:07.090
+So case two,
+
+00:50:08.020 --> 00:50:12.200
+X transpose X is not invertible,
+
+00:50:12.200 --> 00:50:18.100
+i.e.,
+X's columns are not
+
+00:50:18.100 --> 00:50:22.220
+linearly independent.
+And
+
+00:50:22.220 --> 00:50:27.640
+then x
+
+00:50:27.640 --> 00:50:31.460
+transpose xw equals x transpose
+y
+
+00:50:32.940 --> 00:50:38.200
+has infinitely many
+
+00:50:38.200 --> 00:50:41.500
+solutions w,
+
+00:50:43.320 --> 00:50:44.840
+or w star.
+
+00:50:44.840 --> 00:50:47.880
+So instead of there just being
+one optimal w star,
+
+00:50:47.880 --> 00:50:49.520
+there are infinitely many.
+
+00:50:49.520 --> 00:50:52.460
+The issue is, or not the issue,
+the thing to remember,
+
+00:50:52.460 --> 00:50:56.880
+is that all of these different w
+stars
+
+00:50:56.880 --> 00:50:58.960
+lead to the same projection.
+
+00:50:58.960 --> 00:51:02.520
+So the issue is just that this
+best projection
+
+00:51:02.520 --> 00:51:08.400
+is described multiple ways.
+But there's still only
+
+00:51:08.400 --> 00:51:10.640
+one best projection.
+
+00:51:10.640 --> 00:51:11.020
+OK,
+
+00:51:11.020 --> 00:51:17.020
+let me draw a picture for you to
+describe it.
+
+00:51:17.660 --> 00:51:21.410
+When I've been drawing this
+picture,
+
+00:51:21.600 --> 00:51:24.500
+the picture had nothing to do
+with x's columns being linearly
+
+00:51:24.500 --> 00:51:25.280
+independent.
+
+00:51:25.280 --> 00:51:27.460
+Just from this picture, you
+don't know if the x in question
+
+00:51:27.460 --> 00:51:29.960
+has linearly independent columns
+or not.
+
+00:51:29.960 --> 00:51:31.220
+You don't know anything about
+its columns.
+
+00:51:31.220 --> 00:51:34.860
+You just know its column spaces,
+some subspace.
+
+00:51:34.860 --> 00:51:38.600
+If x's columns are linearly
+independent,
+
+00:51:38.600 --> 00:51:41.580
+there is only one way to make p.
+
+00:51:41.580 --> 00:51:44.540
+If x's columns are not linearly
+independent,
+
+00:51:44.540 --> 00:51:46.900
+there are infinitely many ways
+to make P.
+
+00:51:46.900 --> 00:51:49.740
+But either way, it's the same
+vector P.
+
+00:51:49.740 --> 00:51:51.560
+There's only P is unique.
+
+00:51:51.560 --> 00:51:55.310
+What's not necessarily unique is
+how you make P.
+
+00:51:59.780 --> 00:52:03.530
+I'll say no matter what,
+
+00:52:03.880 --> 00:52:09.480
+P is unique If
+
+00:52:09.480 --> 00:52:14.960
+x's calls are linearly
+independent,
+
+00:52:15.940 --> 00:52:20.600
+then there's only
+
+00:52:20.600 --> 00:52:26.180
+one linear
+
+00:52:26.180 --> 00:52:31.260
+combination of x's
+
+00:52:31.260 --> 00:52:34.480
+P equals P.
+
+00:52:40.980 --> 00:52:44.060
+Otherwise,
+
+00:52:48.000 --> 00:52:50.220
+many different
+
+00:52:50.220 --> 00:52:55.140
+w stars
+
+00:52:55.140 --> 00:52:59.920
+give the same P.
+
+00:53:01.320 --> 00:53:04.680
+So this picture I want you to
+remember,
+
+00:53:04.680 --> 00:53:07.900
+p is always unique.
+
+00:53:10.720 --> 00:53:14.740
+What's not necessarily unique is
+how you make p with a linear
+
+00:53:14.740 --> 00:53:17.740
+combination of x's columns.
+
+00:53:20.520 --> 00:53:26.180
+And so when we go about this
+journey of trying to find And I
+
+00:53:26.180 --> 00:53:30.680
+should write this maybe on the
+page here.
+
+00:53:31.340 --> 00:53:35.090
+Orthogonal projection of y onto
+the column space.
+
+00:53:54.720 --> 00:53:55.720
+Sometimes,
+
+00:53:56.560 --> 00:53:59.560
+we will just say, to do that, we
+need to solve the normal
+
+00:53:59.560 --> 00:54:00.560
+equations.
+
+00:54:00.700 --> 00:54:04.450
+We need to solve this
+highlighted equation.
+
+00:54:04.510 --> 00:54:07.680
+It may or may not have a unique
+solution W,
+
+00:54:07.680 --> 00:54:12.180
+but any of those solutions W
+will give us the best P.
+
+00:54:13.970 --> 00:54:18.240
+This is a confusing idea in that
+there could be one W or
+
+00:54:18.240 --> 00:54:20.870
+infinitely many W's that satisfy
+this,
+
+00:54:20.870 --> 00:54:25.370
+but they all correspond to the
+same vector P.
+
+00:54:25.990 --> 00:54:30.460
+So now we have a recipe for
+finding the vector in the column
+
+00:54:30.460 --> 00:54:35.480
+space that is closest to some
+target vector y.
+
+00:54:37.260 --> 00:54:43.240
+So let me give you an example to
+think through.
+
+00:54:43.240 --> 00:54:46.040
+And you worked on an example
+similar to this in yesterday's
+
+00:54:46.040 --> 00:54:47.040
+lab.
+
+00:54:47.060 --> 00:54:51.120
+Let's suppose we make up some
+matrix 1,
+
+00:54:51.120 --> 00:54:52.080
+2,
+
+00:54:52.080 --> 00:54:53.160
+1, 0,
+
+00:54:53.160 --> 00:54:54.040
+0,
+
+00:54:54.040 --> 00:54:55.040
+1,
+
+00:54:55.200 --> 00:54:56.820
+1, negative 1.
+Just trying to use the same
+
+00:54:56.820 --> 00:55:00.120
+examples as the notes.
+and y is equal to 1,
+
+00:55:00.360 --> 00:55:00.780
+0,
+
+00:55:00.780 --> 00:55:01.960
+4, 5,
+
+00:55:01.960 --> 00:55:07.360
+the question that we've just
+learned how to answer is
+
+00:55:07.360 --> 00:55:11.100
+which linear combination
+
+00:55:11.100 --> 00:55:15.720
+of x's columns
+
+00:55:15.720 --> 00:55:20.860
+is closest to y?
+
+00:55:24.480 --> 00:55:29.730
+And the answer is X times W
+star,
+
+00:55:30.080 --> 00:55:31.380
+where,
+
+00:55:32.940 --> 00:55:34.140
+can you tell me here,
+
+00:55:34.140 --> 00:55:37.890
+is X transpose, would X
+transpose X be invertible?
+
+00:55:41.500 --> 00:55:42.500
+Yeah.
+
+00:55:42.820 --> 00:55:43.180
+Yeah.
+
+00:55:43.180 --> 00:55:44.160
+Why?
+
+00:55:44.160 --> 00:55:46.880
+Because the columns are linearly
+independent.
+
+00:55:46.880 --> 00:55:47.360
+Good.
+
+00:55:47.360 --> 00:55:49.160
+This matrix X only has two
+columns.
+
+00:55:49.160 --> 00:55:51.460
+They're not scalar multiples of
+each other.
+
+00:55:51.460 --> 00:55:54.340
+So x's columns are linearly
+independent.
+
+00:55:54.340 --> 00:55:55.820
+So rank of x is 2.
+
+00:55:55.820 --> 00:55:59.560
+So rank of x transpose x is 2.
+So x transpose x is invertible.
+
+00:55:59.560 --> 00:56:02.360
+There are a lot of pieces of
+chained logic here that I really
+
+00:56:02.360 --> 00:56:04.760
+want you to understand every p
+set.
+
+00:56:04.760 --> 00:56:08.240
+So a good thing to review would
+be why all of these implications
+
+00:56:08.240 --> 00:56:09.680
+are true.
+
+00:56:09.680 --> 00:56:13.220
+Make sure you understand that
+conceptually.
+
+00:56:13.220 --> 00:56:14.220
+OK?
+
+00:56:18.700 --> 00:56:21.460
+So, if I do the number
+crunching,
+
+00:56:21.460 --> 00:56:24.540
+which you won't have to do too
+much of by hand,
+
+00:56:24.540 --> 00:56:27.540
+you could evaluate this
+expression,
+
+00:56:27.960 --> 00:56:30.280
+and I'll just tell you what you
+end up getting.
+
+00:56:30.280 --> 00:56:33.920
+You get 2 and negative 8 thirds.
+
+00:56:33.920 --> 00:56:35.700
+What does that tell you?
+
+00:56:35.700 --> 00:56:41.460
+What that tells you is, is among
+all of the
+
+00:56:41.460 --> 00:56:42.760
+linear combinations
+
+00:56:42.760 --> 00:56:48.300
+of x's
+
+00:56:48.300 --> 00:56:49.300
+columns,
+
+00:56:52.600 --> 00:56:57.420
+the vector closest to y,
+
+00:56:59.100 --> 00:57:05.080
+which I think I said was 1, 0,
+4, 5,
+
+00:57:05.080 --> 00:57:11.080
+is X times this particular W
+star, which is 2 times the first
+
+00:57:11.080 --> 00:57:17.080
+column of X plus negative 8
+thirds times the second
+
+00:57:17.080 --> 00:57:19.980
+column of X.
+And the first column of X was 1
+
+00:57:19.980 --> 00:57:22.230
+2 1 0.
+
+00:57:22.300 --> 00:57:27.340
+This is what we were previously
+labeling X 1 and the second
+
+00:57:27.340 --> 00:57:28.760
+column, which was 0,
+
+00:57:28.760 --> 00:57:31.100
+1, 1, negative 1,
+
+00:57:31.100 --> 00:57:34.850
+which is what we previously
+labeled x2.
+
+00:57:37.880 --> 00:57:39.820
+Concretely, that is how you
+would use this to solve a
+
+00:57:39.820 --> 00:57:41.920
+problem.
+Now, again, you wouldn't usually
+
+00:57:42.340 --> 00:57:45.400
+need to crunch these numbers up
+by hand.
+
+00:57:45.400 --> 00:57:47.280
+But if you did,
+
+00:57:47.280 --> 00:57:51.980
+this is how you would use the
+results of w star
+
+00:57:51.980 --> 00:57:54.060
+to answer a question concretely.
+
+00:57:54.060 --> 00:57:58.100
+This tells us, among all linear
+combinations of x's columns,
+
+00:57:58.100 --> 00:58:00.820
+the one linear combination
+that's closest to y is this
+
+00:58:00.820 --> 00:58:03.180
+particular one, where you take
+two of the first column and
+
+00:58:03.180 --> 00:58:04.760
+negative 8 thirds of the second.
+
+00:58:04.760 --> 00:58:09.420
+Is that vector equal to y? No.
+
+00:58:09.420 --> 00:58:11.700
+It's not equal to y.
+
+00:58:11.700 --> 00:58:15.560
+But it's the closest you can get
+to y if you're stuck to using
+
+00:58:15.560 --> 00:58:18.560
+linear combinations of x's
+columns.
+
+00:58:21.080 --> 00:58:23.760
+And just so you're clear on the
+notation, This is what we would
+
+00:58:23.760 --> 00:58:26.010
+also call P
+
+00:58:30.060 --> 00:58:33.380
+Okay, now you may wonder
+
+00:58:33.380 --> 00:58:36.000
+What do we do in the case where
+there are infinitely many
+
+00:58:36.000 --> 00:58:39.600
+solutions to the normal
+equation, so we're going back
+
+00:58:39.600 --> 00:58:42.980
+remember Infinitely many
+solutions to the normal equation
+
+00:58:42.980 --> 00:58:46.400
+don't mean that there are
+infinitely many P's P this
+
+00:58:46.400 --> 00:58:49.560
+picture you should like memorize
+it, and be able to recreate it
+
+00:58:49.560 --> 00:58:50.400
+by hand,
+
+00:58:50.400 --> 00:58:52.860
+this vector P, there's always
+only just one of them.
+
+00:58:52.860 --> 00:58:55.560
+The question is, how many ways
+are there to describe P as a
+
+00:58:55.560 --> 00:58:58.560
+linear combination of x's
+columns?
+
+00:58:58.900 --> 00:59:03.400
+In the case where there are
+infinitely many w's that make P,
+
+00:59:05.540 --> 00:59:10.580
+the cop-out answer I'm going to
+give you is homework seven will
+
+00:59:10.580 --> 00:59:12.830
+show you how.
+
+00:59:14.740 --> 00:59:20.520
+It involves finding the null
+space
+
+00:59:20.520 --> 00:59:22.020
+of X,
+
+00:59:22.540 --> 00:59:25.200
+which is why we talked about
+null spaces.
+
+00:59:25.200 --> 00:59:27.860
+So when there are infinitely
+many solutions
+
+00:59:27.860 --> 00:59:30.040
+for the normal equations,
+
+00:59:30.040 --> 00:59:32.180
+the kind of question that
+homework 7 will teach you how to
+
+00:59:32.180 --> 00:59:33.280
+answer is,
+
+00:59:33.280 --> 00:59:36.820
+describe the complete set of
+solutions.
+
+00:59:36.820 --> 00:59:39.940
+And how you'll do it is you'll
+find one solution,
+
+00:59:39.940 --> 00:59:44.660
+which you can find by just
+deleting columns in x that are
+
+00:59:44.660 --> 00:59:47.500
+linearly dependent on other
+columns and reduce it to a
+
+00:59:47.500 --> 00:59:49.120
+linearly independent case,
+
+00:59:49.120 --> 00:59:51.020
+then use the normal equation,
+
+00:59:51.020 --> 00:59:55.380
+the x transpose x inverse part,
+to find one solution.
+
+00:59:55.380 --> 00:59:58.720
+And then find the null space,
+and you can use that to describe
+
+00:59:58.720 --> 01:00:01.200
+the complete set of solutions.
+
+01:00:01.200 --> 01:00:02.140
+All right?
+
+01:00:02.140 --> 01:00:03.480
+Sort of what I'm getting at here
+is,
+
+01:00:03.480 --> 01:00:08.080
+what if I added a third column
+to this matrix that was just the
+
+01:00:08.080 --> 01:00:11.830
+sum of the first two?
+
+01:00:13.800 --> 01:00:17.550
+What is w star then?
+
+01:00:19.340 --> 01:00:20.980
+Well, there's not just one
+answer.
+
+01:00:20.980 --> 01:00:22.360
+There's infinitely many,
+
+01:00:22.360 --> 01:00:25.320
+because there's dependence among
+the columns.
+
+01:00:25.320 --> 01:00:27.500
+So give me the easiest possible
+answer you could give.
+
+01:00:27.500 --> 01:00:28.500
+Yeah?
+
+01:00:28.720 --> 01:00:29.760
+Same one,
+
+01:00:29.760 --> 01:00:31.760
+like 2, negative 8, or 3,
+
+01:00:31.760 --> 01:00:33.500
+0.
+0, I could just not use the
+
+01:00:33.500 --> 01:00:35.000
+third column.
+
+01:00:35.000 --> 01:00:39.340
+OK? Or I could adjust for the
+fact that column 3 is equal to
+
+01:00:39.340 --> 01:00:40.960
+column 1 plus column 2.
+
+01:00:40.960 --> 01:00:43.380
+That tells me that the vector 1,
+
+01:00:43.380 --> 01:00:46.320
+1, negative 1 is in the null
+space of this matrix.
+
+01:00:46.320 --> 01:00:49.940
+So if I add 1, 1, negative 1 to
+any solution, it would also give
+
+01:00:49.940 --> 01:00:52.900
+me the same thing as doing 2,
+negative 8 thirds,
+
+01:00:52.900 --> 01:00:53.900
+0.
+
+01:00:56.500 --> 01:00:58.940
+I kind of glossed over that.
+The homework problem will walk
+
+01:00:58.940 --> 01:01:00.740
+you through this more.
+But that's essentially the idea.
+
+01:01:00.740 --> 01:01:04.020
+If you have a matrix with
+columns who are linearly
+
+01:01:04.020 --> 01:01:05.020
+dependent,
+
+01:01:05.640 --> 01:01:06.100
+well,
+
+01:01:06.100 --> 01:01:09.100
+removing the linearly dependent
+columns
+
+01:01:09.220 --> 01:01:11.800
+or keeping just a basis for the
+column space,
+
+01:01:11.800 --> 01:01:15.260
+by definition, doesn't change
+the column space,
+
+01:01:15.960 --> 01:01:18.300
+but it makes it so that there's
+just one
+
+01:01:18.300 --> 01:01:22.050
+solution for your w star.
+
+01:01:22.460 --> 01:01:26.060
+Deleting columns that are
+linearly dependent doesn't
+
+01:01:26.060 --> 01:01:27.800
+change the column space.
+You're not losing any
+
+01:01:27.800 --> 01:01:31.480
+information.
+All right,
+
+01:01:31.880 --> 01:01:35.630
+did I write that down?
+
+01:01:37.200 --> 01:01:42.780
+And deleting redundant
+
+01:01:42.780 --> 01:01:44.300
+columns.
+
+01:01:46.200 --> 01:01:50.400
+What questions do we have about
+any of this stuff?
+
+01:01:50.400 --> 01:01:55.650
+There's a lot here, while we do
+attendance.
+
+01:01:58.960 --> 01:02:00.840
+I'll answer questions while we
+do attendance.
+
+01:02:00.840 --> 01:02:05.340
+What questions do we have about
+any of this?
+
+01:02:23.280 --> 01:02:26.040
+Take a break, get some water,
+
+01:02:26.040 --> 01:02:29.790
+and we'll have 16-inch final
+minutes.
+
+01:03:20.080 --> 01:03:23.940
+you guys use like W star, that
+doesn't mean optimal in this
+
+01:03:23.940 --> 01:03:25.920
+case, like it does with
+regression.
+
+01:03:25.920 --> 01:03:28.000
+That's why we use the same
+notation.
+
+01:03:28.000 --> 01:03:32.500
+Because think of it this way.
+
+01:03:36.220 --> 01:03:37.360
+In this picture,
+
+01:03:37.360 --> 01:03:40.380
+what I was demonstrating is that
+every W you think of will just
+
+01:03:40.380 --> 01:03:42.740
+give you a different vector in
+the column space.
+
+01:03:42.740 --> 01:03:47.320
+W star gives you the best vector
+in the column.
+
+01:03:47.320 --> 01:03:50.600
+And and it's best because it's
+closest to i.
+
+01:03:50.600 --> 01:03:53.880
+But that's the connection we're
+about to make.
+
+01:03:53.880 --> 01:03:57.040
+Finding this w star is actually
+the same as finding optimal
+
+01:03:57.040 --> 01:04:00.040
+coefficients for a vector.
+
+01:04:18.300 --> 01:04:21.300
+Anyone still checking in?
+
+01:04:33.200 --> 01:04:34.700
+All right.
+
+01:04:36.500 --> 01:04:40.520
+Going to close the form now.
+
+01:04:40.520 --> 01:04:42.740
+OK, I'll leave it open for a
+minute.
+
+01:04:42.740 --> 01:04:47.480
+But OK, so now that we've
+discussed this whole projecting
+
+01:04:47.480 --> 01:04:50.900
+Moving on to the column space
+business,
+
+01:04:50.900 --> 01:04:55.100
+I said when we introduced the
+ideas of vectors and matrices
+
+01:04:55.100 --> 01:04:58.680
+that eventually we would come
+back to this picture of finding
+
+01:04:58.680 --> 01:05:02.200
+the best fitting line with
+simple linear regression and
+
+01:05:02.200 --> 01:05:05.280
+hopefully taking things a step
+further and being able to find
+
+01:05:05.280 --> 01:05:07.530
+more sophisticated models.
+
+01:05:12.480 --> 01:05:15.480
+So my question is,
+
+01:05:15.740 --> 01:05:21.740
+how did we find this
+
+01:05:21.740 --> 01:05:22.740
+line?
+
+01:05:25.060 --> 01:05:27.260
+Just as a quick refresher about
+the data set, and I'm going to
+
+01:05:27.260 --> 01:05:28.860
+close the attendance for now.
+
+01:05:28.860 --> 01:05:31.460
+As a quick refresher for the
+data set,
+
+01:05:31.460 --> 01:05:32.460
+remember,
+
+01:05:32.700 --> 01:05:36.100
+the setting was that we We have
+this historical data set of
+
+01:05:36.100 --> 01:05:37.100
+endpoints.
+
+01:05:38.900 --> 01:05:44.620
+And each point corresponded to
+the time we left for school in
+
+01:05:44.620 --> 01:05:47.420
+the morning.
+That was the x number and the
+
+01:05:47.420 --> 01:05:50.840
+number of minutes it took to get
+to school, or our commute time.
+
+01:05:50.840 --> 01:05:52.440
+That was the y coordinate.
+
+01:05:52.440 --> 01:05:55.840
+And the goal was to try and
+build a function that predicts y
+
+01:05:55.840 --> 01:05:57.040
+from x.
+
+01:05:57.040 --> 01:05:59.140
+So we had this data set of
+endpoints,
+
+01:05:59.140 --> 01:06:02.440
+and we tried to find the line
+that best fits to this.
+
+01:06:02.440 --> 01:06:05.460
+And how did we do that? What was
+the name of the process by which
+
+01:06:05.460 --> 01:06:09.960
+we found the slope and intercept
+of this line?
+
+01:06:12.400 --> 01:06:17.140
+Given our data set of x1, y1,
+
+01:06:17.140 --> 01:06:18.640
+x2, y2,
+
+01:06:19.720 --> 01:06:20.900
+xn,
+
+01:06:21.160 --> 01:06:22.160
+yn,
+
+01:06:22.480 --> 01:06:25.360
+what was the process by which we
+found the slope and intercept of
+
+01:06:25.360 --> 01:06:26.860
+this line?
+
+01:06:26.980 --> 01:06:29.540
+Simple linear regression.
+Simple linear regression was the
+
+01:06:29.540 --> 01:06:32.500
+name of the model, but there was
+a broader process by which we
+
+01:06:32.500 --> 01:06:34.360
+found the line.
+
+01:06:34.360 --> 01:06:35.920
+Three-step modeling recipe?
+
+01:06:35.920 --> 01:06:36.160
+Yeah,
+
+01:06:36.160 --> 01:06:38.410
+three-step modeling recipe.
+
+01:06:42.620 --> 01:06:46.370
+Where we chose a model,
+
+01:06:47.300 --> 01:06:50.700
+and that indeed was the simple
+linear regression model here.
+
+01:06:50.700 --> 01:06:53.480
+What was the name of the model
+that we learned about before the
+
+01:06:53.480 --> 01:06:56.480
+simple linear regression model?
+
+01:06:57.760 --> 01:06:59.540
+Anyone remember that?
+
+01:06:59.540 --> 01:07:00.540
+Sorry.
+
+01:07:05.400 --> 01:07:07.540
+What was the model we learned
+about before, the simple linear
+
+01:07:07.540 --> 01:07:09.040
+regression model?
+
+01:07:09.140 --> 01:07:09.620
+Yeah,
+
+01:07:09.620 --> 01:07:11.240
+constant model, good.
+
+01:07:11.240 --> 01:07:13.340
+Okay, the first stage was to
+choose a model, what did we
+
+01:07:13.340 --> 01:07:15.560
+choose after that? Choose A.
+
+01:07:15.560 --> 01:07:17.140
+Haven't thought about this word
+for a while, but what did we
+
+01:07:17.140 --> 01:07:18.140
+choose?
+
+01:07:18.820 --> 01:07:21.140
+This term, I should say.
+
+01:07:21.140 --> 01:07:22.140
+Yeah.
+
+01:07:22.520 --> 01:07:24.770
+Good, loss function.
+
+01:07:26.300 --> 01:07:30.520
+And typically when finding the
+best fitting line, We chose
+
+01:07:30.520 --> 01:07:33.660
+squared loss, but you explored
+in the homework earlier in the
+
+01:07:33.660 --> 01:07:36.240
+semester What would happen if
+you chose absolute loss and then
+
+01:07:36.240 --> 01:07:38.020
+what did we do?
+
+01:07:38.020 --> 01:07:39.860
+Once we chose our model and loss
+function, what was the third
+
+01:07:39.860 --> 01:07:40.620
+step?
+
+01:07:40.620 --> 01:07:41.440
+Yeah
+
+01:07:41.440 --> 01:07:42.360
+Yeah,
+
+01:07:42.360 --> 01:07:45.360
+we minimize average loss
+
+01:07:49.600 --> 01:07:53.940
+Another word for which is
+empirical risk to find
+
+01:07:57.900 --> 01:07:59.400
+Optimal parameters
+
+01:08:02.100 --> 01:08:05.400
+So what did average loss look
+like here?
+
+01:08:05.400 --> 01:08:11.400
+Well, it was a 1 over n times
+the sum for our n data points,
+
+01:08:12.620 --> 01:08:15.420
+number of data points,
+
+01:08:15.420 --> 01:08:18.820
+of what?
+
+01:08:19.400 --> 01:08:23.150
+What was in the summation?
+
+01:08:27.220 --> 01:08:31.120
+Yeah? yi minus h of xi.
+
+01:08:31.120 --> 01:08:31.440
+Good,
+
+01:08:31.440 --> 01:08:36.920
+yi minus our hypothesis
+function, that was the name for
+
+01:08:36.920 --> 01:08:37.920
+h,
+
+01:08:38.060 --> 01:08:39.060
+squared.
+
+01:08:39.180 --> 01:08:41.940
+But here, that hypothesis
+function has a very particular
+
+01:08:41.940 --> 01:08:42.940
+form.
+
+01:08:43.120 --> 01:08:46.870
+It's w0 plus w1 xi.
+
+01:08:47.700 --> 01:08:51.040
+But in general, yeah, this is
+our hypothesis function.
+
+01:08:51.040 --> 01:08:54.540
+And because we just had two
+unknowns here, remember the data
+
+01:08:54.540 --> 01:08:57.560
+set is given to us.
+The things we need to find are
+
+01:08:57.560 --> 01:08:59.340
+w0 and w1.
+
+01:08:59.340 --> 01:09:03.720
+This was a function of how many
+input variables?
+
+01:09:03.720 --> 01:09:06.020
+Not the hypothesis function.
+That's a function of just one
+
+01:09:06.020 --> 01:09:06.760
+input.
+
+01:09:06.760 --> 01:09:08.800
+I'm asking about the function
+down here.
+
+01:09:08.800 --> 01:09:11.720
+How many input variables did we
+write this as how many?
+
+01:09:11.720 --> 01:09:12.420
+Two.
+
+01:09:12.420 --> 01:09:12.760
+Right?
+
+01:09:12.760 --> 01:09:13.760
+Good.
+
+01:09:27.900 --> 01:09:30.740
+Now, and I should write it on
+this page.
+
+01:09:30.740 --> 01:09:33.880
+What was another word for this
+term for this function had three
+
+01:09:33.880 --> 01:09:35.520
+words in it.
+
+01:09:35.520 --> 01:09:40.020
+First one started with an M.
+
+01:09:40.820 --> 01:09:43.620
+Second I'm going to start with
+an S.
+
+01:09:43.620 --> 01:09:44.200
+Yeah.
+
+01:09:44.200 --> 01:09:46.450
+Mean squared error.
+Good, mean squared error.
+
+01:09:52.420 --> 01:09:53.320
+OK,
+
+01:09:53.320 --> 01:09:56.680
+so let's think about what
+happened
+
+01:09:56.680 --> 01:09:59.420
+in the storyline of the course
+that led us to go away from
+
+01:09:59.420 --> 01:10:00.260
+this.
+
+01:10:00.260 --> 01:10:03.340
+We learned how to find optimal
+parameters here, and everything
+
+01:10:03.340 --> 01:10:06.300
+felt like it was related to
+machine learning.
+
+01:10:06.300 --> 01:10:08.380
+And then we started doing all of
+this vectors business.
+
+01:10:08.380 --> 01:10:09.700
+But why was that?
+
+01:10:09.700 --> 01:10:12.220
+Well, it was because we got to
+this point And we said, well,
+
+01:10:12.220 --> 01:10:14.940
+to find these optimal
+perimeters,
+
+01:10:14.940 --> 01:10:19.440
+what did we have to do?
+
+01:10:23.800 --> 01:10:26.440
+To find the optimal intercept
+and slope,
+
+01:10:26.440 --> 01:10:30.940
+what did we have to do?
+
+01:10:34.180 --> 01:10:35.860
+It's a while ago now, but what
+did we do?
+
+01:10:35.860 --> 01:10:36.860
+Yeah.
+
+01:10:37.640 --> 01:10:39.540
+Yeah we had to find partial
+derivatives
+
+01:10:39.540 --> 01:10:46.220
+and
+
+01:10:46.220 --> 01:10:49.680
+that was okay when we just had
+two parameters an intercept and
+
+01:10:49.680 --> 01:10:52.120
+slope but the premise we were
+thinking about is well what
+
+01:10:52.120 --> 01:10:55.180
+would happen if we added another
+feature or another input
+
+01:10:55.180 --> 01:10:57.880
+variable which would give us
+another parameter or what if we
+
+01:10:57.880 --> 01:11:00.340
+added 10 more features which
+would give us 10 more parameters
+
+01:11:00.340 --> 01:11:02.860
+are we really going to sit here
+calculating 12 partial
+
+01:11:02.860 --> 01:11:05.110
+derivatives? Because probably
+not,
+
+01:11:06.640 --> 01:11:11.400
+because it's annoying if we had
+
+01:11:11.400 --> 01:11:14.780
+more features
+
+01:11:14.780 --> 01:11:20.500
+and parameters.
+
+01:11:24.200 --> 01:11:27.600
+And so what we're going to try
+and do is rewrite
+
+01:11:27.600 --> 01:11:32.140
+this mean squared error function
+
+01:11:33.960 --> 01:11:36.210
+using linear algebra.
+
+01:11:40.260 --> 01:11:41.220
+Why?
+
+01:11:41.220 --> 01:11:43.100
+Well, because if you think about
+the stuff we were doing for the
+
+01:11:43.100 --> 01:11:45.160
+first hour of today,
+
+01:11:45.160 --> 01:11:47.840
+about projecting y onto the
+column space,
+
+01:11:47.840 --> 01:11:52.320
+none of that really assumed a
+specific number of columns of x
+
+01:11:52.320 --> 01:11:55.120
+or a specific number of data
+points.
+
+01:11:55.120 --> 01:11:59.840
+All of that logic could be true
+for an x with 10 million rows in
+
+01:11:59.840 --> 01:12:02.360
+50 billion columns.
+All right, we didn't care about
+
+01:12:02.360 --> 01:12:04.780
+that.
+Whereas when we were finding
+
+01:12:04.780 --> 01:12:06.840
+this optimal intercept and
+slope, everything we did was
+
+01:12:06.840 --> 01:12:10.220
+hard coded to the very specific
+scenario where we had just two
+
+01:12:10.220 --> 01:12:13.060
+parameters and this very fixed
+model.
+
+01:12:13.060 --> 01:12:17.560
+So if we can convert this
+formula for mean squared error
+
+01:12:17.620 --> 01:12:21.300
+into something that involves
+linear algebra objects,
+
+01:12:21.740 --> 01:12:24.400
+well, then maybe we can scale
+this up to the setting where we
+
+01:12:24.400 --> 01:12:27.520
+have multiple parameters without
+really needing to do that much
+
+01:12:27.520 --> 01:12:29.020
+more work.
+
+01:12:29.100 --> 01:12:32.700
+Okay, that is why we've studied
+all of these linear algebra
+
+01:12:32.700 --> 01:12:33.700
+ideas.
+
+01:12:33.740 --> 01:12:35.280
+So that's going to be my goal.
+
+01:12:35.280 --> 01:12:39.160
+My goal is to convert this
+formula into one that involves
+
+01:12:39.160 --> 01:12:40.600
+matrices and vectors.
+
+01:12:40.600 --> 01:12:43.500
+And I think we can do it in the
+remaining eight minutes we have.
+
+01:12:43.500 --> 01:12:46.840
+I'm going to define a few new
+terms for us.
+
+01:12:46.840 --> 01:12:51.340
+First, I'm going to construct a
+vector y,
+
+01:12:52.380 --> 01:12:56.800
+which contains I'm going to use
+all of the y values in my data
+
+01:12:56.800 --> 01:12:57.800
+set.
+
+01:12:57.960 --> 01:13:03.210
+And I'm going to call that my
+observation vector.
+
+01:13:03.400 --> 01:13:08.680
+For the commute times example,
+this might have our actual
+
+01:13:08.680 --> 01:13:10.180
+commute times.
+
+01:13:15.700 --> 01:13:20.120
+Now, it would be great if I had
+a vector p.
+
+01:13:20.120 --> 01:13:22.720
+In the context of what we're
+doing right now, What do you
+
+01:13:22.720 --> 01:13:25.140
+think p should be called?
+
+01:13:25.140 --> 01:13:26.640
+Let me put it this way.
+
+01:13:26.640 --> 01:13:30.080
+Why do you think I picked the
+letter p here?
+
+01:13:30.080 --> 01:13:33.580
+If I have a vector with my
+actual y values,
+
+01:13:33.580 --> 01:13:38.080
+maybe I should have a vector
+with my predicted.
+
+01:13:39.000 --> 01:13:41.640
+English is convenient, and
+prediction and projection both
+
+01:13:41.640 --> 01:13:43.120
+happen to start with p,
+
+01:13:43.120 --> 01:13:45.900
+which is why I use p here.
+
+01:13:45.900 --> 01:13:48.960
+We haven't yet seen why this is
+a projection of anything,
+
+01:13:48.960 --> 01:13:52.710
+but let's call this our
+prediction vector for now.
+
+01:13:55.880 --> 01:13:57.360
+What should this contain?
+
+01:13:57.360 --> 01:14:01.480
+Well, it should contain n
+predicted y values,
+
+01:14:02.540 --> 01:14:07.040
+so the outputs of my hypothesis
+function.
+
+01:14:09.960 --> 01:14:15.940
+But my hypothesis function
+outputs essentially
+
+01:14:15.940 --> 01:14:18.260
+the same thing for every row.
+the only thing that's different
+
+01:14:18.260 --> 01:14:20.180
+is the xi value.
+
+01:14:20.180 --> 01:14:22.020
+So for the first row,
+
+01:14:22.020 --> 01:14:27.270
+it's going to spit out w0 plus
+w1 times what?
+
+01:14:27.760 --> 01:14:32.260
+Top right here, what should I
+write?
+
+01:14:34.480 --> 01:14:38.220
+What should I put in this? Yeah,
+good, x1.
+
+01:14:38.220 --> 01:14:42.100
+Next, I'll write w0 plus w1
+times x2,
+
+01:14:42.100 --> 01:14:47.350
+all the way through w0 plus w1
+times xn.
+
+01:14:49.420 --> 01:14:53.920
+And actually, I'm going to move
+this to the next page.
+
+01:15:00.100 --> 01:15:03.100
+Now, here's my claim.
+
+01:15:03.320 --> 01:15:08.460
+And this is the connection that
+will sort of describe why we've
+
+01:15:08.460 --> 01:15:11.460
+studied matrices and vectors
+over the past month.
+
+01:15:11.760 --> 01:15:17.740
+I can write this prediction
+vector as some matrix times
+
+01:15:17.740 --> 01:15:19.240
+some vector.
+
+01:15:20.780 --> 01:15:22.680
+Where do you think I'm going
+with this?
+
+01:15:22.680 --> 01:15:26.480
+I want to decompose this
+prediction vector into a matrix
+
+01:15:26.480 --> 01:15:27.980
+vector product.
+
+01:15:28.280 --> 01:15:33.530
+It seems like every row kind of
+looks like the same dot product.
+
+01:15:36.260 --> 01:15:41.300
+They both involve a w0 and a w1.
+They always involve a w0 and w1.
+
+01:15:41.300 --> 01:15:45.480
+And the second parameter, that
+w1,
+
+01:15:45.900 --> 01:15:48.340
+is always multiplied by an x.
+
+01:15:48.340 --> 01:15:52.220
+The first thing just seems not
+to be multiplied by anything.
+
+01:15:52.220 --> 01:15:57.000
+So how might I be able to factor
+this out?
+
+01:15:57.000 --> 01:15:58.500
+Any ideas?
+
+01:16:03.680 --> 01:16:07.540
+How can I factor this out? Would
+it be like 1 and xn in the first
+
+01:16:07.540 --> 01:16:11.240
+one, like going down, and the
+second one would be w0 and w1?
+
+01:16:11.240 --> 01:16:12.200
+Good.
+Let me start with the second
+
+01:16:12.200 --> 01:16:13.200
+thing.
+
+01:16:14.900 --> 01:16:17.940
+I can put my parameters in a
+vector.
+
+01:16:17.940 --> 01:16:20.220
+What do you think I'll call that
+vector?
+
+01:16:20.220 --> 01:16:22.400
+Let's call it the parameter
+vector.
+
+01:16:22.400 --> 01:16:25.220
+Not very creative, that's OK.
+
+01:16:25.220 --> 01:16:28.620
+So now the question is, what
+goes in the matrix?
+
+01:16:28.620 --> 01:16:31.320
+Well, what should the shape of
+the matrix be?
+
+01:16:31.320 --> 01:16:33.900
+If p is a vector in Rn,
+
+01:16:33.900 --> 01:16:36.600
+and w is a vector with two
+things in it, there's only one
+
+01:16:36.600 --> 01:16:38.860
+possible shape for this matrix.
+
+01:16:38.860 --> 01:16:41.740
+What is the shape of this
+matrix?
+
+01:16:41.740 --> 01:16:44.060
+How many rows does it have?
+
+01:16:44.060 --> 01:16:46.180
+n, one per data set, or data
+point.
+
+01:16:46.180 --> 01:16:49.060
+How many columns does it have?
+two, one per parameter.
+
+01:16:49.060 --> 01:16:54.310
+And this matrix is going to be
+called x.
+
+01:16:54.860 --> 01:16:57.720
+It has an English name that I'll
+tell you about in just a second.
+
+01:16:57.720 --> 01:16:59.580
+Now, what goes in x? It has two
+columns.
+
+01:16:59.580 --> 01:17:02.160
+The second column is a little
+more straightforward to think
+
+01:17:02.160 --> 01:17:05.020
+about.
+The second column is made up of
+
+01:17:05.020 --> 01:17:07.340
+the things that get multiplied
+by the slope,
+
+01:17:07.340 --> 01:17:08.340
+the w1's.
+
+01:17:08.340 --> 01:17:10.500
+So what should go there?
+
+01:17:10.500 --> 01:17:12.750
+x1 through xn.
+
+01:17:18.740 --> 01:17:20.960
+That one's a little more
+straightforward.
+
+01:17:20.960 --> 01:17:25.320
+What goes in the first column
+now?
+
+01:17:25.320 --> 01:17:26.320
+Yeah,
+
+01:17:27.880 --> 01:17:31.900
+you just put a column of ones.
+
+01:17:31.900 --> 01:17:32.900
+Why?
+
+01:17:32.900 --> 01:17:35.920
+Well, it's because you want the
+W not to be in your prediction,
+
+01:17:35.920 --> 01:17:41.170
+but you don't want it to be
+multiplied by anything else.
+
+01:17:41.900 --> 01:17:46.260
+And so in this conversion of
+mean squared error into this
+
+01:17:46.260 --> 01:17:48.220
+matrix vector format, Now,
+
+01:17:48.220 --> 01:17:51.480
+we've written our prediction
+vector, P,
+
+01:17:52.380 --> 01:17:55.600
+as this matrix X times a
+parameter vector, W.
+
+01:17:55.600 --> 01:17:57.920
+And this matrix X has a name.
+
+01:17:57.920 --> 01:18:00.420
+Again, I didn't choose it.
+This is just what it's called.
+
+01:18:00.420 --> 01:18:03.460
+It's called the design matrix.
+
+01:18:03.460 --> 01:18:06.260
+I've tried to figure out why
+they call it that in statistics
+
+01:18:06.260 --> 01:18:09.320
+and machine learning.
+And the best I could tell is you
+
+01:18:09.320 --> 01:18:11.260
+designed the model.
+You designed what features get
+
+01:18:11.260 --> 01:18:12.660
+included.
+So I guess you designed the
+
+01:18:12.660 --> 01:18:14.160
+design matrix.
+
+01:18:15.300 --> 01:18:18.560
+Okay, why did we do all this?
+
+01:18:18.560 --> 01:18:19.560
+Well,
+
+01:18:19.920 --> 01:18:20.920
+before,
+
+01:18:23.160 --> 01:18:27.080
+to find optimal parameters, we
+had this function,
+
+01:18:27.300 --> 01:18:29.680
+we had two input variables, our
+intercept and slope, and it
+
+01:18:29.680 --> 01:18:33.500
+returned the mean squared error
+of our predictions.
+
+01:18:37.720 --> 01:18:41.470
+We took partial derivatives to
+minimize that function.
+
+01:18:43.940 --> 01:18:49.860
+Now, I can write this same
+function as if it
+
+01:18:49.860 --> 01:18:55.110
+takes a vector w as its input.
+
+01:18:58.450 --> 01:19:01.900
+But instead of having to write
+out a summation,
+
+01:19:01.900 --> 01:19:06.020
+how could I express that second
+piece of the formula? I still
+
+01:19:06.020 --> 01:19:07.980
+have the 1 over n.
+
+01:19:07.980 --> 01:19:12.580
+But the sum of things squared is
+similar to things we've seen
+
+01:19:12.580 --> 01:19:14.580
+with matrices and vectors.
+
+01:19:14.580 --> 01:19:18.330
+What formula involves summing a
+bunch of things squared?
+
+01:19:19.560 --> 01:19:22.380
+When have we needed to do that
+recently?
+
+01:19:22.380 --> 01:19:24.920
+Summing a bunch of things
+squared.
+
+01:19:24.920 --> 01:19:26.740
+I mean the length of magnitude
+of a vector.
+
+01:19:26.740 --> 01:19:28.840
+Yeah, the length of a vector.
+
+01:19:28.840 --> 01:19:32.800
+So perhaps there's a vector
+whose squared length
+
+01:19:35.120 --> 01:19:37.780
+that is the same as this
+summation.
+
+01:19:37.780 --> 01:19:41.000
+Now, what vector do you think
+that is?
+
+01:19:41.000 --> 01:19:45.920
+The components of that vector
+are y minus a prediction.
+
+01:19:46.660 --> 01:19:51.910
+So what vector do you think I
+should put here?
+
+01:19:52.320 --> 01:19:54.760
+It's one we've seen so far
+today.
+
+01:19:54.760 --> 01:19:56.300
+It'd be y minus p.
+
+01:19:56.300 --> 01:20:00.050
+y minus our prediction vector.
+
+01:20:00.180 --> 01:20:05.220
+But our prediction vector is
+just equal to x times w.
+
+01:20:07.460 --> 01:20:10.120
+And now you see, this is the
+exact same thing we spent the
+
+01:20:10.120 --> 01:20:11.720
+first hour of today doing.
+
+01:20:11.720 --> 01:20:15.760
+We know the w that minimizes
+this.
+
+01:20:15.760 --> 01:20:18.940
+If the columns of x are linearly
+independent, which they are in
+
+01:20:18.940 --> 01:20:21.190
+this particular case,
+
+01:20:21.240 --> 01:20:25.080
+then the w that minimizes this
+is x transpose x inverse x
+
+01:20:25.080 --> 01:20:26.580
+transpose y.
+
+01:20:32.520 --> 01:20:38.520
+So for the n by 2 design matrix,
+
+01:20:40.880 --> 01:20:44.630
+x t x is invertible.
+
+01:20:44.860 --> 01:20:50.820
+So the optimal solution for w,
+
+01:20:51.560 --> 01:20:52.940
+my parameter vector,
+
+01:20:52.940 --> 01:20:55.260
+is x transpose x inverse x
+transpose y.
+
+01:20:55.260 --> 01:20:59.740
+So here's the quick summary of
+What I was getting at if you
+
+01:20:59.740 --> 01:21:02.000
+don't believe me you'll see this
+in the upcoming homeworks and in
+
+01:21:02.000 --> 01:21:02.860
+the nodes
+
+01:21:02.860 --> 01:21:05.740
+if you take those formulas we
+saw at the start of the semester
+
+01:21:05.740 --> 01:21:08.580
+the ones that involve the
+correlation coefficient and the
+
+01:21:08.580 --> 01:21:13.140
+sum of Xi minus X bar times y
+minus by Y bar whatever and you
+
+01:21:13.140 --> 01:21:17.160
+also take this formula You get
+the exact same results Even
+
+01:21:17.160 --> 01:21:19.720
+though we came up with this in a
+way that had nothing to do with
+
+01:21:19.720 --> 01:21:22.240
+how we came up with those first
+Formulas a month ago, but
+
+01:21:22.240 --> 01:21:25.700
+they're the exact same if you
+define your matrix X this way
+
+01:21:25.700 --> 01:21:28.860
+And you get the exact same slope
+and intercept using this
+
+01:21:28.860 --> 01:21:32.060
+formula, which I think is pretty
+cool because this came about in
+
+01:21:32.060 --> 01:21:34.080
+a totally unrelated way.
+
+01:21:34.080 --> 01:21:36.920
+But this is why we introduced
+all of these linear algebra
+
+01:21:36.920 --> 01:21:37.820
+tools.
+
+01:21:37.820 --> 01:21:40.680
+When we come back on Tuesday we
+will review this and then think
+
+01:21:40.680 --> 01:21:41.220
+about,
+
+01:21:41.220 --> 01:21:41.740
+well,
+
+01:21:41.740 --> 01:21:45.100
+what if we just added more
+columns to our design matrix?
+
+01:21:45.100 --> 01:21:47.480
+Which would allow us to use more
+features.
+
+01:21:47.480 --> 01:21:49.900
+The design matrix could have as
+many columns as we want.
+
+01:21:49.900 --> 01:21:52.960
+Each one corresponding to a new
+feature and that would just come
+
+01:21:52.960 --> 01:21:55.780
+from adding more things to our
+parameter vector and And the
+
+01:21:55.780 --> 01:21:58.580
+solution for those optimal
+parameters just come from this
+
+01:21:58.580 --> 01:21:59.580
+formula.
+
+01:22:00.840 --> 01:22:03.090
+OK, that's it.
+
+01:22:03.520 --> 01:22:05.000
+I have office hours after this,
+as per usual.
+
+01:22:05.000 --> 01:22:08.820
+Otherwise, don't forget,
+homework is due on Sunday.
+
+01:22:13.540 --> 01:22:19.260
+I could talk about the different
+
+01:22:19.260 --> 01:22:20.260
+questions,
+
+01:22:23.540 --> 01:22:27.020
+and the thing that I'm more wary
+about is committing to having
+
+01:22:27.020 --> 01:22:30.600
+the exam ready to talk, which I
+don't know how,
+
+01:22:30.600 --> 01:22:33.380
+but my other class also has an
+exam,
+
+01:22:33.380 --> 01:22:35.480
+which I'll be doing right now.
+
+01:22:35.480 --> 01:22:39.300
+Let me talk to the head of the
+club before I go.
+
+01:22:39.300 --> 01:22:42.460
+It's the instructor from my
+other class.
+
+01:22:42.460 --> 01:22:45.700
+I did a 40-minute session with
+Nico, where Nico just kept on
+
+01:22:45.700 --> 01:22:47.920
+asking me questions.
+
+01:22:47.920 --> 01:22:50.360
+And then at the end, I asked
+Nico questions, and Nico just
+
+01:22:50.360 --> 01:22:53.920
+asked if they were good
+questions.
+
+01:22:53.920 --> 01:22:57.100
+I need to work on base bus, so
+I'm fading in lecture.
+
+01:22:57.100 --> 01:22:57.800
+I just,
+
+01:22:57.800 --> 01:22:58.740
+I just,
+
+01:22:58.740 --> 01:23:00.240
+I just.
+Let's go.
+
+01:23:01.140 --> 01:23:06.980
+Is there something about this
+that makes
+
+01:23:06.980 --> 01:23:10.420
+this like a line of code to do
+something kind of conceptually
+
+01:23:10.420 --> 01:23:11.160
+trivial,
+
+01:23:11.160 --> 01:23:13.800
+but that's really difficult? Is
+it all of the xi's are equal to
+
+01:23:13.800 --> 01:23:15.500
+the same number?
+
+01:23:15.500 --> 01:23:19.300
+Because if any one of these were
+different,
+
+01:23:19.300 --> 01:23:22.820
+then whether it be this column
+using this column, these columns
+
+01:23:22.820 --> 01:23:24.300
+are the best.
+
+01:23:24.300 --> 01:23:24.960
+Oh,
+
+01:23:24.960 --> 01:23:27.060
+got it.
+I kind of except for two of me
+
+01:23:27.060 --> 01:23:28.100
+now.
+By the way, I'm searching.
+
+01:23:28.680 --> 01:23:28.980
+Oh,
+
+01:23:28.980 --> 01:23:33.480
+well, I mean, we have to
+implement.
+
+01:23:36.080 --> 01:23:36.840
+Okay,
+
+01:23:36.840 --> 01:23:37.840
+right.
+
+01:23:41.620 --> 01:23:43.020
+This way.
+
+01:23:43.020 --> 01:23:45.540
+I'm almost six to eight.
+Not in your group.
+
+01:23:45.540 --> 01:23:48.040
+So from now on, basically,
+you're always in your groups.
+
+01:23:48.040 --> 01:23:49.400
+I meant like not like all of
+them.
+
+01:23:49.400 --> 01:23:49.800
+Well, yeah.
+
+01:23:49.800 --> 01:23:50.800
+Okay.
+
+01:23:51.500 --> 01:23:53.220
+As long as you're kind of close
+to your...
+
+01:23:53.220 --> 01:23:57.600
+Basically the same people who
+were working on the trade study,
+
+01:23:57.760 --> 01:23:59.720
+the in-class example of the
+trade study.
+
+01:23:59.720 --> 01:24:04.220
+So you probably worked with us
+before and that sort of thing.
+
+01:24:08.440 --> 01:24:11.880
+If J is more right, then AX
+equals B has a solution, that's
+
+01:24:11.880 --> 01:24:12.800
+true.
+
+01:24:12.800 --> 01:24:14.340
+The question is,
+
+01:24:14.340 --> 01:24:16.880
+you're talking about the
+question in the Hallmark method,
+
+01:24:16.880 --> 01:24:21.580
+the question question which asks
+you to come up with a
+
+01:24:21.580 --> 01:24:26.640
+where it has sometimes one
+solution
+
+01:24:26.640 --> 01:24:56.620
+sometimes
+
+01:24:56.640 --> 01:24:58.140
+Thank you.

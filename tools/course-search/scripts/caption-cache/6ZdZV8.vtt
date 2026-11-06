@@ -1,0 +1,5445 @@
+WEBVTT
+
+00:00:06.560 --> 00:00:10.800
+I don't know if I'm too put
+together, like, I don't know, I
+
+00:00:10.800 --> 00:00:14.540
+don't know, okay,
+
+00:00:15.120 --> 00:00:16.120
+okay,
+
+00:00:16.520 --> 00:00:17.520
+um,
+
+00:00:18.940 --> 00:00:20.720
+all your routine,
+
+00:00:20.720 --> 00:00:21.500
+step by step,
+
+00:00:21.500 --> 00:00:24.100
+because I couldn't even sign up
+for something, so So I'm hoping
+
+00:00:24.100 --> 00:00:27.640
+to be able to get another round
+of this sign up for one of the
+
+00:00:27.640 --> 00:00:28.640
+works.
+
+00:00:29.500 --> 00:00:33.100
+Didn't fit into categories for
+ADL.
+
+00:00:33.100 --> 00:00:35.880
+All right, it's 10.30,
+so we'll get started.
+
+00:00:35.880 --> 00:00:37.740
+Good to see everyone again.
+
+00:00:37.740 --> 00:00:40.780
+Only real announcement is that
+Homework 7, again, is due on
+
+00:00:40.780 --> 00:00:41.780
+Sunday.
+
+00:00:41.900 --> 00:00:45.060
+The solutions to yesterday's lab
+are posted as well as to
+
+00:00:45.060 --> 00:00:45.920
+Homework 6,
+
+00:00:45.920 --> 00:00:47.520
+so make sure to review those.
+
+00:00:47.520 --> 00:00:50.520
+The question from yesterday's
+lab that we thought was most
+
+00:00:50.520 --> 00:00:52.360
+challenging, the one that was
+about chicken,
+
+00:00:52.360 --> 00:00:52.820
+beef,
+
+00:00:52.820 --> 00:00:55.820
+fish, and finding optimal
+parameters.
+
+00:00:56.060 --> 00:00:58.420
+One of the TAs has recorded a
+walkthrough video of that.
+
+00:00:58.420 --> 00:00:59.920
+So you can take a look at that
+as well.
+
+00:00:59.920 --> 00:01:02.820
+And if you just click the Lab 6
+link on the course website,
+
+00:01:02.820 --> 00:01:04.220
+you'll see the video right
+there.
+
+00:01:04.220 --> 00:01:06.580
+And we're going to review a few
+other lab questions from
+
+00:01:06.580 --> 00:01:09.480
+activity 4, the one that was
+about the new gradient rules.
+
+00:01:09.480 --> 00:01:12.980
+We're going to do some of those
+together today as well.
+
+00:01:12.980 --> 00:01:14.280
+The plan for today,
+
+00:01:14.280 --> 00:01:17.100
+like I said, is to start by
+recapping those big three
+
+00:01:17.100 --> 00:01:19.860
+gradient rules and also just
+more generally what is the
+
+00:01:19.860 --> 00:01:22.560
+gradient operation.
+And what does it tell you about
+
+00:01:22.560 --> 00:01:23.840
+a function?
+
+00:01:23.840 --> 00:01:27.320
+Then the big result we are going
+to work towards today is
+
+00:01:27.320 --> 00:01:31.540
+minimizing mean squared error
+using these new gradient rules,
+
+00:01:31.540 --> 00:01:33.760
+rather than using
+
+00:01:33.760 --> 00:01:36.180
+orthogonality and projections
+the way we did before.
+
+00:01:36.180 --> 00:01:38.940
+And hopefully, we will end up
+with the same result.
+
+00:01:38.940 --> 00:01:42.060
+And then lastly, we will start
+to think about what the gradient
+
+00:01:42.060 --> 00:01:47.280
+can tell us about functions
+whose minima we cannot solve for
+
+00:01:47.280 --> 00:01:49.520
+by hand.
+Okay, and we will try and think
+
+00:01:49.520 --> 00:01:53.720
+of more computational procedure
+that will allow us to estimate
+
+00:01:53.720 --> 00:01:57.460
+the minimums of functions Where
+we can't solve for the minimizer
+
+00:01:57.460 --> 00:01:59.860
+by hand Okay, so that's the
+plan.
+
+00:01:59.860 --> 00:02:03.160
+This is not related at all But
+yesterday I was on Instagram and
+
+00:02:03.160 --> 00:02:04.980
+I said I was just you know
+Walking and I saw this random
+
+00:02:04.980 --> 00:02:07.960
+post that was like ranking
+courses from my math degree for
+
+00:02:07.960 --> 00:02:10.640
+how much they matter for quant
+And I just I was curious so I
+
+00:02:10.640 --> 00:02:13.400
+looked at it and basically all
+of the stuff in s-tier and
+
+00:02:13.400 --> 00:02:16.100
+a-tier stuff We talked about in
+this class good not why we're
+
+00:02:16.100 --> 00:02:17.840
+talking about it, but I just
+thought it was relevant in our
+
+00:02:17.840 --> 00:02:18.840
+chair
+
+00:02:19.160 --> 00:02:20.060
+Okay,
+
+00:02:20.060 --> 00:02:24.940
+so back to a regular business.
+Can someone remind me what type
+
+00:02:24.940 --> 00:02:28.860
+of function does it a gradient
+apply to?
+
+00:02:28.860 --> 00:02:32.900
+So what what kind of function
+are we thinking about here?
+
+00:02:32.900 --> 00:02:36.680
+What what type of function has a
+gradient?
+
+00:02:36.680 --> 00:02:37.680
+Yeah.
+
+00:02:38.780 --> 00:02:39.580
+Good.
+
+00:02:39.580 --> 00:02:43.000
+A function which I called vector
+to scalar.
+
+00:02:43.000 --> 00:02:46.120
+One who takes in multiple input
+variables,
+
+00:02:46.120 --> 00:02:47.060
+one or more,
+
+00:02:47.060 --> 00:02:50.810
+but output's just a single
+scalar.
+
+00:02:58.200 --> 00:02:59.700
+And geometrically,
+
+00:03:01.960 --> 00:03:06.460
+what does the gradient at any
+point in the input describe?
+
+00:03:08.320 --> 00:03:09.780
+What does the gradient describe?
+
+00:03:09.780 --> 00:03:12.860
+The direction of the steepest
+increase in value.
+
+00:03:12.860 --> 00:03:15.200
+Good.
+But what the gradient at any
+
+00:03:15.200 --> 00:03:18.900
+point in the input tells you is
+the direction along which the
+
+00:03:18.900 --> 00:03:21.560
+function is increasing the
+quickest.
+
+00:03:21.560 --> 00:03:23.300
+So what we are seeing here,
+
+00:03:23.300 --> 00:03:29.140
+both left and right, is the same
+function where the domain is R2,
+
+00:03:29.880 --> 00:03:33.380
+meaning it takes in two input
+variables, and then it returns a
+
+00:03:33.380 --> 00:03:34.360
+single scalar.
+
+00:03:34.360 --> 00:03:37.800
+On the left, I'm viewing this
+function in this interactive 3D
+
+00:03:37.800 --> 00:03:38.380
+way.
+
+00:03:38.380 --> 00:03:39.500
+On the right,
+
+00:03:39.500 --> 00:03:41.440
+I'm viewing this function top
+down.
+
+00:03:41.440 --> 00:03:45.940
+And remember, this is what we've
+called a contour plot.
+
+00:03:49.360 --> 00:03:53.300
+And so what the gradient at any
+point describes is,
+
+00:03:53.300 --> 00:03:56.600
+OK, maybe I should make this
+black here,
+
+00:03:56.600 --> 00:03:59.740
+the direction along which the
+function is increasing the
+
+00:03:59.740 --> 00:04:00.740
+quickest.
+
+00:04:01.980 --> 00:04:02.980
+Now,
+
+00:04:03.020 --> 00:04:06.820
+something new with the plot I am
+showing you on the right is all
+
+00:04:06.820 --> 00:04:11.100
+of these black arrows.
+what these arrows are describing
+
+00:04:11.100 --> 00:04:14.940
+are the gradients of the
+function at all of those input
+
+00:04:14.940 --> 00:04:20.100
+points okay this is what's
+called a gradient field so
+
+00:04:20.100 --> 00:04:25.980
+let's make sense of where some
+of these arrows look why
+
+00:04:25.980 --> 00:04:31.220
+are these arrows pointing to the
+right these arrows why are they
+
+00:04:31.220 --> 00:04:37.200
+all pointing to the right does
+that
+
+00:04:37.200 --> 00:04:37.820
+Make sense?
+
+00:04:37.820 --> 00:04:38.720
+There's something wrong.
+Yeah.
+
+00:04:38.720 --> 00:04:40.120
+Why are these pointing to the
+right?
+
+00:04:40.120 --> 00:04:43.000
+Because the direction to keep
+this percent is that way.
+
+00:04:43.000 --> 00:04:44.640
+Exactly.
+What this is saying is, if you
+
+00:04:44.640 --> 00:04:47.380
+were at any of these points
+along the input,
+
+00:04:47.380 --> 00:04:51.260
+the way to climb up the hill as
+fast as you can at that point
+
+00:04:51.260 --> 00:04:52.480
+is to move to the right.
+
+00:04:52.480 --> 00:04:55.440
+And over here, where these
+points correspond to is
+
+00:04:55.440 --> 00:04:56.620
+somewhere over here.
+
+00:04:56.620 --> 00:04:58.980
+So this is like saying, if
+you're living right here,
+
+00:04:58.980 --> 00:05:01.600
+what you should do is travel up
+that way.
+
+00:05:01.600 --> 00:05:03.000
+OK? Similarly,
+
+00:05:03.000 --> 00:05:08.250
+why are the arrows here sort of
+pointing down?
+
+00:05:08.960 --> 00:05:11.120
+Why are these pointing down?
+
+00:05:11.120 --> 00:05:14.180
+Well, it's because this
+corresponds to the very bottom
+
+00:05:14.180 --> 00:05:14.880
+here.
+
+00:05:14.880 --> 00:05:18.160
+So this is saying if you want to
+escape this hole the quickest,
+
+00:05:18.160 --> 00:05:21.060
+you're going to travel that way,
+which corresponds to looking
+
+00:05:21.060 --> 00:05:24.060
+like it's pointing down.
+
+00:05:24.220 --> 00:05:28.000
+So I want you to familiarize
+yourselves by going to the notes
+
+00:05:28.000 --> 00:05:32.140
+with these various ways of
+visualizing and interpreting the
+
+00:05:32.140 --> 00:05:34.660
+gradient of a function,
+
+00:05:34.660 --> 00:05:35.660
+OK?
+
+00:05:35.920 --> 00:05:39.280
+Again, the gradient itself is a
+new function where if you plug
+
+00:05:39.280 --> 00:05:42.000
+in an input, it tells you the
+direction along which the
+
+00:05:42.000 --> 00:05:45.000
+function is increasing the
+quickest at that new input.
+
+00:05:46.580 --> 00:05:47.060
+OK?
+
+00:05:47.060 --> 00:05:49.800
+What conceptual questions do we
+have about the gradient thus
+
+00:05:49.800 --> 00:05:50.800
+far?
+
+00:05:55.860 --> 00:06:00.960
+And just so we have it written
+down one more time, Recall,
+
+00:06:00.960 --> 00:06:05.200
+if f is a function that takes in
+d input variables or
+
+00:06:05.200 --> 00:06:08.760
+equivalently a vector in Rd and
+outputs a scalar,
+
+00:06:08.760 --> 00:06:12.080
+the gradient of f is a new
+function
+
+00:06:12.080 --> 00:06:15.080
+whose components are what?
+
+00:06:17.340 --> 00:06:20.180
+The gradient itself is a
+function that takes in a vector
+
+00:06:20.180 --> 00:06:21.760
+and returns a vector.
+
+00:06:21.760 --> 00:06:25.510
+So the gradient is a
+vector-to-vector function.
+
+00:06:25.880 --> 00:06:28.040
+And what are the components of
+the gradient? Yeah.
+
+00:06:28.040 --> 00:06:30.820
+The partial derivative of xq.
+
+00:06:30.820 --> 00:06:31.260
+Good.
+
+00:06:31.260 --> 00:06:34.120
+The partial derivatives of this
+function with respect to each
+
+00:06:34.120 --> 00:06:35.620
+input variable.
+
+00:06:39.960 --> 00:06:45.720
+So the original f is a vector to
+scalar
+
+00:06:45.720 --> 00:06:46.800
+function.
+
+00:06:48.000 --> 00:06:53.780
+The gradient of f is a vector to
+vector
+
+00:06:53.780 --> 00:06:55.600
+function.
+
+00:07:00.440 --> 00:07:04.190
+Questions with how to interpret
+the gradient thus far.
+
+00:07:05.120 --> 00:07:09.020
+And in yesterday's lab and in
+the new homework we released
+
+00:07:09.020 --> 00:07:10.240
+over the weekend,
+
+00:07:10.240 --> 00:07:12.600
+there will be some questions
+that have you interpret and
+
+00:07:12.600 --> 00:07:16.120
+calculate gradients of functions
+who are defined in terms of
+
+00:07:16.120 --> 00:07:17.620
+individual operations.
+
+00:07:17.960 --> 00:07:19.700
+By that I mean something like,
+
+00:07:19.700 --> 00:07:21.950
+I don't know.
+
+00:07:26.200 --> 00:07:31.200
+f of x is equal to, I don't
+know, x1 plus x2
+
+00:07:31.200 --> 00:07:35.180
+squared plus 2 cos x1,
+
+00:07:36.020 --> 00:07:38.270
+something like that.
+
+00:07:41.720 --> 00:07:44.520
+A question I could ask is, what
+is the gradient of this
+
+00:07:44.520 --> 00:07:45.280
+function?
+
+00:07:45.280 --> 00:07:46.520
+How would you find that?
+
+00:07:46.520 --> 00:07:49.300
+Well, you'd find the partial
+derivative with respect to x1,
+
+00:07:49.300 --> 00:07:51.540
+the partial derivative with
+respect to x2,
+
+00:07:51.540 --> 00:07:56.040
+and stack those into a vector.
+
+00:07:56.440 --> 00:07:58.480
+So you'd have something like,
+what's the partial derivative
+
+00:07:58.480 --> 00:08:00.220
+with respect to x1 here?
+
+00:08:00.220 --> 00:08:06.220
+I think it's 2 times x1 plus x2
+minus 2 sine x1.
+
+00:08:07.240 --> 00:08:11.740
+And with respect to x2, we'll
+have 2 times x1 plus x2.
+
+00:08:11.780 --> 00:08:12.260
+OK?
+
+00:08:12.260 --> 00:08:15.200
+That would be the gradient.
+
+00:08:15.200 --> 00:08:17.960
+So to figure out the direction
+along which the function is
+
+00:08:17.960 --> 00:08:21.680
+increasing the quickest at any
+one input,
+
+00:08:21.680 --> 00:08:23.920
+I just plug in whatever input
+I'm considering into this
+
+00:08:23.920 --> 00:08:26.920
+gradient operation, and it'll
+tell me that.
+
+00:08:27.200 --> 00:08:28.700
+But remember,
+
+00:08:28.900 --> 00:08:32.540
+this type of function is not
+really the one that we are going
+
+00:08:32.540 --> 00:08:35.080
+to focus our efforts on.
+Instead,
+
+00:08:35.080 --> 00:08:38.120
+we are going to focus our
+efforts on functions who are
+
+00:08:38.120 --> 00:08:41.870
+defined in terms of matrix
+vector operations.
+
+00:08:45.080 --> 00:08:47.700
+We're going to try and find
+gradients of functions who are
+
+00:08:47.700 --> 00:08:50.700
+defined in terms of matrix and
+vector operations.
+
+00:08:50.700 --> 00:08:53.380
+And so as I said at the start of
+today's lecture, our ultimate
+
+00:08:53.380 --> 00:08:58.900
+goal is to find the gradient
+
+00:09:04.820 --> 00:09:07.540
+of mean scored error
+
+00:09:07.540 --> 00:09:13.360
+in the
+
+00:09:13.360 --> 00:09:19.000
+general multiple linear
+regression case.
+
+00:09:19.220 --> 00:09:22.000
+This is also a vector to scalar
+function,
+
+00:09:22.000 --> 00:09:23.000
+right?
+
+00:09:23.240 --> 00:09:28.980
+What was its domain? How many
+inputs did this take
+
+00:09:28.980 --> 00:09:29.980
+in?
+
+00:09:35.600 --> 00:09:38.560
+What is the shape? In other
+words, what is the shape of W
+
+00:09:38.560 --> 00:09:39.560
+here?
+
+00:09:48.560 --> 00:09:50.060
+R what?
+
+00:09:50.100 --> 00:09:51.080
+Yeah.
+
+00:09:51.080 --> 00:09:52.080
+Close.
+
+00:09:53.560 --> 00:09:55.810
+rd plus 1.
+Good, because remember,
+
+00:09:56.100 --> 00:10:00.000
+we have d features.
+That leads to d plus 1
+
+00:10:00.000 --> 00:10:02.580
+parameters if we have this
+intercept term.
+
+00:10:02.580 --> 00:10:05.400
+And it returns a single number,
+because the mean squared error
+
+00:10:05.400 --> 00:10:06.660
+is a single number.
+
+00:10:06.660 --> 00:10:09.300
+So at some point today, we are
+going to find the gradient of
+
+00:10:09.300 --> 00:10:10.300
+this.
+
+00:10:10.940 --> 00:10:12.880
+But before we get there,
+
+00:10:12.880 --> 00:10:16.240
+there were three smaller
+building blocks that we
+
+00:10:16.240 --> 00:10:18.860
+introduced at the very end of
+Tuesday's lecture.
+
+00:10:18.860 --> 00:10:20.440
+And you reviewed them in
+yesterday's lab.
+
+00:10:20.440 --> 00:10:25.700
+And they were called the big
+three gradient rules.
+
+00:10:31.360 --> 00:10:35.900
+What was the first of these big
+three rules?
+
+00:10:35.900 --> 00:10:39.240
+There's not really a default
+ordering to them, but the order
+
+00:10:39.240 --> 00:10:41.320
+in which I talked about them on
+Tuesday and the order in which
+
+00:10:41.320 --> 00:10:43.340
+they appeared on the lab
+worksheet yesterday.
+
+00:10:43.340 --> 00:10:46.600
+What was the first one?
+
+00:10:46.600 --> 00:10:48.760
+Good.
+It was the gradient of the dot
+
+00:10:48.760 --> 00:10:52.500
+product of a with x.
+And note that this can be
+
+00:10:52.500 --> 00:10:53.460
+written
+
+00:10:53.460 --> 00:10:56.120
+a lot of different ways.
+
+00:10:56.120 --> 00:10:59.120
+What was that gradient?
+
+00:11:01.860 --> 00:11:03.600
+Remember, the answer should be a
+vector here.
+
+00:11:03.600 --> 00:11:08.360
+What vector is the gradient of
+the dot product of x with a
+
+00:11:08.360 --> 00:11:10.610
+constant vector a?
+
+00:11:10.700 --> 00:11:11.960
+Yeah? It was just a.
+
+00:11:11.960 --> 00:11:12.580
+Yeah, good.
+
+00:11:12.580 --> 00:11:14.140
+It was just a.
+
+00:11:14.140 --> 00:11:19.460
+So this is kind of like the fact
+that the derivative of Ax is
+
+00:11:19.460 --> 00:11:20.740
+equal to A.
+
+00:11:20.740 --> 00:11:23.160
+But it's not exactly the same,
+because in the regular
+
+00:11:23.160 --> 00:11:25.920
+derivative sense that you knew
+about before this class,
+
+00:11:25.920 --> 00:11:27.620
+A and X are both scalars.
+
+00:11:27.620 --> 00:11:30.540
+But here, A and X are both
+vectors, which is why we're
+
+00:11:30.540 --> 00:11:33.540
+computing their dot product.
+
+00:11:35.600 --> 00:11:39.350
+What was the second gradient
+rule we saw?
+
+00:11:45.960 --> 00:11:48.600
+What was the second rule?
+
+00:11:48.600 --> 00:11:50.060
+Gradient of squared norm.
+
+00:11:50.060 --> 00:11:51.060
+Excellent.
+
+00:11:52.420 --> 00:11:56.170
+The gradient of the squared
+norm, what was that?
+
+00:11:59.160 --> 00:11:59.880
+Good.
+
+00:11:59.880 --> 00:12:01.580
+2 times the vector x.
+
+00:12:01.580 --> 00:12:05.260
+So the gradient of the squared
+norm of x is 2 times the vector
+
+00:12:05.260 --> 00:12:06.140
+x.
+
+00:12:06.140 --> 00:12:08.100
+OK, just to emphasize,
+
+00:12:08.100 --> 00:12:09.600
+this operation,
+
+00:12:10.000 --> 00:12:10.800
+f,
+
+00:12:10.800 --> 00:12:13.640
+in both cases, you plug in an x,
+and you plug in an x, And what
+
+00:12:13.640 --> 00:12:15.880
+it gives you back is a single
+number.
+
+00:12:15.880 --> 00:12:18.760
+The dot product of x with
+whatever a happens to be is just
+
+00:12:18.760 --> 00:12:19.640
+one number.
+
+00:12:19.640 --> 00:12:23.080
+And the squared length of x is
+also just one number.
+
+00:12:23.080 --> 00:12:24.140
+The gradient,
+
+00:12:24.140 --> 00:12:26.560
+you plug in an x and it doesn't
+tell you a number, it tells you
+
+00:12:26.560 --> 00:12:27.680
+a whole vector.
+
+00:12:27.680 --> 00:12:30.680
+That vector describes the
+direction along which the
+
+00:12:30.680 --> 00:12:32.740
+function is increasing the
+quickest
+
+00:12:32.740 --> 00:12:35.080
+at the vector you plug in.
+
+00:12:35.080 --> 00:12:39.680
+And this second gradient rule is
+kind of like the vector version
+
+00:12:39.680 --> 00:12:44.180
+of the fact that the derivative
+of x squared is 2x.
+
+00:12:44.680 --> 00:12:47.920
+But it's more subtle than that,
+because you can't square a
+
+00:12:47.920 --> 00:12:48.920
+vector.
+
+00:12:48.980 --> 00:12:51.060
+This is not the vector x
+squared.
+
+00:12:51.060 --> 00:12:53.060
+This is the length of x squared.
+
+00:12:53.060 --> 00:12:54.960
+It's a different idea.
+
+00:12:54.960 --> 00:12:55.900
+A vector,
+
+00:12:55.900 --> 00:12:58.940
+squaring it is not one of the
+operations we've learned about.
+
+00:12:58.940 --> 00:13:01.000
+Its length, though, is a regular
+number, and so you can square
+
+00:13:01.000 --> 00:13:02.000
+that.
+
+00:13:03.200 --> 00:13:04.100
+Good.
+
+00:13:04.100 --> 00:13:05.680
+And what was the third one? We
+didn't talk about this in
+
+00:13:05.680 --> 00:13:07.880
+lecture, but it was mentioned in
+lab.
+
+00:13:07.880 --> 00:13:09.580
+And we're going to use this one
+heavily as well.
+
+00:13:09.580 --> 00:13:13.330
+This one's the most complicated
+of the bunch.
+
+00:13:13.380 --> 00:13:14.640
+Anyone remember?
+
+00:13:14.640 --> 00:13:15.640
+Quadratic.
+
+00:13:15.800 --> 00:13:17.240
+Good.
+And what did that look like?
+
+00:13:18.500 --> 00:13:22.680
+X transpose times A times the
+vector X.
+
+00:13:22.680 --> 00:13:23.220
+Good.
+
+00:13:23.220 --> 00:13:23.980
+So this,
+
+00:13:23.980 --> 00:13:25.100
+by quadratic,
+
+00:13:25.100 --> 00:13:27.960
+what you're referring to is the
+fact that we called this a
+
+00:13:27.960 --> 00:13:30.780
+quadratic form.
+
+00:13:33.420 --> 00:13:36.580
+This is something you explored a
+little bit in yesterday's lab.
+
+00:13:36.580 --> 00:13:39.300
+We are going to see this in
+coming lectures as well.
+
+00:13:39.300 --> 00:13:42.220
+But the reason you should think
+of this as being quadratic in
+
+00:13:42.220 --> 00:13:48.220
+some sense is that if you took A
+to be some square matrix and
+
+00:13:48.220 --> 00:13:52.720
+wrote out your variables x1, x2,
+x3, and x1, x2, x3 here,
+
+00:13:52.740 --> 00:13:56.140
+if you evaluated x transpose Ax,
+
+00:13:56.140 --> 00:14:00.900
+you would end up with a sum of
+terms that look like x1 squared,
+
+00:14:00.900 --> 00:14:02.620
+or x1, x2,
+
+00:14:02.620 --> 00:14:04.280
+or x2, x3.
+
+00:14:04.280 --> 00:14:07.340
+And what makes it quadratic is
+that this output, again, this is
+
+00:14:07.340 --> 00:14:09.940
+just going to return a single
+scalar, is going to be made up
+
+00:14:09.940 --> 00:14:13.140
+of pairs of your variables
+multiplied together, or two
+
+00:14:13.140 --> 00:14:15.660
+variables multiplied together at
+a time.
+
+00:14:15.660 --> 00:14:15.920
+OK,
+
+00:14:15.920 --> 00:14:18.060
+and quad means two.
+
+00:14:18.060 --> 00:14:20.240
+Even though it sounds like four,
+two squared is four, which is
+
+00:14:20.240 --> 00:14:21.820
+why it's quadratic.
+
+00:14:21.820 --> 00:14:22.380
+OK,
+
+00:14:22.380 --> 00:14:24.480
+so this is like how you would
+make the equivalent of a
+
+00:14:24.480 --> 00:14:28.230
+parabola, but when you have
+multiple input variables.
+
+00:14:28.300 --> 00:14:28.780
+All right,
+
+00:14:28.780 --> 00:14:31.920
+this reduces to a parabola if x
+is just a scalar, right,
+
+00:14:31.920 --> 00:14:33.420
+ax squared.
+
+00:14:33.820 --> 00:14:36.070
+So all right.
+
+00:14:36.100 --> 00:14:40.600
+What was the gradient of the
+quadratic form?
+
+00:14:43.340 --> 00:14:45.320
+What was the gradient here?
+
+00:14:45.320 --> 00:14:50.520
+It was a plus a transpose
+multiplied by the vector x.
+
+00:14:51.060 --> 00:14:51.760
+Awesome.
+
+00:14:51.760 --> 00:14:55.760
+The gradient of x transpose ax
+is a plus a transpose x.
+
+00:14:55.760 --> 00:14:57.700
+We're not going to walk through
+the derivation of this one.
+
+00:14:57.700 --> 00:14:59.420
+It's linked in the notes if you
+would like.
+
+00:14:59.420 --> 00:15:01.080
+The first two you should be
+familiar with.
+
+00:15:01.080 --> 00:15:02.980
+We talked about it on Tuesday,
+
+00:15:02.980 --> 00:15:06.340
+and discussed it deeply in the
+notes.
+
+00:15:06.340 --> 00:15:09.940
+There is a simplification you
+can make to the quadratic form
+
+00:15:09.940 --> 00:15:13.690
+one if A is symmetric.
+
+00:15:14.160 --> 00:15:19.410
+Can you remind me what it means
+for a matrix to be symmetric?
+
+00:15:19.960 --> 00:15:21.560
+What is a symmetric matrix?
+
+00:15:21.560 --> 00:15:23.120
+A is the same as a transpose.
+
+00:15:23.120 --> 00:15:25.040
+Yeah, A and A transpose are the
+same.
+
+00:15:25.040 --> 00:15:29.040
+And what does this gradient
+reduce to in that case, where A
+
+00:15:29.040 --> 00:15:32.240
+and A transpose are the same.
+
+00:15:32.240 --> 00:15:34.400
+It's not a trick.
+
+00:15:34.400 --> 00:15:35.900
+What is the reduced to? Yeah.
+
+00:15:35.900 --> 00:15:36.640
+2AX.
+
+00:15:36.640 --> 00:15:38.140
+Awesome, 2AX.
+
+00:15:40.420 --> 00:15:42.260
+Also, that kind of makes sense,
+because here,
+
+00:15:42.260 --> 00:15:44.920
+if A were the identity matrix,
+
+00:15:44.920 --> 00:15:47.880
+X transpose X would be the same
+as the squared length of X.
+
+00:15:47.880 --> 00:15:50.780
+So plugging in the identity
+matrix here should give us the
+
+00:15:50.780 --> 00:15:54.530
+same result as the second
+gradient rule.
+
+00:15:54.820 --> 00:15:56.780
+So these are our big three
+gradient rules.
+
+00:15:56.780 --> 00:16:02.580
+And all of the functions defined
+in terms of matrix
+
+00:16:02.580 --> 00:16:05.600
+vector operations that we're
+going to need to work with for
+
+00:16:05.600 --> 00:16:08.140
+the rest of today's lecture
+
+00:16:08.140 --> 00:16:11.240
+will use one of these three
+rules, or one or more of these
+
+00:16:11.240 --> 00:16:12.280
+three rules.
+
+00:16:12.280 --> 00:16:14.360
+But just with these three rules,
+
+00:16:14.360 --> 00:16:17.200
+we can find relatively
+complicated
+
+00:16:17.200 --> 00:16:21.440
+gradients.
+
+00:16:21.700 --> 00:16:24.040
+And so that's what I want us to
+work on for a little bit.
+
+00:16:24.040 --> 00:16:25.580
+So the first example
+
+00:16:25.580 --> 00:16:31.320
+is the gradient
+
+00:16:31.320 --> 00:16:37.120
+of the norm.
+
+00:16:37.200 --> 00:16:38.820
+Not the squared norm,
+
+00:16:38.820 --> 00:16:40.320
+the norm.
+
+00:16:41.220 --> 00:16:42.220
+OK.
+
+00:16:42.220 --> 00:16:45.780
+So you worked on this in lab
+yesterday.
+
+00:16:45.780 --> 00:16:48.080
+And what I want to get at is
+that there are two ways of
+
+00:16:48.080 --> 00:16:50.330
+thinking about this.
+
+00:16:54.940 --> 00:16:59.440
+Or I'll call it two approaches.
+
+00:17:01.080 --> 00:17:05.300
+The first approach is to just
+pretend we didn't know about any
+
+00:17:05.300 --> 00:17:07.100
+of the big three rules
+
+00:17:07.100 --> 00:17:10.980
+and expand this out as a
+function of all of its input
+
+00:17:10.980 --> 00:17:11.980
+variables.
+
+00:17:12.400 --> 00:17:18.220
+So suppose x is made up of the
+components x1,
+
+00:17:18.220 --> 00:17:20.470
+x2, through xd,
+
+00:17:21.600 --> 00:17:25.200
+f of x then,
+
+00:17:25.820 --> 00:17:31.070
+how would I write it out in
+terms of its components?
+
+00:17:31.500 --> 00:17:35.180
+Square root of x1 squared plus
+x2 squared plus dot dot.
+
+00:17:35.180 --> 00:17:39.400
+The square root of x1 squared
+plus x2 squared plus all the way
+
+00:17:39.400 --> 00:17:41.650
+through xd squared.
+
+00:17:41.900 --> 00:17:44.100
+Now, if I wanted to find its
+gradient,
+
+00:17:44.100 --> 00:17:46.660
+I could forget about these big
+three rules.
+
+00:17:46.660 --> 00:17:50.340
+And I could just go to what?
+Like, well, what could I always
+
+00:17:50.340 --> 00:17:51.340
+use?
+
+00:17:56.940 --> 00:18:01.800
+What could I do here to find the
+gradient of that?
+
+00:18:01.800 --> 00:18:02.440
+Yeah.
+
+00:18:02.440 --> 00:18:03.940
+The derivative.
+
+00:18:04.000 --> 00:18:04.680
+Close.
+
+00:18:04.680 --> 00:18:07.440
+Find the partial derivatives
+with respect to each one of the
+
+00:18:07.440 --> 00:18:08.660
+input variables.
+
+00:18:08.660 --> 00:18:09.660
+Good.
+
+00:18:10.280 --> 00:18:13.280
+So I could find.
+
+00:18:13.800 --> 00:18:16.400
+Now, the nice thing with this
+one is that all of the input
+
+00:18:16.400 --> 00:18:19.980
+variables appear symmetrically
+in the formula.
+
+00:18:20.040 --> 00:18:23.380
+What that means is if I shuffled
+around the x1s, x2s, x3s, the
+
+00:18:23.380 --> 00:18:24.940
+formula would look the same.
+
+00:18:24.940 --> 00:18:27.740
+So I really only need to
+consider the partial derivative
+
+00:18:27.740 --> 00:18:30.480
+with respect to one of them, and
+all of the other ones are going
+
+00:18:30.480 --> 00:18:33.860
+to be the same just with the
+subscript changed.
+
+00:18:33.860 --> 00:18:39.110
+So why don't I just start with
+x1?
+
+00:18:39.840 --> 00:18:43.480
+What is the partial derivative
+of this beast with respect to
+
+00:18:43.480 --> 00:18:44.480
+x1?
+
+00:18:53.920 --> 00:18:58.740
+Yeah.
+Is it 2x1 over the square root
+
+00:18:58.740 --> 00:19:01.220
+of all that again? Right.
+And so what you're using here is
+
+00:19:01.220 --> 00:19:04.120
+the chain rule, which is that if
+all we had was the square root
+
+00:19:04.120 --> 00:19:05.420
+of x,
+
+00:19:05.420 --> 00:19:09.520
+the derivative would be 1 over 2
+times the square root of x.
+
+00:19:09.520 --> 00:19:12.400
+Or another way to think about it
+is that if you had x to the 1
+
+00:19:12.400 --> 00:19:17.500
+half, the derivative is 1 by 2x
+to the negative 1 by 2,
+
+00:19:17.500 --> 00:19:19.860
+which is 1 over 2 times the
+square root of x.
+
+00:19:19.860 --> 00:19:22.860
+But we don't just have the
+square root of x here because
+
+00:19:22.860 --> 00:19:25.320
+there's not just one x.
+There are dx's.
+
+00:19:25.320 --> 00:19:26.820
+So the chain rule says,
+
+00:19:26.820 --> 00:19:29.070
+take the derivative
+
+00:19:30.260 --> 00:19:32.400
+of the square root operation,
+
+00:19:32.400 --> 00:19:36.900
+but keep whatever is under the
+square root.
+
+00:19:39.820 --> 00:19:44.200
+And then multiply that by the
+derivative of what's in the
+
+00:19:44.200 --> 00:19:46.680
+square root with respect to x1,
+
+00:19:46.680 --> 00:19:49.680
+which is indeed 2x1.
+
+00:19:50.360 --> 00:19:54.760
+But then notice the 2 up top and
+the 2 down here cancel.
+
+00:19:54.760 --> 00:19:58.980
+And so we're left with just x1
+over the square root of x1
+
+00:19:58.980 --> 00:20:00.960
+squared plus x2 squared plus x3
+squared.
+
+00:20:00.960 --> 00:20:05.460
+And what is that? Well, that's
+just the length of x.
+
+00:20:07.720 --> 00:20:08.720
+OK.
+
+00:20:08.720 --> 00:20:10.220
+So similarly,
+
+00:20:13.420 --> 00:20:15.720
+the partial with respect to x2,
+
+00:20:15.720 --> 00:20:20.220
+what would that end up being?
+
+00:20:21.120 --> 00:20:26.370
+Yeah? The x2 over norm x? Yeah,
+x2 over the length of x.
+
+00:20:29.540 --> 00:20:31.180
+OK.
+Let me save some space here.
+
+00:20:38.640 --> 00:20:41.980
+And so all of them, the other
+ones would be found similarly.
+
+00:20:41.980 --> 00:20:45.840
+So if I stitch these all
+together in the gradient,
+
+00:20:45.840 --> 00:20:50.160
+what this tells me is the
+gradient
+
+00:20:50.160 --> 00:20:53.620
+contains x1 over the length of
+x,
+
+00:20:53.620 --> 00:20:57.020
+x2 over the length of x,
+
+00:20:57.020 --> 00:21:02.270
+all the way through xd over the
+length of x.
+
+00:21:04.080 --> 00:21:07.680
+But can you think of another way
+to write this,
+
+00:21:07.680 --> 00:21:09.180
+perhaps more
+
+00:21:10.640 --> 00:21:11.640
+concisely?
+
+00:21:13.540 --> 00:21:16.600
+Just tell me the gradient of f
+with respect to x has the
+
+00:21:16.600 --> 00:21:19.380
+components x1 over box,
+
+00:21:19.380 --> 00:21:23.240
+x2 over box, x3 over box, all
+the way through xd over box.
+
+00:21:23.240 --> 00:21:24.540
+Turns out that box is a
+constant.
+
+00:21:24.540 --> 00:21:25.060
+So yeah?
+
+00:21:25.060 --> 00:21:30.340
+What can we do, Sam? Yes, you
+can just do x over the
+
+00:21:30.340 --> 00:21:33.340
+vector x over that.
+Exactly.
+
+00:21:33.860 --> 00:21:36.780
+These components are just the
+components of the vector x.
+
+00:21:36.780 --> 00:21:42.040
+So we can write this as the
+vector x
+
+00:21:42.040 --> 00:21:45.140
+over this one.
+
+00:21:47.020 --> 00:21:49.920
+So there's a nice interpretation
+to this.
+
+00:21:49.920 --> 00:21:55.100
+The gradient of the norm is a
+unit vector in the direction of
+
+00:21:55.100 --> 00:21:58.100
+x, okay? Because remember,
+
+00:21:58.460 --> 00:22:02.200
+x over this length of x is a
+unit vector that points in the
+
+00:22:02.200 --> 00:22:05.760
+same direction as x, but has a
+length of 1,
+
+00:22:05.760 --> 00:22:06.580
+okay?
+
+00:22:06.580 --> 00:22:12.400
+So this is how I might find a
+gradient of something I
+
+00:22:12.400 --> 00:22:14.940
+didn't tell you about.
+
+00:22:14.940 --> 00:22:19.260
+But you might say, well hold up,
+we didn't actually use any of
+
+00:22:19.260 --> 00:22:21.540
+the three rules to do this.
+
+00:22:21.540 --> 00:22:24.680
+Could we have perhaps leveraged
+our prior work a little bit
+
+00:22:24.680 --> 00:22:25.520
+more?
+
+00:22:25.520 --> 00:22:26.860
+There is a way to do it,
+
+00:22:26.860 --> 00:22:30.420
+and it involves the chain rule
+for gradients.
+
+00:22:30.420 --> 00:22:33.420
+Let's talk about that.
+
+00:22:36.040 --> 00:22:41.200
+I want us to think of this
+function
+
+00:22:41.200 --> 00:22:47.120
+as performing two successive
+operations to an input vector x.
+
+00:22:49.760 --> 00:22:52.010
+The first operation,
+
+00:22:54.040 --> 00:22:56.540
+and sort of what I'm getting at
+is I want to break it down into
+
+00:22:56.540 --> 00:22:57.840
+two operations,
+
+00:22:57.840 --> 00:23:01.640
+both of which are simpler to
+think about than the overall
+
+00:23:01.640 --> 00:23:03.740
+action of taking the norm.
+
+00:23:03.740 --> 00:23:07.640
+And by simpler, I mean uses
+things we've seen already.
+
+00:23:07.640 --> 00:23:09.040
+Here's what I'm getting at.
+
+00:23:09.040 --> 00:23:14.000
+I'm going to apply one function
+to get something, and then
+
+00:23:14.000 --> 00:23:19.160
+another function to get
+something else.
+
+00:23:19.240 --> 00:23:22.960
+And I'll make this blue.
+
+00:23:22.960 --> 00:23:28.440
+And what comes out at the end is
+the length of x.
+
+00:23:28.440 --> 00:23:30.660
+What do you think this
+intermediate step I'm alluding
+
+00:23:30.660 --> 00:23:32.160
+to is?
+
+00:23:37.780 --> 00:23:39.260
+Maybe to hint,
+
+00:23:39.260 --> 00:23:40.760
+I'll say,
+
+00:23:41.940 --> 00:23:42.940
+ideally,
+
+00:23:44.160 --> 00:23:49.160
+we use the fact that,
+
+00:23:49.880 --> 00:23:53.120
+which of the big three gradient
+rules seems most relevant to
+
+00:23:53.120 --> 00:23:54.620
+this situation?
+
+00:23:57.140 --> 00:23:59.260
+The squared norm.
+
+00:23:59.260 --> 00:24:03.620
+The squared norm.
+the squared norm is 2 times the
+
+00:24:03.620 --> 00:24:05.120
+vector x.
+
+00:24:08.420 --> 00:24:13.340
+So how might I do that here?
+
+00:24:13.340 --> 00:24:17.500
+What I'm saying is that this
+first step could involve just
+
+00:24:17.500 --> 00:24:22.660
+taking the squared norm of x,
+and the second step can involve
+
+00:24:22.660 --> 00:24:25.960
+taking the square root of
+whatever came before it.
+
+00:24:25.960 --> 00:24:29.800
+So I'm thinking of two separate
+functions here.
+
+00:24:29.800 --> 00:24:31.320
+This function h,
+
+00:24:31.320 --> 00:24:37.080
+which is scalar to scalar, and
+this
+
+00:24:37.080 --> 00:24:37.920
+function,
+
+00:24:37.920 --> 00:24:39.320
+let's call it g,
+
+00:24:39.320 --> 00:24:43.070
+which is vector to scalar.
+
+00:24:44.480 --> 00:24:47.480
+So here's my proposal.
+
+00:24:48.760 --> 00:24:54.300
+Define the function g of x to
+just do the square norm of x.
+
+00:24:56.740 --> 00:24:59.940
+Then define the function h.
+I could say it takes in the
+
+00:24:59.940 --> 00:25:01.860
+input x, but that makes it a
+little confusing.
+
+00:25:01.860 --> 00:25:05.080
+Why don't we just say h of y or
+something?
+
+00:25:05.080 --> 00:25:08.600
+All it does is take the square
+root of y.
+
+00:25:08.600 --> 00:25:11.080
+These are fundamentally
+different types of functions.
+
+00:25:11.340 --> 00:25:14.840
+g takes in a vector and returns
+a number.
+
+00:25:14.840 --> 00:25:18.020
+h takes in a number and returns
+a number.
+
+00:25:18.020 --> 00:25:21.620
+And the reason this function, h,
+takes in a number is because the
+
+00:25:21.620 --> 00:25:24.180
+output of the first thing was
+already number right the squared
+
+00:25:24.180 --> 00:25:27.020
+length of a vector is a number
+so if I want to do things out on
+
+00:25:27.020 --> 00:25:32.920
+to that I need to use a function
+that only takes in a number
+
+00:25:32.920 --> 00:25:36.640
+okay and what I'm saying is that
+my overall function F
+
+00:25:36.640 --> 00:25:40.980
+can really be thought of
+
+00:25:40.980 --> 00:25:46.760
+as calling this second operation
+the square root machine H
+
+00:25:46.760 --> 00:25:49.760
+on Then the input,
+
+00:25:51.020 --> 00:25:52.020
+g,
+
+00:25:52.920 --> 00:25:55.420
+of the vector to scalar
+function,
+
+00:25:55.420 --> 00:25:56.420
+x.
+
+00:25:57.000 --> 00:25:59.680
+And so another way to think
+about what I'm saying
+
+00:25:59.680 --> 00:26:04.720
+is that g takes in a vector, x,
+and returns a scalar.
+
+00:26:04.720 --> 00:26:07.640
+That scalar it returns is the
+squared length of x.
+
+00:26:07.640 --> 00:26:11.240
+Then this h function takes the
+square root of whatever was past
+
+00:26:11.240 --> 00:26:12.240
+it.
+
+00:26:12.530 --> 00:26:14.030
+All right.
+
+00:26:15.720 --> 00:26:21.180
+And so the chain rule
+
+00:26:21.180 --> 00:26:26.240
+here
+
+00:26:26.240 --> 00:26:31.040
+says the following.
+
+00:26:31.840 --> 00:26:37.480
+The gradient of f is equal to
+the
+
+00:26:37.480 --> 00:26:38.480
+derivative.
+
+00:26:38.680 --> 00:26:40.080
+Notice I'm not saying partial
+derivative.
+
+00:26:40.080 --> 00:26:41.380
+I'm just saying derivative,
+
+00:26:41.380 --> 00:26:45.760
+because h is just a regular
+scalar to scalar function, like
+
+00:26:45.760 --> 00:26:48.080
+the type you knew about before
+this class.
+
+00:26:48.080 --> 00:26:53.760
+The derivative of h when you
+pass in g of
+
+00:26:53.760 --> 00:26:56.380
+x times,
+
+00:26:56.880 --> 00:27:02.060
+what do you think we follow this
+up with?
+
+00:27:02.060 --> 00:27:04.940
+If g was a scalar to scalar
+function,
+
+00:27:04.940 --> 00:27:07.260
+you'd follow this up with g
+prime of x.
+
+00:27:07.260 --> 00:27:08.940
+That's what the regular chain
+would tell you.
+
+00:27:08.940 --> 00:27:11.520
+But g is not a scalar to scalar
+function.
+
+00:27:11.520 --> 00:27:12.960
+g doesn't have a derivative.
+
+00:27:12.960 --> 00:27:15.960
+It has a gradient.
+
+00:27:16.140 --> 00:27:22.100
+So I follow this up with the
+gradient of g.
+
+00:27:22.500 --> 00:27:25.380
+So this is sort of the same as
+the chain rule you knew about
+
+00:27:25.380 --> 00:27:26.380
+before,
+
+00:27:26.640 --> 00:27:29.920
+just a little more general,
+because now it accounts for the
+
+00:27:29.920 --> 00:27:32.200
+fact that g and h are different
+types of functions.
+
+00:27:32.200 --> 00:27:33.820
+g takes in a vector,
+
+00:27:33.820 --> 00:27:36.300
+and so the way you describe its
+rate of change is with the
+
+00:27:36.300 --> 00:27:38.560
+gradient.
+H takes in a scalar, so the way
+
+00:27:38.560 --> 00:27:41.900
+you describe its rate of change
+is with a scalar.
+
+00:27:41.900 --> 00:27:45.580
+So it's still the derivative of
+the outside thing with the
+
+00:27:45.580 --> 00:27:48.920
+inside thing passed in times the
+rate of change of the inside
+
+00:27:48.920 --> 00:27:50.300
+thing.
+It's just the rate of change of
+
+00:27:50.300 --> 00:27:52.580
+the inside thing is now a
+gradient rather than a single
+
+00:27:52.580 --> 00:27:53.580
+derivative.
+
+00:27:56.900 --> 00:28:02.150
+So what would that tell us here?
+
+00:28:06.800 --> 00:28:12.050
+It tells us the gradient of the
+norm of x is equal to what?
+
+00:28:15.440 --> 00:28:19.380
+The H here is the square root
+machine and it's just so we have
+
+00:28:19.380 --> 00:28:23.130
+it written down even though
+we've already used it
+
+00:28:24.720 --> 00:28:29.970
+What is H prime of Y here
+
+00:28:30.360 --> 00:28:33.360
+H prime of Y.
+
+00:28:35.500 --> 00:28:36.500
+Yeah.
+
+00:28:37.240 --> 00:28:38.800
+Good.
+1 over 2 root Y.
+
+00:28:39.080 --> 00:28:44.330
+So over here, what am I gonna
+write?
+
+00:28:45.620 --> 00:28:46.040
+Based
+
+00:28:46.040 --> 00:28:56.180
+on
+
+00:28:56.180 --> 00:28:59.940
+this 2 root g of x
+
+00:28:59.940 --> 00:29:05.700
+times the gradient of g of
+
+00:29:05.700 --> 00:29:06.700
+x.
+
+00:29:07.340 --> 00:29:08.980
+OK, but these are things we've
+seen before.
+
+00:29:08.980 --> 00:29:10.860
+Because what is g of x here?
+
+00:29:10.860 --> 00:29:13.860
+It's the squared norm.
+
+00:29:14.080 --> 00:29:16.580
+And the gradient of the squared
+norm is a solved problem.
+
+00:29:16.580 --> 00:29:19.560
+It's one of the three big three
+rules.
+
+00:29:19.560 --> 00:29:21.810
+And then also,
+
+00:29:22.120 --> 00:29:25.940
+what is the square root of the
+squared norm?
+
+00:29:25.940 --> 00:29:31.190
+That is, what is the square root
+of g of x?
+
+00:29:31.660 --> 00:29:35.120
+What's the square root of g of
+x?
+
+00:29:35.120 --> 00:29:35.680
+Yeah.
+
+00:29:35.680 --> 00:29:37.140
+It's the norm.
+It's just the norm.
+
+00:29:37.140 --> 00:29:40.600
+The square root of the squared
+norm is just the regular norm.
+
+00:29:40.600 --> 00:29:45.100
+Multiply that by the gradient of
+the squared norm, which is 2x.
+
+00:29:45.120 --> 00:29:50.370
+And lo and behold, you get the
+same thing we had before.
+
+00:29:50.920 --> 00:29:56.170
+But we didn't have to take any
+individual partial derivatives.
+
+00:29:57.940 --> 00:30:02.440
+And we more easily used things
+we already knew about.
+
+00:30:06.180 --> 00:30:12.120
+So that's the chain rule for
+vector to scalar functions.
+
+00:30:14.940 --> 00:30:18.620
+To apply this, I want you to
+work on another example from
+
+00:30:18.620 --> 00:30:20.120
+yesterday's lab.
+
+00:30:22.660 --> 00:30:28.460
+The function f of x, which
+returns the dot product of a
+
+00:30:28.460 --> 00:30:30.710
+with x squared.
+
+00:30:31.960 --> 00:30:34.700
+Once again, there are two ways
+to approach this.
+
+00:30:34.700 --> 00:30:39.540
+However you want, I want you to
+approach it and find the
+
+00:30:39.540 --> 00:30:41.040
+gradient here.
+
+00:30:44.760 --> 00:30:47.340
+So I'll give you a few minutes
+to think about this however
+
+00:30:47.340 --> 00:30:48.960
+you'd like.
+
+00:31:02.440 --> 00:31:05.840
+We can use the product rule.
+We could use,
+
+00:31:05.840 --> 00:31:08.840
+I think it was,
+
+00:31:09.520 --> 00:31:14.770
+I don't know, I don't know, I
+think we could use,
+
+00:31:15.080 --> 00:31:17.940
+I don't know, I don't know, I
+think we could use,
+
+00:31:17.940 --> 00:31:23.940
+I think we could use,
+
+00:31:27.160 --> 00:31:32.320
+I think we could use,
+
+00:32:02.320 --> 00:32:08.760
+Okay.
+
+00:32:36.780 --> 00:32:37.780
+OK,
+
+00:32:42.320 --> 00:32:48.080
+so if we want to find the
+gradient of this function,
+
+00:32:49.380 --> 00:32:53.640
+there is actually a way to do it
+without the chain rule.
+
+00:32:53.640 --> 00:32:58.140
+Maybe we can do that first.
+
+00:33:01.600 --> 00:33:05.040
+But it still does require using
+those big three rules that we
+
+00:33:05.040 --> 00:33:06.540
+saw before.
+
+00:33:06.940 --> 00:33:08.860
+Can you think of a way,
+
+00:33:08.860 --> 00:33:12.610
+and this one's not super
+intuitive,
+
+00:33:12.720 --> 00:33:17.880
+to expand this out in a way that
+would allow us to use one of the
+
+00:33:17.880 --> 00:33:19.840
+big three gradient rules?
+
+00:33:19.840 --> 00:33:24.820
+It's not the rule that you think
+it's going to be.
+
+00:33:24.820 --> 00:33:27.820
+So any ideas here?
+
+00:33:30.620 --> 00:33:31.220
+Yeah?
+
+00:33:31.220 --> 00:33:33.880
+What's the product rule?
+
+00:33:33.880 --> 00:33:36.080
+So tell me what you did here.
+
+00:33:36.080 --> 00:33:39.520
+I was thinking one thing you
+could do is you represent it as
+
+00:33:39.520 --> 00:33:43.000
+a dot x times a dot x.
+
+00:33:43.000 --> 00:33:45.420
+And then you just do the
+derivative of the first part and
+
+00:33:45.420 --> 00:33:48.400
+the derivative of the second
+part.
+
+00:33:48.400 --> 00:33:50.820
+So I think what you're thinking
+of is the derivative of
+
+00:33:50.820 --> 00:33:54.040
+something like f of x times g of
+x.
+
+00:33:54.040 --> 00:33:55.460
+Right, but the thing is,
+
+00:33:55.460 --> 00:33:58.040
+those are scalar to scalar
+functions.
+
+00:33:58.040 --> 00:34:02.400
+If we are dealing with a vector
+to scalar function,
+
+00:34:02.400 --> 00:34:05.400
+the operations are more
+challenging.
+
+00:34:10.300 --> 00:34:11.800
+Any ideas?
+
+00:34:11.860 --> 00:34:12.860
+Yeah.
+
+00:34:13.800 --> 00:34:16.860
+Like he said before, you could
+expand it out into two different
+
+00:34:16.860 --> 00:34:19.400
+dot products, But in those dot
+products, you could represent
+
+00:34:19.400 --> 00:34:23.100
+them differently in that you
+could say a transpose times the
+
+00:34:23.100 --> 00:34:24.300
+x vector.
+
+00:34:24.300 --> 00:34:26.440
+And you can make it out that
+way,
+
+00:34:26.440 --> 00:34:30.100
+where it's just two vectors
+multiplying against each other.
+
+00:34:30.100 --> 00:34:32.180
+So here's what I want to
+experiment with.
+
+00:34:32.180 --> 00:34:34.360
+Notice there are a lot of ways I
+can write this dot product.
+
+00:34:34.360 --> 00:34:36.140
+I can write it as a dot x,
+
+00:34:36.140 --> 00:34:37.280
+x dot a,
+
+00:34:37.280 --> 00:34:38.480
+a transpose x,
+
+00:34:38.480 --> 00:34:40.730
+x transpose a.
+Those are all the same thing.
+
+00:34:40.740 --> 00:34:44.120
+So I can write them however I
+want in order to
+
+00:34:44.120 --> 00:34:50.120
+use a rule that I would like to
+try and apply here.
+
+00:34:50.280 --> 00:34:52.900
+So for example, I could write it
+this way.
+
+00:34:52.900 --> 00:34:55.040
+But instead, I'm going to do
+something maybe not as
+
+00:34:55.040 --> 00:34:56.040
+intuitive.
+
+00:34:57.260 --> 00:35:00.200
+And I'm going to write it two
+different ways.
+
+00:35:00.200 --> 00:35:02.450
+X transpose A,
+
+00:35:02.600 --> 00:35:03.900
+not squared,
+
+00:35:03.900 --> 00:35:06.900
+but times A transpose X.
+
+00:35:06.900 --> 00:35:08.400
+Totally legal.
+
+00:35:09.760 --> 00:35:11.140
+And remember,
+
+00:35:11.140 --> 00:35:13.390
+matrix multiplication is
+associative.
+
+00:35:14.320 --> 00:35:17.080
+What that means is I can put
+these brackets wherever I want
+
+00:35:17.080 --> 00:35:22.380
+them or not have them at all.
+
+00:35:23.040 --> 00:35:26.500
+Now, what does this look like?
+
+00:35:26.500 --> 00:35:30.250
+What rule does this resemble?
+
+00:35:33.240 --> 00:35:33.880
+Yeah?
+
+00:35:33.880 --> 00:35:35.840
+This is the third one, the
+quadratic one.
+
+00:35:35.840 --> 00:35:40.720
+Yeah, this is the quadratic form
+rule with this inside piece as a
+
+00:35:40.720 --> 00:35:41.720
+matrix.
+
+00:35:43.260 --> 00:35:48.510
+And not only is it a matrix,
+it's a symmetric matrix.
+
+00:35:49.440 --> 00:35:53.780
+So we can use the quadratic form
+rule,
+
+00:35:53.780 --> 00:35:55.880
+which, as a refresher,
+
+00:35:55.880 --> 00:35:57.380
+was this one.
+
+00:35:57.380 --> 00:36:00.820
+The gradient of x transpose
+times some matrix times x.
+
+00:36:00.820 --> 00:36:02.480
+That's what we have here.
+
+00:36:02.480 --> 00:36:07.080
+There was a term for the matrix
+that produced this way what was
+
+00:36:07.080 --> 00:36:10.060
+the term for that it was made up
+of two words the second was
+
+00:36:10.060 --> 00:36:13.740
+product was the first outer
+product yeah you saw this in a
+
+00:36:13.740 --> 00:36:16.320
+lab recently and we will start
+to see these more as the
+
+00:36:16.320 --> 00:36:18.140
+semester progresses
+
+00:36:20.280 --> 00:36:23.460
+so what is the gradient of this
+function now doesn't require the
+
+00:36:23.460 --> 00:36:26.580
+chain rule what is the gradient
+
+00:36:26.580 --> 00:36:32.560
+what does the quadratic form
+will tell us here
+
+00:36:38.300 --> 00:36:39.580
+Yeah,
+
+00:36:40.480 --> 00:36:45.940
+two times whatever this matrix
+is times
+
+00:36:45.940 --> 00:36:46.940
+X.
+
+00:36:48.320 --> 00:36:53.920
+But again, remember this matrix
+multiplication is
+
+00:36:53.920 --> 00:36:54.920
+associative,
+
+00:36:55.180 --> 00:37:00.560
+which means this is also 2 times
+A
+
+00:37:00.560 --> 00:37:03.560
+times A transpose x.
+
+00:37:07.740 --> 00:37:12.960
+So you can also think of this as
+2 times A dot x.
+
+00:37:12.960 --> 00:37:14.540
+That's a scalar.
+
+00:37:14.540 --> 00:37:16.740
+I can only change the order
+because I've confirmed that this
+
+00:37:16.740 --> 00:37:20.490
+is a scalar times A.
+
+00:37:22.540 --> 00:37:25.680
+In general, you can't change the
+order.
+
+00:37:25.680 --> 00:37:28.320
+You can't say AB equals BA.
+
+00:37:28.320 --> 00:37:29.660
+But when you have a scalar, you
+can't.
+
+00:37:29.660 --> 00:37:33.410
+It doesn't matter where you
+write the scalar.
+
+00:37:35.940 --> 00:37:38.700
+Okay, so we found that the
+gradient of the dot product
+
+00:37:38.700 --> 00:37:42.300
+squared is 2 times the dot
+product times the constant
+
+00:37:42.300 --> 00:37:43.500
+vector A.
+
+00:37:43.500 --> 00:37:46.600
+This did not require the chain
+rule.
+
+00:37:46.600 --> 00:37:50.760
+But can you now think of a way
+to approach this same gradient
+
+00:37:50.760 --> 00:37:52.260
+with the chain rule.
+
+00:37:52.260 --> 00:37:56.020
+And I've written this in a way
+to sort of have you think about
+
+00:37:56.020 --> 00:37:58.020
+how the chain rule would be
+applied here.
+
+00:37:58.020 --> 00:38:00.500
+What would happen? Yeah? Just
+bring down the 2's from the
+
+00:38:00.500 --> 00:38:04.860
+exponent and then multiply by
+the constant or the scalar a on
+
+00:38:04.860 --> 00:38:05.500
+the outside.
+
+00:38:05.500 --> 00:38:06.120
+Exactly.
+
+00:38:06.120 --> 00:38:09.820
+The gradient of the square dot
+product is 2 times the dot
+
+00:38:09.820 --> 00:38:12.300
+product times the gradient of
+the not squared dot product,
+
+00:38:12.300 --> 00:38:13.640
+which is just a,
+
+00:38:13.640 --> 00:38:19.440
+right? and I'll say I'll just
+write that here with chain rule
+
+00:38:19.440 --> 00:38:25.220
+the gradient of a dot
+
+00:38:25.220 --> 00:38:31.040
+x squared is 2 times a dot x
+times the
+
+00:38:31.040 --> 00:38:35.540
+gradient of a dot x which
+
+00:38:35.540 --> 00:38:41.520
+is 2 times a dot
+
+00:38:41.520 --> 00:38:43.760
+x times a.
+
+00:38:43.760 --> 00:38:46.260
+So you get the same result,
+
+00:38:46.260 --> 00:38:50.010
+regardless of how you think
+about it.
+
+00:38:51.720 --> 00:38:54.420
+Questions with this example?
+
+00:38:54.420 --> 00:38:57.900
+Is the gradient times an
+expression, like on the top
+
+00:38:57.900 --> 00:38:58.900
+right,
+
+00:38:58.900 --> 00:39:01.880
+gradient times a times x,
+
+00:39:01.880 --> 00:39:04.400
+or dot x, is that always going
+to be the same as taking the
+
+00:39:04.400 --> 00:39:07.400
+derivative of that expression?
+
+00:39:07.540 --> 00:39:11.780
+Will the gradient ever be a
+different output and just taking
+
+00:39:11.780 --> 00:39:13.280
+the derivative?
+
+00:39:13.900 --> 00:39:18.260
+You should think of the gradient
+and derivative as two
+
+00:39:18.260 --> 00:39:21.960
+fundamentally different ideas,
+like a matrix versus a vector,
+
+00:39:22.100 --> 00:39:24.080
+or a vector versus a number.
+
+00:39:24.080 --> 00:39:26.600
+The rules would like the output
+will always be the same as
+
+00:39:26.600 --> 00:39:27.680
+taking a derivative?
+
+00:39:27.680 --> 00:39:28.800
+As in like,
+
+00:39:28.800 --> 00:39:31.140
+you're saying what if I
+individually took the partial
+
+00:39:31.140 --> 00:39:34.320
+derivative of this with respect
+to x1, x2, x3,
+
+00:39:34.320 --> 00:39:37.580
+and put those in a vector, would
+I get the same thing?
+
+00:39:37.580 --> 00:39:38.580
+Yeah.
+
+00:39:38.720 --> 00:39:40.780
+The answer to that is yes.
+Yes.
+
+00:39:40.780 --> 00:39:43.020
+Because these big three rules,
+
+00:39:43.020 --> 00:39:46.620
+we came up with them just by
+taking the partial derivative of
+
+00:39:46.620 --> 00:39:49.760
+this with respect to x1, x2, x3,
+and then just noticing that the
+
+00:39:49.760 --> 00:39:51.960
+result is just the vector a.
+
+00:39:51.960 --> 00:39:53.000
+Similarly here,
+
+00:39:53.000 --> 00:39:54.980
+if you take the partial
+derivative of this with respect
+
+00:39:54.980 --> 00:39:56.120
+to x1,
+
+00:39:56.120 --> 00:39:57.360
+that's just 2x1.
+
+00:39:57.360 --> 00:39:59.480
+And with respect to x2, it's
+just 2x2.
+
+00:39:59.480 --> 00:40:00.660
+You put all those together,
+
+00:40:00.660 --> 00:40:02.280
+that's just the vector 2x.
+
+00:40:02.280 --> 00:40:03.120
+Yeah.
+
+00:40:03.120 --> 00:40:04.560
+So if you want,
+
+00:40:04.560 --> 00:40:06.800
+there's always the fallback of
+just taking partial derivatives
+
+00:40:06.800 --> 00:40:09.820
+with respect to each of the xi's
+and and putting them together.
+
+00:40:09.820 --> 00:40:10.880
+But usually,
+
+00:40:10.880 --> 00:40:13.020
+there's a way to simplify.
+
+00:40:13.020 --> 00:40:16.540
+So again, you shouldn't think of
+these matrix vector functions as
+
+00:40:16.540 --> 00:40:19.220
+being different necessarily.
+It's just that there are
+
+00:40:19.220 --> 00:40:21.300
+convenient rules that we can
+apply.
+
+00:40:21.300 --> 00:40:25.040
+But the fact that I applied this
+rule, that the gradient of a dot
+
+00:40:25.040 --> 00:40:26.460
+x is a,
+
+00:40:26.460 --> 00:40:29.240
+that didn't change any of the
+fundamental ways that the
+
+00:40:29.240 --> 00:40:31.140
+gradient is defined.
+I could have done all of this by
+
+00:40:31.140 --> 00:40:33.740
+taking the partial with respect
+to x1, with respect to x2, with
+
+00:40:33.740 --> 00:40:34.900
+respect to x3,
+
+00:40:34.900 --> 00:40:35.920
+or whatever that would end up
+being.
+
+00:40:35.920 --> 00:40:37.140
+It would be necessary.
+
+00:40:37.140 --> 00:40:38.640
+Yeah, question?
+
+00:40:45.820 --> 00:40:49.240
+You're saying here to here, oh
+without chain rule.
+
+00:40:49.240 --> 00:40:52.990
+You're saying here to here?
+
+00:40:54.460 --> 00:40:56.710
+Here to here?
+
+00:40:59.620 --> 00:41:01.720
+So are you first are you
+referring to the without chain
+
+00:41:01.720 --> 00:41:03.920
+rule part or the with chain of a
+part?
+
+00:41:03.920 --> 00:41:04.320
+Without?
+
+00:41:04.320 --> 00:41:05.320
+OK.
+
+00:41:05.640 --> 00:41:07.440
+Maybe this to this, I think.
+
+00:41:07.440 --> 00:41:08.480
+Yeah, OK.
+
+00:41:08.480 --> 00:41:09.060
+Well,
+
+00:41:09.060 --> 00:41:13.560
+these are both just the dot
+product of a with x.
+
+00:41:13.560 --> 00:41:18.480
+So this is fair to say, because
+all this is saying is, take the
+
+00:41:18.480 --> 00:41:21.480
+dot product of a with x and
+multiply it by the dot product
+
+00:41:21.480 --> 00:41:22.640
+of a with x.
+
+00:41:22.640 --> 00:41:24.880
+Now, how did I know to write it
+this way specifically? Well,
+
+00:41:24.880 --> 00:41:27.200
+it's because I experimented a
+little, and I was like,
+
+00:41:27.200 --> 00:41:27.720
+well,
+
+00:41:27.720 --> 00:41:31.240
+if I have all my big three rules
+written down, I know one of them
+
+00:41:31.240 --> 00:41:34.040
+looks like x transpose times box
+times x.
+
+00:41:34.040 --> 00:41:37.300
+And if I write x transpose a
+with x transpose on the left
+
+00:41:37.300 --> 00:41:40.200
+and a transpose x with x on the
+right,
+
+00:41:40.200 --> 00:41:42.820
+well, then if I multiply them
+together, I will get the x
+
+00:41:42.820 --> 00:41:45.460
+transpose times box times x that
+I want.
+
+00:41:45.460 --> 00:41:49.020
+So you could have written x
+transpose a twice, but it just
+
+00:41:49.020 --> 00:41:50.780
+wouldn't happen? Yeah, I could
+have.
+
+00:41:50.780 --> 00:41:56.460
+Yeah, this is all also equal to
+x transpose a
+
+00:41:56.460 --> 00:41:58.760
+a transpose.
+Well, that's what I did, but.
+
+00:41:59.380 --> 00:42:01.180
+X transpose A,
+
+00:42:01.180 --> 00:42:03.260
+X transpose A.
+
+00:42:03.260 --> 00:42:05.040
+Like, that's also true.
+
+00:42:05.040 --> 00:42:06.620
+And this is also an outer
+product.
+
+00:42:06.620 --> 00:42:10.370
+But then this doesn't cleanly
+map to any of the rules I need.
+
+00:42:13.600 --> 00:42:14.600
+Good.
+
+00:42:15.820 --> 00:42:16.600
+All right.
+
+00:42:16.600 --> 00:42:20.800
+So ultimately, the gradient we
+really want is not any of these.
+
+00:42:21.600 --> 00:42:22.460
+Well, I mean, OK,
+
+00:42:22.460 --> 00:42:24.920
+we do care about those.
+But this is the function we
+
+00:42:24.920 --> 00:42:29.420
+really want to find the gradient
+of.
+
+00:42:31.620 --> 00:42:34.880
+Why? Well, if we can find its
+gradient,
+
+00:42:34.880 --> 00:42:37.410
+then we can hopefully set it
+equal to 0
+
+00:42:37.410 --> 00:42:41.910
+and solve for the w that
+minimizes this function.
+
+00:42:42.820 --> 00:42:45.680
+And remind me, if I have the w
+that minimizes this function,
+
+00:42:45.680 --> 00:42:49.700
+what can I do with that?
+
+00:42:49.700 --> 00:42:52.020
+The w that minimizes this
+function, well, what does that
+
+00:42:52.020 --> 00:42:53.520
+tell me?
+
+00:42:55.740 --> 00:42:56.740
+Yeah?
+
+00:42:57.100 --> 00:42:58.020
+Yeah,
+
+00:42:58.020 --> 00:43:00.540
+the optimal parameter is for
+multiple linear regression.
+
+00:43:00.540 --> 00:43:02.720
+We know what the answer is going
+to end up being.
+
+00:43:02.720 --> 00:43:05.180
+But we want to see if this new
+framework also gives us that
+
+00:43:05.180 --> 00:43:06.680
+same answer.
+
+00:43:06.700 --> 00:43:08.200
+All right.
+
+00:43:08.420 --> 00:43:09.420
+Remember.
+
+00:43:32.060 --> 00:43:33.060
+Okay.
+
+00:43:36.020 --> 00:43:39.660
+So somehow I have to take the
+gradient of this operation.
+
+00:43:39.660 --> 00:43:41.840
+How might I go about doing that?
+
+00:43:41.840 --> 00:43:46.340
+It's going to require a few
+steps.
+
+00:43:47.020 --> 00:43:50.540
+How might I do that?
+
+00:43:50.540 --> 00:43:56.040
+What I'd like to do is perhaps
+rewrite this so that it's
+
+00:43:56.040 --> 00:43:59.700
+immediately obvious how I would
+use the necessary big three
+
+00:43:59.700 --> 00:44:00.280
+rules.
+
+00:44:00.280 --> 00:44:04.060
+So instead of my next line
+saying gradient of r equals
+
+00:44:04.060 --> 00:44:05.560
+blood whatever,
+
+00:44:06.040 --> 00:44:08.620
+let's rewrite this a little bit.
+
+00:44:08.620 --> 00:44:14.440
+What's the first thing that
+comes to
+
+00:44:14.440 --> 00:44:19.260
+mind when it comes to trying to
+rewrite this expression?
+
+00:44:19.260 --> 00:44:21.620
+What's the first thing you
+should think of?
+
+00:44:21.620 --> 00:44:25.220
+I want to somehow expand this a
+little.
+
+00:44:25.220 --> 00:44:27.580
+What's the first thing that
+should come to mind?
+
+00:44:27.580 --> 00:44:28.040
+Yeah?
+
+00:44:28.040 --> 00:44:32.140
+Maybe that like you can rewrite
+the square.
+
+00:44:32.140 --> 00:44:33.140
+Exactly.
+
+00:44:33.220 --> 00:44:36.700
+That should always be your first
+step whenever you have some
+
+00:44:36.700 --> 00:44:39.440
+complicated expression that
+involves a squared norm, you can
+
+00:44:39.440 --> 00:44:41.820
+write it as the dot product of
+the vector whose norm you are
+
+00:44:41.820 --> 00:44:43.260
+taking with itself.
+
+00:44:43.260 --> 00:44:49.020
+So this is 1 over n times the
+dot product of y minus
+
+00:44:49.020 --> 00:44:50.020
+xw
+
+00:44:50.320 --> 00:44:53.060
+with y minus xw.
+And I'm going to write it as y
+
+00:44:53.060 --> 00:44:55.280
+minus xw transpose
+
+00:44:55.280 --> 00:44:59.860
+y minus xw just because we know
+that one of the big three rules
+
+00:44:59.860 --> 00:45:03.060
+is x transpose times blank times
+x.
+
+00:45:03.060 --> 00:45:05.320
+So somehow a transpose is
+probably going to enter the
+
+00:45:05.320 --> 00:45:06.880
+picture.
+So I'll write it that way.
+
+00:45:07.480 --> 00:45:07.900
+Though,
+
+00:45:07.900 --> 00:45:10.500
+one thing to keep a watch out
+for here
+
+00:45:10.500 --> 00:45:13.060
+is that the vector we are
+taking,
+
+00:45:13.060 --> 00:45:15.520
+we will ultimately take the
+gradient with respect to,
+
+00:45:15.520 --> 00:45:18.460
+is not called x.
+It's called w.
+
+00:45:18.460 --> 00:45:20.400
+So w is the vector here,
+
+00:45:20.400 --> 00:45:21.900
+not x.
+
+00:45:22.100 --> 00:45:25.120
+So ultimately, somewhere in
+here, we will look for a w
+
+00:45:25.120 --> 00:45:28.180
+transpose times something times
+w.
+
+00:45:30.720 --> 00:45:34.470
+All right, now let's expand.
+
+00:45:37.700 --> 00:45:42.200
+What's the first term in this
+product going to be?
+
+00:45:44.880 --> 00:45:48.630
+First term in the product.
+
+00:45:53.980 --> 00:45:56.230
+y transpose y.
+
+00:45:58.500 --> 00:46:01.020
+which, by the way,
+
+00:46:01.020 --> 00:46:03.980
+remember y in the context of
+multiple linear regression, we
+
+00:46:03.980 --> 00:46:05.700
+would call it our observation
+vector.
+
+00:46:05.700 --> 00:46:10.080
+It would store in its components
+the first observed y value, the
+
+00:46:10.080 --> 00:46:12.160
+second observed y value, and so
+on.
+
+00:46:12.160 --> 00:46:16.220
+So y transpose y is the sum of
+the squared y values,
+
+00:46:16.220 --> 00:46:19.200
+which is related to the variance
+of the y values and the mean of
+
+00:46:19.200 --> 00:46:22.540
+the y values, which is how this
+connects to things we saw
+
+00:46:22.540 --> 00:46:24.940
+at the start of the semester.
+
+00:46:24.940 --> 00:46:26.840
+Okay, what's next?
+
+00:46:26.840 --> 00:46:31.340
+We have y transpose y, what
+comes after?
+
+00:46:34.960 --> 00:46:38.710
+Comes after y transpose y.
+
+00:46:42.900 --> 00:46:44.400
+It is
+
+00:46:45.460 --> 00:46:46.460
+Yeah
+
+00:46:47.000 --> 00:46:48.000
+Yeah,
+
+00:46:48.760 --> 00:46:53.700
+I mean I could do it either way
+I could do this one or this one
+
+00:46:53.700 --> 00:46:58.200
+Sure, why don't we do xw
+transpose y?
+
+00:47:03.240 --> 00:47:06.060
+I think it's actually more
+natural to perhaps do this and
+
+00:47:06.060 --> 00:47:09.810
+then this and then this.
+
+00:47:11.200 --> 00:47:12.700
+Same idea.
+
+00:47:13.560 --> 00:47:18.440
+I have y transpose xw minus that
+same thing again,
+
+00:47:18.440 --> 00:47:22.560
+so I can maybe put a 2 here.
+
+00:47:22.560 --> 00:47:26.000
+And then plus, what's the final
+term?
+
+00:47:26.000 --> 00:47:29.340
+xw transpose xw.
+
+00:47:39.260 --> 00:47:44.510
+And actually, let me not skip a
+step here.
+
+00:47:50.580 --> 00:47:54.330
+Hold on, it looks atrocious.
+
+00:47:57.240 --> 00:48:02.420
+Let's write this as y
+
+00:48:02.420 --> 00:48:08.060
+transpose xw and then xw
+transpose y
+
+00:48:08.700 --> 00:48:12.060
+plus xw transpose xw.
+
+00:48:13.480 --> 00:48:14.480
+OK,
+
+00:48:14.620 --> 00:48:16.580
+now I want to simplify this a
+little.
+
+00:48:16.580 --> 00:48:20.260
+And again, I want to get this to
+look like it uses is my big
+
+00:48:20.260 --> 00:48:21.760
+three rules.
+
+00:48:22.100 --> 00:48:24.350
+y transpose y,
+
+00:48:24.540 --> 00:48:28.340
+this is a constant with respect
+to w.
+
+00:48:28.340 --> 00:48:30.740
+There's no w's involved there.
+So when we go and take the
+
+00:48:30.740 --> 00:48:33.300
+gradient of this entire
+expression,
+
+00:48:33.300 --> 00:48:37.800
+what is the gradient of this
+thing with respect to w?
+
+00:48:41.520 --> 00:48:42.040
+Yeah?
+
+00:48:42.040 --> 00:48:44.580
+It would just be 0.
+0, the 0 vector, right? Because
+
+00:48:44.580 --> 00:48:47.180
+this has nothing to do with w.
+OK.
+
+00:48:47.180 --> 00:48:50.760
+The term that most clearly we'll
+use one of the big three
+
+00:48:50.760 --> 00:48:53.480
+gradient rules is actually the
+one at the end.
+
+00:48:53.480 --> 00:48:55.520
+Can you think of a way to
+rewrite the expression at the
+
+00:48:55.520 --> 00:48:55.940
+end,
+
+00:48:55.940 --> 00:48:58.190
+xw transpose xw,
+
+00:48:58.380 --> 00:49:02.100
+in a way that clearly uses one
+of my rules?
+
+00:49:02.100 --> 00:49:04.040
+The way it's currently written,
+it doesn't.
+
+00:49:04.040 --> 00:49:05.820
+And remember, the vector in
+question is w.
+
+00:49:05.820 --> 00:49:06.920
+x is not a vector.
+
+00:49:06.920 --> 00:49:07.860
+Yeah?
+
+00:49:07.860 --> 00:49:11.160
+You can do just put the
+transpose inside.
+
+00:49:11.160 --> 00:49:15.820
+So w transpose x transpose.
+and then the X transpose X.
+
+00:49:17.200 --> 00:49:17.840
+Yeah,
+
+00:49:17.840 --> 00:49:20.840
+and that's like the.
+
+00:49:21.460 --> 00:49:22.760
+Yeah, exactly.
+
+00:49:22.760 --> 00:49:23.180
+Remember,
+
+00:49:23.180 --> 00:49:26.380
+X W transpose is the same as W
+transpose X transpose.
+
+00:49:26.380 --> 00:49:28.980
+But now, like we did before in
+that earlier example,
+
+00:49:28.980 --> 00:49:32.080
+I have my vector on the outside,
+which is what I want.
+
+00:49:32.080 --> 00:49:35.620
+W transpose times box times W.
+
+00:49:35.620 --> 00:49:38.120
+Again, remember, the vector we
+are taking the gradient with
+
+00:49:38.120 --> 00:49:40.160
+respect to is W.
+
+00:49:40.160 --> 00:49:41.520
+W is the vector here.
+
+00:49:41.520 --> 00:49:42.640
+So that part's good.
+OK,
+
+00:49:42.640 --> 00:49:47.890
+what about what we have going on
+in the middle?
+
+00:49:48.060 --> 00:49:52.800
+I want to write this like
+something involving w.
+
+00:49:57.540 --> 00:49:58.540
+Firstly,
+
+00:49:59.380 --> 00:50:02.060
+and maybe we'll go to the side
+here,
+
+00:50:02.060 --> 00:50:07.740
+the terms we have are y
+transpose xw
+
+00:50:07.740 --> 00:50:11.160
+and xw transpose y.
+
+00:50:12.200 --> 00:50:15.640
+Those are the terms involved.
+They're just both negated.
+
+00:50:15.640 --> 00:50:17.220
+Do we agree that those are the
+same thing?
+
+00:50:17.220 --> 00:50:21.220
+They're both the dot product of
+y with x w.
+
+00:50:21.220 --> 00:50:22.720
+Do we agree?
+
+00:50:22.720 --> 00:50:23.720
+OK.
+So those are the same.
+
+00:50:37.500 --> 00:50:41.880
+But none of these forms really
+look like anything related to
+
+00:50:41.880 --> 00:50:43.080
+our big three rule.
+
+00:50:43.080 --> 00:50:45.260
+Because our big three rule, the
+one that relates to a dot
+
+00:50:45.260 --> 00:50:46.260
+product,
+
+00:50:46.260 --> 00:50:49.740
+involves a dot product of w with
+something.
+
+00:50:49.740 --> 00:50:53.780
+But right now, these look like
+dot products of xw with y.
+
+00:50:53.780 --> 00:50:58.760
+So how can I massage one of
+these expressions
+
+00:50:58.760 --> 00:51:02.180
+to look like the dot product of
+xw,
+
+00:51:02.180 --> 00:51:05.860
+or sorry, of the dot product of
+w with something?
+
+00:51:05.860 --> 00:51:07.200
+Let me put it this way.
+
+00:51:07.200 --> 00:51:10.120
+We just established that y
+transpose xw
+
+00:51:10.120 --> 00:51:14.620
+is equal to xw transpose y.
+
+00:51:14.860 --> 00:51:19.360
+What does that also equal to?
+
+00:51:20.240 --> 00:51:24.740
+What does this also equal to?
+
+00:51:25.260 --> 00:51:26.260
+Yeah?
+
+00:51:26.480 --> 00:51:29.000
+w transpose x transpose y.
+
+00:51:29.000 --> 00:51:31.380
+w transpose x transpose y.
+
+00:51:31.380 --> 00:51:35.880
+And now what does this look
+like?
+
+00:51:39.000 --> 00:51:41.250
+This looks like,
+
+00:51:41.680 --> 00:51:46.180
+does it look like the dot
+product of w with something?
+
+00:51:49.680 --> 00:51:51.880
+It does.
+It's the dot product of w with
+
+00:51:51.880 --> 00:51:52.880
+what?
+
+00:51:53.700 --> 00:51:55.300
+Yeah, x transpose y,
+
+00:51:55.300 --> 00:51:59.800
+right? This is indeed the same
+thing as w dot x transpose y.
+
+00:52:01.060 --> 00:52:02.060
+So,
+
+00:52:03.320 --> 00:52:05.660
+if I go back here,
+
+00:52:05.660 --> 00:52:09.460
+Because these two terms are both
+the same,
+
+00:52:09.460 --> 00:52:14.140
+I can write a 2 followed by any
+one of those equivalent forms
+
+00:52:14.140 --> 00:52:16.020
+for them that I want.
+
+00:52:16.020 --> 00:52:19.900
+And what I will do here is I
+will write w transpose x
+
+00:52:19.900 --> 00:52:21.400
+transpose y.
+
+00:52:25.720 --> 00:52:27.900
+We still haven't taken the
+gradient yet.
+
+00:52:27.900 --> 00:52:29.280
+But now when we do that,
+
+00:52:29.280 --> 00:52:33.300
+it's not going to require much
+work.
+
+00:52:33.300 --> 00:52:37.120
+So I take the gradient of R.
+
+00:52:37.120 --> 00:52:41.200
+Let me just make it clear here
+that that's R itself.
+
+00:52:41.200 --> 00:52:43.700
+The gradient of R with respect
+to w,
+
+00:52:43.700 --> 00:52:46.040
+we still have this 1 over n
+factor floating around.
+
+00:52:46.040 --> 00:52:47.600
+We'll keep it around.
+
+00:52:47.600 --> 00:52:49.360
+Now we can just go term by term.
+
+00:52:49.360 --> 00:52:52.200
+What's the gradient of this
+first thing with respect to w?
+
+00:52:52.200 --> 00:52:52.720
+0.
+
+00:52:52.720 --> 00:52:53.660
+We can keep moving.
+
+00:52:53.660 --> 00:52:55.860
+What's the gradient of this
+second term,
+
+00:52:55.860 --> 00:52:58.720
+everything that I've circled
+here, minus 2w transpose x
+
+00:52:58.720 --> 00:53:02.470
+transpose y? What's the gradient
+of that with respect to w?
+
+00:53:07.340 --> 00:53:11.840
+What is the gradient of this
+with respect to w?
+
+00:53:13.720 --> 00:53:15.480
+Yeah.
+It would be negative 2x
+
+00:53:15.480 --> 00:53:16.660
+transpose y.
+
+00:53:16.660 --> 00:53:17.100
+Awesome.
+
+00:53:17.100 --> 00:53:22.580
+Negative 2x transpose y.
+
+00:53:25.740 --> 00:53:28.980
+It looks scary, but remember, x
+transpose y, though it involves
+
+00:53:28.980 --> 00:53:30.760
+a matrix, it's just a vector.
+
+00:53:30.760 --> 00:53:33.580
+Whenever you multiply a matrix
+by a vector,
+
+00:53:33.580 --> 00:53:36.880
+x transpose by y comes out as a
+new vector.
+
+00:53:36.880 --> 00:53:40.440
+So this is the dot product of w,
+which is a vector with x
+
+00:53:40.440 --> 00:53:42.100
+transpose y, which is a vector.
+
+00:53:42.100 --> 00:53:45.850
+And that gradient, as we've
+seen, is just the other vector.
+
+00:53:49.820 --> 00:53:53.340
+Then what is the gradient of the
+last thing?
+
+00:53:53.340 --> 00:53:56.520
+w transpose x transpose x w.
+W.
+
+00:53:56.520 --> 00:54:01.020
+What is the gradient of that
+with respect to W?
+
+00:54:07.200 --> 00:54:12.840
+x transpose x plus transpose of
+x transpose x all times
+
+00:54:12.840 --> 00:54:13.660
+W.
+
+00:54:13.660 --> 00:54:14.540
+Good.
+Indeed,
+
+00:54:14.540 --> 00:54:20.060
+it would be x transpose x plus x
+transpose x transpose, a lot of
+
+00:54:20.060 --> 00:54:21.060
+transposes,
+
+00:54:21.500 --> 00:54:25.140
+times W.
+But what do we know about x
+
+00:54:25.140 --> 00:54:26.640
+transpose x?
+
+00:54:26.940 --> 00:54:28.100
+Yeah.
+It has to be symmetric.
+
+00:54:28.220 --> 00:54:29.720
+It's symmetric.
+Why?
+
+00:54:30.800 --> 00:54:32.060
+It's the same matrix.
+
+00:54:32.060 --> 00:54:33.520
+I don't really know how to
+describe and test that.
+
+00:54:33.520 --> 00:54:34.780
+Well, there's a couple of ways
+you can think about it.
+
+00:54:34.780 --> 00:54:38.200
+One is if you distributed the
+transpose operation here,
+
+00:54:38.200 --> 00:54:42.360
+it would be the second thing
+transposed times the first thing
+
+00:54:42.360 --> 00:54:44.940
+transposed.
+But then you'd have a double
+
+00:54:44.940 --> 00:54:47.540
+transpose, and that would cancel
+out and just give you x.
+
+00:54:47.540 --> 00:54:50.320
+But remember, there is also the
+convenient interpretation of x
+
+00:54:50.320 --> 00:54:53.380
+transpose x, which is that it
+contains the dot products of all
+
+00:54:53.380 --> 00:54:56.140
+pairs of the columns of x.
+
+00:54:56.140 --> 00:55:00.440
+Element at position 7 comma 5 is
+the dot product of column 7 with
+
+00:55:00.440 --> 00:55:01.940
+column 5.
+
+00:55:01.940 --> 00:55:05.460
+And the element at position 5
+comma 7 is also the dot product
+
+00:55:05.460 --> 00:55:07.760
+with column 5 and column 7.
+
+00:55:07.760 --> 00:55:10.240
+So the matrix is symmetric.
+
+00:55:10.240 --> 00:55:15.860
+So we have 2 times
+
+00:55:15.860 --> 00:55:19.610
+x transpose x times w.
+
+00:55:27.180 --> 00:55:28.180
+Okay,
+
+00:55:28.760 --> 00:55:31.940
+so let's write this again.
+
+00:55:31.940 --> 00:55:36.960
+We found that the gradient of
+mean squared error is negative 2
+
+00:55:36.960 --> 00:55:38.600
+over n,
+
+00:55:39.120 --> 00:55:40.560
+sorry I skipped a step there,
+
+00:55:40.560 --> 00:55:46.020
+1 over n times negative 2 x
+transpose y plus
+
+00:55:46.020 --> 00:55:49.770
+2 x transpose x, w,
+
+00:55:50.820 --> 00:55:54.920
+which I can now factor out the
+negative 2 here
+
+00:55:54.920 --> 00:55:57.680
+and write this as x transpose y
+
+00:55:57.680 --> 00:56:03.600
+minus x transpose x,
+
+00:56:03.860 --> 00:56:04.860
+w.
+
+00:56:06.380 --> 00:56:09.100
+What's our final step here? If
+we want to find the w that
+
+00:56:09.100 --> 00:56:12.100
+minimizes the original function?
+
+00:56:15.500 --> 00:56:16.500
+Yeah?
+
+00:56:16.980 --> 00:56:19.100
+Yeah, set it equal to 0,
+
+00:56:19.100 --> 00:56:23.660
+but to be clear, we're setting
+it equal to the 0 vector because
+
+00:56:23.660 --> 00:56:28.160
+the gradient is a vector, so
+this is the 0 vector.
+
+00:56:30.480 --> 00:56:35.820
+This negative 2 over n can be
+multiplied into both sides and
+
+00:56:35.820 --> 00:56:41.740
+we can drop it, so we're just
+left with x transpose y minus x
+
+00:56:41.740 --> 00:56:45.500
+transpose x w is equal to the 0
+vector, and when and we
+
+00:56:45.500 --> 00:56:46.500
+rearrange,
+
+00:56:47.100 --> 00:56:50.780
+we get x transpose xw is equal
+to x transpose y,
+
+00:56:50.780 --> 00:56:54.980
+which is exactly what we saw
+before.
+
+00:56:54.980 --> 00:56:57.320
+What was the equation? What was
+the name for this equation?
+
+00:56:57.320 --> 00:56:58.400
+Oh, wait.
+I don't know why it's not up
+
+00:56:58.400 --> 00:56:59.400
+here.
+
+00:57:03.800 --> 00:57:08.300
+I don't know what just happened
+there.
+
+00:57:11.780 --> 00:57:16.280
+What was the name for this
+equation?
+
+00:57:18.500 --> 00:57:19.500
+Yeah,
+
+00:57:20.560 --> 00:57:23.560
+yeah, the normal equation.
+
+00:57:31.220 --> 00:57:36.060
+And what we saw before is that
+the optimal parameter vector w
+
+00:57:36.060 --> 00:57:39.740
+is the solution to the normal
+equation.
+
+00:57:39.740 --> 00:57:43.160
+There may be a unique solution
+to the normal equation.
+
+00:57:43.160 --> 00:57:45.400
+and there may be infinitely
+many,
+
+00:57:45.400 --> 00:57:48.420
+what does it depend on?
+
+00:57:48.420 --> 00:57:53.670
+Like, what would need to be true
+if there is a single solution?
+
+00:57:54.780 --> 00:57:55.300
+Yeah?
+
+00:57:55.300 --> 00:57:57.550
+x transpose x.
+I mean,
+
+00:57:57.740 --> 00:58:00.380
+x transpose x is invertible.
+
+00:58:00.380 --> 00:58:04.880
+Yeah, if x transpose x is
+invertible,
+
+00:58:05.720 --> 00:58:09.940
+i.e.
+Let's see if x's columns are
+
+00:58:09.940 --> 00:58:15.280
+full rank linearly independent.
+
+00:58:20.360 --> 00:58:24.860
+Then I can multiply both sides
+by the inverse of x transpose x.
+
+00:58:25.840 --> 00:58:30.880
+And I get the exact same thing I
+had before.
+
+00:58:30.880 --> 00:58:31.880
+Oh,
+
+00:58:31.940 --> 00:58:33.200
+that's what happened.
+
+00:58:33.200 --> 00:58:34.200
+OK.
+
+00:58:35.280 --> 00:58:36.040
+OK,
+
+00:58:36.040 --> 00:58:39.540
+so this is not that surprising.
+This was the answer we were
+
+00:58:39.540 --> 00:58:41.080
+supposed to get.
+If we got something else, then
+
+00:58:41.080 --> 00:58:42.760
+we did something wrong.
+
+00:58:42.760 --> 00:58:45.440
+But I think it is kind of
+surprising from the meta
+
+00:58:45.440 --> 00:58:49.180
+perspective, which is that we
+arrived at this result
+
+00:58:49.180 --> 00:58:52.180
+not knowing anything about
+projections or orthogonality.
+
+00:58:53.140 --> 00:58:56.480
+We had no point here did we use
+the fact that the error vector
+
+00:58:56.480 --> 00:58:58.460
+was orthogonal to the column
+space of x.
+
+00:58:58.460 --> 00:59:00.020
+We didn't need to think about
+that here.
+
+00:59:00.020 --> 00:59:03.020
+But the math works out the same
+way,
+
+00:59:03.020 --> 00:59:09.020
+just by using this new extension
+of calculus into this world
+
+00:59:09.020 --> 00:59:12.020
+of vector to scalar functions,
+which I think is really cool.
+
+00:59:12.020 --> 00:59:15.580
+We've now found this formula for
+the optimal parameters in
+
+00:59:15.580 --> 00:59:18.020
+multiple linear regression in
+different ways.
+
+00:59:18.020 --> 00:59:19.460
+We've done it using gradients.
+
+00:59:19.460 --> 00:59:21.840
+We've done it using
+orthogonality.
+
+00:59:21.840 --> 00:59:23.860
+And then in the simple linear
+regression case, we also did it
+
+00:59:23.860 --> 00:59:25.920
+a different way, which is just
+by taking partial derivatives
+
+00:59:25.920 --> 00:59:28.320
+directly and solving for these
+very specific formulas.
+
+00:59:28.320 --> 00:59:32.700
+OK? All of these ways of finding
+optimal parameter vectors have
+
+00:59:32.700 --> 00:59:35.920
+arrived at the same result.
+But now we have this more
+
+00:59:35.920 --> 00:59:40.620
+general purpose framework for
+finding the rates of change of
+
+00:59:40.620 --> 00:59:42.800
+these more flexible functions
+
+00:59:42.800 --> 00:59:46.500
+that take in multiple inputs.
+
+00:59:46.500 --> 00:59:47.120
+OK.
+
+00:59:47.120 --> 00:59:51.620
+What questions do we have with
+how we arrived here?
+
+00:59:54.040 --> 00:59:55.540
+You OK?
+
+00:59:55.900 --> 00:59:57.500
+All right.
+Let's take a short break for
+
+00:59:57.500 --> 00:59:59.080
+attendance.
+I'll leave this up here.
+
+01:00:04.080 --> 01:00:07.830
+We'll come back at 11.30.
+
+01:00:27.980 --> 01:00:28.980
+So,
+
+01:00:39.220 --> 01:00:44.260
+thank you very
+
+01:00:44.260 --> 01:00:57.860
+much.
+
+01:01:17.880 --> 01:01:23.700
+It's supposed to be ESA, but
+also I never took
+
+01:01:23.700 --> 01:01:24.780
+stats in high school,
+
+01:01:24.780 --> 01:01:25.780
+so...
+
+01:01:29.380 --> 01:01:31.160
+I'd say it's like,
+
+01:01:31.160 --> 01:01:33.960
+for a class, it's like the
+easiest class because it's
+
+01:01:33.960 --> 01:01:34.620
+supposed to be learning.
+
+01:01:34.620 --> 01:01:37.920
+So you need to know that you're
+a live actor, it's not a
+
+01:01:37.920 --> 01:01:38.920
+product,
+
+01:01:39.160 --> 01:01:40.460
+it has to be in order,
+
+01:01:40.460 --> 01:01:41.900
+like it's rated,
+
+01:01:41.900 --> 01:01:44.620
+it's powered because like,
+that's what it's all for, it's a
+
+01:01:44.620 --> 01:01:45.220
+dot.
+
+01:01:45.220 --> 01:01:47.800
+It gives a true impact that you
+can touch it, or something, it's
+
+01:01:47.800 --> 01:01:49.160
+like that probability.
+
+01:01:49.160 --> 01:01:51.560
+In like confidence intervals,
+
+01:01:51.560 --> 01:01:53.300
+like two-tailed t-tests.
+
+01:01:53.300 --> 01:01:56.100
+so I kind of like this is
+average like whatever the thing
+
+01:01:56.100 --> 01:02:01.980
+is where it's like you check the
+difference like
+
+01:02:01.980 --> 01:02:06.220
+I like
+
+01:02:46.460 --> 01:02:52.380
+I want to make sure that if it's
+
+01:02:52.380 --> 01:02:55.560
+not successful for most people,
+that we do something else.
+
+01:02:55.560 --> 01:02:57.540
+We don't want to keep doing
+study groups if they're not
+
+01:02:57.540 --> 01:02:58.540
+effective.
+
+01:02:58.960 --> 01:03:00.280
+Time to make notes.
+
+01:03:00.280 --> 01:03:04.280
+We need to replace it with some
+other thing.
+
+01:03:04.280 --> 01:03:08.780
+I'm going to close the forum.
+
+01:03:08.860 --> 01:03:10.360
+All right.
+
+01:03:10.640 --> 01:03:15.340
+So what have we done over the
+past hour-ish of lecture time?
+
+01:03:15.340 --> 01:03:18.460
+We've learned how to take the
+gradient of a vector to scalar
+
+01:03:18.460 --> 01:03:19.460
+function.
+
+01:03:19.760 --> 01:03:22.620
+What that tells us is the rates
+of change for that vector to
+
+01:03:22.620 --> 01:03:25.420
+scalar function across all of
+its input variables.
+
+01:03:25.420 --> 01:03:28.860
+And ultimately, what we've used
+it for is to minimize a vector
+
+01:03:28.860 --> 01:03:30.480
+to scalar function.
+
+01:03:30.480 --> 01:03:32.160
+And how did we do that? Well,
+
+01:03:32.160 --> 01:03:34.180
+once we found its gradient, we
+set it equal to 0.
+
+01:03:34.180 --> 01:03:40.140
+And we solved using a formula to
+tell us what the minimizer was.
+
+01:03:41.500 --> 01:03:46.750
+The setting I want us to think
+through now,
+
+01:03:50.860 --> 01:03:54.380
+Suppose we have a function
+
+01:03:54.380 --> 01:04:06.360
+and
+
+01:04:06.360 --> 01:04:08.720
+we have its gradient,
+
+01:04:08.720 --> 01:04:14.080
+but it is hard and slash
+impossible
+
+01:04:14.080 --> 01:04:20.020
+to solve for where the gradient
+is
+
+01:04:20.020 --> 01:04:22.270
+equal to 0.
+
+01:04:23.400 --> 01:04:24.900
+Then what?
+
+01:04:28.160 --> 01:04:32.500
+Let me give you a practical
+example of this.
+
+01:04:32.500 --> 01:04:37.000
+And now we're moving it to
+chapter 8.3.
+
+01:04:43.740 --> 01:04:47.840
+I'm going to show you a
+
+01:04:47.840 --> 01:04:50.840
+function like this one.
+
+01:04:53.220 --> 01:04:55.500
+This is a vector to scalar
+function with two input
+
+01:04:55.500 --> 01:04:56.500
+variables.
+
+01:04:57.020 --> 01:04:59.780
+You can see it has some local
+minimums, a true global minimum
+
+01:04:59.780 --> 01:05:01.280
+down here.
+
+01:05:01.420 --> 01:05:04.140
+We can compute its gradient.
+If I give you a formula for the
+
+01:05:04.140 --> 01:05:05.140
+function,
+
+01:05:05.160 --> 01:05:06.520
+you could compute its gradient.
+
+01:05:06.520 --> 01:05:08.400
+You could take the partial
+derivative of this with respect
+
+01:05:08.400 --> 01:05:12.240
+to x1 and the partial derivative
+of x2.
+
+01:05:12.240 --> 01:05:13.760
+If you do that,
+
+01:05:13.760 --> 01:05:17.510
+the gradient looks like this.
+
+01:05:19.020 --> 01:05:22.060
+But it's very hard, if not
+impossible, to solve for where
+
+01:05:22.060 --> 01:05:26.560
+the gradient is exactly equal to
+0.
+
+01:05:27.700 --> 01:05:31.000
+This is the setting in which we
+actually work in practice.
+
+01:05:31.000 --> 01:05:35.020
+We would need to minimize
+functions whose gradients exist,
+
+01:05:35.020 --> 01:05:37.920
+but we can't solve for where
+they're equal to 0.
+
+01:05:37.920 --> 01:05:41.220
+And the type of function we will
+ultimately really care about,
+
+01:05:41.220 --> 01:05:43.820
+like in this most recent example
+we worked with,
+
+01:05:43.820 --> 01:05:47.820
+is one that describes mean
+squared error, or more generally
+
+01:05:47.820 --> 01:05:49.260
+empirical risk,
+
+01:05:49.260 --> 01:05:51.700
+for some very complicated model.
+
+01:05:51.700 --> 01:05:56.460
+The setting you should be
+thinking about is these large
+
+01:05:56.460 --> 01:06:00.220
+language models with billions or
+trillions of parameters where
+
+01:06:00.220 --> 01:06:03.970
+their average loss function is
+some really complicated thing,
+
+01:06:04.040 --> 01:06:07.040
+like more complicated than
+squared loss.
+
+01:06:07.380 --> 01:06:11.300
+And so finding the gradient of
+the loss is possible, or the
+
+01:06:11.300 --> 01:06:14.280
+gradient of the empirical risk
+is possible, but solving for
+
+01:06:14.280 --> 01:06:17.360
+where it is equal to 0 is not
+possible.
+
+01:06:17.360 --> 01:06:20.360
+And so this hypothetical
+function
+
+01:06:20.700 --> 01:06:24.280
+is meant to be an estimate of
+that kind of setting, where you
+
+01:06:24.280 --> 01:06:25.440
+have a function,
+
+01:06:25.440 --> 01:06:28.380
+you have its gradient, gradient,
+but you don't know where the
+
+01:06:28.380 --> 01:06:31.340
+gradient is equal to zero.
+
+01:06:31.340 --> 01:06:35.520
+And so the question is, if we
+have the gradient,
+
+01:06:35.520 --> 01:06:35.860
+well,
+
+01:06:35.860 --> 01:06:38.440
+maybe we can't solve for where
+the gradient is zero.
+
+01:06:38.440 --> 01:06:41.180
+But the gradient still does tell
+us something.
+
+01:06:41.180 --> 01:06:43.480
+What does the gradient tell us?
+
+01:06:43.480 --> 01:06:45.360
+If I'm on a point,
+
+01:06:45.360 --> 01:06:46.620
+say,
+
+01:06:46.960 --> 01:06:47.960
+here,
+
+01:06:48.220 --> 01:06:52.720
+what does the gradient at that
+point tell me?
+
+01:06:54.700 --> 01:06:57.100
+It has some geometric meaning,
+and what was that geometric
+
+01:06:57.100 --> 01:06:58.100
+meaning?
+
+01:07:03.680 --> 01:07:05.280
+What did the gradient tell me?
+
+01:07:05.280 --> 01:07:06.340
+The steepest descent?
+
+01:07:06.340 --> 01:07:07.360
+Yeah, it tells me,
+
+01:07:07.360 --> 01:07:10.360
+if I have this thing that tells
+me the gradient at any point,
+
+01:07:10.360 --> 01:07:13.260
+it tells me the direction along
+which the function is increasing
+
+01:07:13.260 --> 01:07:14.760
+the quickest.
+
+01:07:15.360 --> 01:07:18.380
+What I want to think about now
+is how could I estimate where
+
+01:07:18.380 --> 01:07:21.000
+the minimum of the function is.
+
+01:07:21.000 --> 01:07:24.700
+If I have the gradient, it tells
+me the direction along which I
+
+01:07:24.700 --> 01:07:28.120
+could walk to increase my
+function's value as quickly as
+
+01:07:28.120 --> 01:07:28.900
+possible.
+
+01:07:28.900 --> 01:07:31.920
+So if I'm trying to decrease my
+function's value,
+
+01:07:31.920 --> 01:07:34.920
+what should I do?
+
+01:07:35.220 --> 01:07:39.720
+Yeah, I should move opposite the
+direction of the gradient,
+
+01:07:40.020 --> 01:07:41.420
+negative the gradient,
+
+01:07:41.420 --> 01:07:45.420
+if my goal is to try and get to
+the bottom of this hill.
+
+01:07:45.420 --> 01:07:46.280
+OK?
+
+01:07:46.280 --> 01:07:47.860
+Let me start with a simpler
+example.
+
+01:07:47.860 --> 01:07:52.100
+that is a scalar-to-scalar
+function.
+
+01:07:58.520 --> 01:08:01.260
+There's a default example I want
+to copy in here.
+
+01:08:01.260 --> 01:08:04.260
+Yeah, there we go.
+
+01:08:04.720 --> 01:08:08.300
+This is a good example of the
+type of function whose
+
+01:08:08.300 --> 01:08:10.660
+derivative is really easy to
+calculate,
+
+01:08:10.660 --> 01:08:14.320
+but solving where the derivative
+is 0 is annoying to calculate.
+
+01:08:14.320 --> 01:08:15.060
+Right?
+
+01:08:15.060 --> 01:08:19.180
+This is a degree 4 polynomial in
+just one variable,
+
+01:08:19.180 --> 01:08:20.180
+x.
+
+01:08:20.600 --> 01:08:23.020
+So its derivative is a degree 3
+polynomial.
+
+01:08:23.020 --> 01:08:28.100
+There's no quick formula for
+finding the roots of a degree 3
+
+01:08:28.100 --> 01:08:29.520
+polynomial.
+It would be kind of annoying.
+
+01:08:29.620 --> 01:08:31.520
+You'd have to try and factor it
+and whatnot.
+
+01:08:31.520 --> 01:08:32.520
+OK.
+
+01:08:33.420 --> 01:08:36.080
+So what does the derivative here
+tell you?
+
+01:08:36.080 --> 01:08:41.330
+Well, if you plug in a point
+like there, All right.
+
+01:08:42.200 --> 01:08:45.950
+What does the derivative there
+tell you?
+
+01:08:47.220 --> 01:08:49.500
+Yeah? The slope of the tangent
+line at that point? Yeah.
+
+01:08:49.500 --> 01:08:53.250
+And at this particular point,
+what would it tell you?
+
+01:08:53.460 --> 01:08:57.340
+This is what the slope is? Yeah,
+and what is it at that point?
+
+01:08:57.340 --> 01:08:59.540
+Not the exact slope, but tell me
+what you know about the slope at
+
+01:08:59.540 --> 01:09:01.040
+that point.
+Negative? Yeah.
+
+01:09:01.280 --> 01:09:05.780
+So let me use red here.
+
+01:09:09.680 --> 01:09:13.260
+Here, derivative is negative.
+
+01:09:15.600 --> 01:09:18.180
+So what does that tell me? What
+that tells me,
+
+01:09:18.180 --> 01:09:21.400
+again, you have to imagine you
+don't have the ability to look
+
+01:09:21.400 --> 01:09:23.180
+at the entire function with your
+eyes.
+
+01:09:23.180 --> 01:09:26.280
+All you have is a formula that
+tells you the derivative at any
+
+01:09:26.280 --> 01:09:27.980
+point you plug it.
+
+01:09:27.980 --> 01:09:30.280
+If you're at a point,
+
+01:09:30.280 --> 01:09:31.820
+the derivative tells you,
+
+01:09:31.820 --> 01:09:34.020
+this derivative box tells you
+the derivative right now is
+
+01:09:34.020 --> 01:09:35.020
+negative.
+
+01:09:35.460 --> 01:09:38.720
+And your goal is to guess where
+the bottom of the function is.
+
+01:09:38.720 --> 01:09:40.760
+And again, we're guessing
+because we don't have a way of
+
+01:09:40.760 --> 01:09:42.120
+figuring out where it is
+exactly.
+
+01:09:42.120 --> 01:09:44.060
+That's the whole premise here.
+
+01:09:44.060 --> 01:09:47.900
+If you know the derivative here
+is negative, what would you do?
+
+01:09:47.900 --> 01:09:50.340
+What direction would you move
+it?
+
+01:09:50.340 --> 01:09:52.590
+Left or right?
+
+01:09:56.980 --> 01:09:57.860
+Yeah.
+
+01:09:57.860 --> 01:09:59.360
+You would move right.
+Right,
+
+01:09:59.360 --> 01:10:01.680
+this is telling you the
+derivative is negative, which
+
+01:10:01.680 --> 01:10:04.700
+means if you move to the right,
+the function is decreasing.
+
+01:10:04.700 --> 01:10:06.960
+And so if your goal is to try
+and estimate where the bottom
+
+01:10:06.960 --> 01:10:07.760
+is,
+
+01:10:07.760 --> 01:10:10.600
+you would move to the right.
+
+01:10:10.600 --> 01:10:11.820
+So update guess
+
+01:10:11.820 --> 01:10:17.680
+by moving right.
+
+01:10:20.280 --> 01:10:24.420
+Then there's a question of how
+far right do you move.
+
+01:10:24.420 --> 01:10:27.260
+Maybe you move a little bit to
+the right.
+
+01:10:27.260 --> 01:10:29.400
+The thing is, if you move too
+far to the right, well, then you
+
+01:10:29.400 --> 01:10:31.740
+might overcorrect and end up
+over here.
+
+01:10:31.740 --> 01:10:34.000
+So at some level in this
+process,
+
+01:10:34.000 --> 01:10:38.500
+we're going to have to control
+by how much we are moving.
+
+01:10:38.500 --> 01:10:41.860
+Suppose I did move some amount
+to the right and I ended up over
+
+01:10:41.860 --> 01:10:42.860
+here.
+
+01:10:43.860 --> 01:10:47.060
+I can think of this procedure as
+being an iterative one.
+
+01:10:47.060 --> 01:10:48.620
+Now I've ended up here.
+
+01:10:48.620 --> 01:10:52.370
+What does the derivative here
+tell me?
+
+01:10:54.700 --> 01:10:58.900
+So at the second point, what is
+the derivative?
+
+01:10:58.900 --> 01:10:59.900
+Positive,
+
+01:10:59.920 --> 01:11:02.540
+and so where should I move?
+Should I continue moving to the
+
+01:11:02.540 --> 01:11:03.540
+right?
+
+01:11:04.080 --> 01:11:07.160
+No, because if a positive
+derivative tells me if I move to
+
+01:11:07.160 --> 01:11:07.820
+the right,
+
+01:11:07.820 --> 01:11:09.340
+the function is going to go up.
+
+01:11:09.340 --> 01:11:12.200
+And what I'm trying to do is I'm
+trying to go down,
+
+01:11:12.200 --> 01:11:17.450
+so I should move to the left.
+
+01:11:23.560 --> 01:11:24.560
+OK,
+
+01:11:27.700 --> 01:11:31.420
+and then I can move left a
+little bit, and then reassess.
+
+01:11:31.420 --> 01:11:34.880
+Where did I end up?
+
+01:11:34.880 --> 01:11:37.560
+The sort of mental model you
+should have for this is, imagine
+
+01:11:37.560 --> 01:11:42.680
+you're on some really tall,
+hilly mountain with lots of
+
+01:11:42.680 --> 01:11:43.600
+little valleys.
+
+01:11:43.600 --> 01:11:47.100
+And your goal is to get to the
+bottom of the mountain
+
+01:11:47.100 --> 01:11:48.320
+as quickly as you can.
+
+01:11:48.320 --> 01:11:49.520
+But you can't see the whole
+thing.
+
+01:11:49.520 --> 01:11:51.640
+It's really foggy.
+So all you can see is like a
+
+01:11:51.640 --> 01:11:54.140
+small area around you.
+
+01:11:54.140 --> 01:11:55.960
+What would you do?
+
+01:11:55.960 --> 01:11:59.020
+You'd look at what's around you,
+look at the direction that's
+
+01:11:59.020 --> 01:12:00.240
+going downhill,
+
+01:12:00.240 --> 01:12:02.040
+walk a little bit in that
+direction,
+
+01:12:02.040 --> 01:12:05.000
+and then reassess where to go
+based on the new information you
+
+01:12:05.000 --> 01:12:06.220
+have at that point.
+
+01:12:06.220 --> 01:12:07.780
+You look around here.
+
+01:12:07.780 --> 01:12:09.120
+That way is going downhill.
+
+01:12:09.120 --> 01:12:10.300
+I walk.
+
+01:12:10.300 --> 01:12:12.020
+Now I look at where it's going
+downhill.
+
+01:12:12.020 --> 01:12:13.200
+That way is most downhill.
+
+01:12:13.200 --> 01:12:14.300
+I go that way.
+
+01:12:14.300 --> 01:12:17.900
+And I keep updating my guess
+until hopefully I get to a point
+
+01:12:17.900 --> 01:12:18.740
+that's flat,
+
+01:12:18.740 --> 01:12:21.340
+at which case Hopefully I'm at
+the bottom, but maybe I got
+
+01:12:21.340 --> 01:12:22.840
+trapped somewhere.
+
+01:12:23.880 --> 01:12:28.500
+That is the general procedure
+that we are getting at here.
+
+01:12:29.400 --> 01:12:32.080
+And that procedure is called the
+gradient descent.
+
+01:12:32.080 --> 01:12:34.200
+Why is it called gradient
+descent?
+
+01:12:34.200 --> 01:12:36.360
+Well, it's because the goal is
+to try and minimize the
+
+01:12:36.360 --> 01:12:37.360
+function.
+
+01:12:37.520 --> 01:12:39.660
+Why is it called gradient
+descent?
+
+01:12:39.660 --> 01:12:43.440
+Well, because this is a scalar
+to scalar function, so we were
+
+01:12:43.440 --> 01:12:45.180
+thinking in terms of its
+derivative.
+
+01:12:45.180 --> 01:12:47.480
+But more generally, we want to
+minimize vector to scalar
+
+01:12:47.480 --> 01:12:48.440
+function,
+
+01:12:48.440 --> 01:12:52.940
+and their rates of change are
+the gradient.
+
+01:12:52.980 --> 01:12:53.740
+OK?
+
+01:12:53.740 --> 01:12:56.540
+The analog of what we just
+discussed here
+
+01:12:56.540 --> 01:13:00.100
+in this more sophisticated
+example would be to start with
+
+01:13:00.100 --> 01:13:01.720
+some initial guess,
+
+01:13:01.720 --> 01:13:03.080
+like there,
+
+01:13:03.080 --> 01:13:05.260
+compute the gradient.
+The gradient would tell you the
+
+01:13:05.260 --> 01:13:07.280
+direction along which the
+function is increasing the
+
+01:13:07.280 --> 01:13:07.780
+quickest.
+
+01:13:07.780 --> 01:13:09.940
+So you go opposite the gradient
+a little bit.
+
+01:13:09.940 --> 01:13:10.960
+So from there,
+
+01:13:10.960 --> 01:13:12.460
+maybe I go down here.
+
+01:13:12.460 --> 01:13:14.160
+And then I reassess.
+
+01:13:14.160 --> 01:13:16.420
+The gradient will be pointing
+upwards, So I'm going to point
+
+01:13:16.420 --> 01:13:19.020
+go downwards here.
+The gradient will be pointing
+
+01:13:19.020 --> 01:13:20.020
+upwards.
+So I go down.
+
+01:13:20.220 --> 01:13:23.840
+So I keep doing that until I
+converge
+
+01:13:23.840 --> 01:13:27.480
+now in this case, I would have
+converged in a Trap because my
+
+01:13:27.480 --> 01:13:29.540
+goal would be to minimize the
+overall function.
+
+01:13:29.540 --> 01:13:32.420
+I don't have I would have ended
+up here So it also depends on
+
+01:13:32.420 --> 01:13:33.460
+where you start.
+
+01:13:33.460 --> 01:13:36.860
+There are a lot of parameters to
+this Algorithm where you start
+
+01:13:36.860 --> 01:13:39.140
+matters how big of a step
+matters?
+
+01:13:39.140 --> 01:13:41.020
+You take matters.
+We're gonna explore all of those
+
+01:13:41.020 --> 01:13:44.400
+things in the next seven minutes
+and onto in Tuesday's life So
+
+01:13:44.400 --> 01:13:46.120
+that's the general idea,
+
+01:13:46.120 --> 01:13:47.120
+OK?
+
+01:13:48.680 --> 01:13:51.760
+So let me write out the
+algorithm, and then we can play
+
+01:13:51.760 --> 01:13:54.200
+around with it.
+There are a lot of examples
+
+01:13:54.200 --> 01:13:55.200
+here.
+
+01:14:14.380 --> 01:14:17.720
+The goal is to minimize
+
+01:14:17.720 --> 01:14:23.680
+the vector to scalar function
+
+01:14:23.680 --> 01:14:27.540
+f given its gradient.
+
+01:14:31.820 --> 01:14:35.540
+Again, if we could easily solve
+for where its gradient is equal
+
+01:14:35.540 --> 01:14:36.520
+to 0,
+
+01:14:36.520 --> 01:14:37.880
+you wouldn't need to estimate
+it.
+
+01:14:37.880 --> 01:14:40.800
+You could just write out a
+formula for what the minimizer
+
+01:14:40.800 --> 01:14:41.880
+would be.
+
+01:14:41.880 --> 01:14:45.630
+That's why when we were
+minimizing mean squared error,
+
+01:14:45.640 --> 01:14:47.520
+we didn't need this gradient
+descent idea.
+
+01:14:47.520 --> 01:14:49.980
+We could just figure out where
+the bottom was without needing
+
+01:14:49.980 --> 01:14:51.740
+to do this guesswork.
+
+01:14:51.740 --> 01:14:54.100
+We're thinking about more
+complicated functions now where
+
+01:14:54.100 --> 01:14:57.840
+the gradient exists, but there's
+no closed form solution for the
+
+01:14:57.840 --> 01:14:58.840
+minimizer.
+
+01:14:59.940 --> 01:15:04.440
+And so I'll just keep this
+picture over here to the right.
+
+01:15:07.780 --> 01:15:10.780
+Here's how it works.
+
+01:15:12.120 --> 01:15:14.960
+First, choose an initial guess
+
+01:15:14.960 --> 01:15:20.300
+because this is an iterative
+procedure.
+
+01:15:20.820 --> 01:15:23.800
+You have to start somewhere for
+where we think the minimizer
+
+01:15:23.800 --> 01:15:27.900
+might be, and then from there we
+update our guesses.
+
+01:15:27.900 --> 01:15:29.860
+The notation I will use for that
+
+01:15:29.860 --> 01:15:34.360
+is the vector x with the
+superscript 0 in parentheses.
+
+01:15:36.020 --> 01:15:40.100
+The updated guess will be x1,
+with the 1 in superscript,
+
+01:15:40.100 --> 01:15:45.880
+then x2, and so on and so forth.
+
+01:15:45.880 --> 01:15:48.600
+And there's one more thing we
+have to choose.
+
+01:15:48.600 --> 01:15:51.640
+I said there are two sort of
+knobs we have to tune with this
+
+01:15:51.640 --> 01:15:52.640
+operation,
+
+01:15:53.240 --> 01:15:57.740
+where we start and then also
+something else.
+
+01:16:00.280 --> 01:16:03.180
+We have to decide where we
+start.
+
+01:16:03.180 --> 01:16:07.680
+But we also have to decide
+something else.
+
+01:16:09.440 --> 01:16:11.690
+There it is.
+
+01:16:12.640 --> 01:16:13.640
+Yeah.
+Learning rate?
+
+01:16:13.840 --> 01:16:18.380
+Yeah, how much we travel in the
+direction that we decide to
+
+01:16:18.380 --> 01:16:19.380
+travel.
+
+01:16:20.220 --> 01:16:22.020
+At this point,
+
+01:16:22.020 --> 01:16:25.360
+it tells me the direction along
+which the function is increasing
+
+01:16:25.360 --> 01:16:26.860
+the quickest.
+That would be the gradient.
+
+01:16:27.100 --> 01:16:29.440
+So the negative of that is the
+direction along which it's
+
+01:16:29.440 --> 01:16:31.460
+decreasing the quickest.
+
+01:16:31.460 --> 01:16:34.900
+But I still have to pick how far
+to travel in that direction,
+
+01:16:34.900 --> 01:16:38.400
+right? I could update my guess a
+little bit or a lot.
+
+01:16:38.400 --> 01:16:40.120
+Again, I don't have eyes in this
+setting.
+
+01:16:40.120 --> 01:16:41.840
+I don't know what the function
+actually looks like.
+
+01:16:41.840 --> 01:16:42.720
+So I have to,
+
+01:16:42.720 --> 01:16:45.980
+like a thing I will have to tune
+is how far to go in the
+
+01:16:45.980 --> 01:16:48.100
+direction it tells me to go.
+
+01:16:48.100 --> 01:16:52.180
+That is another thing to decide,
+and so what that is called is
+
+01:16:52.180 --> 01:16:54.430
+the learning rate,
+
+01:16:56.560 --> 01:16:59.200
+sometimes also called a step
+size,
+
+01:16:59.200 --> 01:17:03.540
+and the variable we will use in
+this class for that is the
+
+01:17:03.540 --> 01:17:05.040
+scalar alpha.
+
+01:17:08.040 --> 01:17:13.780
+Then what we are going to do is
+we are going to update our
+
+01:17:13.780 --> 01:17:19.620
+guess iteratively using
+
+01:17:19.620 --> 01:17:21.120
+this formula.
+
+01:17:22.020 --> 01:17:27.580
+My guess at time step t plus 1
+is equal to what?
+
+01:17:27.580 --> 01:17:29.860
+Based on everything we've
+explored here,
+
+01:17:29.860 --> 01:17:33.610
+what is the gradient descent
+update rule?
+
+01:17:35.880 --> 01:17:40.060
+How do What do you think we'd
+write this out?
+
+01:17:40.060 --> 01:17:41.060
+Yeah?
+
+01:17:44.380 --> 01:17:45.880
+Very smart.
+
+01:17:46.980 --> 01:17:48.680
+Gradient times alpha.
+
+01:17:48.680 --> 01:17:49.680
+Good.
+
+01:17:49.860 --> 01:17:50.300
+Well,
+
+01:17:50.300 --> 01:17:53.020
+so instead of x0 here, I'll
+write xt.
+
+01:17:53.020 --> 01:17:56.120
+So if you plug in t equals 0,
+this tells you how to make t
+
+01:17:56.120 --> 01:17:58.920
+equals 1, for example.
+
+01:17:58.920 --> 01:18:04.170
+Then I have to take the gradient
+of f, oops, not that.
+
+01:18:04.720 --> 01:18:09.220
+The gradient of f at the
+previous guess
+
+01:18:10.860 --> 01:18:14.600
+and multiply it by this scalar
+alpha,
+
+01:18:14.600 --> 01:18:18.200
+because this is how I'm
+controlling
+
+01:18:18.200 --> 01:18:23.450
+how far to go in the direction
+of the gradient.
+
+01:18:24.040 --> 01:18:28.200
+Now the question is, what sign
+do I put here?
+
+01:18:28.200 --> 01:18:32.600
+Is it a plus or is it a minus?
+
+01:18:32.600 --> 01:18:33.580
+Yeah,
+
+01:18:33.580 --> 01:18:34.540
+it's a minus.
+
+01:18:34.540 --> 01:18:37.320
+Because remember, we want to
+update by going opposite the
+
+01:18:37.320 --> 01:18:39.000
+direction of the gradient.
+
+01:18:39.000 --> 01:18:41.240
+The gradient says go up,
+
+01:18:41.240 --> 01:18:43.740
+or the gradient says move to the
+right.
+
+01:18:43.740 --> 01:18:46.360
+Well, it's telling us how to
+increase quickly, but we want to
+
+01:18:46.360 --> 01:18:48.120
+decrease.
+So we go opposite what it tells
+
+01:18:48.120 --> 01:18:50.370
+us to do.
+
+01:18:51.220 --> 01:18:54.660
+We move against
+
+01:18:54.660 --> 01:18:57.780
+the gradient.
+
+01:19:01.100 --> 01:19:01.900
+Now,
+
+01:19:01.900 --> 01:19:04.900
+when do we stop?
+
+01:19:10.560 --> 01:19:13.260
+We're not just going to run this
+for loop forever.
+
+01:19:13.260 --> 01:19:14.720
+When do we say, all right,
+
+01:19:14.720 --> 01:19:15.740
+we're at the minimum,
+
+01:19:15.740 --> 01:19:20.080
+or we're close enough to it?
+
+01:19:20.080 --> 01:19:21.080
+Yeah?
+
+01:19:21.120 --> 01:19:22.120
+Zero,
+
+01:19:22.260 --> 01:19:22.900
+close enough.
+
+01:19:22.900 --> 01:19:25.150
+If what's zero?
+
+01:19:25.240 --> 01:19:26.000
+Gradient.
+
+01:19:26.000 --> 01:19:29.600
+The gradient, good.
+So all we are really looking for
+
+01:19:29.600 --> 01:19:34.200
+is a minimizer here.
+
+01:19:34.580 --> 01:19:38.800
+But what that means is a point
+here where the gradient is 0.
+
+01:19:38.800 --> 01:19:42.800
+You can think of this operation
+as being a way of guessing where
+
+01:19:42.800 --> 01:19:44.340
+the gradient is 0.
+
+01:19:44.340 --> 01:19:46.720
+But not at the top of a hill,
+like it's also 0 there.
+
+01:19:46.720 --> 01:19:48.700
+But because we are moving
+against the gradient, we're not
+
+01:19:48.700 --> 01:19:50.680
+going to get trapped there.
+
+01:19:50.680 --> 01:19:55.180
+We're trying to find where the
+gradient is 0 at a minimum.
+
+01:19:55.540 --> 01:19:59.440
+So we terminate when the
+gradient is close enough to 0
+
+01:19:59.440 --> 01:20:01.340
+that we're comfortable that
+we're close enough to the
+
+01:20:01.340 --> 01:20:02.340
+minimize.
+
+01:20:02.360 --> 01:20:05.460
+Our condition shouldn't be that
+the gradient is exactly 0,
+
+01:20:05.460 --> 01:20:09.100
+because it may take an extra
+million steps to get a tiny bit
+
+01:20:09.100 --> 01:20:10.220
+closer to 0,
+
+01:20:10.220 --> 01:20:11.900
+at which point we don't really
+care.
+
+01:20:11.900 --> 01:20:16.400
+So we will terminate when the
+length of the gradient vector
+
+01:20:18.020 --> 01:20:20.980
+is less than or equal to some
+small tolerance, It's like
+
+01:20:20.980 --> 01:20:22.020
+0.0001,
+
+01:20:22.400 --> 01:20:23.860
+something like that.
+
+01:20:23.860 --> 01:20:27.960
+Because then we are sufficiently
+confident that we are close to a
+
+01:20:27.960 --> 01:20:28.960
+minimizer.
+
+01:20:29.980 --> 01:20:30.980
+OK?
+
+01:20:31.160 --> 01:20:32.400
+So just really quickly,
+
+01:20:32.400 --> 01:20:37.650
+I want to go through some visual
+examples.
+
+01:20:39.000 --> 01:20:42.800
+The one I really want to play
+with is here.
+
+01:20:42.800 --> 01:20:46.320
+There are several in the note,
+this is chapter 8.3,
+
+01:20:46.320 --> 01:20:50.760
+Including some that involve
+scalar to scalar functions, but
+
+01:20:50.760 --> 01:20:52.960
+I want to look at the vectors to
+scalar case because it's more
+
+01:20:52.960 --> 01:20:54.420
+interesting perhaps
+
+01:20:54.420 --> 01:20:57.980
+What I've done here is I've
+picked the initial guess And
+
+01:20:57.980 --> 01:21:00.200
+this is for that same, you know
+function with lots of local
+
+01:21:00.200 --> 01:21:03.400
+minimums and a global minimum
+Initial guess of one comma
+
+01:21:03.400 --> 01:21:07.760
+negative a half and a learning
+rate slash step size of 0.05
+
+01:21:07.760 --> 01:21:10.840
+So what I can do with this
+slider is update my gradient
+
+01:21:10.840 --> 01:21:12.340
+descent guesses
+
+01:21:13.980 --> 01:21:18.720
+You can see the initial steps,
+or the initial changes,
+
+01:21:19.980 --> 01:21:22.230
+jumped by more.
+
+01:21:22.480 --> 01:21:24.240
+In the later stages,
+
+01:21:24.240 --> 01:21:26.300
+we're not jumping by very much.
+
+01:21:26.300 --> 01:21:27.960
+Why is that?
+
+01:21:27.960 --> 01:21:31.520
+Why are we moving more at the
+start and less at the end,
+
+01:21:31.520 --> 01:21:35.940
+even though the step size is
+0.05?
+
+01:21:35.940 --> 01:21:37.360
+Write the code wrong.
+
+01:21:37.360 --> 01:21:38.340
+Yeah, what's going on?
+
+01:21:38.340 --> 01:21:40.040
+The magnitude of the gradient is
+less.
+
+01:21:40.040 --> 01:21:41.580
+Exactly.
+The step size is just what we
+
+01:21:41.580 --> 01:21:44.720
+are multiplying the gradient by.
+
+01:21:44.720 --> 01:21:48.440
+We're moving by 0.05
+times whatever the gradient is
+
+01:21:48.440 --> 01:21:49.840
+times negative 1.
+
+01:21:49.840 --> 01:21:51.760
+The gradient is a really long
+vector.
+
+01:21:51.760 --> 01:21:56.020
+We multiply by 0.05
+and move still a good amount.
+
+01:21:56.320 --> 01:21:59.280
+If the gradient is close to 0,
+then we don't move very much.
+
+01:21:59.280 --> 01:22:02.280
+Did gradient descent work
+successfully here?
+
+01:22:05.160 --> 01:22:06.660
+You're saying no, why?
+
+01:22:06.660 --> 01:22:08.160
+Why not?
+
+01:22:10.360 --> 01:22:11.800
+I got trapped in a local
+minimum.
+
+01:22:11.800 --> 01:22:14.960
+And ultimately, we were trying
+to find a global minimum.
+
+01:22:14.960 --> 01:22:18.100
+Here's another example of things
+that could go wrong.
+
+01:22:18.100 --> 01:22:19.300
+Same initial guess,
+
+01:22:19.300 --> 01:22:22.480
+but I changed my step size from
+0.05
+
+01:22:22.480 --> 01:22:24.220
+to 0.25.
+
+01:22:32.260 --> 01:22:34.860
+If you pick a step size that's
+too big,
+
+01:22:34.860 --> 01:22:37.780
+you may not actually convert.
+
+01:22:37.780 --> 01:22:40.440
+So these are the kinds of things
+we are going to explore when we
+
+01:22:40.440 --> 01:22:42.690
+come back on.
+
+01:23:32.340 --> 01:23:38.020
+I changed my tutoring speed
+during
+
+01:23:38.020 --> 01:23:39.520
+office hours.
+
+01:23:40.480 --> 01:23:43.820
+Now I stop at one o'clock
+instead of two o'clock, or
+
+01:23:43.820 --> 01:23:45.160
+instead of three o'clock,
+
+01:23:45.160 --> 01:23:48.160
+now it's a team.
+
+01:23:48.820 --> 01:23:50.500
+It's just us looking for
+players,
+
+01:23:50.500 --> 01:23:51.100
+and it's like,
+
+01:23:51.100 --> 01:23:52.280
+just five players.
+
+01:23:52.280 --> 01:23:53.260
+It's where you have, like,
+
+01:23:53.260 --> 01:23:55.300
+in one direction it's like this,
+and in the other direction it's
+
+01:23:55.300 --> 01:23:56.320
+like this.
+
+01:23:56.320 --> 01:23:59.180
+What are you doing next?
+
+01:23:59.180 --> 01:24:00.900
+It's a good journey.
+that's a good journey and I'm
+
+01:24:00.900 --> 01:24:02.360
+trying to figure that out.
+
+01:24:02.360 --> 01:24:04.800
+I think I might have to have a
+whole bunch of stats to kind of
+
+01:24:04.800 --> 01:24:06.300
+concentrate on.
+
+01:24:06.500 --> 01:24:07.580
+I'd like to see the math,
+
+01:24:07.580 --> 01:24:08.580
+so.
+
+01:24:08.580 --> 01:24:11.440
+This is a tool that's the
+opposite of the gradient.
+
+01:24:11.440 --> 01:24:13.280
+It's a 203 stat,
+
+01:24:13.280 --> 01:24:14.380
+and it's always been terrible at
+homework.
+
+01:24:14.380 --> 01:24:16.080
+Some are not gonna be the
+opposite of the gradient, but
+
+01:24:16.080 --> 01:24:19.080
+it's not necessary that doing
+this will always get the point.
+
+01:24:19.080 --> 01:24:19.800
+Right,
+
+01:24:19.800 --> 01:24:20.940
+right, right.
+
+01:24:20.940 --> 01:24:24.080
+Is this guaranteed to actually
+apply to that?
+
+01:24:24.080 --> 01:24:26.560
+The function is not well behaved
+in some ways, and we're gonna
+
+01:24:26.560 --> 01:24:27.840
+talk about this on Tuesday.
+
+01:24:27.840 --> 01:24:29.840
+A function like this, for
+example,
+
+01:24:29.840 --> 01:24:32.500
+even if it does converge, it's
+not guaranteed that it converges
+
+01:24:32.500 --> 01:24:34.720
+in the right place.
+
+01:24:34.720 --> 01:24:37.100
+It definitely could send you in
+the wrong direction.
+
+01:24:37.100 --> 01:24:40.850
+This is just like leveraging
+what we know about the gradient,
+
+01:24:41.720 --> 01:24:44.080
+how do we try and guess where
+the minimum is? It may work, it
+
+01:24:44.080 --> 01:24:45.080
+may not work.
+
+01:24:45.080 --> 01:24:49.580
+But the gradient will always be
+in the right place?
+
+01:24:50.120 --> 01:24:52.960
+The gradient does always point
+in the direction of steepest
+
+01:24:52.960 --> 01:24:53.940
+ascent,
+
+01:24:53.940 --> 01:24:58.080
+and at that point the gradients
+negative like the negative of
+
+01:24:58.080 --> 01:25:01.830
+the gradient always points in
+the direction
