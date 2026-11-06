@@ -242,6 +242,8 @@ Open Desmos and plot the related function <span class="math-inline">\\(g(x) = x^
 <details markdown="1"><summary>Solution</summary>
 
 <span class="math-inline">\\(g(x)\\)</span> is a cubic function, with a local minimum and local maximum and no global minimum nor maximum. It is not convex.
+
+[<img src="imgs/desmos-cubic.png" alt="image" style="width: 40%; max-width: 100%;">](https://www.desmos.com/calculator/gqlazqscpw)
 </details>
 
 </div>
@@ -513,13 +515,13 @@ This is false: a function can have multiple local minima that are all adjacent t
 
 ## Activity 3: Using Convexity to Prove Inequalities
 
-Suppose <span class="math-inline">\\(f: \mathbb{R} \to \mathbb{R}\\)</span> is a convex scalar-to-scalar function.
+Suppose <span class="math-inline">\\(f: \mathbb{R} \to \mathbb{R}\\)</span> is a convex function.
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Let <span class="math-inline">\\(f: \mathbb{R} \to \mathbb{R}\\)</span> be a convex function. Prove that <span class="math-inline">\\(2f(5) \leq f(3) + f(7)\\)</span>.
+Prove that <span class="math-inline">\\(2f(5) \leq f(3) + f(7)\\)</span>.
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -557,7 +559,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-Suppose <span class="math-inline">\\(f: \mathbb{R} \to \mathbb{R}\\)</span> is a convex function such that <span class="math-inline">\\(f(0) = 0\\)</span>. Prove that for all <span class="math-inline">\\(y \in \mathbb{R}\\)</span> and <span class="math-inline">\\(t \in [0, 1]\\)</span>,
+Suppose also that <span class="math-inline">\\(f(0) = 0\\)</span>. Prove that for all <span class="math-inline">\\(y \in \mathbb{R}\\)</span> and <span class="math-inline">\\(t \in [0, 1]\\)</span>,
 
 <div class="math-display">
 $$
