@@ -30,4 +30,6 @@ days:
       - name: HW 8
         type: hw
         title: Multiple Linear Regression; Gradients
+        problems: ../resources/homeworks/hw08/
+        title_suffix: '<span style="color: red;">(no slip days!)</span>'
 ---
