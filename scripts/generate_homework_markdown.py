@@ -25,6 +25,11 @@ SECTION_SEPARATOR = "---"
 COURSE_REPOSITORY = "https://github.com/eecs245/fa26-code/tree/main"
 
 HOMEWORK_STYLE_SNIPPET = """<style>
+.main-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .main-content p {
   margin-bottom: 1.15em;
 }
