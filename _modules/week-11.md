@@ -31,5 +31,5 @@ days:
         type: hw
         title: Multiple Linear Regression; Gradients
         problems: ../resources/homeworks/hw08/
-        title_suffix: '<span style="color: red;">(no slip days!)</span>'
+        title_suffix: '<strong style="color: red;">(no slip days!)</strong>'
 ---
