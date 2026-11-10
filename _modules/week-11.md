@@ -7,7 +7,7 @@ days:
       - name: LEC 19
         type: lecture
         title: Gradient Descent and Convexity
-        live_notes: https://web.goodnotes.com/s/NcG257063ZT6jyM4R9x1Og
+        live_notes: resources/lecture-pdfs/lec19-filled.pdf
         reading: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading_text: Ch. 8.4
         reading2: https://notes.eecs245.org/gradients/convexity/
