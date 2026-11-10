@@ -10,6 +10,7 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Midterm 2 (7-9PM; 1013 DOW)</b>"
+        logistics: https://edstem.org/us/courses/101561/discussion/8499664
   - date: "2026-11-19"
     events:
       - name: LEC 21
