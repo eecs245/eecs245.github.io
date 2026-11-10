@@ -1,5 +1,10 @@
 name: Release Homework 7 solutions
 on:
+  push:
+    paths:
+      - .github/workflows/release-hw07-solutions.yml
+      - .github/scripts/release_hw07_solutions.py
+      - _incoming/hw07-solutions-2026.tar.gz.enc
   schedule:
     # November 11, 2026 at 12:01 AM Eastern (EST).
     - cron: '1 5 11 11 *'
@@ -29,7 +34,7 @@ jobs:
         id: release
         env:
           HW07_RELEASE_PASSWORD: ${{ secrets.HW07_RELEASE_PASSWORD }}
-          VALIDATE_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.validate_only && 'true' || 'false' }}
+          VALIDATE_ONLY: ${{ (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.validate_only)) && 'true' || 'false' }}
         run: python3 .github/scripts/release_hw07_solutions.py
       - name: Commit and push the solutions
         if: steps.release.outputs.changed == 'true'
