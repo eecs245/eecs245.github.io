@@ -7,6 +7,7 @@ days:
       - name: LEC 19
         type: lecture
         title: Gradient Descent and Convexity
+        recording: https://leccap.engin.umich.edu/leccap/player/r/6Z3J0j
         live_notes: resources/lecture-pdfs/lec19-filled.pdf
         reading: https://notes.eecs245.org/gradients/gradient-descent-erm/
         reading_text: Ch. 8.4
