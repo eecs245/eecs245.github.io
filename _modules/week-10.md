@@ -38,4 +38,5 @@ days:
         type: hw
         title: <b>Projections; Regression using Linear Algebra</b>
         problems: ../resources/homeworks/hw07/
+        solutions: true
 ---
