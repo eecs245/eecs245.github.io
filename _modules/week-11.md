@@ -24,7 +24,7 @@ days:
       - name: LEC 20
         type: lecture
         title: Eigenvalues and Eigenvectors
-        live_notes: https://web.goodnotes.com/s/zUOexnKrmgQDamoWi2xLgd
+        live_notes: resources/lecture-pdfs/lec20-filled.pdf
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/eigenvalues-eigenvectors/
         reading_text: Ch. 9.1
         reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/characteristic-polynomial/
