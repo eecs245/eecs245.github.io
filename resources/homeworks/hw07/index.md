@@ -487,9 +487,9 @@ $$
 \boxed{
 \vec{x}^* =
 \begin{bmatrix}
-\frac{3}{10} \\\\[3pt]
-0 \\\\[3pt]
 \frac{8}{5} \\\\[3pt]
+0 \\\\[3pt]
+\frac{3}{10} \\\\[3pt]
 0 \\\\[3pt]
 0
 \end{bmatrix}
