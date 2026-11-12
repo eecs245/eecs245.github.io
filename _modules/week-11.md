@@ -24,6 +24,7 @@ days:
       - name: LEC 20
         type: lecture
         title: Eigenvalues and Eigenvectors
+        recording: https://leccap.engin.umich.edu/leccap/player/r/Tkf8eX
         live_notes: resources/lecture-pdfs/lec20-filled.pdf
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/eigenvalues-eigenvectors/
         reading_text: Ch. 9.1
