@@ -296,7 +296,7 @@ Zero vector
 </li>
 <li markdown="1">
 
-Residual vector
+Error vector
 
 </li>
 <li markdown="1">
