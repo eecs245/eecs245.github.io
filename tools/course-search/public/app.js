@@ -17,7 +17,15 @@ if(document.body.classList.contains('embedded')){
  window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==parent)return;
   if(event.data?.type==='eecs245-search-focus')input.focus();
-  if(event.data?.type==='eecs245-search-font'&&typeof event.data.fontFamily==='string')document.documentElement.style.setProperty('--course-font',event.data.fontFamily);
+  if (event.data?.type !== 'eecs245-search-font') return;
+  const {fontFamily, appearance, colors} = event.data;
+  const root = document.documentElement;
+  if (typeof fontFamily === 'string') root.style.setProperty('--course-font', fontFamily);
+  if (!['light', 'paper', 'dark'].includes(appearance)) return;
+  const readingColors = ['bg', 'ink', 'muted', 'border', 'hover', 'accent', 'selected'];
+  if (!readingColors.every(name => typeof colors?.[name] === 'string' && colors[name])) return;
+  for (const name of readingColors) root.style.setProperty(`--reading-${name}`, colors[name]);
+  root.dataset.readingAppearance = appearance;
  });
  parent.postMessage({type:'eecs245-search-font-request'},location.origin);
  document.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();parent.postMessage({type:'eecs245-search-close'},location.origin);}if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='f'){if(event.repeat){event.preventDefault();return;}if(pageFind){parent.postMessage({type:'eecs245-search-page-find'},location.origin);return;}event.preventDefault();input.focus();}});
