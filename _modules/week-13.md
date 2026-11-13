@@ -11,6 +11,9 @@ days:
         reading_text: Ch. 9.3
         reading2: https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/
         reading2_text: Ch. 9.4
+      - name: HW 9
+        type: hw
+        title: Practical Machine Learning, Eigenvalues
   - date: "2026-11-25"
     events:
       - name: BREAK
