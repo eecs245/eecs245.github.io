@@ -613,7 +613,7 @@ The <span class="math-inline">\\(\approx\\)</span> symbol means that the tangent
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-Draw <span class="math-inline">\\(f(x) = (x - 2)^2 + 5\\)</span> and its tangent line at <span class="math-inline">\\(x = 3\\)</span>.
+Draw <span class="math-inline">\\(f(x) = (x - 2)^2 + 5\\)</span> and its tangent line at <span class="math-inline">\\(a = 3\\)</span>.
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -625,7 +625,7 @@ $$
 $$
 </div>
 
-So, the tangent line to <span class="math-inline">\\(f(x)\\)</span> at <span class="math-inline">\\(x = 3\\)</span> is given by
+So, the tangent line to <span class="math-inline">\\(f(x)\\)</span> at <span class="math-inline">\\(a = 3\\)</span> is given by
 
 <div class="math-display">
 $$
@@ -644,11 +644,11 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-For vector-to-scalar functions, the best linear approximation at <span class="math-inline">\\(\vec x = \vec a\\)</span> is given by
+For vector-to-scalar functions, the best linear approximation at <span class="math-inline">\\(\vec a\\)</span> is given by
 
 <div class="math-display">
 $$
-f(\vec x) \approx f(\vec a) + \left(\nabla f(\vec a) \right) \cdot (\vec x - \vec a)
+L_{\vec a}(\vec x) = f(\vec a) + \nabla f(\vec a)^T (\vec x - \vec a)
 $$
 </div>
 
@@ -658,7 +658,7 @@ If <span class="math-inline">\\(\vec x \in \mathbb{R}^2\\)</span>, this is calle
 
 Tangent plane for a function <span class="math-inline">\\(f: \mathbb{R}^2 \to \mathbb{R}\\)</span>.
 
-Find the tangent plane to <span class="math-inline">\\(f(\vec x) = \lVert \vec x \rVert^2 - 3\\)</span> at <span class="math-inline">\\(\vec x = \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\\)</span>.
+Find the tangent plane to <span class="math-inline">\\(f(\vec x) = \lVert \vec x \rVert^2 - 3\\)</span> at <span class="math-inline">\\(\vec a = \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\\)</span>.
 
 <details markdown="1"><summary>Solution</summary>
 
@@ -672,16 +672,16 @@ $$
 
 as well.
 
-So, the tangent plane to <span class="math-inline">\\(f(\vec x)\\)</span> at <span class="math-inline">\\(\vec x = \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\\)</span> is given by
+So, the tangent plane to <span class="math-inline">\\(f(\vec x)\\)</span> at <span class="math-inline">\\(\vec a = \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\\)</span> is given by
 
 <div class="math-display">
 $$
 \begin{align*}
-f(\vec x) &\approx f\left(\begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right) + \left(\nabla f\left(\begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right) \right) \cdot \left(\vec x - \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right) \\\\
-&= (2^2 + 5^2 - 3) + \left( 2\begin{bmatrix} 2 \\\\ 5 \end{bmatrix} \right) \cdot \left(\vec x - \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right) \\\\
-&= 26 + \begin{bmatrix} 4 \\\\ 10 \end{bmatrix} \cdot \vec x - \begin{bmatrix} 4 \\\\ 10 \end{bmatrix} \cdot \begin{bmatrix} 2 \\\\ 5 \end{bmatrix} \\\\
-&= 26 - (8 + 50) + \begin{bmatrix} 4 \\\\ 10 \end{bmatrix} \cdot \vec x \\\\
-&= \boxed{\begin{bmatrix} 4 \\\\ 10 \end{bmatrix} \cdot \vec x - 32} \\\\
+L_{\vec a}(\vec x) &= f\left(\begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right) + \nabla f\left(\begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right)^T \left(\vec x - \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right) \\\\
+&= (2^2 + 5^2 - 3) + \left( 2\begin{bmatrix} 2 \\\\ 5 \end{bmatrix} \right)^T \left(\vec x - \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\right) \\\\
+&= 26 + \begin{bmatrix} 4 \\\\ 10 \end{bmatrix}^T \vec x - \begin{bmatrix} 4 \\\\ 10 \end{bmatrix}^T \begin{bmatrix} 2 \\\\ 5 \end{bmatrix} \\\\
+&= 26 - (8 + 50) + \begin{bmatrix} 4 \\\\ 10 \end{bmatrix}^T \vec x \\\\
+&= \boxed{\begin{bmatrix} 4 \\\\ 10 \end{bmatrix}^T \vec x - 32} \\\\
 &= \boxed{4x_1 + 10x_2 - 32}
 \end{align*}
 $$
@@ -702,7 +702,7 @@ In the latter form, the coefficients on <span class="math-inline">\\(x&#95;1\\)<
 </li>
 </ul>
 
-So, the boxed plane is **the** tangent plane to <span class="math-inline">\\(f(\vec x)\\)</span> at <span class="math-inline">\\(\vec x = \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\\)</span>. It's the best linear approximation of <span class="math-inline">\\(f(\vec x)\\)</span> near that point.
+So, the boxed plane is **the** tangent plane to <span class="math-inline">\\(f(\vec x)\\)</span> at <span class="math-inline">\\(\vec a = \begin{bmatrix} 2 \\\\ 5 \end{bmatrix}\\)</span>. It's the best linear approximation of <span class="math-inline">\\(f(\vec x)\\)</span> near that point.
 </details>
 
 </div>
