@@ -24,8 +24,8 @@ summary {
 }
 
 details {
-    background: #f5f5f5;
-    border: 1px solid #b8b8b8;
+    background: var(--course-details-background, #f5f5f5);
+    border: 1px solid var(--course-details-border, #b8b8b8);
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
     margin: 1rem 0;

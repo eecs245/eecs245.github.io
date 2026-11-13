@@ -43,7 +43,7 @@ permalink: pretty
 sass:
   custom_css: _sass/custom/custom.scss
 
-logo: "/assets/site-images/logo.png"
+logo: "/assets/site-images/logo.svg"
 
 # Add custom CSS
 aux_links_new_tab: true

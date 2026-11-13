@@ -1,7 +1,15 @@
 <div id="main-header" class="main-header">
-  <button type="button" class="smart-search-trigger" data-page-find="true" data-search-url="{{ '/assets/course-search/index.html?embedded=1' | relative_url }}" aria-haspopup="dialog">
+  <button type="button" class="smart-search-trigger" aria-label="Smart Search" data-page-find="true" data-search-url="{{ '/assets/course-search/index.html?embedded=1' | relative_url }}" aria-haspopup="dialog">
     <span aria-hidden="true">⌕</span> <span>New: Smart Search</span><kbd>Ctrl F</kbd>
+  </button>
+  <button type="button" class="reading-settings-button" title="Reading settings" aria-label="Reading settings" aria-haspopup="dialog" aria-controls="reading-settings" aria-expanded="false" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+      <path d="M4 7h3m4 0h9M4 17h9m4 0h3"/>
+      <circle cx="9" cy="7" r="2"/>
+      <circle cx="15" cy="17" r="2"/>
+    </svg>
   </button>
   {% include header_custom.html %}
   {% if site.aux_links %}{% include components/aux_nav.html %}{% endif %}
 </div>
+{% include reading-settings.html %}
