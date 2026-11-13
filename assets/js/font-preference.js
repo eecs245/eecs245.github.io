@@ -79,13 +79,12 @@
 
     const mobile = window.matchMedia('(max-width: 639px)');
     const toolbarMobile = window.matchMedia('(max-width: 799px)');
-    const search = document.querySelector('.smart-search-trigger');
+    const toolbar = document.getElementById('main-header');
     const menu = document.getElementById('menu-button');
 
     function placeButton() {
-      // Smart Search moves first, then this button follows it on either layout.
-      if (toolbarMobile.matches && menu) menu.before(button);
-      else search?.after(button);
+      if (toolbarMobile.matches && menu) menu.after(button);
+      else toolbar?.append(button);
       positionDialog();
     }
 

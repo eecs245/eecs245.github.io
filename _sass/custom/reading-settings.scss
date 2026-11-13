@@ -98,6 +98,10 @@ html[data-reading-appearance="dark"] .main-content span[style="color: red;"] {
   }
 }
 
+.site-header .reading-settings-button {
+  margin-inline: 0 10px;
+}
+
 @media (max-width: 1130px) {
   :is(#main-header, .site-header) .smart-search-trigger {
     flex: 0 0 44px;
