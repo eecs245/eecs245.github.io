@@ -13,7 +13,8 @@ days:
         reading2_text: Ch. 9.4
       - name: HW 9
         type: hw
-        title: Practical Machine Learning, Eigenvalues
+        title: <b>Practical Machine Learning, Eigenvalues</b>
+        problems: ../resources/homeworks/hw09/
   - date: "2026-11-25"
     events:
       - name: BREAK
