@@ -1,0 +1,27 @@
+{% assign chart = include.chart %}
+<figure class="next-distribution" aria-labelledby="{{ chart.id }}">
+  <figcaption>
+    <strong id="{{ chart.id }}">{{ chart.title }}</strong>
+    <span>{{ chart.note }}</span>
+  </figcaption>
+  <div class="next-distribution-bars" role="list" style="--bar-count: {{ chart.bars.size }}">
+    {% for bar in chart.bars %}
+      {% assign height = bar[1] | times: 100.0 | divided_by: chart.scale %}
+      <div class="next-distribution-bar" role="listitem">
+        <span class="next-distribution-category">{{ bar[0] | escape }}</span>
+        <span class="next-distribution-column" style="--bar-height: {{ height }}%">
+          <span class="next-distribution-count">{{ bar[1] }}</span>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+  {% if chart.bars.first[2] %}
+    <div class="next-distribution-endpoints" style="--bar-count: {{ chart.bars.size }}">
+      <span>{{ chart.bars.first[2] }}</span>
+      <span>{{ chart.bars.last[2] }}</span>
+    </div>
+  {% endif %}
+  {% if chart.axis_label %}
+    <div class="next-distribution-axis">{{ chart.axis_label }}</div>
+  {% endif %}
+</figure>

@@ -1,0 +1,24 @@
+workload:
+  id: winter-2026-workload
+  title: Winter 2026 self-reported homework time
+  note: n = 50 responses
+  axis_label: Hours per homework
+  scale: 30
+  bars:
+    - ["<3", 2]
+    - [3–6, 9]
+    - [6–9, 29]
+    - [9–12, 9]
+    - [12–15, 0]
+    - [15–18, 1]
+comparison:
+  id: workload-comparison
+  title: Fall 2026 workload compared with EECS 203
+  note: n = 59 responses
+  scale: 30
+  bars:
+    - [1, 1, Way less work than EECS 203]
+    - [2, 15]
+    - [3, 24]
+    - [4, 17]
+    - [5, 2, Way more work than EECS 203]
