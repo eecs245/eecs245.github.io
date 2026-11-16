@@ -51,7 +51,7 @@ css:
   - /assets/css/custom.css
 
 aux_links:
-  📖 Course Notes:
+  📖 Notes:
     - 'https://notes.eecs245.org'
   📝 Exams:
     - 'https://exams.eecs245.org/'
