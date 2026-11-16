@@ -209,10 +209,50 @@ iframe {
   z-index: 999;
   // background-color: #333; /* Adjust this to fit your theme */
   padding: 10px;
+
+  .aux-nav .site-button {
+    padding-inline: 10px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+  #main-header .aux-nav .site-button {
+    padding-inline: 4px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 799px) {
+  #main-header {
+    padding-block: 0;
+  }
+}
+
+@media (max-width: 519px) {
+  #main-header,
+  #main-header .aux-nav {
+    height: auto;
+  }
+
+  #main-header .aux-nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  #main-header .aux-nav .site-button {
+    height: 44px;
+    justify-content: center;
+    padding-inline: 4px;
+  }
 }
 
 /* Adjust for sticky header overlap */
 /* Offset the position of any anchored elements */
 h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 80px; /* Adjust based on the height of your sticky toolbar */
+
+  @media (max-width: 519px) {
+    scroll-margin-top: 100px;
+  }
 }
