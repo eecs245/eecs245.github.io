@@ -748,6 +748,42 @@ A basis for <span class="math-inline">\\(\text{colsp}(P^T)\\)</span>
 </li>
 </ol>
 
+<details markdown="1"><summary>Solution</summary>
+
+Since <span class="math-inline">\\(\vec x\\)</span> is a unit vector, <span class="math-inline">\\(\vec x^T\vec x=1\\)</span>, so <span class="math-inline">\\(P\vec x=\vec x\\)</span>. Also, for any <span class="math-inline">\\(\vec y\in\mathbb R^2\\)</span>,
+
+<div class="math-display">
+$$
+P\vec y=\vec x(\vec x^T\vec y),
+$$
+</div>
+
+ which is a scalar multiple of <span class="math-inline">\\(\vec x\\)</span>. So <span class="math-inline">\\(\text{colsp}(P)=\text{span}\lbrace\vec x\rbrace\\)</span>.
+
+<ol class="assignment-list" markdown="1" data-item-count="4" start="1" style="list-style-type: decimal;">
+<li markdown="1" value="1">
+
+<span class="math-inline">\\(\text{rank}(P)=1\\)</span>.
+
+</li>
+<li markdown="1" value="2">
+
+A basis for <span class="math-inline">\\(\text{colsp}(P)\\)</span> is <span class="math-inline">\\(\left\lbrace\begin{bmatrix}x&#95;1\\\\x&#95;2\end{bmatrix}\right\rbrace\\)</span>.
+
+</li>
+<li markdown="1" value="3">
+
+A basis for <span class="math-inline">\\(\text{nullsp}(P)\\)</span> is <span class="math-inline">\\(\left\lbrace\begin{bmatrix}-x&#95;2\\\\x&#95;1\end{bmatrix}\right\rbrace\\)</span>. This vector is nonzero and orthogonal to <span class="math-inline">\\(\vec x\\)</span>, so <span class="math-inline">\\(P\\)</span> sends it to <span class="math-inline">\\(\vec 0\\)</span>. By the rank-nullity theorem, <span class="math-inline">\\(\text{nullsp}(P)\\)</span> has dimension <span class="math-inline">\\(2-1=1\\)</span>.
+
+</li>
+<li markdown="1" value="4">
+
+A basis for <span class="math-inline">\\(\text{colsp}(P^T)\\)</span> is <span class="math-inline">\\(\left\lbrace\begin{bmatrix}x&#95;1\\\\x&#95;2\end{bmatrix}\right\rbrace\\)</span>, since <span class="math-inline">\\(P^T=(\vec x\vec x^T)^T=\vec x\vec x^T=P\\)</span>.
+
+</li>
+</ol>
+</details>
+
 </div>
 </div>
 
@@ -764,6 +800,30 @@ $$
 
  Show that <span class="math-inline">\\(P\\)</span> is both symmetric (meaning that <span class="math-inline">\\(P^T = P\\)</span>) and idempotent (meaning that <span class="math-inline">\\(P^2 = P\\)</span>). Then, explain in English how <span class="math-inline">\\(P\\)</span>'s idempotence relates to projecting <span class="math-inline">\\(\vec y\\)</span> onto <span class="math-inline">\\(\text{colsp}(X)\\)</span>.
 
+<details markdown="1"><summary>Solution</summary>
+
+First, <span class="math-inline">\\(X^TX\\)</span> is symmetric, so its inverse is symmetric as well. Thus,
+
+<div class="math-display">
+$$
+P^T=\big(X(X^TX)^{-1}X^T\big)^T
+=X\big((X^TX)^{-1}\big)^T X^T
+=X(X^TX)^{-1}X^T=P.
+$$
+</div>
+
+To see that <span class="math-inline">\\(P\\)</span> is idempotent, multiply it by itself.
+
+<div class="math-display">
+$$
+P^2=X(X^TX)^{-1}(X^TX)(X^TX)^{-1}X^T
+=X(X^TX)^{-1}X^T=P.
+$$
+</div>
+
+Once we project <span class="math-inline">\\(\vec y\\)</span> onto <span class="math-inline">\\(\text{colsp}(X)\\)</span>, the result is already in <span class="math-inline">\\(\text{colsp}(X)\\)</span>. Projecting it again gives the same vector. That's what <span class="math-inline">\\(P^2\vec y=P\vec y\\)</span> says.
+</details>
+
 </div>
 </div>
 
@@ -772,6 +832,21 @@ $$
 <div class="assignment-part-content" markdown="1">
 (2 pts) Suppose <span class="math-inline">\\(d&lt;n\\)</span>. Explain why <span class="math-inline">\\(P\\)</span> is not invertible, and why the transformation <span class="math-inline">\\(f(\vec y)=P\vec y\\)</span> can't be reversed.
 
+<details markdown="1"><summary>Solution</summary>
+
+Every column of <span class="math-inline">\\(P\\)</span> is a linear combination of the columns of <span class="math-inline">\\(X\\)</span>, so <span class="math-inline">\\(\text{rank}(P)\le d&lt;n\\)</span>. Since <span class="math-inline">\\(P\\)</span> is <span class="math-inline">\\(n\times n\\)</span>, it has less than full rank and is therefore not invertible.
+
+By the rank-nullity theorem, there is a nonzero vector <span class="math-inline">\\(\vec z\\)</span> in <span class="math-inline">\\(\text{nullsp}(P)\\)</span>. Then
+
+<div class="math-display">
+$$
+P(\vec y+\vec z)=P\vec y+P\vec z=P\vec y.
+$$
+</div>
+
+ So <span class="math-inline">\\(\vec y\\)</span> and <span class="math-inline">\\(\vec y+\vec z\\)</span> have the same projection. Given only the projection, we can't tell which vector we started with.
+</details>
+
 </div>
 </div>
 
@@ -779,6 +854,19 @@ $$
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
 (3 pts) Now suppose <span class="math-inline">\\(d=n\\)</span>. What is <span class="math-inline">\\(P\\)</span>? What does this say about the relationship between <span class="math-inline">\\(\vec y\\)</span>, <span class="math-inline">\\(\vec p\\)</span>, and <span class="math-inline">\\(\text{colsp}(X)\\)</span>? <em>Hint: Use the fact that <span class="math-inline">\\((AB)^{-1}=B^{-1}A^{-1}\\)</span>.</em>
+
+<details markdown="1"><summary>Solution</summary>
+
+When <span class="math-inline">\\(d=n\\)</span>, <span class="math-inline">\\(X\\)</span> is square with linearly independent columns, so <span class="math-inline">\\(X\\)</span> is invertible. Using <span class="math-inline">\\((X^TX)^{-1}=X^{-1}(X^T)^{-1}\\)</span>, we get
+
+<div class="math-display">
+$$
+P=XX^{-1}(X^T)^{-1}X^T=I_n.
+$$
+</div>
+
+ The columns of <span class="math-inline">\\(X\\)</span> span all of <span class="math-inline">\\(\mathbb R^n\\)</span>, so every <span class="math-inline">\\(\vec y\in\mathbb R^n\\)</span> is already in <span class="math-inline">\\(\text{colsp}(X)\\)</span>. Its projection is therefore <span class="math-inline">\\(\vec p=\vec y\\)</span>.
+</details>
 
 </div>
 </div>
@@ -1372,7 +1460,7 @@ Gram-Schmidt already gave us <span class="math-inline">\\(Q = \begin{bmatrix} 1/
 <div class="assignment-part-content" markdown="1">
 (3 pts) Consider <span class="math-inline">\\(\vec y = \begin{bmatrix} 3 \\\\ 1 \\\\ 2 \\\\ 4 \end{bmatrix}\\)</span>. <span class="math-inline">\\(\vec y\\)</span> **is** in <span class="math-inline">\\(\text{span}(\lbrace \vec v&#95;1, \vec v&#95;2, \vec v&#95;3 \rbrace) = \text{span}(\lbrace \vec q&#95;1, \vec q&#95;2, \vec q&#95;3 \rbrace)\\)</span>.
 
-Find scalars <span class="math-inline">\\(a\\)</span>, <span class="math-inline">\\(b\\)</span>, and <span class="math-inline">\\(c\\)</span> such that <span class="math-inline">\\(a\vec q&#95;1 + b\vec q&#95;2 + c\vec q&#95;3 = \vec y\\)</span>, **without** solving a system of 3 equations and 3 unknowns. Instead, use the fact that <span class="math-inline">\\(\vec q&#95;1, \vec q&#95;2, \vec q&#95;3\\)</span> are orthonormal. <em>Hint: There's a relevant problem from Lab 5.</em>
+Find scalars <span class="math-inline">\\(a\\)</span>, <span class="math-inline">\\(b\\)</span>, and <span class="math-inline">\\(c\\)</span> such that <span class="math-inline">\\(a\vec q&#95;1 + b\vec q&#95;2 + c\vec q&#95;3 = \vec y\\)</span>, **without** solving a system of 3 equations and 3 unknowns. Instead, use the fact that <span class="math-inline">\\(\vec q&#95;1, \vec q&#95;2, \vec q&#95;3\\)</span> are orthonormal. <em>Hint: There's a relevant problem from <a href="https://eecs245.org/resources/labs/lab04/#activity-5-orthogonal-decomposition-with-non-unit-vectors">Lab 4</a>.</em>
 
 <details markdown="1"><summary>Solution</summary>
 
