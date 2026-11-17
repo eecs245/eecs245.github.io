@@ -164,6 +164,6 @@ are made by the search app itself.
 
 ### Recording publication and separate caption indexing
 
-The **245 Recording** and **124 Recording** Apple Shortcuts pass `--recording-only`. Recording publication updates the recording link and selected CAEN titles without requesting or importing captions. Caption availability or download errors cannot block this operation. `--title-count N` controls title updates only.
+The **245 Recording** and **124 Recording** Apple Shortcuts pass `--recording-only`. Recording publication updates the recording link and selected CAEN titles without requesting or importing captions. Caption availability or download errors cannot block this operation. `--title-count N` controls title updates only. The shortcuts publish from temporary checkouts of the course repositories’ GitHub main branches. The shortcut shell commands can run the poster directly from the desktop checkout.
 
 Caption indexing is a separate, explicitly requested operation. Download the authentic caption track, validate it with `scripts/import_captions.py`, and review and commit its `.vtt` and `.json` cache files. Publishing those caches triggers the existing complete search rebuild, including semantic embeddings. Website builds use cached captions offline and never fetch CAEN caption tracks.
