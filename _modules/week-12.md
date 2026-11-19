@@ -19,6 +19,7 @@ days:
       - name: LEC 21
         type: lecture
         title: Eigenvalues and Eigenvectors, Continued
+        recording: https://leccap.engin.umich.edu/leccap/player/r/jVzGFO
         live_notes: resources/lecture-pdfs/lec21-filled.pdf
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
         reading_text: Ch. 9.3
