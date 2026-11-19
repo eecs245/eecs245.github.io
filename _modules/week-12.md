@@ -10,6 +10,9 @@ days:
       - name: EXAM
         type: exam
         title: "<b>Midterm 2 (7-9PM; 1013 DOW)</b>"
+        url: https://exams.eecs245.org/exams/fa26-mt2/
+        problems: https://exams.eecs245.org/exams/fa26-mt2/
+        solutions: true
         logistics: https://edstem.org/us/courses/101561/discussion/8499664
   - date: "2026-11-19"
     events:
