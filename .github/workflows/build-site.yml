@@ -59,7 +59,7 @@ jobs:
 
       - name: Install course search dependencies
         working-directory: tools/course-search
-        run: npm ci
+        run: npm ci --onnxruntime-node-install-cuda=skip
 
       - name: Install caption importer dependencies
         run: python3 -m pip install -r tools/course-search/scripts/requirements.txt
