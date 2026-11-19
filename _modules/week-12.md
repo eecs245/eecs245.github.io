@@ -19,6 +19,7 @@ days:
       - name: LEC 21
         type: lecture
         title: Eigenvalues and Eigenvectors, Continued
+        live_notes: https://web.goodnotes.com/s/vAW0Ihlye8HolTaUMvoZMp
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
         reading_text: Ch. 9.3
 ---
