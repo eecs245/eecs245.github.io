@@ -15,8 +15,9 @@ before(async()=>{
  processQuery=createQueryProcessor(records);keyword=buildSearch(records);
  assert.equal(data.metadata.errors.length,0);
  assert(records.every(r=>new Date(r.releaseAt)<=new Date(data.metadata.builtAt)));
- // Fall 2026 Midterm 1 is now publicly released; other midterms remain excluded.
- assert(records.every(r=>!r.url.includes('private')&&(!r.url.includes('fa26-mt')||r.url.startsWith('https://exams.eecs245.org/exams/fa26-mt1/'))));
+ // Only publicly released Fall 2026 midterms belong in the index.
+ const releasedMidterms=['fa26-mt1','fa26-mt2'].map(id=>`https://exams.eecs245.org/exams/${id}/`);
+ assert(records.every(r=>!r.url.includes('private')&&(!r.url.includes('fa26-mt')||releasedMidterms.some(url=>r.url.startsWith(url)))));
  const bytes=await readFile(new URL('../public/data/vectors.f32',import.meta.url));
  vectors=new Float32Array(bytes.buffer,bytes.byteOffset,bytes.length/4);
  assert.equal(vectors.length,records.length*384);
