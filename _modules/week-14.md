@@ -31,5 +31,6 @@ days:
     events:
       - name: HW 10
         type: hw
-        title: Diagonalization
+        title: <b>Diagonalization</b>
+        problems: ../resources/homeworks/hw10/
 ---
