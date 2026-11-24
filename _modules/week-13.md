@@ -7,6 +7,7 @@ days:
       - name: LEC 22
         type: lecture
         title: Adjacency Matrices and Diagonalization
+        recording: https://leccap.engin.umich.edu/leccap/player/r/hU6gi2
         live_notes: resources/lecture-pdfs/lec22-filled.pdf
         reading: https://notes.eecs245.org/eigenvalues-and-eigenvectors/markov-chains-adjacency-matrices/
         reading_text: Ch. 9.3
