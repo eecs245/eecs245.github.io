@@ -301,7 +301,7 @@ $$
 $$
 </div>
 
- The inequality above holds for all **convex functions** <span class="math-inline">\\(g(x)\\)</span> and is known as Jensen's inequality, named after [Johan Jensen](https://en.wikipedia.org/wiki/Johan_Jensen_%28mathematician%29) (not the former CEO of NVIDIA). Let's see how we can use Jensen's inequality to prove something useful!
+ The inequality above holds for all **convex functions** <span class="math-inline">\\(g(x)\\)</span> and is known as Jensen's inequality, named after [Johan Jensen](https://en.wikipedia.org/wiki/Johan_Jensen_%28mathematician%29) (not the CEO of NVIDIA). Let's see how we can use Jensen's inequality to prove something useful!
 
 <div class="assignment-parts" markdown="1">
 <div class="assignment-part" markdown="1">
