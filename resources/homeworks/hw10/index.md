@@ -162,7 +162,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 {: .yellow }
 <div markdown="1">
-Other than the video link for Problem 1 and the notebook for Problem 7, write your solutions by hand, on paper or on a tablet, and submit them as one PDF. Include your Problem 6f screenshot in that PDF. Submit your Problem 1 video link and your Problem 7 notebook separately on Pensive. Note that you are not allowed to use LaTeX, Google Docs, or any other digital document creation software to type your answers. Homeworks are due to Pensive by 11:59PM on the due date. See the [syllabus](https://eecs245.org/syllabus/#homeworks) for details on the slip day policy.
+Other than the video link for Problem 1 and the notebook for Problem 8, write your solutions by hand, on paper or on a tablet, and submit them as one PDF. Include your Problem 7f screenshot in that PDF. Submit your Problem 1 video link and your Problem 8 notebook separately on Pensive. Note that you are not allowed to use LaTeX, Google Docs, or any other digital document creation software to type your answers. Homeworks are due to Pensive by 11:59PM on the due date. See the [syllabus](https://eecs245.org/syllabus/#homeworks) for details on the slip day policy.
 
 Homework will be evaluated not only on the correctness of your answers, but on your ability to present your ideas clearly and logically. You should always explain and justify your conclusions, using sound reasoning. Your goal should be to convince the reader of your assertions. If a question does not require explanation, it will be explicitly stated.
 
@@ -173,22 +173,22 @@ Before proceeding, make sure you're familiar with the [collaboration policy](htt
 
 ## Problems
 
-- [Problem 1: Homework 9 Concept Video](#problem-1-homework-9-concept-video-10-pts)
-- [Problem 2: Rank One Projection Matrices](#problem-2-rank-one-projection-matrices-10-pts)
-- [Problem 3: Algebraic and Geometric Multiplicities](#problem-3-algebraic-and-geometric-multiplicities-20-pts)
-- [Problem 4: Diagonalization](#problem-4-diagonalization-14-pts)
-- [Problem 5: Adjacency Matrices](#problem-5-adjacency-matrices-16-pts)
-- [Problem 6: Regularization](#problem-6-regularization-24-pts)
-- [Problem 7: PageRank](#problem-7-pagerank-12-pts)
-- [Problem 8: Recovering Eigenspace Components](#problem-8-recovering-eigenspace-components-10-pts)
+- [Problem 1: Homework 9 Concept Video](#problem-1-homework-9-concept-video-8-pts)
+- [Problem 2: Rank One Projection Matrices](#problem-2-rank-one-projection-matrices-8-pts)
+- [Problem 3: Recovering Eigenvector Components](#problem-3-recovering-eigenvector-components-8-pts)
+- [Problem 4: Algebraic and Geometric Multiplicities](#problem-4-algebraic-and-geometric-multiplicities-15-pts)
+- [Problem 5: Diagonalization](#problem-5-diagonalization-12-pts)
+- [Problem 6: Adjacency Matrices](#problem-6-adjacency-matrices-15-pts)
+- [Problem 7: Regularization](#problem-7-regularization-22-pts)
+- [Problem 8: PageRank](#problem-8-pagerank-12-pts)
 
 ---
 
-Total Points: <span class="math-inline">\\(10 + 10 + 20 + 14 + 16 + 24 + 12 + 10 = 116\\)</span>
+Total Points: <span class="math-inline">\\(8 + 8 + 8 + 15 + 12 + 15 + 22 + 12 = 100\\)</span>
 
 ---
 
-## Problem 1: Homework 9 Concept Video (10 pts)
+## Problem 1: Homework 9 Concept Video (8 pts)
 
 Record a **2- to 5-minute video** answering **one** of the prompts below. These prompts are related to the ideas in [Homework 9](https://eecs245.org/resources/homeworks/hw09/).
 
@@ -214,15 +214,18 @@ The video should be **just you speaking into the camera**. Your face must be vis
 
 Submit your video link to the separate assignment on Pensive called **Homework 10, Problem 1 Video Link**. You can upload your video to YouTube as unlisted, share a Zoom recording link, or share a Google Drive link; whatever works. Make sure the course staff can view the video using that link.
 
-Your submission time for Homework 10 is the latest of your three submission times: your Problem 1 video link, your PDF, and your Problem 7 notebook.
+Your submission time for Homework 10 is the latest of your three submission times: your Problem 1 video link, your PDF, and your Problem 8 notebook.
 
 **This problem is graded on completion.** Record a video of the required length and make an honest effort to explain the question, and you will receive full credit. Your explanation does not need to be polished or perfect.
 
-**Note**: Repeatedly, you'll be asked to find eigenvalues and eigenvectors. As usual, you're expected to show all of your work. But, you're encouraged to verify your answers by using `np.linalg.eig` in Python, as is demonstrated in [Chapter 9.1](https://notes.eecs245.org/eigenvalues-and-eigenvectors/eigenvalues-eigenvectors/#finding-eigenvalues-using-numpy). (Resist the urge to use ChatGPT\...)
+---
+
+{: .yellow }
+> **Note**: Repeatedly, you'll be asked to find eigenvalues and eigenvectors. As usual, you're expected to show all of your work. But, you're encouraged to verify your answers by using `np.linalg.eig` in Python, as is demonstrated in [Chapter 9.1](https://notes.eecs245.org/eigenvalues-and-eigenvectors/eigenvalues-eigenvectors/#finding-eigenvalues-using-numpy). (Resist the urge to use ChatGPT\...)
 
 ---
 
-## Problem 2: Rank One Projection Matrices (10 pts)
+## Problem 2: Rank One Projection Matrices (8 pts)
 
 Consider the unit vector <span class="math-inline">\\(\vec u = \begin{bmatrix} 1/6 \\\\ 1/6 \\\\ 3/6 \\\\ 5/6 \end{bmatrix}\\)</span>, and the corresponding rank one projection matrix <span class="math-inline">\\(P = \vec u \vec u^T\\)</span>.
 
@@ -230,7 +233,7 @@ Consider the unit vector <span class="math-inline">\\(\vec u = \begin{bmatrix} 1
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(3 pts) Show that <span class="math-inline">\\(\vec u\\)</span> is an eigenvector of <span class="math-inline">\\(P\\)</span>. What is its corresponding eigenvalue?
+(2 pts) Show that <span class="math-inline">\\(\vec u\\)</span> is an eigenvector of <span class="math-inline">\\(P\\)</span>. What is its corresponding eigenvalue?
 
 </div>
 </div>
@@ -238,7 +241,7 @@ Consider the unit vector <span class="math-inline">\\(\vec u = \begin{bmatrix} 1
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(3 pts) Show that if <span class="math-inline">\\(\vec v\\)</span> is orthogonal to <span class="math-inline">\\(\vec u\\)</span>, then <span class="math-inline">\\(\vec v\\)</span> is an eigenvector of <span class="math-inline">\\(P\\)</span>. What is its corresponding eigenvalue?
+(2 pts) Show that if <span class="math-inline">\\(\vec v\\)</span> is orthogonal to <span class="math-inline">\\(\vec u\\)</span>, then <span class="math-inline">\\(\vec v\\)</span> is an eigenvector of <span class="math-inline">\\(P\\)</span>. What is its corresponding eigenvalue?
 
 </div>
 </div>
@@ -257,7 +260,52 @@ These three eigenvectors form a basis of the **eigenspace** of <span class="math
 
 ---
 
-## Problem 3: Algebraic and Geometric Multiplicities (20 pts)
+## Problem 3: Recovering Eigenvector Components (8 pts)
+
+Suppose <span class="math-inline">\\(S\\)</span> is a <span class="math-inline">\\(2 \times 2\\)</span> **symmetric** matrix whose eigenvalues are <span class="math-inline">\\(1\\)</span> and <span class="math-inline">\\(3\\)</span>. You are given a vector <span class="math-inline">\\(\vec x\\)</span> and the result of multiplying it by <span class="math-inline">\\(S\\)</span>:
+
+<div class="math-display">
+$$
+\vec x=\begin{bmatrix}2\\\\4\end{bmatrix}
+\qquad
+S\vec x=\begin{bmatrix}6\\\\4\end{bmatrix}
+$$
+</div>
+
+ Write <span class="math-inline">\\(\vec x=\vec v_1+\vec v_2\\)</span>, where <span class="math-inline">\\(\vec v_1\\)</span> is an eigenvector corresponding to <span class="math-inline">\\(\lambda=1\\)</span> and <span class="math-inline">\\(\vec v_2\\)</span> is an eigenvector corresponding to <span class="math-inline">\\(\lambda=3\\)</span>.
+
+<div class="assignment-parts" markdown="1">
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">a)</div>
+<div class="assignment-part-content" markdown="1">
+(2 pts) Express <span class="math-inline">\\(S\vec x\\)</span> as a linear combination of <span class="math-inline">\\(\vec v_1\\)</span> and <span class="math-inline">\\(\vec v_2\\)</span>.
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">b)</div>
+<div class="assignment-part-content" markdown="1">
+(4 pts) Use the two given vectors to find <span class="math-inline">\\(\vec v_1\\)</span> and <span class="math-inline">\\(\vec v_2\\)</span>. Verify that <span class="math-inline">\\(\vec v_1\\)</span> and <span class="math-inline">\\(\vec v_2\\)</span> are orthogonal, as the Spectral Theorem in [Chapter 9.5](https://notes.eecs245.org/eigenvalues-and-eigenvectors/symmetric-matrices-spectral-theorem/) guarantees.
+
+</div>
+</div>
+
+<div class="assignment-part" markdown="1">
+<div class="assignment-part-label">c)</div>
+<div class="assignment-part-content" markdown="1">
+(2 pts) Find <span class="math-inline">\\(S^4\vec x\\)</span> using your vectors from part b).
+</div>
+</div>
+
+</div>
+
+{% endraw %}
+
+
+---
+
+## Problem 4: Algebraic and Geometric Multiplicities (15 pts)
 
 For each matrix below:
 
@@ -303,7 +351,7 @@ Work efficiently: this problem is quicker than it seems.
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts)
+(3 pts)
 <span class="math-inline">\\(A = \begin{bmatrix} 3 &amp; 0 &amp; 0 \\\\ 0 &amp; 4 &amp; 0 \\\\ 0 &amp; 0 &amp; 4 \end{bmatrix}\\)</span>
 
 </div>
@@ -312,7 +360,7 @@ Work efficiently: this problem is quicker than it seems.
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts)
+(3 pts)
 <span class="math-inline">\\(A = \begin{bmatrix} 3 &amp; 1 \\\\ 0 &amp; 3 \end{bmatrix}\\)</span>
 
 </div>
@@ -321,7 +369,7 @@ Work efficiently: this problem is quicker than it seems.
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">c)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts)
+(3 pts)
 <span class="math-inline">\\(A = \begin{bmatrix} 2 &amp; 0 &amp; 1 \\\\ 0 &amp; 2 &amp; 1 \\\\ 0 &amp; 0 &amp; 3 \end{bmatrix}\\)</span>
 
 </div>
@@ -330,7 +378,7 @@ Work efficiently: this problem is quicker than it seems.
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">d)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts)
+(3 pts)
 <span class="math-inline">\\(A = \begin{bmatrix} 5 &amp; 0 &amp; 0 &amp; 0 \\\\ 0 &amp; 3 &amp; 1 &amp; 0 \\\\ 0 &amp; 0 &amp; 3 &amp; 0 \\\\ 0 &amp; 0 &amp; 0 &amp; 5 \end{bmatrix}\\)</span>
 
 </div>
@@ -339,7 +387,7 @@ Work efficiently: this problem is quicker than it seems.
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">e)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts)
+(3 pts)
 <span class="math-inline">\\(A = \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\\\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\\\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\\\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}\\)</span>
 
 </div>
@@ -349,7 +397,7 @@ Work efficiently: this problem is quicker than it seems.
 
 ---
 
-## Problem 4: Diagonalization (14 pts)
+## Problem 5: Diagonalization (12 pts)
 
 Before proceeding, it's wise to read [Chapter 9.4](https://notes.eecs245.org/eigenvalues-and-eigenvectors/multiplicities-diagonalization/).
 
@@ -357,7 +405,7 @@ Before proceeding, it's wise to read [Chapter 9.4](https://notes.eecs245.org/eig
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts) In each statement, fill in the blanks and provide a brief justification. Each answer is more than just one word or number.
+(3 pts) In each statement, fill in the blanks and provide a brief justification. Each answer is more than just one word or number.
 
 <ol class="assignment-list" markdown="1" data-item-count="2" start="1" style="list-style-type: decimal;">
 <li markdown="1" value="1">
@@ -378,7 +426,7 @@ Before proceeding, it's wise to read [Chapter 9.4](https://notes.eecs245.org/eig
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(10 pts) For each matrix <span class="math-inline">\\(A\\)</span> in **Problem 3**:
+(9 pts) For each matrix <span class="math-inline">\\(A\\)</span> in **Problem 4**:
 
 <ul class="assignment-list" markdown="1" data-item-count="2">
 <li markdown="1">
@@ -400,7 +448,7 @@ Before proceeding, it's wise to read [Chapter 9.4](https://notes.eecs245.org/eig
 
 ---
 
-## Problem 5: Adjacency Matrices (16 pts)
+## Problem 6: Adjacency Matrices (15 pts)
 
 Consider the matrix
 
@@ -424,7 +472,7 @@ $$
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">b)</div>
 <div class="assignment-part-content" markdown="1">
-(4 pts) Diagonalize <span class="math-inline">\\(A\\)</span> by finding matrices <span class="math-inline">\\(V\\)</span> and <span class="math-inline">\\(\Lambda\\)</span> such that <span class="math-inline">\\(A = V \Lambda V^{-1}\\)</span>. Do this by hand, but then include a screenshot of `numpy` code that verifies that you found the correct <span class="math-inline">\\(V\\)</span> and <span class="math-inline">\\(\Lambda\\)</span>.
+(3 pts) Diagonalize <span class="math-inline">\\(A\\)</span> by finding matrices <span class="math-inline">\\(V\\)</span> and <span class="math-inline">\\(\Lambda\\)</span> such that <span class="math-inline">\\(A = V \Lambda V^{-1}\\)</span>. Do this by hand, but then include a screenshot of `numpy` code that verifies that you found the correct <span class="math-inline">\\(V\\)</span> and <span class="math-inline">\\(\Lambda\\)</span>.
 
 </div>
 </div>
@@ -457,7 +505,7 @@ $$
 
 ---
 
-## Problem 6: Regularization (24 pts)
+## Problem 7: Regularization (22 pts)
 
 Suppose we'd like to perform multiple linear regression using the <span class="math-inline">\\(n \times (d+1)\\)</span> design matrix <span class="math-inline">\\(X\\)</span>, observation vector <span class="math-inline">\\(\vec y \in \mathbb{R}^n\\)</span>, and parameter vector <span class="math-inline">\\(\vec w \in \mathbb{R}^{d+1}\\)</span>.
 
@@ -479,7 +527,7 @@ But, it turns out that <span class="math-inline">\\(\vec w&#95;\text{ridge}^{\as
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">a)</div>
 <div class="assignment-part-content" markdown="1">
-(6 pts) Find <span class="math-inline">\\(\nabla R&#95;\text{ridge}(\vec w)\\)</span>, the gradient of <span class="math-inline">\\(R&#95;\text{ridge}(\vec w)\\)</span>.
+(5 pts) Find <span class="math-inline">\\(\nabla R&#95;\text{ridge}(\vec w)\\)</span>, the gradient of <span class="math-inline">\\(R&#95;\text{ridge}(\vec w)\\)</span>.
 
 <em>Hint: Most of the steps involved were done in <a href="https://notes.eecs245.org/gradients/gradients-matrix-vector-operations/#minimizing-mean-squared-error">Chapter 8.2</a>, but you'll need to redo the work yourself and extend it slightly.</em>
 
@@ -527,7 +575,7 @@ One of the side benefits of adding this regularization term is that a unique sol
 <div class="assignment-part" markdown="1">
 <div class="assignment-part-label">f)</div>
 <div class="assignment-part-content" markdown="1">
-(5 pts) Now, let's explore how adding the regularization term <span class="math-inline">\\(\lambda \lVert \vec w \rVert^2\\)</span> to the objective function affects the shape of the loss surface.
+(4 pts) Now, let's explore how adding the regularization term <span class="math-inline">\\(\lambda \lVert \vec w \rVert^2\\)</span> to the objective function affects the shape of the loss surface.
 
 Open the **supplemental Jupyter Notebook** we've created for Homework 10, which can either be found [here](https://github.com/eecs245/fa26-code/blob/main/homeworks/hw10/hw10.ipynb) in the course GitHub repository or [here](https://datahub.eecs245.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Feecs245%2Ffa26-code&urlpath=tree%2Ffa26-code%2Fhomeworks%2Fhw10%2Fhw10.ipynb&branch=main) on DataHub.
 
@@ -536,7 +584,7 @@ This problem is **not** autograded. Instead,
 <ol class="assignment-list" markdown="1" data-item-count="3" start="1" style="list-style-type: decimal;">
 <li markdown="1" value="1">
 
-Read through the entire walkthrough, all the way through the end of Problem 6f).
+Read through the entire walkthrough, all the way through the end of Problem 7f).
 
 </li>
 <li markdown="1" value="2">
@@ -572,7 +620,7 @@ If you'd like to read more about regularization, and **how we actually choose th
 
 ---
 
-## Problem 7: PageRank (12 pts)
+## Problem 8: PageRank (12 pts)
 
 This problem involves writing code and submitting it to the Pensive autograder. The goal of this problem is to allow you to implement Google's PageRank algorithm in code and think through some of its pitfalls and variants.
 
@@ -581,7 +629,7 @@ There are two ways to access the supplemental Jupyter Notebook:
 <ul class="assignment-list" markdown="1" data-item-count="2">
 <li markdown="1">
 
-**Option 1**: Set up a Jupyter Notebook environment locally, use `git` to clone our [course repository](https://github.com/eecs245/fa26-code/tree/main), and open `homeworks/hw10/hw10.ipynb`. For instructions on how to do this, see the [Tech Support](https://eecs245.org/env-setup/#option-1-local-setup) page of the course website.
+**Option 1**: Set up a Jupyter Notebook environment locally, use `git` to clone our course repository, and open [`homeworks/hw10/hw10.ipynb`](https://github.com/eecs245/fa26-code/blob/main/homeworks/hw10/hw10.ipynb). For instructions on how to do this, see the [Tech Support](https://eecs245.org/env-setup/#option-1-local-setup) page of the course website.
 
 </li>
 <li markdown="1">
@@ -592,46 +640,4 @@ There are two ways to access the supplemental Jupyter Notebook:
 </ul>
 
 {: .yellow }
-> This problem is entirely autograded. Submit your completed notebook to **Homework 10, Problem 7 Code** on Pensive.
-
-## Problem 8: Recovering Eigenspace Components (10 pts)
-
-Suppose <span class="math-inline">\\(S\\)</span> is a <span class="math-inline">\\(2 \times 2\\)</span> symmetric matrix whose eigenvalues are <span class="math-inline">\\(1\\)</span> and <span class="math-inline">\\(3\\)</span>. You are given a vector <span class="math-inline">\\(\vec x\\)</span> and the result of multiplying it by <span class="math-inline">\\(S\\)</span>:
-
-<div class="math-display">
-$$
-\vec x=\begin{bmatrix}2\\\\4\end{bmatrix}
-\qquad
-S\vec x=\begin{bmatrix}6\\\\4\end{bmatrix}
-$$
-</div>
-
- Write <span class="math-inline">\\(\vec x=\vec u+\vec v\\)</span>, where <span class="math-inline">\\(\vec u\\)</span> belongs to the eigenspace for <span class="math-inline">\\(\lambda=1\\)</span> and <span class="math-inline">\\(\vec v\\)</span> belongs to the eigenspace for <span class="math-inline">\\(\lambda=3\\)</span>.
-
-<div class="assignment-parts" markdown="1">
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">a)</div>
-<div class="assignment-part-content" markdown="1">
-(3 pts) Express <span class="math-inline">\\(S\vec x\\)</span> as a linear combination of <span class="math-inline">\\(\vec u\\)</span> and <span class="math-inline">\\(\vec v\\)</span>. Explain how the two eigenvalues determine the coefficients.
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">b)</div>
-<div class="assignment-part-content" markdown="1">
-(4 pts) Use the two given vectors to find <span class="math-inline">\\(\vec u\\)</span> and <span class="math-inline">\\(\vec v\\)</span>. Check that the components you found are orthogonal, as the spectral theorem predicts.
-
-</div>
-</div>
-
-<div class="assignment-part" markdown="1">
-<div class="assignment-part-label">c)</div>
-<div class="assignment-part-content" markdown="1">
-(3 pts) Find <span class="math-inline">\\(S^4\vec x\\)</span> using your components from part b). Show how <span class="math-inline">\\(S^4\\)</span> acts on each component.
-</div>
-</div>
-
-</div>
-
-{% endraw %}
+> This problem is entirely autograded. Submit your completed notebook to **Homework 10, Problem 8 Code** on Pensive.
